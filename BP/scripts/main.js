@@ -246,9 +246,9 @@ world.afterEvents.entityHurt.subscribe((event) => {
         if (typeId === "alexsmobs:kangaroo") {
             const retaliate = Math.random() < 0.5;
             if (retaliate && attacker && attacker.isValid() && dist < 12) {
-                victim.applyImpulse({ x: normX * 0.45, y: 0.25, z: normZ * 0.45 });
+                victim.applyImpulse({ x: normX * 0.45, y: 0.42, z: normZ * 0.45 });
             } else {
-                victim.applyImpulse({ x: -normX * 0.55, y: 0.3, z: -normZ * 0.55 });
+                victim.applyImpulse({ x: -normX * 0.55, y: 0.52, z: -normZ * 0.55 });
             }
             return;
         }
@@ -481,6 +481,17 @@ system.runInterval(() => {
                         y: 0.38,
                         z: Math.cos(rad) * 0.35
                     });
+                }
+            } catch (e) {}
+        }
+
+        const kangaroos = overworld.getEntities({ type: "alexsmobs:kangaroo" });
+        for (const k of kangaroos) {
+            if (!k.isValid()) continue;
+            try {
+                const vel = k.getVelocity();
+                if (k.isOnGround && (Math.abs(vel.x) > 0.04 || Math.abs(vel.z) > 0.04) && Math.random() < 0.22) {
+                    k.applyImpulse({ x: vel.x * 1.15, y: 0.44, z: vel.z * 1.15 });
                 }
             } catch (e) {}
         }
