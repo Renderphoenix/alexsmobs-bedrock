@@ -6,7 +6,7 @@ This addon brings an incredible variety of aesthetic, authentic, engaging, and u
 
 ---
 
-## 🌟 Features
+## Features
 
 - **80+ Authentic Mobs**:
   - **Overworld Fauna**: Grizzly Bears, Gorillas, Capuchin Monkeys, Elephants, Rhinoceroses, Tigers, Kangaroos, Emus, Moose, Raccoons, Skunks, Tasmanian Devils, Anteaters, and more.
@@ -21,13 +21,37 @@ This addon brings an incredible variety of aesthetic, authentic, engaging, and u
 
 ---
 
-## 📁 Repository Structure
+## Useful Commands & Functions
+
+Use these built-in functions in-game (cheats must be enabled):
+
+- **Get all custom items** (326 items):
+  ```
+  /function give_all_items
+  ```
+- **Get all custom blocks** (148 blocks):
+  ```
+  /function give_all_blocks
+  ```
+- **Summon all authentic creatures** (89 mobs):
+  ```
+  /function summon_all_mobs
+  ```
+- **Command help**:
+  ```
+  /function help
+  ```
+
+---
+
+## Repository Structure
 
 ```
 alexsmobs/
 ├── BP/                                # Behavior Pack
 │   ├── blocks/                        # Custom block definitions
 │   ├── entities/                      # Entity behaviors, components & events
+│   ├── functions/                     # Custom in-game mcfunction files
 │   ├── items/                         # Custom item behaviors
 │   ├── loot_tables/                   # Entity & block loot drop tables
 │   ├── recipes/                       # Crafting & smelting recipes
@@ -45,32 +69,42 @@ alexsmobs/
 │   ├── textures/                      # Mob, item, and block textures
 │   └── manifest.json                  # RP metadata
 │
+├── AlexsMobs.mcaddon                  # One-click installer for Bedrock
 └── README.md
 ```
 
 ---
 
-## 🚀 Installation Guide
+## Installation Guide
 
-### For Windows 10/11 (Minecraft Bedrock):
+### Option 1: One-Click Installation (.mcaddon)
 
-1. **Clone or Download** this repository.
-2. Press `Win + R`, paste the following path, and hit `Enter`:
+1. Download **`AlexsMobs.mcaddon`**.
+2. Double-click or open the file. Minecraft Bedrock Edition will launch and automatically import both the Behavior Pack and Resource Pack.
+3. Apply both packs to your world.
+
+### Option 2: Manual Installation
+
+1. Clone or download this repository.
+2. Press `Win + R`, paste the following path, and press `Enter`:
    ```cmd
    %localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang
    ```
-3. Copy the **`BP`** folder into the `development_behavior_packs` folder (rename to `AlexsMobs_BP` if desired).
-4. Copy the **`RP`** folder into the `development_resource_packs` folder (rename to `AlexsMobs_RP` if desired).
+3. Copy the **`BP`** folder into the `development_behavior_packs` folder.
+4. Copy the **`RP`** folder into the `development_resource_packs` folder.
 5. Open Minecraft Bedrock Edition, create or edit a world, and activate **Alex's Mobs** in both Resource Packs and Behavior Packs.
-6. Enable **Beta / Experimental Features** in your world settings:
-   - *Holiday Creator Features*
-   - *Custom Biomes*
-   - *Upcoming Creator Features*
-   - *Molang Features*
+
+### Important: Enable Experimental Features
+
+In your world settings, make sure to enable:
+- *Holiday Creator Features*
+- *Custom Biomes*
+- *Upcoming Creator Features*
+- *Molang Features*
 
 ---
 
-## 📜 Credits & Licensing
+## Credits & Licensing
 
 - **Original Mod Authors**:
   - **Alexthe668** (Lead Developer & Creator)
@@ -81,5 +115,4 @@ alexsmobs/
 
 ---
 
-*Enjoy the wild adventures with Alex's Mobs on Bedrock! 🐾*
-
+*Enjoy the wild adventures with Alex's Mobs on Bedrock!*
