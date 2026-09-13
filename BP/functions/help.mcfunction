@@ -1,2 +1,2 @@
-# Alex's Mobs - Function Commands Help
-tellraw @s {"rawtext":[{"text":"§6=== Alex's Mobs Commands ===§r\n§e/function give_all_items§r - Get all 326 custom items\n§e/function give_all_blocks§r - Get all 148 custom blocks\n§e/function summon_all_mobs§r - Summon all 89 authentic creatures"}]}
+ï»¿# Alex's Mobs - Function Commands Help
+tellraw @s {rawtext:[{text:Â§6=== Alex's Mobs Commands ===Â§r\nÂ§e/function give_all_itemsÂ§r - Get all 326 custom items\nÂ§e/function give_all_blocksÂ§r - Get all 148 custom blocks\nÂ§e/function summon_all_mobsÂ§r - Summon all creatures\nÂ§e/function test_scriptsÂ§r - Confirm Script Engine is working\nÂ§e/scriptevent alexsmobs:testÂ§r - Direct script test\nÂ§e!testÂ§r - Chat command to test scripts}]}

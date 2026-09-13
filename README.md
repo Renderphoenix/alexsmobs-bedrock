@@ -41,6 +41,20 @@ Use these built-in functions in-game (cheats must be enabled):
   ```
   /function help
   ```
+- **Confirm scripts are working**:
+  - Run function command:
+    ```
+    /function test_scripts
+    ```
+  - Or run native script event:
+    ```
+    /scriptevent alexsmobs:test
+    ```
+  - Or type directly in chat:
+    ```
+    !test
+    ```
+
 
 ---
 

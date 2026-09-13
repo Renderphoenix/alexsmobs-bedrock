@@ -3,18 +3,74 @@ import { world, system } from "@minecraft/server";
 // Alex's Mobs Bedrock AI Script Enhancer
 // Enhances kangaroo hopping, bird gliding, and crocodile predator lunges
 
+// Helper to broadcast status verification
+function handleScriptStatus(player) {
+    try {
+        const overworld = world.getDimension("overworld");
+        let mobCount = 0;
+        if (overworld) {
+            const allEntities = overworld.getEntities();
+            for (const ent of allEntities) {
+                if (ent.typeId && ent.typeId.startsWith("alexsmobs:")) {
+                    mobCount++;
+                }
+            }
+        }
+        const message = `§a[Alex's Mobs] §fScript Engine: §aONLINE & WORKING§f! Server Tick: §e${system.currentTick}§f, Active Alex's Mobs: §b${mobCount}`;
+        if (player && player.sendMessage) {
+            player.sendMessage(message);
+        } else {
+            world.sendMessage(message);
+        }
+    } catch (e) {
+        world.sendMessage(`§a[Alex's Mobs] §fScript Engine: §aONLINE & WORKING§f! Server Tick: §e${system.currentTick}`);
+    }
+}
+
+// 1. Command confirmation via Bedrock ScriptEvent: /scriptevent alexsmobs:test or /scriptevent alexsmobs:status
+system.afterEvents.scriptEventReceive.subscribe((event) => {
+    if (event.id === "alexsmobs:test" || event.id === "alexsmobs:status" || event.id === "alexsmobs:ping") {
+        const player = event.sourceEntity;
+        handleScriptStatus(player);
+    }
+});
+
+// 2. Chat command confirmation: type !test or !alexsmobs or !status in chat
+world.beforeEvents.chatSend.subscribe((event) => {
+    const msg = event.message.trim().toLowerCase();
+    if (msg === "!test" || msg === "!alexsmobs" || msg === "!status") {
+        event.cancel = true;
+        system.run(() => {
+            handleScriptStatus(event.sender);
+        });
+    }
+});
+
+// 3. Welcome notification on player join
+world.afterEvents.playerSpawn.subscribe((event) => {
+    if (event.initialSpawn) {
+        system.runTimeout(() => {
+            try {
+                if (event.player && event.player.isValid()) {
+                    event.player.sendMessage("§6[Alex's Mobs] §aScript Engine initialized! Type §e!test §aor §e/scriptevent alexsmobs:test §ato confirm scripts are active.");
+                }
+            } catch (e) {}
+        }, 40);
+    }
+});
+
+// 4. Continuous AI physics enhancement loop (kangaroo hopping, bird gliding, croc lunging)
 system.runInterval(() => {
     try {
         const overworld = world.getDimension("overworld");
         if (!overworld) return;
 
-        // 1. Kangaroo dynamic hopping leap
+        // Kangaroo dynamic hopping leap
         const kangaroos = overworld.getEntities({ type: "alexsmobs:kangaroo" });
         for (const k of kangaroos) {
             if (!k.isValid()) continue;
             try {
                 const vel = k.getVelocity();
-                // When kangaroo is airborne or jumping upward, give forward momentum
                 if (vel.y > 0.05 && vel.y < 0.6) {
                     const rot = k.getRotation();
                     const rad = (rot.y * Math.PI) / 180;
@@ -25,7 +81,7 @@ system.runInterval(() => {
             } catch (e) {}
         }
 
-        // 2. Jerboa quick bounds
+        // Jerboa quick bounds
         const jerboas = overworld.getEntities({ type: "alexsmobs:jerboa" });
         for (const j of jerboas) {
             if (!j.isValid()) continue;
@@ -41,7 +97,7 @@ system.runInterval(() => {
             } catch (e) {}
         }
 
-        // 3. Birds smooth gliding momentum
+        // Birds smooth gliding momentum
         const birdTypes = [
             "alexsmobs:sunbird",
             "alexsmobs:bald_eagle",
@@ -58,7 +114,6 @@ system.runInterval(() => {
                 if (!b.isValid()) continue;
                 try {
                     const vel = b.getVelocity();
-                    // If dropping downward too fast, catch air and glide forward smoothly
                     if (vel.y < -0.15) {
                         const rot = b.getRotation();
                         const rad = (rot.y * Math.PI) / 180;
@@ -70,7 +125,7 @@ system.runInterval(() => {
             }
         }
 
-        // 4. Crocodile predatory water lunge
+        // Crocodile predatory water lunge
         const crocodiles = overworld.getEntities({ type: "alexsmobs:crocodile" });
         for (const c of crocodiles) {
             if (!c.isValid()) continue;
@@ -84,7 +139,6 @@ system.runInterval(() => {
                         const dy = tLoc.y - cLoc.y;
                         const dz = tLoc.z - cLoc.z;
                         const distSq = dx * dx + dz * dz;
-                        // If within 10 blocks, lunge forward at target
                         if (distSq < 100 && distSq > 3) {
                             const dist = Math.sqrt(distSq);
                             c.applyImpulse({
