@@ -1,4 +1,4 @@
-{
+﻿{
   "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
@@ -10,7 +10,7 @@
         "default": "textures/entity/cosmic_cod"
       },
       "geometry": {
-        "default": "geometry.cosmic_cod"
+        "default": "geometry.cosmic_cod_eyes"
       },
       "animations": {
         "walk": "animation.cosmic_cod.walk",

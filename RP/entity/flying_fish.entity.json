@@ -10,7 +10,7 @@
                                                                          "default":  "textures/entity/flying_fish"
                                                                      },
                                                         "geometry":  {
-                                                                         "default":  "geometry.flying_fish"
+                                                                         "default":  "geometry.flying_fish_0"
                                                                      },
                                                         "animations":  {
                                                                            "walk":  "animation.flying_fish.walk",

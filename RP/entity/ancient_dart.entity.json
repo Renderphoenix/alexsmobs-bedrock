@@ -1,4 +1,4 @@
-{
+﻿{
   "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
@@ -10,7 +10,7 @@
         "default": "textures/entity/ancient_dart"
       },
       "geometry": {
-        "default": "geometry.ancient_dart"
+        "default": "geometry.arrow"
       },
       "animations": {
         "walk": "animation.ancient_dart.walk",

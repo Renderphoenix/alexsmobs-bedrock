@@ -1,4 +1,4 @@
-{
+﻿{
     "resource_pack_name":  "Alex\u0027s Mobs Addon",
     "texture_name":  "atlas.items",
     "texture_data":  {
@@ -45,7 +45,7 @@
                                                  "textures":  "textures/items/blobfish_bucket"
                                              },
                          "blood_gun_empty":  {
-                                                 "textures":  "textures/items/blood_gun_empty"
+                                                 "textures":  "textures/items/blood_sprayer_empty"
                                              },
                          "blood_sac":  {
                                            "textures":  "textures/items/blood_sac"
@@ -59,9 +59,6 @@
                          "boiled_emu_egg":  {
                                                 "textures":  "textures/items/boiled_emu_egg"
                                             },
-                         "bone_serpent_tooth":  {
-                                                    "textures":  "textures/items/bone_serpent_tooth"
-                                                },
                          "cachalot_whale_tooth":  {
                                                       "textures":  "textures/items/cachalot_whale_tooth"
                                                   },
@@ -180,10 +177,10 @@
                                               "textures":  "textures/items/emu_leggings"
                                           },
                          "end_pirate_anchor":  {
-                                                   "textures":  "textures/items/end_pirate_anchor"
+                                                   "textures":  "textures/entity/anchor"
                                                },
                          "end_pirate_anchor_winch":  {
-                                                         "textures":  "textures/items/end_pirate_anchor_winch"
+                                                         "textures":  "textures/entity/anchor_winch"
                                                      },
                          "end_pirate_door":  {
                                                  "textures":  "textures/items/end_pirate_door"
@@ -192,13 +189,13 @@
                                                  "textures":  "textures/items/end_pirate_flag"
                                              },
                          "end_pirate_ship_wheel":  {
-                                                       "textures":  "textures/items/end_pirate_ship_wheel"
+                                                       "textures":  "textures/entity/ship_wheel"
                                                    },
                          "end_pirate_trapdoor":  {
                                                      "textures":  "textures/items/end_pirate_trapdoor"
                                                  },
                          "ender_residue":  {
-                                               "textures":  "textures/items/ender_residue"
+                                               "textures":  "textures/blocks/ender_residue"
                                            },
                          "enderiophage_rocket":  {
                                                      "textures":  "textures/items/enderiophage_rocket"
@@ -264,7 +261,7 @@
                                             "textures":  "textures/items/guster_eye"
                                         },
                          "gustmaker":  {
-                                           "textures":  "textures/items/gustmaker"
+                                           "textures":  "textures/blocks/gustmaker"
                                        },
                          "halo":  {
                                       "textures":  "textures/items/halo"
@@ -279,7 +276,7 @@
                                                "textures":  "textures/items/hemolymph_sac"
                                            },
                          "hummingbird_feeder":  {
-                                                    "textures":  "textures/items/hummingbird_feeder"
+                                                    "textures":  "textures/blocks/bird_feeder"
                                                 },
                          "kangaroo_burger":  {
                                                  "textures":  "textures/items/kangaroo_burger"
@@ -372,7 +369,7 @@
                                              "textures":  "textures/items/novelty_hat"
                                          },
                          "phantom_sail":  {
-                                              "textures":  "textures/items/phantom_sail"
+                                              "textures":  "textures/blocks/phantom_sail"
                                           },
                          "pigshoes":  {
                                           "textures":  "textures/items/pigshoes"
@@ -402,13 +399,13 @@
                                                "textures":  "textures/items/purpur_planks"
                                            },
                          "purpur_planks_slab":  {
-                                                    "textures":  "textures/items/purpur_planks_slab"
+                                                    "textures":  "textures/blocks/purpur_planks_slab"
                                                 },
                          "purpur_planks_stairs":  {
-                                                      "textures":  "textures/items/purpur_planks_stairs"
+                                                      "textures":  "textures/blocks/purpur_planks_stairs"
                                                   },
                          "purpur_planks_wall":  {
-                                                    "textures":  "textures/items/purpur_planks_wall"
+                                                    "textures":  "textures/blocks/purpur_planks_wall_post"
                                                 },
                          "raccoon_tail":  {
                                               "textures":  "textures/items/raccoon_tail"
@@ -444,7 +441,7 @@
                                              "textures":  "textures/items/sand_circle"
                                          },
                          "sculk_boomer":  {
-                                              "textures":  "textures/items/sculk_boomer"
+                                              "textures":  "textures/blocks/sculk_boomer_closed"
                                           },
                          "serrated_shark_tooth":  {
                                                       "textures":  "textures/items/serrated_shark_tooth"
@@ -465,7 +462,7 @@
                                                     "textures":  "textures/items/shield_of_the_deep"
                                                 },
                          "shield_of_the_deep_blocking":  {
-                                                             "textures":  "textures/items/shield_of_the_deep_blocking"
+                                                             "textures":  "textures/items/shield_of_the_deep"
                                                          },
                          "shrimp_fried_rice":  {
                                                    "textures":  "textures/items/shrimp_fried_rice"
@@ -474,7 +471,7 @@
                                                 "textures":  "textures/items/skelewag_sword"
                                             },
                          "skelewag_sword_blocking":  {
-                                                         "textures":  "textures/items/skelewag_sword_blocking"
+                                                         "textures":  "textures/items/skelewag_sword"
                                                      },
                          "skelewag_sword_hand":  {
                                                      "textures":  "textures/items/skelewag_sword_hand"
@@ -527,9 +524,6 @@
                          "spawn_egg_blue_jay":  {
                                                     "textures":  "textures/items/spawn_egg_blue_jay"
                                                 },
-                         "spawn_egg_bone_serpent":  {
-                                                        "textures":  "textures/items/spawn_egg_bone_serpent"
-                                                    },
                          "spawn_egg_bunfungus":  {
                                                      "textures":  "textures/items/spawn_egg_bunfungus"
                                                  },
@@ -771,7 +765,7 @@
                                                        "textures":  "textures/items/spawn_egg_warped_toad"
                                                    },
                          "spectre_sail":  {
-                                              "textures":  "textures/items/spectre_sail"
+                                              "textures":  "textures/blocks/spectre_sail"
                                           },
                          "spiked_scute":  {
                                               "textures":  "textures/items/spiked_scute"
@@ -798,7 +792,7 @@
                                                 "textures":  "textures/items/stink_ray_hand"
                                             },
                          "stink_ray_hand_base":  {
-                                                     "textures":  "textures/items/stink_ray_hand_base"
+                                                     "textures":  "textures/items/stink_ray_hand"
                                                  },
                          "stink_ray_inventory":  {
                                                      "textures":  "textures/items/stink_ray_inventory"
@@ -822,7 +816,7 @@
                                                   "textures":  "textures/items/stradpole_bucket"
                                               },
                          "tab_icon":  {
-                                          "textures":  "textures/items/tab_icon"
+                                          "textures":  "textures/items/transmutation_table"
                                       },
                          "tarantula_hawk_elytra":  {
                                                        "textures":  "textures/items/tarantula_hawk_elytra"
@@ -888,82 +882,82 @@
                                                "textures":  "textures/items/warped_muscle"
                                            },
                          "banana_slug_slime_block_bubbles":  {
-                                                                 "textures":  "textures/items/banana_slug_slime_block_bubbles"
+                                                                 "textures":  "textures/blocks/banana_slug_slime_block"
                                                              },
                          "banana_slug_slime_block_inventory":  {
-                                                                   "textures":  "textures/items/banana_slug_slime_block_inventory"
+                                                                   "textures":  "textures/blocks/banana_slug_slime_block"
                                                                },
                          "bird_feeder":  {
-                                             "textures":  "textures/items/bird_feeder"
+                                             "textures":  "textures/blocks/bird_feeder"
                                          },
                          "bird_feeder_hanging":  {
-                                                     "textures":  "textures/items/bird_feeder_hanging"
+                                                     "textures":  "textures/blocks/bird_feeder"
                                                  },
                          "end_pirate_trapdoor_bottom":  {
-                                                            "textures":  "textures/items/end_pirate_trapdoor_bottom"
+                                                            "textures":  "textures/blocks/end_pirate_trapdoor_bottom"
                                                         },
                          "end_pirate_trapdoor_open":  {
-                                                          "textures":  "textures/items/end_pirate_trapdoor_open"
+                                                          "textures":  "textures/blocks/end_pirate_trapdoor_open"
                                                       },
                          "end_pirate_trapdoor_top":  {
-                                                         "textures":  "textures/items/end_pirate_trapdoor_top"
+                                                         "textures":  "textures/blocks/end_pirate_trapdoor_top"
                                                      },
                          "sail":  {
-                                      "textures":  "textures/items/sail"
+                                      "textures":  "textures/blocks/sail"
                                   },
                          "template_caiman_egg":  {
-                                                     "textures":  "textures/items/template_caiman_egg"
+                                                     "textures":  "textures/blocks/caiman_egg"
                                                  },
                          "template_crocodile_egg":  {
-                                                        "textures":  "textures/items/template_crocodile_egg"
+                                                        "textures":  "textures/blocks/crocodile_egg"
                                                     },
                          "template_four_caiman_eggs":  {
-                                                           "textures":  "textures/items/template_four_caiman_eggs"
+                                                           "textures":  "textures/blocks/four_caiman_eggs"
                                                        },
                          "template_four_crocodile_eggs":  {
-                                                              "textures":  "textures/items/template_four_crocodile_eggs"
+                                                              "textures":  "textures/blocks/four_crocodile_eggs"
                                                           },
                          "template_four_platypus_eggs":  {
-                                                             "textures":  "textures/items/template_four_platypus_eggs"
+                                                             "textures":  "textures/blocks/four_platypus_eggs"
                                                          },
                          "template_four_terrapin_eggs":  {
-                                                             "textures":  "textures/items/template_four_terrapin_eggs"
+                                                             "textures":  "textures/blocks/four_terrapin_eggs"
                                                          },
                          "template_platypus_egg":  {
-                                                       "textures":  "textures/items/template_platypus_egg"
+                                                       "textures":  "textures/blocks/platypus_egg"
                                                    },
                          "template_terrapin_egg":  {
-                                                       "textures":  "textures/items/template_terrapin_egg"
+                                                       "textures":  "textures/blocks/terrapin_egg"
                                                    },
                          "template_three_caiman_eggs":  {
-                                                            "textures":  "textures/items/template_three_caiman_eggs"
+                                                            "textures":  "textures/blocks/three_caiman_eggs"
                                                         },
                          "template_three_crocodile_eggs":  {
-                                                               "textures":  "textures/items/template_three_crocodile_eggs"
+                                                               "textures":  "textures/blocks/three_crocodile_eggs"
                                                            },
                          "template_three_platypus_eggs":  {
-                                                              "textures":  "textures/items/template_three_platypus_eggs"
+                                                              "textures":  "textures/blocks/three_platypus_eggs"
                                                           },
                          "template_three_terrapin_eggs":  {
-                                                              "textures":  "textures/items/template_three_terrapin_eggs"
+                                                              "textures":  "textures/blocks/three_terrapin_eggs"
                                                           },
                          "template_two_caiman_eggs":  {
-                                                          "textures":  "textures/items/template_two_caiman_eggs"
+                                                          "textures":  "textures/blocks/two_caiman_eggs"
                                                       },
                          "template_two_crocodile_eggs":  {
-                                                             "textures":  "textures/items/template_two_crocodile_eggs"
+                                                             "textures":  "textures/blocks/two_crocodile_eggs"
                                                          },
                          "template_two_platypus_eggs":  {
-                                                            "textures":  "textures/items/template_two_platypus_eggs"
+                                                            "textures":  "textures/blocks/two_platypus_eggs"
                                                         },
                          "template_two_terrapin_eggs":  {
-                                                            "textures":  "textures/items/template_two_terrapin_eggs"
+                                                            "textures":  "textures/blocks/two_terrapin_eggs"
                                                         },
                          "void_worm_effigy_inventory":  {
-                                                            "textures":  "textures/items/void_worm_effigy_inventory"
+                                                            "textures":  "textures/blocks/void_worm_effigy_inventory"
                                                         },
                          "wall_inventory":  {
-                                                "textures":  "textures/items/wall_inventory"
+                                                "textures":  "textures/blocks/purpur_planks_wall_inventory"
                                             },
                          "spawn_egg_alligator_snapping_turtle_moss":  {
                                                                           "textures":  "textures/items/spawn_egg_alligator_snapping_turtle_moss"
@@ -1037,15 +1031,6 @@
                          "spawn_egg_blue_jay_shiny":  {
                                                           "textures":  "textures/items/spawn_egg_blue_jay_shiny"
                                                       },
-                         "spawn_egg_bone_serpent_head":  {
-                                                             "textures":  "textures/items/spawn_egg_bone_serpent_head"
-                                                         },
-                         "spawn_egg_bone_serpent_mid":  {
-                                                            "textures":  "textures/items/spawn_egg_bone_serpent_mid"
-                                                        },
-                         "spawn_egg_bone_serpent_tail":  {
-                                                             "textures":  "textures/items/spawn_egg_bone_serpent_tail"
-                                                         },
                          "spawn_egg_bunfungus_sleeping":  {
                                                               "textures":  "textures/items/spawn_egg_bunfungus_sleeping"
                                                           },
@@ -1907,9 +1892,6 @@
                          "spawn_egg_warped_toad_pepe_blink":  {
                                                                   "textures":  "textures/items/spawn_egg_warped_toad_pepe_blink"
                                                               },
-                         "spawn_egg_bone_serpent_part":  {
-                                                             "textures":  "textures/items/spawn_egg_bone_serpent_part"
-                                                         },
                          "spawn_egg_tossed_item":  {
                                                        "textures":  "textures/items/spawn_egg_tossed_item"
                                                    },

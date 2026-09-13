@@ -1,4 +1,4 @@
-{
+﻿{
   "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
@@ -10,7 +10,7 @@
         "default": "textures/entity/shark_tooth_arrow"
       },
       "geometry": {
-        "default": "geometry.shark_tooth_arrow"
+        "default": "geometry.arrow"
       },
       "animations": {
         "walk": "animation.shark_tooth_arrow.walk",

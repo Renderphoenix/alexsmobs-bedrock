@@ -10,7 +10,7 @@
                                                                          "default":  "textures/entity/blobfish"
                                                                      },
                                                         "geometry":  {
-                                                                         "default":  "geometry.blobfish"
+                                                                         "default":  "geometry.blobfish_depressurized"
                                                                      },
                                                         "animations":  {
                                                                            "walk":  "animation.blobfish.walk",

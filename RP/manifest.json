@@ -1,8 +1,8 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Alex's Mobs Addon RP",
-    "description": "New, original, engaging, and aesthetic mobs for Minecraft.\n\nResource Pack for 423 entities, 326 items, 148 blocks, 83 recipes, 104 loot tables converted to Bedrock\n\nOriginal mod by: Alexthe668, Carro1001, Paint_Ninja\n\nRenderphoenix is publishing this , for pocket edition, but credits goes to owners, for contact, visit https://renderphoenix.com",
+    "name": "Alex's Mobs Bedrock RP",
+    "description": "The definitive Bedrock port of Alex's Mobs! 90+ unique creatures with custom models, textures, animations, 148 custom blocks with full textures, custom item icons, and multi-language support.\n\nOriginal Java Mod by: Alexthe668, Carro1001, Paint_Ninja\nBedrock Adaptation by: Renderphoenix & devsuki",
     "uuid": "0931a5b2-c68e-4fa5-ae1b-78ee412e4458",
     "version": [
       1,

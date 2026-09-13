@@ -8,8 +8,17 @@ echo ===================================================
 set "BP_SRC=%~dp0BP"
 set "RP_SRC=%~dp0RP"
 
-set "BP_DEST=C:\Users\devsuki\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_behavior_packs\AlexsMobs_BP"
-set "RP_DEST=C:\Users\devsuki\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_resource_packs\AlexsMobs_RP"
+set "MOJANG_DIR="
+if exist "%APPDATA%\Minecraft Bedrock\Users\Shared\games\com.mojang" (
+    set "MOJANG_DIR=%APPDATA%\Minecraft Bedrock\Users\Shared\games\com.mojang"
+) else if exist "%LOCALAPPDATA%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang" (
+    set "MOJANG_DIR=%LOCALAPPDATA%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang"
+) else (
+    set "MOJANG_DIR=%APPDATA%\Minecraft Bedrock\Users\Shared\games\com.mojang"
+)
+
+set "BP_DEST=!MOJANG_DIR!\development_behavior_packs\AlexsMobs_BP"
+set "RP_DEST=!MOJANG_DIR!\development_resource_packs\AlexsMobs_RP"
 
 echo.
 echo [1/2] Syncing Behavior Pack (BP)...
