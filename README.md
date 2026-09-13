@@ -13,7 +13,7 @@ This addon brings an incredible variety of aesthetic, authentic, engaging, and u
   - **Birds & Flying Creatures**: Bald Eagles, Blue Jays, Toucans, Hummingbirds, Shoebills, Sunbirds, Crows, Potoos, and Flies.
   - **Reptiles & Amphibians**: Crocodiles, Alligator Snapping Turtles, Caimans, Rattlesnakes, Komodo Dragons, Anacondas, Terrapins, Mudskippers, and Rain Frogs.
   - **Aquatic & Marine Life**: Orcas, Cachalot Whales, Giant Squids, Hammerhead Sharks, Frilled Sharks, Seals, Platypuses, Mantis Shrimps, Lobsters, Comb Jelly, Flying Fish, and Catfish.
-  - **Nether & End Inhabitants**: Bone Serpents, Crimson Mosquitoes, Warped Toads, Straddlers, Stradpoles, Soul Vultures, Laviathans, Endergrades, and Enderiophages.
+  - **Nether & End Inhabitants**: Crimson Mosquitoes, Warped Toads, Straddlers, Stradpoles, Soul Vultures, Laviathans, Endergrades, and Enderiophages.
   - **Underground & Fantasy**: Cave Centipedes, Rocky Rollers, Underminers, Skreechers, Murmurs, and Farseers.
 - **Natural Ecosystems & Biome Spawns**: Mobs spawn organically in their native biomes (savannas, jungles, deserts, oceans, swamps, nether forests, caves, and mountains).
 - **Custom Items & Blocks**: Custom food items, drops, materials, weapons, attachables, and utility blocks.
@@ -69,30 +69,32 @@ alexsmobs/
 │   ├── textures/                      # Mob, item, and block textures
 │   └── manifest.json                  # RP metadata
 │
-├── AlexsMobs.mcaddon                  # One-click installer for Bedrock
+├── update.bat                         # Automatic sync script for Bedrock dev packs
 └── README.md
 ```
 
 ---
 
-## Installation Guide
+## Installation & Development Setup
 
-### Option 1: One-Click Installation (.mcaddon)
+### Quick Setup with update.bat
 
-1. Download **`AlexsMobs.mcaddon`**.
-2. Double-click or open the file. Minecraft Bedrock Edition will launch and automatically import both the Behavior Pack and Resource Pack.
-3. Apply both packs to your world.
+To sync the latest Behavior Pack and Resource Pack directly into your Minecraft Bedrock development folders:
 
-### Option 2: Manual Installation
-
-1. Clone or download this repository.
-2. Press `Win + R`, paste the following path, and press `Enter`:
+1. Simply run `update.bat` (double-click or run from command prompt):
    ```cmd
-   %localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang
+   update.bat
    ```
-3. Copy the **`BP`** folder into the `development_behavior_packs` folder.
-4. Copy the **`RP`** folder into the `development_resource_packs` folder.
-5. Open Minecraft Bedrock Edition, create or edit a world, and activate **Alex's Mobs** in both Resource Packs and Behavior Packs.
+2. The script copies `BP` and `RP` into:
+   - `development_behavior_packs\AlexsMobs_BP`
+   - `development_resource_packs\AlexsMobs_RP`
+3. Launch Minecraft Bedrock Edition, create or edit a world, and activate **Alex's Mobs** in both Resource Packs and Behavior Packs.
+
+### Manual Installation
+
+1. Copy the **`BP`** folder into your `development_behavior_packs` directory.
+2. Copy the **`RP`** folder into your `development_resource_packs` directory.
+3. Open Minecraft Bedrock Edition and activate the packs on your world.
 
 ### Important: Enable Experimental Features
 

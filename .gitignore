@@ -6,9 +6,14 @@ alexsmobs-*-decompiled-jar/
 *.tar
 .tools/
 
+# Minecraft package archives
+*.mcaddon
+*.mcpack
+
 # Temporary and system files
 *.log
 .DS_Store
 Thumbs.db
 desktop.ini
 *.tmp
+
