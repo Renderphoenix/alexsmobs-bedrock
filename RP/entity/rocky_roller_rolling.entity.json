@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:rocky_roller_rolling",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/rocky_roller_rolling"
+      },
+      "geometry": {
+        "default": "geometry.rocky_roller_rolling"
+      },
+      "animations": {
+        "walk": "animation.rocky_roller_rolling.walk",
+        "idle": "animation.rocky_roller_rolling.idle",
+        "look_at_target": "animation.rocky_roller_rolling.idle",
+        "controller_move": "controller.animation.rocky_roller_rolling.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

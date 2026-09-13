@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:end_pirate_trapdoor_top",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "end_pirate_trapdoor_top"
+    }
+  }
+}

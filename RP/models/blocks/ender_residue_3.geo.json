@@ -1,0 +1,149 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "format_version": "1.12.0",
+      "identifier": "geometry.ender_residue_3",
+      "texture_width": 16,
+      "texture_height": 16,
+      "visible_bounds_width": 2,
+      "visible_bounds_height": 2,
+      "visible_bounds_offset": [
+        0,
+        0.5,
+        0
+      ],
+      "textures": {
+        "all": "alexsmobs:block/ender_residue_3",
+        "top": "alexsmobs:block/ender_residue_3",
+        "bottom": "alexsmobs:block/ender_residue_3",
+        "side": "alexsmobs:block/ender_residue_3",
+        "north": "alexsmobs:block/ender_residue_3",
+        "south": "alexsmobs:block/ender_residue_3",
+        "east": "alexsmobs:block/ender_residue_3",
+        "west": "alexsmobs:block/ender_residue_3",
+        "torch": "alexsmobs:block/ender_residue_3",
+        "lantern": "alexsmobs:block/ender_residue_3",
+        "cross": "alexsmobs:block/ender_residue_3",
+        "texture": "alexsmobs:block/ender_residue_3",
+        "wool": "alexsmobs:block/ender_residue_3"
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                0,
+                -8
+              ],
+              "size": [
+                16,
+                16,
+                16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#north"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#south"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#east"
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#west"
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#top"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#bottom"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "collision_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          16,
+          16
+        ]
+      },
+      "bounds": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          16,
+          16,
+          16
+        ]
+      }
+    }
+  ]
+}

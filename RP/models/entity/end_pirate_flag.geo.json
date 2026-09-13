@@ -1,0 +1,131 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "identifier": "geometry.endpirateflag",
+      "texture_width": 64,
+      "texture_height": 64,
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "cubes": []
+        },
+        {
+          "name": "rod",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                0,
+                -1
+              ],
+              "size": [
+                2,
+                16,
+                2
+              ],
+              "uv": [
+                29,
+                0
+              ]
+            }
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "flag1",
+          "pivot": [
+            0,
+            8,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                1,
+                0,
+                0
+              ],
+              "size": [
+                14,
+                16,
+                0
+              ],
+              "uv": [
+                0,
+                17
+              ]
+            }
+          ],
+          "parent": "rod"
+        },
+        {
+          "name": "flag2",
+          "pivot": [
+            15,
+            8,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                15,
+                0,
+                0
+              ],
+              "size": [
+                14,
+                16,
+                0
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            }
+          ],
+          "parent": "flag1"
+        }
+      ],
+      "visible_bounds_width": 4,
+      "visible_bounds_height": 1,
+      "visible_bounds_offset": [
+        0,
+        0.5,
+        0
+      ],
+      "collision_width": 0.5,
+      "collision_height": 0.7
+    }
+  ]
+}

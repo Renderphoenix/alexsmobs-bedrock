@@ -1,0 +1,74 @@
+{
+    "format_version":  "1.16.0",
+    "minecraft:entity":  {
+                             "description":  {
+                                                 "identifier":  "alexsmobs:enderiophage_rocket",
+                                                 "is_spawnable":  false,
+                                                 "is_summonable":  true,
+                                                 "is_experimental":  false
+                                             },
+                             "component_groups":  {
+
+                                                  },
+                             "components":  {
+                                                "minecraft:collision_box":  {
+                                                                                "width":  0.5,
+                                                                                "height":  0.5
+                                                                            },
+                                                "minecraft:health":  {
+                                                                         "value":  20,
+                                                                         "max":  20
+                                                                     },
+                                                "minecraft:movement":  {
+                                                                           "value":  0.15
+                                                                       },
+                                                "minecraft:movement.basic":  {
+
+                                                                             },
+                                                "minecraft:jump.static":  {
+
+                                                                          },
+                                                "minecraft:can_climb":  {
+
+                                                                        },
+                                                "minecraft:physics":  {
+
+                                                                      },
+                                                "minecraft:pushable":  {
+                                                                           "is_pushable":  true,
+                                                                           "is_pushable_by_piston":  true
+                                                                       },
+                                                "minecraft:nameable":  {
+
+                                                                       },
+                                                "minecraft:follow_range":  {
+                                                                               "value":  16
+                                                                           },
+                                                "minecraft:type_family":  {
+                                                                              "family":  [
+                                                                                             "mob",
+                                                                                             "enderiophage_rocket",
+                                                                                             "monster"
+                                                                                         ]
+                                                                          },
+                                                "minecraft:navigation.walk":  {
+                                                                                  "can_path_over_water":  true,
+                                                                                  "avoid_water":  true
+                                                                              },
+                                                "minecraft:attack":  {
+                                                                         "damage":  2
+                                                                     },
+                                                "minecraft:behavior.float":  {
+                                                                                 "priority":  0
+                                                                             },
+                                                "minecraft:behavior.hurt_by_target":  {
+                                                                                          "priority":  1,
+                                                                                          "hurt_owner":  false
+                                                                                      },
+                                                "minecraft:behavior.random_stroll":  {
+                                                                                         "priority":  2,
+                                                                                         "speed_multiplier":  1
+                                                                                     }
+                                            }
+                         }
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "alexsmobs:cooked_catfish_smoke"
+    },
+    "tags": [
+      "smoker"
+    ],
+    "input": "alexsmobs:raw_catfish",
+    "output": "alexsmobs:cooked_catfish"
+  }
+}

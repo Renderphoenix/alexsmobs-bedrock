@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:purpur_planks_stairs",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "purpur_planks_stairs"
+    }
+  }
+}

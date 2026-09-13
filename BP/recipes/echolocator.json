@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:echolocator"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "CPC",
+      "PAP",
+      " P "
+    ],
+    "key": {
+      "A": {
+        "item": "alexsmobs:ambergris"
+      },
+      "C": {
+        "item": "alexsmobs:cachalot_whale_tooth"
+      },
+      "P": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:echolocator",
+      "count": 1
+    }
+  }
+}

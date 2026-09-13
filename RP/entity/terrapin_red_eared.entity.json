@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:terrapin_red_eared",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/terrapin_red_eared"
+      },
+      "geometry": {
+        "default": "geometry.terrapin_red_eared"
+      },
+      "animations": {
+        "walk": "animation.terrapin_red_eared.walk",
+        "idle": "animation.terrapin_red_eared.idle",
+        "look_at_target": "animation.terrapin_red_eared.idle",
+        "controller_move": "controller.animation.terrapin_red_eared.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

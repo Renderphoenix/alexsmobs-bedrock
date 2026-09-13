@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:stink_ray_empty_inventory",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "stink_ray_empty_inventory"
+    }
+  }
+}

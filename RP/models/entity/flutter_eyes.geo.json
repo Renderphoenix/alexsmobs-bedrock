@@ -1,0 +1,368 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.flutter_eyes",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 1,
+        "visible_bounds_height": 1,
+        "visible_bounds_offset": [
+          0,
+          0.434375,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            0,
+            3.9,
+            0
+          ],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                1.9,
+                -3.5
+              ],
+              "size": [
+                7,
+                5,
+                7
+              ],
+              "uv": [
+                0,
+                13
+              ]
+            },
+            {
+              "origin": [
+                -3.5,
+                1.9,
+                -3.5
+              ],
+              "size": [
+                7,
+                5,
+                7
+              ],
+              "uv": [
+                0,
+                0
+              ],
+              "inflate": -0.2
+            }
+          ]
+        },
+        {
+          "name": "eyes",
+          "pivot": [
+            0,
+            4.9,
+            -3
+          ],
+          "parent": "body",
+          "cubes": [
+            {
+              "origin": [
+                -1.5,
+                4.4,
+                -3
+              ],
+              "size": [
+                3,
+                1,
+                0
+              ],
+              "uv": [
+                23,
+                30
+              ]
+            }
+          ]
+        },
+        {
+          "name": "petals",
+          "pivot": [
+            0,
+            6.9,
+            0
+          ],
+          "parent": "body"
+        },
+        {
+          "name": "front_petal",
+          "pivot": [
+            0,
+            6.9,
+            -1.5
+          ],
+          "parent": "petals",
+          "rotation": [
+            -67.500157,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                6.9,
+                -1.5
+              ],
+              "size": [
+                7,
+                7,
+                0
+              ],
+              "uv": [
+                0,
+                26
+              ]
+            }
+          ]
+        },
+        {
+          "name": "left_petal",
+          "pivot": [
+            1.5,
+            6.9,
+            0
+          ],
+          "parent": "petals",
+          "rotation": [
+            -67.500157,
+            90.000207,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2,
+                6.9,
+                0
+              ],
+              "size": [
+                7,
+                7,
+                0
+              ],
+              "uv": [
+                0,
+                26
+              ]
+            }
+          ]
+        },
+        {
+          "name": "right_petal",
+          "pivot": [
+            -1.5,
+            6.9,
+            0
+          ],
+          "parent": "petals",
+          "rotation": [
+            -67.500157,
+            -90.000207,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -5,
+                6.9,
+                0
+              ],
+              "size": [
+                7,
+                7,
+                0
+              ],
+              "uv": [
+                0,
+                26
+              ],
+              "mirror": true
+            }
+          ]
+        },
+        {
+          "name": "back_petal",
+          "pivot": [
+            0,
+            6.9,
+            1.5
+          ],
+          "parent": "petals",
+          "rotation": [
+            -67.500157,
+            -180.000415,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                6.9,
+                1.5
+              ],
+              "size": [
+                7,
+                7,
+                0
+              ],
+              "uv": [
+                0,
+                26
+              ]
+            }
+          ]
+        },
+        {
+          "name": "left_arm",
+          "pivot": [
+            3,
+            2,
+            -3
+          ],
+          "parent": "body",
+          "rotation": [
+            0,
+            42.50201,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                2.5,
+                0,
+                -5
+              ],
+              "size": [
+                1,
+                2,
+                2
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "left_leg",
+          "pivot": [
+            3,
+            2,
+            3
+          ],
+          "parent": "body",
+          "rotation": [
+            180.000415,
+            42.50201,
+            180.000415
+          ],
+          "cubes": [
+            {
+              "origin": [
+                2.5,
+                0,
+                1
+              ],
+              "size": [
+                1,
+                2,
+                2
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "right_leg",
+          "pivot": [
+            -3,
+            2,
+            3
+          ],
+          "parent": "body",
+          "rotation": [
+            180.000415,
+            -42.50201,
+            -180.000415
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                0,
+                1
+              ],
+              "size": [
+                1,
+                2,
+                2
+              ],
+              "uv": [
+                0,
+                0
+              ],
+              "mirror": true
+            }
+          ]
+        },
+        {
+          "name": "right_arm",
+          "pivot": [
+            -3,
+            2,
+            -3
+          ],
+          "parent": "body",
+          "rotation": [
+            0,
+            -42.50201,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                0,
+                -5
+              ],
+              "size": [
+                1,
+                2,
+                2
+              ],
+              "uv": [
+                0,
+                0
+              ],
+              "mirror": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

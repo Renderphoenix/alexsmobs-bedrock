@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:dimensional_carver_shard_0",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "dimensional_carver_shard_0"
+    }
+  }
+}

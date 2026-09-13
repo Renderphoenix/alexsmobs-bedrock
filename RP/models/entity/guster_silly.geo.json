@@ -1,0 +1,228 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.guster_silly",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [
+          0,
+          1,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "tornado",
+          "pivot": [
+            0,
+            4,
+            0
+          ],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [
+                -4,
+                0,
+                -4
+              ],
+              "size": [
+                8,
+                8,
+                8
+              ],
+              "uv": [
+                65,
+                72
+              ]
+            }
+          ]
+        },
+        {
+          "name": "tornado2",
+          "pivot": [
+            0,
+            12,
+            0
+          ],
+          "parent": "tornado",
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                8,
+                -8
+              ],
+              "size": [
+                16,
+                8,
+                16
+              ],
+              "uv": [
+                0,
+                72
+              ]
+            }
+          ]
+        },
+        {
+          "name": "tornadomid",
+          "pivot": [
+            0,
+            6,
+            0
+          ],
+          "parent": "tornado2",
+          "cubes": [
+            {
+              "origin": [
+                -14,
+                6,
+                -14
+              ],
+              "size": [
+                28,
+                4,
+                28
+              ],
+              "uv": [
+                16,
+                96
+              ]
+            }
+          ]
+        },
+        {
+          "name": "tornado3",
+          "pivot": [
+            0,
+            20,
+            0
+          ],
+          "parent": "tornado2",
+          "cubes": [
+            {
+              "origin": [
+                -12,
+                16,
+                -12
+              ],
+              "size": [
+                24,
+                8,
+                24
+              ],
+              "uv": [
+                0,
+                39
+              ]
+            }
+          ]
+        },
+        {
+          "name": "tornado4",
+          "pivot": [
+            0,
+            28,
+            0
+          ],
+          "parent": "tornado3",
+          "cubes": [
+            {
+              "origin": [
+                -15,
+                24,
+                -15
+              ],
+              "size": [
+                30,
+                8,
+                30
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "eyes",
+          "pivot": [
+            0,
+            18,
+            -15
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "eye_left",
+          "pivot": [
+            4,
+            18,
+            -15
+          ],
+          "parent": "eyes",
+          "cubes": [
+            {
+              "origin": [
+                1,
+                14,
+                -15
+              ],
+              "size": [
+                6,
+                8,
+                0
+              ],
+              "uv": [
+                8,
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "name": "eye_right",
+          "pivot": [
+            -4,
+            18,
+            -15
+          ],
+          "parent": "eyes",
+          "cubes": [
+            {
+              "origin": [
+                -7,
+                14,
+                -15
+              ],
+              "size": [
+                6,
+                8,
+                0
+              ],
+              "uv": [
+                8,
+                13
+              ],
+              "mirror": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

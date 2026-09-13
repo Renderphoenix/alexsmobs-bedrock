@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:bone_serpent_tail",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/bone_serpent_tail"
+      },
+      "geometry": {
+        "default": "geometry.bone_serpent_tail"
+      },
+      "animations": {
+        "walk": "animation.bone_serpent_tail.walk",
+        "idle": "animation.bone_serpent_tail.idle",
+        "look_at_target": "animation.bone_serpent_tail.idle",
+        "controller_move": "controller.animation.bone_serpent_tail.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

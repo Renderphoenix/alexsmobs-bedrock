@@ -1,0 +1,25 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:crocodile_chestplate"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "S S",
+      "SSS",
+      "SSS"
+    ],
+    "key": {
+      "S": {
+        "item": "alexsmobs:crocodile_scute"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:crocodile_chestplate",
+      "count": 1
+    }
+  }
+}

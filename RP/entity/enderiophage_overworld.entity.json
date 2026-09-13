@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:enderiophage_overworld",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/enderiophage_overworld"
+      },
+      "geometry": {
+        "default": "geometry.enderiophage_overworld"
+      },
+      "animations": {
+        "walk": "animation.enderiophage_overworld.walk",
+        "idle": "animation.enderiophage_overworld.idle",
+        "look_at_target": "animation.enderiophage_overworld.idle",
+        "controller_move": "controller.animation.enderiophage_overworld.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.warped_mosco_glow.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "legfront_left": {
+          "rotation": [
+            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        },
+        "legfront_right": {
+          "rotation": [
+            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        },
+        "legback_left": {
+          "rotation": [
+            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        },
+        "legback_right": {
+          "rotation": [
+            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        },
+        "arm_left": {
+          "rotation": [
+            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        },
+        "arm_right": {
+          "rotation": [
+            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        },
+        "wingtop_left": {
+          "rotation": [
+            0,
+            0,
+            "(math.cos(query.anim_time * 45.0) * 35.0)"
+          ]
+        },
+        "wingtop_right": {
+          "rotation": [
+            0,
+            0,
+            "-(math.cos(query.anim_time * 45.0) * 35.0)"
+          ]
+        },
+        "wingbottom_left": {
+          "rotation": [
+            0,
+            0,
+            "(math.cos(query.anim_time * 45.0) * 35.0)"
+          ]
+        },
+        "wingbottom_right": {
+          "rotation": [
+            0,
+            0,
+            "-(math.cos(query.anim_time * 45.0) * 35.0)"
+          ]
+        }
+      }
+    },
+    "animation.warped_mosco_glow.idle": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            "math.clamp(query.target_x_rotation, -30.0, 30.0) + (math.sin(query.anim_time * 20.0) * 1.5)",
+            "math.clamp(query.target_y_rotation, -45.0, 45.0)",
+            0
+          ]
+        }
+      }
+    }
+  }
+}

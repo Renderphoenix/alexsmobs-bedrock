@@ -1,0 +1,37 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:hemolymph_blaster"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "SSS",
+      "CBP",
+      "M  "
+    ],
+    "key": {
+      "S": {
+        "item": "alexsmobs:hemolymph_sac"
+      },
+      "P": {
+        "item": "alexsmobs:mosquito_proboscis"
+      },
+      "M": {
+        "item": "alexsmobs:warped_muscle"
+      },
+      "C": {
+        "item": "alexsmobs:mimicream"
+      },
+      "B": {
+        "item": "alexsmobs:blood_sprayer"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:hemolymph_blaster",
+      "count": 1
+    }
+  }
+}

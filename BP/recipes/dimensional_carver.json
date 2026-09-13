@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:dimensional_carver"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "MEM",
+      " X ",
+      " X "
+    ],
+    "key": {
+      "M": {
+        "item": "alexsmobs:void_worm_mandible"
+      },
+      "E": {
+        "item": "alexsmobs:void_worm_eye"
+      },
+      "X": {
+        "item": "minecraft:netherite_ingot"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:dimensional_carver",
+      "count": 1
+    }
+  }
+}

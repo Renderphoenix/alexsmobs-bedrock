@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:sopa_de_macaco",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "sopa_de_macaco"
+    }
+  }
+}

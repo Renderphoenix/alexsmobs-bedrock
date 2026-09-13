@@ -1,0 +1,13 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "alexsmobs:cooked_lobster_tail"
+    },
+    "tags": [
+      "furnace"
+    ],
+    "input": "alexsmobs:lobster_tail",
+    "output": "alexsmobs:cooked_lobster_tail"
+  }
+}

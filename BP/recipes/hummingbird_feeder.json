@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:hummingbird_feeder"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " P ",
+      "PGP",
+      "FPF"
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:glass_bottle"
+      },
+      "F": {
+        "item": "minecraft:sunflower"
+      },
+      "P": {
+        "item": "minecraft:copper_ingot"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:hummingbird_feeder",
+      "count": 1
+    }
+  }
+}

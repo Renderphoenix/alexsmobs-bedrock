@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:guster_soul",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/guster_soul"
+      },
+      "geometry": {
+        "default": "geometry.guster_soul"
+      },
+      "animations": {
+        "walk": "animation.guster_soul.walk",
+        "idle": "animation.guster_soul.idle",
+        "look_at_target": "animation.guster_soul.idle",
+        "controller_move": "controller.animation.guster_soul.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:shed_snake_skin",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "shed_snake_skin"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:hammerhead_shark",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/hammerhead_shark"
+      },
+      "geometry": {
+        "default": "geometry.hammerhead_shark"
+      },
+      "animations": {
+        "walk": "animation.hammerhead_shark.walk",
+        "idle": "animation.hammerhead_shark.idle",
+        "look_at_target": "animation.hammerhead_shark.idle",
+        "controller_move": "controller.animation.hammerhead_shark.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

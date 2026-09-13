@@ -1,0 +1,56 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:ender_residue_1",
+      "menu_category": {
+        "category": "construction",
+        "group": "itemGroup.name.construction"
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.5
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 6
+      },
+      "minecraft:friction": 0.6,
+      "minecraft:light_dampening": 15,
+      "minecraft:loot": "loot_tables/blocks/ender_residue_1.json",
+      "minecraft:geometry": {
+        "identifier": "geometry.ender_residue_1"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "ender_residue_1",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          16,
+          16
+        ]
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          16,
+          16
+        ]
+      }
+    }
+  }
+}

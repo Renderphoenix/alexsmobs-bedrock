@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:echolocator",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.misc"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "echolocator"
+      },
+      "minecraft:display_name": {
+        "value": "Echolocator"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "format_version": "1.12.0",
+      "identifier": "geometry.very_cracked_terrapin_egg",
+      "texture_width": 32,
+      "texture_height": 32,
+      "visible_bounds_width": 2,
+      "visible_bounds_height": 2,
+      "visible_bounds_offset": [
+        0,
+        0.5,
+        0
+      ],
+      "textures": {
+        "particle": "#0"
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                0,
+                0
+              ],
+              "size": [
+                3,
+                4,
+                3
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    1.5,
+                    1.5
+                  ],
+                  "uv_size": [
+                    1.5,
+                    2
+                  ],
+                  "texture": "#0"
+                },
+                "south": {
+                  "uv": [
+                    4.5,
+                    1.5
+                  ],
+                  "uv_size": [
+                    1.5,
+                    2
+                  ],
+                  "texture": "#0"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    1.5
+                  ],
+                  "uv_size": [
+                    1.5,
+                    2
+                  ],
+                  "texture": "#0"
+                },
+                "west": {
+                  "uv": [
+                    3,
+                    1.5
+                  ],
+                  "uv_size": [
+                    1.5,
+                    2
+                  ],
+                  "texture": "#0"
+                },
+                "up": {
+                  "uv": [
+                    3,
+                    1.5
+                  ],
+                  "uv_size": [
+                    -1.5,
+                    -1.5
+                  ],
+                  "texture": "#0"
+                },
+                "down": {
+                  "uv": [
+                    4.5,
+                    0
+                  ],
+                  "uv_size": [
+                    -1.5,
+                    1.5
+                  ],
+                  "texture": "#0"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "collision_box": {
+        "origin": [
+          -1,
+          0,
+          0
+        ],
+        "size": [
+          3,
+          4,
+          3
+        ]
+      },
+      "bounds": {
+        "min": [
+          7,
+          0,
+          8
+        ],
+        "max": [
+          10,
+          4,
+          11
+        ]
+      }
+    }
+  ]
+}

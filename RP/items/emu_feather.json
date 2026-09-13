@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:emu_feather",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "emu_feather"
+    }
+  }
+}

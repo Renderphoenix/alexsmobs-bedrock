@@ -1,0 +1,137 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "format_version": "1.12.0",
+      "identifier": "geometry.spectre_sail_middle",
+      "texture_width": 16,
+      "texture_height": 16,
+      "visible_bounds_width": 2,
+      "visible_bounds_height": 2,
+      "visible_bounds_offset": [
+        0,
+        0.5,
+        0
+      ],
+      "textures": {
+        "particle": "#sail"
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                0,
+                -1
+              ],
+              "size": [
+                16,
+                16,
+                2
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#sail"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#sail"
+                },
+                "east": {
+                  "uv": [
+                    7,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    16
+                  ],
+                  "texture": "#sail"
+                },
+                "west": {
+                  "uv": [
+                    7,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    16
+                  ],
+                  "texture": "#sail"
+                },
+                "up": {
+                  "uv": [
+                    16,
+                    0
+                  ],
+                  "uv_size": [
+                    -16,
+                    2
+                  ],
+                  "texture": "#top"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    14
+                  ],
+                  "uv_size": [
+                    16,
+                    2
+                  ],
+                  "texture": "#bottom"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "collision_box": {
+        "origin": [
+          -8,
+          0,
+          -1
+        ],
+        "size": [
+          16,
+          16,
+          2
+        ]
+      },
+      "bounds": {
+        "min": [
+          0,
+          0,
+          7
+        ],
+        "max": [
+          16,
+          16,
+          9
+        ]
+      }
+    }
+  ]
+}

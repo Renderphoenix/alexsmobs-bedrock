@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:banner_pattern_brazil",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "banner_pattern_brazil"
+    }
+  }
+}

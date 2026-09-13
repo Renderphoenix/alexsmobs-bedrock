@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:cockroach_egg",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/cockroach_egg"
+      },
+      "geometry": {
+        "default": "geometry.cockroach_egg"
+      },
+      "animations": {
+        "walk": "animation.cockroach_egg.walk",
+        "idle": "animation.cockroach_egg.idle",
+        "look_at_target": "animation.cockroach_egg.idle",
+        "controller_move": "controller.animation.cockroach_egg.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

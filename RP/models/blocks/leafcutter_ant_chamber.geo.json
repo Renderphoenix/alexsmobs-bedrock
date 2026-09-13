@@ -1,0 +1,149 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "format_version": "1.12.0",
+      "identifier": "geometry.leafcutter_ant_chamber",
+      "texture_width": 16,
+      "texture_height": 16,
+      "visible_bounds_width": 2,
+      "visible_bounds_height": 2,
+      "visible_bounds_offset": [
+        0,
+        0.5,
+        0
+      ],
+      "textures": {
+        "all": "alexsmobs:block/leafcutter_ant_chamber",
+        "top": "alexsmobs:block/leafcutter_ant_chamber",
+        "bottom": "alexsmobs:block/leafcutter_ant_chamber",
+        "side": "alexsmobs:block/leafcutter_ant_chamber",
+        "north": "alexsmobs:block/leafcutter_ant_chamber",
+        "south": "alexsmobs:block/leafcutter_ant_chamber",
+        "east": "alexsmobs:block/leafcutter_ant_chamber",
+        "west": "alexsmobs:block/leafcutter_ant_chamber",
+        "torch": "alexsmobs:block/leafcutter_ant_chamber",
+        "lantern": "alexsmobs:block/leafcutter_ant_chamber",
+        "cross": "alexsmobs:block/leafcutter_ant_chamber",
+        "texture": "alexsmobs:block/leafcutter_ant_chamber",
+        "wool": "alexsmobs:block/leafcutter_ant_chamber"
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                0,
+                -8
+              ],
+              "size": [
+                16,
+                16,
+                16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#north"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#south"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#east"
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#west"
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#top"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#bottom"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "collision_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          16,
+          16
+        ]
+      },
+      "bounds": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          16,
+          16,
+          16
+        ]
+      }
+    }
+  ]
+}

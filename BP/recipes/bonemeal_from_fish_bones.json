@@ -1,0 +1,20 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alexsmobs:bonemeal_from_fish_bones"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "alexsmobs:fish_bones"
+      }
+    ],
+    "result": {
+      "item": "minecraft:bone_meal",
+      "count": 2
+    }
+  }
+}

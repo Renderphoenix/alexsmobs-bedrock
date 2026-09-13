@@ -1,0 +1,149 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "format_version": "1.12.0",
+      "identifier": "geometry.phantom_sail",
+      "texture_width": 16,
+      "texture_height": 16,
+      "visible_bounds_width": 2,
+      "visible_bounds_height": 2,
+      "visible_bounds_offset": [
+        0,
+        0.5,
+        0
+      ],
+      "textures": {
+        "all": "phantom_sail",
+        "top": "phantom_sail",
+        "bottom": "phantom_sail",
+        "side": "phantom_sail",
+        "north": "phantom_sail",
+        "south": "phantom_sail",
+        "east": "phantom_sail",
+        "west": "phantom_sail",
+        "torch": "phantom_sail",
+        "lantern": "phantom_sail",
+        "cross": "phantom_sail",
+        "texture": "phantom_sail",
+        "wool": "phantom_sail"
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                0,
+                -8
+              ],
+              "size": [
+                16,
+                16,
+                16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#north"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#south"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#east"
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#west"
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#top"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#bottom"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "collision_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          16,
+          16
+        ]
+      },
+      "bounds": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          16,
+          16,
+          16
+        ]
+      }
+    }
+  ]
+}

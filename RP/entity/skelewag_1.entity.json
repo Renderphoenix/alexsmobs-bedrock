@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:skelewag_1",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/skelewag_1"
+      },
+      "geometry": {
+        "default": "geometry.skelewag_1"
+      },
+      "animations": {
+        "walk": "animation.skelewag_1.walk",
+        "idle": "animation.skelewag_1.idle",
+        "look_at_target": "animation.skelewag_1.idle",
+        "controller_move": "controller.animation.skelewag_1.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

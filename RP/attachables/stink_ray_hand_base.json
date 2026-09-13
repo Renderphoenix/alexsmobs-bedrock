@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alexsmobs:stink_ray_hand_base",
+      "item": {
+        "alexsmobs:stink_ray_hand_base": "query.is_owner_identifier_any('minecraft:player')"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/items/stink_ray_hand_base"
+      },
+      "geometry": {
+        "default": "geometry.stink_ray_hand_base"
+      },
+      "scripts": {
+        "parent_setup": "variable.item_scale = 1.0;"
+      },
+      "render_controllers": [
+        "controller.render.item_default"
+      ]
+    }
+  }
+}

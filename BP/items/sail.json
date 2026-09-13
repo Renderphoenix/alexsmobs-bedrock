@@ -1,0 +1,25 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:sail",
+      "menu_category": {
+        "category": "construction",
+        "group": "itemGroup.name.construction"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "sail"
+      },
+      "minecraft:display_name": {
+        "value": "Sail"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:hand_equipped": true,
+      "minecraft:block_placer": {
+        "block": "alexsmobs:sail"
+      }
+    }
+  }
+}

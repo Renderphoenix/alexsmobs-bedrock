@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:pocket_sand"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "SSS",
+      "LEL",
+      "LLL"
+    ],
+    "key": {
+      "E": {
+        "item": "alexsmobs:guster_eye"
+      },
+      "L": {
+        "item": "minecraft:leather"
+      },
+      "S": {
+        "item": "alexsmobs:sand"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:pocket_sand",
+      "count": 1
+    }
+  }
+}

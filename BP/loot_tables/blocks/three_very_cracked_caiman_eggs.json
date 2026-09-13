@@ -1,0 +1,13 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "alexsmobs:three_very_cracked_caiman_eggs"
+        }
+      ]
+    }
+  ]
+}

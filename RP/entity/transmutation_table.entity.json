@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:transmutation_table",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/transmutation_table"
+      },
+      "geometry": {
+        "default": "geometry.transmutation_table"
+      },
+      "animations": {
+        "walk": "animation.transmutation_table.walk",
+        "idle": "animation.transmutation_table.idle",
+        "look_at_target": "animation.transmutation_table.idle",
+        "controller_move": "controller.animation.transmutation_table.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

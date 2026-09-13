@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:fedora",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "fedora"
+    }
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.void_worm_shot",
+        "texture_width": 256,
+        "texture_height": 256,
+        "visible_bounds_width": 6,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          0.625,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "neck",
+          "pivot": [
+            0,
+            10,
+            20
+          ],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [
+                -10,
+                0,
+                -8
+              ],
+              "size": [
+                20,
+                20,
+                28
+              ],
+              "uv": [
+                0,
+                53
+              ]
+            }
+          ]
+        },
+        {
+          "name": "topfrills_left",
+          "pivot": [
+            10,
+            20,
+            0
+          ],
+          "parent": "neck",
+          "rotation": [
+            0,
+            0,
+            45.000104
+          ],
+          "cubes": [
+            {
+              "origin": [
+                10,
+                20,
+                -7
+              ],
+              "size": [
+                0,
+                9,
+                26
+              ],
+              "uv": [
+                71,
+                76
+              ]
+            }
+          ]
+        },
+        {
+          "name": "topfrills_right",
+          "pivot": [
+            -10,
+            20,
+            0
+          ],
+          "parent": "neck",
+          "rotation": [
+            0,
+            0,
+            -45.000104
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -10,
+                20,
+                -7
+              ],
+              "size": [
+                0,
+                9,
+                26
+              ],
+              "uv": [
+                71,
+                76
+              ],
+              "mirror": true
+            }
+          ]
+        },
+        {
+          "name": "bottomfrills_left",
+          "pivot": [
+            10,
+            0,
+            0
+          ],
+          "parent": "neck",
+          "rotation": [
+            0,
+            0,
+            135.000315
+          ],
+          "cubes": [
+            {
+              "origin": [
+                10,
+                0,
+                -7
+              ],
+              "size": [
+                0,
+                9,
+                26
+              ],
+              "uv": [
+                71,
+                76
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bottomfrills_right",
+          "pivot": [
+            -10,
+            0,
+            0
+          ],
+          "parent": "neck",
+          "rotation": [
+            0,
+            0,
+            -135.000315
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -10,
+                0,
+                -7
+              ],
+              "size": [
+                0,
+                9,
+                26
+              ],
+              "uv": [
+                71,
+                76
+              ],
+              "mirror": true
+            }
+          ]
+        },
+        {
+          "name": "head",
+          "pivot": [
+            0,
+            10,
+            -8
+          ],
+          "parent": "neck",
+          "cubes": [
+            {
+              "origin": [
+                -17,
+                -7,
+                -26
+              ],
+              "size": [
+                34,
+                34,
+                18
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            },
+            {
+              "origin": [
+                17,
+                5,
+                -22
+              ],
+              "size": [
+                2,
+                10,
+                10
+              ],
+              "uv": [
+                25,
+                102
+              ]
+            },
+            {
+              "origin": [
+                -19,
+                5,
+                -22
+              ],
+              "size": [
+                2,
+                10,
+                10
+              ],
+              "uv": [
+                0,
+                102
+              ]
+            }
+          ]
+        },
+        {
+          "name": "eye_bottom_r1",
+          "pivot": [
+            0,
+            -8,
+            -17
+          ],
+          "parent": "head",
+          "rotation": [
+            0,
+            0,
+            90.000207
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                -13,
+                -22
+              ],
+              "size": [
+                2,
+                10,
+                10
+              ],
+              "uv": [
+                0,
+                53
+              ]
+            }
+          ]
+        },
+        {
+          "name": "eye_top_r1",
+          "pivot": [
+            0,
+            28,
+            -17
+          ],
+          "parent": "head",
+          "rotation": [
+            0,
+            0,
+            90.000207
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                23,
+                -22
+              ],
+              "size": [
+                2,
+                10,
+                10
+              ],
+              "uv": [
+                69,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "name": "topjaw",
+          "pivot": [
+            0,
+            7,
+            -26
+          ],
+          "parent": "head",
+          "cubes": [
+            {
+              "origin": [
+                -5,
+                7,
+                -42
+              ],
+              "size": [
+                10,
+                10,
+                16
+              ],
+              "uv": [
+                98,
+                64
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bottomjaw",
+          "pivot": [
+            0,
+            13,
+            -25.9
+          ],
+          "parent": "head",
+          "cubes": [
+            {
+              "origin": [
+                -5,
+                3,
+                -41.9
+              ],
+              "size": [
+                10,
+                10,
+                16
+              ],
+              "uv": [
+                89,
+                37
+              ],
+              "inflate": -0.1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

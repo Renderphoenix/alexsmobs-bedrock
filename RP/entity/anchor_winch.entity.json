@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:anchor_winch",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/anchor_winch"
+      },
+      "geometry": {
+        "default": "geometry.anchor_winch"
+      },
+      "animations": {
+        "walk": "animation.anchor_winch.walk",
+        "idle": "animation.anchor_winch.idle",
+        "look_at_target": "animation.anchor_winch.idle",
+        "controller_move": "controller.animation.anchor_winch.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

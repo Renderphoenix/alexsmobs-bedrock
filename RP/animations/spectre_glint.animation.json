@@ -1,0 +1,36 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.spectre_glint.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "tail": {
+          "rotation": [
+            0,
+            "(math.cos(query.anim_time * 38.17) * 18.0)",
+            0
+          ]
+        },
+        "wing_left_p": {
+          "rotation": [
+            0,
+            0,
+            "(math.cos(query.anim_time * 45.0) * 35.0)"
+          ]
+        },
+        "wing_right_p": {
+          "rotation": [
+            0,
+            0,
+            "-(math.cos(query.anim_time * 45.0) * 35.0)"
+          ]
+        }
+      }
+    },
+    "animation.spectre_glint.idle": {
+      "loop": true,
+      "bones": {}
+    }
+  }
+}

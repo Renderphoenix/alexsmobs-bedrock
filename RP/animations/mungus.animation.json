@@ -1,0 +1,29 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.mungus.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "leg_left": {
+          "rotation": [
+            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        },
+        "leg_right": {
+          "rotation": [
+            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.mungus.idle": {
+      "loop": true,
+      "bones": {}
+    }
+  }
+}

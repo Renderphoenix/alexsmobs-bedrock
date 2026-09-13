@@ -1,0 +1,197 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.spectre_lead",
+        "texture_width": 256,
+        "texture_height": 256,
+        "visible_bounds_width": 7,
+        "visible_bounds_height": 1,
+        "visible_bounds_offset": [
+          0,
+          0.34375,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            0,
+            0.5,
+            0
+          ],
+          "parent": "root",
+          "rotation": [
+            0,
+            45.000104,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -12,
+                0,
+                -12
+              ],
+              "size": [
+                24,
+                6,
+                24
+              ],
+              "uv": [
+                43,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "spine",
+          "pivot": [
+            0,
+            6,
+            0
+          ],
+          "parent": "body",
+          "rotation": [
+            0,
+            -45.000104,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                1,
+                -14
+              ],
+              "size": [
+                0,
+                8,
+                42
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "tail",
+          "pivot": [
+            0,
+            5,
+            28
+          ],
+          "parent": "spine",
+          "cubes": [
+            {
+              "origin": [
+                0,
+                0,
+                28
+              ],
+              "size": [
+                0,
+                11,
+                27
+              ],
+              "uv": [
+                76,
+                31
+              ]
+            }
+          ]
+        },
+        {
+          "name": "wing_left_p",
+          "pivot": [
+            12,
+            3,
+            -12
+          ],
+          "parent": "body"
+        },
+        {
+          "name": "wing_left",
+          "pivot": [
+            12,
+            3,
+            -12
+          ],
+          "parent": "wing_left_p",
+          "cubes": [
+            {
+              "origin": [
+                12,
+                1.5,
+                -12
+              ],
+              "size": [
+                26,
+                3,
+                23
+              ],
+              "uv": [
+                76,
+                76
+              ]
+            }
+          ]
+        },
+        {
+          "name": "wing_right_p",
+          "pivot": [
+            -12,
+            3,
+            12
+          ],
+          "parent": "body",
+          "rotation": [
+            0,
+            -90.000207,
+            0
+          ]
+        },
+        {
+          "name": "wing_right",
+          "pivot": [
+            -12,
+            3,
+            12
+          ],
+          "parent": "wing_right_p",
+          "cubes": [
+            {
+              "origin": [
+                -38,
+                1.5,
+                12
+              ],
+              "size": [
+                26,
+                3,
+                23
+              ],
+              "uv": [
+                0,
+                51
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

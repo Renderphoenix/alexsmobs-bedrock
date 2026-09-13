@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:potted_flutter",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "potted_flutter"
+    }
+  }
+}

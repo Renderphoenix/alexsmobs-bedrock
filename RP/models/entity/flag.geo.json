@@ -1,0 +1,220 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.flag",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 4,
+        "visible_bounds_offset": [
+          0,
+          1.5625,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "anchor",
+          "pivot": [
+            0,
+            47.25,
+            0
+          ],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                0,
+                -3.5
+              ],
+              "size": [
+                7,
+                36,
+                7
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            },
+            {
+              "origin": [
+                -5.5,
+                36,
+                -4.5
+              ],
+              "size": [
+                11,
+                9,
+                9
+              ],
+              "uv": [
+                29,
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "name": "chain_start",
+          "pivot": [
+            1.5,
+            45,
+            0.5
+          ],
+          "parent": "anchor",
+          "cubes": [
+            {
+              "origin": [
+                -1.5,
+                45,
+                -3.5
+              ],
+              "size": [
+                3,
+                5,
+                7
+              ],
+              "uv": [
+                23,
+                46
+              ]
+            }
+          ]
+        },
+        {
+          "name": "left_side",
+          "pivot": [
+            16.5,
+            17.3333,
+            0
+          ],
+          "parent": "anchor",
+          "cubes": [
+            {
+              "origin": [
+                13.5,
+                25,
+                -3.5
+              ],
+              "size": [
+                10,
+                6,
+                7
+              ],
+              "uv": [
+                29,
+                32
+              ]
+            },
+            {
+              "origin": [
+                15.5,
+                10,
+                -2.5
+              ],
+              "size": [
+                6,
+                15,
+                5
+              ],
+              "uv": [
+                0,
+                44
+              ]
+            },
+            {
+              "origin": [
+                3.5,
+                3,
+                -2.5
+              ],
+              "size": [
+                18,
+                7,
+                5
+              ],
+              "uv": [
+                29,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "right_side",
+          "pivot": [
+            -16.5,
+            17.3333,
+            0
+          ],
+          "parent": "anchor",
+          "cubes": [
+            {
+              "origin": [
+                -23.5,
+                25,
+                -3.5
+              ],
+              "size": [
+                10,
+                6,
+                7
+              ],
+              "uv": [
+                29,
+                32
+              ],
+              "mirror": true
+            },
+            {
+              "origin": [
+                -21.5,
+                10,
+                -2.5
+              ],
+              "size": [
+                6,
+                15,
+                5
+              ],
+              "uv": [
+                0,
+                44
+              ],
+              "mirror": true
+            },
+            {
+              "origin": [
+                -21.5,
+                3,
+                -2.5
+              ],
+              "size": [
+                18,
+                7,
+                5
+              ],
+              "uv": [
+                29,
+                0
+              ],
+              "mirror": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:sugar_glider",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/sugar_glider"
+      },
+      "geometry": {
+        "default": "geometry.sugar_glider"
+      },
+      "animations": {
+        "walk": "animation.sugar_glider.walk",
+        "idle": "animation.sugar_glider.idle",
+        "look_at_target": "animation.sugar_glider.idle",
+        "controller_move": "controller.animation.sugar_glider.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

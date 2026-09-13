@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:emu_leggings",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.leggings"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "emu_leggings"
+      },
+      "minecraft:display_name": {
+        "value": "Outback Leggings"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:wearable": {
+        "slot": "slot.armor.legs",
+        "dispensable": true
+      },
+      "minecraft:armor": {
+        "protection": 5
+      },
+      "minecraft:durability": {
+        "max_durability": 280
+      }
+    }
+  }
+}

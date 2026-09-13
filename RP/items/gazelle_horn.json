@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:gazelle_horn",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "gazelle_horn"
+    }
+  }
+}

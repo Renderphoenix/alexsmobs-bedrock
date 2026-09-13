@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alexsmobs:crocodile_egg",
+      "item": {
+        "alexsmobs:crocodile_egg": "query.is_owner_identifier_any('minecraft:player')"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/items/crocodile_egg"
+      },
+      "geometry": {
+        "default": "geometry.crocodile_egg"
+      },
+      "scripts": {
+        "parent_setup": "variable.item_scale = 1.0;"
+      },
+      "render_controllers": [
+        "controller.render.item_default"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:maraca"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " P ",
+      "PRP",
+      " S "
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:planks"
+      },
+      "R": {
+        "item": "alexsmobs:rattlesnake_rattle"
+      },
+      "S": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:maraca",
+      "count": 1
+    }
+  }
+}

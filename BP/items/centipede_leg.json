@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:centipede_leg",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.misc"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "centipede_leg"
+      },
+      "minecraft:display_name": {
+        "value": "Cave Centipede Leg"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

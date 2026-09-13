@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:skelewag_sword_hand",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:icon": "skelewag_sword_hand"
+    }
+  }
+}

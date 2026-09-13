@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:sea_bear",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/sea_bear"
+      },
+      "geometry": {
+        "default": "geometry.sea_bear"
+      },
+      "animations": {
+        "walk": "animation.sea_bear.walk",
+        "idle": "animation.sea_bear.idle",
+        "look_at_target": "animation.sea_bear.idle",
+        "controller_move": "controller.animation.sea_bear.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

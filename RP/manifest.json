@@ -1,0 +1,29 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Alex's Mobs Addon RP",
+    "description": "New, original, engaging, and aesthetic mobs for Minecraft.\n\nResource Pack for 423 entities, 326 items, 148 blocks, 83 recipes, 104 loot tables converted to Bedrock\n\nOriginal mod by: Alexthe668, Carro1001, Paint_Ninja\n\nRenderphoenix is publishing this , for pocket edition, but credits goes to owners, for contact, visit https://renderphoenix.com",
+    "uuid": "0931a5b2-c68e-4fa5-ae1b-78ee412e4458",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "250baf95-7926-4951-9ff6-6e0445ecb159",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

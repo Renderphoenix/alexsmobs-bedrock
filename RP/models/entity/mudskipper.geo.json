@@ -1,0 +1,235 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.mudskipper",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 1,
+        "visible_bounds_offset": [
+          0,
+          0.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "head",
+          "pivot": [
+            0,
+            2,
+            -5
+          ],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                0,
+                -9
+              ],
+              "size": [
+                7,
+                5,
+                6
+              ],
+              "uv": [
+                0,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "name": "eyes",
+          "pivot": [
+            0,
+            5,
+            -6.5
+          ],
+          "parent": "head",
+          "cubes": [
+            {
+              "origin": [
+                -2.5,
+                5,
+                -8
+              ],
+              "size": [
+                5,
+                2,
+                3
+              ],
+              "uv": [
+                19,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "tail",
+          "pivot": [
+            0,
+            2,
+            -2
+          ],
+          "parent": "head",
+          "cubes": [
+            {
+              "origin": [
+                -2,
+                0,
+                -3
+              ],
+              "size": [
+                4,
+                4,
+                10
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            },
+            {
+              "origin": [
+                0,
+                4,
+                2
+              ],
+              "size": [
+                0,
+                2,
+                6
+              ],
+              "uv": [
+                23,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "name": "dorsalFin",
+          "pivot": [
+            0,
+            4,
+            -4
+          ],
+          "parent": "tail",
+          "cubes": [
+            {
+              "origin": [
+                0,
+                4,
+                -5
+              ],
+              "size": [
+                0,
+                5,
+                7
+              ],
+              "uv": [
+                0,
+                27
+              ]
+            }
+          ]
+        },
+        {
+          "name": "tailFin",
+          "pivot": [
+            0,
+            2,
+            7
+          ],
+          "parent": "tail",
+          "cubes": [
+            {
+              "origin": [
+                0,
+                -1,
+                6
+              ],
+              "size": [
+                0,
+                6,
+                7
+              ],
+              "uv": [
+                20,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "name": "leftFin",
+          "pivot": [
+            2,
+            0,
+            -3
+          ],
+          "parent": "tail",
+          "cubes": [
+            {
+              "origin": [
+                2,
+                0,
+                -3
+              ],
+              "size": [
+                3,
+                0,
+                3
+              ],
+              "uv": [
+                28,
+                18
+              ]
+            }
+          ]
+        },
+        {
+          "name": "rightFin",
+          "pivot": [
+            -2,
+            0,
+            -3
+          ],
+          "parent": "tail",
+          "cubes": [
+            {
+              "origin": [
+                -5,
+                0,
+                -3
+              ],
+              "size": [
+                3,
+                0,
+                3
+              ],
+              "uv": [
+                28,
+                18
+              ],
+              "mirror": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

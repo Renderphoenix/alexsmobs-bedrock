@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:cooked_kangaroo_meat",
+      "category": "nature"
+    },
+    "components": {
+      "minecraft:icon": "cooked_kangaroo_meat"
+    }
+  }
+}

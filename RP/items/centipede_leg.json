@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:centipede_leg",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "centipede_leg"
+    }
+  }
+}

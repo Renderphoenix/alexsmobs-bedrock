@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:tendon_whip"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " CC",
+      "TTC",
+      "ST "
+    ],
+    "key": {
+      "C": {
+        "item": "alexsmobs:dropbear_claw"
+      },
+      "T": {
+        "item": "alexsmobs:elastic_tendon"
+      },
+      "S": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:tendon_whip",
+      "count": 1
+    }
+  }
+}

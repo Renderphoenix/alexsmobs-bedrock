@@ -1,0 +1,55 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "alexsmobs:flying_fish_1",
+      "population_control": "water_animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_underwater": {},
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 15,
+          "adjust_for_weather": false
+        },
+        "minecraft:weight": {
+          "default": 40
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 6
+        },
+        "minecraft:biome_filter": {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "ocean"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "deep_ocean"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "warm_ocean"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "frozen_ocean"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "river"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

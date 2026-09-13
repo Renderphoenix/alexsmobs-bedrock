@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alexsmobs:banana_slug_slime_block_inventory",
+      "item": {
+        "alexsmobs:banana_slug_slime_block_inventory": "query.is_owner_identifier_any('minecraft:player')"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/items/banana_slug_slime_block_inventory"
+      },
+      "geometry": {
+        "default": "geometry.banana_slug_slime_block_inventory"
+      },
+      "scripts": {
+        "parent_setup": "variable.item_scale = 1.0;"
+      },
+      "render_controllers": [
+        "controller.render.item_default"
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:tab_icon",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "tab_icon"
+    }
+  }
+}

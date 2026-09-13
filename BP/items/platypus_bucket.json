@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:platypus_bucket",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.misc"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "platypus_bucket"
+      },
+      "minecraft:display_name": {
+        "value": "Bucket of Platypus"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

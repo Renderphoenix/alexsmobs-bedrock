@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:poison_bottle",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.potion"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "poison_bottle"
+      },
+      "minecraft:display_name": {
+        "value": "Poisonous Essence"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:use_animation": "drink",
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6,
+        "movement_modifier": 0.35
+      }
+    }
+  }
+}

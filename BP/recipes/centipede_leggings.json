@@ -1,0 +1,25 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:centipede_leggings"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "SSS",
+      "S S",
+      "S S"
+    ],
+    "key": {
+      "S": {
+        "item": "alexsmobs:centipede_leg"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:centipede_leggings",
+      "count": 1
+    }
+  }
+}

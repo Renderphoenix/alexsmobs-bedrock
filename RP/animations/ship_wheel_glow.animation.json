@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ship_wheel_glow.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {}
+    },
+    "animation.ship_wheel_glow.idle": {
+      "loop": true,
+      "bones": {}
+    }
+  }
+}

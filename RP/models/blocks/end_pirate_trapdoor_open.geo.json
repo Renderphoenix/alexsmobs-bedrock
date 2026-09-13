@@ -1,0 +1,139 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "format_version": "1.12.0",
+      "identifier": "geometry.end_pirate_trapdoor_open",
+      "texture_width": 16,
+      "texture_height": 16,
+      "visible_bounds_width": 2,
+      "visible_bounds_height": 2,
+      "visible_bounds_offset": [
+        0,
+        0.5,
+        0
+      ],
+      "textures": {
+        "texture": "alexsmobs:block/end_pirate_trapdoor",
+        "side": "alexsmobs:block/end_pirate_trapdoor_side",
+        "particle": "alexsmobs:block/end_pirate_trapdoor"
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                0,
+                5
+              ],
+              "size": [
+                16,
+                16,
+                3
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    16
+                  ],
+                  "uv_size": [
+                    16,
+                    -16
+                  ],
+                  "texture": "#texture"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    16
+                  ],
+                  "uv_size": [
+                    16,
+                    -16
+                  ],
+                  "texture": "#texture"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    3
+                  ],
+                  "uv_size": [
+                    16,
+                    -3
+                  ],
+                  "texture": "#side"
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    3
+                  ],
+                  "texture": "#side"
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    3
+                  ],
+                  "uv_size": [
+                    16,
+                    -3
+                  ],
+                  "texture": "#side"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    3
+                  ],
+                  "texture": "#side"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "collision_box": {
+        "origin": [
+          -8,
+          0,
+          5
+        ],
+        "size": [
+          16,
+          16,
+          3
+        ]
+      },
+      "bounds": {
+        "min": [
+          0,
+          0,
+          13
+        ],
+        "max": [
+          16,
+          16,
+          16
+        ]
+      }
+    }
+  ]
+}

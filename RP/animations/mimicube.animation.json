@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.mimicube.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {}
+    },
+    "animation.mimicube.idle": {
+      "loop": true,
+      "bones": {}
+    }
+  }
+}

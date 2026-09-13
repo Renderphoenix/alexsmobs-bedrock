@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:farseer_arm",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "farseer_arm"
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "format_version": "1.12.0",
+      "identifier": "geometry.bison_carpet",
+      "texture_width": 16,
+      "texture_height": 16,
+      "visible_bounds_width": 2,
+      "visible_bounds_height": 2,
+      "visible_bounds_offset": [
+        0,
+        0.5,
+        0
+      ],
+      "textures": {
+        "0": "alexsmobs:block/bison_fur",
+        "1": "alexsmobs:block/bison_carpet",
+        "particle": "alexsmobs:block/bison_fur"
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                0,
+                -8
+              ],
+              "size": [
+                16,
+                2,
+                16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    2
+                  ],
+                  "texture": "#0"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    2
+                  ],
+                  "texture": "#0"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    2
+                  ],
+                  "texture": "#0"
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    2
+                  ],
+                  "texture": "#0"
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#0"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "texture": "#0"
+                }
+              }
+            },
+            {
+              "origin": [
+                -11,
+                1.01,
+                -11
+              ],
+              "size": [
+                22,
+                0,
+                22
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    0
+                  ],
+                  "texture": "#1"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    0
+                  ],
+                  "texture": "#1"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    0
+                  ],
+                  "texture": "#1"
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    0
+                  ],
+                  "texture": "#1"
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    11,
+                    11
+                  ],
+                  "texture": "#1"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    11,
+                    11
+                  ],
+                  "texture": "#1"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "collision_box": {
+        "origin": [
+          -11,
+          0,
+          -11
+        ],
+        "size": [
+          22,
+          2,
+          22
+        ]
+      },
+      "bounds": {
+        "min": [
+          -3,
+          0,
+          -3
+        ],
+        "max": [
+          19,
+          2,
+          19
+        ]
+      }
+    }
+  ]
+}

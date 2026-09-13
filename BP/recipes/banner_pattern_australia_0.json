@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alexsmobs:banner_pattern_australia_0"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:paper"
+      },
+      {
+        "item": "alexsmobs:kangaroo_hide"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:banner_pattern_australia_0",
+      "count": 1
+    }
+  }
+}

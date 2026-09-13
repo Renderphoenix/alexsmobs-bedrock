@@ -1,0 +1,115 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.anaconda_yellow",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 1,
+        "visible_bounds_offset": [
+          0,
+          0.1875,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "part",
+          "pivot": [
+            0,
+            3,
+            0
+          ],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                3,
+                -9
+              ],
+              "size": [
+                7,
+                3,
+                10
+              ],
+              "uv": [
+                62,
+                32
+              ]
+            },
+            {
+              "origin": [
+                -3.5,
+                4,
+                -9
+              ],
+              "size": [
+                7,
+                0,
+                10
+              ],
+              "uv": [
+                67,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "name": "________jaw",
+          "pivot": [
+            0,
+            3,
+            0
+          ],
+          "parent": "part",
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                0,
+                -9
+              ],
+              "size": [
+                7,
+                4,
+                10
+              ],
+              "uv": [
+                52,
+                55
+              ]
+            },
+            {
+              "origin": [
+                -3.5,
+                3,
+                -9
+              ],
+              "size": [
+                7,
+                0,
+                10
+              ],
+              "uv": [
+                66,
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

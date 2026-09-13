@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:straddle_helmet",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "straddle_helmet"
+    }
+  }
+}

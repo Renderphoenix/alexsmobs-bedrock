@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:rainbow_glass",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:icon": "rainbow_glass"
+    }
+  }
+}

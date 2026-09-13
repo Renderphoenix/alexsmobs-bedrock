@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:medium_catfish_bucket",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.misc"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "medium_catfish_bucket"
+      },
+      "minecraft:display_name": {
+        "value": "Bucket of Medium Catfish"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

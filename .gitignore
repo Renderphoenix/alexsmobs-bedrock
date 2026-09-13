@@ -1,0 +1,14 @@
+# Java mod archives and source folders
+alexsmobs-*.jar
+alexsmobs-*-source/
+alexsmobs-*-decompiled-jar/
+*.jar
+*.tar
+.tools/
+
+# Temporary and system files
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp

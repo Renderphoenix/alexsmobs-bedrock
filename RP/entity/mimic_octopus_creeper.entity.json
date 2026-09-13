@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:mimic_octopus_creeper",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/mimic_octopus_creeper"
+      },
+      "geometry": {
+        "default": "geometry.mimic_octopus_creeper"
+      },
+      "animations": {
+        "walk": "animation.mimic_octopus_creeper.walk",
+        "idle": "animation.mimic_octopus_creeper.idle",
+        "look_at_target": "animation.mimic_octopus_creeper.idle",
+        "controller_move": "controller.animation.mimic_octopus_creeper.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

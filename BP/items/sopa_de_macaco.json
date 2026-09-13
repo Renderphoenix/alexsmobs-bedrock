@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:sopa_de_macaco",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.misc"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "sopa_de_macaco"
+      },
+      "minecraft:display_name": {
+        "value": "Sopa De Macaco"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

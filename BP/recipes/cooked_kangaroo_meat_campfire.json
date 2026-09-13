@@ -1,0 +1,13 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "alexsmobs:cooked_kangaroo_meat_campfire"
+    },
+    "tags": [
+      "campfire"
+    ],
+    "input": "alexsmobs:kangaroo_meat",
+    "output": "alexsmobs:cooked_kangaroo_meat"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:pigshoes",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.hoe"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "pigshoes"
+      },
+      "minecraft:display_name": {
+        "value": "Ancient Hogshoes"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:damage": 2,
+      "minecraft:durability": {
+        "max_durability": 250
+      }
+    }
+  }
+}

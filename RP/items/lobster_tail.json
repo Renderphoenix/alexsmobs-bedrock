@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:lobster_tail",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "lobster_tail"
+    }
+  }
+}

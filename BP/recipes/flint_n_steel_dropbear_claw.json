@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alexsmobs:flint_n_steel_dropbear_claw"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "alexsmobs:dropbear_claw"
+      },
+      {
+        "item": "minecraft:flint"
+      }
+    ],
+    "result": {
+      "item": "minecraft:flint_and_steel",
+      "count": 1
+    }
+  }
+}

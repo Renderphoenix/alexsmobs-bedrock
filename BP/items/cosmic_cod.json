@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:cosmic_cod",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.misc"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "cosmic_cod"
+      },
+      "minecraft:display_name": {
+        "value": "Cosmic Cod"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

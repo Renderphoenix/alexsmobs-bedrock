@@ -1,0 +1,90 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "alexsmobs:stradpole",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:health": {
+        "value": 4,
+        "max": 4
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:nameable": {},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/stradpole.json"
+      },
+      "minecraft:type_family": {
+        "family": [
+          "mob",
+          "stradpole",
+          "animal"
+        ]
+      },
+      "minecraft:navigation.swim": {
+        "can_swim": true,
+        "can_path_over_water": false
+      },
+      "minecraft:movement.swimming": {},
+      "minecraft:breathable": {
+        "breathes_water": true,
+        "breathes_air": false,
+        "generates_bubbles": true
+      },
+      "minecraft:behavior.random_swim": {
+        "priority": 1,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 8
+          }
+        ],
+        "walk_speed_multiplier": 1.2,
+        "sprint_speed_multiplier": 1.4
+      },
+      "minecraft:behavior.panic": {
+        "priority": 1,
+        "speed_multiplier": 1.4
+      },
+      "minecraft:behavior.follow_mob": {
+        "priority": 4,
+        "speed_multiplier": 1.25,
+        "stop_distance": 2,
+        "search_range": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 4
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 5,
+        "target_distance": 6
+      }
+    }
+  }
+}

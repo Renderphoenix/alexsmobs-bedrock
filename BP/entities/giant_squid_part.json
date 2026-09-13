@@ -1,0 +1,100 @@
+{
+    "format_version":  "1.16.0",
+    "minecraft:entity":  {
+                             "description":  {
+                                                 "identifier":  "alexsmobs:giant_squid_part",
+                                                 "is_spawnable":  false,
+                                                 "is_summonable":  true,
+                                                 "is_experimental":  false
+                                             },
+                             "component_groups":  {
+
+                                                  },
+                             "components":  {
+                                                "minecraft:collision_box":  {
+                                                                                "width":  0.6,
+                                                                                "height":  1.9
+                                                                            },
+                                                "minecraft:health":  {
+                                                                         "value":  38,
+                                                                         "max":  38
+                                                                     },
+                                                "minecraft:movement":  {
+                                                                           "value":  0.25
+                                                                       },
+                                                "minecraft:movement.basic":  {
+
+                                                                             },
+                                                "minecraft:jump.static":  {
+
+                                                                          },
+                                                "minecraft:can_climb":  {
+
+                                                                        },
+                                                "minecraft:physics":  {
+
+                                                                      },
+                                                "minecraft:pushable":  {
+                                                                           "is_pushable":  true,
+                                                                           "is_pushable_by_piston":  true
+                                                                       },
+                                                "minecraft:nameable":  {
+
+                                                                       },
+                                                "minecraft:type_family":  {
+                                                                              "family":  [
+                                                                                             "mob",
+                                                                                             "giant_squid_part",
+                                                                                             "animal"
+                                                                                         ]
+                                                                          },
+                                                "minecraft:navigation.swim":  {
+                                                                                  "can_swim":  true,
+                                                                                  "can_path_over_water":  false
+                                                                              },
+                                                "minecraft:movement.swimming":  {
+
+                                                                                },
+                                                "minecraft:breathable":  {
+                                                                             "breathes_water":  true,
+                                                                             "breathes_air":  false,
+                                                                             "generates_bubbles":  true
+                                                                         },
+                                                "minecraft:attack":  {
+                                                                         "damage":  8
+                                                                     },
+                                                "minecraft:behavior.move_to_block":  {
+                                                                                         "priority":  1,
+                                                                                         "speed_multiplier":  1,
+                                                                                         "search_range":  16
+                                                                                     },
+                                                "minecraft:behavior.melee_attack":  {
+                                                                                        "priority":  2,
+                                                                                        "speed_multiplier":  1.2
+                                                                                    },
+                                                "minecraft:behavior.random_swim":  {
+                                                                                       "priority":  3,
+                                                                                       "speed_multiplier":  1
+                                                                                   },
+                                                "minecraft:behavior.random_look_around":  {
+                                                                                              "priority":  5
+                                                                                          },
+                                                "minecraft:behavior.hurt_by_target":  {
+                                                                                          "priority":  1
+                                                                                      },
+                                                "minecraft:behavior.nearest_attackable_target":  {
+                                                                                                     "priority":  2,
+                                                                                                     "entity_types":  [
+                                                                                                                          {
+                                                                                                                              "filters":  {
+                                                                                                                                              "test":  "is_family",
+                                                                                                                                              "subject":  "other",
+                                                                                                                                              "value":  "player"
+                                                                                                                                          }
+                                                                                                                          }
+                                                                                                                      ],
+                                                                                                     "must_see":  true
+                                                                                                 }
+                                            }
+                         }
+}

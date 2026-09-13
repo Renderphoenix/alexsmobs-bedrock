@@ -1,0 +1,56 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:skunk_spray",
+      "menu_category": {
+        "category": "construction",
+        "group": "itemGroup.name.construction"
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.6
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 0.5
+      },
+      "minecraft:friction": 0.6,
+      "minecraft:light_dampening": 15,
+      "minecraft:loot": "loot_tables/blocks/skunk_spray.json",
+      "minecraft:geometry": {
+        "identifier": "geometry.skunk_spray"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "skunk_spray",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0,
+          -7.9
+        ],
+        "size": [
+          16,
+          16,
+          0
+        ]
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          -8,
+          0,
+          -7.9
+        ],
+        "size": [
+          16,
+          16,
+          0
+        ]
+      }
+    }
+  }
+}

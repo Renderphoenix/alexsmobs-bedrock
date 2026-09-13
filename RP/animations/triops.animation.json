@@ -1,0 +1,36 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.triops.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "leftLegs": {
+          "rotation": [
+            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        },
+        "rightLegs": {
+          "rotation": [
+            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            0,
+            0
+          ]
+        },
+        "tail1": {
+          "rotation": [
+            0,
+            "(math.cos(query.anim_time * 38.17) * 18.0)",
+            0
+          ]
+        }
+      }
+    },
+    "animation.triops.idle": {
+      "loop": true,
+      "bones": {}
+    }
+  }
+}

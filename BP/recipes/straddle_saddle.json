@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:straddle_saddle"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "EE",
+      "SS"
+    ],
+    "key": {
+      "S": {
+        "item": "alexsmobs:straddlite"
+      },
+      "E": {
+        "item": "minecraft:saddle"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:straddle_saddle",
+      "count": 1
+    }
+  }
+}

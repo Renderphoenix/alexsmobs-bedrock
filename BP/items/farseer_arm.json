@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:farseer_arm",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.misc"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "farseer_arm"
+      },
+      "minecraft:display_name": {
+        "value": "Farseer Arm"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

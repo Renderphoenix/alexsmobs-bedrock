@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:froststalker_helmet",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.helmet"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "froststalker_helmet"
+      },
+      "minecraft:display_name": {
+        "value": "Froststalker Helmet"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:wearable": {
+        "slot": "slot.armor.head",
+        "dispensable": true
+      },
+      "minecraft:armor": {
+        "protection": 3
+      },
+      "minecraft:durability": {
+        "max_durability": 200
+      }
+    }
+  }
+}

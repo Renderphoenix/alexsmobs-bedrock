@@ -1,0 +1,29 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alexsmobs:sopa_de_macaco"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:bowl"
+      },
+      {
+        "item": "alexsmobs:banana_peel"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:bone"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:sopa_de_macaco",
+      "count": 1
+    }
+  }
+}

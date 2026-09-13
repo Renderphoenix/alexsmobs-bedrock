@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.comb_jelly.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {}
+    },
+    "animation.comb_jelly.idle": {
+      "loop": true,
+      "bones": {}
+    }
+  }
+}

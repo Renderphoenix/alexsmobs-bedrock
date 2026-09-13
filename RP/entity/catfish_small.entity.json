@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:catfish_small",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/catfish_small"
+      },
+      "geometry": {
+        "default": "geometry.catfish_small"
+      },
+      "animations": {
+        "walk": "animation.catfish_small.walk",
+        "idle": "animation.catfish_small.idle",
+        "look_at_target": "animation.catfish_small.idle",
+        "controller_move": "controller.animation.catfish_small.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

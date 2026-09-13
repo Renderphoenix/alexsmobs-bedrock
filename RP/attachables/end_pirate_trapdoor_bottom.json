@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alexsmobs:end_pirate_trapdoor_bottom",
+      "item": {
+        "alexsmobs:end_pirate_trapdoor_bottom": "query.is_owner_identifier_any('minecraft:player')"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/items/end_pirate_trapdoor_bottom"
+      },
+      "geometry": {
+        "default": "geometry.end_pirate_trapdoor_bottom"
+      },
+      "scripts": {
+        "parent_setup": "variable.item_scale = 1.0;"
+      },
+      "render_controllers": [
+        "controller.render.item_default"
+      ]
+    }
+  }
+}

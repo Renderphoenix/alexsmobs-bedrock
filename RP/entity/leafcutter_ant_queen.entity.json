@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:leafcutter_ant_queen",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/leafcutter_ant_queen"
+      },
+      "geometry": {
+        "default": "geometry.leafcutter_ant_queen"
+      },
+      "animations": {
+        "walk": "animation.leafcutter_ant_queen.walk",
+        "idle": "animation.leafcutter_ant_queen.idle",
+        "look_at_target": "animation.leafcutter_ant_queen.idle",
+        "controller_move": "controller.animation.leafcutter_ant_queen.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

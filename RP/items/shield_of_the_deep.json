@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:shield_of_the_deep",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "shield_of_the_deep"
+    }
+  }
+}

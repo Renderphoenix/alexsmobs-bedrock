@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:centipede_tail",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/centipede_tail"
+      },
+      "geometry": {
+        "default": "geometry.centipede_tail"
+      },
+      "animations": {
+        "walk": "animation.centipede_tail.walk",
+        "idle": "animation.centipede_tail.idle",
+        "look_at_target": "animation.centipede_tail.idle",
+        "controller_move": "controller.animation.centipede_tail.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

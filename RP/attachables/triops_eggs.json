@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alexsmobs:triops_eggs",
+      "item": {
+        "alexsmobs:triops_eggs": "query.is_owner_identifier_any('minecraft:player')"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/items/triops_eggs"
+      },
+      "geometry": {
+        "default": "geometry.triops_eggs"
+      },
+      "scripts": {
+        "parent_setup": "variable.item_scale = 1.0;"
+      },
+      "render_controllers": [
+        "controller.render.item_default"
+      ]
+    }
+  }
+}

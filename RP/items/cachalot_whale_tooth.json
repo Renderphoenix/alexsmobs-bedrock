@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:cachalot_whale_tooth",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "cachalot_whale_tooth"
+    }
+  }
+}

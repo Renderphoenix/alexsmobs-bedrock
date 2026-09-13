@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:bison_carpet"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "FF"
+    ],
+    "key": {
+      "F": {
+        "item": "alexsmobs:bison_fur_block"
+      }
+    },
+    "result": {
+      "item": "alexsmobs:bison_carpet",
+      "count": 3
+    }
+  }
+}

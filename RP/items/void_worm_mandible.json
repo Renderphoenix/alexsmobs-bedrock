@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:void_worm_mandible",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "void_worm_mandible"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:cockroach_ootheca",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "cockroach_ootheca"
+    }
+  }
+}

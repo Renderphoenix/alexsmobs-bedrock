@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:raccoon",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/raccoon"
+      },
+      "geometry": {
+        "default": "geometry.raccoon"
+      },
+      "animations": {
+        "walk": "animation.raccoon.walk",
+        "idle": "animation.raccoon.idle",
+        "look_at_target": "animation.raccoon.idle",
+        "controller_move": "controller.animation.raccoon.move"
+      },
+      "scripts": {
+        "animate": [
+          "controller_move",
+          {
+            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#4f46e5",
+        "overlay_color": "#10b981"
+      }
+    }
+  }
+}

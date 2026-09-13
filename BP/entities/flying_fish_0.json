@@ -1,0 +1,90 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "alexsmobs:flying_fish_0",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.35,
+        "height": 0.35
+      },
+      "minecraft:health": {
+        "value": 6,
+        "max": 6
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:nameable": {},
+      "minecraft:type_family": {
+        "family": [
+          "mob",
+          "flying_fish_0",
+          "animal"
+        ]
+      },
+      "minecraft:navigation.swim": {
+        "can_swim": true,
+        "can_path_over_water": false
+      },
+      "minecraft:movement.swimming": {},
+      "minecraft:breathable": {
+        "breathes_water": true,
+        "breathes_air": false,
+        "generates_bubbles": true
+      },
+      "minecraft:behavior.random_swim": {
+        "priority": 4,
+        "speed_multiplier": 1,
+        "interval": 20
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 8
+          }
+        ],
+        "walk_speed_multiplier": 1.2,
+        "sprint_speed_multiplier": 1.4
+      },
+      "minecraft:behavior.panic": {
+        "priority": 3,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.follow_mob": {
+        "priority": 4,
+        "speed_multiplier": 1.25,
+        "stop_distance": 2,
+        "search_range": 8
+      },
+      "minecraft:behavior.move_to_block": {
+        "priority": 1,
+        "speed_multiplier": 1,
+        "search_range": 16
+      },
+      "minecraft:behavior.flying_random_stroll": {
+        "priority": 2,
+        "speed_multiplier": 1
+      }
+    }
+  }
+}

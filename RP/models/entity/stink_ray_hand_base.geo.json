@@ -1,0 +1,376 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "format_version": "1.12.0",
+      "identifier": "geometry.stink_ray_hand_base",
+      "texture_width": 64,
+      "texture_height": 64,
+      "visible_bounds_width": 2,
+      "visible_bounds_height": 2,
+      "visible_bounds_offset": [
+        0,
+        0.5,
+        0
+      ],
+      "textures": {},
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2,
+                6,
+                -5
+              ],
+              "size": [
+                4,
+                4,
+                11
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    2.75,
+                    6.75
+                  ],
+                  "uv_size": [
+                    1,
+                    1
+                  ],
+                  "texture": "#texture"
+                },
+                "south": {
+                  "uv": [
+                    6.5,
+                    6.75
+                  ],
+                  "uv_size": [
+                    1,
+                    1
+                  ],
+                  "texture": "#texture"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    6.75
+                  ],
+                  "uv_size": [
+                    2.75,
+                    1
+                  ],
+                  "texture": "#texture"
+                },
+                "west": {
+                  "uv": [
+                    3.75,
+                    6.75
+                  ],
+                  "uv_size": [
+                    2.75,
+                    1
+                  ],
+                  "texture": "#texture"
+                },
+                "up": {
+                  "uv": [
+                    3.75,
+                    6.75
+                  ],
+                  "uv_size": [
+                    -1,
+                    -2.75
+                  ],
+                  "texture": "#texture"
+                },
+                "down": {
+                  "uv": [
+                    4.75,
+                    4
+                  ],
+                  "uv_size": [
+                    -1,
+                    2.75
+                  ],
+                  "texture": "#texture"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2,
+                10,
+                -3
+              ],
+              "size": [
+                4,
+                4,
+                8
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    7.75,
+                    4
+                  ],
+                  "uv_size": [
+                    1,
+                    1
+                  ],
+                  "texture": "#texture"
+                },
+                "south": {
+                  "uv": [
+                    10.75,
+                    4
+                  ],
+                  "uv_size": [
+                    1,
+                    1
+                  ],
+                  "texture": "#texture"
+                },
+                "east": {
+                  "uv": [
+                    5.75,
+                    4
+                  ],
+                  "uv_size": [
+                    2,
+                    1
+                  ],
+                  "texture": "#texture"
+                },
+                "west": {
+                  "uv": [
+                    8.75,
+                    4
+                  ],
+                  "uv_size": [
+                    2,
+                    1
+                  ],
+                  "texture": "#texture"
+                },
+                "up": {
+                  "uv": [
+                    8.75,
+                    4
+                  ],
+                  "uv_size": [
+                    -1,
+                    -2
+                  ],
+                  "texture": "#texture"
+                },
+                "down": {
+                  "uv": [
+                    9.75,
+                    2
+                  ],
+                  "uv_size": [
+                    -1,
+                    2
+                  ],
+                  "texture": "#texture"
+                }
+              }
+            },
+            {
+              "origin": [
+                -1,
+                0,
+                -1
+              ],
+              "size": [
+                2,
+                6,
+                6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    7.75,
+                    8
+                  ],
+                  "uv_size": [
+                    0.5,
+                    1.5
+                  ],
+                  "texture": "#texture"
+                },
+                "south": {
+                  "uv": [
+                    9.75,
+                    8
+                  ],
+                  "uv_size": [
+                    0.5,
+                    1.5
+                  ],
+                  "texture": "#texture"
+                },
+                "east": {
+                  "uv": [
+                    6.25,
+                    8
+                  ],
+                  "uv_size": [
+                    1.5,
+                    1.5
+                  ],
+                  "texture": "#texture"
+                },
+                "west": {
+                  "uv": [
+                    8.25,
+                    8
+                  ],
+                  "uv_size": [
+                    1.5,
+                    1.5
+                  ],
+                  "texture": "#texture"
+                },
+                "up": {
+                  "uv": [
+                    8.25,
+                    8
+                  ],
+                  "uv_size": [
+                    -0.5,
+                    -1.5
+                  ],
+                  "texture": "#texture"
+                },
+                "down": {
+                  "uv": [
+                    8.75,
+                    6.5
+                  ],
+                  "uv_size": [
+                    -0.5,
+                    1.5
+                  ],
+                  "texture": "#texture"
+                }
+              }
+            },
+            {
+              "origin": [
+                -4.5,
+                3.5,
+                -11
+              ],
+              "size": [
+                9,
+                9,
+                6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    1.5,
+                    1.5
+                  ],
+                  "uv_size": [
+                    2.25,
+                    2.25
+                  ],
+                  "texture": "#texture"
+                },
+                "south": {
+                  "uv": [
+                    5.25,
+                    1.5
+                  ],
+                  "uv_size": [
+                    2.25,
+                    2.25
+                  ],
+                  "texture": "#texture"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    1.5
+                  ],
+                  "uv_size": [
+                    1.5,
+                    2.25
+                  ],
+                  "texture": "#texture"
+                },
+                "west": {
+                  "uv": [
+                    3.75,
+                    1.5
+                  ],
+                  "uv_size": [
+                    1.5,
+                    2.25
+                  ],
+                  "texture": "#texture"
+                },
+                "up": {
+                  "uv": [
+                    3.75,
+                    1.5
+                  ],
+                  "uv_size": [
+                    -2.25,
+                    -1.5
+                  ],
+                  "texture": "#texture"
+                },
+                "down": {
+                  "uv": [
+                    6,
+                    0
+                  ],
+                  "uv_size": [
+                    -2.25,
+                    1.5
+                  ],
+                  "texture": "#texture"
+                }
+              }
+            }
+          ],
+          "binding": "q.item_slot_to_bone_name(context.item_slot)"
+        }
+      ],
+      "collision_box": {
+        "origin": [
+          -4.5,
+          0,
+          -11
+        ],
+        "size": [
+          9,
+          14,
+          17
+        ]
+      },
+      "bounds": {
+        "min": [
+          3.5,
+          0,
+          -3
+        ],
+        "max": [
+          12.5,
+          14,
+          14
+        ]
+      }
+    }
+  ]
+}

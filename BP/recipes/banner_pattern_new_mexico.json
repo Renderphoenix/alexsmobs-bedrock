@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alexsmobs:banner_pattern_new_mexico"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:paper"
+      },
+      {
+        "item": "alexsmobs:tarantula_hawk_wing_fragment"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:banner_pattern_new_mexico",
+      "count": 1
+    }
+  }
+}

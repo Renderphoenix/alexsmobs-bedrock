@@ -1,0 +1,30 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.squid_grapple.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "tentacle": {
+          "rotation": [
+            "math.sin(query.anim_time * 35.0 + 0.00 * 57.3) * 28.0",
+            0,
+            "math.cos(query.anim_time * 35.0 + 0.00 * 57.3) * 18.0"
+          ]
+        }
+      }
+    },
+    "animation.squid_grapple.idle": {
+      "loop": true,
+      "bones": {
+        "tentacle": {
+          "rotation": [
+            "math.sin(query.anim_time * 20.0 + 0.00 * 57.3) * 16.0",
+            0,
+            "math.cos(query.anim_time * 20.0 + 0.00 * 57.3) * 12.0"
+          ]
+        }
+      }
+    }
+  }
+}
