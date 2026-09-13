@@ -1,56 +1,54 @@
-{
-  "format_version": "1.20.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "alexsmobs:void_worm_beak",
-      "menu_category": {
-        "category": "construction",
-        "group": "itemGroup.name.construction"
-      }
-    },
-    "components": {
-      "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 0.6
-      },
-      "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 0.5
-      },
-      "minecraft:friction": 0.6,
-      "minecraft:light_dampening": 15,
-      "minecraft:loot": "loot_tables/blocks/void_worm_beak.json",
-      "minecraft:geometry": {
-        "identifier": "geometry.void_worm_beak"
-      },
-      "minecraft:material_instances": {
-        "*": {
-          "texture": "void_worm_beak",
-          "render_method": "opaque"
-        }
-      },
-      "minecraft:selection_box": {
-        "origin": [
-          -8,
-          0,
-          -8
-        ],
-        "size": [
-          16,
-          16,
-          16
-        ]
-      },
-      "minecraft:collision_box": {
-        "origin": [
-          -8,
-          0,
-          -8
-        ],
-        "size": [
-          16,
-          16,
-          16
-        ]
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.20.0",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "alexsmobs:void_worm_beak",
+                                                "menu_category":  {
+                                                                      "category":  "construction",
+                                                                      "group":  "itemGroup.name.construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  0.6
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  0.5
+                                                                                       },
+                                               "minecraft:friction":  0.6,
+                                               "minecraft:light_dampening":  15,
+                                               "minecraft:loot":  "loot_tables/blocks/void_worm_beak.json",
+                                               "minecraft:geometry":  "geometry.void_worm_beak",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "void_worm_beak",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -8,
+                                                                                              0,
+                                                                                              -8
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            16,
+                                                                                            16,
+                                                                                            16
+                                                                                        ]
+                                                                           },
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -8,
+                                                                                              0,
+                                                                                              -8
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            16,
+                                                                                            16,
+                                                                                            16
+                                                                                        ]
+                                                                           }
+                                           }
+                        }
 }

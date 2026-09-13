@@ -1,56 +1,54 @@
-{
-  "format_version": "1.20.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "alexsmobs:two_slightly_cracked_platypus_eggs",
-      "menu_category": {
-        "category": "construction",
-        "group": "itemGroup.name.construction"
-      }
-    },
-    "components": {
-      "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 1.5
-      },
-      "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 6
-      },
-      "minecraft:friction": 0.6,
-      "minecraft:light_dampening": 15,
-      "minecraft:loot": "loot_tables/blocks/two_slightly_cracked_platypus_eggs.json",
-      "minecraft:geometry": {
-        "identifier": "geometry.two_slightly_cracked_platypus_eggs"
-      },
-      "minecraft:material_instances": {
-        "*": {
-          "texture": "platypus_eggs_slightly_cracked",
-          "render_method": "opaque"
-        }
-      },
-      "minecraft:selection_box": {
-        "origin": [
-          -4,
-          0,
-          -3
-        ],
-        "size": [
-          6,
-          5,
-          6
-        ]
-      },
-      "minecraft:collision_box": {
-        "origin": [
-          -4,
-          0,
-          -3
-        ],
-        "size": [
-          6,
-          5,
-          6
-        ]
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.20.0",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "alexsmobs:two_slightly_cracked_platypus_eggs",
+                                                "menu_category":  {
+                                                                      "category":  "construction",
+                                                                      "group":  "itemGroup.name.construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1.5
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  6
+                                                                                       },
+                                               "minecraft:friction":  0.6,
+                                               "minecraft:light_dampening":  15,
+                                               "minecraft:loot":  "loot_tables/blocks/two_slightly_cracked_platypus_eggs.json",
+                                               "minecraft:geometry":  "geometry.two_slightly_cracked_platypus_eggs",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "platypus_eggs_slightly_cracked",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -4,
+                                                                                              0,
+                                                                                              -3
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            6,
+                                                                                            5,
+                                                                                            6
+                                                                                        ]
+                                                                           },
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -4,
+                                                                                              0,
+                                                                                              -3
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            6,
+                                                                                            5,
+                                                                                            6
+                                                                                        ]
+                                                                           }
+                                           }
+                        }
 }

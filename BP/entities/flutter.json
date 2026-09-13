@@ -115,12 +115,6 @@
                                                                                           "priority":  1,
                                                                                           "hurt_owner":  false
                                                                                       },
-                                                "minecraft:behavior.follow_owner":  {
-                                                                                        "priority":  3,
-                                                                                        "speed_multiplier":  1.2,
-                                                                                        "start_distance":  10,
-                                                                                        "stop_distance":  2
-                                                                                    },
                                                 "minecraft:behavior.random_stroll":  {
                                                                                          "priority":  5,
                                                                                          "speed_multiplier":  1
@@ -134,7 +128,7 @@
                                                                                           },
                                                 "minecraft:despawn":  {
                                                                           "despawn_from_distance":  {
-                                                                                                        "min_distance":  32,
+                                                                                                        "min_distance":  40,
                                                                                                         "max_distance":  128
                                                                                                     }
                                                                       }

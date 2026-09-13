@@ -101,12 +101,6 @@
                                                 "minecraft:behavior.stay_while_sitting":  {
                                                                                               "priority":  2
                                                                                           },
-                                                "minecraft:behavior.follow_owner":  {
-                                                                                        "priority":  3,
-                                                                                        "speed_multiplier":  1.2,
-                                                                                        "start_distance":  10,
-                                                                                        "stop_distance":  2
-                                                                                    },
                                                 "minecraft:behavior.pickup_items":  {
                                                                                         "priority":  1,
                                                                                         "max_dist":  16,
@@ -152,7 +146,7 @@
                                                                                     },
                                                 "minecraft:despawn":  {
                                                                           "despawn_from_distance":  {
-                                                                                                        "min_distance":  32,
+                                                                                                        "min_distance":  40,
                                                                                                         "max_distance":  128
                                                                                                     }
                                                                       },

@@ -1,56 +1,54 @@
-{
-  "format_version": "1.20.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "alexsmobs:banana_peel",
-      "menu_category": {
-        "category": "construction",
-        "group": "itemGroup.name.construction"
-      }
-    },
-    "components": {
-      "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 0.6
-      },
-      "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 0.5
-      },
-      "minecraft:friction": 0.6,
-      "minecraft:light_dampening": 15,
-      "minecraft:loot": "loot_tables/blocks/banana_peel.json",
-      "minecraft:geometry": {
-        "identifier": "geometry.banana_peel"
-      },
-      "minecraft:material_instances": {
-        "*": {
-          "texture": "banana_peel",
-          "render_method": "opaque"
-        }
-      },
-      "minecraft:selection_box": {
-        "origin": [
-          -6,
-          0.1,
-          -6
-        ],
-        "size": [
-          12,
-          4,
-          12
-        ]
-      },
-      "minecraft:collision_box": {
-        "origin": [
-          -6,
-          0.1,
-          -6
-        ],
-        "size": [
-          12,
-          4,
-          12
-        ]
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.20.0",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "alexsmobs:banana_peel",
+                                                "menu_category":  {
+                                                                      "category":  "construction",
+                                                                      "group":  "itemGroup.name.construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  0.6
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  0.5
+                                                                                       },
+                                               "minecraft:friction":  0.6,
+                                               "minecraft:light_dampening":  15,
+                                               "minecraft:loot":  "loot_tables/blocks/banana_peel.json",
+                                               "minecraft:geometry":  "geometry.banana_peel",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "banana_peel",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -6,
+                                                                                              0.1,
+                                                                                              -6
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            12,
+                                                                                            4,
+                                                                                            12
+                                                                                        ]
+                                                                           },
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -6,
+                                                                                              0.1,
+                                                                                              -6
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            12,
+                                                                                            4,
+                                                                                            12
+                                                                                        ]
+                                                                           }
+                                           }
+                        }
 }

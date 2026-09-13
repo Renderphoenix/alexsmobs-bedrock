@@ -1,446 +1,599 @@
-{
-  "alexsmobs:banana_peel": {
-    "sound": "grass"
-  },
-  "alexsmobs:banana_slug_slime_block": {
-    "sound": "grass"
-  },
-  "alexsmobs:banana_slug_slime_block_bubbles": {
-    "sound": "stone"
-  },
-  "alexsmobs:banana_slug_slime_block_inventory": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder_empty": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder_empty_hanging": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder_filled": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder_filled_hanging": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder_hanging": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder_sugar": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder_sugar_hanging": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder_water": {
-    "sound": "stone"
-  },
-  "alexsmobs:bird_feeder_water_hanging": {
-    "sound": "stone"
-  },
-  "alexsmobs:bison_carpet": {
-    "sound": "grass"
-  },
-  "alexsmobs:bison_fur_block": {
-    "sound": "grass"
-  },
-  "alexsmobs:caiman_egg": {
-    "sound": "grass"
-  },
-  "alexsmobs:capsid": {
-    "sound": "grass"
-  },
-  "alexsmobs:crocodile_egg": {
-    "sound": "grass"
-  },
-  "alexsmobs:crystalized_banana_slug_mucus": {
-    "sound": "grass"
-  },
-  "alexsmobs:end_pirate_door": {
-    "sound": "stone"
-  },
-  "alexsmobs:end_pirate_trapdoor_bottom": {
-    "sound": "stone"
-  },
-  "alexsmobs:end_pirate_trapdoor_open": {
-    "sound": "stone"
-  },
-  "alexsmobs:end_pirate_trapdoor_top": {
-    "sound": "stone"
-  },
-  "alexsmobs:ender_residue_0": {
-    "sound": "stone"
-  },
-  "alexsmobs:ender_residue_1": {
-    "sound": "stone"
-  },
-  "alexsmobs:ender_residue_2": {
-    "sound": "stone"
-  },
-  "alexsmobs:ender_residue_3": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_slightly_cracked_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_slightly_cracked_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_slightly_cracked_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_slightly_cracked_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_very_cracked_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_very_cracked_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_very_cracked_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:four_very_cracked_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:gustmaker": {
-    "sound": "grass"
-  },
-  "alexsmobs:gustmaker_on": {
-    "sound": "stone"
-  },
-  "alexsmobs:gustmaker_vertical": {
-    "sound": "stone"
-  },
-  "alexsmobs:gustmaker_vertical_on": {
-    "sound": "stone"
-  },
-  "alexsmobs:leafcutter_ant_chamber": {
-    "sound": "grass"
-  },
-  "alexsmobs:leafcutter_ant_chamber_fungus": {
-    "sound": "grass"
-  },
-  "alexsmobs:leafcutter_anthill": {
-    "sound": "grass"
-  },
-  "alexsmobs:orientable_with_top": {
-    "sound": "stone"
-  },
-  "alexsmobs:orientable_with_top_vertical": {
-    "sound": "stone"
-  },
-  "alexsmobs:phantom_sail_bottom": {
-    "sound": "stone"
-  },
-  "alexsmobs:phantom_sail_middle": {
-    "sound": "stone"
-  },
-  "alexsmobs:phantom_sail_single": {
-    "sound": "stone"
-  },
-  "alexsmobs:phantom_sail_top": {
-    "sound": "stone"
-  },
-  "alexsmobs:platypus_egg": {
-    "sound": "grass"
-  },
-  "alexsmobs:purpur_planks": {
-    "sound": "wood"
-  },
-  "alexsmobs:purpur_planks_inner_stairs": {
-    "sound": "wood"
-  },
-  "alexsmobs:purpur_planks_outer_stairs": {
-    "sound": "wood"
-  },
-  "alexsmobs:purpur_planks_slab": {
-    "sound": "wood"
-  },
-  "alexsmobs:purpur_planks_stairs": {
-    "sound": "wood"
-  },
-  "alexsmobs:purpur_planks_upper_slab": {
-    "sound": "wood"
-  },
-  "alexsmobs:purpur_planks_wall_inventory": {
-    "sound": "wood"
-  },
-  "alexsmobs:purpur_planks_wall_post": {
-    "sound": "wood"
-  },
-  "alexsmobs:purpur_planks_wall_side": {
-    "sound": "wood"
-  },
-  "alexsmobs:purpur_planks_wall_side_tall": {
-    "sound": "wood"
-  },
-  "alexsmobs:rainbow_glass": {
-    "sound": "grass"
-  },
-  "alexsmobs:rainbow_glass_all": {
-    "sound": "glass"
-  },
-  "alexsmobs:rainbow_glass_down": {
-    "sound": "glass"
-  },
-  "alexsmobs:rainbow_glass_left": {
-    "sound": "glass"
-  },
-  "alexsmobs:rainbow_glass_right": {
-    "sound": "glass"
-  },
-  "alexsmobs:rainbow_glass_up": {
-    "sound": "glass"
-  },
-  "alexsmobs:red_sand_circle": {
-    "sound": "grass"
-  },
-  "alexsmobs:sail": {
-    "sound": "stone"
-  },
-  "alexsmobs:sand_circle": {
-    "sound": "grass"
-  },
-  "alexsmobs:sculk_boomer_closed": {
-    "sound": "stone"
-  },
-  "alexsmobs:sculk_boomer_locked": {
-    "sound": "stone"
-  },
-  "alexsmobs:sculk_boomer_open": {
-    "sound": "stone"
-  },
-  "alexsmobs:skunk_spray": {
-    "sound": "grass"
-  },
-  "alexsmobs:slightly_cracked_caiman_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:slightly_cracked_crocodile_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:slightly_cracked_platypus_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:slightly_cracked_terrapin_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:spectre_sail_bottom": {
-    "sound": "stone"
-  },
-  "alexsmobs:spectre_sail_middle": {
-    "sound": "stone"
-  },
-  "alexsmobs:spectre_sail_single": {
-    "sound": "stone"
-  },
-  "alexsmobs:spectre_sail_top": {
-    "sound": "stone"
-  },
-  "alexsmobs:straddlite_block": {
-    "sound": "grass"
-  },
-  "alexsmobs:template_caiman_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_crocodile_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_four_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_four_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_four_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_four_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_platypus_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_terrapin_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_three_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_three_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_three_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_three_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_two_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_two_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_two_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:template_two_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:terrapin_egg": {
-    "sound": "grass"
-  },
-  "alexsmobs:three_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_slightly_cracked_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_slightly_cracked_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_slightly_cracked_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_slightly_cracked_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_very_cracked_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_very_cracked_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_very_cracked_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:three_very_cracked_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:transmutation_table": {
-    "sound": "grass"
-  },
-  "alexsmobs:triops_eggs": {
-    "sound": "grass"
-  },
-  "alexsmobs:two_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_slightly_cracked_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_slightly_cracked_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_slightly_cracked_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_slightly_cracked_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_very_cracked_caiman_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_very_cracked_crocodile_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_very_cracked_platypus_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:two_very_cracked_terrapin_eggs": {
-    "sound": "stone"
-  },
-  "alexsmobs:very_cracked_caiman_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:very_cracked_crocodile_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:very_cracked_platypus_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:very_cracked_terrapin_egg": {
-    "sound": "stone"
-  },
-  "alexsmobs:void_worm_beak": {
-    "sound": "grass"
-  },
-  "alexsmobs:void_worm_effigy": {
-    "sound": "grass"
-  },
-  "alexsmobs:void_worm_effigy_inventory": {
-    "sound": "stone"
-  },
-  "alexsmobs:wall_inventory": {
-    "sound": "stone"
-  },
-  "alexsmobs:end_pirate_anchor": {
-    "sound": "stone"
-  },
-  "alexsmobs:end_pirate_anchor_winch": {
-    "sound": "stone"
-  },
-  "alexsmobs:end_pirate_flag": {
-    "sound": "stone"
-  },
-  "alexsmobs:end_pirate_ship_wheel": {
-    "sound": "stone"
-  },
-  "alexsmobs:end_pirate_trapdoor": {
-    "sound": "stone"
-  },
-  "alexsmobs:ender_residue": {
-    "sound": "grass"
-  },
-  "alexsmobs:hummingbird_feeder": {
-    "sound": "grass"
-  },
-  "alexsmobs:phantom_sail": {
-    "sound": "stone"
-  },
-  "alexsmobs:purpur_planks_wall": {
-    "sound": "wood"
-  },
-  "alexsmobs:sculk_boomer": {
-    "sound": "grass"
-  },
-  "alexsmobs:spectre_sail": {
-    "sound": "stone"
-  }
+﻿{
+    "format_version":  [
+                           1,
+                           1,
+                           0
+                       ],
+    "alexsmobs:banana_peel":  {
+                                  "sound":  "grass",
+                                  "textures":  "banana_peel"
+                              },
+    "alexsmobs:banana_slug_slime_block":  {
+                                              "sound":  "slime",
+                                              "textures":  "banana_slug_slime_block"
+                                          },
+    "alexsmobs:banana_slug_slime_block_bubbles":  {
+                                                      "sound":  "slime",
+                                                      "textures":  "banana_slug_slime_block"
+                                                  },
+    "alexsmobs:banana_slug_slime_block_inventory":  {
+                                                        "sound":  "slime",
+                                                        "textures":  "banana_slug_slime_block"
+                                                    },
+    "alexsmobs:bird_feeder":  {
+                                  "sound":  "wood",
+                                  "textures":  "bird_feeder_empty"
+                              },
+    "alexsmobs:bird_feeder_empty":  {
+                                        "sound":  "wood",
+                                        "textures":  "bird_feeder_empty"
+                                    },
+    "alexsmobs:bird_feeder_empty_hanging":  {
+                                                "sound":  "wood",
+                                                "textures":  "bird_feeder_empty"
+                                            },
+    "alexsmobs:bird_feeder_filled":  {
+                                         "sound":  "wood",
+                                         "textures":  "bird_feeder_filled"
+                                     },
+    "alexsmobs:bird_feeder_filled_hanging":  {
+                                                 "sound":  "wood",
+                                                 "textures":  "bird_feeder_filled"
+                                             },
+    "alexsmobs:bird_feeder_hanging":  {
+                                          "sound":  "wood",
+                                          "textures":  "bird_feeder_hanging"
+                                      },
+    "alexsmobs:bird_feeder_sugar":  {
+                                        "sound":  "wood",
+                                        "textures":  "bird_feeder_sugar"
+                                    },
+    "alexsmobs:bird_feeder_sugar_hanging":  {
+                                                "sound":  "wood",
+                                                "textures":  "bird_feeder_sugar"
+                                            },
+    "alexsmobs:bird_feeder_water":  {
+                                        "sound":  "wood",
+                                        "textures":  "bird_feeder_water"
+                                    },
+    "alexsmobs:bird_feeder_water_hanging":  {
+                                                "sound":  "wood",
+                                                "textures":  "bird_feeder_water"
+                                            },
+    "alexsmobs:bison_carpet":  {
+                                   "sound":  "grass",
+                                   "textures":  "bison_fur"
+                               },
+    "alexsmobs:bison_fur_block":  {
+                                      "sound":  "grass",
+                                      "textures":  "bison_fur"
+                                  },
+    "alexsmobs:caiman_egg":  {
+                                 "sound":  "stone",
+                                 "textures":  "caiman_eggs"
+                             },
+    "alexsmobs:capsid":  {
+                             "sound":  "stone",
+                             "textures":  "capsid"
+                         },
+    "alexsmobs:crocodile_egg":  {
+                                    "sound":  "stone",
+                                    "textures":  "crocodile_egg"
+                                },
+    "alexsmobs:crystalized_banana_slug_mucus":  {
+                                                    "sound":  "slime",
+                                                    "textures":  "crystalized_banana_slug_mucus"
+                                                },
+    "alexsmobs:ender_residue":  {
+                                    "sound":  "slime",
+                                    "textures":  "ender_residue_0"
+                                },
+    "alexsmobs:ender_residue_0":  {
+                                      "sound":  "slime",
+                                      "textures":  "ender_residue_0"
+                                  },
+    "alexsmobs:ender_residue_1":  {
+                                      "sound":  "slime",
+                                      "textures":  "ender_residue_1"
+                                  },
+    "alexsmobs:ender_residue_2":  {
+                                      "sound":  "slime",
+                                      "textures":  "ender_residue_2"
+                                  },
+    "alexsmobs:ender_residue_3":  {
+                                      "sound":  "slime",
+                                      "textures":  "ender_residue_3"
+                                  },
+    "alexsmobs:end_pirate_anchor":  {
+                                        "sound":  "stone",
+                                        "textures":  "end_pirate_anchor"
+                                    },
+    "alexsmobs:end_pirate_anchor_winch":  {
+                                              "sound":  "stone",
+                                              "textures":  "end_pirate_anchor_winch"
+                                          },
+    "alexsmobs:end_pirate_door":  {
+                                      "sound":  "wood",
+                                      "textures":  "end_pirate_trapdoor"
+                                  },
+    "alexsmobs:end_pirate_flag":  {
+                                      "sound":  "wood",
+                                      "textures":  "end_pirate_flag"
+                                  },
+    "alexsmobs:end_pirate_ship_wheel":  {
+                                            "sound":  "wood",
+                                            "textures":  "end_pirate_ship_wheel"
+                                        },
+    "alexsmobs:end_pirate_trapdoor":  {
+                                          "sound":  "wood",
+                                          "textures":  "end_pirate_trapdoor"
+                                      },
+    "alexsmobs:end_pirate_trapdoor_bottom":  {
+                                                 "sound":  "wood",
+                                                 "textures":  "end_pirate_trapdoor"
+                                             },
+    "alexsmobs:end_pirate_trapdoor_open":  {
+                                               "sound":  "wood",
+                                               "textures":  "end_pirate_trapdoor"
+                                           },
+    "alexsmobs:end_pirate_trapdoor_top":  {
+                                              "sound":  "wood",
+                                              "textures":  "end_pirate_trapdoor"
+                                          },
+    "alexsmobs:four_caiman_eggs":  {
+                                       "sound":  "stone",
+                                       "textures":  "caiman_eggs"
+                                   },
+    "alexsmobs:four_crocodile_eggs":  {
+                                          "sound":  "stone",
+                                          "textures":  "crocodile_egg"
+                                      },
+    "alexsmobs:four_platypus_eggs":  {
+                                         "sound":  "stone",
+                                         "textures":  "platypus_eggs"
+                                     },
+    "alexsmobs:four_slightly_cracked_caiman_eggs":  {
+                                                        "sound":  "stone",
+                                                        "textures":  "caiman_eggs_slightly_cracked"
+                                                    },
+    "alexsmobs:four_slightly_cracked_crocodile_eggs":  {
+                                                           "sound":  "stone",
+                                                           "textures":  "crocodile_egg_slightly_cracked"
+                                                       },
+    "alexsmobs:four_slightly_cracked_platypus_eggs":  {
+                                                          "sound":  "stone",
+                                                          "textures":  "platypus_eggs_slightly_cracked"
+                                                      },
+    "alexsmobs:four_slightly_cracked_terrapin_eggs":  {
+                                                          "sound":  "stone",
+                                                          "textures":  "terrapin_egg_slightly_cracked"
+                                                      },
+    "alexsmobs:four_terrapin_eggs":  {
+                                         "sound":  "stone",
+                                         "textures":  "terrapin_egg"
+                                     },
+    "alexsmobs:four_very_cracked_caiman_eggs":  {
+                                                    "sound":  "stone",
+                                                    "textures":  "caiman_eggs_very_cracked"
+                                                },
+    "alexsmobs:four_very_cracked_crocodile_eggs":  {
+                                                       "sound":  "stone",
+                                                       "textures":  "crocodile_egg_very_cracked"
+                                                   },
+    "alexsmobs:four_very_cracked_platypus_eggs":  {
+                                                      "sound":  "stone",
+                                                      "textures":  "platypus_eggs_very_cracked"
+                                                  },
+    "alexsmobs:four_very_cracked_terrapin_eggs":  {
+                                                      "sound":  "stone",
+                                                      "textures":  "terrapin_egg_very_cracked"
+                                                  },
+    "alexsmobs:gustmaker":  {
+                                "sound":  "stone",
+                                "textures":  "gustmaker_top"
+                            },
+    "alexsmobs:gustmaker_on":  {
+                                   "sound":  "stone",
+                                   "textures":  "gustmaker_top"
+                               },
+    "alexsmobs:gustmaker_vertical":  {
+                                         "sound":  "stone",
+                                         "textures":  "gustmaker_top"
+                                     },
+    "alexsmobs:gustmaker_vertical_on":  {
+                                            "sound":  "stone",
+                                            "textures":  "gustmaker_top"
+                                        },
+    "alexsmobs:hummingbird_feeder":  {
+                                         "sound":  "wood",
+                                         "textures":  "hummingbird_feeder"
+                                     },
+    "alexsmobs:leafcutter_anthill":  {
+                                         "sound":  "grass",
+                                         "textures":  "leafcutter_anthill_top"
+                                     },
+    "alexsmobs:leafcutter_ant_chamber":  {
+                                             "sound":  "grass",
+                                             "textures":  "leafcutter_ant_chamber"
+                                         },
+    "alexsmobs:leafcutter_ant_chamber_fungus":  {
+                                                    "sound":  "grass",
+                                                    "textures":  "leafcutter_ant_chamber_fungus"
+                                                },
+    "alexsmobs:orientable_with_top":  {
+                                          "sound":  "stone",
+                                          "textures":  "orientable_with_top"
+                                      },
+    "alexsmobs:orientable_with_top_vertical":  {
+                                                   "sound":  "stone",
+                                                   "textures":  "orientable_with_top_vertical"
+                                               },
+    "alexsmobs:phantom_sail":  {
+                                   "sound":  "stone",
+                                   "textures":  "phantom_sail_bottom"
+                               },
+    "alexsmobs:phantom_sail_bottom":  {
+                                          "sound":  "stone",
+                                          "textures":  "sail_bottom"
+                                      },
+    "alexsmobs:phantom_sail_middle":  {
+                                          "sound":  "stone",
+                                          "textures":  "sail_bottom"
+                                      },
+    "alexsmobs:phantom_sail_single":  {
+                                          "sound":  "stone",
+                                          "textures":  "phantom_sail_single"
+                                      },
+    "alexsmobs:phantom_sail_top":  {
+                                       "sound":  "stone",
+                                       "textures":  "phantom_sail_top"
+                                   },
+    "alexsmobs:platypus_egg":  {
+                                   "sound":  "stone",
+                                   "textures":  "platypus_eggs"
+                               },
+    "alexsmobs:purpur_planks":  {
+                                    "sound":  "wood",
+                                    "textures":  "purpur_planks"
+                                },
+    "alexsmobs:purpur_planks_inner_stairs":  {
+                                                 "sound":  "wood",
+                                                 "textures":  "purpur_planks"
+                                             },
+    "alexsmobs:purpur_planks_outer_stairs":  {
+                                                 "sound":  "wood",
+                                                 "textures":  "purpur_planks"
+                                             },
+    "alexsmobs:purpur_planks_slab":  {
+                                         "sound":  "wood",
+                                         "textures":  "purpur_planks"
+                                     },
+    "alexsmobs:purpur_planks_stairs":  {
+                                           "sound":  "wood",
+                                           "textures":  "purpur_planks"
+                                       },
+    "alexsmobs:purpur_planks_upper_slab":  {
+                                               "sound":  "wood",
+                                               "textures":  "purpur_planks"
+                                           },
+    "alexsmobs:purpur_planks_wall":  {
+                                         "sound":  "wood",
+                                         "textures":  "purpur_planks_wall"
+                                     },
+    "alexsmobs:purpur_planks_wall_inventory":  {
+                                                   "sound":  "wood",
+                                                   "textures":  "purpur_planks"
+                                               },
+    "alexsmobs:purpur_planks_wall_post":  {
+                                              "sound":  "wood",
+                                              "textures":  "purpur_planks"
+                                          },
+    "alexsmobs:purpur_planks_wall_side":  {
+                                              "sound":  "wood",
+                                              "textures":  "purpur_planks"
+                                          },
+    "alexsmobs:purpur_planks_wall_side_tall":  {
+                                                   "sound":  "wood",
+                                                   "textures":  "purpur_planks"
+                                               },
+    "alexsmobs:rainbow_glass":  {
+                                    "sound":  "glass",
+                                    "textures":  "rainbow_glass"
+                                },
+    "alexsmobs:rainbow_glass_all":  {
+                                        "sound":  "glass",
+                                        "textures":  "rainbow_glass_all"
+                                    },
+    "alexsmobs:rainbow_glass_down":  {
+                                         "sound":  "glass",
+                                         "textures":  "rainbow_glass_all"
+                                     },
+    "alexsmobs:rainbow_glass_left":  {
+                                         "sound":  "glass",
+                                         "textures":  "rainbow_glass_all"
+                                     },
+    "alexsmobs:rainbow_glass_right":  {
+                                          "sound":  "glass",
+                                          "textures":  "rainbow_glass_all"
+                                      },
+    "alexsmobs:rainbow_glass_up":  {
+                                       "sound":  "glass",
+                                       "textures":  "rainbow_glass_all"
+                                   },
+    "alexsmobs:red_sand_circle":  {
+                                      "sound":  "stone",
+                                      "textures":  "red_sand_circle"
+                                  },
+    "alexsmobs:sail":  {
+                           "sound":  "stone",
+                           "textures":  "phantom_sail_bottom"
+                       },
+    "alexsmobs:sand_circle":  {
+                                  "sound":  "stone",
+                                  "textures":  "sand_circle"
+                              },
+    "alexsmobs:sculk_boomer":  {
+                                   "sound":  "stone",
+                                   "textures":  "sculk_boomer"
+                               },
+    "alexsmobs:sculk_boomer_closed":  {
+                                          "sound":  "stone",
+                                          "textures":  "skulk_boomer_top"
+                                      },
+    "alexsmobs:sculk_boomer_locked":  {
+                                          "sound":  "stone",
+                                          "textures":  "skulk_boomer_top"
+                                      },
+    "alexsmobs:sculk_boomer_open":  {
+                                        "sound":  "stone",
+                                        "textures":  "skulk_boomer_top"
+                                    },
+    "alexsmobs:skunk_spray":  {
+                                  "sound":  "stone",
+                                  "textures":  "skunk_spray"
+                              },
+    "alexsmobs:slightly_cracked_caiman_egg":  {
+                                                  "sound":  "stone",
+                                                  "textures":  "caiman_eggs_slightly_cracked"
+                                              },
+    "alexsmobs:slightly_cracked_crocodile_egg":  {
+                                                     "sound":  "stone",
+                                                     "textures":  "crocodile_egg_slightly_cracked"
+                                                 },
+    "alexsmobs:slightly_cracked_platypus_egg":  {
+                                                    "sound":  "stone",
+                                                    "textures":  "platypus_eggs_slightly_cracked"
+                                                },
+    "alexsmobs:slightly_cracked_terrapin_egg":  {
+                                                    "sound":  "stone",
+                                                    "textures":  "terrapin_egg_slightly_cracked"
+                                                },
+    "alexsmobs:spectre_sail":  {
+                                   "sound":  "stone",
+                                   "textures":  "spectre_sail_bottom"
+                               },
+    "alexsmobs:spectre_sail_bottom":  {
+                                          "sound":  "stone",
+                                          "textures":  "sail_bottom"
+                                      },
+    "alexsmobs:spectre_sail_middle":  {
+                                          "sound":  "stone",
+                                          "textures":  "sail_bottom"
+                                      },
+    "alexsmobs:spectre_sail_single":  {
+                                          "sound":  "stone",
+                                          "textures":  "spectre_sail_single"
+                                      },
+    "alexsmobs:spectre_sail_top":  {
+                                       "sound":  "stone",
+                                       "textures":  "spectre_sail_top"
+                                   },
+    "alexsmobs:straddlite_block":  {
+                                       "sound":  "stone",
+                                       "textures":  "straddlite_block"
+                                   },
+    "alexsmobs:template_caiman_egg":  {
+                                          "sound":  "stone",
+                                          "textures":  "template_caiman_egg"
+                                      },
+    "alexsmobs:template_crocodile_egg":  {
+                                             "sound":  "stone",
+                                             "textures":  "crocodile_egg"
+                                         },
+    "alexsmobs:template_four_caiman_eggs":  {
+                                                "sound":  "stone",
+                                                "textures":  "caiman_eggs"
+                                            },
+    "alexsmobs:template_four_crocodile_eggs":  {
+                                                   "sound":  "stone",
+                                                   "textures":  "template_four_crocodile_eggs"
+                                               },
+    "alexsmobs:template_four_platypus_eggs":  {
+                                                  "sound":  "stone",
+                                                  "textures":  "platypus_eggs"
+                                              },
+    "alexsmobs:template_four_terrapin_eggs":  {
+                                                  "sound":  "stone",
+                                                  "textures":  "template_four_terrapin_eggs"
+                                              },
+    "alexsmobs:template_platypus_egg":  {
+                                            "sound":  "stone",
+                                            "textures":  "template_platypus_egg"
+                                        },
+    "alexsmobs:template_terrapin_egg":  {
+                                            "sound":  "stone",
+                                            "textures":  "terrapin_egg"
+                                        },
+    "alexsmobs:template_three_caiman_eggs":  {
+                                                 "sound":  "stone",
+                                                 "textures":  "caiman_eggs"
+                                             },
+    "alexsmobs:template_three_crocodile_eggs":  {
+                                                    "sound":  "stone",
+                                                    "textures":  "template_three_crocodile_eggs"
+                                                },
+    "alexsmobs:template_three_platypus_eggs":  {
+                                                   "sound":  "stone",
+                                                   "textures":  "platypus_eggs"
+                                               },
+    "alexsmobs:template_three_terrapin_eggs":  {
+                                                   "sound":  "stone",
+                                                   "textures":  "template_three_terrapin_eggs"
+                                               },
+    "alexsmobs:template_two_caiman_eggs":  {
+                                               "sound":  "stone",
+                                               "textures":  "caiman_eggs"
+                                           },
+    "alexsmobs:template_two_crocodile_eggs":  {
+                                                  "sound":  "stone",
+                                                  "textures":  "template_two_crocodile_eggs"
+                                              },
+    "alexsmobs:template_two_platypus_eggs":  {
+                                                 "sound":  "stone",
+                                                 "textures":  "platypus_eggs"
+                                             },
+    "alexsmobs:template_two_terrapin_eggs":  {
+                                                 "sound":  "stone",
+                                                 "textures":  "template_two_terrapin_eggs"
+                                             },
+    "alexsmobs:terrapin_egg":  {
+                                   "sound":  "stone",
+                                   "textures":  "terrapin_egg"
+                               },
+    "alexsmobs:three_caiman_eggs":  {
+                                        "sound":  "stone",
+                                        "textures":  "caiman_eggs"
+                                    },
+    "alexsmobs:three_crocodile_eggs":  {
+                                           "sound":  "stone",
+                                           "textures":  "crocodile_egg"
+                                       },
+    "alexsmobs:three_platypus_eggs":  {
+                                          "sound":  "stone",
+                                          "textures":  "platypus_eggs"
+                                      },
+    "alexsmobs:three_slightly_cracked_caiman_eggs":  {
+                                                         "sound":  "stone",
+                                                         "textures":  "caiman_eggs_slightly_cracked"
+                                                     },
+    "alexsmobs:three_slightly_cracked_crocodile_eggs":  {
+                                                            "sound":  "stone",
+                                                            "textures":  "crocodile_egg_slightly_cracked"
+                                                        },
+    "alexsmobs:three_slightly_cracked_platypus_eggs":  {
+                                                           "sound":  "stone",
+                                                           "textures":  "platypus_eggs_slightly_cracked"
+                                                       },
+    "alexsmobs:three_slightly_cracked_terrapin_eggs":  {
+                                                           "sound":  "stone",
+                                                           "textures":  "terrapin_egg_slightly_cracked"
+                                                       },
+    "alexsmobs:three_terrapin_eggs":  {
+                                          "sound":  "stone",
+                                          "textures":  "terrapin_egg"
+                                      },
+    "alexsmobs:three_very_cracked_caiman_eggs":  {
+                                                     "sound":  "stone",
+                                                     "textures":  "caiman_eggs_very_cracked"
+                                                 },
+    "alexsmobs:three_very_cracked_crocodile_eggs":  {
+                                                        "sound":  "stone",
+                                                        "textures":  "crocodile_egg_very_cracked"
+                                                    },
+    "alexsmobs:three_very_cracked_platypus_eggs":  {
+                                                       "sound":  "stone",
+                                                       "textures":  "platypus_eggs_very_cracked"
+                                                   },
+    "alexsmobs:three_very_cracked_terrapin_eggs":  {
+                                                       "sound":  "stone",
+                                                       "textures":  "terrapin_egg_very_cracked"
+                                                   },
+    "alexsmobs:transmutation_table":  {
+                                          "sound":  "stone",
+                                          "textures":  "transmutation_table"
+                                      },
+    "alexsmobs:triops_eggs":  {
+                                  "sound":  "stone",
+                                  "textures":  "triops_eggs"
+                              },
+    "alexsmobs:two_caiman_eggs":  {
+                                      "sound":  "stone",
+                                      "textures":  "caiman_eggs"
+                                  },
+    "alexsmobs:two_crocodile_eggs":  {
+                                         "sound":  "stone",
+                                         "textures":  "crocodile_egg"
+                                     },
+    "alexsmobs:two_platypus_eggs":  {
+                                        "sound":  "stone",
+                                        "textures":  "platypus_eggs"
+                                    },
+    "alexsmobs:two_slightly_cracked_caiman_eggs":  {
+                                                       "sound":  "stone",
+                                                       "textures":  "caiman_eggs_slightly_cracked"
+                                                   },
+    "alexsmobs:two_slightly_cracked_crocodile_eggs":  {
+                                                          "sound":  "stone",
+                                                          "textures":  "crocodile_egg_slightly_cracked"
+                                                      },
+    "alexsmobs:two_slightly_cracked_platypus_eggs":  {
+                                                         "sound":  "stone",
+                                                         "textures":  "platypus_eggs_slightly_cracked"
+                                                     },
+    "alexsmobs:two_slightly_cracked_terrapin_eggs":  {
+                                                         "sound":  "stone",
+                                                         "textures":  "terrapin_egg_very_cracked"
+                                                     },
+    "alexsmobs:two_terrapin_eggs":  {
+                                        "sound":  "stone",
+                                        "textures":  "terrapin_egg"
+                                    },
+    "alexsmobs:two_very_cracked_caiman_eggs":  {
+                                                   "sound":  "stone",
+                                                   "textures":  "caiman_eggs_very_cracked"
+                                               },
+    "alexsmobs:two_very_cracked_crocodile_eggs":  {
+                                                      "sound":  "stone",
+                                                      "textures":  "crocodile_egg_very_cracked"
+                                                  },
+    "alexsmobs:two_very_cracked_platypus_eggs":  {
+                                                     "sound":  "stone",
+                                                     "textures":  "platypus_eggs_very_cracked"
+                                                 },
+    "alexsmobs:two_very_cracked_terrapin_eggs":  {
+                                                     "sound":  "stone",
+                                                     "textures":  "terrapin_egg_slightly_cracked"
+                                                 },
+    "alexsmobs:very_cracked_caiman_egg":  {
+                                              "sound":  "stone",
+                                              "textures":  "caiman_eggs_very_cracked"
+                                          },
+    "alexsmobs:very_cracked_crocodile_egg":  {
+                                                 "sound":  "stone",
+                                                 "textures":  "crocodile_egg_very_cracked"
+                                             },
+    "alexsmobs:very_cracked_platypus_egg":  {
+                                                "sound":  "stone",
+                                                "textures":  "platypus_eggs_very_cracked"
+                                            },
+    "alexsmobs:very_cracked_terrapin_egg":  {
+                                                "sound":  "stone",
+                                                "textures":  "terrapin_egg_very_cracked"
+                                            },
+    "alexsmobs:void_worm_beak":  {
+                                     "sound":  "stone",
+                                     "textures":  "void_worm_beak"
+                                 },
+    "alexsmobs:void_worm_effigy":  {
+                                       "sound":  "stone",
+                                       "textures":  "void_worm_effigy"
+                                   },
+    "alexsmobs:void_worm_effigy_inventory":  {
+                                                 "sound":  "stone",
+                                                 "textures":  "void_worm_effigy"
+                                             },
+    "alexsmobs:wall_inventory":  {
+                                     "sound":  "stone",
+                                     "textures":  "wall_inventory"
+                                 }
 }

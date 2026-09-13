@@ -1,56 +1,54 @@
-{
-  "format_version": "1.20.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "alexsmobs:slightly_cracked_terrapin_egg",
-      "menu_category": {
-        "category": "construction",
-        "group": "itemGroup.name.construction"
-      }
-    },
-    "components": {
-      "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 1.5
-      },
-      "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 6
-      },
-      "minecraft:friction": 0.6,
-      "minecraft:light_dampening": 15,
-      "minecraft:loot": "loot_tables/blocks/slightly_cracked_terrapin_egg.json",
-      "minecraft:geometry": {
-        "identifier": "geometry.slightly_cracked_terrapin_egg"
-      },
-      "minecraft:material_instances": {
-        "*": {
-          "texture": "terrapin_egg_slightly_cracked",
-          "render_method": "opaque"
-        }
-      },
-      "minecraft:selection_box": {
-        "origin": [
-          -1,
-          0,
-          0
-        ],
-        "size": [
-          3,
-          4,
-          3
-        ]
-      },
-      "minecraft:collision_box": {
-        "origin": [
-          -1,
-          0,
-          0
-        ],
-        "size": [
-          3,
-          4,
-          3
-        ]
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.20.0",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "alexsmobs:slightly_cracked_terrapin_egg",
+                                                "menu_category":  {
+                                                                      "category":  "construction",
+                                                                      "group":  "itemGroup.name.construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1.5
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  6
+                                                                                       },
+                                               "minecraft:friction":  0.6,
+                                               "minecraft:light_dampening":  15,
+                                               "minecraft:loot":  "loot_tables/blocks/slightly_cracked_terrapin_egg.json",
+                                               "minecraft:geometry":  "geometry.slightly_cracked_terrapin_egg",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "terrapin_egg_slightly_cracked",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -1,
+                                                                                              0,
+                                                                                              0
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            3,
+                                                                                            4,
+                                                                                            3
+                                                                                        ]
+                                                                           },
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -1,
+                                                                                              0,
+                                                                                              0
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            3,
+                                                                                            4,
+                                                                                            3
+                                                                                        ]
+                                                                           }
+                                           }
+                        }
 }

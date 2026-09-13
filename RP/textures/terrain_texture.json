@@ -1,497 +1,497 @@
-{
-  "resource_pack_name": "Alex's Mobs Addon",
-  "texture_name": "atlas.terrain",
-  "padding": 8,
-  "num_mip_levels": 4,
-  "texture_data": {
-    "banana_peel": {
-      "textures": "textures/blocks/banana_peel"
-    },
-    "banana_slug_slime_block": {
-      "textures": "textures/blocks/banana_slug_slime_block_inventory"
-    },
-    "banana_slug_slime_block_bubbles": {
-      "textures": "textures/blocks/banana_slug_slime_block_bubbles"
-    },
-    "banana_slug_slime_block_inventory": {
-      "textures": "textures/blocks/banana_slug_slime_block_inventory"
-    },
-    "bird_feeder": {
-      "textures": "textures/blocks/bird_feeder"
-    },
-    "bird_feeder_empty": {
-      "textures": "textures/blocks/bird_feeder_empty_hanging"
-    },
-    "bird_feeder_empty_hanging": {
-      "textures": "textures/blocks/bird_feeder_empty_hanging"
-    },
-    "bird_feeder_filled": {
-      "textures": "textures/blocks/bird_feeder_filled_hanging"
-    },
-    "bird_feeder_filled_hanging": {
-      "textures": "textures/blocks/bird_feeder_filled_hanging"
-    },
-    "bird_feeder_hanging": {
-      "textures": "textures/blocks/bird_feeder_hanging"
-    },
-    "bird_feeder_sugar": {
-      "textures": "textures/blocks/bird_feeder_sugar_hanging"
-    },
-    "bird_feeder_sugar_hanging": {
-      "textures": "textures/blocks/bird_feeder_sugar_hanging"
-    },
-    "bird_feeder_water": {
-      "textures": "textures/blocks/bird_feeder_water_hanging"
-    },
-    "bird_feeder_water_hanging": {
-      "textures": "textures/blocks/bird_feeder_water_hanging"
-    },
-    "bison_carpet": {
-      "textures": "textures/blocks/bison_carpet"
-    },
-    "bison_fur": {
-      "textures": "textures/blocks/bison_fur_block"
-    },
-    "bison_fur_block": {
-      "textures": "textures/blocks/bison_fur_block"
-    },
-    "caiman_egg": {
-      "textures": "textures/blocks/caiman_egg"
-    },
-    "caiman_eggs": {
-      "textures": "textures/blocks/two_caiman_eggs"
-    },
-    "capsid": {
-      "textures": "textures/blocks/capsid"
-    },
-    "crocodile_egg": {
-      "textures": "textures/blocks/two_crocodile_eggs"
-    },
-    "crystalized_banana_slug_mucus": {
-      "textures": "textures/blocks/crystalized_banana_slug_mucus"
-    },
-    "end_pirate_door": {
-      "textures": "textures/blocks/end_pirate_door"
-    },
-    "end_pirate_trapdoor": {
-      "textures": "textures/blocks/end_pirate_trapdoor"
-    },
-    "end_pirate_trapdoor_bottom": {
-      "textures": "textures/blocks/end_pirate_trapdoor_bottom"
-    },
-    "end_pirate_trapdoor_open": {
-      "textures": "textures/blocks/end_pirate_trapdoor_open"
-    },
-    "end_pirate_trapdoor_top": {
-      "textures": "textures/blocks/end_pirate_trapdoor_top"
-    },
-    "ender_residue_0": {
-      "textures": "textures/blocks/ender_residue"
-    },
-    "ender_residue_1": {
-      "textures": "textures/blocks/ender_residue_1"
-    },
-    "ender_residue_2": {
-      "textures": "textures/blocks/ender_residue_2"
-    },
-    "ender_residue_3": {
-      "textures": "textures/blocks/ender_residue_3"
-    },
-    "four_caiman_eggs": {
-      "textures": "textures/blocks/four_caiman_eggs"
-    },
-    "four_crocodile_eggs": {
-      "textures": "textures/blocks/four_crocodile_eggs"
-    },
-    "four_platypus_eggs": {
-      "textures": "textures/blocks/four_platypus_eggs"
-    },
-    "platypus_eggs": {
-      "textures": "textures/blocks/two_platypus_eggs"
-    },
-    "four_slightly_cracked_caiman_eggs": {
-      "textures": "textures/blocks/four_slightly_cracked_caiman_eggs"
-    },
-    "caiman_eggs_slightly_cracked": {
-      "textures": "textures/blocks/two_slightly_cracked_caiman_eggs"
-    },
-    "four_slightly_cracked_crocodile_eggs": {
-      "textures": "textures/blocks/four_slightly_cracked_crocodile_eggs"
-    },
-    "crocodile_egg_slightly_cracked": {
-      "textures": "textures/blocks/two_slightly_cracked_crocodile_eggs"
-    },
-    "four_slightly_cracked_platypus_eggs": {
-      "textures": "textures/blocks/four_slightly_cracked_platypus_eggs"
-    },
-    "platypus_eggs_slightly_cracked": {
-      "textures": "textures/blocks/two_slightly_cracked_platypus_eggs"
-    },
-    "four_slightly_cracked_terrapin_eggs": {
-      "textures": "textures/blocks/four_slightly_cracked_terrapin_eggs"
-    },
-    "terrapin_egg_slightly_cracked": {
-      "textures": "textures/blocks/two_very_cracked_terrapin_eggs"
-    },
-    "four_terrapin_eggs": {
-      "textures": "textures/blocks/four_terrapin_eggs"
-    },
-    "terrapin_egg": {
-      "textures": "textures/blocks/two_terrapin_eggs"
-    },
-    "four_very_cracked_caiman_eggs": {
-      "textures": "textures/blocks/four_very_cracked_caiman_eggs"
-    },
-    "caiman_eggs_very_cracked": {
-      "textures": "textures/blocks/very_cracked_caiman_egg"
-    },
-    "four_very_cracked_crocodile_eggs": {
-      "textures": "textures/blocks/four_very_cracked_crocodile_eggs"
-    },
-    "crocodile_egg_very_cracked": {
-      "textures": "textures/blocks/very_cracked_crocodile_egg"
-    },
-    "four_very_cracked_platypus_eggs": {
-      "textures": "textures/blocks/four_very_cracked_platypus_eggs"
-    },
-    "platypus_eggs_very_cracked": {
-      "textures": "textures/blocks/very_cracked_platypus_egg"
-    },
-    "four_very_cracked_terrapin_eggs": {
-      "textures": "textures/blocks/four_very_cracked_terrapin_eggs"
-    },
-    "terrapin_egg_very_cracked": {
-      "textures": "textures/blocks/very_cracked_terrapin_egg"
-    },
-    "gustmaker": {
-      "textures": "textures/blocks/gustmaker"
-    },
-    "gustmaker_top": {
-      "textures": "textures/blocks/gustmaker_vertical_on"
-    },
-    "gustmaker_on": {
-      "textures": "textures/blocks/gustmaker_on"
-    },
-    "gustmaker_vertical": {
-      "textures": "textures/blocks/gustmaker_vertical"
-    },
-    "gustmaker_vertical_on": {
-      "textures": "textures/blocks/gustmaker_vertical_on"
-    },
-    "leafcutter_ant_chamber": {
-      "textures": "textures/blocks/leafcutter_ant_chamber"
-    },
-    "leafcutter_ant_chamber_fungus": {
-      "textures": "textures/blocks/leafcutter_ant_chamber_fungus"
-    },
-    "leafcutter_anthill": {
-      "textures": "textures/blocks/leafcutter_anthill"
-    },
-    "leafcutter_anthill_top": {
-      "textures": "textures/blocks/leafcutter_anthill"
-    },
-    "orientable_with_top": {
-      "textures": "textures/blocks/orientable_with_top"
-    },
-    "orientable_with_top_vertical": {
-      "textures": "textures/blocks/orientable_with_top_vertical"
-    },
-    "phantom_sail_bottom": {
-      "textures": "textures/blocks/phantom_sail"
-    },
-    "sail_bottom": {
-      "textures": "textures/blocks/spectre_sail_middle"
-    },
-    "phantom_sail_middle": {
-      "textures": "textures/blocks/phantom_sail_middle"
-    },
-    "phantom_sail_single": {
-      "textures": "textures/blocks/phantom_sail_single"
-    },
-    "phantom_sail_top": {
-      "textures": "textures/blocks/phantom_sail_top"
-    },
-    "platypus_egg": {
-      "textures": "textures/blocks/platypus_egg"
-    },
-    "purpur_planks": {
-      "textures": "textures/blocks/purpur_planks_wall_side_tall"
-    },
-    "purpur_planks_inner_stairs": {
-      "textures": "textures/blocks/purpur_planks_inner_stairs"
-    },
-    "purpur_planks_outer_stairs": {
-      "textures": "textures/blocks/purpur_planks_outer_stairs"
-    },
-    "purpur_planks_slab": {
-      "textures": "textures/blocks/purpur_planks_slab"
-    },
-    "purpur_planks_stairs": {
-      "textures": "textures/blocks/purpur_planks_stairs"
-    },
-    "purpur_planks_upper_slab": {
-      "textures": "textures/blocks/purpur_planks_upper_slab"
-    },
-    "purpur_planks_wall_inventory": {
-      "textures": "textures/blocks/purpur_planks_wall_inventory"
-    },
-    "purpur_planks_wall_post": {
-      "textures": "textures/blocks/purpur_planks_wall_post"
-    },
-    "purpur_planks_wall_side": {
-      "textures": "textures/blocks/purpur_planks_wall_side"
-    },
-    "purpur_planks_wall_side_tall": {
-      "textures": "textures/blocks/purpur_planks_wall_side_tall"
-    },
-    "rainbow_glass": {
-      "textures": "textures/blocks/rainbow_glass"
-    },
-    "rainbow_glass_all": {
-      "textures": "textures/blocks/rainbow_glass_up"
-    },
-    "rainbow_glass_down": {
-      "textures": "textures/blocks/rainbow_glass_down"
-    },
-    "rainbow_glass_left": {
-      "textures": "textures/blocks/rainbow_glass_left"
-    },
-    "rainbow_glass_right": {
-      "textures": "textures/blocks/rainbow_glass_right"
-    },
-    "rainbow_glass_up": {
-      "textures": "textures/blocks/rainbow_glass_up"
-    },
-    "red_sand_circle": {
-      "textures": "textures/blocks/red_sand_circle"
-    },
-    "sail": {
-      "textures": "textures/blocks/sail"
-    },
-    "sand_circle": {
-      "textures": "textures/blocks/sand_circle"
-    },
-    "sculk_boomer_closed": {
-      "textures": "textures/blocks/sculk_boomer_closed"
-    },
-    "skulk_boomer_top": {
-      "textures": "textures/blocks/sculk_boomer_open"
-    },
-    "sculk_boomer_locked": {
-      "textures": "textures/blocks/sculk_boomer_locked"
-    },
-    "sculk_boomer_open": {
-      "textures": "textures/blocks/sculk_boomer_open"
-    },
-    "skunk_spray": {
-      "textures": "textures/blocks/skunk_spray"
-    },
-    "slightly_cracked_caiman_egg": {
-      "textures": "textures/blocks/slightly_cracked_caiman_egg"
-    },
-    "slightly_cracked_crocodile_egg": {
-      "textures": "textures/blocks/slightly_cracked_crocodile_egg"
-    },
-    "slightly_cracked_platypus_egg": {
-      "textures": "textures/blocks/slightly_cracked_platypus_egg"
-    },
-    "slightly_cracked_terrapin_egg": {
-      "textures": "textures/blocks/slightly_cracked_terrapin_egg"
-    },
-    "spectre_sail_bottom": {
-      "textures": "textures/blocks/spectre_sail"
-    },
-    "spectre_sail_middle": {
-      "textures": "textures/blocks/spectre_sail_middle"
-    },
-    "spectre_sail_single": {
-      "textures": "textures/blocks/spectre_sail_single"
-    },
-    "spectre_sail_top": {
-      "textures": "textures/blocks/spectre_sail_top"
-    },
-    "straddlite_block": {
-      "textures": "textures/blocks/straddlite_block"
-    },
-    "template_caiman_egg": {
-      "textures": "textures/blocks/template_caiman_egg"
-    },
-    "template_crocodile_egg": {
-      "textures": "textures/blocks/template_crocodile_egg"
-    },
-    "template_four_caiman_eggs": {
-      "textures": "textures/blocks/template_four_caiman_eggs"
-    },
-    "template_four_crocodile_eggs": {
-      "textures": "textures/blocks/template_four_crocodile_eggs"
-    },
-    "template_four_platypus_eggs": {
-      "textures": "textures/blocks/template_four_platypus_eggs"
-    },
-    "template_four_terrapin_eggs": {
-      "textures": "textures/blocks/template_four_terrapin_eggs"
-    },
-    "template_platypus_egg": {
-      "textures": "textures/blocks/template_platypus_egg"
-    },
-    "template_terrapin_egg": {
-      "textures": "textures/blocks/template_terrapin_egg"
-    },
-    "template_three_caiman_eggs": {
-      "textures": "textures/blocks/template_three_caiman_eggs"
-    },
-    "template_three_crocodile_eggs": {
-      "textures": "textures/blocks/template_three_crocodile_eggs"
-    },
-    "template_three_platypus_eggs": {
-      "textures": "textures/blocks/template_three_platypus_eggs"
-    },
-    "template_three_terrapin_eggs": {
-      "textures": "textures/blocks/template_three_terrapin_eggs"
-    },
-    "template_two_caiman_eggs": {
-      "textures": "textures/blocks/template_two_caiman_eggs"
-    },
-    "template_two_crocodile_eggs": {
-      "textures": "textures/blocks/template_two_crocodile_eggs"
-    },
-    "template_two_platypus_eggs": {
-      "textures": "textures/blocks/template_two_platypus_eggs"
-    },
-    "template_two_terrapin_eggs": {
-      "textures": "textures/blocks/template_two_terrapin_eggs"
-    },
-    "three_caiman_eggs": {
-      "textures": "textures/blocks/three_caiman_eggs"
-    },
-    "three_crocodile_eggs": {
-      "textures": "textures/blocks/three_crocodile_eggs"
-    },
-    "three_platypus_eggs": {
-      "textures": "textures/blocks/three_platypus_eggs"
-    },
-    "three_slightly_cracked_caiman_eggs": {
-      "textures": "textures/blocks/three_slightly_cracked_caiman_eggs"
-    },
-    "three_slightly_cracked_crocodile_eggs": {
-      "textures": "textures/blocks/three_slightly_cracked_crocodile_eggs"
-    },
-    "three_slightly_cracked_platypus_eggs": {
-      "textures": "textures/blocks/three_slightly_cracked_platypus_eggs"
-    },
-    "three_slightly_cracked_terrapin_eggs": {
-      "textures": "textures/blocks/three_slightly_cracked_terrapin_eggs"
-    },
-    "three_terrapin_eggs": {
-      "textures": "textures/blocks/three_terrapin_eggs"
-    },
-    "three_very_cracked_caiman_eggs": {
-      "textures": "textures/blocks/three_very_cracked_caiman_eggs"
-    },
-    "three_very_cracked_crocodile_eggs": {
-      "textures": "textures/blocks/three_very_cracked_crocodile_eggs"
-    },
-    "three_very_cracked_platypus_eggs": {
-      "textures": "textures/blocks/three_very_cracked_platypus_eggs"
-    },
-    "three_very_cracked_terrapin_eggs": {
-      "textures": "textures/blocks/three_very_cracked_terrapin_eggs"
-    },
-    "transmutation_table": {
-      "textures": "textures/blocks/transmutation_table"
-    },
-    "triops_eggs": {
-      "textures": "textures/blocks/triops_eggs"
-    },
-    "two_caiman_eggs": {
-      "textures": "textures/blocks/two_caiman_eggs"
-    },
-    "two_crocodile_eggs": {
-      "textures": "textures/blocks/two_crocodile_eggs"
-    },
-    "two_platypus_eggs": {
-      "textures": "textures/blocks/two_platypus_eggs"
-    },
-    "two_slightly_cracked_caiman_eggs": {
-      "textures": "textures/blocks/two_slightly_cracked_caiman_eggs"
-    },
-    "two_slightly_cracked_crocodile_eggs": {
-      "textures": "textures/blocks/two_slightly_cracked_crocodile_eggs"
-    },
-    "two_slightly_cracked_platypus_eggs": {
-      "textures": "textures/blocks/two_slightly_cracked_platypus_eggs"
-    },
-    "two_slightly_cracked_terrapin_eggs": {
-      "textures": "textures/blocks/two_slightly_cracked_terrapin_eggs"
-    },
-    "two_terrapin_eggs": {
-      "textures": "textures/blocks/two_terrapin_eggs"
-    },
-    "two_very_cracked_caiman_eggs": {
-      "textures": "textures/blocks/two_very_cracked_caiman_eggs"
-    },
-    "two_very_cracked_crocodile_eggs": {
-      "textures": "textures/blocks/two_very_cracked_crocodile_eggs"
-    },
-    "two_very_cracked_platypus_eggs": {
-      "textures": "textures/blocks/two_very_cracked_platypus_eggs"
-    },
-    "two_very_cracked_terrapin_eggs": {
-      "textures": "textures/blocks/two_very_cracked_terrapin_eggs"
-    },
-    "very_cracked_caiman_egg": {
-      "textures": "textures/blocks/very_cracked_caiman_egg"
-    },
-    "very_cracked_crocodile_egg": {
-      "textures": "textures/blocks/very_cracked_crocodile_egg"
-    },
-    "very_cracked_platypus_egg": {
-      "textures": "textures/blocks/very_cracked_platypus_egg"
-    },
-    "very_cracked_terrapin_egg": {
-      "textures": "textures/blocks/very_cracked_terrapin_egg"
-    },
-    "void_worm_beak": {
-      "textures": "textures/blocks/void_worm_beak"
-    },
-    "void_worm_effigy": {
-      "textures": "textures/blocks/void_worm_effigy_inventory"
-    },
-    "void_worm_effigy_inventory": {
-      "textures": "textures/blocks/void_worm_effigy_inventory"
-    },
-    "wall_inventory": {
-      "textures": "textures/blocks/wall_inventory"
-    },
-    "end_pirate_anchor": {
-      "textures": "textures/blocks/end_pirate_anchor"
-    },
-    "end_pirate_anchor_winch": {
-      "textures": "textures/blocks/end_pirate_anchor_winch"
-    },
-    "end_pirate_flag": {
-      "textures": "textures/blocks/end_pirate_flag"
-    },
-    "end_pirate_ship_wheel": {
-      "textures": "textures/blocks/end_pirate_ship_wheel"
-    },
-    "ender_residue": {
-      "textures": "textures/blocks/ender_residue"
-    },
-    "hummingbird_feeder": {
-      "textures": "textures/blocks/hummingbird_feeder"
-    },
-    "phantom_sail": {
-      "textures": "textures/blocks/phantom_sail"
-    },
-    "purpur_planks_wall": {
-      "textures": "textures/blocks/purpur_planks_wall"
-    },
-    "sculk_boomer": {
-      "textures": "textures/blocks/sculk_boomer"
-    },
-    "spectre_sail": {
-      "textures": "textures/blocks/spectre_sail"
-    }
-  }
+﻿{
+    "resource_pack_name":  "Alex\u0027s Mobs Addon",
+    "texture_name":  "atlas.terrain",
+    "padding":  8,
+    "num_mip_levels":  4,
+    "texture_data":  {
+                         "banana_peel":  {
+                                             "textures":  "textures/blocks/banana_peel"
+                                         },
+                         "banana_slug_slime_block":  {
+                                                         "textures":  "textures/blocks/banana_slug_slime_block_inventory"
+                                                     },
+                         "banana_slug_slime_block_bubbles":  {
+                                                                 "textures":  "textures/blocks/banana_slug_slime_block_bubbles"
+                                                             },
+                         "banana_slug_slime_block_inventory":  {
+                                                                   "textures":  "textures/blocks/banana_slug_slime_block_inventory"
+                                                               },
+                         "bird_feeder":  {
+                                             "textures":  "textures/blocks/bird_feeder"
+                                         },
+                         "bird_feeder_empty":  {
+                                                   "textures":  "textures/blocks/bird_feeder_empty_hanging"
+                                               },
+                         "bird_feeder_empty_hanging":  {
+                                                           "textures":  "textures/blocks/bird_feeder_empty_hanging"
+                                                       },
+                         "bird_feeder_filled":  {
+                                                    "textures":  "textures/blocks/bird_feeder_filled_hanging"
+                                                },
+                         "bird_feeder_filled_hanging":  {
+                                                            "textures":  "textures/blocks/bird_feeder_filled_hanging"
+                                                        },
+                         "bird_feeder_hanging":  {
+                                                     "textures":  "textures/blocks/bird_feeder_empty_hanging"
+                                                 },
+                         "bird_feeder_sugar":  {
+                                                   "textures":  "textures/blocks/bird_feeder_sugar_hanging"
+                                               },
+                         "bird_feeder_sugar_hanging":  {
+                                                           "textures":  "textures/blocks/bird_feeder_sugar_hanging"
+                                                       },
+                         "bird_feeder_water":  {
+                                                   "textures":  "textures/blocks/bird_feeder_water_hanging"
+                                               },
+                         "bird_feeder_water_hanging":  {
+                                                           "textures":  "textures/blocks/bird_feeder_water_hanging"
+                                                       },
+                         "bison_carpet":  {
+                                              "textures":  "textures/blocks/bison_carpet"
+                                          },
+                         "bison_fur":  {
+                                           "textures":  "textures/blocks/bison_fur_block"
+                                       },
+                         "bison_fur_block":  {
+                                                 "textures":  "textures/blocks/bison_fur_block"
+                                             },
+                         "caiman_egg":  {
+                                            "textures":  "textures/blocks/caiman_egg"
+                                        },
+                         "caiman_eggs":  {
+                                             "textures":  "textures/blocks/caiman_egg"
+                                         },
+                         "capsid":  {
+                                        "textures":  "textures/blocks/capsid"
+                                    },
+                         "crocodile_egg":  {
+                                               "textures":  "textures/blocks/crocodile_egg"
+                                           },
+                         "crystalized_banana_slug_mucus":  {
+                                                               "textures":  "textures/blocks/crystalized_banana_slug_mucus"
+                                                           },
+                         "end_pirate_door":  {
+                                                 "textures":  "textures/blocks/end_pirate_door"
+                                             },
+                         "end_pirate_trapdoor":  {
+                                                     "textures":  "textures/blocks/end_pirate_trapdoor"
+                                                 },
+                         "end_pirate_trapdoor_bottom":  {
+                                                            "textures":  "textures/blocks/end_pirate_trapdoor_bottom"
+                                                        },
+                         "end_pirate_trapdoor_open":  {
+                                                          "textures":  "textures/blocks/end_pirate_trapdoor_open"
+                                                      },
+                         "end_pirate_trapdoor_top":  {
+                                                         "textures":  "textures/blocks/end_pirate_trapdoor_top"
+                                                     },
+                         "ender_residue_0":  {
+                                                 "textures":  "textures/blocks/ender_residue"
+                                             },
+                         "ender_residue_1":  {
+                                                 "textures":  "textures/blocks/ender_residue_1"
+                                             },
+                         "ender_residue_2":  {
+                                                 "textures":  "textures/blocks/ender_residue_2"
+                                             },
+                         "ender_residue_3":  {
+                                                 "textures":  "textures/blocks/ender_residue_3"
+                                             },
+                         "four_caiman_eggs":  {
+                                                  "textures":  "textures/blocks/four_caiman_eggs"
+                                              },
+                         "four_crocodile_eggs":  {
+                                                     "textures":  "textures/blocks/four_crocodile_eggs"
+                                                 },
+                         "four_platypus_eggs":  {
+                                                    "textures":  "textures/blocks/four_platypus_eggs"
+                                                },
+                         "platypus_eggs":  {
+                                               "textures":  "textures/blocks/platypus_egg"
+                                           },
+                         "four_slightly_cracked_caiman_eggs":  {
+                                                                   "textures":  "textures/blocks/four_slightly_cracked_caiman_eggs"
+                                                               },
+                         "caiman_eggs_slightly_cracked":  {
+                                                              "textures":  "textures/blocks/two_slightly_cracked_caiman_eggs"
+                                                          },
+                         "four_slightly_cracked_crocodile_eggs":  {
+                                                                      "textures":  "textures/blocks/four_slightly_cracked_crocodile_eggs"
+                                                                  },
+                         "crocodile_egg_slightly_cracked":  {
+                                                                "textures":  "textures/blocks/two_slightly_cracked_crocodile_eggs"
+                                                            },
+                         "four_slightly_cracked_platypus_eggs":  {
+                                                                     "textures":  "textures/blocks/four_slightly_cracked_platypus_eggs"
+                                                                 },
+                         "platypus_eggs_slightly_cracked":  {
+                                                                "textures":  "textures/blocks/two_slightly_cracked_platypus_eggs"
+                                                            },
+                         "four_slightly_cracked_terrapin_eggs":  {
+                                                                     "textures":  "textures/blocks/four_slightly_cracked_terrapin_eggs"
+                                                                 },
+                         "terrapin_egg_slightly_cracked":  {
+                                                               "textures":  "textures/blocks/two_very_cracked_terrapin_eggs"
+                                                           },
+                         "four_terrapin_eggs":  {
+                                                    "textures":  "textures/blocks/four_terrapin_eggs"
+                                                },
+                         "terrapin_egg":  {
+                                              "textures":  "textures/blocks/terrapin_egg"
+                                          },
+                         "four_very_cracked_caiman_eggs":  {
+                                                               "textures":  "textures/blocks/four_very_cracked_caiman_eggs"
+                                                           },
+                         "caiman_eggs_very_cracked":  {
+                                                          "textures":  "textures/blocks/very_cracked_caiman_egg"
+                                                      },
+                         "four_very_cracked_crocodile_eggs":  {
+                                                                  "textures":  "textures/blocks/four_very_cracked_crocodile_eggs"
+                                                              },
+                         "crocodile_egg_very_cracked":  {
+                                                            "textures":  "textures/blocks/very_cracked_crocodile_egg"
+                                                        },
+                         "four_very_cracked_platypus_eggs":  {
+                                                                 "textures":  "textures/blocks/four_very_cracked_platypus_eggs"
+                                                             },
+                         "platypus_eggs_very_cracked":  {
+                                                            "textures":  "textures/blocks/very_cracked_platypus_egg"
+                                                        },
+                         "four_very_cracked_terrapin_eggs":  {
+                                                                 "textures":  "textures/blocks/four_very_cracked_terrapin_eggs"
+                                                             },
+                         "terrapin_egg_very_cracked":  {
+                                                           "textures":  "textures/blocks/very_cracked_terrapin_egg"
+                                                       },
+                         "gustmaker":  {
+                                           "textures":  "textures/blocks/gustmaker"
+                                       },
+                         "gustmaker_top":  {
+                                               "textures":  "textures/blocks/gustmaker_vertical_on"
+                                           },
+                         "gustmaker_on":  {
+                                              "textures":  "textures/blocks/gustmaker_on"
+                                          },
+                         "gustmaker_vertical":  {
+                                                    "textures":  "textures/blocks/gustmaker_vertical"
+                                                },
+                         "gustmaker_vertical_on":  {
+                                                       "textures":  "textures/blocks/gustmaker_vertical_on"
+                                                   },
+                         "leafcutter_ant_chamber":  {
+                                                        "textures":  "textures/blocks/leafcutter_ant_chamber"
+                                                    },
+                         "leafcutter_ant_chamber_fungus":  {
+                                                               "textures":  "textures/blocks/leafcutter_ant_chamber_fungus"
+                                                           },
+                         "leafcutter_anthill":  {
+                                                    "textures":  "textures/blocks/leafcutter_anthill"
+                                                },
+                         "leafcutter_anthill_top":  {
+                                                        "textures":  "textures/blocks/leafcutter_anthill"
+                                                    },
+                         "orientable_with_top":  {
+                                                     "textures":  "textures/blocks/purpur_planks"
+                                                 },
+                         "orientable_with_top_vertical":  {
+                                                              "textures":  "textures/blocks/purpur_planks"
+                                                          },
+                         "phantom_sail_bottom":  {
+                                                     "textures":  "textures/blocks/phantom_sail"
+                                                 },
+                         "sail_bottom":  {
+                                             "textures":  "textures/blocks/spectre_sail_middle"
+                                         },
+                         "phantom_sail_middle":  {
+                                                     "textures":  "textures/blocks/phantom_sail_middle"
+                                                 },
+                         "phantom_sail_single":  {
+                                                     "textures":  "textures/blocks/phantom_sail_single"
+                                                 },
+                         "phantom_sail_top":  {
+                                                  "textures":  "textures/blocks/phantom_sail_top"
+                                              },
+                         "platypus_egg":  {
+                                              "textures":  "textures/blocks/platypus_egg"
+                                          },
+                         "purpur_planks":  {
+                                               "textures":  "textures/blocks/purpur_planks_wall_side_tall"
+                                           },
+                         "purpur_planks_inner_stairs":  {
+                                                            "textures":  "textures/blocks/purpur_planks_inner_stairs"
+                                                        },
+                         "purpur_planks_outer_stairs":  {
+                                                            "textures":  "textures/blocks/purpur_planks_outer_stairs"
+                                                        },
+                         "purpur_planks_slab":  {
+                                                    "textures":  "textures/blocks/purpur_planks_slab"
+                                                },
+                         "purpur_planks_stairs":  {
+                                                      "textures":  "textures/blocks/purpur_planks_stairs"
+                                                  },
+                         "purpur_planks_upper_slab":  {
+                                                          "textures":  "textures/blocks/purpur_planks_upper_slab"
+                                                      },
+                         "purpur_planks_wall_inventory":  {
+                                                              "textures":  "textures/blocks/purpur_planks_wall_inventory"
+                                                          },
+                         "purpur_planks_wall_post":  {
+                                                         "textures":  "textures/blocks/purpur_planks_wall_post"
+                                                     },
+                         "purpur_planks_wall_side":  {
+                                                         "textures":  "textures/blocks/purpur_planks_wall_side"
+                                                     },
+                         "purpur_planks_wall_side_tall":  {
+                                                              "textures":  "textures/blocks/purpur_planks_wall_side_tall"
+                                                          },
+                         "rainbow_glass":  {
+                                               "textures":  "textures/blocks/rainbow_glass"
+                                           },
+                         "rainbow_glass_all":  {
+                                                   "textures":  "textures/blocks/rainbow_glass_up"
+                                               },
+                         "rainbow_glass_down":  {
+                                                    "textures":  "textures/blocks/rainbow_glass_down"
+                                                },
+                         "rainbow_glass_left":  {
+                                                    "textures":  "textures/blocks/rainbow_glass_left"
+                                                },
+                         "rainbow_glass_right":  {
+                                                     "textures":  "textures/blocks/rainbow_glass_right"
+                                                 },
+                         "rainbow_glass_up":  {
+                                                  "textures":  "textures/blocks/rainbow_glass_up"
+                                              },
+                         "red_sand_circle":  {
+                                                 "textures":  "textures/blocks/red_sand_circle"
+                                             },
+                         "sail":  {
+                                      "textures":  "textures/blocks/sail"
+                                  },
+                         "sand_circle":  {
+                                             "textures":  "textures/blocks/sand_circle"
+                                         },
+                         "sculk_boomer_closed":  {
+                                                     "textures":  "textures/blocks/sculk_boomer_closed"
+                                                 },
+                         "skulk_boomer_top":  {
+                                                  "textures":  "textures/blocks/sculk_boomer_open"
+                                              },
+                         "sculk_boomer_locked":  {
+                                                     "textures":  "textures/blocks/sculk_boomer_locked"
+                                                 },
+                         "sculk_boomer_open":  {
+                                                   "textures":  "textures/blocks/sculk_boomer_open"
+                                               },
+                         "skunk_spray":  {
+                                             "textures":  "textures/blocks/skunk_spray"
+                                         },
+                         "slightly_cracked_caiman_egg":  {
+                                                             "textures":  "textures/blocks/slightly_cracked_caiman_egg"
+                                                         },
+                         "slightly_cracked_crocodile_egg":  {
+                                                                "textures":  "textures/blocks/slightly_cracked_crocodile_egg"
+                                                            },
+                         "slightly_cracked_platypus_egg":  {
+                                                               "textures":  "textures/blocks/slightly_cracked_platypus_egg"
+                                                           },
+                         "slightly_cracked_terrapin_egg":  {
+                                                               "textures":  "textures/blocks/slightly_cracked_terrapin_egg"
+                                                           },
+                         "spectre_sail_bottom":  {
+                                                     "textures":  "textures/blocks/spectre_sail"
+                                                 },
+                         "spectre_sail_middle":  {
+                                                     "textures":  "textures/blocks/spectre_sail_middle"
+                                                 },
+                         "spectre_sail_single":  {
+                                                     "textures":  "textures/blocks/spectre_sail_single"
+                                                 },
+                         "spectre_sail_top":  {
+                                                  "textures":  "textures/blocks/spectre_sail_top"
+                                              },
+                         "straddlite_block":  {
+                                                  "textures":  "textures/blocks/straddlite_block"
+                                              },
+                         "template_caiman_egg":  {
+                                                     "textures":  "textures/blocks/caiman_egg"
+                                                 },
+                         "template_crocodile_egg":  {
+                                                        "textures":  "textures/blocks/template_crocodile_egg"
+                                                    },
+                         "template_four_caiman_eggs":  {
+                                                           "textures":  "textures/blocks/template_four_caiman_eggs"
+                                                       },
+                         "template_four_crocodile_eggs":  {
+                                                              "textures":  "textures/blocks/four_crocodile_eggs"
+                                                          },
+                         "template_four_platypus_eggs":  {
+                                                             "textures":  "textures/blocks/template_four_platypus_eggs"
+                                                         },
+                         "template_four_terrapin_eggs":  {
+                                                             "textures":  "textures/blocks/four_terrapin_eggs"
+                                                         },
+                         "template_platypus_egg":  {
+                                                       "textures":  "textures/blocks/platypus_egg"
+                                                   },
+                         "template_terrapin_egg":  {
+                                                       "textures":  "textures/blocks/template_terrapin_egg"
+                                                   },
+                         "template_three_caiman_eggs":  {
+                                                            "textures":  "textures/blocks/template_three_caiman_eggs"
+                                                        },
+                         "template_three_crocodile_eggs":  {
+                                                               "textures":  "textures/blocks/three_crocodile_eggs"
+                                                           },
+                         "template_three_platypus_eggs":  {
+                                                              "textures":  "textures/blocks/template_three_platypus_eggs"
+                                                          },
+                         "template_three_terrapin_eggs":  {
+                                                              "textures":  "textures/blocks/three_terrapin_eggs"
+                                                          },
+                         "template_two_caiman_eggs":  {
+                                                          "textures":  "textures/blocks/template_two_caiman_eggs"
+                                                      },
+                         "template_two_crocodile_eggs":  {
+                                                             "textures":  "textures/blocks/two_crocodile_eggs"
+                                                         },
+                         "template_two_platypus_eggs":  {
+                                                            "textures":  "textures/blocks/template_two_platypus_eggs"
+                                                        },
+                         "template_two_terrapin_eggs":  {
+                                                            "textures":  "textures/blocks/two_terrapin_eggs"
+                                                        },
+                         "three_caiman_eggs":  {
+                                                   "textures":  "textures/blocks/three_caiman_eggs"
+                                               },
+                         "three_crocodile_eggs":  {
+                                                      "textures":  "textures/blocks/three_crocodile_eggs"
+                                                  },
+                         "three_platypus_eggs":  {
+                                                     "textures":  "textures/blocks/three_platypus_eggs"
+                                                 },
+                         "three_slightly_cracked_caiman_eggs":  {
+                                                                    "textures":  "textures/blocks/three_slightly_cracked_caiman_eggs"
+                                                                },
+                         "three_slightly_cracked_crocodile_eggs":  {
+                                                                       "textures":  "textures/blocks/three_slightly_cracked_crocodile_eggs"
+                                                                   },
+                         "three_slightly_cracked_platypus_eggs":  {
+                                                                      "textures":  "textures/blocks/three_slightly_cracked_platypus_eggs"
+                                                                  },
+                         "three_slightly_cracked_terrapin_eggs":  {
+                                                                      "textures":  "textures/blocks/three_slightly_cracked_terrapin_eggs"
+                                                                  },
+                         "three_terrapin_eggs":  {
+                                                     "textures":  "textures/blocks/three_terrapin_eggs"
+                                                 },
+                         "three_very_cracked_caiman_eggs":  {
+                                                                "textures":  "textures/blocks/three_very_cracked_caiman_eggs"
+                                                            },
+                         "three_very_cracked_crocodile_eggs":  {
+                                                                   "textures":  "textures/blocks/three_very_cracked_crocodile_eggs"
+                                                               },
+                         "three_very_cracked_platypus_eggs":  {
+                                                                  "textures":  "textures/blocks/three_very_cracked_platypus_eggs"
+                                                              },
+                         "three_very_cracked_terrapin_eggs":  {
+                                                                  "textures":  "textures/blocks/three_very_cracked_terrapin_eggs"
+                                                              },
+                         "transmutation_table":  {
+                                                     "textures":  "textures/entity/transmutation_table"
+                                                 },
+                         "triops_eggs":  {
+                                             "textures":  "textures/blocks/triops_eggs"
+                                         },
+                         "two_caiman_eggs":  {
+                                                 "textures":  "textures/blocks/two_caiman_eggs"
+                                             },
+                         "two_crocodile_eggs":  {
+                                                    "textures":  "textures/blocks/two_crocodile_eggs"
+                                                },
+                         "two_platypus_eggs":  {
+                                                   "textures":  "textures/blocks/two_platypus_eggs"
+                                               },
+                         "two_slightly_cracked_caiman_eggs":  {
+                                                                  "textures":  "textures/blocks/two_slightly_cracked_caiman_eggs"
+                                                              },
+                         "two_slightly_cracked_crocodile_eggs":  {
+                                                                     "textures":  "textures/blocks/two_slightly_cracked_crocodile_eggs"
+                                                                 },
+                         "two_slightly_cracked_platypus_eggs":  {
+                                                                    "textures":  "textures/blocks/two_slightly_cracked_platypus_eggs"
+                                                                },
+                         "two_slightly_cracked_terrapin_eggs":  {
+                                                                    "textures":  "textures/blocks/two_slightly_cracked_terrapin_eggs"
+                                                                },
+                         "two_terrapin_eggs":  {
+                                                   "textures":  "textures/blocks/two_terrapin_eggs"
+                                               },
+                         "two_very_cracked_caiman_eggs":  {
+                                                              "textures":  "textures/blocks/two_very_cracked_caiman_eggs"
+                                                          },
+                         "two_very_cracked_crocodile_eggs":  {
+                                                                 "textures":  "textures/blocks/two_very_cracked_crocodile_eggs"
+                                                             },
+                         "two_very_cracked_platypus_eggs":  {
+                                                                "textures":  "textures/blocks/two_very_cracked_platypus_eggs"
+                                                            },
+                         "two_very_cracked_terrapin_eggs":  {
+                                                                "textures":  "textures/blocks/two_very_cracked_terrapin_eggs"
+                                                            },
+                         "very_cracked_caiman_egg":  {
+                                                         "textures":  "textures/blocks/very_cracked_caiman_egg"
+                                                     },
+                         "very_cracked_crocodile_egg":  {
+                                                            "textures":  "textures/blocks/very_cracked_crocodile_egg"
+                                                        },
+                         "very_cracked_platypus_egg":  {
+                                                           "textures":  "textures/blocks/very_cracked_platypus_egg"
+                                                       },
+                         "very_cracked_terrapin_egg":  {
+                                                           "textures":  "textures/blocks/very_cracked_terrapin_egg"
+                                                       },
+                         "void_worm_beak":  {
+                                                "textures":  "textures/entity/void_worm_beak"
+                                            },
+                         "void_worm_effigy":  {
+                                                  "textures":  "textures/blocks/void_worm_effigy_inventory"
+                                              },
+                         "void_worm_effigy_inventory":  {
+                                                            "textures":  "textures/blocks/void_worm_effigy_inventory"
+                                                        },
+                         "wall_inventory":  {
+                                                "textures":  "textures/blocks/purpur_planks_wall_inventory"
+                                            },
+                         "end_pirate_anchor":  {
+                                                   "textures":  "textures/entity/anchor"
+                                               },
+                         "end_pirate_anchor_winch":  {
+                                                         "textures":  "textures/entity/anchor_winch"
+                                                     },
+                         "end_pirate_flag":  {
+                                                 "textures":  "textures/items/end_pirate_flag"
+                                             },
+                         "end_pirate_ship_wheel":  {
+                                                       "textures":  "textures/entity/ship_wheel"
+                                                   },
+                         "ender_residue":  {
+                                               "textures":  "textures/blocks/ender_residue"
+                                           },
+                         "hummingbird_feeder":  {
+                                                    "textures":  "textures/blocks/bird_feeder"
+                                                },
+                         "phantom_sail":  {
+                                              "textures":  "textures/blocks/phantom_sail"
+                                          },
+                         "purpur_planks_wall":  {
+                                                    "textures":  "textures/blocks/purpur_planks_wall_post"
+                                                },
+                         "sculk_boomer":  {
+                                              "textures":  "textures/blocks/sculk_boomer_closed"
+                                          },
+                         "spectre_sail":  {
+                                              "textures":  "textures/blocks/spectre_sail"
+                                          }
+                     }
 }

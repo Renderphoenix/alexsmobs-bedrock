@@ -1,56 +1,54 @@
-{
-  "format_version": "1.20.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "alexsmobs:bird_feeder",
-      "menu_category": {
-        "category": "construction",
-        "group": "itemGroup.name.construction"
-      }
-    },
-    "components": {
-      "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 1.5
-      },
-      "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 6
-      },
-      "minecraft:friction": 0.6,
-      "minecraft:light_dampening": 15,
-      "minecraft:loot": "loot_tables/blocks/bird_feeder.json",
-      "minecraft:geometry": {
-        "identifier": "geometry.bird_feeder"
-      },
-      "minecraft:material_instances": {
-        "*": {
-          "texture": "bird_feeder_empty",
-          "render_method": "opaque"
-        }
-      },
-      "minecraft:selection_box": {
-        "origin": [
-          -3,
-          0,
-          -3
-        ],
-        "size": [
-          6,
-          11.9,
-          6
-        ]
-      },
-      "minecraft:collision_box": {
-        "origin": [
-          -3,
-          0,
-          -3
-        ],
-        "size": [
-          6,
-          11.9,
-          6
-        ]
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.20.0",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "alexsmobs:bird_feeder",
+                                                "menu_category":  {
+                                                                      "category":  "construction",
+                                                                      "group":  "itemGroup.name.construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1.5
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  6
+                                                                                       },
+                                               "minecraft:friction":  0.6,
+                                               "minecraft:light_dampening":  15,
+                                               "minecraft:loot":  "loot_tables/blocks/bird_feeder.json",
+                                               "minecraft:geometry":  "geometry.bird_feeder",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "bird_feeder_empty",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -3,
+                                                                                              0,
+                                                                                              -3
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            6,
+                                                                                            11.9,
+                                                                                            6
+                                                                                        ]
+                                                                           },
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -3,
+                                                                                              0,
+                                                                                              -3
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            6,
+                                                                                            11.9,
+                                                                                            6
+                                                                                        ]
+                                                                           }
+                                           }
+                        }
 }

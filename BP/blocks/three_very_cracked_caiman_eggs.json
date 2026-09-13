@@ -1,56 +1,54 @@
-{
-  "format_version": "1.20.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "alexsmobs:three_very_cracked_caiman_eggs",
-      "menu_category": {
-        "category": "construction",
-        "group": "itemGroup.name.construction"
-      }
-    },
-    "components": {
-      "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 1.5
-      },
-      "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 6
-      },
-      "minecraft:friction": 0.6,
-      "minecraft:light_dampening": 15,
-      "minecraft:loot": "loot_tables/blocks/three_very_cracked_caiman_eggs.json",
-      "minecraft:geometry": {
-        "identifier": "geometry.three_very_cracked_caiman_eggs"
-      },
-      "minecraft:material_instances": {
-        "*": {
-          "texture": "caiman_eggs_very_cracked",
-          "render_method": "opaque"
-        }
-      },
-      "minecraft:selection_box": {
-        "origin": [
-          -3,
-          0,
-          -4
-        ],
-        "size": [
-          7,
-          6,
-          8
-        ]
-      },
-      "minecraft:collision_box": {
-        "origin": [
-          -3,
-          0,
-          -4
-        ],
-        "size": [
-          7,
-          6,
-          8
-        ]
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.20.0",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "alexsmobs:three_very_cracked_caiman_eggs",
+                                                "menu_category":  {
+                                                                      "category":  "construction",
+                                                                      "group":  "itemGroup.name.construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1.5
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  6
+                                                                                       },
+                                               "minecraft:friction":  0.6,
+                                               "minecraft:light_dampening":  15,
+                                               "minecraft:loot":  "loot_tables/blocks/three_very_cracked_caiman_eggs.json",
+                                               "minecraft:geometry":  "geometry.three_very_cracked_caiman_eggs",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "caiman_eggs_very_cracked",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -3,
+                                                                                              0,
+                                                                                              -4
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            7,
+                                                                                            6,
+                                                                                            8
+                                                                                        ]
+                                                                           },
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -3,
+                                                                                              0,
+                                                                                              -4
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            7,
+                                                                                            6,
+                                                                                            8
+                                                                                        ]
+                                                                           }
+                                           }
+                        }
 }

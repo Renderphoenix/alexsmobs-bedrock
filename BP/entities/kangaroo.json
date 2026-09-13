@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -18,14 +18,14 @@
                                                                    "minecraft:ageable":  {
                                                                                              "duration":  1200,
                                                                                              "feed_items":  [
-                                                                                                                 "minecraft:carrot",
-                                                                                                                 "minecraft:golden_carrot",
-                                                                                                                 "minecraft:wheat",
-                                                                                                                 "minecraft:apple",
-                                                                                                                 "minecraft:grass",
-                                                                                                                 "minecraft:tallgrass",
-                                                                                                                 "minecraft:dead_bush"
-                                                                                                             ],
+                                                                                                                "minecraft:carrot",
+                                                                                                                "minecraft:golden_carrot",
+                                                                                                                "minecraft:wheat",
+                                                                                                                "minecraft:apple",
+                                                                                                                "minecraft:grass",
+                                                                                                                "minecraft:tallgrass",
+                                                                                                                "minecraft:dead_bush"
+                                                                                                            ],
                                                                                              "grow_up":  {
                                                                                                              "event":  "grow_up",
                                                                                                              "target":  "self"
@@ -84,7 +84,7 @@
                                                                              },
                                                 "minecraft:jump.static":  {
 
-                                                                           },
+                                                                          },
                                                 "minecraft:can_climb":  {
 
                                                                         },
@@ -126,12 +126,6 @@
                                                 "minecraft:behavior.float":  {
                                                                                  "priority":  2
                                                                              },
-                                                "minecraft:behavior.follow_owner":  {
-                                                                                        "priority":  2,
-                                                                                        "speed_multiplier":  1.2,
-                                                                                        "start_distance":  10,
-                                                                                        "stop_distance":  2
-                                                                                    },
                                                 "minecraft:behavior.tempt":  {
                                                                                  "priority":  4,
                                                                                  "speed_multiplier":  1.2,
@@ -162,7 +156,7 @@
                                                                                       },
                                                 "minecraft:despawn":  {
                                                                           "despawn_from_distance":  {
-                                                                                                        "min_distance":  32,
+                                                                                                        "min_distance":  40,
                                                                                                         "max_distance":  128
                                                                                                     }
                                                                       },

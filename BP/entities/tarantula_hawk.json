@@ -98,12 +98,6 @@
                                                 "minecraft:attack":  {
                                                                          "damage":  5
                                                                      },
-                                                "minecraft:behavior.follow_owner":  {
-                                                                                        "priority":  2,
-                                                                                        "speed_multiplier":  1.2,
-                                                                                        "start_distance":  10,
-                                                                                        "stop_distance":  2
-                                                                                    },
                                                 "minecraft:behavior.panic":  {
                                                                                  "priority":  3,
                                                                                  "speed_multiplier":  1.35
@@ -150,7 +144,7 @@
                                                                                                  },
                                                 "minecraft:despawn":  {
                                                                           "despawn_from_distance":  {
-                                                                                                        "min_distance":  32,
+                                                                                                        "min_distance":  40,
                                                                                                         "max_distance":  128
                                                                                                     }
                                                                       },

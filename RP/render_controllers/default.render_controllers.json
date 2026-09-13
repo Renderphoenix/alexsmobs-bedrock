@@ -11,6 +11,28 @@
       "textures": [
         "Texture.default"
       ]
+    },
+    "controller.render.variant": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.textures[query.variant]"
+      ]
+    },
+    "controller.render.bison": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "query.is_baby ? Texture.baby : (query.is_sheared ? Texture.sheared : Texture.default)"
+      ]
     }
   }
 }

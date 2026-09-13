@@ -1,56 +1,54 @@
-{
-  "format_version": "1.20.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "alexsmobs:template_three_crocodile_eggs",
-      "menu_category": {
-        "category": "construction",
-        "group": "itemGroup.name.construction"
-      }
-    },
-    "components": {
-      "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 1.5
-      },
-      "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 6
-      },
-      "minecraft:friction": 0.6,
-      "minecraft:light_dampening": 15,
-      "minecraft:loot": "loot_tables/blocks/template_three_crocodile_eggs.json",
-      "minecraft:geometry": {
-        "identifier": "geometry.template_three_crocodile_eggs"
-      },
-      "minecraft:material_instances": {
-        "*": {
-          "texture": "template_three_crocodile_eggs",
-          "render_method": "opaque"
-        }
-      },
-      "minecraft:selection_box": {
-        "origin": [
-          -5,
-          0,
-          -3
-        ],
-        "size": [
-          9,
-          6,
-          7
-        ]
-      },
-      "minecraft:collision_box": {
-        "origin": [
-          -5,
-          0,
-          -3
-        ],
-        "size": [
-          9,
-          6,
-          7
-        ]
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.20.0",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "alexsmobs:template_three_crocodile_eggs",
+                                                "menu_category":  {
+                                                                      "category":  "construction",
+                                                                      "group":  "itemGroup.name.construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1.5
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  6
+                                                                                       },
+                                               "minecraft:friction":  0.6,
+                                               "minecraft:light_dampening":  15,
+                                               "minecraft:loot":  "loot_tables/blocks/template_three_crocodile_eggs.json",
+                                               "minecraft:geometry":  "geometry.template_three_crocodile_eggs",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "template_three_crocodile_eggs",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -5,
+                                                                                              0,
+                                                                                              -3
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            9,
+                                                                                            6,
+                                                                                            7
+                                                                                        ]
+                                                                           },
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -5,
+                                                                                              0,
+                                                                                              -3
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            9,
+                                                                                            6,
+                                                                                            7
+                                                                                        ]
+                                                                           }
+                                           }
+                        }
 }
