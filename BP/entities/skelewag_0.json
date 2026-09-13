@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -22,17 +22,9 @@
                                                 "minecraft:movement":  {
                                                                            "value":  0.28
                                                                        },
-                                                "minecraft:movement.basic":  {
-
-                                                                             },
-                                                "minecraft:jump.static":  {
-
-                                                                          },
-                                                "minecraft:can_climb":  {
-
-                                                                        },
                                                 "minecraft:physics":  {
-
+                                                                          "has_gravity":  false,
+                                                                          "has_collision":  true
                                                                       },
                                                 "minecraft:pushable":  {
                                                                            "is_pushable":  true,
@@ -50,7 +42,9 @@
                                                                           },
                                                 "minecraft:navigation.swim":  {
                                                                                   "can_swim":  true,
-                                                                                  "can_path_over_water":  false
+                                                                                  "can_path_over_water":  false,
+                                                                                  "can_path_from_water":  false,
+                                                                                  "can_sink":  false
                                                                               },
                                                 "minecraft:movement.swimming":  {
 
@@ -58,14 +52,12 @@
                                                 "minecraft:breathable":  {
                                                                              "breathes_water":  true,
                                                                              "breathes_air":  false,
+                                                                             "suffocate_time":  10,
                                                                              "generates_bubbles":  true
                                                                          },
                                                 "minecraft:attack":  {
                                                                          "damage":  3
                                                                      },
-                                                "minecraft:behavior.float":  {
-                                                                                 "priority":  0
-                                                                             },
                                                 "minecraft:behavior.hurt_by_target":  {
                                                                                           "priority":  1
                                                                                       },
@@ -98,16 +90,26 @@
                                                                                                                       ],
                                                                                                      "must_see":  true
                                                                                                  },
-                                                "minecraft:behavior.move_to_block":  {
-                                                                                         "priority":  1,
-                                                                                         "speed_multiplier":  1,
-                                                                                         "search_range":  16
-                                                                                     },
                                                 "minecraft:behavior.random_swim":  {
-                                                                                       "priority":  3,
+                                                                                       "priority":  4,
                                                                                        "speed_multiplier":  1,
-                                                                                       "interval":  20
-                                                                                   }
+                                                                                       "interval":  8,
+                                                                                       "avoid_surface":  false
+                                                                                   },
+                                                "minecraft:despawn":  {
+                                                                          "despawn_from_distance":  {
+                                                                                                        "min_distance":  32,
+                                                                                                        "max_distance":  128
+                                                                                                    }
+                                                                      },
+                                                "minecraft:buoyancy":  {
+                                                                           "apply_gravity":  false,
+                                                                           "base_buoyancy":  1,
+                                                                           "liquid_blocks":  [
+                                                                                                 "minecraft:water",
+                                                                                                 "minecraft:flowing_water"
+                                                                                             ]
+                                                                       }
                                             }
                          }
 }

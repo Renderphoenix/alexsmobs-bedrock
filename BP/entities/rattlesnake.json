@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -161,7 +161,13 @@
                                                                                                  },
                                                 "minecraft:behavior.hurt_by_target":  {
                                                                                           "priority":  3
-                                                                                      }
+                                                                                      },
+                                                "minecraft:despawn":  {
+                                                                          "despawn_from_distance":  {
+                                                                                                        "min_distance":  32,
+                                                                                                        "max_distance":  128
+                                                                                                    }
+                                                                      }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

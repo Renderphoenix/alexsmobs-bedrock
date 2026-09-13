@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -98,7 +98,13 @@
                                                 "minecraft:behavior.float_wander":  {
                                                                                         "priority":  5,
                                                                                         "must_reach":  false
-                                                                                    }
+                                                                                    },
+                                                "minecraft:despawn":  {
+                                                                          "despawn_from_distance":  {
+                                                                                                        "min_distance":  32,
+                                                                                                        "max_distance":  128
+                                                                                                    }
+                                                                      }
                                             }
                          }
 }

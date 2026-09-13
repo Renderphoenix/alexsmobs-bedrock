@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -105,7 +105,13 @@
                                                                                          "speed_multiplier":  1.1,
                                                                                          "attack_interval":  25,
                                                                                          "attack_radius":  12
-                                                                                     }
+                                                                                     },
+                                                "minecraft:despawn":  {
+                                                                          "despawn_from_distance":  {
+                                                                                                        "min_distance":  32,
+                                                                                                        "max_distance":  128
+                                                                                                    }
+                                                                      }
                                             }
                          }
 }

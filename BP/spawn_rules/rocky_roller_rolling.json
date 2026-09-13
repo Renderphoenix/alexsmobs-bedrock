@@ -1,55 +1,37 @@
-{
-  "format_version": "1.8.0",
-  "minecraft:spawn_rules": {
-    "description": {
-      "identifier": "alexsmobs:rocky_roller_rolling",
-      "population_control": "monster"
-    },
-    "conditions": [
-      {
-        "minecraft:spawns_on_surface": {},
-        "minecraft:brightness_filter": {
-          "min": 0,
-          "max": 7,
-          "adjust_for_weather": false
-        },
-        "minecraft:weight": {
-          "default": 50
-        },
-        "minecraft:herd": {
-          "min_size": 1,
-          "max_size": 3
-        },
-        "minecraft:biome_filter": {
-          "any_of": [
-            {
-              "test": "has_biome_tag",
-              "operator": "==",
-              "value": "plains"
-            },
-            {
-              "test": "has_biome_tag",
-              "operator": "==",
-              "value": "forest"
-            },
-            {
-              "test": "has_biome_tag",
-              "operator": "==",
-              "value": "desert"
-            },
-            {
-              "test": "has_biome_tag",
-              "operator": "==",
-              "value": "taiga"
-            },
-            {
-              "test": "has_biome_tag",
-              "operator": "==",
-              "value": "savanna"
-            }
-          ]
-        }
-      }
-    ]
-  }
+﻿{
+    "format_version":  "1.8.0",
+    "minecraft:spawn_rules":  {
+                                  "description":  {
+                                                      "identifier":  "alexsmobs:rocky_roller_rolling",
+                                                      "population_control":  "monster"
+                                                  },
+                                  "conditions":  [
+                                                     {
+                                                         "minecraft:brightness_filter":  {
+                                                                                             "min":  0,
+                                                                                             "max":  7,
+                                                                                             "adjust_for_weather":  false
+                                                                                         },
+                                                         "minecraft:weight":  {
+                                                                                  "default":  45
+                                                                              },
+                                                         "minecraft:herd":  {
+                                                                                "min_size":  1,
+                                                                                "max_size":  3
+                                                                            },
+                                                         "minecraft:biome_filter":  {
+                                                                                        "any_of":  [
+                                                                                                       {
+                                                                                                           "test":  "has_biome_tag",
+                                                                                                           "operator":  "==",
+                                                                                                           "value":  "overworld"
+                                                                                                       }
+                                                                                                   ]
+                                                                                    },
+                                                         "minecraft:spawns_underground":  {
+
+                                                                                          }
+                                                     }
+                                                 ]
+                              }
 }

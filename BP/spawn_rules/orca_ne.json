@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.8.0",
     "minecraft:spawn_rules":  {
                                   "description":  {
@@ -8,12 +8,12 @@
                                   "conditions":  [
                                                      {
                                                          "minecraft:brightness_filter":  {
-                                                                                             "min":  7,
+                                                                                             "min":  0,
                                                                                              "max":  15,
                                                                                              "adjust_for_weather":  false
                                                                                          },
                                                          "minecraft:weight":  {
-                                                                                  "default":  35
+                                                                                  "default":  50
                                                                               },
                                                          "minecraft:herd":  {
                                                                                 "min_size":  2,
@@ -24,17 +24,17 @@
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "plains"
+                                                                                                           "value":  "ocean"
                                                                                                        },
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "forest"
+                                                                                                           "value":  "river"
                                                                                                        },
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "savanna"
+                                                                                                           "value":  "swamp"
                                                                                                        }
                                                                                                    ]
                                                                                     },

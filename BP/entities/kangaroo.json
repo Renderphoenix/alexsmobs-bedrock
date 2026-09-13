@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -69,12 +69,6 @@
                                                 "minecraft:movement":  {
                                                                            "value":  0.28
                                                                        },
-                                                "minecraft:movement.basic":  {
-
-                                                                             },
-                                                "minecraft:jump.static":  {
-
-                                                                          },
                                                 "minecraft:can_climb":  {
 
                                                                         },
@@ -132,8 +126,8 @@
                                                                                  "can_get_scared":  false
                                                                              },
                                                 "minecraft:behavior.random_stroll":  {
-                                                                                         "priority":  5,
-                                                                                         "speed_multiplier":  110
+                                                                                         "priority":  4,
+                                                                                         "speed_multiplier":  1.2
                                                                                      },
                                                 "minecraft:behavior.look_at_player":  {
                                                                                           "priority":  6,
@@ -145,7 +139,25 @@
                                                 "minecraft:behavior.hurt_by_target":  {
                                                                                           "priority":  3,
                                                                                           "hurt_owner":  false
-                                                                                      }
+                                                                                      },
+                                                "minecraft:despawn":  {
+                                                                          "despawn_from_distance":  {
+                                                                                                        "min_distance":  32,
+                                                                                                        "max_distance":  128
+                                                                                                    }
+                                                                      },
+                                                "minecraft:movement.jump":  {
+                                                                                "jump_delay":  [
+                                                                                                   0.1,
+                                                                                                   0.25
+                                                                                               ]
+                                                                            },
+                                                "minecraft:jump.dynamic":  {
+                                                                               "max_turn":  30
+                                                                           },
+                                                "minecraft:can_power_jump":  {
+
+                                                                             }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

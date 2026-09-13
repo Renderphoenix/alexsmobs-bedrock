@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -108,52 +108,23 @@
                                                                              "generates_bubbles":  true
                                                                          },
                                                 "minecraft:attack":  {
-                                                                         "damage":  10
+                                                                         "damage":  12
                                                                      },
-                                                "minecraft:behavior.stay_while_sitting":  {
-                                                                                              "priority":  0
-                                                                                          },
                                                 "minecraft:behavior.lay_egg":  {
                                                                                    "priority":  1
                                                                                },
-                                                "minecraft:behavior.eat_block":  {
-                                                                                     "priority":  2,
-                                                                                     "speed_multiplier":  1
-                                                                                 },
-                                                "minecraft:behavior.move_to_water":  {
-                                                                                         "priority":  2,
-                                                                                         "search_range":  16,
-                                                                                         "speed_multiplier":  1
-                                                                                     },
-                                                "minecraft:behavior.move_to_land":  {
-                                                                                        "priority":  2,
-                                                                                        "search_range":  12,
-                                                                                        "speed_multiplier":  1
-                                                                                    },
                                                 "minecraft:behavior.random_swim":  {
-                                                                                       "priority":  5,
-                                                                                       "speed_multiplier":  1,
-                                                                                       "interval":  20
+                                                                                       "priority":  3,
+                                                                                       "speed_multiplier":  1.2,
+                                                                                       "interval":  8
                                                                                    },
                                                 "minecraft:behavior.random_look_around":  {
                                                                                               "priority":  6
                                                                                           },
                                                 "minecraft:behavior.look_at_player":  {
-                                                                                          "priority":  7,
-                                                                                          "target_distance":  6
+                                                                                          "priority":  5,
+                                                                                          "target_distance":  8
                                                                                       },
-                                                "minecraft:behavior.owner_hurt_by_target":  {
-                                                                                                "priority":  2
-                                                                                            },
-                                                "minecraft:behavior.owner_hurt_target":  {
-                                                                                             "priority":  3
-                                                                                         },
-                                                "minecraft:navigation.generic":  {
-                                                                                     "is_amphibious":  true,
-                                                                                     "can_path_over_water":  true,
-                                                                                     "can_swim":  true,
-                                                                                     "can_walk":  true
-                                                                                 },
                                                 "minecraft:behavior.nearest_attackable_target":  {
                                                                                                      "priority":  2,
                                                                                                      "entity_types":  [
@@ -163,7 +134,7 @@
                                                                                                                                               "subject":  "other",
                                                                                                                                               "value":  "player"
                                                                                                                                           },
-                                                                                                                              "max_dist":  14
+                                                                                                                              "max_dist":  18
                                                                                                                           },
                                                                                                                           {
                                                                                                                               "filters":  {
@@ -171,16 +142,43 @@
                                                                                                                                               "subject":  "other",
                                                                                                                                               "value":  "animal"
                                                                                                                                           },
-                                                                                                                              "max_dist":  14
+                                                                                                                              "max_dist":  18
                                                                                                                           }
                                                                                                                       ],
-                                                                                                     "must_see":  true
+                                                                                                     "must_see":  false
                                                                                                  },
                                                 "minecraft:behavior.melee_attack":  {
                                                                                         "priority":  1,
-                                                                                        "speed_multiplier":  1.3,
+                                                                                        "speed_multiplier":  1.4,
                                                                                         "track_target":  true
-                                                                                    }
+                                                                                    },
+                                                "minecraft:despawn":  {
+                                                                          "despawn_from_distance":  {
+                                                                                                        "min_distance":  32,
+                                                                                                        "max_distance":  128
+                                                                                                    }
+                                                                      },
+                                                "minecraft:behavior.hurt_by_target":  {
+                                                                                          "priority":  1
+                                                                                      },
+                                                "minecraft:navigation.walk":  {
+                                                                                  "can_path_over_water":  true,
+                                                                                  "can_swim":  true,
+                                                                                  "can_walk":  true,
+                                                                                  "avoid_water":  false
+                                                                              },
+                                                "minecraft:buoyancy":  {
+                                                                           "apply_gravity":  true,
+                                                                           "base_buoyancy":  0.8,
+                                                                           "liquid_blocks":  [
+                                                                                                 "minecraft:water",
+                                                                                                 "minecraft:flowing_water"
+                                                                                             ]
+                                                                       },
+                                                "minecraft:behavior.random_stroll":  {
+                                                                                         "priority":  4,
+                                                                                         "speed_multiplier":  0.85
+                                                                                     }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

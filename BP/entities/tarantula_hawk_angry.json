@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -67,17 +67,9 @@
                                                 "minecraft:movement":  {
                                                                            "value":  0.3
                                                                        },
-                                                "minecraft:movement.basic":  {
-
-                                                                             },
-                                                "minecraft:jump.static":  {
-
-                                                                          },
-                                                "minecraft:can_climb":  {
-
-                                                                        },
                                                 "minecraft:physics":  {
-
+                                                                          "has_gravity":  false,
+                                                                          "has_collision":  true
                                                                       },
                                                 "minecraft:pushable":  {
                                                                            "is_pushable":  true,
@@ -103,9 +95,6 @@
                                                 "minecraft:attack":  {
                                                                          "damage":  5
                                                                      },
-                                                "minecraft:behavior.float":  {
-                                                                                 "priority":  0
-                                                                             },
                                                 "minecraft:behavior.follow_owner":  {
                                                                                         "priority":  2,
                                                                                         "speed_multiplier":  1.2,
@@ -155,7 +144,38 @@
                                                                                                                           }
                                                                                                                       ],
                                                                                                      "must_see":  true
+                                                                                                 },
+                                                "minecraft:despawn":  {
+                                                                          "despawn_from_distance":  {
+                                                                                                        "min_distance":  32,
+                                                                                                        "max_distance":  128
+                                                                                                    }
+                                                                      },
+                                                "minecraft:damage_sensor":  {
+                                                                                "triggers":  [
+                                                                                                 {
+                                                                                                     "cause":  "fall",
+                                                                                                     "deals_damage":  false
                                                                                                  }
+                                                                                             ]
+                                                                            },
+                                                "minecraft:can_fly":  {
+
+                                                                      },
+                                                "minecraft:movement.fly":  {
+
+                                                                           },
+                                                "minecraft:navigation.fly":  {
+                                                                                 "can_path_over_water":  true
+                                                                             },
+                                                "minecraft:behavior.float_wander":  {
+                                                                                        "priority":  3,
+                                                                                        "must_reach":  false
+                                                                                    },
+                                                "minecraft:behavior.flying_random_stroll":  {
+                                                                                                "priority":  4,
+                                                                                                "speed_multiplier":  1
+                                                                                            }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

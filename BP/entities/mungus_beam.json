@@ -1,4 +1,4 @@
-{
+﻿{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -144,7 +144,13 @@
                                                                                         "max_dist":  16,
                                                                                         "goal_radius":  2,
                                                                                         "speed_multiplier":  1
-                                                                                    }
+                                                                                    },
+                                                "minecraft:despawn":  {
+                                                                          "despawn_from_distance":  {
+                                                                                                        "min_distance":  32,
+                                                                                                        "max_distance":  128
+                                                                                                    }
+                                                                      }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {
