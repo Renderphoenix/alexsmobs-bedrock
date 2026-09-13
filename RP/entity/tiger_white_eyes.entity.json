@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:tiger_white_eyes",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/tiger_white_eyes"
-      },
-      "geometry": {
-        "default": "geometry.tiger_white_eyes"
-      },
-      "animations": {
-        "walk": "animation.tiger_white_eyes.walk",
-        "idle": "animation.tiger_white_eyes.idle",
-        "look_at_target": "animation.tiger_white_eyes.idle",
-        "controller_move": "controller.animation.tiger_white_eyes.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:tiger_white_eyes",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/tiger_white_eyes"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.tiger_white_eyes"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.tiger_white_eyes.walk",
+                                                                           "idle":  "animation.tiger_white_eyes.idle",
+                                                                           "look_at_target":  "animation.tiger_white_eyes.idle",
+                                                                           "controller_move":  "controller.animation.tiger_white_eyes.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#e67300",
+                                                                          "overlay_color":  "#1a1a1a"
+                                                                      }
+                                                    }
+                                }
 }

@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:flying_fish",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/flying_fish"
-      },
-      "geometry": {
-        "default": "geometry.flying_fish"
-      },
-      "animations": {
-        "walk": "animation.flying_fish.walk",
-        "idle": "animation.flying_fish.idle",
-        "look_at_target": "animation.flying_fish.idle",
-        "controller_move": "controller.animation.flying_fish.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:flying_fish",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/flying_fish"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.flying_fish"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.flying_fish.walk",
+                                                                           "idle":  "animation.flying_fish.idle",
+                                                                           "look_at_target":  "animation.flying_fish.idle",
+                                                                           "controller_move":  "controller.animation.flying_fish.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#27272a",
+                                                                          "overlay_color":  "#38bdf8"
+                                                                      }
+                                                    }
+                                }
 }

@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:orca_nw",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/orca_nw"
-      },
-      "geometry": {
-        "default": "geometry.orca_nw"
-      },
-      "animations": {
-        "walk": "animation.orca_nw.walk",
-        "idle": "animation.orca_nw.idle",
-        "look_at_target": "animation.orca_nw.idle",
-        "controller_move": "controller.animation.orca_nw.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:orca_nw",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/orca_nw"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.orca_nw"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.orca_nw.walk",
+                                                                           "idle":  "animation.orca_nw.idle",
+                                                                           "look_at_target":  "animation.orca_nw.idle",
+                                                                           "controller_move":  "controller.animation.orca_nw.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#0f172a",
+                                                                          "overlay_color":  "#ffffff"
+                                                                      }
+                                                    }
+                                }
 }

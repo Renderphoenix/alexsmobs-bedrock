@@ -156,7 +156,26 @@
                                                 "minecraft:behavior.flying_random_stroll":  {
                                                                                                 "priority":  4,
                                                                                                 "speed_multiplier":  1
+                                                                                            },
+                                                "minecraft:breedable":  {
+                                                                            "require_tame":  false,
+                                                                            "breed_items":  [
+                                                                                                "minecraft:glow_berries",
+                                                                                                "minecraft:wheat_seeds"
+                                                                                            ],
+                                                                            "breeds_with":  {
+                                                                                                "mate_type":  "alexsmobs:sunbird",
+                                                                                                "baby_type":  "alexsmobs:sunbird",
+                                                                                                "breed_event":  {
+                                                                                                                    "event":  "minecraft:entity_born",
+                                                                                                                    "target":  "baby"
+                                                                                                                }
                                                                                             }
+                                                                        },
+                                                "minecraft:behavior.breed":  {
+                                                                                 "priority":  2,
+                                                                                 "speed_multiplier":  1
+                                                                             }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

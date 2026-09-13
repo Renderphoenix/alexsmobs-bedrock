@@ -12,8 +12,8 @@
                                                   },
                              "components":  {
                                                 "minecraft:collision_box":  {
-                                                                                "width":  3.75,
-                                                                                "height":  1.75
+                                                                                "width":  2.4,
+                                                                                "height":  1.6
                                                                             },
                                                 "minecraft:health":  {
                                                                          "value":  60,
@@ -121,7 +121,26 @@
                                                                                                  "minecraft:water",
                                                                                                  "minecraft:flowing_water"
                                                                                              ]
-                                                                       }
+                                                                       },
+                                                "minecraft:breedable":  {
+                                                                            "require_tame":  false,
+                                                                            "breed_items":  [
+                                                                                                "minecraft:salmon",
+                                                                                                "minecraft:cod"
+                                                                                            ],
+                                                                            "breeds_with":  {
+                                                                                                "mate_type":  "alexsmobs:orca",
+                                                                                                "baby_type":  "alexsmobs:orca",
+                                                                                                "breed_event":  {
+                                                                                                                    "event":  "minecraft:entity_born",
+                                                                                                                    "target":  "baby"
+                                                                                                                }
+                                                                                            }
+                                                                        },
+                                                "minecraft:behavior.breed":  {
+                                                                                 "priority":  2,
+                                                                                 "speed_multiplier":  1
+                                                                             }
                                             }
                          }
 }

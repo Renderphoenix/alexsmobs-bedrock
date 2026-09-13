@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:giant_squid_blue",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/giant_squid_blue"
-      },
-      "geometry": {
-        "default": "geometry.giant_squid_blue"
-      },
-      "animations": {
-        "walk": "animation.giant_squid_blue.walk",
-        "idle": "animation.giant_squid_blue.idle",
-        "look_at_target": "animation.giant_squid_blue.idle",
-        "controller_move": "controller.animation.giant_squid_blue.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:giant_squid_blue",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/giant_squid_blue"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.giant_squid_blue"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.giant_squid_blue.walk",
+                                                                           "idle":  "animation.giant_squid_blue.idle",
+                                                                           "look_at_target":  "animation.giant_squid_blue.idle",
+                                                                           "controller_move":  "controller.animation.giant_squid_blue.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#be123c",
+                                                                          "overlay_color":  "#fecdd3"
+                                                                      }
+                                                    }
+                                }
 }

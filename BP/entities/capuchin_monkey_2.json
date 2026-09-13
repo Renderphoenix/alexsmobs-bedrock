@@ -149,7 +149,26 @@
                                                                                                         "min_distance":  32,
                                                                                                         "max_distance":  128
                                                                                                     }
-                                                                      }
+                                                                      },
+                                                "minecraft:breedable":  {
+                                                                            "require_tame":  false,
+                                                                            "breed_items":  [
+                                                                                                "alexsmobs:banana",
+                                                                                                "minecraft:apple"
+                                                                                            ],
+                                                                            "breeds_with":  {
+                                                                                                "mate_type":  "alexsmobs:capuchin_monkey_2",
+                                                                                                "baby_type":  "alexsmobs:capuchin_monkey_2",
+                                                                                                "breed_event":  {
+                                                                                                                    "event":  "minecraft:entity_born",
+                                                                                                                    "target":  "baby"
+                                                                                                                }
+                                                                                            }
+                                                                        },
+                                                "minecraft:behavior.breed":  {
+                                                                                 "priority":  2,
+                                                                                 "speed_multiplier":  1
+                                                                             }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

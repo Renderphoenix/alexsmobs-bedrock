@@ -18,7 +18,13 @@
                                                                    "minecraft:ageable":  {
                                                                                              "duration":  1200,
                                                                                              "feed_items":  [
-                                                                                                                "alexsmobs:acacia_blossom"
+                                                                                                                "alexsmobs:acacia_blossom",
+                                                                                                                "minecraft:apple",
+                                                                                                                "minecraft:golden_apple",
+                                                                                                                "minecraft:hay_block",
+                                                                                                                "minecraft:wheat",
+                                                                                                                "minecraft:leaves",
+                                                                                                                "minecraft:leaves2"
                                                                                                             ],
                                                                                              "grow_up":  {
                                                                                                              "event":  "grow_up",
@@ -38,7 +44,13 @@
                                                                     "minecraft:breedable":  {
                                                                                                 "require_tame":  false,
                                                                                                 "breed_items":  [
-                                                                                                                    "alexsmobs:acacia_blossom"
+                                                                                                                    "alexsmobs:acacia_blossom",
+                                                                                                                    "minecraft:apple",
+                                                                                                                    "minecraft:golden_apple",
+                                                                                                                    "minecraft:hay_block",
+                                                                                                                    "minecraft:wheat",
+                                                                                                                    "minecraft:leaves",
+                                                                                                                    "minecraft:leaves2"
                                                                                                                 ],
                                                                                                 "breeds_with":  {
                                                                                                                     "mate_type":  "alexsmobs:elephant_tusks",
@@ -57,8 +69,8 @@
                                                   },
                              "components":  {
                                                 "minecraft:collision_box":  {
-                                                                                "width":  3.1,
-                                                                                "height":  3.5
+                                                                                "width":  2.6,
+                                                                                "height":  3.2
                                                                             },
                                                 "minecraft:health":  {
                                                                          "value":  80,
@@ -117,7 +129,13 @@
                                                                                  "priority":  4,
                                                                                  "speed_multiplier":  1,
                                                                                  "items":  [
-                                                                                               "alexsmobs:acacia_blossom"
+                                                                                               "alexsmobs:acacia_blossom",
+                                                                                               "minecraft:apple",
+                                                                                               "minecraft:golden_apple",
+                                                                                               "minecraft:hay_block",
+                                                                                               "minecraft:wheat",
+                                                                                               "minecraft:leaves",
+                                                                                               "minecraft:leaves2"
                                                                                            ],
                                                                                  "can_get_scared":  false
                                                                              },
@@ -172,7 +190,31 @@
                                                                                                         "min_distance":  32,
                                                                                                         "max_distance":  128
                                                                                                     }
-                                                                      }
+                                                                      },
+                                                "minecraft:breedable":  {
+                                                                            "require_tame":  false,
+                                                                            "breed_items":  [
+                                                                                                "alexsmobs:acacia_blossom",
+                                                                                                "minecraft:apple",
+                                                                                                "minecraft:golden_apple",
+                                                                                                "minecraft:hay_block",
+                                                                                                "minecraft:wheat",
+                                                                                                "minecraft:leaves",
+                                                                                                "minecraft:leaves2"
+                                                                                            ],
+                                                                            "breeds_with":  {
+                                                                                                "mate_type":  "alexsmobs:elephant_tusks",
+                                                                                                "baby_type":  "alexsmobs:elephant_tusks",
+                                                                                                "breed_event":  {
+                                                                                                                    "event":  "minecraft:entity_born",
+                                                                                                                    "target":  "baby"
+                                                                                                                }
+                                                                                            }
+                                                                        },
+                                                "minecraft:behavior.breed":  {
+                                                                                 "priority":  2,
+                                                                                 "speed_multiplier":  1
+                                                                             }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

@@ -176,7 +176,27 @@
                                                                                        "priority":  3,
                                                                                        "speed_multiplier":  1.2,
                                                                                        "interval":  8
-                                                                                   }
+                                                                                   },
+                                                "minecraft:breedable":  {
+                                                                            "require_tame":  false,
+                                                                            "breed_items":  [
+                                                                                                "minecraft:rotten_flesh",
+                                                                                                "minecraft:cod",
+                                                                                                "minecraft:salmon"
+                                                                                            ],
+                                                                            "breeds_with":  {
+                                                                                                "mate_type":  "alexsmobs:crocodile_1",
+                                                                                                "baby_type":  "alexsmobs:crocodile_1",
+                                                                                                "breed_event":  {
+                                                                                                                    "event":  "minecraft:entity_born",
+                                                                                                                    "target":  "baby"
+                                                                                                                }
+                                                                                            }
+                                                                        },
+                                                "minecraft:behavior.breed":  {
+                                                                                 "priority":  2,
+                                                                                 "speed_multiplier":  1
+                                                                             }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

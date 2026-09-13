@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:rhinoceros_potion",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/rhinoceros_potion"
-      },
-      "geometry": {
-        "default": "geometry.rhinoceros_potion"
-      },
-      "animations": {
-        "walk": "animation.rhinoceros_potion.walk",
-        "idle": "animation.rhinoceros_potion.idle",
-        "look_at_target": "animation.rhinoceros_potion.idle",
-        "controller_move": "controller.animation.rhinoceros_potion.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:rhinoceros_potion",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/rhinoceros_potion"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.rhinoceros_potion"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.rhinoceros_potion.walk",
+                                                                           "idle":  "animation.rhinoceros_potion.idle",
+                                                                           "look_at_target":  "animation.rhinoceros_potion.idle",
+                                                                           "controller_move":  "controller.animation.rhinoceros_potion.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#6b7280",
+                                                                          "overlay_color":  "#9ca3af"
+                                                                      }
+                                                    }
+                                }
 }

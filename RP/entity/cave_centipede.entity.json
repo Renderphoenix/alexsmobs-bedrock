@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:cave_centipede",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/cave_centipede"
-      },
-      "geometry": {
-        "default": "geometry.cave_centipede"
-      },
-      "animations": {
-        "walk": "animation.cave_centipede.walk",
-        "idle": "animation.cave_centipede.idle",
-        "look_at_target": "animation.cave_centipede.idle",
-        "controller_move": "controller.animation.cave_centipede.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:cave_centipede",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/cave_centipede"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.cave_centipede"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.cave_centipede.walk",
+                                                                           "idle":  "animation.cave_centipede.idle",
+                                                                           "look_at_target":  "animation.cave_centipede.idle",
+                                                                           "controller_move":  "controller.animation.cave_centipede.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#78350f",
+                                                                          "overlay_color":  "#dc2626"
+                                                                      }
+                                                    }
+                                }
 }

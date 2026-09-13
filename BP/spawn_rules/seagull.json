@@ -7,9 +7,6 @@
                                                   },
                                   "conditions":  [
                                                      {
-                                                         "minecraft:spawns_underwater":  {
-
-                                                                                         },
                                                          "minecraft:brightness_filter":  {
                                                                                              "min":  7,
                                                                                              "max":  15,
@@ -27,22 +24,12 @@
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "plains"
+                                                                                                           "value":  "beach"
                                                                                                        },
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "forest"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "savanna"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "taiga"
+                                                                                                           "value":  "ocean"
                                                                                                        }
                                                                                                    ]
                                                                                     },

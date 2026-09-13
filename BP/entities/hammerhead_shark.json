@@ -134,7 +134,26 @@
                                                                        },
                                                 "minecraft:attack":  {
                                                                          "damage":  12
-                                                                     }
+                                                                     },
+                                                "minecraft:breedable":  {
+                                                                            "require_tame":  false,
+                                                                            "breed_items":  [
+                                                                                                "minecraft:cod",
+                                                                                                "minecraft:salmon"
+                                                                                            ],
+                                                                            "breeds_with":  {
+                                                                                                "mate_type":  "alexsmobs:hammerhead_shark",
+                                                                                                "baby_type":  "alexsmobs:hammerhead_shark",
+                                                                                                "breed_event":  {
+                                                                                                                    "event":  "minecraft:entity_born",
+                                                                                                                    "target":  "baby"
+                                                                                                                }
+                                                                                            }
+                                                                        },
+                                                "minecraft:behavior.breed":  {
+                                                                                 "priority":  2,
+                                                                                 "speed_multiplier":  1
+                                                                             }
                                             }
                          }
 }

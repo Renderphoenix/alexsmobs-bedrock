@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:soul_vulture_flames_0",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/soul_vulture_flames_0"
-      },
-      "geometry": {
-        "default": "geometry.soul_vulture_flames_0"
-      },
-      "animations": {
-        "walk": "animation.soul_vulture_flames_0.walk",
-        "idle": "animation.soul_vulture_flames_0.idle",
-        "look_at_target": "animation.soul_vulture_flames_0.idle",
-        "controller_move": "controller.animation.soul_vulture_flames_0.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:soul_vulture_flames_0",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/soul_vulture_flames_0"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.soul_vulture_flames_0"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.soul_vulture_flames_0.walk",
+                                                                           "idle":  "animation.soul_vulture_flames_0.idle",
+                                                                           "look_at_target":  "animation.soul_vulture_flames_0.idle",
+                                                                           "controller_move":  "controller.animation.soul_vulture_flames_0.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#334155",
+                                                                          "overlay_color":  "#38bdf8"
+                                                                      }
+                                                    }
+                                }
 }

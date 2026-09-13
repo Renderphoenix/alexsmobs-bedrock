@@ -3,7 +3,7 @@
     "minecraft:spawn_rules":  {
                                   "description":  {
                                                       "identifier":  "alexsmobs:lobster_blue",
-                                                      "population_control":  "animal"
+                                                      "population_control":  "water_animal"
                                                   },
                                   "conditions":  [
                                                      {
@@ -11,7 +11,7 @@
 
                                                                                          },
                                                          "minecraft:brightness_filter":  {
-                                                                                             "min":  7,
+                                                                                             "min":  0,
                                                                                              "max":  15,
                                                                                              "adjust_for_weather":  false
                                                                                          },
@@ -27,25 +27,18 @@
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "plains"
+                                                                                                           "value":  "ocean"
                                                                                                        },
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "forest"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "savanna"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "taiga"
+                                                                                                           "value":  "beach"
                                                                                                        }
                                                                                                    ]
-                                                                                    }
+                                                                                    },
+                                                         "minecraft:spawns_underwater":  {
+
+                                                                                         }
                                                      }
                                                  ]
                               }

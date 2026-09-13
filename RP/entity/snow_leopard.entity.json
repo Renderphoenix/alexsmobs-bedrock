@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:snow_leopard",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/snow_leopard"
-      },
-      "geometry": {
-        "default": "geometry.snow_leopard"
-      },
-      "animations": {
-        "walk": "animation.snow_leopard.walk",
-        "idle": "animation.snow_leopard.idle",
-        "look_at_target": "animation.snow_leopard.idle",
-        "controller_move": "controller.animation.snow_leopard.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:snow_leopard",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/snow_leopard"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.snow_leopard"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.snow_leopard.walk",
+                                                                           "idle":  "animation.snow_leopard.idle",
+                                                                           "look_at_target":  "animation.snow_leopard.idle",
+                                                                           "controller_move":  "controller.animation.snow_leopard.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#e2e8f0",
+                                                                          "overlay_color":  "#334155"
+                                                                      }
+                                                    }
+                                }
 }

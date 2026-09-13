@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:capuchin_monkey",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/capuchin_monkey"
-      },
-      "geometry": {
-        "default": "geometry.capuchin_monkey"
-      },
-      "animations": {
-        "walk": "animation.capuchin_monkey.walk",
-        "idle": "animation.capuchin_monkey.idle",
-        "look_at_target": "animation.capuchin_monkey.idle",
-        "controller_move": "controller.animation.capuchin_monkey.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:capuchin_monkey",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/capuchin_monkey"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.capuchin_monkey"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.capuchin_monkey.walk",
+                                                                           "idle":  "animation.capuchin_monkey.idle",
+                                                                           "look_at_target":  "animation.capuchin_monkey.idle",
+                                                                           "controller_move":  "controller.animation.capuchin_monkey.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#78350f",
+                                                                          "overlay_color":  "#fef08a"
+                                                                      }
+                                                    }
+                                }
 }

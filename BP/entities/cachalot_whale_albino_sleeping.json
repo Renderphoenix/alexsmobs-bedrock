@@ -63,8 +63,8 @@
                                                   },
                              "components":  {
                                                 "minecraft:collision_box":  {
-                                                                                "width":  9,
-                                                                                "height":  4
+                                                                                "width":  4.5,
+                                                                                "height":  2.8
                                                                             },
                                                 "minecraft:health":  {
                                                                          "value":  140,
@@ -178,7 +178,26 @@
                                                                                         "priority":  1,
                                                                                         "speed_multiplier":  1.35,
                                                                                         "track_target":  true
-                                                                                    }
+                                                                                    },
+                                                "minecraft:breedable":  {
+                                                                            "require_tame":  false,
+                                                                            "breed_items":  [
+                                                                                                "minecraft:salmon",
+                                                                                                "minecraft:cod"
+                                                                                            ],
+                                                                            "breeds_with":  {
+                                                                                                "mate_type":  "alexsmobs:cachalot_whale_albino_sleeping",
+                                                                                                "baby_type":  "alexsmobs:cachalot_whale_albino_sleeping",
+                                                                                                "breed_event":  {
+                                                                                                                    "event":  "minecraft:entity_born",
+                                                                                                                    "target":  "baby"
+                                                                                                                }
+                                                                                            }
+                                                                        },
+                                                "minecraft:behavior.breed":  {
+                                                                                 "priority":  2,
+                                                                                 "speed_multiplier":  1
+                                                                             }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

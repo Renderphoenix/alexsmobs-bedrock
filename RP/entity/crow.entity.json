@@ -1,38 +1,38 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:crow",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/crow"
-      },
-      "geometry": {
-        "default": "geometry.crow"
-      },
-      "animations": {
-        "walk": "animation.crow.walk",
-        "idle": "animation.crow.idle",
-        "look_at_target": "animation.crow.idle",
-        "controller_move": "controller.animation.crow.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:crow",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/crow"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.crow"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.crow.walk",
+                                                                           "idle":  "animation.crow.idle",
+                                                                           "look_at_target":  "animation.crow.idle",
+                                                                           "controller_move":  "controller.animation.crow.move"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#18181b",
+                                                                          "overlay_color":  "#27272a"
+                                                                      }
+                                                    }
+                                }
 }

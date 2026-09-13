@@ -11,12 +11,12 @@
 
                                                                                          },
                                                          "minecraft:brightness_filter":  {
-                                                                                             "min":  7,
+                                                                                             "min":  6,
                                                                                              "max":  15,
                                                                                              "adjust_for_weather":  false
                                                                                          },
                                                          "minecraft:weight":  {
-                                                                                  "default":  45
+                                                                                  "default":  40
                                                                               },
                                                          "minecraft:herd":  {
                                                                                 "min_size":  2,
@@ -27,22 +27,12 @@
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "plains"
+                                                                                                           "value":  "jungle"
                                                                                                        },
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "forest"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "savanna"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "taiga"
+                                                                                                           "value":  "swamp"
                                                                                                        }
                                                                                                    ]
                                                                                     }

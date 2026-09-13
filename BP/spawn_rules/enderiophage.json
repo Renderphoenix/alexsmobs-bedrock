@@ -3,7 +3,7 @@
     "minecraft:spawn_rules":  {
                                   "description":  {
                                                       "identifier":  "alexsmobs:enderiophage",
-                                                      "population_control":  "animal"
+                                                      "population_control":  "monster"
                                                   },
                                   "conditions":  [
                                                      {
@@ -11,12 +11,12 @@
 
                                                                                          },
                                                          "minecraft:brightness_filter":  {
-                                                                                             "min":  7,
+                                                                                             "min":  0,
                                                                                              "max":  15,
                                                                                              "adjust_for_weather":  false
                                                                                          },
                                                          "minecraft:weight":  {
-                                                                                  "default":  45
+                                                                                  "default":  40
                                                                               },
                                                          "minecraft:herd":  {
                                                                                 "min_size":  1,
@@ -27,22 +27,7 @@
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "plains"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "forest"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "savanna"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "taiga"
+                                                                                                           "value":  "the_end"
                                                                                                        }
                                                                                                    ]
                                                                                     }

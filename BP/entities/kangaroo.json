@@ -1,4 +1,4 @@
-﻿{
+{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -18,9 +18,14 @@
                                                                    "minecraft:ageable":  {
                                                                                              "duration":  1200,
                                                                                              "feed_items":  [
-                                                                                                                "minecraft:dead_bush",
-                                                                                                                "minecraft:grass"
-                                                                                                            ],
+                                                                                                                 "minecraft:carrot",
+                                                                                                                 "minecraft:golden_carrot",
+                                                                                                                 "minecraft:wheat",
+                                                                                                                 "minecraft:apple",
+                                                                                                                 "minecraft:grass",
+                                                                                                                 "minecraft:tallgrass",
+                                                                                                                 "minecraft:dead_bush"
+                                                                                                             ],
                                                                                              "grow_up":  {
                                                                                                              "event":  "grow_up",
                                                                                                              "target":  "self"
@@ -39,8 +44,13 @@
                                                                     "minecraft:breedable":  {
                                                                                                 "require_tame":  false,
                                                                                                 "breed_items":  [
-                                                                                                                    "minecraft:dead_bush",
-                                                                                                                    "minecraft:grass"
+                                                                                                                    "minecraft:carrot",
+                                                                                                                    "minecraft:golden_carrot",
+                                                                                                                    "minecraft:wheat",
+                                                                                                                    "minecraft:apple",
+                                                                                                                    "minecraft:grass",
+                                                                                                                    "minecraft:tallgrass",
+                                                                                                                    "minecraft:dead_bush"
                                                                                                                 ],
                                                                                                 "breeds_with":  {
                                                                                                                     "mate_type":  "alexsmobs:kangaroo",
@@ -67,8 +77,14 @@
                                                                          "max":  22
                                                                      },
                                                 "minecraft:movement":  {
-                                                                           "value":  0.28
+                                                                           "value":  0.32
                                                                        },
+                                                "minecraft:movement.basic":  {
+
+                                                                             },
+                                                "minecraft:jump.static":  {
+
+                                                                           },
                                                 "minecraft:can_climb":  {
 
                                                                         },
@@ -100,11 +116,11 @@
                                                                                   "avoid_water":  true
                                                                               },
                                                 "minecraft:attack":  {
-                                                                         "damage":  4
+                                                                         "damage":  8
                                                                      },
                                                 "minecraft:behavior.melee_attack":  {
-                                                                                        "priority":  1,
-                                                                                        "speed_multiplier":  1.2,
+                                                                                        "priority":  2,
+                                                                                        "speed_multiplier":  1.4,
                                                                                         "track_target":  true
                                                                                     },
                                                 "minecraft:behavior.float":  {
@@ -120,8 +136,13 @@
                                                                                  "priority":  4,
                                                                                  "speed_multiplier":  1.2,
                                                                                  "items":  [
-                                                                                               "minecraft:dead_bush",
-                                                                                               "minecraft:grass"
+                                                                                               "minecraft:carrot",
+                                                                                               "minecraft:golden_carrot",
+                                                                                               "minecraft:wheat",
+                                                                                               "minecraft:apple",
+                                                                                               "minecraft:grass",
+                                                                                               "minecraft:tallgrass",
+                                                                                               "minecraft:dead_bush"
                                                                                            ],
                                                                                  "can_get_scared":  false
                                                                              },
@@ -137,8 +158,7 @@
                                                                                               "priority":  7
                                                                                           },
                                                 "minecraft:behavior.hurt_by_target":  {
-                                                                                          "priority":  3,
-                                                                                          "hurt_owner":  false
+                                                                                          "priority":  1
                                                                                       },
                                                 "minecraft:despawn":  {
                                                                           "despawn_from_distance":  {
@@ -146,17 +166,33 @@
                                                                                                         "max_distance":  128
                                                                                                     }
                                                                       },
-                                                "minecraft:movement.jump":  {
-                                                                                "jump_delay":  [
-                                                                                                   0.1,
-                                                                                                   0.25
-                                                                                               ]
-                                                                            },
-                                                "minecraft:jump.dynamic":  {
-                                                                               "max_turn":  30
-                                                                           },
-                                                "minecraft:can_power_jump":  {
-
+                                                "minecraft:behavior.panic":  {
+                                                                                 "priority":  3,
+                                                                                 "speed_multiplier":  1.5
+                                                                             },
+                                                "minecraft:breedable":  {
+                                                                            "require_tame":  false,
+                                                                            "breed_items":  [
+                                                                                                "minecraft:carrot",
+                                                                                                "minecraft:golden_carrot",
+                                                                                                "minecraft:wheat",
+                                                                                                "minecraft:apple",
+                                                                                                "minecraft:grass",
+                                                                                                "minecraft:tallgrass",
+                                                                                                "minecraft:dead_bush"
+                                                                                            ],
+                                                                            "breeds_with":  {
+                                                                                                "mate_type":  "alexsmobs:kangaroo",
+                                                                                                "baby_type":  "alexsmobs:kangaroo",
+                                                                                                "breed_event":  {
+                                                                                                                    "event":  "minecraft:entity_born",
+                                                                                                                    "target":  "baby"
+                                                                                                                }
+                                                                                            }
+                                                                        },
+                                                "minecraft:behavior.breed":  {
+                                                                                 "priority":  2,
+                                                                                 "speed_multiplier":  1
                                                                              }
                                             },
                              "events":  {
