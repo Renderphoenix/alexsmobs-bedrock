@@ -97,11 +97,11 @@
                                                                                          ]
                                                                           },
                                                 "minecraft:navigation.walk":  {
-                                                                                  "can_path_over_water":  true,
+                                                                                  "can_path_over_water":  false,
                                                                                   "avoid_water":  true
                                                                               },
                                                 "minecraft:attack":  {
-                                                                         "damage":  8
+                                                                         "damage":  7
                                                                      },
                                                 "minecraft:behavior.float":  {
                                                                                  "priority":  0
@@ -133,15 +133,15 @@
                                                 "minecraft:behavior.random_look_around":  {
                                                                                               "priority":  7
                                                                                           },
-                                                "minecraft:behavior.melee_attack":  {
-                                                                                        "priority":  1,
-                                                                                        "speed_multiplier":  1,
-                                                                                        "track_target":  false
-                                                                                    },
                                                 "minecraft:behavior.hurt_by_target":  {
                                                                                           "priority":  1,
                                                                                           "hurt_owner":  false
-                                                                                      }
+                                                                                      },
+                                                "minecraft:behavior.melee_attack":  {
+                                                                                        "priority":  2,
+                                                                                        "speed_multiplier":  1.25,
+                                                                                        "track_target":  true
+                                                                                    }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

@@ -22,9 +22,6 @@
                                                 "minecraft:movement":  {
                                                                            "value":  0.25
                                                                        },
-                                                "minecraft:movement.basic":  {
-
-                                                                             },
                                                 "minecraft:jump.static":  {
 
                                                                           },
@@ -48,16 +45,10 @@
                                                                                              "animal"
                                                                                          ]
                                                                           },
-                                                "minecraft:navigation.swim":  {
-                                                                                  "can_swim":  true,
-                                                                                  "can_path_over_water":  false
-                                                                              },
-                                                "minecraft:movement.swimming":  {
-
-                                                                                },
                                                 "minecraft:breathable":  {
                                                                              "breathes_water":  true,
                                                                              "breathes_air":  false,
+                                                                             "suffocate_time":  10,
                                                                              "generates_bubbles":  true
                                                                          },
                                                 "minecraft:behavior.random_swim":  {
@@ -115,7 +106,14 @@
                                                                                                "wheat"
                                                                                            ],
                                                                                  "can_get_scared":  false
-                                                                             }
+                                                                             },
+                                                "minecraft:movement.swimming":  {
+
+                                                                                },
+                                                "minecraft:navigation.swim":  {
+                                                                                  "can_swim":  true,
+                                                                                  "can_path_over_water":  false
+                                                                              }
                                             }
                          }
 }

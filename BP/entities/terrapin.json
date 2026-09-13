@@ -61,8 +61,8 @@
                                                                                 "height":  0.45
                                                                             },
                                                 "minecraft:health":  {
-                                                                         "value":  10,
-                                                                         "max":  10
+                                                                         "value":  14,
+                                                                         "max":  14
                                                                      },
                                                 "minecraft:movement":  {
                                                                            "value":  0.1
@@ -106,10 +106,6 @@
                                                                          },
                                                 "minecraft:behavior.float":  {
                                                                                  "priority":  0
-                                                                             },
-                                                "minecraft:behavior.panic":  {
-                                                                                 "priority":  6,
-                                                                                 "speed_multiplier":  1.1
                                                                              },
                                                 "minecraft:behavior.tempt":  {
                                                                                  "priority":  2,
@@ -162,7 +158,11 @@
                                                                                      "can_path_over_water":  true,
                                                                                      "can_swim":  true,
                                                                                      "can_walk":  true
-                                                                                 }
+                                                                                 },
+                                                "minecraft:behavior.panic":  {
+                                                                                 "priority":  1,
+                                                                                 "speed_multiplier":  1.35
+                                                                             }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

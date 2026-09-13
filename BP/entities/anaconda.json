@@ -145,11 +145,6 @@
                                                                                         "priority":  2,
                                                                                         "speed_multiplier":  1.2
                                                                                     },
-                                                "minecraft:behavior.move_to_water":  {
-                                                                                         "priority":  3,
-                                                                                         "search_range":  16,
-                                                                                         "speed_multiplier":  1
-                                                                                     },
                                                 "minecraft:behavior.move_to_land":  {
                                                                                         "priority":  3,
                                                                                         "search_range":  12,

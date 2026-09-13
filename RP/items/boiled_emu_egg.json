@@ -1,12 +1,12 @@
 {
-  "format_version": "1.10.0",
-  "minecraft:item": {
-    "description": {
-      "identifier": "alexsmobs:boiled_emu_egg",
-      "category": "items"
-    },
-    "components": {
-      "minecraft:icon": "boiled_emu_egg"
-    }
-  }
+    "format_version":  "1.10.0",
+    "minecraft:item":  {
+                           "description":  {
+                                               "identifier":  "alexsmobs:boiled_emu_egg",
+                                               "category":  "items"
+                                           },
+                           "components":  {
+                                              "minecraft:icon":  "boiled_emu_egg"
+                                          }
+                       }
 }

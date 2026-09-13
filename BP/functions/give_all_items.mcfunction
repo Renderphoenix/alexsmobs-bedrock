@@ -8,11 +8,6 @@ give @s alexsmobs:banana_slug_slime 1
 give @s alexsmobs:banana_slug_slime_block 1
 give @s alexsmobs:banana_slug_slime_block_bubbles 1
 give @s alexsmobs:banana_slug_slime_block_inventory 1
-give @s alexsmobs:banner_pattern_australia_0 1
-give @s alexsmobs:banner_pattern_australia_1 1
-give @s alexsmobs:banner_pattern_bear 1
-give @s alexsmobs:banner_pattern_brazil 1
-give @s alexsmobs:banner_pattern_new_mexico 1
 give @s alexsmobs:bear_dust 1
 give @s alexsmobs:bear_fur 1
 give @s alexsmobs:bird_feeder 1
@@ -27,7 +22,6 @@ give @s alexsmobs:blood_sac 1
 give @s alexsmobs:blood_sprayer 1
 give @s alexsmobs:blood_sprayer_empty 1
 give @s alexsmobs:boiled_emu_egg 1
-give @s alexsmobs:bone_serpent_tooth 1
 give @s alexsmobs:cachalot_whale_tooth 1
 give @s alexsmobs:caiman_egg 1
 give @s alexsmobs:capsid 1
@@ -187,7 +181,6 @@ give @s alexsmobs:spawn_egg_banana_slug 1
 give @s alexsmobs:spawn_egg_bison 1
 give @s alexsmobs:spawn_egg_blobfish 1
 give @s alexsmobs:spawn_egg_blue_jay 1
-give @s alexsmobs:spawn_egg_bone_serpent 1
 give @s alexsmobs:spawn_egg_bunfungus 1
 give @s alexsmobs:spawn_egg_cachalot_whale 1
 give @s alexsmobs:spawn_egg_caiman 1

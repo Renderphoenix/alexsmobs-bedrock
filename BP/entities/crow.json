@@ -67,9 +67,6 @@
                                                 "minecraft:movement":  {
                                                                            "value":  0.2
                                                                        },
-                                                "minecraft:movement.basic":  {
-
-                                                                             },
                                                 "minecraft:jump.static":  {
 
                                                                           },
@@ -77,7 +74,8 @@
 
                                                                         },
                                                 "minecraft:physics":  {
-
+                                                                          "has_gravity":  false,
+                                                                          "has_collision":  true
                                                                       },
                                                 "minecraft:pushable":  {
                                                                            "is_pushable":  true,
@@ -96,39 +94,18 @@
                                                                                              "animal"
                                                                                          ]
                                                                           },
-                                                "minecraft:can_fly":  {
-
-                                                                      },
-                                                "minecraft:movement.fly":  {
-
-                                                                           },
-                                                "minecraft:navigation.fly":  {
-                                                                                 "can_path_over_water":  true
-                                                                             },
-                                                "minecraft:attack":  {
-                                                                         "damage":  1
-                                                                     },
                                                 "minecraft:behavior.float":  {
                                                                                  "priority":  0
                                                                              },
                                                 "minecraft:behavior.stay_while_sitting":  {
                                                                                               "priority":  1
                                                                                           },
-                                                "minecraft:behavior.melee_attack":  {
-                                                                                        "priority":  2,
-                                                                                        "speed_multiplier":  1.25,
-                                                                                        "track_target":  true
-                                                                                    },
                                                 "minecraft:behavior.follow_owner":  {
                                                                                         "priority":  3,
                                                                                         "speed_multiplier":  1.2,
                                                                                         "start_distance":  10,
                                                                                         "stop_distance":  2
                                                                                     },
-                                                "minecraft:behavior.panic":  {
-                                                                                 "priority":  4,
-                                                                                 "speed_multiplier":  1.35
-                                                                             },
                                                 "minecraft:behavior.circle_around_anchor":  {
                                                                                                 "priority":  6,
                                                                                                 "radius_range":  [
@@ -140,10 +117,6 @@
                                                                                                                             6
                                                                                                                         ]
                                                                                             },
-                                                "minecraft:behavior.random_stroll":  {
-                                                                                         "priority":  7,
-                                                                                         "speed_multiplier":  1
-                                                                                     },
                                                 "minecraft:behavior.look_at_player":  {
                                                                                           "priority":  8,
                                                                                           "target_distance":  6
@@ -160,7 +133,24 @@
                                                                                             },
                                                 "minecraft:behavior.owner_hurt_target":  {
                                                                                              "priority":  3
-                                                                                         }
+                                                                                         },
+                                                "minecraft:can_fly":  {
+
+                                                                      },
+                                                "minecraft:movement.fly":  {
+
+                                                                           },
+                                                "minecraft:navigation.fly":  {
+                                                                                 "can_path_over_water":  true
+                                                                             },
+                                                "minecraft:behavior.float_wander":  {
+                                                                                        "priority":  5,
+                                                                                        "must_reach":  false
+                                                                                    },
+                                                "minecraft:behavior.panic":  {
+                                                                                 "priority":  1,
+                                                                                 "speed_multiplier":  1.35
+                                                                             }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

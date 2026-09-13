@@ -67,9 +67,6 @@
                                                 "minecraft:movement":  {
                                                                            "value":  0.2
                                                                        },
-                                                "minecraft:movement.basic":  {
-
-                                                                             },
                                                 "minecraft:jump.static":  {
 
                                                                           },
@@ -93,16 +90,10 @@
                                                                                              "animal"
                                                                                          ]
                                                                           },
-                                                "minecraft:navigation.swim":  {
-                                                                                  "can_swim":  true,
-                                                                                  "can_path_over_water":  false
-                                                                              },
-                                                "minecraft:movement.swimming":  {
-
-                                                                                },
                                                 "minecraft:breathable":  {
                                                                              "breathes_water":  true,
                                                                              "breathes_air":  false,
+                                                                             "suffocate_time":  10,
                                                                              "generates_bubbles":  true
                                                                          },
                                                 "minecraft:attack":  {
@@ -126,11 +117,6 @@
                                                                                          "search_range":  16,
                                                                                          "speed_multiplier":  1
                                                                                      },
-                                                "minecraft:behavior.move_to_land":  {
-                                                                                        "priority":  3,
-                                                                                        "search_range":  12,
-                                                                                        "speed_multiplier":  1
-                                                                                    },
                                                 "minecraft:behavior.panic":  {
                                                                                  "priority":  5,
                                                                                  "speed_multiplier":  1.35
@@ -164,7 +150,14 @@
                                                                                                                           }
                                                                                                                       ],
                                                                                                      "must_see":  true
-                                                                                                 }
+                                                                                                 },
+                                                "minecraft:movement.swimming":  {
+
+                                                                                },
+                                                "minecraft:navigation.swim":  {
+                                                                                  "can_swim":  true,
+                                                                                  "can_path_over_water":  false
+                                                                              }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

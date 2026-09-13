@@ -69,9 +69,6 @@
                                                 "minecraft:movement":  {
                                                                            "value":  0.25
                                                                        },
-                                                "minecraft:movement.basic":  {
-
-                                                                             },
                                                 "minecraft:jump.static":  {
 
                                                                           },
@@ -96,12 +93,6 @@
                                                                                              "passive"
                                                                                          ]
                                                                           },
-                                                "minecraft:navigation.walk":  {
-                                                                                  "can_path_over_water":  true,
-                                                                                  "avoid_water":  true,
-                                                                                  "can_pass_doors":  false,
-                                                                                  "can_open_doors":  false
-                                                                              },
                                                 "minecraft:behavior.float":  {
                                                                                  "priority":  0
                                                                              },
@@ -117,10 +108,6 @@
                                                                                                "alexsmobs:cooked_lobster_tail"
                                                                                            ]
                                                                              },
-                                                "minecraft:behavior.random_stroll":  {
-                                                                                         "priority":  6,
-                                                                                         "speed_multiplier":  0.8
-                                                                                     },
                                                 "minecraft:behavior.look_at_player":  {
                                                                                           "priority":  7,
                                                                                           "look_distance":  6,
@@ -128,7 +115,25 @@
                                                                                       },
                                                 "minecraft:behavior.random_look_around":  {
                                                                                               "priority":  8
-                                                                                          }
+                                                                                          },
+                                                "minecraft:movement.swimming":  {
+
+                                                                                },
+                                                "minecraft:navigation.swim":  {
+                                                                                  "can_swim":  true,
+                                                                                  "can_path_over_water":  false
+                                                                              },
+                                                "minecraft:behavior.random_swim":  {
+                                                                                       "priority":  4,
+                                                                                       "speed_multiplier":  1,
+                                                                                       "interval":  20
+                                                                                   },
+                                                "minecraft:breathable":  {
+                                                                             "breathes_water":  true,
+                                                                             "breathes_air":  false,
+                                                                             "suffocate_time":  15,
+                                                                             "generates_bubbles":  true
+                                                                         }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

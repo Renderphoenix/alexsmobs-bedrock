@@ -7,7 +7,6 @@ summon alexsmobs:banana_slug ~ ~ ~
 summon alexsmobs:bison ~ ~ ~
 summon alexsmobs:blobfish ~ ~ ~
 summon alexsmobs:blue_jay ~ ~ ~
-summon alexsmobs:bone_serpent ~ ~ ~
 summon alexsmobs:bunfungus ~ ~ ~
 summon alexsmobs:cachalot_whale ~ ~ ~
 summon alexsmobs:caiman ~ ~ ~

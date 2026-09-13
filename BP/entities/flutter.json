@@ -131,13 +131,7 @@
                                                                                       },
                                                 "minecraft:behavior.random_look_around":  {
                                                                                               "priority":  7
-                                                                                          },
-                                                "minecraft:behavior.owner_hurt_by_target":  {
-                                                                                                "priority":  1
-                                                                                            },
-                                                "minecraft:behavior.owner_hurt_target":  {
-                                                                                             "priority":  2
-                                                                                         }
+                                                                                          }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

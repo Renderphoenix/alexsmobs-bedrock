@@ -20,11 +20,8 @@
                                                                          "max":  60
                                                                      },
                                                 "minecraft:movement":  {
-                                                                           "value":  1.35
+                                                                           "value":  0.3
                                                                        },
-                                                "minecraft:movement.basic":  {
-
-                                                                             },
                                                 "minecraft:jump.static":  {
 
                                                                           },
@@ -57,16 +54,10 @@
                                                                                              "animal"
                                                                                          ]
                                                                           },
-                                                "minecraft:navigation.swim":  {
-                                                                                  "can_swim":  true,
-                                                                                  "can_path_over_water":  false
-                                                                              },
-                                                "minecraft:movement.swimming":  {
-
-                                                                                },
                                                 "minecraft:breathable":  {
                                                                              "breathes_water":  true,
-                                                                             "breathes_air":  true,
+                                                                             "breathes_air":  false,
+                                                                             "suffocate_time":  10,
                                                                              "generates_bubbles":  true
                                                                          },
                                                 "minecraft:attack":  {
@@ -118,7 +109,14 @@
                                                                                                                           }
                                                                                                                       ],
                                                                                                      "must_see":  true
-                                                                                                 }
+                                                                                                 },
+                                                "minecraft:movement.swimming":  {
+
+                                                                                },
+                                                "minecraft:navigation.swim":  {
+                                                                                  "can_swim":  true,
+                                                                                  "can_path_over_water":  false
+                                                                              }
                                             }
                          }
 }

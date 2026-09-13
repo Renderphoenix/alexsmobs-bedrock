@@ -99,7 +99,7 @@
                                                                                          ]
                                                                           },
                                                 "minecraft:navigation.walk":  {
-                                                                                  "can_path_over_water":  true,
+                                                                                  "can_path_over_water":  false,
                                                                                   "avoid_water":  true
                                                                               },
                                                 "minecraft:attack":  {
@@ -144,11 +144,6 @@
                                                                                           "priority":  5,
                                                                                           "speed_multiplier":  1.05
                                                                                       },
-                                                "minecraft:behavior.move_to_water":  {
-                                                                                         "priority":  6,
-                                                                                         "search_range":  16,
-                                                                                         "speed_multiplier":  1
-                                                                                     },
                                                 "minecraft:behavior.move_to_land":  {
                                                                                         "priority":  7,
                                                                                         "search_range":  12,

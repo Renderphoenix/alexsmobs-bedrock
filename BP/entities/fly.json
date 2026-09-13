@@ -67,9 +67,6 @@
                                                 "minecraft:movement":  {
                                                                            "value":  0.25
                                                                        },
-                                                "minecraft:movement.basic":  {
-
-                                                                             },
                                                 "minecraft:jump.static":  {
 
                                                                           },
@@ -77,7 +74,8 @@
 
                                                                         },
                                                 "minecraft:physics":  {
-
+                                                                          "has_gravity":  false,
+                                                                          "has_collision":  true
                                                                       },
                                                 "minecraft:pushable":  {
                                                                            "is_pushable":  true,
@@ -96,15 +94,6 @@
                                                                                              "animal"
                                                                                          ]
                                                                           },
-                                                "minecraft:can_fly":  {
-
-                                                                      },
-                                                "minecraft:movement.fly":  {
-
-                                                                           },
-                                                "minecraft:navigation.fly":  {
-                                                                                 "can_path_over_water":  true
-                                                                             },
                                                 "minecraft:behavior.float":  {
                                                                                  "priority":  6
                                                                              },
@@ -123,10 +112,6 @@
                                                 "minecraft:behavior.follow_parent":  {
                                                                                          "priority":  3,
                                                                                          "speed_multiplier":  1.25
-                                                                                     },
-                                                "minecraft:behavior.random_stroll":  {
-                                                                                         "priority":  5,
-                                                                                         "speed_multiplier":  1
                                                                                      },
                                                 "minecraft:behavior.look_at_player":  {
                                                                                           "priority":  6,
@@ -149,7 +134,20 @@
                                                                                                            ],
                                                                                           "walk_speed_multiplier":  1,
                                                                                           "sprint_speed_multiplier":  1.2
-                                                                                      }
+                                                                                      },
+                                                "minecraft:can_fly":  {
+
+                                                                      },
+                                                "minecraft:movement.fly":  {
+
+                                                                           },
+                                                "minecraft:navigation.fly":  {
+                                                                                 "can_path_over_water":  true
+                                                                             },
+                                                "minecraft:behavior.float_wander":  {
+                                                                                        "priority":  5,
+                                                                                        "must_reach":  false
+                                                                                    }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

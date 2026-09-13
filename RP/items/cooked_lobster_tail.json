@@ -1,12 +1,12 @@
 {
-  "format_version": "1.10.0",
-  "minecraft:item": {
-    "description": {
-      "identifier": "alexsmobs:cooked_lobster_tail",
-      "category": "nature"
-    },
-    "components": {
-      "minecraft:icon": "cooked_lobster_tail"
-    }
-  }
+    "format_version":  "1.10.0",
+    "minecraft:item":  {
+                           "description":  {
+                                               "identifier":  "alexsmobs:cooked_lobster_tail",
+                                               "category":  "items"
+                                           },
+                           "components":  {
+                                              "minecraft:icon":  "cooked_lobster_tail"
+                                          }
+                       }
 }

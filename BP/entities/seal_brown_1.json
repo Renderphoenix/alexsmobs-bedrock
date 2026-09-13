@@ -63,8 +63,8 @@
                                                                                 "height":  0.9
                                                                             },
                                                 "minecraft:health":  {
-                                                                         "value":  10,
-                                                                         "max":  10
+                                                                         "value":  20,
+                                                                         "max":  20
                                                                      },
                                                 "minecraft:movement":  {
                                                                            "value":  0.18
@@ -103,15 +103,8 @@
                                                                              "breathes_air":  true,
                                                                              "generates_bubbles":  true
                                                                          },
-                                                "minecraft:attack":  {
-                                                                         "damage":  2
-                                                                     },
                                                 "minecraft:behavior.float":  {
                                                                                  "priority":  0
-                                                                             },
-                                                "minecraft:behavior.panic":  {
-                                                                                 "priority":  4,
-                                                                                 "speed_multiplier":  1.6
                                                                              },
                                                 "minecraft:behavior.tempt":  {
                                                                                  "priority":  10,
@@ -151,11 +144,6 @@
                                                                                         "search_range":  12,
                                                                                         "speed_multiplier":  1
                                                                                     },
-                                                "minecraft:behavior.melee_attack":  {
-                                                                                        "priority":  5,
-                                                                                        "speed_multiplier":  1,
-                                                                                        "track_target":  false
-                                                                                    },
                                                 "minecraft:behavior.pickup_items":  {
                                                                                         "priority":  2,
                                                                                         "max_dist":  16,
@@ -182,25 +170,16 @@
                                                                                           "walk_speed_multiplier":  1.3,
                                                                                           "sprint_speed_multiplier":  1
                                                                                       },
-                                                "minecraft:behavior.nearest_attackable_target":  {
-                                                                                                     "priority":  1,
-                                                                                                     "entity_types":  [
-                                                                                                                          {
-                                                                                                                              "filters":  {
-                                                                                                                                              "test":  "is_family",
-                                                                                                                                              "subject":  "other",
-                                                                                                                                              "value":  "fish"
-                                                                                                                                          }
-                                                                                                                          }
-                                                                                                                      ],
-                                                                                                     "must_see":  true
-                                                                                                 },
                                                 "minecraft:navigation.generic":  {
                                                                                      "is_amphibious":  true,
                                                                                      "can_path_over_water":  true,
                                                                                      "can_swim":  true,
                                                                                      "can_walk":  true
-                                                                                 }
+                                                                                 },
+                                                "minecraft:behavior.panic":  {
+                                                                                 "priority":  1,
+                                                                                 "speed_multiplier":  1.35
+                                                                             }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

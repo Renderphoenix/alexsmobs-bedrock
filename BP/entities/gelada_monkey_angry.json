@@ -95,7 +95,7 @@
                                                                                          ]
                                                                           },
                                                 "minecraft:navigation.walk":  {
-                                                                                  "can_path_over_water":  true,
+                                                                                  "can_path_over_water":  false,
                                                                                   "avoid_water":  true,
                                                                                   "can_pass_doors":  false,
                                                                                   "can_open_doors":  false
