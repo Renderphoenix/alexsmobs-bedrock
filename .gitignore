@@ -16,4 +16,15 @@ alexsmobs-*-decompiled-jar/
 Thumbs.db
 desktop.ini
 *.tmp
+scratch_*.txt
+__pycache__/
+*.pyc
+*.blend
+*.blend1
+
+# Render scripts (renders/ folder is explicitly preserved)
+render_*.py
+test_*.py
+!renders/
+!renders/**
 
