@@ -1,4 +1,4 @@
-﻿{
+{
     "format_version":  "1.10.0",
     "animation_controllers":  {
                                   "controller.animation.elephant.move":  {
@@ -10,7 +10,7 @@
                                                                                                                         ],
                                                                                                          "transitions":  [
                                                                                                                              {
-                                                                                                                                 "run":  "(query.is_moving || query.ground_speed > 0.1) && (query.has_target || query.is_panicking || query.is_sprinting || query.ground_speed > 2.0 || math.mod(query.life_time + query.entity_id, 10.0) > 6.0)"
+                                                                                                                                 "run":  "(query.is_moving || query.ground_speed > 0.1) && (query.has_target || query.is_panicking || query.is_sprinting || query.ground_speed > 1.8)"
                                                                                                                              },
                                                                                                                              {
                                                                                                                                  "walk":  "query.is_moving || query.ground_speed > 0.1"
@@ -27,7 +27,7 @@
                                                                                                                                  "idle":  "!query.is_moving && query.ground_speed <= 0.05"
                                                                                                                              },
                                                                                                                              {
-                                                                                                                                 "run":  "query.has_target || query.is_panicking || query.is_sprinting || query.ground_speed > 2.0 || math.mod(query.life_time + query.entity_id, 10.0) > 6.0"
+                                                                                                                                 "run":  "query.has_target || query.is_panicking || query.is_sprinting || query.ground_speed > 1.8"
                                                                                                                              }
                                                                                                                          ],
                                                                                                          "blend_transition":  0.2
@@ -41,7 +41,7 @@
                                                                                                                                 "idle":  "!query.is_moving && query.ground_speed <= 0.05"
                                                                                                                             },
                                                                                                                             {
-                                                                                                                                "walk":  "!query.has_target && !query.is_panicking && !query.is_sprinting && query.ground_speed <= 2.0 && math.mod(query.life_time + query.entity_id, 10.0) <= 6.0"
+                                                                                                                                "walk":  "!query.has_target && !query.is_panicking && !query.is_sprinting && query.ground_speed <= 1.8"
                                                                                                                             }
                                                                                                                         ],
                                                                                                         "blend_transition":  0.2
@@ -60,7 +60,10 @@
                                                                                                                                       "attack":  "variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 3.5)"
                                                                                                                                   },
                                                                                                                                   {
-                                                                                                                                      "trumpet":  "query.has_target || (!query.is_moving && query.ground_speed <= 0.05 && math.mod(query.life_time * 0.12 + query.entity_id, 18.0) > 14.0)"
+                                                                                                                                      "trumpet":  "query.has_target || (!query.is_moving && query.ground_speed <= 0.05 && math.mod(query.life_time, 45.0) > 42.0)"
+                                                                                                                                  },
+                                                                                                                                  {
+                                                                                                                                      "eat":  "!query.is_moving && query.ground_speed <= 0.05 && !query.has_target && math.mod(query.life_time + 20.0, 50.0) > 46.0"
                                                                                                                                   }
                                                                                                                               ],
                                                                                                               "blend_transition":  0.15
@@ -104,7 +107,7 @@
                                                                                                                          ],
                                                                                                           "transitions":  [
                                                                                                                               {
-                                                                                                                                  "default":  "query.state_time >= 1.5"
+                                                                                                                                  "default":  "query.state_time >= 1.5 || query.is_moving || query.is_hurt"
                                                                                                                               }
                                                                                                                           ],
                                                                                                           "blend_transition":  0.15

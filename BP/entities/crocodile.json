@@ -1,4 +1,4 @@
-﻿{
+{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -53,7 +53,57 @@
                                                                                                      "priority":  1,
                                                                                                      "speed_multiplier":  1
                                                                                                  }
-                                                                }
+                                                                },
+                                                      "crocodile_calm":  {
+                                                                             "minecraft:timer":  {
+                                                                                                     "time":  [20.0, 45.0],
+                                                                                                     "looping":  false,
+                                                                                                     "time_down_event":  {
+                                                                                                                             "event":  "alexsmobs:crocodile_evaluate_hunt"
+                                                                                                                         }
+                                                                                                 }
+                                                                         },
+                                                      "crocodile_hunting":  {
+                                                                                "minecraft:timer":  {
+                                                                                                        "time":  [12.0, 24.0],
+                                                                                                        "looping":  false,
+                                                                                                        "time_down_event":  {
+                                                                                                                                "event":  "alexsmobs:crocodile_evaluate_calm"
+                                                                                                                            }
+                                                                                                    },
+                                                                                "minecraft:behavior.nearest_attackable_target":  {
+                                                                                                                                     "priority":  2,
+                                                                                                                                     "entity_types":  [
+                                                                                                                                                          {
+                                                                                                                                                              "filters":  {
+                                                                                                                                                                              "test":  "is_family",
+                                                                                                                                                                              "subject":  "other",
+                                                                                                                                                                              "value":  "player"
+                                                                                                                                                                          },
+                                                                                                                                                              "max_dist":  14
+                                                                                                                                                          },
+                                                                                                                                                          {
+                                                                                                                                                              "filters":  {
+                                                                                                                                                                              "all_of":  [
+                                                                                                                                                                                             {
+                                                                                                                                                                                                 "test":  "is_family",
+                                                                                                                                                                                                 "subject":  "other",
+                                                                                                                                                                                                 "value":  "animal"
+                                                                                                                                                                                             },
+                                                                                                                                                                                             {
+                                                                                                                                                                                                 "test":  "is_family",
+                                                                                                                                                                                                 "subject":  "other",
+                                                                                                                                                                                                 "operator":  "!=",
+                                                                                                                                                                                                 "value":  "crocodile"
+                                                                                                                                                                                             }
+                                                                                                                                                          ]
+                                                                                                                                              },
+                                                                                                                                "max_dist":  16
+                                                                                                                            }
+                                                                                                                       ],
+                                                                                                      "must_see":  true
+                                                                                                  }
+                                                                            }
                                                   },
                              "components":  {
                                                 "minecraft:collision_box":  {
@@ -128,28 +178,6 @@
                                                                                           "priority":  5,
                                                                                           "target_distance":  8
                                                                                       },
-                                                "minecraft:behavior.nearest_attackable_target":  {
-                                                                                                     "priority":  2,
-                                                                                                     "entity_types":  [
-                                                                                                                          {
-                                                                                                                              "filters":  {
-                                                                                                                                              "test":  "is_family",
-                                                                                                                                              "subject":  "other",
-                                                                                                                                              "value":  "player"
-                                                                                                                                          },
-                                                                                                                              "max_dist":  18
-                                                                                                                          },
-                                                                                                                          {
-                                                                                                                              "filters":  {
-                                                                                                                                              "test":  "is_family",
-                                                                                                                                              "subject":  "other",
-                                                                                                                                              "value":  "animal"
-                                                                                                                                          },
-                                                                                                                              "max_dist":  18
-                                                                                                                          }
-                                                                                                                      ],
-                                                                                                     "must_see":  false
-                                                                                                 },
                                                 "minecraft:behavior.melee_attack":  {
                                                                                         "priority":  1,
                                                                                         "speed_multiplier":  1.4,
@@ -200,32 +228,117 @@
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {
-                                                                             "randomize":  [
-                                                                                               {
-                                                                                                   "weight":  95,
-                                                                                                   "add":  {
-                                                                                                               "component_groups":  [
-                                                                                                                                        "adult"
-                                                                                                                                    ]
-                                                                                                           }
-                                                                                               },
-                                                                                               {
-                                                                                                   "weight":  5,
-                                                                                                   "add":  {
-                                                                                                               "component_groups":  [
-                                                                                                                                        "baby"
-                                                                                                                                    ]
-                                                                                                           }
-                                                                                               }
-                                                                                           ]
+                                                                             "sequence":  [
+                                                                                              {
+                                                                                                  "randomize":  [
+                                                                                                                    {
+                                                                                                                        "weight":  95,
+                                                                                                                        "add":  {
+                                                                                                                                    "component_groups":  [
+                                                                                                                                                             "adult"
+                                                                                                                                                         ]
+                                                                                                                                }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "weight":  5,
+                                                                                                                        "add":  {
+                                                                                                                                    "component_groups":  [
+                                                                                                                                                             "baby"
+                                                                                                                                                         ]
+                                                                                                                                }
+                                                                                                                    }
+                                                                                                                ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "randomize":  [
+                                                                                                                    {
+                                                                                                                        "weight":  70,
+                                                                                                                        "add":  {
+                                                                                                                                    "component_groups":  [
+                                                                                                                                                             "crocodile_calm"
+                                                                                                                                                         ]
+                                                                                                                                }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "weight":  30,
+                                                                                                                        "add":  {
+                                                                                                                                    "component_groups":  [
+                                                                                                                                                             "crocodile_hunting"
+                                                                                                                                                         ]
+                                                                                                                                }
+                                                                                                                    }
+                                                                                                                ]
+                                                                                              }
+                                                                                          ]
                                                                          },
                                             "minecraft:entity_born":  {
                                                                           "add":  {
                                                                                       "component_groups":  [
-                                                                                                               "baby"
+                                                                                                               "baby",
+                                                                                                               "crocodile_calm"
                                                                                                            ]
                                                                                   }
                                                                       },
+                                            "alexsmobs:crocodile_evaluate_hunt":  {
+                                                                                      "randomize":  [
+                                                                                                        {
+                                                                                                            "weight":  35,
+                                                                                                            "remove":  {
+                                                                                                                           "component_groups":  [
+                                                                                                                                                    "crocodile_calm"
+                                                                                                                                                ]
+                                                                                                                       },
+                                                                                                            "add":  {
+                                                                                                                        "component_groups":  [
+                                                                                                                                                 "crocodile_hunting"
+                                                                                                                                             ]
+                                                                                                                    }
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "weight":  65,
+                                                                                                            "remove":  {
+                                                                                                                           "component_groups":  [
+                                                                                                                                                    "crocodile_calm"
+                                                                                                                                                ]
+                                                                                                                       },
+                                                                                                            "add":  {
+                                                                                                                        "component_groups":  [
+                                                                                                                                                 "crocodile_calm"
+                                                                                                                                             ]
+                                                                                                                    }
+                                                                                                        }
+                                                                                                    ]
+                                                                                  },
+                                            "alexsmobs:crocodile_evaluate_calm":  {
+                                                                                      "randomize":  [
+                                                                                                        {
+                                                                                                            "weight":  65,
+                                                                                                            "remove":  {
+                                                                                                                           "component_groups":  [
+                                                                                                                                                    "crocodile_hunting"
+                                                                                                                                                ]
+                                                                                                                       },
+                                                                                                            "add":  {
+                                                                                                                        "component_groups":  [
+                                                                                                                                                 "crocodile_calm"
+                                                                                                                                             ]
+                                                                                                                    }
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "weight":  35,
+                                                                                                            "remove":  {
+                                                                                                                           "component_groups":  [
+                                                                                                                                                    "crocodile_hunting"
+                                                                                                                                                ]
+                                                                                                                       },
+                                                                                                            "add":  {
+                                                                                                                        "component_groups":  [
+                                                                                                                                                 "crocodile_hunting"
+                                                                                                                                             ]
+                                                                                                                    }
+                                                                                                        }
+                                                                                                    ]
+                                                                                  },
                                             "grow_up":  {
                                                             "remove":  {
                                                                            "component_groups":  [
