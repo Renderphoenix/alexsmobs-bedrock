@@ -10,13 +10,16 @@
                                                                                                                       ],
                                                                                                        "transitions":  [
                                                                                                                            {
-                                                                                                                               "swim":  "query.is_in_water"
+                                                                                                                               "swim":  "query.is_in_water && (query.is_moving || query.ground_speed > 0.05)"
                                                                                                                            },
                                                                                                                            {
-                                                                                                                               "walk":  "query.modified_move_speed > 0.05 && query.modified_move_speed <= 0.4 && !query.has_target && !query.is_panicking"
+                                                                                                                               "run":  "(query.is_moving || query.ground_speed > 0.1) && (query.has_target || query.is_panicking || query.ground_speed > 2.0 || math.mod(query.life_time + query.entity_id, 10.0) > 6.0)"
                                                                                                                            },
                                                                                                                            {
-                                                                                                                               "run":  "query.modified_move_speed > 0.4 || query.has_target || query.is_panicking"
+                                                                                                                               "walk":  "query.is_moving || query.ground_speed > 0.1"
+                                                                                                                           },
+                                                                                                                           {
+                                                                                                                               "bask":  "!query.is_in_water && !query.is_moving && query.ground_speed <= 0.05 && !query.has_target && math.mod(query.life_time * 0.1 + query.entity_id, 24.0) > 15.0"
                                                                                                                            }
                                                                                                                        ],
                                                                                                        "blend_transition":  0.2
@@ -27,13 +30,13 @@
                                                                                                                       ],
                                                                                                        "transitions":  [
                                                                                                                            {
-                                                                                                                               "idle":  "query.modified_move_speed <= 0.05"
-                                                                                                                           },
-                                                                                                                           {
                                                                                                                                "swim":  "query.is_in_water"
                                                                                                                            },
                                                                                                                            {
-                                                                                                                               "run":  "query.modified_move_speed > 0.4 || query.has_target || query.is_panicking"
+                                                                                                                               "idle":  "!query.is_moving && query.ground_speed <= 0.05"
+                                                                                                                           },
+                                                                                                                           {
+                                                                                                                               "run":  "query.has_target || query.is_panicking || query.ground_speed > 2.0 || math.mod(query.life_time + query.entity_id, 10.0) > 6.0"
                                                                                                                            }
                                                                                                                        ],
                                                                                                        "blend_transition":  0.2
@@ -44,13 +47,13 @@
                                                                                                                      ],
                                                                                                       "transitions":  [
                                                                                                                           {
-                                                                                                                              "idle":  "query.modified_move_speed <= 0.05"
-                                                                                                                          },
-                                                                                                                          {
                                                                                                                               "swim":  "query.is_in_water"
                                                                                                                           },
                                                                                                                           {
-                                                                                                                              "walk":  "query.modified_move_speed <= 0.4 && !query.has_target && !query.is_panicking && query.modified_move_speed > 0.05"
+                                                                                                                              "idle":  "!query.is_moving && query.ground_speed <= 0.05"
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                              "walk":  "!query.has_target && !query.is_panicking && query.ground_speed <= 2.0 && math.mod(query.life_time + query.entity_id, 10.0) <= 6.0"
                                                                                                                           }
                                                                                                                       ],
                                                                                                       "blend_transition":  0.2
@@ -61,16 +64,33 @@
                                                                                                                       ],
                                                                                                        "transitions":  [
                                                                                                                            {
-                                                                                                                               "idle":  "!query.is_in_water && query.modified_move_speed <= 0.05"
+                                                                                                                               "idle":  "!query.is_in_water && !query.is_moving && query.ground_speed <= 0.05"
                                                                                                                            },
                                                                                                                            {
-                                                                                                                               "walk":  "!query.is_in_water && query.modified_move_speed > 0.05 && query.modified_move_speed <= 0.4"
-                                                                                                                           },
-                                                                                                                           {
-                                                                                                                               "run":  "!query.is_in_water && (query.modified_move_speed > 0.4 || query.has_target || query.is_panicking)"
+                                                                                                                               "walk":  "!query.is_in_water && query.is_moving"
                                                                                                                            }
                                                                                                                        ],
                                                                                                        "blend_transition":  0.2
+                                                                                                   },
+                                                                                          "bask":  {
+                                                                                                       "animations":  [
+                                                                                                                          "idle_bask"
+                                                                                                                      ],
+                                                                                                       "transitions":  [
+                                                                                                                           {
+                                                                                                                               "swim":  "query.is_in_water"
+                                                                                                                           },
+                                                                                                                           {
+                                                                                                                               "run":  "(query.is_moving || query.ground_speed > 0.1) && (query.has_target || query.is_panicking || query.ground_speed > 2.0)"
+                                                                                                                           },
+                                                                                                                           {
+                                                                                                                               "walk":  "query.is_moving || query.ground_speed > 0.1"
+                                                                                                                           },
+                                                                                                                           {
+                                                                                                                               "idle":  "query.state_time >= 8.0 || query.has_target || query.is_hurt"
+                                                                                                                           }
+                                                                                                                       ],
+                                                                                                       "blend_transition":  0.3
                                                                                                    }
                                                                                       }
                                                                        },
@@ -83,28 +103,11 @@
                                                                                                                                     "hurt":  "query.is_hurt || (query.hurt_time > 0)"
                                                                                                                                 },
                                                                                                                                 {
-                                                                                                                                    "death_roll":  "query.is_in_water && (variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 2.5))"
-                                                                                                                                },
-                                                                                                                                {
-                                                                                                                                    "attack":  "!query.is_in_water && (variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 2.5))"
-                                                                                                                                },
-                                                                                                                                {
-                                                                                                                                    "bask":  "!query.is_in_water && query.modified_move_speed <= 0.02 && !query.has_target && math.mod(query.life_time, 20.0) > 12.0"
+                                                                                                                                    "attack":  "variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 2.5)"
                                                                                                                                 }
                                                                                                                             ],
                                                                                                             "blend_transition":  0.15
                                                                                                         },
-                                                                                            "attack":  {
-                                                                                                           "animations":  [
-                                                                                                                              "attack"
-                                                                                                                          ],
-                                                                                                           "transitions":  [
-                                                                                                                               {
-                                                                                                                                   "default":  "query.state_time >= 0.6"
-                                                                                                                               }
-                                                                                                                           ],
-                                                                                                           "blend_transition":  0.15
-                                                                                                       },
                                                                                             "hurt":  {
                                                                                                          "animations":  [
                                                                                                                             "hurt"
@@ -116,28 +119,17 @@
                                                                                                                          ],
                                                                                                          "blend_transition":  0.1
                                                                                                      },
-                                                                                            "death_roll":  {
-                                                                                                               "animations":  [
-                                                                                                                                  "death_roll"
-                                                                                                                              ],
-                                                                                                               "transitions":  [
-                                                                                                                                   {
-                                                                                                                                       "default":  "query.state_time >= 0.6"
-                                                                                                                                   }
-                                                                                                                               ],
-                                                                                                               "blend_transition":  0.15
-                                                                                                           },
-                                                                                            "bask":  {
-                                                                                                         "animations":  [
-                                                                                                                            "idle_bask"
-                                                                                                                        ],
-                                                                                                         "transitions":  [
-                                                                                                                             {
-                                                                                                                                 "default":  "query.modified_move_speed > 0.02 || query.has_target || query.is_in_water || query.state_time >= 5.0"
-                                                                                                                             }
-                                                                                                                         ],
-                                                                                                         "blend_transition":  0.2
-                                                                                                     }
+                                                                                            "attack":  {
+                                                                                                           "animations":  [
+                                                                                                                              "attack"
+                                                                                                                          ],
+                                                                                                           "transitions":  [
+                                                                                                                               {
+                                                                                                                                   "default":  "query.state_time >= 0.6"
+                                                                                                                               }
+                                                                                                                           ],
+                                                                                                           "blend_transition":  0.15
+                                                                                                       }
                                                                                         }
                                                                          }
                               }
