@@ -1,56 +1,462 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.kangaroo.walk": {
-      "anim_time_update": "query.modified_distance_moved",
+    "animation.kangaroo.idle": {
       "loop": true,
       "bones": {
-        "leg_left": {
+        "body": {
           "rotation": [
-            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            "-15.0 + math.sin(query.anim_time * 22.0) * 1.2",
+            "math.sin(query.anim_time * 11.0) * 1.0",
+            "math.cos(query.anim_time * 15.0) * 0.8"
+          ],
+          "position": [
+            0,
+            "math.sin(query.anim_time * 22.0) * 0.15",
+            0
+          ]
+        },
+        "chest": {
+          "rotation": [
+            "-10.0 + (math.sin(query.anim_time * 22.0) * 1.0)",
             0,
             0
           ]
         },
-        "leg_right": {
+        "neck": {
           "rotation": [
-            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            "12.0 - (math.sin(query.anim_time * 22.0) * 0.8)",
             0,
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            "10.0 + math.clamp(query.target_x_rotation, -25.0, 25.0) + (math.sin(query.anim_time * 30.0) * 1.5)",
+            "math.clamp(query.target_y_rotation, -45.0, 45.0) + (math.sin(query.anim_time * 15.0) * 2.0)",
+            "-(math.sin(query.anim_time * 11.0) * 1.0)"
+          ]
+        },
+        "ear_left": {
+          "rotation": [
+            "10.0 + math.sin(query.anim_time * 25.0) * 2.0",
+            "20.0",
+            "25.0 + math.clamp(math.sin(query.anim_time * 100.0) * 10.0, 0.0, 10.0)"
+          ]
+        },
+        "ear_right": {
+          "rotation": [
+            "10.0 + math.sin(query.anim_time * 25.0 + 20.0) * 2.0",
+            "-20.0",
+            "-25.0 - math.clamp(math.sin(query.anim_time * 100.0 + 35.0) * 10.0, 0.0, 10.0)"
+          ]
+        },
+        "arm_left": {
+          "rotation": [
+            "25.0 + math.sin(query.anim_time * 22.0) * 2.5",
+            "10.0",
+            "15.0"
+          ]
+        },
+        "arm_right": {
+          "rotation": [
+            "25.0 + math.sin(query.anim_time * 22.0) * 2.5",
+            "-10.0",
+            "-15.0"
+          ]
+        },
+        "tail1": {
+          "rotation": [
+            "22.0 + math.sin(query.anim_time * 18.0) * 2.5",
+            "math.sin(query.anim_time * 14.0 - 20.0) * 6.0",
+            0
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "15.0 + math.sin(query.anim_time * 18.0 + 20.0) * 4.0",
+            "math.sin(query.anim_time * 14.0 - 45.0) * 10.0",
+            0
+          ]
+        }
+      }
+    },
+    "animation.kangaroo.idle_graze": {
+      "loop": true,
+      "animation_length": 3.0,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [-15.0, 0, 0],
+            "0.8": [35.0, 0, 0],
+            "2.2": [35.0, 0, 0],
+            "3.0": [-15.0, 0, 0]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.8": [0, -3.5, 3.5],
+            "2.2": [0, -3.5, 3.5],
+            "3.0": [0, 0, 0]
+          }
+        },
+        "chest": {
+          "rotation": {
+            "0.0": [-10.0, 0, 0],
+            "0.8": [10.0, 0, 0],
+            "2.2": [10.0, 0, 0],
+            "3.0": [-10.0, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": [10.0, 0, 0],
+            "0.8": [25.0, 0, 0],
+            "1.4": [30.0, 8.0, 0],
+            "1.8": [28.0, -8.0, 0],
+            "2.2": [25.0, 0, 0],
+            "3.0": [10.0, 0, 0]
+          }
+        },
+        "arm_left": {
+          "rotation": {
+            "0.0": [25.0, 0, 0],
+            "0.8": [-45.0, 0, 0],
+            "2.2": [-45.0, 0, 0],
+            "3.0": [25.0, 0, 0]
+          }
+        },
+        "arm_right": {
+          "rotation": {
+            "0.0": [25.0, 0, 0],
+            "0.8": [-45.0, 0, 0],
+            "2.2": [-45.0, 0, 0],
+            "3.0": [25.0, 0, 0]
+          }
+        },
+        "tail1": {
+          "rotation": {
+            "0.0": [22.0, 0, 0],
+            "0.8": [-15.0, 0, 0],
+            "2.2": [-15.0, 0, 0],
+            "3.0": [22.0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.kangaroo.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "math.sin(query.anim_time * 50.0) * 12.0 + 8.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.abs(math.sin(query.anim_time * 50.0)) * 1.5 - 0.7",
+            "math.cos(query.anim_time * 50.0) * 0.8"
+          ]
+        },
+        "head": {
+          "rotation": [
+            "math.clamp(query.target_x_rotation, -20.0, 20.0) - (math.sin(query.anim_time * 50.0) * 6.0)",
+            "math.clamp(query.target_y_rotation, -35.0, 35.0)",
             0
           ]
         },
         "arm_left": {
           "rotation": [
-            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            "-math.sin(query.anim_time * 50.0) * 25.0 - 15.0",
             0,
             0
           ]
         },
         "arm_right": {
           "rotation": [
-            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            "-math.sin(query.anim_time * 50.0) * 25.0 - 15.0",
+            0,
+            0
+          ]
+        },
+        "leg_left": {
+          "rotation": [
+            "-math.sin(query.anim_time * 50.0) * 35.0",
+            0,
+            0
+          ]
+        },
+        "knee_left": {
+          "rotation": [
+            "math.clamp(math.sin(query.anim_time * 50.0) * 30.0, 0.0, 30.0)",
+            0,
+            0
+          ]
+        },
+        "foot_left": {
+          "rotation": [
+            "-math.clamp(math.sin(query.anim_time * 50.0) * 20.0, 0.0, 20.0)",
+            0,
+            0
+          ]
+        },
+        "leg_right": {
+          "rotation": [
+            "-math.sin(query.anim_time * 50.0) * 35.0",
+            0,
+            0
+          ]
+        },
+        "knee_right": {
+          "rotation": [
+            "math.clamp(math.sin(query.anim_time * 50.0) * 30.0, 0.0, 30.0)",
+            0,
+            0
+          ]
+        },
+        "foot_right": {
+          "rotation": [
+            "-math.clamp(math.sin(query.anim_time * 50.0) * 20.0, 0.0, 20.0)",
             0,
             0
           ]
         },
         "tail1": {
           "rotation": [
+            "math.sin(query.anim_time * 50.0 - 25.0) * 15.0 + 10.0",
             0,
-            "(math.cos(query.anim_time * 38.17) * 18.0)",
+            0
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "math.sin(query.anim_time * 50.0 - 50.0) * 20.0 + 10.0",
+            0,
             0
           ]
         }
       }
     },
-    "animation.kangaroo.idle": {
+    "animation.kangaroo.run": {
+      "anim_time_update": "query.modified_distance_moved",
       "loop": true,
       "bones": {
+        "body": {
+          "rotation": [
+            "math.sin(query.anim_time * 45.0) * 18.0 + 5.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.abs(math.sin(query.anim_time * 45.0)) * 3.5 - 1.5",
+            "math.cos(query.anim_time * 45.0) * 1.5"
+          ]
+        },
         "head": {
           "rotation": [
-            "math.clamp(query.target_x_rotation, -30.0, 30.0) + (math.sin(query.anim_time * 20.0) * 1.5)",
-            "math.clamp(query.target_y_rotation, -45.0, 45.0)",
+            "math.clamp(query.target_x_rotation, -20.0, 20.0) - (math.sin(query.anim_time * 45.0) * 8.0)",
+            "math.clamp(query.target_y_rotation, -30.0, 30.0)",
             0
           ]
+        },
+        "arm_left": {
+          "rotation": [
+            "35.0 + math.sin(query.anim_time * 45.0) * 15.0",
+            "10.0",
+            "10.0"
+          ]
+        },
+        "arm_right": {
+          "rotation": [
+            "35.0 + math.sin(query.anim_time * 45.0) * 15.0",
+            "-10.0",
+            "-10.0"
+          ]
+        },
+        "leg_left": {
+          "rotation": [
+            "-math.sin(query.anim_time * 45.0) * 55.0",
+            0,
+            0
+          ]
+        },
+        "knee_left": {
+          "rotation": [
+            "math.clamp(math.sin(query.anim_time * 45.0) * 45.0, 0.0, 45.0)",
+            0,
+            0
+          ]
+        },
+        "foot_left": {
+          "rotation": [
+            "-math.clamp(math.sin(query.anim_time * 45.0) * 30.0, 0.0, 30.0)",
+            0,
+            0
+          ]
+        },
+        "leg_right": {
+          "rotation": [
+            "-math.sin(query.anim_time * 45.0) * 55.0",
+            0,
+            0
+          ]
+        },
+        "knee_right": {
+          "rotation": [
+            "math.clamp(math.sin(query.anim_time * 45.0) * 45.0, 0.0, 45.0)",
+            0,
+            0
+          ]
+        },
+        "foot_right": {
+          "rotation": [
+            "-math.clamp(math.sin(query.anim_time * 45.0) * 30.0, 0.0, 30.0)",
+            0,
+            0
+          ]
+        },
+        "tail1": {
+          "rotation": [
+            "math.sin(query.anim_time * 45.0 - 30.0) * 22.0 + 5.0",
+            0,
+            0
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "math.sin(query.anim_time * 45.0 - 60.0) * 28.0 + 10.0",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.kangaroo.box": {
+      "animation_length": 0.6,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [-15.0, 0, 0],
+            "0.15": [-20.0, -15.0, 0],
+            "0.35": [-20.0, 20.0, 0],
+            "0.6": [-15.0, 0, 0]
+          }
+        },
+        "arm_left": {
+          "rotation": {
+            "0.0": [25.0, 10.0, 15.0],
+            "0.15": [-65.0, 15.0, -10.0],
+            "0.35": [30.0, 10.0, 15.0],
+            "0.6": [25.0, 10.0, 15.0]
+          }
+        },
+        "arm_right": {
+          "rotation": {
+            "0.0": [25.0, -10.0, -15.0],
+            "0.15": [30.0, -10.0, -15.0],
+            "0.35": [-75.0, -20.0, 10.0],
+            "0.6": [25.0, -10.0, -15.0]
+          }
+        }
+      }
+    },
+    "animation.kangaroo.dropkick": {
+      "animation_length": 0.8,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [-15.0, 0, 0],
+            "0.2": [-55.0, 0, 0],
+            "0.4": [-60.0, 0, 0],
+            "0.65": [-30.0, 0, 0],
+            "0.8": [-15.0, 0, 0]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.2": [0, -1.5, 3.0],
+            "0.4": [0, 1.0, 2.5],
+            "0.8": [0, 0, 0]
+          }
+        },
+        "tail1": {
+          "rotation": {
+            "0.0": [22.0, 0, 0],
+            "0.2": [55.0, 0, 0],
+            "0.4": [60.0, 0, 0],
+            "0.8": [22.0, 0, 0]
+          }
+        },
+        "leg_left": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-35.0, 0, 0],
+            "0.4": [-85.0, 0, 0],
+            "0.65": [-30.0, 0, 0],
+            "0.8": [0, 0, 0]
+          }
+        },
+        "leg_right": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-35.0, 0, 0],
+            "0.4": [-85.0, 0, 0],
+            "0.65": [-30.0, 0, 0],
+            "0.8": [0, 0, 0]
+          }
+        },
+        "arm_left": {
+          "rotation": {
+            "0.0": [25.0, 0, 0],
+            "0.4": [-40.0, 0, -25.0],
+            "0.8": [25.0, 0, 0]
+          }
+        },
+        "arm_right": {
+          "rotation": {
+            "0.0": [25.0, 0, 0],
+            "0.4": [-40.0, 0, 25.0],
+            "0.8": [25.0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.kangaroo.hurt": {
+      "animation_length": 0.4,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [-15.0, 0, 0],
+            "0.1": [-30.0, 0, "-math.clamp(query.yaw_speed, -15.0, 15.0)"],
+            "0.4": [-15.0, 0, 0]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.1": [0, 0.8, 1.2],
+            "0.4": [0, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [20.0, 0, 0],
+            "0.4": [0, 0, 0]
+          }
+        },
+        "ear_left": {
+          "rotation": {
+            "0.0": [10.0, 20.0, 25.0],
+            "0.1": [-15.0, 0, 0],
+            "0.4": [10.0, 20.0, 25.0]
+          }
+        },
+        "ear_right": {
+          "rotation": {
+            "0.0": [10.0, -20.0, -25.0],
+            "0.1": [-15.0, 0, 0],
+            "0.4": [10.0, -20.0, -25.0]
+          }
         }
       }
     }

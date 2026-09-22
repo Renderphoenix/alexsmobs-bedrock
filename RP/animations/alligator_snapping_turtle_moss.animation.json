@@ -1,56 +1,298 @@
-{
+﻿{
   "format_version": "1.8.0",
   "animations": {
-    "animation.alligator_snapping_turtle_moss.walk": {
-      "anim_time_update": "query.modified_distance_moved",
+    "animation.alligator_snapping_turtle_moss.idle": {
       "loop": true,
       "bones": {
-        "arm_left": {
+        "body": {
           "rotation": [
-            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            "math.sin(query.anim_time * 15.0) * 0.6",
             0,
+            0
+          ],
+          "position": [
+            0,
+            "math.sin(query.anim_time * 15.0) * 0.08",
             0
           ]
         },
-        "arm_right": {
+        "neck": {
           "rotation": [
-            "-(math.cos(query.anim_time * 38.17) * 40.0)",
-            0,
+            "math.clamp(query.target_x_rotation, -15.0, 15.0) - (math.sin(query.anim_time * 15.0) * 0.5)",
+            "math.clamp(query.target_y_rotation, -25.0, 25.0) * 0.5",
             0
           ]
         },
-        "leg_left": {
+        "head": {
           "rotation": [
-            "-(math.cos(query.anim_time * 38.17) * 40.0)",
-            0,
-            0
-          ]
-        },
-        "leg_right": {
-          "rotation": [
-            "(math.cos(query.anim_time * 38.17) * 40.0)",
-            0,
+            "math.clamp(query.target_x_rotation, -15.0, 15.0) * 0.5",
+            "math.clamp(query.target_y_rotation, -25.0, 25.0) * 0.5",
             0
           ]
         },
         "tail": {
           "rotation": [
             0,
-            "(math.cos(query.anim_time * 38.17) * 18.0)",
+            "math.sin(query.anim_time * 12.0) * 4.0",
             0
           ]
         }
       }
     },
-    "animation.alligator_snapping_turtle_moss.idle": {
+    "animation.alligator_snapping_turtle_moss.idle_lure": {
       "loop": true,
       "bones": {
+        "body": {
+          "position": [0, -0.2, 0]
+        },
+        "neck": {
+          "rotation": [-5.0, 0, 0],
+          "position": [0, 0, -1.0]
+        },
         "head": {
+          "rotation": [-10.0, "math.sin(query.anim_time * 10.0) * 2.0", 0]
+        },
+        "jaw": {
           "rotation": [
-            "math.clamp(query.target_x_rotation, -30.0, 30.0) + (math.sin(query.anim_time * 20.0) * 1.5)",
-            "math.clamp(query.target_y_rotation, -45.0, 45.0)",
+            "38.0 + math.sin(query.anim_time * 20.0) * 1.5",
+            0,
             0
           ]
+        },
+        "head_inside": {
+          "rotation": [
+            "math.sin(query.anim_time * 120.0) * 15.0",
+            "math.cos(query.anim_time * 100.0) * 12.0",
+            0
+          ]
+        },
+        "tail": {
+          "rotation": [0, "math.sin(query.anim_time * 8.0) * 3.0", 0]
+        }
+      }
+    },
+    "animation.alligator_snapping_turtle_moss.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "math.sin(query.anim_time * 76.34) * 1.5",
+            "math.sin(query.anim_time * 38.17) * 4.0",
+            "-(math.sin(query.anim_time * 38.17) * 2.5)"
+          ],
+          "position": [
+            "math.sin(query.anim_time * 38.17) * 0.3",
+            "math.abs(math.sin(query.anim_time * 38.17)) * 0.5 - 0.25",
+            0
+          ]
+        },
+        "neck": {
+          "rotation": [
+            "math.clamp(query.target_x_rotation, -15.0, 15.0) - (math.sin(query.anim_time * 76.34) * 1.5)",
+            "math.clamp(query.target_y_rotation, -25.0, 25.0) * 0.5 - (math.sin(query.anim_time * 38.17) * 2.5)",
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            0,
+            "math.clamp(query.target_y_rotation, -25.0, 25.0) * 0.5",
+            0
+          ]
+        },
+        "arm_left": {
+          "rotation": [
+            "math.cos(query.anim_time * 38.17) * 28.0",
+            "-32.5 + math.sin(query.anim_time * 38.17) * 10.0",
+            "2.5 + math.clamp(math.sin(query.anim_time * 38.17) * 8.0, 0.0, 8.0)"
+          ],
+          "position": [
+            0,
+            "math.clamp(math.sin(query.anim_time * 38.17) * 0.8, 0.0, 0.8)",
+            0
+          ]
+        },
+        "arm_right": {
+          "rotation": [
+            "-math.cos(query.anim_time * 38.17) * 28.0",
+            "32.5 + math.sin(query.anim_time * 38.17) * 10.0",
+            "-2.5 - math.clamp(-math.sin(query.anim_time * 38.17) * 8.0, 0.0, 8.0)"
+          ],
+          "position": [
+            0,
+            "math.clamp(-math.sin(query.anim_time * 38.17) * 0.8, 0.0, 0.8)",
+            0
+          ]
+        },
+        "leg_left": {
+          "rotation": [
+            "-math.cos(query.anim_time * 38.17) * 25.0",
+            "35.0",
+            "2.5"
+          ],
+          "position": [
+            0,
+            "math.clamp(-math.sin(query.anim_time * 38.17) * 0.7, 0.0, 0.7)",
+            0
+          ]
+        },
+        "leg_right": {
+          "rotation": [
+            "math.cos(query.anim_time * 38.17) * 25.0",
+            "-35.0",
+            "-2.5"
+          ],
+          "position": [
+            0,
+            "math.clamp(math.sin(query.anim_time * 38.17) * 0.7, 0.0, 0.7)",
+            0
+          ]
+        },
+        "tail": {
+          "rotation": [
+            0,
+            "-math.sin(query.anim_time * 38.17 - 30.0) * 10.0",
+            0
+          ]
+        }
+      }
+    },
+    "animation.alligator_snapping_turtle_moss.swim": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "math.sin(query.anim_time * 40.0) * 2.0",
+            "math.sin(query.anim_time * 40.0) * 4.0",
+            0
+          ],
+          "position": [0, "math.sin(query.anim_time * 40.0) * 0.4", 0]
+        },
+        "arm_left": {
+          "rotation": [
+            "math.sin(query.anim_time * 40.0) * 35.0",
+            "-25.0",
+            "15.0"
+          ]
+        },
+        "arm_right": {
+          "rotation": [
+            "math.sin(query.anim_time * 40.0) * 35.0",
+            "25.0",
+            "-15.0"
+          ]
+        },
+        "leg_left": {
+          "rotation": [
+            "-math.sin(query.anim_time * 40.0) * 30.0",
+            "30.0",
+            "10.0"
+          ]
+        },
+        "leg_right": {
+          "rotation": [
+            "-math.sin(query.anim_time * 40.0) * 30.0",
+            "-30.0",
+            "-10.0"
+          ]
+        },
+        "tail": {
+          "rotation": [
+            0,
+            "math.sin(query.anim_time * 40.0 - 25.0) * 14.0",
+            0
+          ]
+        }
+      }
+    },
+    "animation.alligator_snapping_turtle_moss.attack": {
+      "animation_length": 0.5,
+      "bones": {
+        "neck": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.15": [-10.0, 0, 0],
+            "0.25": [5.0, 0, 0],
+            "0.5": [0, 0, 0]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.15": [0, 0.5, 2.0],
+            "0.25": [0, -0.5, -4.5],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.15": [-15.0, 0, 0],
+            "0.25": [12.0, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "jaw": {
+          "rotation": {
+            "0.0": [12.5, 0, 0],
+            "0.15": [50.0, 0, 0],
+            "0.24": [0.0, 0, 0],
+            "0.5": [12.5, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alligator_snapping_turtle_moss.retract": {
+      "loop": true,
+      "bones": {
+        "neck": {
+          "position": [0, -0.5, 4.0]
+        },
+        "head": {
+          "position": [0, -0.5, 3.5]
+        },
+        "jaw": {
+          "rotation": [0, 0, 0]
+        },
+        "arm_left": {
+          "position": [-2.0, 0, 2.0],
+          "rotation": [0, -45.0, 0]
+        },
+        "arm_right": {
+          "position": [2.0, 0, 2.0],
+          "rotation": [0, 45.0, 0]
+        },
+        "leg_left": {
+          "position": [-1.5, 0, -2.0]
+        },
+        "leg_right": {
+          "position": [1.5, 0, -2.0]
+        }
+      }
+    },
+    "animation.alligator_snapping_turtle_moss.hurt": {
+      "animation_length": 0.4,
+      "bones": {
+        "neck": {
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.1": [0, 0, 2.5],
+            "0.4": [0, 0, 0]
+          }
+        },
+        "head": {
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.1": [0, 0, 2.0],
+            "0.4": [0, 0, 0]
+          }
+        },
+        "jaw": {
+          "rotation": {
+            "0.0": [12.5, 0, 0],
+            "0.1": [35.0, 0, 0],
+            "0.4": [12.5, 0, 0]
+          }
         }
       }
     }

@@ -1,56 +1,559 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.tiger.walk": {
-      "anim_time_update": "query.modified_distance_moved",
+    "animation.tiger.idle": {
       "loop": true,
       "bones": {
-        "legleft": {
+        "body": {
           "rotation": [
-            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            "math.sin(query.anim_time * 20.0) * 1.2",
+            "math.sin(query.anim_time * 10.0) * 0.8",
+            "math.cos(query.anim_time * 15.0) * 0.6"
+          ],
+          "position": [
+            0,
+            "math.sin(query.anim_time * 20.0) * 0.2",
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            "math.clamp(query.target_x_rotation, -25.0, 25.0) - (math.sin(query.anim_time * 20.0) * 1.0)",
+            "math.clamp(query.target_y_rotation, -45.0, 45.0) + (math.sin(query.anim_time * 12.0) * 1.5)",
+            "-(math.sin(query.anim_time * 10.0) * 0.8)"
+          ]
+        },
+        "snout": {
+          "rotation": [
+            "-10.0 + math.sin(query.anim_time * 20.0) * 0.8",
             0,
             0
           ]
         },
-        "legright": {
+        "earleft": {
           "rotation": [
-            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            "math.sin(query.anim_time * 25.0) * 2.0",
             0,
-            0
+            "math.clamp(math.sin(query.anim_time * 90.0) * 8.0, 0.0, 8.0)"
           ]
         },
-        "armleft": {
+        "earright": {
           "rotation": [
-            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            "math.sin(query.anim_time * 25.0 + 20.0) * 2.0",
             0,
-            0
-          ]
-        },
-        "armright": {
-          "rotation": [
-            "-(math.cos(query.anim_time * 38.17) * 40.0)",
-            0,
-            0
+            "-math.clamp(math.sin(query.anim_time * 90.0 + 35.0) * 8.0, 0.0, 8.0)"
           ]
         },
         "tail": {
           "rotation": [
+            "-5.0 + math.sin(query.anim_time * 18.0) * 3.0",
+            "math.sin(query.anim_time * 15.0 - 20.0) * 8.0",
+            "math.cos(query.anim_time * 15.0) * 4.0"
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "-12.5 + math.sin(query.anim_time * 18.0 + 25.0) * 5.0",
+            "math.sin(query.anim_time * 15.0 - 45.0) * 14.0",
+            "math.cos(query.anim_time * 15.0 + 25.0) * 6.0"
+          ]
+        }
+      }
+    },
+    "animation.tiger.idle_stalk": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "-4.0 + math.sin(query.anim_time * 18.0) * 1.0",
+            "math.sin(query.anim_time * 12.0) * 1.5",
+            0
+          ],
+          "position": [
             0,
-            "(math.cos(query.anim_time * 38.17) * 18.0)",
+            "-2.2 + math.sin(query.anim_time * 18.0) * 0.15",
+            0.5
+          ]
+        },
+        "head": {
+          "rotation": [
+            "8.0 + math.clamp(query.target_x_rotation, -20.0, 20.0)",
+            "math.clamp(query.target_y_rotation, -40.0, 40.0)",
+            0
+          ],
+          "position": [0, 0.5, -0.5]
+        },
+        "armleft": {
+          "rotation": [8.0, 0, 0],
+          "position": [0, -1.8, 0]
+        },
+        "armright": {
+          "rotation": [8.0, 0, 0],
+          "position": [0, -1.8, 0]
+        },
+        "legleft": {
+          "rotation": [-10.0, 0, 0],
+          "position": [0, -1.8, 0]
+        },
+        "legright": {
+          "rotation": [-10.0, 0, 0],
+          "position": [0, -1.8, 0]
+        },
+        "tail": {
+          "rotation": [
+            "10.0 + math.sin(query.anim_time * 20.0) * 3.0",
+            "math.sin(query.anim_time * 25.0) * 12.0",
+            0
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "5.0 + math.sin(query.anim_time * 20.0 + 20.0) * 4.0",
+            "math.sin(query.anim_time * 25.0 - 30.0) * 22.0",
             0
           ]
         }
       }
     },
-    "animation.tiger.idle": {
+    "animation.tiger.idle_sit": {
       "loop": true,
       "bones": {
+        "body": {
+          "rotation": [-35.0, 0, 0],
+          "position": [0, -4.5, 2.0]
+        },
         "head": {
           "rotation": [
-            "math.clamp(query.target_x_rotation, -30.0, 30.0) + (math.sin(query.anim_time * 20.0) * 1.5)",
-            "math.clamp(query.target_y_rotation, -45.0, 45.0)",
+            "30.0 + math.clamp(query.target_x_rotation, -25.0, 25.0) + math.sin(query.anim_time * 20.0) * 1.5",
+            "math.clamp(query.target_y_rotation, -45.0, 45.0) + math.sin(query.anim_time * 12.0) * 2.0",
             0
           ]
+        },
+        "armleft": {
+          "rotation": [35.0, 0, 0],
+          "position": [0, 2.5, -1.5]
+        },
+        "armright": {
+          "rotation": [35.0, 0, 0],
+          "position": [0, 2.5, -1.5]
+        },
+        "legleft": {
+          "rotation": [-50.0, -12.0, 0],
+          "position": [0, 0.5, -1.5]
+        },
+        "legright": {
+          "rotation": [-50.0, 12.0, 0],
+          "position": [0, 0.5, -1.5]
+        },
+        "tail": {
+          "rotation": [
+            "40.0 + math.sin(query.anim_time * 18.0) * 3.0",
+            "30.0 + math.sin(query.anim_time * 15.0) * 10.0",
+            0
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "10.0 + math.sin(query.anim_time * 18.0 + 20.0) * 5.0",
+            "45.0 + math.sin(query.anim_time * 15.0 - 25.0) * 16.0",
+            0
+          ]
+        }
+      }
+    },
+    "animation.tiger.idle_roar": {
+      "animation_length": 2.2,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.3": [-8.0, 0, 0],
+            "0.8": [-14.0, 0, 0],
+            "1.6": [-12.0, 0, 0],
+            "2.2": [0, 0, 0]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.8": [0, 0.8, -0.5],
+            "2.2": [0, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.4": [15.0, 0, 0],
+            "0.8": [-28.0, "math.sin(query.anim_time * 80.0) * 3.0", 0],
+            "1.5": [-25.0, "math.sin(query.anim_time * 80.0) * 3.0", 0],
+            "1.9": [5.0, 0, 0],
+            "2.2": [0, 0, 0]
+          }
+        },
+        "snout": {
+          "rotation": {
+            "0.0": [-10.0, 0, 0],
+            "0.8": [20.0, 0, 0],
+            "1.5": [18.0, 0, 0],
+            "2.2": [-10.0, 0, 0]
+          }
+        },
+        "earleft": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.8": [-15.0, -10.0, -20.0],
+            "1.5": [-15.0, -10.0, -20.0],
+            "2.2": [0, 0, 0]
+          }
+        },
+        "earright": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.8": [-15.0, 10.0, 20.0],
+            "1.5": [-15.0, 10.0, 20.0],
+            "2.2": [0, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.8": [15.0, -20.0, 0],
+            "1.5": [18.0, 20.0, 0],
+            "2.2": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.tiger.walk": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "math.sin(query.anim_time * 76.34) * 2.2",
+            "math.sin(query.anim_time * 38.17) * 3.5",
+            "-(math.sin(query.anim_time * 38.17) * 2.2)"
+          ],
+          "position": [
+            "math.sin(query.anim_time * 38.17) * 0.4",
+            "math.abs(math.sin(query.anim_time * 38.17)) * 0.8 - 0.4",
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            "math.clamp(query.target_x_rotation, -25.0, 25.0) - (math.sin(query.anim_time * 76.34) * 2.5)",
+            "math.clamp(query.target_y_rotation, -40.0, 40.0) - (math.sin(query.anim_time * 38.17) * 2.5)",
+            "math.sin(query.anim_time * 38.17) * 2.0"
+          ],
+          "position": [
+            0,
+            "-(math.abs(math.sin(query.anim_time * 38.17)) * 0.4)",
+            0
+          ]
+        },
+        "armleft": {
+          "rotation": [
+            "math.cos(query.anim_time * 38.17) * 36.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.clamp(math.sin(query.anim_time * 38.17) * 1.5, 0.0, 1.5)",
+            0
+          ]
+        },
+        "armright": {
+          "rotation": [
+            "-math.cos(query.anim_time * 38.17) * 36.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.clamp(-math.sin(query.anim_time * 38.17) * 1.5, 0.0, 1.5)",
+            0
+          ]
+        },
+        "legleft": {
+          "rotation": [
+            "-math.cos(query.anim_time * 38.17) * 34.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.clamp(-math.sin(query.anim_time * 38.17) * 1.2, 0.0, 1.2)",
+            0
+          ]
+        },
+        "legright": {
+          "rotation": [
+            "math.cos(query.anim_time * 38.17) * 34.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.clamp(math.sin(query.anim_time * 38.17) * 1.2, 0.0, 1.2)",
+            0
+          ]
+        },
+        "tail": {
+          "rotation": [
+            "-5.0 + math.sin(query.anim_time * 76.34) * 4.0",
+            "-math.sin(query.anim_time * 38.17 - 35.0) * 12.0",
+            "math.cos(query.anim_time * 38.17) * 5.0"
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "-12.5 + math.sin(query.anim_time * 76.34 + 25.0) * 6.0",
+            "-math.sin(query.anim_time * 38.17 - 65.0) * 18.0",
+            0
+          ]
+        }
+      }
+    },
+    "animation.tiger.run": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "math.sin(query.anim_time * 47.71) * 8.0 - 5.0",
+            "math.sin(query.anim_time * 23.86) * 4.0",
+            "-(math.sin(query.anim_time * 23.86) * 3.0)"
+          ],
+          "position": [
+            0,
+            "math.abs(math.sin(query.anim_time * 47.71)) * 2.2 - 0.9",
+            "math.cos(query.anim_time * 47.71) * 1.0"
+          ]
+        },
+        "head": {
+          "rotation": [
+            "math.clamp(query.target_x_rotation, -20.0, 20.0) - (math.sin(query.anim_time * 47.71) * 6.0)",
+            "math.clamp(query.target_y_rotation, -30.0, 30.0)",
+            0
+          ]
+        },
+        "armleft": {
+          "rotation": [
+            "math.cos(query.anim_time * 47.71) * 52.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.clamp(math.sin(query.anim_time * 47.71) * 2.5, 0.0, 2.5)",
+            0
+          ]
+        },
+        "armright": {
+          "rotation": [
+            "math.cos(query.anim_time * 47.71 + 20.0) * 52.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.clamp(math.sin(query.anim_time * 47.71 + 20.0) * 2.5, 0.0, 2.5)",
+            0
+          ]
+        },
+        "legleft": {
+          "rotation": [
+            "-math.cos(query.anim_time * 47.71) * 50.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.clamp(-math.sin(query.anim_time * 47.71) * 2.2, 0.0, 2.2)",
+            0
+          ]
+        },
+        "legright": {
+          "rotation": [
+            "-math.cos(query.anim_time * 47.71 + 20.0) * 50.0",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "math.clamp(-math.sin(query.anim_time * 47.71 + 20.0) * 2.2, 0.0, 2.2)",
+            0
+          ]
+        },
+        "tail": {
+          "rotation": [
+            "10.0 + math.sin(query.anim_time * 47.71 - 30.0) * 8.0",
+            "math.sin(query.anim_time * 23.86) * 14.0",
+            0
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "15.0 + math.sin(query.anim_time * 47.71 - 60.0) * 12.0",
+            "math.sin(query.anim_time * 23.86 - 30.0) * 18.0",
+            0
+          ]
+        }
+      }
+    },
+    "animation.tiger.attack": {
+      "animation_length": 0.7,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-30.0, 10.0, 0],
+            "0.45": [18.0, -15.0, 0],
+            "0.7": [0, 0, 0]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.2": [0, 2.5, 1.5],
+            "0.45": [0, -0.8, -3.0],
+            "0.7": [0, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [20.0, -10.0, 0],
+            "0.45": [-22.0, 12.0, 0],
+            "0.7": [0, 0, 0]
+          }
+        },
+        "armleft": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-65.0, 20.0, 0],
+            "0.45": [40.0, -15.0, 0],
+            "0.7": [0, 0, 0]
+          }
+        },
+        "armright": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-75.0, -25.0, 15.0],
+            "0.45": [50.0, 20.0, -10.0],
+            "0.7": [0, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [25.0, -15.0, 0],
+            "0.45": [-20.0, 20.0, 0],
+            "0.7": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.tiger.pounce": {
+      "animation_length": 1.0,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-15.0, 0, 0],
+            "0.45": [-40.0, 0, 0],
+            "0.75": [20.0, 0, 0],
+            "1.0": [0, 0, 0]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.2": [0, -2.5, 2.0],
+            "0.45": [0, 7.0, -4.0],
+            "0.75": [0, 0, -8.0],
+            "1.0": [0, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [10.0, 0, 0],
+            "0.45": [25.0, 0, 0],
+            "0.75": [-25.0, 0, 0],
+            "1.0": [0, 0, 0]
+          }
+        },
+        "armleft": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [20.0, 0, 0],
+            "0.45": [-80.0, 0, -15.0],
+            "0.75": [40.0, 0, 0],
+            "1.0": [0, 0, 0]
+          }
+        },
+        "armright": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [20.0, 0, 0],
+            "0.45": [-80.0, 0, 15.0],
+            "0.75": [40.0, 0, 0],
+            "1.0": [0, 0, 0]
+          }
+        },
+        "legleft": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-35.0, 0, 0],
+            "0.45": [50.0, 0, 0],
+            "0.75": [-20.0, 0, 0],
+            "1.0": [0, 0, 0]
+          }
+        },
+        "legright": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-35.0, 0, 0],
+            "0.45": [50.0, 0, 0],
+            "0.75": [-20.0, 0, 0],
+            "1.0": [0, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.45": [30.0, 0, 0],
+            "0.75": [-35.0, 0, 0],
+            "1.0": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.tiger.hurt": {
+      "animation_length": 0.45,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [12.0, 0, "-math.clamp(query.yaw_speed, -15.0, 15.0)"],
+            "0.45": [0, 0, 0]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.1": [0, 1.0, 1.8],
+            "0.45": [0, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [-25.0, 0, 0],
+            "0.45": [0, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [25.0, 0, 0],
+            "0.45": [0, 0, 0]
+          }
         }
       }
     }
