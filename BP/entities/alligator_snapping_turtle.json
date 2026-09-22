@@ -172,7 +172,13 @@
                                                                                                         "min_distance":  40,
                                                                                                         "max_distance":  128
                                                                                                     }
-                                                                      }
+                                                                      },
+                                                "minecraft:underwater_movement":  {
+                                                                                      "value":  0.2
+                                                                                  },
+                                                "minecraft:movement.swimming":  {
+
+                                                                                }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

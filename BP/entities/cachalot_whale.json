@@ -143,9 +143,8 @@
 
                                                                                 },
                                                 "minecraft:navigation.swim":  {
-                                                                                  "can_swim":  true,
                                                                                   "can_path_over_water":  false,
-                                                                                  "can_path_from_water":  false,
+                                                                                  "can_swim":  true,
                                                                                   "can_sink":  false
                                                                               },
                                                 "minecraft:behavior.random_swim":  {
@@ -166,14 +165,6 @@
                                                                                                         "max_distance":  128
                                                                                                     }
                                                                       },
-                                                "minecraft:buoyancy":  {
-                                                                           "apply_gravity":  false,
-                                                                           "base_buoyancy":  1,
-                                                                           "liquid_blocks":  [
-                                                                                                 "minecraft:water",
-                                                                                                 "minecraft:flowing_water"
-                                                                                             ]
-                                                                       },
                                                 "minecraft:attack":  {
                                                                          "damage":  12
                                                                      },
@@ -200,7 +191,10 @@
                                                 "minecraft:behavior.breed":  {
                                                                                  "priority":  2,
                                                                                  "speed_multiplier":  1
-                                                                             }
+                                                                             },
+                                                "minecraft:underwater_movement":  {
+                                                                                      "value":  0.28
+                                                                                  }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

@@ -16,33 +16,28 @@
                                                                                              "adjust_for_weather":  false
                                                                                          },
                                                          "minecraft:weight":  {
-                                                                                  "default":  45
+                                                                                  "default":  30
                                                                               },
                                                          "minecraft:herd":  {
-                                                                                "min_size":  2,
-                                                                                "max_size":  4
+                                                                                "min_size":  1,
+                                                                                "max_size":  2
                                                                             },
                                                          "minecraft:biome_filter":  {
                                                                                         "any_of":  [
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "plains"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "forest"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "savanna"
-                                                                                                       },
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
                                                                                                            "value":  "taiga"
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "test":  "has_biome_tag",
+                                                                                                           "operator":  "==",
+                                                                                                           "value":  "jungle"
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "test":  "has_biome_tag",
+                                                                                                           "operator":  "==",
+                                                                                                           "value":  "bamboo_jungle"
                                                                                                        }
                                                                                                    ]
                                                                                     }

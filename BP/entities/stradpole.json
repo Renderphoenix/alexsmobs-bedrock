@@ -32,7 +32,8 @@
 
                                                                         },
                                                 "minecraft:physics":  {
-
+                                                                          "has_gravity":  false,
+                                                                          "has_collision":  true
                                                                       },
                                                 "minecraft:pushable":  {
                                                                            "is_pushable":  true,
@@ -52,8 +53,9 @@
                                                                                          ]
                                                                           },
                                                 "minecraft:navigation.swim":  {
+                                                                                  "can_path_over_water":  false,
                                                                                   "can_swim":  true,
-                                                                                  "can_path_over_water":  false
+                                                                                  "can_sink":  false
                                                                               },
                                                 "minecraft:movement.swimming":  {
 
@@ -104,7 +106,10 @@
                                                                                                         "min_distance":  40,
                                                                                                         "max_distance":  128
                                                                                                     }
-                                                                      }
+                                                                      },
+                                                "minecraft:underwater_movement":  {
+                                                                                      "value":  0.2
+                                                                                  }
                                             }
                          }
 }

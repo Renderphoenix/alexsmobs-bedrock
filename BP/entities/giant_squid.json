@@ -110,9 +110,8 @@
 
                                                                                 },
                                                 "minecraft:navigation.swim":  {
-                                                                                  "can_swim":  true,
                                                                                   "can_path_over_water":  false,
-                                                                                  "can_path_from_water":  false,
+                                                                                  "can_swim":  true,
                                                                                   "can_sink":  false
                                                                               },
                                                 "minecraft:despawn":  {
@@ -121,14 +120,9 @@
                                                                                                         "max_distance":  128
                                                                                                     }
                                                                       },
-                                                "minecraft:buoyancy":  {
-                                                                           "apply_gravity":  false,
-                                                                           "base_buoyancy":  1,
-                                                                           "liquid_blocks":  [
-                                                                                                 "minecraft:water",
-                                                                                                 "minecraft:flowing_water"
-                                                                                             ]
-                                                                       }
+                                                "minecraft:underwater_movement":  {
+                                                                                      "value":  0.2
+                                                                                  }
                                             }
                          }
 }

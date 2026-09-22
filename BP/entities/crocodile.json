@@ -170,14 +170,6 @@
                                                                                   "can_walk":  true,
                                                                                   "avoid_water":  false
                                                                               },
-                                                "minecraft:buoyancy":  {
-                                                                           "apply_gravity":  true,
-                                                                           "base_buoyancy":  0.8,
-                                                                           "liquid_blocks":  [
-                                                                                                 "minecraft:water",
-                                                                                                 "minecraft:flowing_water"
-                                                                                             ]
-                                                                       },
                                                 "minecraft:behavior.random_stroll":  {
                                                                                          "priority":  4,
                                                                                          "speed_multiplier":  0.85
@@ -201,7 +193,10 @@
                                                 "minecraft:behavior.breed":  {
                                                                                  "priority":  2,
                                                                                  "speed_multiplier":  1
-                                                                             }
+                                                                             },
+                                                "minecraft:underwater_movement":  {
+                                                                                      "value":  0.2
+                                                                                  }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

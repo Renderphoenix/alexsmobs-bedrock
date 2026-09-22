@@ -29,10 +29,7 @@
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
-                                                                                        "controller_action",
-                                                                                        {
-                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-                                                                                        }
+                                                                                        "controller_action"
                                                                                     ]
                                                                     },
                                                         "render_controllers":  [

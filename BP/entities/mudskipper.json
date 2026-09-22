@@ -210,7 +210,10 @@
                                                 "minecraft:behavior.breed":  {
                                                                                  "priority":  2,
                                                                                  "speed_multiplier":  1
-                                                                             }
+                                                                             },
+                                                "minecraft:underwater_movement":  {
+                                                                                      "value":  0.2
+                                                                                  }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

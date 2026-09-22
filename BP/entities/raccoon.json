@@ -127,7 +127,7 @@
                                                                            },
                                                 "minecraft:behavior.random_stroll":  {
                                                                                          "priority":  12,
-                                                                                         "speed_multiplier":  200
+                                                                                         "speed_multiplier":  1
                                                                                      },
                                                 "minecraft:behavior.lay_egg":  {
                                                                                    "priority":  13,

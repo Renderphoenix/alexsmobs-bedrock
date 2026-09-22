@@ -16,19 +16,14 @@
                                                                                              "adjust_for_weather":  false
                                                                                          },
                                                          "minecraft:weight":  {
-                                                                                  "default":  45
+                                                                                  "default":  30
                                                                               },
                                                          "minecraft:herd":  {
                                                                                 "min_size":  1,
-                                                                                "max_size":  3
+                                                                                "max_size":  2
                                                                             },
                                                          "minecraft:biome_filter":  {
                                                                                         "any_of":  [
-                                                                                                       {
-                                                                                                           "test":  "has_biome_tag",
-                                                                                                           "operator":  "==",
-                                                                                                           "value":  "plains"
-                                                                                                       },
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
@@ -37,12 +32,12 @@
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "savanna"
+                                                                                                           "value":  "taiga"
                                                                                                        },
                                                                                                        {
                                                                                                            "test":  "has_biome_tag",
                                                                                                            "operator":  "==",
-                                                                                                           "value":  "taiga"
+                                                                                                           "value":  "mountains"
                                                                                                        }
                                                                                                    ]
                                                                                     }

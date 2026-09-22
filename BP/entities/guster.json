@@ -73,7 +73,7 @@
                                                                                     },
                                                 "minecraft:behavior.random_stroll":  {
                                                                                          "priority":  1,
-                                                                                         "speed_multiplier":  60
+                                                                                         "speed_multiplier":  1
                                                                                      },
                                                 "minecraft:behavior.look_at_player":  {
                                                                                           "priority":  2,

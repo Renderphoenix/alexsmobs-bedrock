@@ -91,17 +91,6 @@
                                                 "minecraft:behavior.stay_while_sitting":  {
                                                                                               "priority":  1
                                                                                           },
-                                                "minecraft:behavior.circle_around_anchor":  {
-                                                                                                "priority":  6,
-                                                                                                "radius_range":  [
-                                                                                                                     5,
-                                                                                                                     10
-                                                                                                                 ],
-                                                                                                "height_offset_range":  [
-                                                                                                                            3,
-                                                                                                                            6
-                                                                                                                        ]
-                                                                                            },
                                                 "minecraft:behavior.look_at_player":  {
                                                                                           "priority":  8,
                                                                                           "target_distance":  6
@@ -128,10 +117,6 @@
                                                 "minecraft:navigation.fly":  {
                                                                                  "can_path_over_water":  true
                                                                              },
-                                                "minecraft:behavior.float_wander":  {
-                                                                                        "priority":  3,
-                                                                                        "must_reach":  false
-                                                                                    },
                                                 "minecraft:behavior.panic":  {
                                                                                  "priority":  1,
                                                                                  "speed_multiplier":  1.35
