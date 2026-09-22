@@ -27,4 +27,6 @@ render_*.py
 test_*.py
 !renders/
 !renders/**
-
+# External reference packs
+Actions And Stuff 1.9/
+Actions And Stuff 1.9

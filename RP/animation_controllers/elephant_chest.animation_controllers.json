@@ -10,7 +10,10 @@
           ],
           "transitions": [
             {
-              "walk": "query.modified_move_speed > 0.05"
+              "walk": "query.modified_move_speed > 0.05 && query.modified_move_speed <= 0.4 && !query.has_target && !query.is_panicking"
+            },
+            {
+              "run": "query.modified_move_speed > 0.4 || query.has_target || query.is_panicking"
             }
           ],
           "blend_transition": 0.2
@@ -22,6 +25,23 @@
           "transitions": [
             {
               "idle": "query.modified_move_speed <= 0.05"
+            },
+            {
+              "run": "query.modified_move_speed > 0.4 || query.has_target || query.is_panicking"
+            }
+          ],
+          "blend_transition": 0.2
+        },
+        "run": {
+          "animations": [
+            "walk"
+          ],
+          "transitions": [
+            {
+              "idle": "query.modified_move_speed <= 0.05"
+            },
+            {
+              "walk": "query.modified_move_speed <= 0.4 && !query.has_target && !query.is_panicking && query.modified_move_speed > 0.05"
             }
           ],
           "blend_transition": 0.2

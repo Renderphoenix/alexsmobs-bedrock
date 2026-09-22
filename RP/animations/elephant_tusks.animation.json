@@ -5,39 +5,83 @@
       "anim_time_update": "query.modified_distance_moved",
       "loop": true,
       "bones": {
+        "body": {
+          "rotation": [
+            "math.sin(query.anim_time * 76.34 + 20.0) * 2.2",
+            "math.sin(query.anim_time * 38.17) * 1.8",
+            "math.cos(query.anim_time * 38.17) * 2.5"
+          ],
+          "position": [
+            "math.sin(query.anim_time * 38.17) * 1.6",
+            "math.cos(query.anim_time * 76.34) * -1.4 - 0.5",
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            "-(math.sin(query.anim_time * 76.34 + 20.0) * 1.7) + math.clamp(query.target_x_rotation, -20.0, 20.0)",
+            "-(math.sin(query.anim_time * 38.17) * 1.5) + math.clamp(query.target_y_rotation, -30.0, 30.0)",
+            "-(math.cos(query.anim_time * 38.17) * 2.0)"
+          ],
+          "position": [
+            "-(math.sin(query.anim_time * 38.17) * 0.6)",
+            "math.cos(query.anim_time * 76.34 + 20.0) * 0.8",
+            0
+          ]
+        },
         "left_arm": {
           "rotation": [
-            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            "math.cos(query.anim_time * 38.17) * 36.0",
             0,
+            "math.clamp(-math.sin(query.anim_time * 38.17) * 4.0, -4.0, 0.0)"
+          ],
+          "position": [
+            0,
+            "math.clamp(math.sin(query.anim_time * 38.17) * 3.5, 0.0, 3.5)",
             0
           ]
         },
         "right_arm": {
           "rotation": [
-            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            "-(math.cos(query.anim_time * 38.17) * 36.0)",
             0,
+            "math.clamp(math.sin(query.anim_time * 38.17) * 4.0, 0.0, 4.0)"
+          ],
+          "position": [
+            0,
+            "math.clamp(-math.sin(query.anim_time * 38.17) * 3.5, 0.0, 3.5)",
             0
           ]
         },
         "left_leg": {
           "rotation": [
-            "-(math.cos(query.anim_time * 38.17) * 40.0)",
+            "math.cos(query.anim_time * 38.17 + 90.0) * 34.0",
             0,
+            "math.clamp(-math.sin(query.anim_time * 38.17 + 90.0) * 3.5, -3.5, 0.0)"
+          ],
+          "position": [
+            0,
+            "math.clamp(math.sin(query.anim_time * 38.17 + 90.0) * 3.0, 0.0, 3.0)",
             0
           ]
         },
         "right_leg": {
           "rotation": [
-            "(math.cos(query.anim_time * 38.17) * 40.0)",
+            "-(math.cos(query.anim_time * 38.17 + 90.0) * 34.0)",
             0,
+            "math.clamp(math.sin(query.anim_time * 38.17 + 90.0) * 3.5, 0.0, 3.5)"
+          ],
+          "position": [
+            0,
+            "math.clamp(-math.sin(query.anim_time * 38.17 + 90.0) * 3.0, 0.0, 3.0)",
             0
           ]
         },
         "tail": {
           "rotation": [
-            0,
-            "(math.cos(query.anim_time * 38.17) * 18.0)",
-            0
+            "math.abs(math.cos(query.anim_time * 38.17)) * 7.0 - 4.0",
+            "math.sin(query.anim_time * 38.17 - 50.0) * 22.0",
+            "math.cos(query.anim_time * 38.17 - 50.0) * 5.0"
           ]
         }
       }
@@ -45,10 +89,27 @@
     "animation.elephant_tusks.idle": {
       "loop": true,
       "bones": {
+        "body": {
+          "rotation": [
+            "math.cos(query.anim_time * 50.0) * 0.8",
+            "math.sin(query.anim_time * 25.0) * 0.6",
+            "math.cos(query.anim_time * 25.0) * 0.7"
+          ],
+          "position": [
+            "math.sin(query.anim_time * 25.0) * 0.25",
+            "math.sin(query.anim_time * 50.0) * 0.4",
+            0
+          ]
+        },
         "head": {
           "rotation": [
-            "math.clamp(query.target_x_rotation, -30.0, 30.0) + (math.sin(query.anim_time * 20.0) * 1.5)",
-            "math.clamp(query.target_y_rotation, -45.0, 45.0)",
+            "math.clamp(query.target_x_rotation, -25.0, 25.0) + (math.sin(query.anim_time * 50.0 - 25.0) * 1.4)",
+            "math.clamp(query.target_y_rotation, -35.0, 35.0) + (math.sin(query.anim_time * 25.0) * 1.8)",
+            "-(math.cos(query.anim_time * 25.0) * 0.9)"
+          ],
+          "position": [
+            0,
+            "math.sin(query.anim_time * 50.0 - 30.0) * 0.2",
             0
           ]
         }
