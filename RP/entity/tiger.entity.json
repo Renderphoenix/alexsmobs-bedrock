@@ -13,14 +13,23 @@
                                                                          "default":  "geometry.tiger"
                                                                      },
                                                         "animations":  {
+                                                                           "idle_stalk":  "animation.tiger.idle_stalk",
+                                                                           "hurt":  "animation.tiger.hurt",
                                                                            "walk":  "animation.tiger.walk",
                                                                            "idle":  "animation.tiger.idle",
+                                                                           "run":  "animation.tiger.run",
+                                                                           "attack":  "animation.tiger.attack",
+                                                                           "idle_roar":  "animation.tiger.idle_roar",
+                                                                           "idle_sit":  "animation.tiger.idle_sit",
+                                                                           "pounce":  "animation.tiger.pounce",
                                                                            "look_at_target":  "animation.tiger.idle",
-                                                                           "controller_move":  "controller.animation.tiger.move"
+                                                                           "controller_move":  "controller.animation.tiger.move",
+                                                                           "controller_action":  "controller.animation.tiger.action"
                                                                        },
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
+                                                                                        "controller_action",
                                                                                         {
                                                                                             "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
                                                                                         }

@@ -13,14 +13,21 @@
                                                                          "default":  "geometry.gorilla"
                                                                      },
                                                         "animations":  {
+                                                                           "run":  "animation.gorilla.run",
                                                                            "walk":  "animation.gorilla.walk",
                                                                            "idle":  "animation.gorilla.idle",
+                                                                           "idle_sit":  "animation.gorilla.idle_sit",
+                                                                           "hurt":  "animation.gorilla.hurt",
+                                                                           "attack":  "animation.gorilla.attack",
+                                                                           "chest_beat":  "animation.gorilla.chest_beat",
                                                                            "look_at_target":  "animation.gorilla.idle",
-                                                                           "controller_move":  "controller.animation.gorilla.move"
+                                                                           "controller_move":  "controller.animation.gorilla.move",
+                                                                           "controller_action":  "controller.animation.gorilla.action"
                                                                        },
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
+                                                                                        "controller_action",
                                                                                         {
                                                                                             "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
                                                                                         }

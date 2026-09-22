@@ -1,32 +1,118 @@
-{
-  "format_version": "1.10.0",
-  "animation_controllers": {
-    "controller.animation.emu_blonde.move": {
-      "initial_state": "idle",
-      "states": {
-        "idle": {
-          "animations": [
-            "idle"
-          ],
-          "transitions": [
-            {
-              "walk": "query.modified_move_speed > 0.05"
-            }
-          ],
-          "blend_transition": 0.2
-        },
-        "walk": {
-          "animations": [
-            "walk"
-          ],
-          "transitions": [
-            {
-              "idle": "query.modified_move_speed <= 0.05"
-            }
-          ],
-          "blend_transition": 0.2
-        }
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "animation_controllers":  {
+                                  "controller.animation.emu_blonde.move":  {
+                                                                               "initial_state":  "idle",
+                                                                               "states":  {
+                                                                                              "idle":  {
+                                                                                                           "animations":  [
+                                                                                                                              "idle"
+                                                                                                                          ],
+                                                                                                           "transitions":  [
+                                                                                                                               {
+                                                                                                                                   "walk":  "query.modified_move_speed > 0.05 && query.modified_move_speed <= 0.4 && !query.has_target && !query.is_panicking"
+                                                                                                                               },
+                                                                                                                               {
+                                                                                                                                   "run":  "query.modified_move_speed > 0.4 || query.has_target || query.is_panicking"
+                                                                                                                               }
+                                                                                                                           ],
+                                                                                                           "blend_transition":  0.2
+                                                                                                       },
+                                                                                              "walk":  {
+                                                                                                           "animations":  [
+                                                                                                                              "walk"
+                                                                                                                          ],
+                                                                                                           "transitions":  [
+                                                                                                                               {
+                                                                                                                                   "idle":  "query.modified_move_speed <= 0.05"
+                                                                                                                               },
+                                                                                                                               {
+                                                                                                                                   "run":  "query.modified_move_speed > 0.4 || query.has_target || query.is_panicking"
+                                                                                                                               }
+                                                                                                                           ],
+                                                                                                           "blend_transition":  0.2
+                                                                                                       },
+                                                                                              "run":  {
+                                                                                                          "animations":  [
+                                                                                                                             "run"
+                                                                                                                         ],
+                                                                                                          "transitions":  [
+                                                                                                                              {
+                                                                                                                                  "idle":  "query.modified_move_speed <= 0.05"
+                                                                                                                              },
+                                                                                                                              {
+                                                                                                                                  "walk":  "query.modified_move_speed <= 0.4 && !query.has_target && !query.is_panicking && query.modified_move_speed > 0.05"
+                                                                                                                              }
+                                                                                                                          ],
+                                                                                                          "blend_transition":  0.2
+                                                                                                      }
+                                                                                          }
+                                                                           },
+                                  "controller.animation.emu_blonde.action":  {
+                                                                                 "initial_state":  "default",
+                                                                                 "states":  {
+                                                                                                "default":  {
+                                                                                                                "transitions":  [
+                                                                                                                                    {
+                                                                                                                                        "hurt":  "query.is_hurt || (query.hurt_time > 0)"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "kick":  "(variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 2.5)) && query.modified_move_speed > 0.2"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "peck":  "variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 2.5)"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "peck_idle":  "query.modified_move_speed <= 0.02 && !query.has_target && math.mod(query.life_time, 15.0) > 10.0"
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                "blend_transition":  0.15
+                                                                                                            },
+                                                                                                "peck_idle":  {
+                                                                                                                  "animations":  [
+                                                                                                                                     "idle_peck"
+                                                                                                                                 ],
+                                                                                                                  "transitions":  [
+                                                                                                                                      {
+                                                                                                                                          "default":  "query.modified_move_speed > 0.02 || query.has_target || query.state_time >= 2.5"
+                                                                                                                                      }
+                                                                                                                                  ],
+                                                                                                                  "blend_transition":  0.2
+                                                                                                              },
+                                                                                                "kick":  {
+                                                                                                             "animations":  [
+                                                                                                                                "kick"
+                                                                                                                            ],
+                                                                                                             "transitions":  [
+                                                                                                                                 {
+                                                                                                                                     "default":  "query.state_time >= 0.6"
+                                                                                                                                 }
+                                                                                                                             ],
+                                                                                                             "blend_transition":  0.15
+                                                                                                         },
+                                                                                                "hurt":  {
+                                                                                                             "animations":  [
+                                                                                                                                "hurt"
+                                                                                                                            ],
+                                                                                                             "transitions":  [
+                                                                                                                                 {
+                                                                                                                                     "default":  "query.state_time >= 0.4"
+                                                                                                                                 }
+                                                                                                                             ],
+                                                                                                             "blend_transition":  0.1
+                                                                                                         },
+                                                                                                "peck":  {
+                                                                                                             "animations":  [
+                                                                                                                                "peck"
+                                                                                                                            ],
+                                                                                                             "transitions":  [
+                                                                                                                                 {
+                                                                                                                                     "default":  "query.state_time >= 0.45"
+                                                                                                                                 }
+                                                                                                                             ],
+                                                                                                             "blend_transition":  0.15
+                                                                                                         }
+                                                                                            }
+                                                                             }
+                              }
 }

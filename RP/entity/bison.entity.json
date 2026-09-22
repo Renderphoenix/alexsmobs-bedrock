@@ -14,13 +14,21 @@
                                                                      },
                                                         "animations":  {
                                                                            "walk":  "animation.bison.walk",
+                                                                           "idle_look":  "animation.bison.idle_look",
+                                                                           "idle_graze":  "animation.bison.idle_graze",
+                                                                           "run":  "animation.bison.run",
+                                                                           "hurt":  "animation.bison.hurt",
                                                                            "idle":  "animation.bison.idle",
+                                                                           "shake":  "animation.bison.shake",
+                                                                           "attack":  "animation.bison.attack",
                                                                            "look_at_target":  "animation.bison.idle",
-                                                                           "controller_move":  "controller.animation.bison.move"
+                                                                           "controller_move":  "controller.animation.bison.move",
+                                                                           "controller_action":  "controller.animation.bison.action"
                                                                        },
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
+                                                                                        "controller_action",
                                                                                         {
                                                                                             "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
                                                                                         }

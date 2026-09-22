@@ -13,14 +13,22 @@
                                                                          "default":  "geometry.crocodile"
                                                                      },
                                                         "animations":  {
-                                                                           "walk":  "animation.crocodile.walk",
+                                                                           "swim":  "animation.crocodile.swim",
+                                                                           "idle_bask":  "animation.crocodile.idle_bask",
+                                                                           "run":  "animation.crocodile.run",
+                                                                           "hurt":  "animation.crocodile.hurt",
                                                                            "idle":  "animation.crocodile.idle",
+                                                                           "attack":  "animation.crocodile.attack",
+                                                                           "death_roll":  "animation.crocodile.death_roll",
+                                                                           "walk":  "animation.crocodile.walk",
                                                                            "look_at_target":  "animation.crocodile.idle",
-                                                                           "controller_move":  "controller.animation.crocodile.move"
+                                                                           "controller_move":  "controller.animation.crocodile.move",
+                                                                           "controller_action":  "controller.animation.crocodile.action"
                                                                        },
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
+                                                                                        "controller_action",
                                                                                         {
                                                                                             "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
                                                                                         }

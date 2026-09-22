@@ -1,32 +1,132 @@
-{
-  "format_version": "1.10.0",
-  "animation_controllers": {
-    "controller.animation.capuchin_monkey.move": {
-      "initial_state": "idle",
-      "states": {
-        "idle": {
-          "animations": [
-            "idle"
-          ],
-          "transitions": [
-            {
-              "walk": "query.modified_move_speed > 0.05"
-            }
-          ],
-          "blend_transition": 0.2
-        },
-        "walk": {
-          "animations": [
-            "walk"
-          ],
-          "transitions": [
-            {
-              "idle": "query.modified_move_speed <= 0.05"
-            }
-          ],
-          "blend_transition": 0.2
-        }
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "animation_controllers":  {
+                                  "controller.animation.capuchin_monkey.move":  {
+                                                                                    "initial_state":  "idle",
+                                                                                    "states":  {
+                                                                                                   "idle":  {
+                                                                                                                "animations":  [
+                                                                                                                                   "idle"
+                                                                                                                               ],
+                                                                                                                "transitions":  [
+                                                                                                                                    {
+                                                                                                                                        "walk":  "query.modified_move_speed > 0.05 && query.modified_move_speed <= 0.4 && !query.has_target && !query.is_panicking"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "run":  "query.modified_move_speed > 0.4 || query.has_target || query.is_panicking"
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                "blend_transition":  0.2
+                                                                                                            },
+                                                                                                   "walk":  {
+                                                                                                                "animations":  [
+                                                                                                                                   "walk"
+                                                                                                                               ],
+                                                                                                                "transitions":  [
+                                                                                                                                    {
+                                                                                                                                        "idle":  "query.modified_move_speed <= 0.05"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "run":  "query.modified_move_speed > 0.4 || query.has_target || query.is_panicking"
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                "blend_transition":  0.2
+                                                                                                            },
+                                                                                                   "run":  {
+                                                                                                               "animations":  [
+                                                                                                                                  "run"
+                                                                                                                              ],
+                                                                                                               "transitions":  [
+                                                                                                                                   {
+                                                                                                                                       "idle":  "query.modified_move_speed <= 0.05"
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "walk":  "query.modified_move_speed <= 0.4 && !query.has_target && !query.is_panicking && query.modified_move_speed > 0.05"
+                                                                                                                                   }
+                                                                                                                               ],
+                                                                                                               "blend_transition":  0.2
+                                                                                                           }
+                                                                                               }
+                                                                                },
+                                  "controller.animation.capuchin_monkey.action":  {
+                                                                                      "initial_state":  "default",
+                                                                                      "states":  {
+                                                                                                     "default":  {
+                                                                                                                     "transitions":  [
+                                                                                                                                         {
+                                                                                                                                             "hurt":  "query.is_hurt || (query.hurt_time > 0)"
+                                                                                                                                         },
+                                                                                                                                         {
+                                                                                                                                             "throw":  "query.has_target && query.target_distance >= 3.0 && query.target_distance < 12.0 && query.modified_move_speed < 0.25"
+                                                                                                                                         },
+                                                                                                                                         {
+                                                                                                                                             "attack":  "variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 3.0)"
+                                                                                                                                         },
+                                                                                                                                         {
+                                                                                                                                             "sit":  "query.is_sitting"
+                                                                                                                                         },
+                                                                                                                                         {
+                                                                                                                                             "scratch":  "query.modified_move_speed <= 0.02 && !query.has_target && math.mod(query.life_time, 15.0) > 10.0"
+                                                                                                                                         }
+                                                                                                                                     ],
+                                                                                                                     "blend_transition":  0.15
+                                                                                                                 },
+                                                                                                     "attack":  {
+                                                                                                                    "animations":  [
+                                                                                                                                       "attack"
+                                                                                                                                   ],
+                                                                                                                    "transitions":  [
+                                                                                                                                        {
+                                                                                                                                            "default":  "query.state_time >= 0.5"
+                                                                                                                                        }
+                                                                                                                                    ],
+                                                                                                                    "blend_transition":  0.15
+                                                                                                                },
+                                                                                                     "sit":  {
+                                                                                                                 "animations":  [
+                                                                                                                                    "idle_sit"
+                                                                                                                                ],
+                                                                                                                 "transitions":  [
+                                                                                                                                     {
+                                                                                                                                         "default":  "!query.is_sitting || query.modified_move_speed > 0.05"
+                                                                                                                                     }
+                                                                                                                                 ],
+                                                                                                                 "blend_transition":  0.2
+                                                                                                             },
+                                                                                                     "scratch":  {
+                                                                                                                     "animations":  [
+                                                                                                                                        "idle_scratch"
+                                                                                                                                    ],
+                                                                                                                     "transitions":  [
+                                                                                                                                         {
+                                                                                                                                             "default":  "query.modified_move_speed > 0.02 || query.has_target || query.state_time >= 2.5"
+                                                                                                                                         }
+                                                                                                                                     ],
+                                                                                                                     "blend_transition":  0.2
+                                                                                                                 },
+                                                                                                     "hurt":  {
+                                                                                                                  "animations":  [
+                                                                                                                                     "hurt"
+                                                                                                                                 ],
+                                                                                                                  "transitions":  [
+                                                                                                                                      {
+                                                                                                                                          "default":  "query.state_time >= 0.4"
+                                                                                                                                      }
+                                                                                                                                  ],
+                                                                                                                  "blend_transition":  0.1
+                                                                                                              },
+                                                                                                     "throw":  {
+                                                                                                                   "animations":  [
+                                                                                                                                      "throw"
+                                                                                                                                  ],
+                                                                                                                   "transitions":  [
+                                                                                                                                       {
+                                                                                                                                           "default":  "query.state_time >= 0.6"
+                                                                                                                                       }
+                                                                                                                                   ],
+                                                                                                                   "blend_transition":  0.15
+                                                                                                               }
+                                                                                                 }
+                                                                                  }
+                              }
 }

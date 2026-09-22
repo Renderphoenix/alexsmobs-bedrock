@@ -13,14 +13,21 @@
                                                                          "default":  "geometry.rhinoceros"
                                                                      },
                                                         "animations":  {
+                                                                           "run":  "animation.rhinoceros.run",
                                                                            "walk":  "animation.rhinoceros.walk",
                                                                            "idle":  "animation.rhinoceros.idle",
+                                                                           "idle_graze":  "animation.rhinoceros.idle_graze",
+                                                                           "hurt":  "animation.rhinoceros.hurt",
+                                                                           "idle_snort":  "animation.rhinoceros.idle_snort",
+                                                                           "attack":  "animation.rhinoceros.attack",
                                                                            "look_at_target":  "animation.rhinoceros.idle",
-                                                                           "controller_move":  "controller.animation.rhinoceros.move"
+                                                                           "controller_move":  "controller.animation.rhinoceros.move",
+                                                                           "controller_action":  "controller.animation.rhinoceros.action"
                                                                        },
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
+                                                                                        "controller_action",
                                                                                         {
                                                                                             "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
                                                                                         }

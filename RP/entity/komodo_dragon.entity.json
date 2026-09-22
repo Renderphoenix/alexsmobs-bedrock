@@ -13,14 +13,20 @@
                                                                          "default":  "geometry.komodo_dragon"
                                                                      },
                                                         "animations":  {
-                                                                           "walk":  "animation.komodo_dragon.walk",
+                                                                           "run":  "animation.komodo_dragon.run",
+                                                                           "idle_look":  "animation.komodo_dragon.idle_look",
                                                                            "idle":  "animation.komodo_dragon.idle",
+                                                                           "attack":  "animation.komodo_dragon.attack",
+                                                                           "hurt":  "animation.komodo_dragon.hurt",
+                                                                           "walk":  "animation.komodo_dragon.walk",
                                                                            "look_at_target":  "animation.komodo_dragon.idle",
-                                                                           "controller_move":  "controller.animation.komodo_dragon.move"
+                                                                           "controller_move":  "controller.animation.komodo_dragon.move",
+                                                                           "controller_action":  "controller.animation.komodo_dragon.action"
                                                                        },
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
+                                                                                        "controller_action",
                                                                                         {
                                                                                             "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
                                                                                         }

@@ -13,14 +13,22 @@
                                                                          "default":  "geometry.caiman"
                                                                      },
                                                         "animations":  {
-                                                                           "walk":  "animation.caiman.walk",
+                                                                           "swim":  "animation.caiman.swim",
+                                                                           "idle_bask":  "animation.caiman.idle_bask",
+                                                                           "run":  "animation.caiman.run",
+                                                                           "hurt":  "animation.caiman.hurt",
                                                                            "idle":  "animation.caiman.idle",
+                                                                           "attack":  "animation.caiman.attack",
+                                                                           "death_roll":  "animation.caiman.death_roll",
+                                                                           "walk":  "animation.caiman.walk",
                                                                            "look_at_target":  "animation.caiman.idle",
-                                                                           "controller_move":  "controller.animation.caiman.move"
+                                                                           "controller_move":  "controller.animation.caiman.move",
+                                                                           "controller_action":  "controller.animation.caiman.action"
                                                                        },
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
+                                                                                        "controller_action",
                                                                                         {
                                                                                             "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
                                                                                         }

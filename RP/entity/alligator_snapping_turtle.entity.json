@@ -1,38 +1,45 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:alligator_snapping_turtle",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/alligator_snapping_turtle"
-      },
-      "geometry": {
-        "default": "geometry.alligator_snapping_turtle"
-      },
-      "animations": {
-        "walk": "animation.alligator_snapping_turtle.walk",
-        "idle": "animation.alligator_snapping_turtle.idle",
-        "look_at_target": "animation.alligator_snapping_turtle.idle",
-        "controller_move": "controller.animation.alligator_snapping_turtle.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:alligator_snapping_turtle",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/alligator_snapping_turtle"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.alligator_snapping_turtle"
+                                                                     },
+                                                        "animations":  {
+                                                                           "swim":  "animation.alligator_snapping_turtle.swim",
+                                                                           "walk":  "animation.alligator_snapping_turtle.walk",
+                                                                           "idle":  "animation.alligator_snapping_turtle.idle",
+                                                                           "idle_lure":  "animation.alligator_snapping_turtle.idle_lure",
+                                                                           "hurt":  "animation.alligator_snapping_turtle.hurt",
+                                                                           "attack":  "animation.alligator_snapping_turtle.attack",
+                                                                           "retract":  "animation.alligator_snapping_turtle.retract",
+                                                                           "look_at_target":  "animation.alligator_snapping_turtle.idle",
+                                                                           "controller_move":  "controller.animation.alligator_snapping_turtle.move",
+                                                                           "controller_action":  "controller.animation.alligator_snapping_turtle.action"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        "controller_action",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#4f46e5",
+                                                                          "overlay_color":  "#10b981"
+                                                                      }
+                                                    }
+                                }
 }

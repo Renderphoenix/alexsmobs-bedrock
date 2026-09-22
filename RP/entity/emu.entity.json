@@ -13,14 +13,21 @@
                                                                          "default":  "geometry.emu"
                                                                      },
                                                         "animations":  {
+                                                                           "run":  "animation.emu.run",
+                                                                           "kick":  "animation.emu.kick",
                                                                            "walk":  "animation.emu.walk",
                                                                            "idle":  "animation.emu.idle",
+                                                                           "peck":  "animation.emu.peck",
+                                                                           "hurt":  "animation.emu.hurt",
+                                                                           "idle_peck":  "animation.emu.idle_peck",
                                                                            "look_at_target":  "animation.emu.idle",
-                                                                           "controller_move":  "controller.animation.emu.move"
+                                                                           "controller_move":  "controller.animation.emu.move",
+                                                                           "controller_action":  "controller.animation.emu.action"
                                                                        },
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
+                                                                                        "controller_action",
                                                                                         {
                                                                                             "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
                                                                                         }

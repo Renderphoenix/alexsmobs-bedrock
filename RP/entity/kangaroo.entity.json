@@ -13,14 +13,21 @@
                                                                          "default":  "geometry.kangaroo"
                                                                      },
                                                         "animations":  {
+                                                                           "run":  "animation.kangaroo.run",
+                                                                           "dropkick":  "animation.kangaroo.dropkick",
                                                                            "walk":  "animation.kangaroo.walk",
                                                                            "idle":  "animation.kangaroo.idle",
+                                                                           "idle_graze":  "animation.kangaroo.idle_graze",
+                                                                           "hurt":  "animation.kangaroo.hurt",
+                                                                           "box":  "animation.kangaroo.box",
                                                                            "look_at_target":  "animation.kangaroo.idle",
-                                                                           "controller_move":  "controller.animation.kangaroo.move"
+                                                                           "controller_move":  "controller.animation.kangaroo.move",
+                                                                           "controller_action":  "controller.animation.kangaroo.action"
                                                                        },
                                                         "scripts":  {
                                                                         "animate":  [
                                                                                         "controller_move",
+                                                                                        "controller_action",
                                                                                         {
                                                                                             "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
                                                                                         }

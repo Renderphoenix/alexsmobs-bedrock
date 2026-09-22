@@ -1,38 +1,46 @@
-{
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "alexsmobs:maned_wolf",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/maned_wolf"
-      },
-      "geometry": {
-        "default": "geometry.maned_wolf"
-      },
-      "animations": {
-        "walk": "animation.maned_wolf.walk",
-        "idle": "animation.maned_wolf.idle",
-        "look_at_target": "animation.maned_wolf.idle",
-        "controller_move": "controller.animation.maned_wolf.move"
-      },
-      "scripts": {
-        "animate": [
-          "controller_move",
-          {
-            "look_at_target": "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ],
-      "spawn_egg": {
-        "base_color": "#4f46e5",
-        "overlay_color": "#10b981"
-      }
-    }
-  }
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "alexsmobs:maned_wolf",
+                                                        "materials":  {
+                                                                          "default":  "entity_alphatest"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/maned_wolf"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.maned_wolf"
+                                                                     },
+                                                        "animations":  {
+                                                                           "idle_howl":  "animation.maned_wolf.idle_howl",
+                                                                           "run":  "animation.maned_wolf.run",
+                                                                           "hurt":  "animation.maned_wolf.hurt",
+                                                                           "pounce":  "animation.maned_wolf.pounce",
+                                                                           "idle":  "animation.maned_wolf.idle",
+                                                                           "idle_sniff":  "animation.maned_wolf.idle_sniff",
+                                                                           "attack":  "animation.maned_wolf.attack",
+                                                                           "walk":  "animation.maned_wolf.walk",
+                                                                           "look_at_target":  "animation.maned_wolf.idle",
+                                                                           "controller_move":  "controller.animation.maned_wolf.move",
+                                                                           "controller_action":  "controller.animation.maned_wolf.action"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        "controller_move",
+                                                                                        "controller_action",
+                                                                                        {
+                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.default"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#4f46e5",
+                                                                          "overlay_color":  "#10b981"
+                                                                      }
+                                                    }
+                                }
 }
