@@ -1,4 +1,4 @@
-﻿{
+{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -145,11 +145,6 @@
                                                 "minecraft:behavior.random_look_around":  {
                                                                                               "priority":  6
                                                                                           },
-                                                "minecraft:behavior.melee_attack":  {
-                                                                                        "priority":  1,
-                                                                                        "speed_multiplier":  1.5,
-                                                                                        "track_target":  false
-                                                                                    },
                                                 "minecraft:behavior.nearest_attackable_target":  {
                                                                                                      "priority":  2,
                                                                                                      "entity_types":  [
@@ -174,7 +169,14 @@
                                                                                                         "min_distance":  40,
                                                                                                         "max_distance":  128
                                                                                                     }
-                                                                      }
+                                                                      },
+                                                "minecraft:behavior.delayed_attack":  {
+                                                                                          "priority":  1,
+                                                                                          "speed_multiplier":  1.5,
+                                                                                          "track_target":  true,
+                                                                                          "attack_duration":  0.55,
+                                                                                          "hit_delay_pct":  0.5
+                                                                                      }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

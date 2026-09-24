@@ -1,4 +1,4 @@
-﻿{
+{
     "format_version":  "1.10.0",
     "animation_controllers":  {
                                   "controller.animation.alligator_snapping_turtle.move":  {
@@ -77,10 +77,10 @@
                                                                                                                                                        "hurt":  "query.is_hurt || (query.hurt_time > 0)"
                                                                                                                                                    },
                                                                                                                                                    {
-                                                                                                                                                       "attack":  "variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 2.5)"
+                                                                                                                                                       "attack":  "query.is_delayed_attacking"
                                                                                                                                                    },
                                                                                                                                                    {
-                                                                                                                                                       "lure":  "query.is_in_water && !query.is_moving && query.ground_speed <= 0.05 && !query.has_target && math.mod(query.life_time * 0.15 + query.entity_id, 14.0) > 8.0"
+                                                                                                                                                       "lure":  "!query.is_delayed_attacking && !query.is_moving && query.ground_speed <= 0.05 && math.mod(query.life_time, 20.0) > 16.0"
                                                                                                                                                    }
                                                                                                                                                ],
                                                                                                                                "blend_transition":  0.15
@@ -102,7 +102,7 @@
                                                                                                                                              ],
                                                                                                                               "transitions":  [
                                                                                                                                                   {
-                                                                                                                                                      "default":  "query.state_time >= 0.6"
+                                                                                                                                                      "default":  "query.state_time >= 0.5 || !query.is_delayed_attacking"
                                                                                                                                                   }
                                                                                                                                               ],
                                                                                                                               "blend_transition":  0.15
@@ -113,7 +113,7 @@
                                                                                                                                            ],
                                                                                                                             "transitions":  [
                                                                                                                                                 {
-                                                                                                                                                    "default":  "query.state_time >= 3.0 || query.is_moving || query.has_target || query.is_hurt"
+                                                                                                                                                    "default":  "(query.state_time >= 3.0 || query.is_moving || query.has_target || query.is_hurt) || query.is_moving || query.is_delayed_attacking || query.is_hurt"
                                                                                                                                                 }
                                                                                                                                             ],
                                                                                                                             "blend_transition":  0.2

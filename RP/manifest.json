@@ -1,12 +1,12 @@
 {
   "format_version": 2,
   "header": {
-    "name": "§6Alex's Mobs §b[RP] §av1.2.0",
-    "description": "§eThe definitive Bedrock port of Alex's Mobs!§r\n§bCustom 3D models, smooth animations, authentic textures, 148 textured blocks, custom item icons, and multi-language support.\n\n§7Original Java Mod: §fAlexthe668, Carro1001, Paint_Ninja\n§7Bedrock Adaptation: §fRenderphoenix & devsuki",
+    "name": "§6Alex's Mobs §b[RP] §av1.1 - Animation Update",
+    "description": "§eThe definitive Bedrock port of Alex's Mobs! §a[Animation Update v1.1]§r\n§bCustom 3D models, smooth animations, authentic textures, 148 textured blocks, custom item icons, and multi-language support.\n\n§7Original Java Mod: §fAlexthe668, Carro1001, Paint_Ninja\n§7Bedrock Adaptation: §fRenderphoenix & devsuki",
     "uuid": "0931a5b2-c68e-4fa5-ae1b-78ee412e4458",
     "version": [
       1,
-      2,
+      1,
       0
     ],
     "min_engine_version": [
@@ -21,7 +21,7 @@
       "uuid": "250baf95-7926-4951-9ff6-6e0445ecb159",
       "version": [
         1,
-        2,
+        1,
         0
       ]
     }

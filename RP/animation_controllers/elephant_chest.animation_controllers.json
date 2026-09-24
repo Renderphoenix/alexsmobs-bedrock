@@ -1,4 +1,4 @@
-﻿{
+{
     "format_version":  "1.10.0",
     "animation_controllers":  {
                                   "controller.animation.elephant_chest.move":  {
@@ -57,10 +57,10 @@
                                                                                                                                             "hurt":  "query.is_hurt || (query.hurt_time > 0)"
                                                                                                                                         },
                                                                                                                                         {
-                                                                                                                                            "attack":  "variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 3.5)"
+                                                                                                                                            "attack":  "query.is_delayed_attacking"
                                                                                                                                         },
                                                                                                                                         {
-                                                                                                                                            "trumpet":  "query.has_target || (!query.is_moving && query.ground_speed <= 0.05 && math.mod(query.life_time * 0.12 + query.entity_id, 18.0) > 14.0)"
+                                                                                                                                            "trumpet":  "!query.is_delayed_attacking && !query.is_moving && query.ground_speed <= 0.05 && math.mod(query.life_time, 60.0) > 57.0"
                                                                                                                                         }
                                                                                                                                     ],
                                                                                                                     "blend_transition":  0.15
@@ -82,7 +82,7 @@
                                                                                                                                   ],
                                                                                                                    "transitions":  [
                                                                                                                                        {
-                                                                                                                                           "default":  "query.state_time >= 0.7"
+                                                                                                                                           "default":  "query.state_time >= 1.2 || (!query.is_delayed_attacking && query.state_time >= 0.5)"
                                                                                                                                        }
                                                                                                                                    ],
                                                                                                                    "blend_transition":  0.15

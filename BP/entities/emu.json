@@ -162,7 +162,17 @@
                                                 "minecraft:behavior.breed":  {
                                                                                  "priority":  2,
                                                                                  "speed_multiplier":  1
-                                                                             }
+                                                                             },
+                                                "minecraft:behavior.delayed_attack":  {
+                                                                                          "priority":  2,
+                                                                                          "speed_multiplier":  1.25,
+                                                                                          "track_target":  true,
+                                                                                          "attack_duration":  0.6,
+                                                                                          "hit_delay_pct":  0.5
+                                                                                      },
+                                                "minecraft:attack":  {
+                                                                         "damage":  6
+                                                                     }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

@@ -1,4 +1,4 @@
-﻿{
+{
     "format_version":  "1.16.0",
     "minecraft:entity":  {
                              "description":  {
@@ -165,7 +165,17 @@
                                                 "minecraft:behavior.breed":  {
                                                                                  "priority":  2,
                                                                                  "speed_multiplier":  1
-                                                                             }
+                                                                             },
+                                                "minecraft:behavior.delayed_attack":  {
+                                                                                          "priority":  2,
+                                                                                          "speed_multiplier":  1.2,
+                                                                                          "track_target":  true,
+                                                                                          "attack_duration":  0.5,
+                                                                                          "hit_delay_pct":  0.5
+                                                                                      },
+                                                "minecraft:attack":  {
+                                                                         "damage":  4
+                                                                     }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

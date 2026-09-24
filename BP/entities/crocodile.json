@@ -56,7 +56,10 @@
                                                                 },
                                                       "crocodile_calm":  {
                                                                              "minecraft:timer":  {
-                                                                                                     "time":  [20.0, 45.0],
+                                                                                                     "time":  [
+                                                                                                                  20.0,
+                                                                                                                  45.0
+                                                                                                              ],
                                                                                                      "looping":  false,
                                                                                                      "time_down_event":  {
                                                                                                                              "event":  "alexsmobs:crocodile_evaluate_hunt"
@@ -65,7 +68,10 @@
                                                                          },
                                                       "crocodile_hunting":  {
                                                                                 "minecraft:timer":  {
-                                                                                                        "time":  [12.0, 24.0],
+                                                                                                        "time":  [
+                                                                                                                     12.0,
+                                                                                                                     24.0
+                                                                                                                 ],
                                                                                                         "looping":  false,
                                                                                                         "time_down_event":  {
                                                                                                                                 "event":  "alexsmobs:crocodile_evaluate_calm"
@@ -96,13 +102,13 @@
                                                                                                                                                                                                  "operator":  "!=",
                                                                                                                                                                                                  "value":  "crocodile"
                                                                                                                                                                                              }
-                                                                                                                                                          ]
-                                                                                                                                              },
-                                                                                                                                "max_dist":  16
-                                                                                                                            }
-                                                                                                                       ],
-                                                                                                      "must_see":  true
-                                                                                                  }
+                                                                                                                                                                                         ]
+                                                                                                                                                                          },
+                                                                                                                                                              "max_dist":  16
+                                                                                                                                                          }
+                                                                                                                                                      ],
+                                                                                                                                     "must_see":  true
+                                                                                                                                 }
                                                                             }
                                                   },
                              "components":  {
@@ -178,11 +184,6 @@
                                                                                           "priority":  5,
                                                                                           "target_distance":  8
                                                                                       },
-                                                "minecraft:behavior.melee_attack":  {
-                                                                                        "priority":  1,
-                                                                                        "speed_multiplier":  1.4,
-                                                                                        "track_target":  true
-                                                                                    },
                                                 "minecraft:despawn":  {
                                                                           "despawn_from_distance":  {
                                                                                                         "min_distance":  40,
@@ -224,7 +225,14 @@
                                                                              },
                                                 "minecraft:underwater_movement":  {
                                                                                       "value":  0.2
-                                                                                  }
+                                                                                  },
+                                                "minecraft:behavior.delayed_attack":  {
+                                                                                          "priority":  1,
+                                                                                          "speed_multiplier":  1.4,
+                                                                                          "track_target":  true,
+                                                                                          "attack_duration":  0.8,
+                                                                                          "hit_delay_pct":  0.5
+                                                                                      }
                                             },
                              "events":  {
                                             "minecraft:entity_spawned":  {

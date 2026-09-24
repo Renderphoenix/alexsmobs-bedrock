@@ -1,4 +1,4 @@
-﻿{
+{
     "format_version":  "1.10.0",
     "minecraft:client_entity":  {
                                     "description":  {
@@ -20,6 +20,7 @@
                                                                            "hurt":  "animation.bison.hurt",
                                                                            "idle":  "animation.bison.idle",
                                                                            "shake":  "animation.bison.shake",
+                                                                           "idle_shake":  "animation.bison.shake",
                                                                            "attack":  "animation.bison.attack",
                                                                            "look_at_target":  "animation.bison.idle",
                                                                            "controller_move":  "controller.animation.bison.move",

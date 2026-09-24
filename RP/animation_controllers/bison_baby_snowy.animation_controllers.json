@@ -1,4 +1,4 @@
-﻿{
+{
     "format_version":  "1.10.0",
     "animation_controllers":  {
                                   "controller.animation.bison_baby_snowy.move":  {
@@ -10,7 +10,7 @@
                                                                                                                                 ],
                                                                                                                  "transitions":  [
                                                                                                                                      {
-                                                                                                                                         "run":  "(query.is_moving || query.ground_speed > 0.1) && (query.has_target || query.is_panicking || query.is_sprinting || query.ground_speed > 2.0 || math.mod(query.life_time + query.entity_id, 10.0) > 6.0)"
+                                                                                                                                         "run":  "(query.is_moving || query.ground_speed > 0.1) && (query.has_target || query.is_panicking || query.is_sprinting || query.ground_speed > 1.2 || math.mod(query.life_time + query.entity_id, 10.0) > 6.0)"
                                                                                                                                      },
                                                                                                                                      {
                                                                                                                                          "walk":  "query.is_moving || query.ground_speed > 0.1"
@@ -30,7 +30,7 @@
                                                                                                                                          "idle":  "!query.is_moving && query.ground_speed <= 0.05"
                                                                                                                                      },
                                                                                                                                      {
-                                                                                                                                         "run":  "query.has_target || query.is_panicking || query.is_sprinting || query.ground_speed > 2.0 || math.mod(query.life_time + query.entity_id, 10.0) > 6.0"
+                                                                                                                                         "run":  "query.has_target || query.is_panicking || query.is_sprinting || query.ground_speed > 1.2 || math.mod(query.life_time + query.entity_id, 10.0) > 6.0"
                                                                                                                                      }
                                                                                                                                  ],
                                                                                                                  "blend_transition":  0.2
@@ -44,7 +44,7 @@
                                                                                                                                         "idle":  "!query.is_moving && query.ground_speed <= 0.05"
                                                                                                                                     },
                                                                                                                                     {
-                                                                                                                                        "walk":  "!query.has_target && !query.is_panicking && !query.is_sprinting && query.ground_speed <= 2.0 && math.mod(query.life_time + query.entity_id, 10.0) <= 6.0"
+                                                                                                                                        "walk":  "!query.has_target && !query.is_panicking && !query.is_sprinting && query.ground_speed <= 1.2 && math.mod(query.life_time + query.entity_id, 10.0) <= 6.0"
                                                                                                                                     }
                                                                                                                                 ],
                                                                                                                 "blend_transition":  0.2
@@ -77,10 +77,10 @@
                                                                                                                                               "hurt":  "query.is_hurt || (query.hurt_time > 0)"
                                                                                                                                           },
                                                                                                                                           {
-                                                                                                                                              "attack":  "variable.attack_time > 0 || query.is_delayed_attacking || (query.has_target && query.target_distance < 2.5)"
+                                                                                                                                              "attack":  "query.is_delayed_attacking"
                                                                                                                                           },
                                                                                                                                           {
-                                                                                                                                              "shake":  "!query.is_moving && query.ground_speed <= 0.05 && !query.has_target && math.mod(query.life_time * 0.2 + query.entity_id, 14.0) > 10.0"
+                                                                                                                                              "shake":  "!query.is_delayed_attacking && !query.is_moving && query.ground_speed <= 0.05 && math.mod(query.life_time, 35.0) > 31.0"
                                                                                                                                           }
                                                                                                                                       ],
                                                                                                                       "blend_transition":  0.15
@@ -102,18 +102,18 @@
                                                                                                                                     ],
                                                                                                                      "transitions":  [
                                                                                                                                          {
-                                                                                                                                             "default":  "query.state_time >= 0.6"
+                                                                                                                                             "default":  "query.state_time >= 1.1 || !query.is_delayed_attacking"
                                                                                                                                          }
                                                                                                                                      ],
                                                                                                                      "blend_transition":  0.15
                                                                                                                  },
                                                                                                       "shake":  {
                                                                                                                     "animations":  [
-                                                                                                                                       "idle_shake"
+                                                                                                                                       "shake"
                                                                                                                                    ],
                                                                                                                     "transitions":  [
                                                                                                                                         {
-                                                                                                                                            "default":  "query.state_time >= 1.5 || query.is_moving || query.has_target || query.is_hurt"
+                                                                                                                                            "default":  "(query.state_time >= 1.5 || query.is_moving || query.has_target || query.is_hurt) || query.is_moving || query.is_delayed_attacking || query.is_hurt"
                                                                                                                                         }
                                                                                                                                     ],
                                                                                                                     "blend_transition":  0.2
