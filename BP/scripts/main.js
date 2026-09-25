@@ -1,5 +1,37 @@
 import { world, system, BlockPermutation, ItemStack } from "@minecraft/server";
 
+// Helper utilities for Bedrock API compatibility across versions
+function isEntityValid(e) {
+    if (!e) return false;
+    try {
+        return typeof e.isValid === "function" ? e.isValid() : Boolean(e.isValid);
+    } catch {
+        return false;
+    }
+}
+
+function isBlockValid(b) {
+    if (!b) return false;
+    try {
+        return typeof b.isValid === "function" ? b.isValid() : Boolean(b.isValid);
+    } catch {
+        return false;
+    }
+}
+
+const DIMENSION_IDS = ["overworld", "nether", "the_end"];
+
+function getLoadedDimensions() {
+    const dims = [];
+    for (const id of DIMENSION_IDS) {
+        try {
+            const dim = world.getDimension(id);
+            if (dim) dims.push(dim);
+        } catch {}
+    }
+    return dims;
+}
+
 const ATTACK_FAMILIES = new Set([
     "alexsmobs:tiger",
     "alexsmobs:crocodile",
@@ -34,7 +66,7 @@ const BIRD_TYPES = new Set([
     "alexsmobs:soul_vulture"
 ]);
 
-const CROCODILE_PREY = [
+const CROCODILE_PREY_SET = new Set([
     "minecraft:sheep",
     "minecraft:cow",
     "minecraft:pig",
@@ -47,9 +79,9 @@ const CROCODILE_PREY = [
     "alexsmobs:gazelle",
     "alexsmobs:platypus",
     "alexsmobs:rain_frog"
-];
+]);
 
-const TIGER_PREY = [
+const TIGER_PREY_SET = new Set([
     "minecraft:sheep",
     "minecraft:cow",
     "minecraft:pig",
@@ -58,7 +90,7 @@ const TIGER_PREY = [
     "alexsmobs:gazelle",
     "alexsmobs:kangaroo",
     "alexsmobs:platypus"
-];
+]);
 
 const EGG_HATCH_MAP = {
     "alexsmobs:crocodile_egg": { mob: "alexsmobs:crocodile", count: 1 },
@@ -115,11 +147,14 @@ const EGG_HATCH_MAP = {
 const trackedEggs = new Map();
 
 function trackEgg(dimension, location, blockTypeId) {
-    const key = `${dimension.id}_${location.x}_${location.y}_${location.z}`;
+    const lx = Math.floor(location.x);
+    const ly = Math.floor(location.y);
+    const lz = Math.floor(location.z);
+    const key = `${dimension.id}_${lx}_${ly}_${lz}`;
     if (!trackedEggs.has(key)) {
         trackedEggs.set(key, {
             dimensionId: dimension.id,
-            location: { x: location.x, y: location.y, z: location.z },
+            location: { x: lx, y: ly, z: lz },
             blockTypeId,
             hatchTick: system.currentTick + Math.floor(Math.random() * 400 + 400),
             cracked: false
@@ -129,18 +164,19 @@ function trackEgg(dimension, location, blockTypeId) {
 
 function handleScriptStatus(player) {
     try {
-        const overworld = world.getDimension("overworld");
         let mobCount = 0;
-        if (overworld) {
-            const allEntities = overworld.getEntities();
-            for (const ent of allEntities) {
-                if (ent.typeId && ent.typeId.startsWith("alexsmobs:")) {
-                    mobCount++;
+        for (const dim of getLoadedDimensions()) {
+            try {
+                const allEntities = dim.getEntities();
+                for (const ent of allEntities) {
+                    if (ent.typeId && ent.typeId.startsWith("alexsmobs:")) {
+                        mobCount++;
+                    }
                 }
-            }
+            } catch {}
         }
         const message = `§a[Alex's Mobs] §fScript Engine: §aONLINE & WORKING§f! Tick: §e${system.currentTick}§f, Active Alex's Mobs: §b${mobCount}, Tracked Eggs: §e${trackedEggs.size}`;
-        if (player && player.sendMessage) {
+        if (player && typeof player.sendMessage === "function") {
             player.sendMessage(message);
         } else {
             world.sendMessage(message);
@@ -170,7 +206,7 @@ world.afterEvents.playerSpawn.subscribe((event) => {
     if (event.initialSpawn) {
         system.runTimeout(() => {
             try {
-                if (event.player && event.player.isValid()) {
+                if (isEntityValid(event.player)) {
                     event.player.sendMessage("§6[Alex's Mobs] §aScript Engine initialized! Type §e!test §aor §e/scriptevent alexsmobs:test §ato verify scripts.");
                 }
             } catch (e) {}
@@ -181,7 +217,7 @@ world.afterEvents.playerSpawn.subscribe((event) => {
 world.afterEvents.playerPlaceBlock.subscribe((event) => {
     try {
         const block = event.block;
-        if (!block || !block.isValid()) return;
+        if (!isBlockValid(block)) return;
         const typeId = block.typeId;
         if (EGG_HATCH_MAP[typeId]) {
             trackEgg(block.dimension, block.location, typeId);
@@ -193,7 +229,7 @@ world.afterEvents.itemUse.subscribe((event) => {
     try {
         if (event.itemStack && event.itemStack.typeId === "alexsmobs:emu_egg") {
             const player = event.source;
-            if (!player || !player.isValid()) return;
+            if (!isEntityValid(player)) return;
             const dir = player.getViewDirection();
             const head = player.getHeadLocation();
             const dim = player.dimension;
@@ -219,7 +255,7 @@ world.afterEvents.itemUse.subscribe((event) => {
 world.afterEvents.entityHurt.subscribe((event) => {
     const victim = event.hurtEntity;
     const attacker = event.damageSource.damagingEntity;
-    if (!victim || !victim.isValid()) return;
+    if (!isEntityValid(victim)) return;
 
     const typeId = victim.typeId;
     if (!typeId || !typeId.startsWith("alexsmobs:")) return;
@@ -229,7 +265,7 @@ world.afterEvents.entityHurt.subscribe((event) => {
         let dx = 0;
         let dz = 0;
 
-        if (attacker && attacker.isValid()) {
+        if (isEntityValid(attacker)) {
             const aLoc = attacker.location;
             dx = aLoc.x - vLoc.x;
             dz = aLoc.z - vLoc.z;
@@ -245,7 +281,7 @@ world.afterEvents.entityHurt.subscribe((event) => {
 
         if (typeId === "alexsmobs:kangaroo") {
             const retaliate = Math.random() < 0.5;
-            if (retaliate && attacker && attacker.isValid() && dist < 12) {
+            if (retaliate && isEntityValid(attacker) && dist < 12) {
                 victim.applyImpulse({ x: normX * 0.45, y: 0.42, z: normZ * 0.45 });
             } else {
                 victim.applyImpulse({ x: -normX * 0.55, y: 0.52, z: -normZ * 0.55 });
@@ -254,14 +290,14 @@ world.afterEvents.entityHurt.subscribe((event) => {
         }
 
         if (typeId === "alexsmobs:elephant") {
-            const overworld = victim.dimension;
-            const nearby = overworld.getEntities({
+            const dim = victim.dimension;
+            const nearby = dim.getEntities({
                 location: vLoc,
                 maxDistance: 8,
                 excludeTypes: ["alexsmobs:elephant"]
             });
             for (const ent of nearby) {
-                if (!ent.isValid() || ent === victim) continue;
+                if (!isEntityValid(ent) || ent === victim) continue;
                 const eLoc = ent.location;
                 const edx = eLoc.x - vLoc.x;
                 const edz = eLoc.z - vLoc.z;
@@ -275,14 +311,14 @@ world.afterEvents.entityHurt.subscribe((event) => {
         }
 
         if (typeId === "alexsmobs:tasmanian_devil") {
-            const overworld = victim.dimension;
-            const nearby = overworld.getEntities({
+            const dim = victim.dimension;
+            const nearby = dim.getEntities({
                 location: vLoc,
                 maxDistance: 5,
                 excludeTypes: ["alexsmobs:tasmanian_devil"]
             });
             for (const ent of nearby) {
-                if (!ent.isValid() || ent === victim) continue;
+                if (!isEntityValid(ent) || ent === victim) continue;
                 try {
                     const eLoc = ent.location;
                     const edx = eLoc.x - vLoc.x;
@@ -296,8 +332,8 @@ world.afterEvents.entityHurt.subscribe((event) => {
         }
 
         if (typeId === "alexsmobs:skreecher") {
-            const overworld = victim.dimension;
-            const nearbyPlayers = overworld.getPlayers({
+            const dim = victim.dimension;
+            const nearbyPlayers = dim.getPlayers({
                 location: vLoc,
                 maxDistance: 12
             });
@@ -311,7 +347,7 @@ world.afterEvents.entityHurt.subscribe((event) => {
             return;
         }
 
-        if (typeId === "alexsmobs:komodo_dragon" && attacker && attacker.isValid()) {
+        if (typeId === "alexsmobs:komodo_dragon" && isEntityValid(attacker)) {
             try {
                 attacker.addEffect("poison", 100, { amplifier: 1, showParticles: true });
                 attacker.addEffect("slowness", 80, { amplifier: 0, showParticles: true });
@@ -331,7 +367,7 @@ world.afterEvents.entityHurt.subscribe((event) => {
         }
 
         if (ATTACK_FAMILIES.has(typeId)) {
-            if (attacker && attacker.isValid() && dist < 16) {
+            if (isEntityValid(attacker) && dist < 16) {
                 victim.applyImpulse({ x: normX * 0.38, y: 0.1, z: normZ * 0.38 });
             }
             return;
@@ -349,240 +385,263 @@ world.afterEvents.entityHurt.subscribe((event) => {
     } catch (e) {}
 });
 
+// Periodic AI assistance loop: lunges, gliding, water movement (runs across all active dimensions)
 system.runInterval(() => {
     try {
-        const overworld = world.getDimension("overworld");
-        if (!overworld) return;
-
-        const crocodiles = overworld.getEntities({ type: "alexsmobs:crocodile" });
-        for (const croc of crocodiles) {
-            if (!croc.isValid()) continue;
+        const dimensions = getLoadedDimensions();
+        for (const dim of dimensions) {
             try {
-                const cLoc = croc.location;
-                let target = croc.target;
+                // Crocodile lunge AI
+                const crocodiles = dim.getEntities({ type: "alexsmobs:crocodile" });
+                for (const croc of crocodiles) {
+                    if (!isEntityValid(croc)) continue;
+                    try {
+                        const cLoc = croc.location;
+                        let target = croc.target;
 
-                if (!target || !target.isValid()) {
-                    for (const preyType of CROCODILE_PREY) {
-                        const nearby = overworld.getEntities({
-                            type: preyType,
-                            location: cLoc,
-                            maxDistance: 14
-                        });
-                        if (nearby.length > 0) {
-                            target = nearby[0];
-                            break;
+                        if (!isEntityValid(target)) {
+                            const nearby = dim.getEntities({
+                                location: cLoc,
+                                maxDistance: 14
+                            });
+                            for (const ent of nearby) {
+                                if (isEntityValid(ent) && CROCODILE_PREY_SET.has(ent.typeId)) {
+                                    target = ent;
+                                    break;
+                                }
+                            }
                         }
-                    }
-                }
 
-                if (target && target.isValid()) {
-                    const tLoc = target.location;
-                    const dx = tLoc.x - cLoc.x;
-                    const dy = tLoc.y - cLoc.y;
-                    const dz = tLoc.z - cLoc.z;
-                    const distSq = dx * dx + dz * dz;
+                        if (isEntityValid(target)) {
+                            const tLoc = target.location;
+                            const dx = tLoc.x - cLoc.x;
+                            const dy = tLoc.y - cLoc.y;
+                            const dz = tLoc.z - cLoc.z;
+                            const distSq = dx * dx + dz * dz;
 
-                    if (distSq < 144 && distSq > 2.5) {
-                        const dist = Math.sqrt(distSq);
-                        const lungePower = croc.isInWater ? 0.38 : 0.25;
-                        croc.applyImpulse({
-                            x: (dx / dist) * lungePower,
-                            y: Math.max(-0.08, Math.min(0.18, dy * 0.12)),
-                            z: (dz / dist) * lungePower
-                        });
-                    }
-                }
-            } catch (e) {}
-        }
-
-        const tigers = overworld.getEntities({ type: "alexsmobs:tiger" });
-        for (const tiger of tigers) {
-            if (!tiger.isValid()) continue;
-            try {
-                const tLoc = tiger.location;
-                let target = tiger.target;
-
-                if (!target || !target.isValid()) {
-                    for (const preyType of TIGER_PREY) {
-                        const nearby = overworld.getEntities({
-                            type: preyType,
-                            location: tLoc,
-                            maxDistance: 16
-                        });
-                        if (nearby.length > 0) {
-                            target = nearby[0];
-                            break;
+                            if (distSq < 144 && distSq > 2.5) {
+                                const dist = Math.sqrt(distSq);
+                                const lungePower = croc.isInWater ? 0.38 : 0.25;
+                                croc.applyImpulse({
+                                    x: (dx / dist) * lungePower,
+                                    y: Math.max(-0.08, Math.min(0.18, dy * 0.12)),
+                                    z: (dz / dist) * lungePower
+                                });
+                            }
                         }
+                    } catch (e) {}
+                }
+
+                // Tiger leap AI
+                const tigers = dim.getEntities({ type: "alexsmobs:tiger" });
+                for (const tiger of tigers) {
+                    if (!isEntityValid(tiger)) continue;
+                    try {
+                        const tLoc = tiger.location;
+                        let target = tiger.target;
+
+                        if (!isEntityValid(target)) {
+                            const nearby = dim.getEntities({
+                                location: tLoc,
+                                maxDistance: 16
+                            });
+                            for (const ent of nearby) {
+                                if (isEntityValid(ent) && TIGER_PREY_SET.has(ent.typeId)) {
+                                    target = ent;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (isEntityValid(target)) {
+                            const preyLoc = target.location;
+                            const dx = preyLoc.x - tLoc.x;
+                            const dz = preyLoc.z - tLoc.z;
+                            const distSq = dx * dx + dz * dz;
+
+                            if (distSq < 36 && distSq > 2) {
+                                const dist = Math.sqrt(distSq);
+                                tiger.applyImpulse({
+                                    x: (dx / dist) * 0.42,
+                                    y: 0.15,
+                                    z: (dz / dist) * 0.42
+                                });
+                            }
+                        }
+                    } catch (e) {}
+                }
+
+                // Birds gliding AI (includes Overworld birds and Nether Soul Vulture)
+                for (const type of BIRD_TYPES) {
+                    const birds = dim.getEntities({ type });
+                    for (const b of birds) {
+                        if (!isEntityValid(b)) continue;
+                        try {
+                            const vel = b.getVelocity();
+                            if (vel.y < -0.15) {
+                                const rot = b.getRotation();
+                                const rad = (rot.y * Math.PI) / 180;
+                                const forwardX = -Math.sin(rad) * 0.14;
+                                const forwardZ = Math.cos(rad) * 0.14;
+                                b.applyImpulse({ x: forwardX, y: 0.12, z: forwardZ });
+                            }
+                        } catch (e) {}
                     }
                 }
 
-                if (target && target.isValid()) {
-                    const preyLoc = target.location;
-                    const dx = preyLoc.x - tLoc.x;
-                    const dz = preyLoc.z - tLoc.z;
-                    const distSq = dx * dx + dz * dz;
-
-                    if (distSq < 36 && distSq > 2) {
-                        const dist = Math.sqrt(distSq);
-                        tiger.applyImpulse({
-                            x: (dx / dist) * 0.42,
-                            y: 0.15,
-                            z: (dz / dist) * 0.42
-                        });
-                    }
+                // Whale water swimming impulse
+                const whales = dim.getEntities({ type: "alexsmobs:cachalot_whale" });
+                for (const w of whales) {
+                    if (!isEntityValid(w) || !w.isInWater) continue;
+                    try {
+                        const vel = w.getVelocity();
+                        if (Math.abs(vel.x) > 0.02 || Math.abs(vel.z) > 0.02) {
+                            const rot = w.getRotation();
+                            const rad = (rot.y * Math.PI) / 180;
+                            w.applyImpulse({
+                                x: -Math.sin(rad) * 0.08,
+                                y: 0.01,
+                                z: Math.cos(rad) * 0.08
+                            });
+                        }
+                    } catch (e) {}
                 }
-            } catch (e) {}
-        }
 
-        for (const type of BIRD_TYPES) {
-            const birds = overworld.getEntities({ type });
-            for (const b of birds) {
-                if (!b.isValid()) continue;
-                try {
-                    const vel = b.getVelocity();
-                    if (vel.y < -0.15) {
-                        const rot = b.getRotation();
-                        const rad = (rot.y * Math.PI) / 180;
-                        const forwardX = -Math.sin(rad) * 0.14;
-                        const forwardZ = Math.cos(rad) * 0.14;
-                        b.applyImpulse({ x: forwardX, y: 0.12, z: forwardZ });
-                    }
-                } catch (e) {}
-            }
-        }
-
-        const whales = overworld.getEntities({ type: "alexsmobs:cachalot_whale" });
-        for (const w of whales) {
-            if (!w.isValid() || !w.isInWater) continue;
-            try {
-                const vel = w.getVelocity();
-                if (Math.abs(vel.x) > 0.02 || Math.abs(vel.z) > 0.02) {
-                    const rot = w.getRotation();
-                    const rad = (rot.y * Math.PI) / 180;
-                    w.applyImpulse({
-                        x: -Math.sin(rad) * 0.08,
-                        y: 0.01,
-                        z: Math.cos(rad) * 0.08
-                    });
+                // Flying fish leap AI
+                const flyingFishes = dim.getEntities({ type: "alexsmobs:flying_fish" });
+                for (const ff of flyingFishes) {
+                    if (!isEntityValid(ff)) continue;
+                    try {
+                        const vel = ff.getVelocity();
+                        if (ff.isInWater && Math.random() < 0.04) {
+                            const rot = ff.getRotation();
+                            const rad = (rot.y * Math.PI) / 180;
+                            ff.applyImpulse({
+                                x: -Math.sin(rad) * 0.35,
+                                y: 0.38,
+                                z: Math.cos(rad) * 0.35
+                            });
+                        }
+                    } catch (e) {}
                 }
-            } catch (e) {}
-        }
 
-        const flyingFishes = overworld.getEntities({ type: "alexsmobs:flying_fish" });
-        for (const ff of flyingFishes) {
-            if (!ff.isValid()) continue;
-            try {
-                const vel = ff.getVelocity();
-                if (ff.isInWater && Math.random() < 0.04) {
-                    const rot = ff.getRotation();
-                    const rad = (rot.y * Math.PI) / 180;
-                    ff.applyImpulse({
-                        x: -Math.sin(rad) * 0.35,
-                        y: 0.38,
-                        z: Math.cos(rad) * 0.35
-                    });
+                // Kangaroo hopping impulse
+                const kangaroos = dim.getEntities({ type: "alexsmobs:kangaroo" });
+                for (const k of kangaroos) {
+                    if (!isEntityValid(k)) continue;
+                    try {
+                        const vel = k.getVelocity();
+                        if (k.isOnGround && (Math.abs(vel.x) > 0.04 || Math.abs(vel.z) > 0.04) && Math.random() < 0.22) {
+                            k.applyImpulse({ x: vel.x * 1.15, y: 0.44, z: vel.z * 1.15 });
+                        }
+                    } catch (e) {}
                 }
-            } catch (e) {}
-        }
-
-        const kangaroos = overworld.getEntities({ type: "alexsmobs:kangaroo" });
-        for (const k of kangaroos) {
-            if (!k.isValid()) continue;
-            try {
-                const vel = k.getVelocity();
-                if (k.isOnGround && (Math.abs(vel.x) > 0.04 || Math.abs(vel.z) > 0.04) && Math.random() < 0.22) {
-                    k.applyImpulse({ x: vel.x * 1.15, y: 0.44, z: vel.z * 1.15 });
-                }
-            } catch (e) {}
+            } catch (errDim) {}
         }
     } catch (e) {}
 }, 5);
 
 const EGG_LAYERS = [
-    { type: "alexsmobs:crocodile", egg: "alexsmobs:crocodile_egg", rate: 0.08 },
-    { type: "alexsmobs:caiman", egg: "alexsmobs:caiman_egg", rate: 0.08 },
-    { type: "alexsmobs:terrapin", egg: "alexsmobs:terrapin_egg", rate: 0.08 },
-    { type: "alexsmobs:platypus", egg: "alexsmobs:platypus_egg", rate: 0.08 }
+    { type: "alexsmobs:crocodile", egg: "alexsmobs:crocodile_egg", rate: 0.02 },
+    { type: "alexsmobs:caiman", egg: "alexsmobs:caiman_egg", rate: 0.02 },
+    { type: "alexsmobs:terrapin", egg: "alexsmobs:terrapin_egg", rate: 0.02 },
+    { type: "alexsmobs:platypus", egg: "alexsmobs:platypus_egg", rate: 0.02 }
 ];
 
+// Egg-laying and surrounding block scanner interval (runs every 5 seconds)
 system.runInterval(() => {
     try {
-        const overworld = world.getDimension("overworld");
-        if (!overworld) return;
+        const dimensions = getLoadedDimensions();
+        for (const dim of dimensions) {
+            try {
+                // Spontaneous egg laying with local density & cap check to prevent runaway population
+                for (const layer of EGG_LAYERS) {
+                    const entities = dim.getEntities({ type: layer.type });
+                    for (const ent of entities) {
+                        if (!isEntityValid(ent) || ent.hasComponent("minecraft:is_baby")) continue;
+                        if (Math.random() < layer.rate) {
+                            const loc = ent.location;
+                            // Check local density: don't lay if already 4+ of species within 12 blocks
+                            const nearbySame = dim.getEntities({
+                                type: layer.type,
+                                location: loc,
+                                maxDistance: 12
+                            });
+                            if (nearbySame.length > 4) continue;
 
-        for (const layer of EGG_LAYERS) {
-            const entities = overworld.getEntities({ type: layer.type });
-            for (const ent of entities) {
-                if (!ent.isValid() || ent.hasComponent("minecraft:is_baby")) continue;
-                if (Math.random() < layer.rate) {
-                    const loc = ent.location;
-                    const bx = Math.floor(loc.x);
-                    const by = Math.floor(loc.y);
-                    const bz = Math.floor(loc.z);
-                    const blk = overworld.getBlock({ x: bx, y: by, z: bz });
-                    const ground = overworld.getBlock({ x: bx, y: by - 1, z: bz });
-                    if (ground && ground.isValid() && !ground.isAir && !ground.isLiquid && blk && blk.isValid() && blk.isAir) {
-                        blk.setPermutation(BlockPermutation.resolve(layer.egg));
-                        overworld.playSound("block.turtle_egg.drop", { x: bx + 0.5, y: by + 0.5, z: bz + 0.5 });
-                        overworld.spawnParticle("minecraft:egg_destroy_emitter", { x: bx + 0.5, y: by + 0.5, z: bz + 0.5 });
-                        trackEgg(overworld, { x: bx, y: by, z: bz }, layer.egg);
-                    }
-                }
-            }
-        }
-
-        const triopsList = overworld.getEntities({ type: "alexsmobs:triops" });
-        for (const triops of triopsList) {
-            if (!triops.isValid() || triops.hasComponent("minecraft:is_baby")) continue;
-            if (Math.random() < 0.07) {
-                const loc = triops.location;
-                const bx = Math.floor(loc.x);
-                const by = Math.floor(loc.y);
-                const bz = Math.floor(loc.z);
-                const blk = overworld.getBlock({ x: bx, y: by, z: bz });
-                const ground = overworld.getBlock({ x: bx, y: by - 1, z: bz });
-                if (ground && ground.isValid() && !ground.isAir && blk && blk.isValid() && (blk.isAir || blk.typeId === "minecraft:water")) {
-                    blk.setPermutation(BlockPermutation.resolve("alexsmobs:triops_eggs"));
-                    overworld.playSound("block.turtle_egg.drop", { x: bx + 0.5, y: by + 0.5, z: bz + 0.5 });
-                    trackEgg(overworld, { x: bx, y: by, z: bz }, "alexsmobs:triops_eggs");
-                }
-            }
-        }
-
-        const emuList = overworld.getEntities({ type: "alexsmobs:emu" });
-        for (const emu of emuList) {
-            if (!emu.isValid() || emu.hasComponent("minecraft:is_baby")) continue;
-            if (Math.random() < 0.06) {
-                const loc = emu.location;
-                try {
-                    overworld.spawnItem(new ItemStack("alexsmobs:emu_egg", 1), loc);
-                    overworld.playSound("mob.chicken.plop", loc);
-                } catch (e) {}
-            }
-        }
-
-        const players = overworld.getPlayers();
-        for (const p of players) {
-            if (!p.isValid()) continue;
-            const pLoc = p.location;
-            const px = Math.floor(pLoc.x);
-            const py = Math.floor(pLoc.y);
-            const pz = Math.floor(pLoc.z);
-            for (let rx = -3; rx <= 3; rx += 3) {
-                for (let rz = -3; rz <= 3; rz += 3) {
-                    for (let ry = -2; ry <= 2; ry++) {
-                        const checkLoc = { x: px + rx, y: py + ry, z: pz + rz };
-                        const checkBlk = overworld.getBlock(checkLoc);
-                        if (checkBlk && checkBlk.isValid() && EGG_HATCH_MAP[checkBlk.typeId]) {
-                            trackEgg(overworld, checkLoc, checkBlk.typeId);
+                            const bx = Math.floor(loc.x);
+                            const by = Math.floor(loc.y);
+                            const bz = Math.floor(loc.z);
+                            const blk = dim.getBlock({ x: bx, y: by, z: bz });
+                            const ground = dim.getBlock({ x: bx, y: by - 1, z: bz });
+                            if (isBlockValid(ground) && !ground.isAir && !ground.isLiquid && isBlockValid(blk) && blk.isAir) {
+                                blk.setPermutation(BlockPermutation.resolve(layer.egg));
+                                dim.playSound("block.turtle_egg.drop", { x: bx + 0.5, y: by + 0.5, z: bz + 0.5 });
+                                dim.spawnParticle("minecraft:egg_destroy_emitter", { x: bx + 0.5, y: by + 0.5, z: bz + 0.5 });
+                                trackEgg(dim, { x: bx, y: by, z: bz }, layer.egg);
+                            }
                         }
                     }
                 }
-            }
+
+                // Triops aquatic egg laying
+                const triopsList = dim.getEntities({ type: "alexsmobs:triops" });
+                for (const triops of triopsList) {
+                    if (!isEntityValid(triops) || triops.hasComponent("minecraft:is_baby")) continue;
+                    if (Math.random() < 0.02) {
+                        const loc = triops.location;
+                        const bx = Math.floor(loc.x);
+                        const by = Math.floor(loc.y);
+                        const bz = Math.floor(loc.z);
+                        const blk = dim.getBlock({ x: bx, y: by, z: bz });
+                        const ground = dim.getBlock({ x: bx, y: by - 1, z: bz });
+                        if (isBlockValid(ground) && !ground.isAir && isBlockValid(blk) && (blk.isAir || blk.typeId === "minecraft:water")) {
+                            blk.setPermutation(BlockPermutation.resolve("alexsmobs:triops_eggs"));
+                            dim.playSound("block.turtle_egg.drop", { x: bx + 0.5, y: by + 0.5, z: bz + 0.5 });
+                            trackEgg(dim, { x: bx, y: by, z: bz }, "alexsmobs:triops_eggs");
+                        }
+                    }
+                }
+
+                // Emu item drop
+                const emuList = dim.getEntities({ type: "alexsmobs:emu" });
+                for (const emu of emuList) {
+                    if (!isEntityValid(emu) || emu.hasComponent("minecraft:is_baby")) continue;
+                    if (Math.random() < 0.02) {
+                        const loc = emu.location;
+                        try {
+                            dim.spawnItem(new ItemStack("alexsmobs:emu_egg", 1), loc);
+                            dim.playSound("mob.chicken.plop", loc);
+                        } catch (e) {}
+                    }
+                }
+
+                // Full 5x5x3 contiguous block scanner around players to discover placed/existing eggs
+                const players = dim.getPlayers();
+                for (const p of players) {
+                    if (!isEntityValid(p)) continue;
+                    const pLoc = p.location;
+                    const px = Math.floor(pLoc.x);
+                    const py = Math.floor(pLoc.y);
+                    const pz = Math.floor(pLoc.z);
+                    for (let rx = -2; rx <= 2; rx++) {
+                        for (let rz = -2; rz <= 2; rz++) {
+                            for (let ry = -1; ry <= 1; ry++) {
+                                const checkLoc = { x: px + rx, y: py + ry, z: pz + rz };
+                                const checkBlk = dim.getBlock(checkLoc);
+                                if (isBlockValid(checkBlk) && EGG_HATCH_MAP[checkBlk.typeId]) {
+                                    trackEgg(dim, checkLoc, checkBlk.typeId);
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (errDim) {}
         }
     } catch (e) {}
 }, 100);
 
+// Egg cracking and hatching ticker (runs every 1 second)
 system.runInterval(() => {
     try {
         if (trackedEggs.size === 0) return;
@@ -595,7 +654,7 @@ system.runInterval(() => {
                     continue;
                 }
                 const blk = dim.getBlock(egg.location);
-                if (!blk || !blk.isValid() || !EGG_HATCH_MAP[blk.typeId]) {
+                if (!isBlockValid(blk) || !EGG_HATCH_MAP[blk.typeId]) {
                     trackedEggs.delete(key);
                     continue;
                 }
