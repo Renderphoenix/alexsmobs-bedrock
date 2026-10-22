@@ -7,7 +7,7 @@
                                                                           "default":  "entity_alphatest"
                                                                       },
                                                         "textures":  {
-                                                                         "default":  "textures/entity/underminer"
+                                                                         "default":  "textures/entity/underminer_dwarf"
                                                                      },
                                                         "geometry":  {
                                                                          "default":  "geometry.underminer"

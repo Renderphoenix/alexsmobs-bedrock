@@ -22,7 +22,7 @@
                                                                         "animate":  [
                                                                                         "controller_move",
                                                                                         {
-                                                                                            "look_at_target":  "1.0 - math.min(1.0, query.modified_move_speed * 1.5)"
+                                                                                            "look_at_target":  "query.is_on_ground ? (1.0 - math.min(1.0, query.modified_move_speed * 1.5)) : 0.0"
                                                                                         }
                                                                                     ]
                                                                     },
