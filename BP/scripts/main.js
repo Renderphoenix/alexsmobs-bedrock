@@ -228,7 +228,7 @@ world.afterEvents.playerPlaceBlock.subscribe((event) => {
 world.afterEvents.itemUse.subscribe((event) => {
     try {
         if (event.itemStack && event.itemStack.typeId === "alexsmobs:emu_egg") {
-            const player = event.source;
+            const player = event.player;
             if (!isEntityValid(player)) return;
             const dir = player.getViewDirection();
             const head = player.getHeadLocation();

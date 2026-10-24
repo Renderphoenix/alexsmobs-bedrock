@@ -1,13 +1,13 @@
 {
   "format_version": 2,
   "header": {
-    "name": "§6Alex's Mobs §e[BP] §av1.1 - Animation Update",
+    "name": "§6Alex's Mobs §e[BP] §av1.2",
     "description": "§eThe definitive Bedrock port of Alex's Mobs! §a[Animation Update v1.1]§r\n§bFeaturing 90+ realistic animals with custom AI, smooth gliding flight, aquatic swimming, and functional egg laying & hatching.\n\n§6[EXPERIMENTAL GAMEPLAY REQUIRED]:§r\n§a✔ Beta APIs §7(Turn ON in world settings for custom JS scripting & egg mechanics)\n\n§7Original Java Mod: §fAlexthe668, Carro1001, Paint_Ninja\n§7Bedrock Adaptation: §fRenderphoenix & devsuki",
     "uuid": "3eb76686-d152-4e42-a9d1-79cc31b6b2ec",
     "version": [
       1,
-      1,
-      5
+      2,
+      0
     ],
     "min_engine_version": [
       1,
