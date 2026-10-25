@@ -1,0 +1,194 @@
+1
+00:00:00,000 --> 00:00:06,000
+Alex's Mobs Pocket
+Présentation de l'Addon Minecraft Bedrock
+
+2
+00:00:06,000 --> 00:00:13,000
+Amenez l'univers d'Alex's Mobs
+sur Minecraft Bedrock Edition.
+
+3
+00:00:13,000 --> 00:00:20,000
+Cet addon ajoute plus de 80 créatures uniques
+inspirées du célèbre mod Java.
+
+4
+00:00:20,000 --> 00:00:27,000
+Explorez votre monde et découvrez
+de nouveaux animaux dans différents biomes.
+
+5
+00:00:27,000 --> 00:00:34,000
+Rencontrez le Grizzly,
+une créature imposante de la nature sauvage.
+
+6
+00:00:34,000 --> 00:00:41,000
+Le Tigre est un redoutable prédateur.
+Gardez vos distances !
+
+7
+00:00:41,000 --> 00:00:48,000
+L'Éléphant introduit l'un des plus grands
+animaux terrestres dans votre monde.
+
+8
+00:00:48,000 --> 00:00:55,000
+Les Gorilles apportent encore plus de vie
+à l'environnement de la jungle.
+
+9
+00:00:55,000 --> 00:01:02,000
+Découvrez le Kangourou
+et ses mouvements uniques.
+
+10
+00:01:02,000 --> 00:01:09,000
+Le Rhinocéros est une autre créature
+puissante que vous pourrez croiser.
+
+11
+00:01:09,000 --> 00:01:16,000
+Parcourez les terres sauvages
+et trouvez l'Élan.
+
+12
+00:01:16,000 --> 00:01:23,000
+Les Bisons apportent plus de variété
+aux plaines et aux prairies.
+
+13
+00:01:23,000 --> 00:01:30,000
+Méfiez-vous des Crocodiles
+près des rivières et des marécages.
+
+14
+00:01:30,000 --> 00:01:37,000
+Le Dragon de Komodo
+est un autre reptile dangereux.
+
+15
+00:01:37,000 --> 00:01:44,000
+Levez les yeux et vous apercevrez peut-être
+un Pygargue à tête blanche planer dans le ciel.
+
+16
+00:01:44,000 --> 00:01:51,000
+Le Raton laveur est une petite créature
+dotée de ses propres animations personnalisées.
+
+17
+00:01:51,000 --> 00:01:58,000
+Découvrez le Léopard des neiges
+dans les environnements plus froids.
+
+18
+00:01:58,000 --> 00:02:05,000
+Le Capucin ajoute
+encore plus de vie à la jungle.
+
+19
+00:02:05,000 --> 00:02:12,000
+Explorez les océans
+et rencontrez l'Orque.
+
+20
+00:02:12,000 --> 00:02:19,000
+Le Calmar géant est une créature
+impressionnante des abysses de l'océan.
+
+21
+00:02:19,000 --> 00:02:26,000
+Prenez garde au Requin-marteau
+lors de vos explorations sous-marines.
+
+22
+00:02:26,000 --> 00:02:33,000
+Le Requin-lézard ajoute
+une autre créature unique aux fonds marins.
+
+23
+00:02:33,000 --> 00:02:40,000
+Faites la connaissance de l'Ornithorynque,
+un animal fascinant vivant près de l'eau.
+
+24
+00:02:40,000 --> 00:02:47,000
+La Crevette-mante est une autre
+créature aquatique fascinante.
+
+25
+00:02:47,000 --> 00:02:54,000
+Vous croiserez également le Bec-en-sabot,
+un oiseau unique des zones humides.
+
+26
+00:02:54,000 --> 00:03:01,000
+L'addon inclut également des créatures
+provenant du Nether et de l'End.
+
+27
+00:03:01,000 --> 00:03:08,000
+Chaque créature dispose de ses propres
+modèles, animations et sons.
+
+28
+00:03:08,000 --> 00:03:15,000
+Beaucoup de mobs possèdent des comportements uniques
+et des interactions avec leur environnement.
+
+29
+00:03:15,000 --> 00:03:22,000
+Certaines créatures chassent d'autres animaux,
+tandis que d'autres fuient face au danger.
+
+30
+00:03:22,000 --> 00:03:29,000
+Vous pouvez également apprivoiser, nourrir
+et faire reproduire certaines créatures.
+
+31
+00:03:29,000 --> 00:03:36,000
+L'apparition naturelle rend l'exploration
+bien plus captivante en mode survie.
+
+32
+00:03:36,000 --> 00:03:43,000
+Découvrez des créatures dans les jungles,
+les déserts, les océans et les montagnes.
+
+33
+00:03:43,000 --> 00:03:50,000
+L'addon ajoute également des objets personnalisés,
+des blocs, de la nourriture et des matériaux.
+
+34
+00:03:50,000 --> 00:03:57,000
+Armes, recettes d'artisanat et butins utiles
+vous offrent encore plus de contenu à découvrir.
+
+35
+00:03:57,000 --> 00:04:04,000
+Comment installer :
+Téléchargez le fichier MCAddon.
+
+36
+00:04:04,000 --> 00:04:11,000
+Ouvrez le fichier avec Minecraft
+et attendez que l'importation se termine.
+
+37
+00:04:11,000 --> 00:04:15,000
+Créez ou modifiez un monde.
+Activez le Pack de comportement.
+
+38
+00:04:15,000 --> 00:04:19,000
+Activez également le Pack de ressources.
+Consultez la page de l'addon pour d'éventuels prérequis.
+
+39
+00:04:19,000 --> 00:04:20,000
+Téléchargement gratuit sur CurseForge ou MCPEDL.
+Liens dans la description !

@@ -1,0 +1,194 @@
+1
+00:00:00,000 --> 00:00:06,000
+Alex's Mobs Pocket
+Minecraft Bedrock Addon Vorstellung
+
+2
+00:00:06,000 --> 00:00:13,000
+Holt euch die Welt von Alex's Mobs
+in die Minecraft Bedrock Edition.
+
+3
+00:00:13,000 --> 00:00:20,000
+Dieses Addon enthält über 80 einzigartige Kreaturen,
+inspiriert von der beliebten Java-Mod.
+
+4
+00:00:20,000 --> 00:00:27,000
+Erkundet eure Welt und entdeckt
+neue Tiere in verschiedenen Biomen.
+
+5
+00:00:27,000 --> 00:00:34,000
+Begegnet dem Grizzlybären,
+einer mächtigen Kreatur der Wildnis.
+
+6
+00:00:34,000 --> 00:00:41,000
+Der Tiger ist ein gefährliches Raubtier.
+Haltet lieber Abstand!
+
+7
+00:00:41,000 --> 00:00:48,000
+Der Elefant bringt eines der größten
+Landsäugetiere in eure Welt.
+
+8
+00:00:48,000 --> 00:00:55,000
+Gorillas bringen mehr Leben
+in die Dschungellandschaft.
+
+9
+00:00:55,000 --> 00:01:02,000
+Entdeckt das Känguru
+und seine unverwechselbaren Sprünge.
+
+10
+00:01:02,000 --> 00:01:09,000
+Das Nashorn ist eine weitere
+beeindruckende Kreatur, der ihr begegnen könnt.
+
+11
+00:01:09,000 --> 00:01:16,000
+Durchstreift die Wildnis
+und findet den Elch.
+
+12
+00:01:16,000 --> 00:01:23,000
+Bisons bringen mehr Vielfalt
+in die Ebenen und Graslandschaften.
+
+13
+00:01:23,000 --> 00:01:30,000
+Hütet euch vor Krokodilen
+in der Nähe von Flüssen und Sümpfen.
+
+14
+00:01:30,000 --> 00:01:37,000
+Der Komodowaran
+ist ein weiteres gefährliches Reptil.
+
+15
+00:01:37,000 --> 00:01:44,000
+Schaut nach oben: vielleicht seht ihr
+einen Weißkopfseeadler am Himmel kreisen.
+
+16
+00:01:44,000 --> 00:01:51,000
+Der Waschbär ist ein kleines Tierchen
+mit eigenen, liebevollen Animationen.
+
+17
+00:01:51,000 --> 00:01:58,000
+Entdeckt den Schneeleoparden
+in kälteren Gebieten.
+
+18
+00:01:58,000 --> 00:02:05,000
+Der Kapuzineraffe
+erweckt den Dschungel zum Leben.
+
+19
+00:02:05,000 --> 00:02:12,000
+Erkundet die Ozeane
+und begegnet dem Orca.
+
+20
+00:02:12,000 --> 00:02:19,000
+Der Riesenkalmar ist eine gewaltige
+Kreatur der Tiefsee.
+
+21
+00:02:19,000 --> 00:02:26,000
+Passt bei euren Tauchgängen
+auf den Hammerhai auf.
+
+22
+00:02:26,000 --> 00:02:33,000
+Der Kragenhai bereichert
+die Meere um eine weitere faszinierende Art.
+
+23
+00:02:33,000 --> 00:02:40,000
+Lernt das Schnabeltier kennen,
+ein bemerkenswertes Tier am Wasser.
+
+24
+00:02:40,000 --> 00:02:47,000
+Der Fangschreckenkrebs ist eine weitere
+außergewöhnliche Meereskreatur.
+
+25
+00:02:47,000 --> 00:02:54,000
+Außerdem trefft ihr auf den Schuhschnabel,
+einen einzigartigen Vogel der Feuchtgebiete.
+
+26
+00:02:54,000 --> 00:03:01,000
+Das Addon enthält auch Kreaturen
+aus dem Nether und dem Ende.
+
+27
+00:03:01,000 --> 00:03:08,000
+Jedes Tier hat seine eigenen
+Modelle, Animationen und Soundeffekte.
+
+28
+00:03:08,000 --> 00:03:15,000
+Viele Mobs haben einzigartige Verhaltensweisen
+und Interaktionen mit der Umgebung.
+
+29
+00:03:15,000 --> 00:03:22,000
+Einige Kreaturen jagen andere Tiere,
+während andere vor Gefahren fliehen.
+
+30
+00:03:22,000 --> 00:03:29,000
+Ihr könnt bestimmte Tiere auch zähmen,
+füttern und züchten.
+
+31
+00:03:29,000 --> 00:03:36,000
+Das natürliche Spawnen macht das Erkunden
+im Überlebensmodus noch spannender.
+
+32
+00:03:36,000 --> 00:03:43,000
+Entdeckt Tiere in Dschungeln,
+Wüsten, Ozeanen und Bergen.
+
+33
+00:03:43,000 --> 00:03:50,000
+Das Addon fügt außerdem eigene Gegenstände,
+Blöcke, Nahrung und Materialien hinzu.
+
+34
+00:03:50,000 --> 00:03:57,000
+Waffen, Rezepte und nützliche Drops
+bieten euch noch mehr zum Entdecken.
+
+35
+00:03:57,000 --> 00:04:04,000
+So installiert ihr das Addon:
+Ladet die MCAddon-Datei herunter.
+
+36
+00:04:04,000 --> 00:04:11,000
+Öffnet die Datei mit Minecraft
+und wartet, bis der Import abgeschlossen ist.
+
+37
+00:04:11,000 --> 00:04:15,000
+Erstellt oder bearbeitet eine Welt.
+Aktiviert das Verhaltenpaket (Behavior Pack).
+
+38
+00:04:15,000 --> 00:04:19,000
+Aktiviert auch das Ressourcenpaket (Resource Pack).
+Prüft die Addon-Seite auf eventuelle Anforderungen.
+
+39
+00:04:19,000 --> 00:04:20,000
+Kostenloser Download auf CurseForge oder MCPEDL.
+Links in der Beschreibung!

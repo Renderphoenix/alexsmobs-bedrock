@@ -1,0 +1,194 @@
+1
+00:00:00,000 --> 00:00:06,000
+Alex's Mobs Pocket
+Review do Addon para Minecraft Bedrock
+
+2
+00:00:06,000 --> 00:00:13,000
+Traga o mundo do Alex's Mobs
+para o Minecraft Bedrock Edition.
+
+3
+00:00:13,000 --> 00:00:20,000
+Este addon traz mais de 80 criaturas únicas
+inspiradas no popular mod de Java.
+
+4
+00:00:20,000 --> 00:00:27,000
+Explore seu mundo e descubra
+novos animais em diferentes biomas.
+
+5
+00:00:27,000 --> 00:00:34,000
+Conheça o Urso-pardo,
+uma criatura poderosa na natureza selvagem.
+
+6
+00:00:34,000 --> 00:00:41,000
+O Tigre é um predador perigoso.
+Mantenha distância!
+
+7
+00:00:41,000 --> 00:00:48,000
+O Elefante traz um dos maiores
+animais terrestres para o seu mundo.
+
+8
+00:00:48,000 --> 00:00:55,000
+Os Gorilas trazem mais vida
+ao ambiente da selva.
+
+9
+00:00:55,000 --> 00:01:02,000
+Descubra o Canguru
+e seus movimentos únicos.
+
+10
+00:01:02,000 --> 00:01:09,000
+O Rinoceronte é outra
+criatura poderosa para encontrar.
+
+11
+00:01:09,000 --> 00:01:16,000
+Explore a vida selvagem
+e encontre o Alce.
+
+12
+00:01:16,000 --> 00:01:23,000
+Os Bisões trazem mais variedade
+às planícies e campos.
+
+13
+00:01:23,000 --> 00:01:30,000
+Cuidado com os Crocodilos
+perto de rios e pântanos.
+
+14
+00:01:30,000 --> 00:01:37,000
+O Dragão de Komodo
+é outro réptil perigoso.
+
+15
+00:01:37,000 --> 00:01:44,000
+Olhe para cima e você poderá ver
+uma Águia-careca voando no céu.
+
+16
+00:01:44,000 --> 00:01:51,000
+O Guaxinim é uma criatura pequena
+com suas próprias animações personalizadas.
+
+17
+00:01:51,000 --> 00:01:58,000
+Descubra o Leopardo-das-neves
+em ambientes mais frios.
+
+18
+00:01:58,000 --> 00:02:05,000
+O Macaco-prego
+traz mais vida para a selva.
+
+19
+00:02:05,000 --> 00:02:12,000
+Explore os oceanos
+e encontre a Orca.
+
+20
+00:02:12,000 --> 00:02:19,000
+A Lula-gigante é uma criatura
+impressionante das profundezas do oceano.
+
+21
+00:02:19,000 --> 00:02:26,000
+Cuidado com o Tubarão-martelo
+enquanto explora debaixo d'água.
+
+22
+00:02:26,000 --> 00:02:33,000
+O Tubarão-cobra adiciona
+mais uma criatura única ao mar.
+
+23
+00:02:33,000 --> 00:02:40,000
+Conheça o Ornitorrinco,
+um animal fascinante perto da água.
+
+24
+00:02:40,000 --> 00:02:47,000
+O Camarão-mantis é outra
+criatura aquática extraordinária.
+
+25
+00:02:47,000 --> 00:02:54,000
+Você também encontrará o Bico-de-sapato,
+uma ave única das áreas úmidas.
+
+26
+00:02:54,000 --> 00:03:01,000
+O addon inclui criaturas
+do Nether e do End.
+
+27
+00:03:01,000 --> 00:03:08,000
+Cada criatura tem seus próprios
+modelos, animações e sons.
+
+28
+00:03:08,000 --> 00:03:15,000
+Muitos mobs têm comportamentos únicos
+e interações com o ambiente.
+
+29
+00:03:15,000 --> 00:03:22,000
+Algumas criaturas caçam outros animais,
+enquanto outras fogem do perigo.
+
+30
+00:03:22,000 --> 00:03:29,000
+Você também pode domesticar, alimentar
+e procriar certas criaturas.
+
+31
+00:03:29,000 --> 00:03:36,000
+O surgimento natural torna a exploração
+mais interessante no sobrevivência.
+
+32
+00:03:36,000 --> 00:03:43,000
+Descubra criaturas em selvas,
+desertos, oceanos e montanhas.
+
+33
+00:03:43,000 --> 00:03:50,000
+O addon também adiciona itens personalizados,
+blocos, comidas e materiais.
+
+34
+00:03:50,000 --> 00:03:57,000
+Armas, receitas e drops úteis
+oferecem mais conteúdo para explorar.
+
+35
+00:03:57,000 --> 00:04:04,000
+Como instalar:
+Baixe o arquivo MCAddon.
+
+36
+00:04:04,000 --> 00:04:11,000
+Abra o arquivo com o Minecraft
+e aguarde a importação terminar.
+
+37
+00:04:11,000 --> 00:04:15,000
+Crie ou edite um mundo.
+Ative o Pacote de Comportamento.
+
+38
+00:04:15,000 --> 00:04:19,000
+Ative também o Pacote de Recursos.
+Verifique a página do addon para eventuais requisitos.
+
+39
+00:04:19,000 --> 00:04:20,000
+Download gratuito no CurseForge ou MCPEDL.
+Links na descrição!

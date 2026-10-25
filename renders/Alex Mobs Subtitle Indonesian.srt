@@ -1,0 +1,194 @@
+1
+00:00:00,000 --> 00:00:06,000
+Alex's Mobs Pocket
+Review Addon Minecraft Bedrock
+
+2
+00:00:06,000 --> 00:00:13,000
+Bawa dunia Alex's Mobs
+ke Minecraft Bedrock Edition.
+
+3
+00:00:13,000 --> 00:00:20,000
+Addon ini menghadirkan lebih dari 80 makhluk unik
+yang terinspirasi dari mod Java yang populer.
+
+4
+00:00:20,000 --> 00:00:27,000
+Jelajahi duniamu dan temukan
+hewan-hewan baru di berbagai bioma.
+
+5
+00:00:27,000 --> 00:00:34,000
+Temui Beruang Grizzly,
+makhluk perkasa di alam liar.
+
+6
+00:00:34,000 --> 00:00:41,000
+Harimau adalah predator yang berbahaya.
+Jaga jarakmu!
+
+7
+00:00:41,000 --> 00:00:48,000
+Gajah menghadirkan salah satu hewan
+darat terbesar ke duniamu.
+
+8
+00:00:48,000 --> 00:00:55,000
+Gorila membuat suasana hutan rimba
+menjadi jauh lebih hidup.
+
+9
+00:00:55,000 --> 00:01:02,000
+Temukan Kanguru
+dengan lompatan dan gerakannya yang unik.
+
+10
+00:01:02,000 --> 00:01:09,000
+Badak adalah makhluk kuat lainnya
+yang bisa kamu jumpai.
+
+11
+00:01:09,000 --> 00:01:16,000
+Jelajahi alam liar
+dan temukan Rusa Besar (Moose).
+
+12
+00:01:16,000 --> 00:01:23,000
+Bison membawa lebih banyak variasi
+ke dataran dan padang rumput.
+
+13
+00:01:23,000 --> 00:01:30,000
+Hati-hati dengan Buaya
+di sekitar sungai dan rawa-rawa.
+
+14
+00:01:30,000 --> 00:01:37,000
+Komodo adalah reptil berbahaya
+lainnya yang perlu diwaspadai.
+
+15
+00:01:37,000 --> 00:01:44,000
+Lihatlah ke atas, kamu mungkin melihat
+Elang Botak terbang melayang di langit.
+
+16
+00:01:44,000 --> 00:01:51,000
+Rakun adalah hewan kecil yang lucu
+dengan animasi kustomnya sendiri.
+
+17
+00:01:51,000 --> 00:01:58,000
+Temukan Macan Tutul Salju
+di lingkungan yang lebih dingin.
+
+18
+00:01:58,000 --> 00:02:05,000
+Monyet Kapusin
+membuat hutan rimba makin semarak.
+
+19
+00:02:05,000 --> 00:02:12,000
+Jelajahi lautan luas
+dan jumpai Orca.
+
+20
+00:02:12,000 --> 00:02:19,000
+Cumi-cumi Raksasa adalah makhluk
+mengagumkan dari kedalaman samudra.
+
+21
+00:02:19,000 --> 00:02:26,000
+Waspadalah terhadap Hiu Martil
+saat menjelajahi bawah air.
+
+22
+00:02:26,000 --> 00:02:33,000
+Hiu Berjumbai (Frilled Shark) menambah
+keanekaragaman biota laut yang unik.
+
+23
+00:02:33,000 --> 00:02:40,000
+Kenali Platipus,
+hewan menarik yang hidup di dekat air.
+
+24
+00:02:40,000 --> 00:02:47,000
+Udang Mantis adalah makhluk
+akuatik luar biasa lainnya.
+
+25
+00:02:47,000 --> 00:02:54,000
+Kamu juga akan menemukan Shoebill,
+burung unik penghuni lahan basah.
+
+26
+00:02:54,000 --> 00:03:01,000
+Addon ini juga menyertakan makhluk
+dari dimensi Nether dan End.
+
+27
+00:03:01,000 --> 00:03:08,000
+Setiap makhluk memiliki model,
+animasi, dan suara tersendiri.
+
+28
+00:03:08,000 --> 00:03:15,000
+Banyak mob memiliki perilaku unik
+dan berinteraksi dengan lingkungan sekitarnya.
+
+29
+00:03:15,000 --> 00:03:22,000
+Beberapa makhluk berburu hewan lain,
+sementara yang lain kabur dari bahaya.
+
+30
+00:03:22,000 --> 00:03:29,000
+Kamu juga dapat menjinakkan, memberi makan,
+dan mengembangbiakkan makhluk tertentu.
+
+31
+00:03:29,000 --> 00:03:36,000
+Spawn alami membuat penjelajahan
+jadi lebih seru dalam mode survival.
+
+32
+00:03:36,000 --> 00:03:43,000
+Temukan makhluk di hutan rimba,
+gurun, samudra, dan pegunungan.
+
+33
+00:03:43,000 --> 00:03:50,000
+Addon ini juga menambahkan item, blok,
+makanan, dan material kustom.
+
+34
+00:03:50,000 --> 00:03:57,000
+Senjata, resep crafting, dan drop berguna
+memberimu lebih banyak konten untuk dijelajahi.
+
+35
+00:03:57,000 --> 00:04:04,000
+Cara memasang:
+Unduh file MCAddon.
+
+36
+00:04:04,000 --> 00:04:11,000
+Buka file dengan Minecraft
+dan tunggu hingga proses impor selesai.
+
+37
+00:04:11,000 --> 00:04:15,000
+Buat atau edit dunia.
+Aktifkan Behavior Pack.
+
+38
+00:04:15,000 --> 00:04:19,000
+Aktifkan juga Resource Pack.
+Periksa halaman addon untuk persyaratan lainnya.
+
+39
+00:04:19,000 --> 00:04:20,000
+Unduh gratis di CurseForge atau MCPEDL.
+Tautan ada di deskripsi!

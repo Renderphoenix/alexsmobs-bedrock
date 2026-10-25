@@ -1,0 +1,194 @@
+1
+00:00:00,000 --> 00:00:06,000
+Alex's Mobs Pocket
+Minecraft Bedrock Addon Review
+
+2
+00:00:06,000 --> 00:00:13,000
+Bring the world of Alex's Mobs
+to Minecraft Bedrock Edition.
+
+3
+00:00:13,000 --> 00:00:20,000
+This addon features over 80 unique creatures
+inspired by the popular Java mod.
+
+4
+00:00:20,000 --> 00:00:27,000
+Explore your world and discover
+new animals in different biomes.
+
+5
+00:00:27,000 --> 00:00:34,000
+Meet the Grizzly Bear,
+a powerful creature in the wilderness.
+
+6
+00:00:34,000 --> 00:00:41,000
+The Tiger is a dangerous predator.
+Keep your distance!
+
+7
+00:00:41,000 --> 00:00:48,000
+The Elephant brings one of the largest
+land animals into your world.
+
+8
+00:00:48,000 --> 00:00:55,000
+Gorillas add more life
+to the jungle environment.
+
+9
+00:00:55,000 --> 00:01:02,000
+Discover the Kangaroo
+and its unique movements.
+
+10
+00:01:02,000 --> 00:01:09,000
+The Rhinoceros is another
+powerful creature to encounter.
+
+11
+00:01:09,000 --> 00:01:16,000
+Explore the wilderness
+and find the Moose.
+
+12
+00:01:16,000 --> 00:01:23,000
+Bison bring more variety
+to the plains and grasslands.
+
+13
+00:01:23,000 --> 00:01:30,000
+Watch out for Crocodiles
+near rivers and swamps.
+
+14
+00:01:30,000 --> 00:01:37,000
+The Komodo Dragon
+is another dangerous reptile.
+
+15
+00:01:37,000 --> 00:01:44,000
+Look up and you might spot
+a Bald Eagle flying overhead.
+
+16
+00:01:44,000 --> 00:01:51,000
+The Raccoon is a small creature
+with its own custom animations.
+
+17
+00:01:51,000 --> 00:01:58,000
+Discover the Snow Leopard
+in colder environments.
+
+18
+00:01:58,000 --> 00:02:05,000
+The Capuchin Monkey
+brings more life to the jungle.
+
+19
+00:02:05,000 --> 00:02:12,000
+Explore the oceans
+and encounter the Orca.
+
+20
+00:02:12,000 --> 00:02:19,000
+The Giant Squid is an impressive
+creature of the deep ocean.
+
+21
+00:02:19,000 --> 00:02:26,000
+Watch out for the Hammerhead Shark
+while exploring underwater.
+
+22
+00:02:26,000 --> 00:02:33,000
+The Frilled Shark adds
+another unique creature to the sea.
+
+23
+00:02:33,000 --> 00:02:40,000
+Meet the Platypus,
+a fascinating animal near the water.
+
+24
+00:02:40,000 --> 00:02:47,000
+The Mantis Shrimp is another
+unusual aquatic creature.
+
+25
+00:02:47,000 --> 00:02:54,000
+You'll also find the Shoebill,
+a unique bird from wetlands.
+
+26
+00:02:54,000 --> 00:03:01,000
+The addon includes creatures
+from the Nether and the End.
+
+27
+00:03:01,000 --> 00:03:08,000
+Every creature has its own
+models, animations, and sounds.
+
+28
+00:03:08,000 --> 00:03:15,000
+Many mobs have unique behaviors
+and interactions with the environment.
+
+29
+00:03:15,000 --> 00:03:22,000
+Some creatures hunt other animals,
+while others flee from danger.
+
+30
+00:03:22,000 --> 00:03:29,000
+You can also tame, feed,
+and breed certain creatures.
+
+31
+00:03:29,000 --> 00:03:36,000
+Natural spawning makes exploration
+more interesting in survival.
+
+32
+00:03:36,000 --> 00:03:43,000
+Discover creatures in jungles,
+deserts, oceans, and mountains.
+
+33
+00:03:43,000 --> 00:03:50,000
+The addon also adds custom items,
+blocks, food, and materials.
+
+34
+00:03:50,000 --> 00:03:57,000
+Weapons, recipes, and useful drops
+give you more content to explore.
+
+35
+00:03:57,000 --> 00:04:04,000
+How to install:
+Download the MCAddon file.
+
+36
+00:04:04,000 --> 00:04:11,000
+Open the file with Minecraft
+and wait for the import to finish.
+
+37
+00:04:11,000 --> 00:04:15,000
+Create or edit a world.
+Activate the Behavior Pack.
+
+38
+00:04:15,000 --> 00:04:19,000
+Also activate the Resource Pack.
+Check the addon page for any requirements.
+
+39
+00:04:19,000 --> 00:04:20,000
+Free download on CurseForge or MCPEDL.
+Links in the description!

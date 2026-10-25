@@ -1,0 +1,194 @@
+1
+00:00:00,000 --> 00:00:06,000
+Alex's Mobs Pocket
+Review del Addon para Minecraft Bedrock
+
+2
+00:00:06,000 --> 00:00:13,000
+Lleva el mundo de Alex's Mobs
+a Minecraft Bedrock Edition.
+
+3
+00:00:13,000 --> 00:00:20,000
+Este addon incluye más de 80 criaturas únicas
+inspiradas en el popular mod de Java.
+
+4
+00:00:20,000 --> 00:00:27,000
+Explora tu mundo y descubre
+nuevos animales en diferentes biomas.
+
+5
+00:00:27,000 --> 00:00:34,000
+Conoce al Oso Grizzly,
+una criatura poderosa en la naturaleza.
+
+6
+00:00:34,000 --> 00:00:41,000
+El Tigre es un depredador peligroso.
+¡Mantén tu distancia!
+
+7
+00:00:41,000 --> 00:00:48,000
+El Elefante trae uno de los animales
+terrestres más grandes a tu mundo.
+
+8
+00:00:48,000 --> 00:00:55,000
+Los Gorilas le dan más vida
+al entorno de la jungla.
+
+9
+00:00:55,000 --> 00:01:02,000
+Descubre al Canguro
+y sus movimientos únicos.
+
+10
+00:01:02,000 --> 00:01:09,000
+El Rinoceronte es otra criatura
+impresionante que podrás encontrar.
+
+11
+00:01:09,000 --> 00:01:16,000
+Explora la naturaleza
+y encuentra al Alce.
+
+12
+00:01:16,000 --> 00:01:23,000
+Los Bisontes aportan más variedad
+a las llanuras y pastizales.
+
+13
+00:01:23,000 --> 00:01:30,000
+Ten cuidado con los Cocodrilos
+cerca de ríos y pantanos.
+
+14
+00:01:30,000 --> 00:01:37,000
+El Dragón de Komodo
+es otro reptil peligroso.
+
+15
+00:01:37,000 --> 00:01:44,000
+Mira hacia arriba y podrías ver
+un Águila Calva volando en el cielo.
+
+16
+00:01:44,000 --> 00:01:51,000
+El Mapache es una criatura pequeña
+con sus propias animaciones personalizadas.
+
+17
+00:01:51,000 --> 00:01:58,000
+Descubre al Leopardo de las Nieves
+en entornos más fríos.
+
+18
+00:01:58,000 --> 00:02:05,000
+El Mono Capuchino
+le da más vida a la jungla.
+
+19
+00:02:05,000 --> 00:02:12,000
+Explora los océanos
+y encuentra a la Orca.
+
+20
+00:02:12,000 --> 00:02:19,000
+El Calamar Gigante es una impresionante
+criatura de las profundidades del océano.
+
+21
+00:02:19,000 --> 00:02:26,000
+Ten cuidado con el Tiburón Martillo
+mientras exploras bajo el agua.
+
+22
+00:02:26,000 --> 00:02:33,000
+El Tiburón Anguila añade
+otra criatura única al mar.
+
+23
+00:02:33,000 --> 00:02:40,000
+Conoce al Ornitorrinco,
+un animal fascinante cerca del agua.
+
+24
+00:02:40,000 --> 00:02:47,000
+El Camarón Mantis es otra
+criatura acuática inusual.
+
+25
+00:02:47,000 --> 00:02:54,000
+También encontrarás al Picozapato,
+un ave única de los humedales.
+
+26
+00:02:54,000 --> 00:03:01,000
+El addon incluye criaturas
+del Nether y del End.
+
+27
+00:03:01,000 --> 00:03:08,000
+Cada criatura tiene sus propios
+modelos, animaciones y sonidos.
+
+28
+00:03:08,000 --> 00:03:15,000
+Muchos mobs tienen comportamientos únicos
+e interacciones con el entorno.
+
+29
+00:03:15,000 --> 00:03:22,000
+Algunas criaturas cazan a otros animales,
+mientras que otras huyen del peligro.
+
+30
+00:03:22,000 --> 00:03:29,000
+También puedes domesticar, alimentar
+y criar ciertas criaturas.
+
+31
+00:03:29,000 --> 00:03:36,000
+La generación natural hace que la exploración
+sea más interesante en supervivencia.
+
+32
+00:03:36,000 --> 00:03:43,000
+Descubre criaturas en junglas,
+desiertos, océanos y montañas.
+
+33
+00:03:43,000 --> 00:03:50,000
+El addon también añade objetos personalizados,
+bloques, comida y materiales.
+
+34
+00:03:50,000 --> 00:03:57,000
+Armas, recetas y drops útiles
+te dan más contenido para explorar.
+
+35
+00:03:57,000 --> 00:04:04,000
+Cómo instalarlo:
+Descarga el archivo MCAddon.
+
+36
+00:04:04,000 --> 00:04:11,000
+Abre el archivo con Minecraft
+y espera a que termine la importación.
+
+37
+00:04:11,000 --> 00:04:15,000
+Crea o edita un mundo.
+Activa el Paquete de Comportamientos.
+
+38
+00:04:15,000 --> 00:04:19,000
+También activa el Paquete de Recursos.
+Revisa la página del addon para ver los requisitos.
+
+39
+00:04:19,000 --> 00:04:20,000
+Descarga gratis en CurseForge o MCPEDL.
+¡Enlaces en la descripción!
