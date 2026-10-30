@@ -1,10 +1,10 @@
 # Alex's Mobs — Bedrock Edition Addon
 
-Bedrock port of the Java mod Alex's Mobs. Two packs: `BP/` (behavior) and `RP/` (resource). Current version: 1.1.5.
+Bedrock port of the Java mod Alex's Mobs. Two packs: `BP/` (behavior) and `RP/` (resource). Current version: 1.2.1.
 
 ## Layout
 - `BP/entities`, `BP/spawn_rules`, `BP/loot_tables`, `BP/items`, `BP/recipes`, `BP/functions` — gameplay data.
-- `BP/scripts/main.js` — Script API logic (egg laying/hatching, predator targeting, density caps). Needs the Beta APIs experiment.
+- `BP/scripts/main.js` — Script API logic (egg laying/hatching, predator targeting, density caps). Uses stable @minecraft/server 1.10.0 (no experiments; manifests have product_type addon, so achievements stay enabled).
 - `RP/entity/*.entity.json` — client entity defs (geometry, texture, animations, render controller).
 - `RP/models/entity/*.geo.json`, `RP/animations`, `RP/animation_controllers`, `RP/textures/entity`.
 - Reference-only, gitignored: `Actions And Stuff 1.9/`, Java jars/sources.
