@@ -192,15 +192,18 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
     }
 });
 
-world.beforeEvents.chatSend.subscribe((event) => {
-    const msg = event.message.trim().toLowerCase();
-    if (msg === "!test" || msg === "!alexsmobs" || msg === "!status") {
-        event.cancel = true;
-        system.run(() => {
-            handleScriptStatus(event.sender);
-        });
-    }
-});
+// chatSend is Beta-only; without this guard the stable API throws here and nothing below registers
+if (world.beforeEvents.chatSend) {
+    world.beforeEvents.chatSend.subscribe((event) => {
+        const msg = event.message.trim().toLowerCase();
+        if (msg === "!test" || msg === "!alexsmobs" || msg === "!status") {
+            event.cancel = true;
+            system.run(() => {
+                handleScriptStatus(event.sender);
+            });
+        }
+    });
+}
 
 world.afterEvents.playerSpawn.subscribe((event) => {
     if (event.initialSpawn) {

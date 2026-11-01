@@ -1,6 +1,6 @@
 # Alex's Mobs — Bedrock Edition Addon
 
-Bedrock port of the Java mod Alex's Mobs. Two packs: `BP/` (behavior) and `RP/` (resource). Current version: 1.2.1.
+Bedrock port of the Java mod Alex's Mobs. Two packs: `BP/` (behavior) and `RP/` (resource). Current version: 1.2.2.
 
 ## Layout
 - `BP/entities`, `BP/spawn_rules`, `BP/loot_tables`, `BP/items`, `BP/recipes`, `BP/functions` — gameplay data.
