@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alexsmobs.moose": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v0",
+            "Texture.v1"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[math.clamp(q.variant, 0, 1)]"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:echolocator",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_echolocator"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.echolocator"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 100
+      }
+    }
+  }
+}

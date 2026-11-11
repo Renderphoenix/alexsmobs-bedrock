@@ -1,0 +1,423 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alexsmobs.crimson_mosquito.pose": {
+      "loop": true,
+      "bones": {
+        "antennaR": {
+          "rotation": [
+            "((math.cos((v.age * 0.5) * 57.29578)) * 0.075 + 0.1) * 57.29578",
+            0,
+            0
+          ]
+        },
+        "antennaL": {
+          "rotation": [
+            "((math.cos((v.age * 0.5) * 57.29578)) * 0.075 + 0.1) * 57.29578",
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            "((((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? (v.p_shootprogress * 0.2) * -0.17453 + 0.69813 : (v.p_shootprogress * 0.2) * -0.17453)) * 57.29578",
+            0,
+            0
+          ]
+        },
+        "mouth": {
+          "rotation": [
+            "((((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? (v.p_shootprogress * 0.2) * -0.34907 + 0.17453 : (v.p_shootprogress * 0.2) * -0.34907)) * 57.29578",
+            0,
+            0
+          ],
+          "scale": [
+            "1 + ((((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding)) && v.p_shootprogress <= 0) || ((!(v.p_flyprogress > 0) && !q.is_riding) || (v.p_flyprogress > 0 && !q.is_riding) && v.p_shootprogress <= 0)) ? 0 : 1 + v.p_shootprogress * 0.1 - 1)",
+            "1 + ((((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding)) && v.p_shootprogress <= 0) || ((!(v.p_flyprogress > 0) && !q.is_riding) || (v.p_flyprogress > 0 && !q.is_riding) && v.p_shootprogress <= 0)) ? (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? 0.85 + (math.sin(v.age * 57.29578)) * 0.15 - 1 : 0) : 1 - (v.p_shootprogress * 0.1) - 1)",
+            "1 + ((((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding)) && v.p_shootprogress <= 0) || ((!(v.p_flyprogress > 0) && !q.is_riding) || (v.p_flyprogress > 0 && !q.is_riding) && v.p_shootprogress <= 0)) ? 0 : 1 + v.p_shootprogress * 0.1 - 1)"
+          ]
+        },
+        "body": {
+          "rotation": [
+            "((((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? -1.5708 : 0)) * 57.29578",
+            "((((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? 3.14159 : 0)) * 57.29578",
+            0
+          ],
+          "position": [
+            0,
+            "-(((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? 0 : (v.p_flyprogress * 0.2) * -10 + (math.sin((v.age * 0.25) * 57.29578)) * 2.5 - 2.5)",
+            0
+          ]
+        },
+        "legR1": {
+          "rotation": [
+            0,
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? 0 : (v.p_flyprogress * 0.2) * 0.5236)) * 57.29578",
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? -0.87266 : 0) : (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? -0.87266 : 0) + (v.p_flyprogress * 0.2) * -1.0472 + (math.cos((v.age * 0.5 + 1) * 57.29578)) * 0.25 + 0.1)) * 57.29578"
+          ]
+        },
+        "legR2": {
+          "rotation": [
+            0,
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? 0 : (v.p_flyprogress * 0.2) * 0.34907)) * 57.29578",
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? -0.87266 : 0) : (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? -0.87266 : 0) + (v.p_flyprogress * 0.2) * -1.0472 + (math.cos((v.age * 0.5 + 2) * 57.29578)) * 0.25 + 0.1)) * 57.29578"
+          ]
+        },
+        "legR3": {
+          "rotation": [
+            0,
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? 0 : (v.p_flyprogress * 0.2) * 0.08727)) * 57.29578",
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? -0.87266 : 0) : (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? -0.87266 : 0) + (v.p_flyprogress * 0.2) * -1.0472 + (math.cos((v.age * 0.5 + 2) * 57.29578)) * 0.25 + 0.1)) * 57.29578"
+          ]
+        },
+        "legL1": {
+          "rotation": [
+            0,
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? 0 : (v.p_flyprogress * 0.2) * -0.5236)) * 57.29578",
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? 0.87266 : 0) : (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? 0.87266 : 0) + (v.p_flyprogress * 0.2) * 1.0472 + -((math.cos((v.age * 0.5 + 1) * 57.29578)) * 0.25 + 0.1))) * 57.29578"
+          ]
+        },
+        "legL2": {
+          "rotation": [
+            0,
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? 0 : (v.p_flyprogress * 0.2) * -0.34907)) * 57.29578",
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? 0.87266 : 0) : (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? 0.87266 : 0) + (v.p_flyprogress * 0.2) * 1.0472 + -((math.cos((v.age * 0.5 + 2) * 57.29578)) * 0.25 + 0.1))) * 57.29578"
+          ]
+        },
+        "legL3": {
+          "rotation": [
+            0,
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? 0 : (v.p_flyprogress * 0.2) * -0.08727)) * 57.29578",
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? 0.87266 : 0) : (((!(v.p_flyprogress > 0) && !(!q.is_riding)) || (v.p_flyprogress > 0 && !(!q.is_riding))) ? 0.87266 : 0) + (v.p_flyprogress * 0.2) * 1.0472 + -((math.cos((v.age * 0.5 + 2) * 57.29578)) * 0.25 + 0.1))) * 57.29578"
+          ]
+        },
+        "wingL": {
+          "rotation": [
+            "(((!(!((!(v.p_flyprogress > 0)) ? 0 : 1))) ? 0 : 0.5236)) * 57.29578",
+            "(((!(!((!(v.p_flyprogress > 0)) ? 0 : 1))) ? 0 : -1.22173)) * 57.29578",
+            "(((!(!((!(v.p_flyprogress > 0)) ? 0 : 1))) ? -((math.cos((v.age * 1.65) * 57.29578)) * 0.5 + 0.2) : 0)) * 57.29578"
+          ]
+        },
+        "wingR": {
+          "rotation": [
+            "(((!(!((!(v.p_flyprogress > 0)) ? 0 : 1))) ? 0 : 0.5236)) * 57.29578",
+            "(((!(!((!(v.p_flyprogress > 0)) ? 0 : 1))) ? 0 : 1.22173)) * 57.29578",
+            "(((!(!((!(v.p_flyprogress > 0)) ? 0 : 1))) ? (math.cos((v.age * 1.65) * 57.29578)) * 0.5 + 0.2 : 0)) * 57.29578"
+          ]
+        },
+        "tail": {
+          "rotation": [
+            "((((!(!((!(v.p_flyprogress > 0)) ? 0 : 1)) && v.p_flyprogress <= 0) || (!((!(v.p_flyprogress > 0)) ? 0 : 1) && v.p_flyprogress <= 0)) ? 0 : (math.cos((v.age * 0.5) * 57.29578)) * 0.075 - 0.1)) * 57.29578",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.alexsmobs.crimson_mosquito.death_0": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "legsL": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-20, 0, 8],
+            "0.45": [-55, 0, 25],
+            "0.8": [-50, 0, 22]
+          }
+        },
+        "legsR": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-20, 0, -8],
+            "0.45": [-55, 0, -25],
+            "0.8": [-50, 0, -22]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-15, 0, 0],
+            "0.45": [30, 10, 0],
+            "0.8": [25, 12, 0]
+          }
+        },
+        "mouth": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [20, 0, 0],
+            "0.45": [12, 0, 0],
+            "0.8": [10, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-10, 15, 0],
+            "0.45": [20, -5, 0],
+            "0.8": [18, -4, 0]
+          }
+        },
+        "wingL": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, -70],
+            "0.45": [0, 0, 10],
+            "0.8": [0, 0, 5]
+          }
+        },
+        "wingR": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, 70],
+            "0.45": [0, 0, -10],
+            "0.8": [0, 0, -5]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-6, 0, 0],
+            "0.45": [4, 0, 6],
+            "0.8": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.crimson_mosquito.death_1": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "legsL": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [30, 0, 10],
+            "0.16": [-25, 0, 5],
+            "0.24": [20, 0, 15],
+            "0.32": [-20, 0, 10],
+            "0.6": [-45, 0, 30],
+            "0.9": [-40, 0, 28]
+          }
+        },
+        "legsR": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [30, 0, -10],
+            "0.16": [-25, 0, -5],
+            "0.24": [20, 0, -15],
+            "0.32": [-20, 0, -10],
+            "0.6": [-45, 0, -30],
+            "0.9": [-40, 0, -28]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-35, 0, 0],
+            "0.3": [-25, -10, 5],
+            "0.6": [30, 15, 0],
+            "0.9": [28, 15, 0]
+          }
+        },
+        "mouth": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [20, 0, 0],
+            "0.45": [12, 0, 0],
+            "0.8": [10, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-20, 25, 0],
+            "0.2": [-10, -25, 0],
+            "0.3": [-15, 20, 0],
+            "0.6": [20, 0, 0],
+            "0.9": [18, 0, 0]
+          }
+        },
+        "wingL": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [0, 0, -60],
+            "0.16": [0, 0, 20],
+            "0.24": [0, 0, -50],
+            "0.36": [0, 0, 15],
+            "0.7": [0, 0, 5]
+          }
+        },
+        "wingR": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [0, 0, 60],
+            "0.16": [0, 0, -20],
+            "0.24": [0, 0, 50],
+            "0.36": [0, 0, -15],
+            "0.7": [0, 0, -5]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-12, 0, -4],
+            "0.2": [6, 0, 6],
+            "0.3": [-6, 0, -3],
+            "0.6": [3, 0, 6],
+            "0.9": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.crimson_mosquito.hurt": {
+      "animation_length": 0.3,
+      "bones": {
+        "head": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-18, 8, 0],
+            "0.3": [0, 0, 0]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-5, 0, 4],
+            "0.3": [0, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-25, 0, 0],
+            "0.3": [0, 0, 0]
+          }
+        },
+        "wingL": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [0, 0, -35],
+            "0.3": [0, 0, 0]
+          }
+        },
+        "wingR": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [0, 0, 35],
+            "0.3": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.crimson_mosquito.idle_look": {
+      "animation_length": 3,
+      "bones": {
+        "head": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "3": [0, 0, 0],
+            "0.5": [-5, 40, 0],
+            "1.3": [-5, 40, 0],
+            "1.8": [0, -35, 5],
+            "2.5": [0, -35, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.crimson_mosquito.idle_sniff": {
+      "animation_length": 2,
+      "bones": {
+        "head": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "1": [20, 0, 0],
+            "2": [0, 0, 0],
+            "0.4": [25, 0, 0],
+            "0.6": [20, 0, 0],
+            "0.8": [25, 0, 0],
+            "1.2": [25, 0, 0],
+            "1.6": [10, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.crimson_mosquito.idle_shake": {
+      "animation_length": 0.8,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [0, 0, 10],
+            "0.2": [0, 0, -10],
+            "0.3": [0, 0, 9],
+            "0.4": [0, 0, -9],
+            "0.5": [0, 0, 6],
+            "0.6": [0, 0, -6],
+            "0.7": [0, 0, 3],
+            "0.8": [0, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [0, 0, -14],
+            "0.2": [0, 0, 14],
+            "0.3": [0, 0, -12],
+            "0.4": [0, 0, 12],
+            "0.5": [0, 0, -8],
+            "0.6": [0, 0, 8],
+            "0.8": [0, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 25, 0],
+            "0.3": [0, -25, 0],
+            "0.45": [0, 20, 0],
+            "0.6": [0, -15, 0],
+            "0.8": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.crimson_mosquito.idle_wings": {
+      "animation_length": 1.1,
+      "bones": {
+        "wingL": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.3": [0, 0, -60],
+            "0.5": [0, 0, -55],
+            "0.7": [0, 0, -62],
+            "1.1": [0, 0, 0]
+          }
+        },
+        "wingR": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.3": [0, 0, 60],
+            "0.5": [0, 0, 55],
+            "0.7": [0, 0, 62],
+            "1.1": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.crimson_mosquito.idle_tail": {
+      "animation_length": 1.5,
+      "bones": {
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.3": [0, 20, 0],
+            "0.6": [0, -20, 0],
+            "0.9": [0, 18, 0],
+            "1.2": [0, -15, 0],
+            "1.5": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

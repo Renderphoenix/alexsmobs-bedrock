@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:giant_squid",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/giant_squid",
+        "v1": "textures/entity/alexsmobs/giant_squid_blue"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.giant_squid"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.giant_squid.pose",
+        "death_0": "animation.alexsmobs.giant_squid.death_0",
+        "death_1": "animation.alexsmobs.giant_squid.death_1",
+        "hurt": "animation.alexsmobs.giant_squid.hurt",
+        "idle_look": "animation.alexsmobs.giant_squid.idle_look",
+        "idle_sniff": "animation.alexsmobs.giant_squid.idle_sniff",
+        "fix": "animation.alexsmobs.giant_squid.fix",
+        "ctrl_idle": "controller.animation.alexsmobs.giant_squid.idle",
+        "ctrl_death": "controller.animation.alexsmobs.giant_squid.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.giant_squid.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_dryprogress = math.clamp((v.p_dryprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_capturedprogress = math.clamp((v.p_capturedprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_grabprogress = math.clamp((v.p_grabprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "fix",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.giant_squid"
+      ],
+      "spawn_egg": {
+        "base_color": "#ab4b4d",
+        "overlay_color": "#d67d6b"
+      },
+      "enable_attachables": false
+    }
+  }
+}

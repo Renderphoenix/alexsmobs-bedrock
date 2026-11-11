@@ -1,0 +1,417 @@
+{
+  "resource_pack_name": "alexsmobs",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "alexsmobs_animal_dictionary": {
+      "textures": "textures/alexsmobs/item/animal_dictionary"
+    },
+    "alexsmobs_bear_fur": {
+      "textures": "textures/alexsmobs/item/bear_fur"
+    },
+    "alexsmobs_bear_dust": {
+      "textures": "textures/alexsmobs/item/bear_dust"
+    },
+    "alexsmobs_roadrunner_feather": {
+      "textures": "textures/alexsmobs/item/roadrunner_feather"
+    },
+    "alexsmobs_roadrunner_boots": {
+      "textures": "textures/alexsmobs/item/roadrunner_boots"
+    },
+    "alexsmobs_lava_bottle": {
+      "textures": "textures/alexsmobs/item/lava_bottle"
+    },
+    "alexsmobs_bone_serpent_tooth": {
+      "textures": "textures/alexsmobs/item/bone_serpent_tooth"
+    },
+    "alexsmobs_gazelle_horn": {
+      "textures": "textures/alexsmobs/item/gazelle_horn"
+    },
+    "alexsmobs_crocodile_scute": {
+      "textures": "textures/alexsmobs/item/crocodile_scute"
+    },
+    "alexsmobs_crocodile_chestplate": {
+      "textures": "textures/alexsmobs/item/crocodile_chestplate"
+    },
+    "alexsmobs_maggot": {
+      "textures": "textures/alexsmobs/item/maggot"
+    },
+    "alexsmobs_banana": {
+      "textures": "textures/alexsmobs/item/banana"
+    },
+    "alexsmobs_ancient_dart": {
+      "textures": "textures/alexsmobs/item/ancient_dart"
+    },
+    "alexsmobs_blood_sac": {
+      "textures": "textures/alexsmobs/item/blood_sac"
+    },
+    "alexsmobs_mosquito_proboscis": {
+      "textures": "textures/alexsmobs/item/mosquito_proboscis"
+    },
+    "alexsmobs_blood_sprayer": {
+      "textures": "textures/alexsmobs/item/blood_sprayer"
+    },
+    "alexsmobs_rattlesnake_rattle": {
+      "textures": "textures/alexsmobs/item/rattlesnake_rattle"
+    },
+    "alexsmobs_chorus_on_a_stick": {
+      "textures": "textures/alexsmobs/item/chorus_on_a_stick"
+    },
+    "alexsmobs_shark_tooth": {
+      "textures": "textures/alexsmobs/item/shark_tooth"
+    },
+    "alexsmobs_shark_tooth_arrow": {
+      "textures": "textures/alexsmobs/item/shark_tooth_arrow"
+    },
+    "alexsmobs_lobster_tail": {
+      "textures": "textures/alexsmobs/item/lobster_tail"
+    },
+    "alexsmobs_cooked_lobster_tail": {
+      "textures": "textures/alexsmobs/item/cooked_lobster_tail"
+    },
+    "alexsmobs_lobster_bucket": {
+      "textures": "textures/alexsmobs/item/composite/lobster_bucket"
+    },
+    "alexsmobs_komodo_spit": {
+      "textures": "textures/alexsmobs/item/komodo_spit"
+    },
+    "alexsmobs_komodo_spit_bottle": {
+      "textures": "textures/alexsmobs/item/komodo_spit_bottle"
+    },
+    "alexsmobs_poison_bottle": {
+      "textures": "textures/alexsmobs/item/poison_bottle"
+    },
+    "alexsmobs_sopa_de_macaco": {
+      "textures": "textures/alexsmobs/item/sopa_de_macaco"
+    },
+    "alexsmobs_centipede_leg": {
+      "textures": "textures/alexsmobs/item/centipede_leg"
+    },
+    "alexsmobs_centipede_leggings": {
+      "textures": "textures/alexsmobs/item/centipede_leggings"
+    },
+    "alexsmobs_mosquito_larva": {
+      "textures": "textures/alexsmobs/item/mosquito_larva"
+    },
+    "alexsmobs_moose_antler": {
+      "textures": "textures/alexsmobs/item/moose_antler"
+    },
+    "alexsmobs_moose_headgear": {
+      "textures": "textures/alexsmobs/item/moose_headgear"
+    },
+    "alexsmobs_moose_ribs": {
+      "textures": "textures/alexsmobs/item/moose_ribs"
+    },
+    "alexsmobs_cooked_moose_ribs": {
+      "textures": "textures/alexsmobs/item/cooked_moose_ribs"
+    },
+    "alexsmobs_mimicream": {
+      "textures": "textures/alexsmobs/item/mimicream"
+    },
+    "alexsmobs_raccoon_tail": {
+      "textures": "textures/alexsmobs/item/raccoon_tail"
+    },
+    "alexsmobs_frontier_cap": {
+      "textures": "textures/alexsmobs/item/frontier_cap"
+    },
+    "alexsmobs_blobfish": {
+      "textures": "textures/alexsmobs/item/blobfish"
+    },
+    "alexsmobs_blobfish_bucket": {
+      "textures": "textures/alexsmobs/item/composite/blobfish_bucket"
+    },
+    "alexsmobs_fish_oil": {
+      "textures": "textures/alexsmobs/item/fish_oil"
+    },
+    "alexsmobs_maraca": {
+      "textures": "textures/alexsmobs/item/maraca"
+    },
+    "alexsmobs_sombrero": {
+      "textures": "textures/alexsmobs/item/sombrero"
+    },
+    "alexsmobs_cockroach_wing_fragment": {
+      "textures": "textures/alexsmobs/item/cockroach_wing_fragment"
+    },
+    "alexsmobs_cockroach_wing": {
+      "textures": "textures/alexsmobs/item/cockroach_wing"
+    },
+    "alexsmobs_cockroach_ootheca": {
+      "textures": "textures/alexsmobs/item/cockroach_ootheca"
+    },
+    "alexsmobs_acacia_blossom": {
+      "textures": "textures/alexsmobs/item/acacia_blossom"
+    },
+    "alexsmobs_soul_heart": {
+      "textures": "textures/alexsmobs/item/soul_heart"
+    },
+    "alexsmobs_spiked_scute": {
+      "textures": "textures/alexsmobs/item/spiked_scute"
+    },
+    "alexsmobs_spiked_turtle_shell": {
+      "textures": "textures/alexsmobs/item/spiked_turtle_shell"
+    },
+    "alexsmobs_shrimp_fried_rice": {
+      "textures": "textures/alexsmobs/item/shrimp_fried_rice"
+    },
+    "alexsmobs_guster_eye": {
+      "textures": "textures/alexsmobs/item/guster_eye"
+    },
+    "alexsmobs_pocket_sand": {
+      "textures": "textures/alexsmobs/item/pocket_sand"
+    },
+    "alexsmobs_warped_muscle": {
+      "textures": "textures/alexsmobs/item/warped_muscle"
+    },
+    "alexsmobs_hemolymph_sac": {
+      "textures": "textures/alexsmobs/item/hemolymph_sac"
+    },
+    "alexsmobs_hemolymph_blaster": {
+      "textures": "textures/alexsmobs/item/hemolymph_blaster"
+    },
+    "alexsmobs_warped_mixture": {
+      "textures": "textures/alexsmobs/item/warped_mixture"
+    },
+    "alexsmobs_straddlite": {
+      "textures": "textures/alexsmobs/item/straddlite"
+    },
+    "alexsmobs_stradpole_bucket": {
+      "textures": "textures/alexsmobs/item/composite/stradpole_bucket"
+    },
+    "alexsmobs_straddleboard": {
+      "textures": "textures/alexsmobs/item/composite/straddleboard"
+    },
+    "alexsmobs_emu_egg": {
+      "textures": "textures/alexsmobs/item/emu_egg"
+    },
+    "alexsmobs_boiled_emu_egg": {
+      "textures": "textures/alexsmobs/item/boiled_emu_egg"
+    },
+    "alexsmobs_emu_feather": {
+      "textures": "textures/alexsmobs/item/emu_feather"
+    },
+    "alexsmobs_emu_leggings": {
+      "textures": "textures/alexsmobs/item/emu_leggings"
+    },
+    "alexsmobs_platypus_bucket": {
+      "textures": "textures/alexsmobs/item/composite/platypus_bucket"
+    },
+    "alexsmobs_fedora": {
+      "textures": "textures/alexsmobs/item/fedora"
+    },
+    "alexsmobs_dropbear_claw": {
+      "textures": "textures/alexsmobs/item/dropbear_claw"
+    },
+    "alexsmobs_kangaroo_meat": {
+      "textures": "textures/alexsmobs/item/kangaroo_meat"
+    },
+    "alexsmobs_cooked_kangaroo_meat": {
+      "textures": "textures/alexsmobs/item/cooked_kangaroo_meat"
+    },
+    "alexsmobs_kangaroo_hide": {
+      "textures": "textures/alexsmobs/item/kangaroo_hide"
+    },
+    "alexsmobs_kangaroo_burger": {
+      "textures": "textures/alexsmobs/item/kangaroo_burger"
+    },
+    "alexsmobs_ambergris": {
+      "textures": "textures/alexsmobs/item/ambergris"
+    },
+    "alexsmobs_cachalot_whale_tooth": {
+      "textures": "textures/alexsmobs/item/cachalot_whale_tooth"
+    },
+    "alexsmobs_echolocator": {
+      "textures": "textures/alexsmobs/item/echolocator"
+    },
+    "alexsmobs_endolocator": {
+      "textures": "textures/alexsmobs/item/endolocator"
+    },
+    "alexsmobs_gongylidia": {
+      "textures": "textures/alexsmobs/item/gongylidia"
+    },
+    "alexsmobs_leafcutter_ant_pupa": {
+      "textures": "textures/alexsmobs/item/leafcutter_ant_pupa"
+    },
+    "alexsmobs_enderiophage_rocket": {
+      "textures": "textures/alexsmobs/item/enderiophage_rocket"
+    },
+    "alexsmobs_falconry_glove": {
+      "textures": "textures/alexsmobs/item/falconry_glove"
+    },
+    "alexsmobs_falconry_hood": {
+      "textures": "textures/alexsmobs/item/falconry_hood"
+    },
+    "alexsmobs_tarantula_hawk_wing_fragment": {
+      "textures": "textures/alexsmobs/item/tarantula_hawk_wing_fragment"
+    },
+    "alexsmobs_tarantula_hawk_wing": {
+      "textures": "textures/alexsmobs/item/tarantula_hawk_wing"
+    },
+    "alexsmobs_tarantula_hawk_elytra": {
+      "textures": "textures/alexsmobs/item/tarantula_hawk_elytra"
+    },
+    "alexsmobs_mysterious_worm": {
+      "textures": "textures/alexsmobs/item/mysterious_worm"
+    },
+    "alexsmobs_void_worm_mandible": {
+      "textures": "textures/alexsmobs/item/void_worm_mandible"
+    },
+    "alexsmobs_void_worm_eye": {
+      "textures": "textures/alexsmobs/item/void_worm_eye"
+    },
+    "alexsmobs_dimensional_carver": {
+      "textures": "textures/alexsmobs/item/dimensional_carver"
+    },
+    "alexsmobs_shattered_dimensional_carver": {
+      "textures": "textures/alexsmobs/item/dimensional_carver"
+    },
+    "alexsmobs_serrated_shark_tooth": {
+      "textures": "textures/alexsmobs/item/serrated_shark_tooth"
+    },
+    "alexsmobs_frilled_shark_bucket": {
+      "textures": "textures/alexsmobs/item/composite/frilled_shark_bucket"
+    },
+    "alexsmobs_shield_of_the_deep": {
+      "textures": "textures/alexsmobs/rendered/shield_of_the_deep"
+    },
+    "alexsmobs_mimic_octopus_bucket": {
+      "textures": "textures/alexsmobs/item/composite/mimic_octopus_bucket"
+    },
+    "alexsmobs_froststalker_horn": {
+      "textures": "textures/alexsmobs/item/froststalker_horn"
+    },
+    "alexsmobs_froststalker_helmet": {
+      "textures": "textures/alexsmobs/item/froststalker_helmet"
+    },
+    "alexsmobs_pigshoes": {
+      "textures": "textures/alexsmobs/item/pigshoes"
+    },
+    "alexsmobs_straddle_helmet": {
+      "textures": "textures/alexsmobs/item/straddle_helmet"
+    },
+    "alexsmobs_straddle_saddle": {
+      "textures": "textures/alexsmobs/item/straddle_saddle"
+    },
+    "alexsmobs_cosmic_cod": {
+      "textures": "textures/alexsmobs/item/cosmic_cod"
+    },
+    "alexsmobs_shed_snake_skin": {
+      "textures": "textures/alexsmobs/item/shed_snake_skin"
+    },
+    "alexsmobs_vine_lasso": {
+      "textures": "textures/alexsmobs/item/vine_lasso"
+    },
+    "alexsmobs_rocky_shell": {
+      "textures": "textures/alexsmobs/item/rocky_shell"
+    },
+    "alexsmobs_rocky_chestplate": {
+      "textures": "textures/alexsmobs/item/rocky_chestplate"
+    },
+    "alexsmobs_potted_flutter": {
+      "textures": "textures/alexsmobs/item/potted_flutter"
+    },
+    "alexsmobs_terrapin_bucket": {
+      "textures": "textures/alexsmobs/item/composite/terrapin_bucket"
+    },
+    "alexsmobs_comb_jelly_bucket": {
+      "textures": "textures/alexsmobs/item/composite/comb_jelly_bucket"
+    },
+    "alexsmobs_rainbow_jelly": {
+      "textures": "textures/alexsmobs/item/rainbow_jelly"
+    },
+    "alexsmobs_cosmic_cod_bucket": {
+      "textures": "textures/alexsmobs/item/cosmic_cod_bucket"
+    },
+    "alexsmobs_mungal_spores": {
+      "textures": "textures/alexsmobs/item/mungal_spores"
+    },
+    "alexsmobs_bison_fur": {
+      "textures": "textures/alexsmobs/item/bison_fur"
+    },
+    "alexsmobs_lost_tentacle": {
+      "textures": "textures/alexsmobs/item/lost_tentacle"
+    },
+    "alexsmobs_squid_grapple": {
+      "textures": "textures/alexsmobs/item/squid_grapple"
+    },
+    "alexsmobs_devils_hole_pupfish_bucket": {
+      "textures": "textures/alexsmobs/item/composite/devils_hole_pupfish_bucket"
+    },
+    "alexsmobs_pupfish_locator": {
+      "textures": "textures/alexsmobs/item/pupfish_locator"
+    },
+    "alexsmobs_small_catfish_bucket": {
+      "textures": "textures/alexsmobs/item/composite/small_catfish_bucket"
+    },
+    "alexsmobs_medium_catfish_bucket": {
+      "textures": "textures/alexsmobs/item/composite/medium_catfish_bucket"
+    },
+    "alexsmobs_large_catfish_bucket": {
+      "textures": "textures/alexsmobs/item/large_catfish_bucket"
+    },
+    "alexsmobs_raw_catfish": {
+      "textures": "textures/alexsmobs/item/raw_catfish"
+    },
+    "alexsmobs_cooked_catfish": {
+      "textures": "textures/alexsmobs/item/cooked_catfish"
+    },
+    "alexsmobs_flying_fish": {
+      "textures": "textures/alexsmobs/item/flying_fish"
+    },
+    "alexsmobs_flying_fish_boots": {
+      "textures": "textures/alexsmobs/item/flying_fish_boots"
+    },
+    "alexsmobs_flying_fish_bucket": {
+      "textures": "textures/alexsmobs/item/composite/flying_fish_bucket"
+    },
+    "alexsmobs_fish_bones": {
+      "textures": "textures/alexsmobs/item/fish_bones"
+    },
+    "alexsmobs_skelewag_sword": {
+      "textures": "textures/alexsmobs/item/skelewag_sword"
+    },
+    "alexsmobs_novelty_hat": {
+      "textures": "textures/alexsmobs/item/novelty_hat"
+    },
+    "alexsmobs_mudskipper_bucket": {
+      "textures": "textures/alexsmobs/item/composite/mudskipper_bucket"
+    },
+    "alexsmobs_farseer_arm": {
+      "textures": "textures/alexsmobs/item/farseer_arm"
+    },
+    "alexsmobs_skreecher_soul": {
+      "textures": "textures/alexsmobs/item/skreecher_soul"
+    },
+    "alexsmobs_ghostly_pickaxe": {
+      "textures": "textures/alexsmobs/item/ghostly_pickaxe"
+    },
+    "alexsmobs_elastic_tendon": {
+      "textures": "textures/alexsmobs/item/elastic_tendon"
+    },
+    "alexsmobs_tendon_whip": {
+      "textures": "textures/alexsmobs/item/tendon_whip"
+    },
+    "alexsmobs_unsettling_kimono": {
+      "textures": "textures/alexsmobs/item/unsettling_kimono"
+    },
+    "alexsmobs_stink_bottle": {
+      "textures": "textures/alexsmobs/item/stink_bottle"
+    },
+    "alexsmobs_stink_ray": {
+      "textures": "textures/alexsmobs/item/stink_ray"
+    },
+    "alexsmobs_banana_slug_slime": {
+      "textures": "textures/alexsmobs/item/banana_slug_slime"
+    },
+    "alexsmobs_mosquito_repellent_stew": {
+      "textures": "textures/alexsmobs/item/mosquito_repellent_stew"
+    },
+    "alexsmobs_triops_bucket": {
+      "textures": "textures/alexsmobs/item/composite/triops_bucket"
+    },
+    "alexsmobs_music_disc_thime": {
+      "textures": "textures/alexsmobs/item/music_disc_thime"
+    },
+    "alexsmobs_music_disc_daze": {
+      "textures": "textures/alexsmobs/item/music_disc_daze"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:anaconda_part",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "k0": "textures/entity/alexsmobs/anaconda",
+        "k1": "textures/entity/alexsmobs/anaconda_yellow"
+      },
+      "geometry": {
+        "s0": "geometry.alexsmobs.anaconda_part.s0",
+        "s1": "geometry.alexsmobs.anaconda_part.s1",
+        "s2": "geometry.alexsmobs.anaconda_part.s2"
+      },
+      "animations": {
+        "sway_s0": "animation.alexsmobs.anaconda_part.sway_s0",
+        "sway_s1": "animation.alexsmobs.anaconda_part.sway_s1",
+        "sway_s2": "animation.alexsmobs.anaconda_part.sway_s2"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "sway_s0": "q.property('alexsmobs:seg') == 0"
+          },
+          {
+            "sway_s1": "q.property('alexsmobs:seg') == 1"
+          },
+          {
+            "sway_s2": "q.property('alexsmobs:seg') == 2"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.anaconda_part"
+      ]
+    }
+  }
+}

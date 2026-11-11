@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:frontier_cap",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_frontier_cap"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.frontier_cap"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:wearable": {
+        "slot": "slot.armor.head",
+        "protection": 2
+      },
+      "minecraft:durability": {
+        "max_durability": 200
+      },
+      "minecraft:enchantable": {
+        "slot": "armor_head",
+        "value": 12
+      }
+    }
+  }
+}

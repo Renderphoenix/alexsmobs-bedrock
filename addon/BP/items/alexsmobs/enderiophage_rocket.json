@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:enderiophage_rocket",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_enderiophage_rocket"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.enderiophage_rocket"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

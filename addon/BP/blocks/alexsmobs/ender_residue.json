@@ -1,0 +1,29 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:ender_residue",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_ender_residue_0",
+          "render_method": "blend"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.3
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 0.8999999999999999
+      },
+      "minecraft:light_emission": 4,
+      "minecraft:light_dampening": 0,
+      "minecraft:display_name": "tile.alexsmobs:ender_residue.name"
+    }
+  }
+}

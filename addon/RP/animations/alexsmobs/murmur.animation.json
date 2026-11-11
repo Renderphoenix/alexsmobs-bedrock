@@ -1,0 +1,108 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alexsmobs.murmur.pose": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "(v.lsa * 0.2618) * 57.29578",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "-(-14 - (math.abs(((math.sin((0.9 * v.ls) * 57.29578)) * v.lsa) * 4)) - -14 + v.lsa * 2)",
+            "v.lsa * 4"
+          ]
+        },
+        "arms": {
+          "rotation": [
+            "(((math.cos((v.ls * 1.8 - 1) * 57.29578)) * 0.18) * v.lsa + 0.15 * v.lsa + (math.cos((v.age * 0.1 - 1) * 57.29578)) * 0.1 + 0.15) * 57.29578",
+            "(((math.cos((v.ls * 0.9 - 3) * 57.29578)) * 0.18) * v.lsa) * 57.29578",
+            0
+          ]
+        }
+      }
+    },
+    "animation.alexsmobs.murmur.death_0": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "arms": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-20, 0, 8],
+            "0.45": [-55, 0, 25],
+            "0.8": [-50, 0, 22]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-6, 0, 0],
+            "0.45": [4, 0, 6],
+            "0.8": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.murmur.death_1": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "arms": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [30, 0, 10],
+            "0.16": [-25, 0, 5],
+            "0.24": [20, 0, 15],
+            "0.32": [-20, 0, 10],
+            "0.6": [-45, 0, 30],
+            "0.9": [-40, 0, 28]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-12, 0, -4],
+            "0.2": [6, 0, 6],
+            "0.3": [-6, 0, -3],
+            "0.6": [3, 0, 6],
+            "0.9": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.murmur.hurt": {
+      "animation_length": 0.3,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-5, 0, 4],
+            "0.3": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.murmur.idle_shake": {
+      "animation_length": 0.8,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [0, 0, 10],
+            "0.2": [0, 0, -10],
+            "0.3": [0, 0, 9],
+            "0.4": [0, 0, -9],
+            "0.5": [0, 0, 6],
+            "0.6": [0, 0, -6],
+            "0.7": [0, 0, 3],
+            "0.8": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

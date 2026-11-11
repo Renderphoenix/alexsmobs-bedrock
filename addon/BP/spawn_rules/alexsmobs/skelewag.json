@@ -1,0 +1,53 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "alexsmobs:skelewag",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_underwater": {},
+        "minecraft:height_filter": {
+          "min": 30,
+          "max": 64
+        },
+        "minecraft:distance_filter": {
+          "min": 12,
+          "max": 32
+        },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 9
+        },
+        "minecraft:herd": {
+          "min_size": 2,
+          "max_size": 3
+        },
+        "minecraft:density_limit": {
+          "underwater": 6
+        },
+        "minecraft:biome_filter": {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "mooshroom_island"
+            },
+            {
+              "test": "has_biome_tag",
+              "value": "ocean"
+            },
+            {
+              "test": "has_biome_tag",
+              "value": "deep"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

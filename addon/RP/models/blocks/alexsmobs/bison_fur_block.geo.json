@@ -1,0 +1,515 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.block.bison_fur_block",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        {
+          "name": "block",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-8, 0, -8],
+              "size": [16, 16, 16],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                },
+                "up": {
+                  "uv": [16, 16],
+                  "uv_size": [-16, -16],
+                  "material_instance": "alexsmobs_block_bison_fur_top"
+                },
+                "down": {
+                  "uv": [16, 16],
+                  "uv_size": [-16, -16],
+                  "material_instance": "alexsmobs_block_bison_fur_top"
+                }
+              }
+            },
+            {
+              "origin": [8, 8, -7],
+              "size": [0, 6, 14],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [8, 14, 0],
+              "rotation": [0, 0, -22.5]
+            },
+            {
+              "origin": [-7, 8, -8],
+              "size": [14, 6, 0],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [0, 14, -8],
+              "rotation": [-22.5, 0, 0]
+            },
+            {
+              "origin": [-7, 8, 8],
+              "size": [14, 6, 0],
+              "uv": {
+                "north": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [0, 14, 8],
+              "rotation": [22.5, 0, 0]
+            },
+            {
+              "origin": [-7, 4, -8],
+              "size": [14, 6, 0],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [0, 10, -8],
+              "rotation": [-22.5, 0, 0]
+            },
+            {
+              "origin": [-7, 4, 8],
+              "size": [14, 6, 0],
+              "uv": {
+                "north": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [0, 10, 8],
+              "rotation": [22.5, 0, 0]
+            },
+            {
+              "origin": [-7, 0, -8],
+              "size": [14, 6, 0],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [0, 6, -8],
+              "rotation": [-22.5, 0, 0]
+            },
+            {
+              "origin": [-7, 0, 8],
+              "size": [14, 6, 0],
+              "uv": {
+                "north": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 0],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [0, 6, 8],
+              "rotation": [22.5, 0, 0]
+            },
+            {
+              "origin": [-8, 8, -7],
+              "size": [0, 6, 14],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [-8, 14, 0],
+              "rotation": [0, 0, 22.5]
+            },
+            {
+              "origin": [8, 4, -7],
+              "size": [0, 6, 14],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [8, 10, 0],
+              "rotation": [0, 0, -22.5]
+            },
+            {
+              "origin": [-8, 4, -7],
+              "size": [0, 6, 14],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [-8, 10, 0],
+              "rotation": [0, 0, 22.5]
+            },
+            {
+              "origin": [8, 1, -7],
+              "size": [0, 6, 14],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [8, 7, 0],
+              "rotation": [0, 0, -22.5]
+            },
+            {
+              "origin": [-8, 1, -7],
+              "size": [0, 6, 14],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "east": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "west": {
+                  "uv": [14, 0],
+                  "uv_size": [-14, 6],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "up": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                },
+                "down": {
+                  "uv": [0, 14],
+                  "uv_size": [0, -14],
+                  "material_instance": "alexsmobs_block_bison_fur_extra"
+                }
+              },
+              "pivot": [-8, 7, 0],
+              "rotation": [0, 0, 22.5]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

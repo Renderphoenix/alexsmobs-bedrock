@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:platypus_egg",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.alexsmobs.block.platypus_egg",
+      "minecraft:selection_box": {
+        "origin": [-2, 0, -3],
+        "size": [4, 5, 4]
+      },
+      "minecraft:collision_box": {
+        "origin": [-2, 0, -3],
+        "size": [4, 5, 4]
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_platypus_eggs",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_platypus_eggs": {
+          "texture": "alexsmobs_block_platypus_eggs",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3
+      },
+      "minecraft:display_name": "tile.alexsmobs:platypus_egg.name"
+    }
+  }
+}

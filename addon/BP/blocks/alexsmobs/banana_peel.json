@@ -1,0 +1,45 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:banana_peel",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.alexsmobs.block.banana_peel",
+      "minecraft:selection_box": {
+        "origin": [-6, 0.1, -6],
+        "size": [12, 4, 12]
+      },
+      "minecraft:collision_box": false,
+      "minecraft:light_dampening": 0,
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_banana_peel",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_banana_peel": {
+          "texture": "alexsmobs_block_banana_peel",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_banana_peel_top": {
+          "texture": "alexsmobs_block_banana_peel_top",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_banana_peel_bottom": {
+          "texture": "alexsmobs_block_banana_peel_bottom",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 0.5
+      },
+      "minecraft:display_name": "tile.alexsmobs:banana_peel.name"
+    }
+  }
+}

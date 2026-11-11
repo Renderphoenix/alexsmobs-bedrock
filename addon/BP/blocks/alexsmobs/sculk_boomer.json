@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:sculk_boomer",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_skulk_boomer_closed",
+          "render_method": "opaque"
+        },
+        "down": {
+          "texture": "alexsmobs_minecraft_block_sculk_catalyst_bottom",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "alexsmobs_block_skulk_boomer_top",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.5
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 4.5
+      },
+      "minecraft:display_name": "tile.alexsmobs:sculk_boomer.name"
+    }
+  }
+}

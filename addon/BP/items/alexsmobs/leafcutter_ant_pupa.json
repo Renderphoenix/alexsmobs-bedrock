@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:leafcutter_ant_pupa",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_leafcutter_ant_pupa"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.leafcutter_ant_pupa"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

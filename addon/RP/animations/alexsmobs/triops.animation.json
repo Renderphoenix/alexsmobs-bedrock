@@ -1,0 +1,183 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alexsmobs.triops.pose": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "((v.pitch * 0.01745) * (1 - ((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2)) + ((math.cos((v.ls * 0.65 + 2.5) * 57.29578)) * 0.25) * v.lsa) * 57.29578",
+            0,
+            "(((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2) * -3.14159) * 57.29578"
+          ],
+          "position": [
+            0,
+            "-(v.lsa * -3)",
+            0
+          ]
+        },
+        "leftAntenna": {
+          "rotation": [
+            0,
+            "((1 - v.lsa) * 0.34907 + -((math.cos((v.age * 0.5 + 1) * 57.29578)) * 0.2 - 0.2)) * 57.29578",
+            0
+          ]
+        },
+        "rightAntenna": {
+          "rotation": [
+            0,
+            "((1 - v.lsa) * -0.34907 + (math.cos((v.age * 0.5 + 1) * 57.29578)) * 0.2 - 0.2) * 57.29578",
+            0
+          ]
+        },
+        "leftTailFlipper": {
+          "rotation": [
+            "((math.cos((v.age * 0.5 + 3) * 57.29578)) * 0.2 + 0.1 + ((math.cos((v.ls * 0.65) * 57.29578)) * 0.25) * v.lsa + -0.1 * v.lsa + ((math.cos((v.age * 0.5) * 57.29578)) * 0.2) * ((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2) + -0.3 * ((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2)) * 57.29578",
+            0,
+            0
+          ]
+        },
+        "rightTailFlipper": {
+          "rotation": [
+            "((math.cos((v.age * 0.5 + 3) * 57.29578)) * 0.2 + 0.1 + ((math.cos((v.ls * 0.65) * 57.29578)) * 0.25) * v.lsa + -0.1 * v.lsa + ((math.cos((v.age * 0.5) * 57.29578)) * 0.2) * ((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2) + -0.3 * ((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2)) * 57.29578",
+            0,
+            0
+          ]
+        },
+        "leftLegs": {
+          "rotation": [
+            0,
+            0,
+            "(-((math.cos((v.age * 1.5 + 1) * 57.29578)) * 0.2 - 0.2)) * 57.29578"
+          ]
+        },
+        "rightLegs": {
+          "rotation": [
+            0,
+            0,
+            "((math.cos((v.age * 1.5 + 1) * 57.29578)) * 0.2 - 0.2) * 57.29578"
+          ]
+        },
+        "tail1": {
+          "rotation": [
+            "(((math.cos((v.ls * 0.65 + 1.5) * 57.29578)) * 0.25) * v.lsa + ((math.cos((v.age * 0.5) * 57.29578)) * 0.2) * ((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2) + -0.1 * ((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2)) * 57.29578",
+            0,
+            0
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "(((math.cos((v.ls * 0.65 + 0.5) * 57.29578)) * 0.375) * v.lsa + ((math.cos((v.age * 0.5) * 57.29578)) * 0.3) * ((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2) + -0.3 * ((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2)) * 57.29578",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.alexsmobs.triops.death_0": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "leftLegs": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [20, 0, 8],
+            "0.45": [55, 0, 25],
+            "0.8": [50, 0, 22]
+          }
+        },
+        "rightLegs": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [20, 0, 8],
+            "0.45": [55, 0, 25],
+            "0.8": [50, 0, 22]
+          }
+        },
+        "tail1": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-10, 15, 0],
+            "0.45": [20, -5, 0],
+            "0.8": [18, -4, 0]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-6, 0, 0],
+            "0.45": [4, 0, 6],
+            "0.8": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.triops.death_1": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "leftLegs": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-30, 0, 10],
+            "0.16": [25, 0, 5],
+            "0.24": [-20, 0, 15],
+            "0.32": [20, 0, 10],
+            "0.6": [45, 0, 30],
+            "0.9": [40, 0, 28]
+          }
+        },
+        "rightLegs": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-30, 0, 10],
+            "0.16": [25, 0, 5],
+            "0.24": [-20, 0, 15],
+            "0.32": [20, 0, 10],
+            "0.6": [45, 0, 30],
+            "0.9": [40, 0, 28]
+          }
+        },
+        "tail1": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-20, 25, 0],
+            "0.2": [-10, -25, 0],
+            "0.3": [-15, 20, 0],
+            "0.6": [20, 0, 0],
+            "0.9": [18, 0, 0]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-12, 0, -4],
+            "0.2": [6, 0, 6],
+            "0.3": [-6, 0, -3],
+            "0.6": [3, 0, 6],
+            "0.9": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.triops.hurt": {
+      "animation_length": 0.3,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-5, 0, 4],
+            "0.3": [0, 0, 0]
+          }
+        },
+        "tail1": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-25, 0, 0],
+            "0.3": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

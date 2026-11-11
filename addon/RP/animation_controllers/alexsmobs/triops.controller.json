@@ -1,0 +1,58 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.alexsmobs.triops.death": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [
+            "v.death_pick = math.random_integer(0, 1);"
+          ],
+          "transitions": [
+            {
+              "dead_0": "!q.is_alive && v.death_pick == 0"
+            },
+            {
+              "dead_1": "!q.is_alive && v.death_pick == 1"
+            }
+          ]
+        },
+        "dead_0": {
+          "animations": [
+            "death_0"
+          ],
+          "blend_transition": 0.1
+        },
+        "dead_1": {
+          "animations": [
+            "death_1"
+          ],
+          "blend_transition": 0.1
+        }
+      }
+    },
+    "controller.animation.alexsmobs.triops.hurt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "hurt": "q.hurt_time > 0 && q.is_alive"
+            }
+          ]
+        },
+        "hurt": {
+          "animations": [
+            "hurt"
+          ],
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ],
+          "blend_transition": 0.05
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:bison_fur_block",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.alexsmobs.block.bison_fur_block",
+      "minecraft:selection_box": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:collision_box": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_bison_fur",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_bison_fur": {
+          "texture": "alexsmobs_block_bison_fur",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_bison_fur_top": {
+          "texture": "alexsmobs_block_bison_fur_top",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_bison_fur_extra": {
+          "texture": "alexsmobs_block_bison_fur_extra",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3
+      },
+      "minecraft:display_name": "tile.alexsmobs:bison_fur_block.name"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "§6Alex's Mobs 2 §e[RP] §7v2.0.0",
+    "description": "§aA fresh Bedrock port of Alex's Mobs§r, converted straight from the Java mod: real models, Java animations, spawns and drops.\n§7Original mod: Alexthe668, Carro1001, Paint_Ninja",
+    "uuid": "a6f6c710-cb6b-40a0-8e2e-bf5636c862a4",
+    "version": [2, 0, 0],
+    "min_engine_version": [1, 21, 90]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "946f2d8b-b08a-492e-8ec9-0cafef2319a0",
+      "version": [2, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "8a5cb6b0-5bac-4ffa-96ca-46d9fce9b761",
+      "version": [2, 0, 0]
+    }
+  ],
+  "metadata": {
+    "authors": [
+      "Alexthe668",
+      "Carro1001",
+      "Paint_Ninja",
+      "Renderphoenix",
+      "devsuki"
+    ],
+    "product_type": "addon"
+  }
+}

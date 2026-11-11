@@ -1,0 +1,68 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:bald_eagle",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/bald_eagle"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.bald_eagle"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.bald_eagle.pose",
+        "death_0": "animation.alexsmobs.bald_eagle.death_0",
+        "death_1": "animation.alexsmobs.bald_eagle.death_1",
+        "hurt": "animation.alexsmobs.bald_eagle.hurt",
+        "idle_look": "animation.alexsmobs.bald_eagle.idle_look",
+        "idle_sniff": "animation.alexsmobs.bald_eagle.idle_sniff",
+        "idle_shake": "animation.alexsmobs.bald_eagle.idle_shake",
+        "idle_wings": "animation.alexsmobs.bald_eagle.idle_wings",
+        "idle_tail": "animation.alexsmobs.bald_eagle.idle_tail",
+        "ctrl_idle": "controller.animation.alexsmobs.bald_eagle.idle",
+        "ctrl_death": "controller.animation.alexsmobs.bald_eagle.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.bald_eagle.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = !q.is_on_ground && !q.is_in_water;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_flyprogress = math.clamp((v.p_flyprogress ?? 0) + ((v.am_flying) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_sitprogress = math.clamp((v.p_sitprogress ?? 0) + ((q.is_sitting) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_tackleprogress = math.clamp((v.p_tackleprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_swoopprogress = math.clamp((v.p_swoopprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_attackprogress = math.clamp((v.p_attackprogress ?? 0) + ((q.is_angry) ? 1 : -1) * q.delta_time * 20, 0, 2.5);",
+          "v.p_flapamount = math.clamp((v.p_flapamount ?? 0) + ((v.am_flying) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.bald_eagle"
+      ],
+      "spawn_egg": {
+        "base_color": "#321f18",
+        "overlay_color": "#f4f4f4"
+      },
+      "enable_attachables": false
+    }
+  }
+}

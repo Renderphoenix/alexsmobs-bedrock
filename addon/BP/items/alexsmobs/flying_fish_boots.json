@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:flying_fish_boots",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_flying_fish_boots"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.flying_fish_boots"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:wearable": {
+        "slot": "slot.armor.feet",
+        "protection": 2
+      },
+      "minecraft:durability": {
+        "max_durability": 220
+      },
+      "minecraft:enchantable": {
+        "slot": "armor_feet",
+        "value": 12
+      }
+    }
+  }
+}

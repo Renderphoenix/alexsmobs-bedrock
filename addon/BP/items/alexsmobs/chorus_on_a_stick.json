@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:chorus_on_a_stick",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_chorus_on_a_stick"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.chorus_on_a_stick"
+      },
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

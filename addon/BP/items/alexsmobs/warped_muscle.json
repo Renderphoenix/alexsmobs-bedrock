@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:warped_muscle",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_warped_muscle"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.warped_muscle"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

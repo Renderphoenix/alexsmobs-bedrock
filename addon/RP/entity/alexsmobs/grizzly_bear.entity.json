@@ -1,0 +1,68 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:grizzly_bear",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/grizzly_bear"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.grizzly_bear"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.grizzly_bear.pose",
+        "maul": "animation.alexsmobs.grizzly_bear.maul",
+        "swipe_r": "animation.alexsmobs.grizzly_bear.swipe_r",
+        "swipe_l": "animation.alexsmobs.grizzly_bear.swipe_l",
+        "sniff": "animation.alexsmobs.grizzly_bear.sniff",
+        "death_0": "animation.alexsmobs.grizzly_bear.death_0",
+        "death_1": "animation.alexsmobs.grizzly_bear.death_1",
+        "hurt": "animation.alexsmobs.grizzly_bear.hurt",
+        "idle_look": "animation.alexsmobs.grizzly_bear.idle_look",
+        "idle_sniff": "animation.alexsmobs.grizzly_bear.idle_sniff",
+        "idle_shake": "animation.alexsmobs.grizzly_bear.idle_shake",
+        "ctrl_attack": "controller.animation.alexsmobs.grizzly_bear.attack",
+        "ctrl_idle": "controller.animation.alexsmobs.grizzly_bear.idle",
+        "ctrl_death": "controller.animation.alexsmobs.grizzly_bear.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.grizzly_bear.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_sitprogress = math.clamp((v.p_sitprogress ?? 0) + ((q.is_sitting) ? 1 : -1) * q.delta_time * 20, 0, 10);",
+          "v.p_standprogress = math.clamp((v.p_standprogress ?? 0) + ((v.am_standing) ? 1 : -1) * q.delta_time * 20, 0, 10);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_attack",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.grizzly_bear"
+      ],
+      "spawn_egg": {
+        "base_color": "#693a2c",
+        "overlay_color": "#976144"
+      },
+      "enable_attachables": false
+    }
+  }
+}

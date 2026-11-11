@@ -1,0 +1,47 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:gustmaker",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_gustmaker_front_off",
+          "render_method": "opaque"
+        },
+        "down": {
+          "texture": "alexsmobs_block_gustmaker_side",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "alexsmobs_block_gustmaker_top",
+          "render_method": "opaque"
+        },
+        "south": {
+          "texture": "alexsmobs_block_gustmaker_side",
+          "render_method": "opaque"
+        },
+        "west": {
+          "texture": "alexsmobs_block_gustmaker_side",
+          "render_method": "opaque"
+        },
+        "east": {
+          "texture": "alexsmobs_block_gustmaker_side",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3
+      },
+      "minecraft:display_name": "tile.alexsmobs:gustmaker.name"
+    }
+  }
+}

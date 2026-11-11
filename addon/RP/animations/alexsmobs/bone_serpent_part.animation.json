@@ -1,0 +1,29 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alexsmobs.bone_serpent_part.sway_s0": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": [
+            0,
+            "math.sin(q.life_time * 220 + q.property('alexsmobs:index') * 55) * 9 * math.clamp(q.ground_speed * 4 + 0.25, 0, 1)",
+            0
+          ]
+        }
+      }
+    },
+    "animation.alexsmobs.bone_serpent_part.sway_s1": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": [
+            0,
+            "math.sin(q.life_time * 220 + q.property('alexsmobs:index') * 55) * 9 * math.clamp(q.ground_speed * 4 + 0.25, 0, 1)",
+            0
+          ]
+        }
+      }
+    }
+  }
+}

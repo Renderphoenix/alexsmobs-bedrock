@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:bone_serpent_part",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "s0": "textures/entity/alexsmobs/bone_serpent_mid",
+        "s1": "textures/entity/alexsmobs/bone_serpent_tail"
+      },
+      "geometry": {
+        "s0": "geometry.alexsmobs.bone_serpent_part.s0",
+        "s1": "geometry.alexsmobs.bone_serpent_part.s1"
+      },
+      "animations": {
+        "sway_s0": "animation.alexsmobs.bone_serpent_part.sway_s0",
+        "sway_s1": "animation.alexsmobs.bone_serpent_part.sway_s1"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "sway_s0": "q.property('alexsmobs:seg') == 0"
+          },
+          {
+            "sway_s1": "q.property('alexsmobs:seg') == 1"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.bone_serpent_part"
+      ]
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:sugar_glider",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/sugar_glider"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.sugar_glider"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.sugar_glider.pose",
+        "death_0": "animation.alexsmobs.sugar_glider.death_0",
+        "death_1": "animation.alexsmobs.sugar_glider.death_1",
+        "hurt": "animation.alexsmobs.sugar_glider.hurt",
+        "idle_look": "animation.alexsmobs.sugar_glider.idle_look",
+        "idle_sniff": "animation.alexsmobs.sugar_glider.idle_sniff",
+        "idle_shake": "animation.alexsmobs.sugar_glider.idle_shake",
+        "idle_tail": "animation.alexsmobs.sugar_glider.idle_tail",
+        "ctrl_idle": "controller.animation.alexsmobs.sugar_glider.idle",
+        "ctrl_death": "controller.animation.alexsmobs.sugar_glider.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.sugar_glider.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_glideprogress = math.clamp((v.p_glideprogress ?? 0) + ((v.am_flying) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_sitprogress = math.clamp((v.p_sitprogress ?? 0) + ((q.is_sitting) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_forageprogress = math.clamp((v.p_forageprogress ?? 0) + ((q.is_angry) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.sugar_glider"
+      ],
+      "spawn_egg": {
+        "base_color": "#868181",
+        "overlay_color": "#ebebe0"
+      },
+      "enable_attachables": false
+    }
+  }
+}

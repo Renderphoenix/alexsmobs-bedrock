@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:mimic_octopus",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/mimic_octopus",
+        "glow": "textures/entity/alexsmobs/mimic_octopus_eyes",
+        "overlay": "textures/entity/alexsmobs/mimic_octopus_overlay"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.mimic_octopus"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.mimic_octopus.pose",
+        "death_0": "animation.alexsmobs.mimic_octopus.death_0",
+        "death_1": "animation.alexsmobs.mimic_octopus.death_1",
+        "hurt": "animation.alexsmobs.mimic_octopus.hurt",
+        "idle_shake": "animation.alexsmobs.mimic_octopus.idle_shake",
+        "ctrl_idle": "controller.animation.alexsmobs.mimic_octopus.idle",
+        "ctrl_death": "controller.animation.alexsmobs.mimic_octopus.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.mimic_octopus.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_transprogress = math.clamp((v.p_transprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_groundprogress = math.clamp((v.p_groundprogress ?? 0) + ((q.is_on_ground) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_sitprogress = math.clamp((v.p_sitprogress ?? 0) + ((q.is_sitting) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.mimic_octopus",
+        "controller.render.alexsmobs.mimic_octopus.overlay",
+        "controller.render.alexsmobs.mimic_octopus.glow"
+      ],
+      "spawn_egg": {
+        "base_color": "#ffebdc",
+        "overlay_color": "#1d1c1f"
+      },
+      "enable_attachables": false
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:void_worm_effigy",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.alexsmobs.block.void_worm_effigy",
+      "minecraft:selection_box": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:collision_box": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_void_worm_effigy",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_void_worm_effigy": {
+          "texture": "alexsmobs_block_void_worm_effigy",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 5
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 15
+      },
+      "minecraft:light_emission": 15,
+      "minecraft:display_name": "tile.alexsmobs:void_worm_effigy.name"
+    }
+  }
+}

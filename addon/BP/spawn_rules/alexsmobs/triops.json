@@ -1,0 +1,93 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "alexsmobs:triops",
+      "population_control": "water_animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_underwater": {},
+        "minecraft:height_filter": {
+          "min": 30,
+          "max": 64
+        },
+        "minecraft:distance_filter": {
+          "min": 12,
+          "max": 32
+        },
+        "minecraft:weight": {
+          "default": 12
+        },
+        "minecraft:herd": {
+          "min_size": 2,
+          "max_size": 6
+        },
+        "minecraft:density_limit": {
+          "underwater": 12
+        },
+        "minecraft:biome_filter": {
+          "all_of": [
+            {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "desert"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "mesa"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "savanna"
+                }
+              ]
+            },
+            {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "desert"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "mesa"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "savanna"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "jungle"
+                }
+              ]
+            },
+            {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "desert"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "mesa"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "beach"
+                }
+              ]
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "mesa"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

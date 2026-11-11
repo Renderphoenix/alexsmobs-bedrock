@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alexsmobs.tiger": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.angry0",
+            "Texture.angry1",
+            "Texture.sleep0",
+            "Texture.sleep1"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[(v.am_sleeping ? 4 : (q.property('alexsmobs:angry') ? 2 : 0)) + math.clamp(q.variant, 0, 1)]"
+      ]
+    },
+    "controller.render.alexsmobs.tiger.glow": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.glow"
+      ],
+      "ignore_lighting": true
+    }
+  }
+}

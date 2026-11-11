@@ -1,0 +1,134 @@
+{
+  "resource_pack_name": "alexsmobs",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "alexsmobs_block_banana_peel": {
+      "textures": "textures/alexsmobs/block/banana_peel"
+    },
+    "alexsmobs_block_banana_peel_top": {
+      "textures": "textures/alexsmobs/block/banana_peel_top"
+    },
+    "alexsmobs_block_banana_peel_bottom": {
+      "textures": "textures/alexsmobs/block/banana_peel_bottom"
+    },
+    "alexsmobs_block_banana_slug_slime_block": {
+      "textures": "textures/alexsmobs/block/banana_slug_slime_block"
+    },
+    "alexsmobs_block_bison_fur": {
+      "textures": "textures/alexsmobs/block/bison_fur"
+    },
+    "alexsmobs_block_bison_carpet": {
+      "textures": "textures/alexsmobs/block/bison_carpet"
+    },
+    "alexsmobs_block_bison_fur_top": {
+      "textures": "textures/alexsmobs/block/bison_fur_top"
+    },
+    "alexsmobs_block_bison_fur_extra": {
+      "textures": "textures/alexsmobs/block/bison_fur_extra"
+    },
+    "alexsmobs_block_caiman_eggs": {
+      "textures": "textures/alexsmobs/block/caiman_eggs"
+    },
+    "alexsmobs_block_capsid": {
+      "textures": "textures/alexsmobs/block/capsid"
+    },
+    "alexsmobs_block_crocodile_egg": {
+      "textures": "textures/alexsmobs/block/crocodile_egg"
+    },
+    "alexsmobs_block_crystalized_banana_slug_mucus": {
+      "textures": "textures/alexsmobs/block/crystalized_banana_slug_mucus"
+    },
+    "alexsmobs_block_ender_residue_0": {
+      "textures": "textures/alexsmobs/block/ender_residue_0"
+    },
+    "alexsmobs_item_end_pirate_door": {
+      "textures": "textures/alexsmobs/item/end_pirate_door"
+    },
+    "alexsmobs_block_end_pirate_trapdoor": {
+      "textures": "textures/alexsmobs/block/end_pirate_trapdoor"
+    },
+    "alexsmobs_block_end_pirate_trapdoor_side": {
+      "textures": "textures/alexsmobs/block/end_pirate_trapdoor_side"
+    },
+    "alexsmobs_block_gustmaker_side": {
+      "textures": "textures/alexsmobs/block/gustmaker_side"
+    },
+    "alexsmobs_block_gustmaker_top": {
+      "textures": "textures/alexsmobs/block/gustmaker_top"
+    },
+    "alexsmobs_block_gustmaker_front_off": {
+      "textures": "textures/alexsmobs/block/gustmaker_front_off"
+    },
+    "alexsmobs_block_bird_feeder_empty": {
+      "textures": "textures/alexsmobs/block/bird_feeder_empty"
+    },
+    "alexsmobs_block_leafcutter_anthill": {
+      "textures": "textures/alexsmobs/block/leafcutter_anthill"
+    },
+    "alexsmobs_block_leafcutter_anthill_top": {
+      "textures": "textures/alexsmobs/block/leafcutter_anthill_top"
+    },
+    "alexsmobs_block_leafcutter_ant_chamber": {
+      "textures": "textures/alexsmobs/block/leafcutter_ant_chamber"
+    },
+    "alexsmobs_block_sail_bottom": {
+      "textures": "textures/alexsmobs/block/sail_bottom"
+    },
+    "alexsmobs_block_phantom_sail_single": {
+      "textures": "textures/alexsmobs/block/phantom_sail_single"
+    },
+    "alexsmobs_block_platypus_eggs": {
+      "textures": "textures/alexsmobs/block/platypus_eggs"
+    },
+    "alexsmobs_block_purpur_planks": {
+      "textures": "textures/alexsmobs/block/purpur_planks"
+    },
+    "alexsmobs_block_rainbow_glass": {
+      "textures": "textures/alexsmobs/block/rainbow_glass"
+    },
+    "alexsmobs_block_red_sand": {
+      "textures": "textures/blocks/red_sand"
+    },
+    "alexsmobs_block_red_sand_circle": {
+      "textures": "textures/alexsmobs/block/red_sand_circle"
+    },
+    "alexsmobs_block_sand": {
+      "textures": "textures/blocks/sand"
+    },
+    "alexsmobs_block_sand_circle": {
+      "textures": "textures/alexsmobs/block/sand_circle"
+    },
+    "alexsmobs_minecraft_block_sculk_catalyst_bottom": {
+      "textures": "textures/blocks/sculk_catalyst_bottom"
+    },
+    "alexsmobs_block_skulk_boomer_top": {
+      "textures": "textures/alexsmobs/block/skulk_boomer_top"
+    },
+    "alexsmobs_block_skulk_boomer_closed": {
+      "textures": "textures/alexsmobs/block/skulk_boomer_closed"
+    },
+    "alexsmobs_block_skunk_spray": {
+      "textures": "textures/alexsmobs/block/skunk_spray"
+    },
+    "alexsmobs_block_spectre_sail_single": {
+      "textures": "textures/alexsmobs/block/spectre_sail_single"
+    },
+    "alexsmobs_block_straddlite_block": {
+      "textures": "textures/alexsmobs/block/straddlite_block"
+    },
+    "alexsmobs_block_terrapin_egg": {
+      "textures": "textures/alexsmobs/block/terrapin_egg"
+    },
+    "alexsmobs_block_obsidian": {
+      "textures": "textures/blocks/obsidian"
+    },
+    "alexsmobs_block_triops_eggs": {
+      "textures": "textures/alexsmobs/block/triops_eggs"
+    },
+    "alexsmobs_block_void_worm_effigy": {
+      "textures": "textures/alexsmobs/block/void_worm_effigy"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:capuchin_monkey",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/capuchin_monkey_0",
+        "v1": "textures/entity/alexsmobs/capuchin_monkey_1",
+        "v2": "textures/entity/alexsmobs/capuchin_monkey_2",
+        "v3": "textures/entity/alexsmobs/capuchin_monkey_3"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.capuchin_monkey"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.capuchin_monkey.pose",
+        "throw": "animation.alexsmobs.capuchin_monkey.throw",
+        "scratch": "animation.alexsmobs.capuchin_monkey.scratch",
+        "headtilt": "animation.alexsmobs.capuchin_monkey.headtilt",
+        "death_0": "animation.alexsmobs.capuchin_monkey.death_0",
+        "death_1": "animation.alexsmobs.capuchin_monkey.death_1",
+        "hurt": "animation.alexsmobs.capuchin_monkey.hurt",
+        "idle_look": "animation.alexsmobs.capuchin_monkey.idle_look",
+        "idle_sniff": "animation.alexsmobs.capuchin_monkey.idle_sniff",
+        "idle_shake": "animation.alexsmobs.capuchin_monkey.idle_shake",
+        "idle_tail": "animation.alexsmobs.capuchin_monkey.idle_tail",
+        "ctrl_attack": "controller.animation.alexsmobs.capuchin_monkey.attack",
+        "ctrl_idle": "controller.animation.alexsmobs.capuchin_monkey.idle",
+        "ctrl_death": "controller.animation.alexsmobs.capuchin_monkey.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.capuchin_monkey.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_sitprogress = math.clamp((v.p_sitprogress ?? 0) + ((q.is_sitting) ? 1 : -1) * q.delta_time * 20, 0, 10);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_attack",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.capuchin_monkey"
+      ],
+      "spawn_egg": {
+        "base_color": "#25211f",
+        "overlay_color": "#f1dab3"
+      },
+      "enable_attachables": false
+    }
+  }
+}

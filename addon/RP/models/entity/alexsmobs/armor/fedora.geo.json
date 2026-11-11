@@ -1,0 +1,67 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.armor.fedora",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 5,
+        "visible_bounds_offset": [0, 2, 0]
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {
+              "origin": [-4, 24, -4],
+              "size": [8, 8, 8],
+              "uv": [0, 0],
+              "inflate": 1
+            }
+          ]
+        },
+        {
+          "name": "fedora",
+          "pivot": [0, 32, 0],
+          "parent": "head",
+          "cubes": [
+            {
+              "origin": [-3, 31.55, -3],
+              "size": [6, 4, 6],
+              "uv": [0, 44],
+              "inflate": 1
+            }
+          ]
+        },
+        {
+          "name": "fedora_shade",
+          "pivot": [0, 32.05, 0],
+          "parent": "head",
+          "cubes": [
+            {
+              "origin": [-5, 31.55, -5],
+              "size": [10, 1, 10],
+              "uv": [0, 32],
+              "inflate": 1
+            }
+          ]
+        },
+        {
+          "name": "hat",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {
+              "origin": [-4, 24, -4],
+              "size": [8, 8, 8],
+              "uv": [32, 0],
+              "inflate": 1.5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

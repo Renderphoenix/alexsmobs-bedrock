@@ -1,0 +1,80 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "alexsmobs:seal",
+      "population_control": "animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_on_block_filter": [
+          "minecraft:grass_block",
+          "minecraft:podzol",
+          "minecraft:dirt",
+          "minecraft:coarse_dirt",
+          "minecraft:sand",
+          "minecraft:red_sand",
+          "minecraft:snow",
+          "minecraft:snow_layer",
+          "minecraft:mud",
+          "minecraft:moss_block",
+          "minecraft:gravel",
+          "minecraft:stone",
+          "minecraft:clay",
+          "minecraft:mycelium",
+          "minecraft:terracotta",
+          "minecraft:grass_path",
+          "minecraft:water"
+        ],
+        "minecraft:brightness_filter": {
+          "min": 7,
+          "max": 15,
+          "adjust_for_weather": false
+        },
+        "minecraft:weight": {
+          "default": 30
+        },
+        "minecraft:herd": {
+          "min_size": 3,
+          "max_size": 8
+        },
+        "minecraft:density_limit": {
+          "surface": 16
+        },
+        "minecraft:biome_filter": {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "value": "beach"
+            },
+            {
+              "all_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                },
+                {
+                  "any_of": [
+                    {
+                      "test": "has_biome_tag",
+                      "value": "cold"
+                    },
+                    {
+                      "test": "has_biome_tag",
+                      "value": "frozen"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "test": "has_biome_tag",
+              "value": "stone"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

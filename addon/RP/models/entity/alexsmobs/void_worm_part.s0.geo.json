@@ -1,0 +1,109 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.void_worm_part.s0",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 5,
+        "visible_bounds_offset": [0, 2, 0]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "body",
+          "pivot": [0, 14, -10],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [-7, 0, -10],
+              "size": [14, 26, 21],
+              "uv": [0, 0]
+            }
+          ]
+        },
+        {
+          "name": "frillstop_left",
+          "pivot": [7, 26, 0],
+          "parent": "body"
+        },
+        {
+          "name": "frillstop_left_r1",
+          "pivot": [7, 26, 0],
+          "parent": "frillstop_left",
+          "rotation": [0, 0, 45.0001],
+          "cubes": [
+            {
+              "origin": [7, 26, -10],
+              "size": [0, 8, 21],
+              "uv": [0, 48]
+            }
+          ]
+        },
+        {
+          "name": "frillstop_right",
+          "pivot": [-7, 26, 0],
+          "parent": "body"
+        },
+        {
+          "name": "frillstop_right_r1",
+          "pivot": [-7, 26, 0],
+          "parent": "frillstop_right",
+          "rotation": [0, 0, -45.0001],
+          "cubes": [
+            {
+              "origin": [-7, 26, -10],
+              "size": [0, 8, 21],
+              "uv": [0, 48],
+              "mirror": true
+            }
+          ]
+        },
+        {
+          "name": "frillsbottom_left",
+          "pivot": [7, 0, 0],
+          "parent": "body",
+          "rotation": [0, 0, 95.0021]
+        },
+        {
+          "name": "frillsbottom_left_r1",
+          "pivot": [7, 0, 0],
+          "parent": "frillsbottom_left",
+          "rotation": [0, 0, 45.0001],
+          "cubes": [
+            {
+              "origin": [7, 0, -10],
+              "size": [0, 8, 21],
+              "uv": [0, 48]
+            }
+          ]
+        },
+        {
+          "name": "frillsbottom_right",
+          "pivot": [-7, 0, 0],
+          "parent": "body",
+          "rotation": [0, 0, -95.0021]
+        },
+        {
+          "name": "frillsbottom_right_r1",
+          "pivot": [-7, 0, 0],
+          "parent": "frillsbottom_right",
+          "rotation": [0, 0, -45.0001],
+          "cubes": [
+            {
+              "origin": [-7, 0, -10],
+              "size": [0, 8, 21],
+              "uv": [0, 48],
+              "mirror": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

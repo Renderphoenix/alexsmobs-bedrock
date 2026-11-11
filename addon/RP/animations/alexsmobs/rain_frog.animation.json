@@ -1,0 +1,232 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alexsmobs.rain_frog.pose": {
+      "loop": true,
+      "bones": {
+        "right_eye": {
+          "position": [
+            0,
+            "-((((math.max(0, (math.sin((v.age * 0.1) * 57.29578) - 0.5) * 2)) * (5 - (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)))) * 0.2) * 0.9 + -((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2))",
+            "(((math.max(0, (math.sin((v.age * 0.1) * 57.29578) - 0.5) * 2)) * (5 - (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)))) * 0.2) * 0.1"
+          ]
+        },
+        "left_eye": {
+          "position": [
+            0,
+            "-((((math.max(0, (math.sin((v.age * 0.1) * 57.29578) - 0.5) * 2)) * (5 - (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)))) * 0.2) * 0.9 + -((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2))",
+            "(((math.max(0, (math.sin((v.age * 0.1) * 57.29578) - 0.5) * 2)) * (5 - (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)))) * 0.2) * 0.1"
+          ]
+        },
+        "body": {
+          "rotation": [
+            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * -0.17453 + ((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + -0.4 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2)) * 57.29578",
+            "(((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + ((math.cos((v.ls + 1) * 57.29578)) * 0.35) * v.lsa + ((math.cos((v.age * 0.8 + 1) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2)) * 57.29578",
+            "(((math.cos(v.ls * 57.29578)) * 0.35) * v.lsa) * 57.29578"
+          ],
+          "position": [
+            0,
+            "-(((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) * -2 + ((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 0.2) * 5 + ((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * -2)",
+            "((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * -2"
+          ],
+          "scale": [
+            "1 + (1 + (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.025 - 1)",
+            "1 + (1 + (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.075 - 1)",
+            "1 + (1 + (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.025 - 1)"
+          ]
+        },
+        "right_leg": {
+          "rotation": [
+            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * 0.17453 + ((math.cos((v.age * 0.8 - 1.5) * 57.29578)) * 0.5) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + 0.2 * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + (math.cos((v.ls - 2.5) * 57.29578)) * v.lsa + 0.3 * v.lsa - (((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * -0.17453 + ((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + -0.4 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578",
+            "(-(((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + ((math.cos((v.ls + 1) * 57.29578)) * 0.35) * v.lsa + ((math.cos((v.age * 0.8 + 1) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578",
+            "(-(((math.cos(v.ls * 57.29578)) * 0.35) * v.lsa)) * 57.29578"
+          ],
+          "position": [
+            0,
+            "-(1.25 + ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) * 0.7 + -((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) + ((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * 2 + 1.5 * ((math.sin((-v.ls + 2.5) * 57.29578)) * v.lsa - v.lsa) - 1.25)",
+            "2.25 - (2 * ((math.sin((-v.ls + 2.5) * 57.29578)) * v.lsa - v.lsa)) - 2.25"
+          ]
+        },
+        "left_leg": {
+          "rotation": [
+            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * 0.17453 + ((math.cos((v.age * 0.8 - 1.5) * 57.29578)) * 0.5) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + 0.2 * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + -((math.cos((v.ls - 2.5) * 57.29578)) * v.lsa + -0.3 * v.lsa) - (((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * -0.17453 + ((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + -0.4 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578",
+            "(-(((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + ((math.cos((v.ls + 1) * 57.29578)) * 0.35) * v.lsa + ((math.cos((v.age * 0.8 + 1) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578",
+            "(-(((math.cos(v.ls * 57.29578)) * 0.35) * v.lsa)) * 57.29578"
+          ],
+          "position": [
+            0,
+            "-(1.25 + ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) * 0.7 + -((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) + ((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * 2 + 1.5 * ((math.sin((v.ls - 2.5) * 57.29578)) * v.lsa - v.lsa) - 1.25)",
+            "2.25 - (2 * ((math.sin((v.ls - 2.5) * 57.29578)) * v.lsa - v.lsa)) - 2.25"
+          ]
+        },
+        "tongue": {
+          "position": [
+            0,
+            0,
+            "((5 - (v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age))) * 0.2) * 3"
+          ]
+        },
+        "left_arm": {
+          "rotation": [
+            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * 0.17453 + ((math.cos((v.age * 0.8 - 1.5) * 57.29578)) * 0.5) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + -0.2 * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + ((math.cos((v.ls - 2.5) * 57.29578)) * 1.2) * v.lsa + -0.2 * v.lsa) * 57.29578",
+            0,
+            "(-(((math.cos((v.age * 0.8) * 57.29578)) * 0.5) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + 0.3 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578"
+          ],
+          "position": [
+            0,
+            "-(((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * 2 + 1.5 * ((math.sin((-v.ls + 2.5) * 57.29578)) * v.lsa - v.lsa))",
+            "-3 + (math.sin((-v.ls + 2.5) * 57.29578)) * v.lsa - v.lsa - -3"
+          ]
+        },
+        "right_arm": {
+          "rotation": [
+            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * 0.17453 + ((math.cos((v.age * 0.8 - 1.5) * 57.29578)) * 0.5) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + -0.2 * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + -(((math.cos((v.ls - 2.5) * 57.29578)) * 1.2) * v.lsa + 0.2 * v.lsa)) * 57.29578",
+            0,
+            "(((math.cos((v.age * 0.8) * 57.29578)) * 0.5) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + 0.3 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2)) * 57.29578"
+          ],
+          "position": [
+            0,
+            "-(((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * 2 + 1.5 * ((math.sin((v.ls - 2.5) * 57.29578)) * v.lsa - v.lsa))",
+            "-3 + (math.sin((v.ls - 2.5) * 57.29578)) * v.lsa - v.lsa - -3"
+          ]
+        }
+      }
+    },
+    "animation.alexsmobs.rain_frog.death_0": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "left_leg": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [20, 0, 8],
+            "0.45": [55, 0, 25],
+            "0.8": [50, 0, 22]
+          }
+        },
+        "right_leg": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [20, 0, -8],
+            "0.45": [55, 0, -25],
+            "0.8": [50, 0, -22]
+          }
+        },
+        "left_arm": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-20, 0, 8],
+            "0.45": [-55, 0, 25],
+            "0.8": [-50, 0, 22]
+          }
+        },
+        "right_arm": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-20, 0, -8],
+            "0.45": [-55, 0, -25],
+            "0.8": [-50, 0, -22]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-6, 0, 0],
+            "0.45": [4, 0, 6],
+            "0.8": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.rain_frog.death_1": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "left_leg": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-30, 0, 10],
+            "0.16": [25, 0, 5],
+            "0.24": [-20, 0, 15],
+            "0.32": [20, 0, 10],
+            "0.6": [45, 0, 30],
+            "0.9": [40, 0, 28]
+          }
+        },
+        "right_leg": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-30, 0, -10],
+            "0.16": [25, 0, -5],
+            "0.24": [-20, 0, -15],
+            "0.32": [20, 0, -10],
+            "0.6": [45, 0, -30],
+            "0.9": [40, 0, -28]
+          }
+        },
+        "left_arm": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [30, 0, 10],
+            "0.16": [-25, 0, 5],
+            "0.24": [20, 0, 15],
+            "0.32": [-20, 0, 10],
+            "0.6": [-45, 0, 30],
+            "0.9": [-40, 0, 28]
+          }
+        },
+        "right_arm": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [30, 0, -10],
+            "0.16": [-25, 0, -5],
+            "0.24": [20, 0, -15],
+            "0.32": [-20, 0, -10],
+            "0.6": [-45, 0, -30],
+            "0.9": [-40, 0, -28]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-12, 0, -4],
+            "0.2": [6, 0, 6],
+            "0.3": [-6, 0, -3],
+            "0.6": [3, 0, 6],
+            "0.9": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.rain_frog.hurt": {
+      "animation_length": 0.3,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-5, 0, 4],
+            "0.3": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.rain_frog.idle_shake": {
+      "animation_length": 0.8,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [0, 0, 10],
+            "0.2": [0, 0, -10],
+            "0.3": [0, 0, 9],
+            "0.4": [0, 0, -9],
+            "0.5": [0, 0, 6],
+            "0.6": [0, 0, -6],
+            "0.7": [0, 0, 3],
+            "0.8": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

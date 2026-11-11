@@ -1,0 +1,69 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "alexsmobs:farseer",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_on_block_filter": [
+          "minecraft:grass_block",
+          "minecraft:podzol",
+          "minecraft:dirt",
+          "minecraft:coarse_dirt",
+          "minecraft:sand",
+          "minecraft:red_sand",
+          "minecraft:snow",
+          "minecraft:snow_layer",
+          "minecraft:mud",
+          "minecraft:moss_block",
+          "minecraft:gravel",
+          "minecraft:stone",
+          "minecraft:clay",
+          "minecraft:mycelium",
+          "minecraft:terracotta",
+          "minecraft:grass_path"
+        ],
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 7,
+          "adjust_for_weather": true
+        },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 18
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 1
+        },
+        "minecraft:density_limit": {
+          "surface": 4
+        },
+        "minecraft:biome_filter": {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "value": "overworld"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "mooshroom_island"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "mooshroom_island"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.armor.novelty_hat",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 5,
+        "visible_bounds_offset": [0, 2, 0]
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {
+              "origin": [-4, 24, -4],
+              "size": [8, 8, 8],
+              "uv": [0, 0],
+              "inflate": 1
+            }
+          ]
+        },
+        {
+          "name": "hat",
+          "pivot": [0, 30, 0],
+          "parent": "head",
+          "cubes": [
+            {
+              "origin": [-4.5, 29, -4.5],
+              "size": [9, 6, 9],
+              "uv": [0, 30]
+            },
+            {
+              "origin": [4.5, 27, -2.5],
+              "size": [4, 5, 4],
+              "uv": [31, 55]
+            },
+            {
+              "origin": [-8.5, 27, -2.5],
+              "size": [4, 5, 4],
+              "uv": [31, 55],
+              "mirror": true
+            },
+            {
+              "origin": [-5.5, 29, -9.5],
+              "size": [11, 0, 8],
+              "uv": [0, 46]
+            }
+          ]
+        },
+        {
+          "name": "pipes",
+          "pivot": [0, 28, -0.5],
+          "parent": "hat",
+          "rotation": [-37.5001, 0, 0],
+          "cubes": [
+            {
+              "origin": [-7.5, 19, -0.5],
+              "size": [15, 9, 0],
+              "uv": [0, 55]
+            }
+          ]
+        },
+        {
+          "name": "hat_2",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {
+              "origin": [-4, 24, -4],
+              "size": [8, 8, 8],
+              "uv": [32, 0],
+              "inflate": 1.5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

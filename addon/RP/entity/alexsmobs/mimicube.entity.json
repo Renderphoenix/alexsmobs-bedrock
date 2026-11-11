@@ -1,0 +1,58 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:mimicube",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/mimicube"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.mimicube"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.mimicube.pose",
+        "death_0": "animation.alexsmobs.mimicube.death_0",
+        "death_1": "animation.alexsmobs.mimicube.death_1",
+        "hurt": "animation.alexsmobs.mimicube.hurt",
+        "idle_shake": "animation.alexsmobs.mimicube.idle_shake",
+        "ctrl_idle": "controller.animation.alexsmobs.mimicube.idle",
+        "ctrl_death": "controller.animation.alexsmobs.mimicube.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.mimicube.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.mimicube"
+      ],
+      "spawn_egg": {
+        "base_color": "#8a80c1",
+        "overlay_color": "#5e4f6f"
+      },
+      "enable_attachables": false
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.block.bison_carpet",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        {
+          "name": "block",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-8, 0, -8],
+              "size": [16, 2, 16],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 2],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 2],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 2],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 2],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                },
+                "up": {
+                  "uv": [16, 16],
+                  "uv_size": [-16, -16],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                },
+                "down": {
+                  "uv": [16, 16],
+                  "uv_size": [-16, -16],
+                  "material_instance": "alexsmobs_block_bison_fur"
+                }
+              }
+            },
+            {
+              "origin": [-11, 1.01, -11],
+              "size": [22, 0, 22],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 0],
+                  "material_instance": "alexsmobs_block_bison_carpet"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 0],
+                  "material_instance": "alexsmobs_block_bison_carpet"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 0],
+                  "material_instance": "alexsmobs_block_bison_carpet"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 0],
+                  "material_instance": "alexsmobs_block_bison_carpet"
+                },
+                "up": {
+                  "uv": [11, 11],
+                  "uv_size": [-11, -11],
+                  "material_instance": "alexsmobs_block_bison_carpet"
+                },
+                "down": {
+                  "uv": [11, 11],
+                  "uv_size": [-11, -11],
+                  "material_instance": "alexsmobs_block_bison_carpet"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

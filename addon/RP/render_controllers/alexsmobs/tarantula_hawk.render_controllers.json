@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alexsmobs.tarantula_hawk": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.v0",
+            "Texture.v0",
+            "Texture.v0",
+            "Texture.baby"
+          ]
+        },
+        "geometries": {
+          "Array.geos": [
+            "Geometry.default",
+            "Geometry.baby"
+          ]
+        }
+      },
+      "geometry": "Array.geos[q.is_baby ? 1 : 0]",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[q.is_baby ? 3 : (0)]"
+      ]
+    }
+  }
+}

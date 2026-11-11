@@ -1,0 +1,736 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "alexsmobs:alligator_snapping_turtle": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.alligator_snapping_turtle_idle",
+          "hurt": "alexsmobs.alligator_snapping_turtle_hurt",
+          "death": "alexsmobs.alligator_snapping_turtle_hurt"
+        }
+      },
+      "alexsmobs:anaconda": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.anaconda_hurt",
+          "death": "alexsmobs.anaconda_hurt"
+        }
+      },
+      "alexsmobs:anteater": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.anteater_hurt",
+          "death": "alexsmobs.anteater_hurt"
+        }
+      },
+      "alexsmobs:bald_eagle": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.bald_eagle_idle",
+          "hurt": "alexsmobs.bald_eagle_hurt",
+          "death": "alexsmobs.bald_eagle_hurt"
+        }
+      },
+      "alexsmobs:banana_slug": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.banana_slug_hurt",
+          "death": "alexsmobs.banana_slug_hurt"
+        }
+      },
+      "alexsmobs:bison": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.bison_idle",
+          "hurt": "alexsmobs.bison_hurt",
+          "death": "alexsmobs.bison_hurt"
+        }
+      },
+      "alexsmobs:blue_jay": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.blue_jay_idle",
+          "hurt": "alexsmobs.blue_jay_hurt",
+          "death": "alexsmobs.blue_jay_hurt"
+        }
+      },
+      "alexsmobs:bone_serpent": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.bone_serpent_idle",
+          "hurt": "alexsmobs.bone_serpent_hurt",
+          "death": "alexsmobs.bone_serpent_hurt"
+        }
+      },
+      "alexsmobs:bunfungus": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.bunfungus_idle",
+          "hurt": "alexsmobs.bunfungus_hurt",
+          "death": "alexsmobs.bunfungus_hurt"
+        }
+      },
+      "alexsmobs:cachalot_whale": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.cachalot_whale_idle",
+          "hurt": "alexsmobs.cachalot_whale_hurt",
+          "death": "alexsmobs.cachalot_whale_hurt"
+        }
+      },
+      "alexsmobs:caiman": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.crocodile_baby",
+          "hurt": "alexsmobs.caiman_hurt",
+          "death": "alexsmobs.caiman_hurt"
+        }
+      },
+      "alexsmobs:capuchin_monkey": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.capuchin_monkey_idle",
+          "hurt": "alexsmobs.capuchin_monkey_hurt",
+          "death": "alexsmobs.capuchin_monkey_hurt"
+        }
+      },
+      "alexsmobs:centipede_head": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.centipede_hurt",
+          "death": "alexsmobs.centipede_hurt"
+        }
+      },
+      "alexsmobs:cockroach": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.cockroach_hurt",
+          "death": "alexsmobs.cockroach_hurt"
+        }
+      },
+      "alexsmobs:comb_jelly": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.comb_jelly_hurt",
+          "death": "alexsmobs.comb_jelly_hurt"
+        }
+      },
+      "alexsmobs:cosmaw": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.cosmaw_idle",
+          "hurt": "alexsmobs.cosmaw_hurt",
+          "death": "alexsmobs.cosmaw_hurt"
+        }
+      },
+      "alexsmobs:cosmic_cod": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.cosmic_cod_hurt",
+          "death": "alexsmobs.cosmic_cod_hurt"
+        }
+      },
+      "alexsmobs:crimson_mosquito": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.mosquito_hurt",
+          "death": "alexsmobs.mosquito_die"
+        }
+      },
+      "alexsmobs:crocodile": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.crocodile_baby",
+          "hurt": "alexsmobs.crocodile_hurt",
+          "death": "alexsmobs.crocodile_hurt"
+        }
+      },
+      "alexsmobs:crow": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.crow_idle",
+          "hurt": "alexsmobs.crow_hurt",
+          "death": "alexsmobs.crow_hurt"
+        }
+      },
+      "alexsmobs:devils_hole_pupfish": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.devils_hole_pupfish_hurt",
+          "death": "alexsmobs.devils_hole_pupfish_hurt"
+        }
+      },
+      "alexsmobs:dropbear": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.dropbear_idle",
+          "hurt": "alexsmobs.dropbear_hurt",
+          "death": "alexsmobs.dropbear_hurt"
+        }
+      },
+      "alexsmobs:elephant": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.elephant_idle",
+          "hurt": "alexsmobs.elephant_hurt",
+          "death": "alexsmobs.elephant_die"
+        }
+      },
+      "alexsmobs:emu": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.emu_idle",
+          "hurt": "alexsmobs.emu_hurt",
+          "death": "alexsmobs.emu_hurt"
+        }
+      },
+      "alexsmobs:endergrade": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.endergrade_hurt",
+          "death": "alexsmobs.endergrade_hurt"
+        }
+      },
+      "alexsmobs:enderiophage": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.enderiophage_hurt",
+          "death": "alexsmobs.enderiophage_hurt"
+        }
+      },
+      "alexsmobs:farseer": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.farseer_idle",
+          "hurt": "alexsmobs.farseer_hurt",
+          "death": "alexsmobs.farseer_hurt"
+        }
+      },
+      "alexsmobs:flutter": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.flutter_idle",
+          "hurt": "alexsmobs.flutter_hurt",
+          "death": "alexsmobs.flutter_hurt"
+        }
+      },
+      "alexsmobs:fly": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.fly_idle",
+          "hurt": "alexsmobs.fly_hurt",
+          "death": "alexsmobs.fly_hurt"
+        }
+      },
+      "alexsmobs:froststalker": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.froststalker_idle",
+          "hurt": "alexsmobs.froststalker_hurt",
+          "death": "alexsmobs.froststalker_hurt"
+        }
+      },
+      "alexsmobs:gazelle": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.gazelle_hurt",
+          "death": "alexsmobs.gazelle_hurt"
+        }
+      },
+      "alexsmobs:gelada_monkey": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.gelada_monkey_idle",
+          "hurt": "alexsmobs.gelada_monkey_hurt",
+          "death": "alexsmobs.gelada_monkey_hurt"
+        }
+      },
+      "alexsmobs:giant_squid": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.giant_squid_hurt",
+          "death": "alexsmobs.giant_squid_hurt"
+        }
+      },
+      "alexsmobs:gorilla": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.gorilla_idle",
+          "hurt": "alexsmobs.gorilla_hurt",
+          "death": "alexsmobs.gorilla_hurt"
+        }
+      },
+      "alexsmobs:grizzly_bear": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.grizzly_bear_idle",
+          "hurt": "alexsmobs.grizzly_bear_hurt",
+          "death": "alexsmobs.grizzly_bear_die"
+        }
+      },
+      "alexsmobs:guster": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.guster_idle",
+          "hurt": "alexsmobs.guster_hurt",
+          "death": "alexsmobs.guster_hurt"
+        }
+      },
+      "alexsmobs:hummingbird": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.hummingbird_idle",
+          "hurt": "alexsmobs.hummingbird_hurt",
+          "death": "alexsmobs.hummingbird_hurt"
+        }
+      },
+      "alexsmobs:jerboa": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.jerboa_idle",
+          "hurt": "alexsmobs.jerboa_hurt",
+          "death": "alexsmobs.jerboa_hurt"
+        }
+      },
+      "alexsmobs:kangaroo": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.kangaroo_idle",
+          "death": "alexsmobs.kangaroo_idle"
+        }
+      },
+      "alexsmobs:komodo_dragon": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.komodo_dragon_idle",
+          "hurt": "alexsmobs.komodo_dragon_hurt",
+          "death": "alexsmobs.komodo_dragon_hurt"
+        }
+      },
+      "alexsmobs:laviathan": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.laviathan_idle",
+          "hurt": "alexsmobs.laviathan_hurt",
+          "death": "alexsmobs.laviathan_hurt"
+        }
+      },
+      "alexsmobs:leafcutter_ant": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.leafcutter_ant_queen_hurt",
+          "death": "alexsmobs.leafcutter_ant_queen_hurt"
+        }
+      },
+      "alexsmobs:lobster": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.lobster_hurt",
+          "death": "alexsmobs.lobster_hurt"
+        }
+      },
+      "alexsmobs:maned_wolf": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.maned_wolf_idle",
+          "hurt": "alexsmobs.maned_wolf_hurt",
+          "death": "alexsmobs.maned_wolf_hurt"
+        }
+      },
+      "alexsmobs:mantis_shrimp": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.mantis_shrimp_hurt",
+          "death": "alexsmobs.mantis_shrimp_hurt"
+        }
+      },
+      "alexsmobs:mimic_octopus": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.mimic_octopus_idle",
+          "hurt": "alexsmobs.mimic_octopus_hurt",
+          "death": "alexsmobs.mimic_octopus_hurt"
+        }
+      },
+      "alexsmobs:mimicube": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.mimicube_hurt",
+          "death": "alexsmobs.mimicube_hurt"
+        }
+      },
+      "alexsmobs:moose": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.moose_idle",
+          "hurt": "alexsmobs.moose_hurt",
+          "death": "alexsmobs.moose_hurt"
+        }
+      },
+      "alexsmobs:mudskipper": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.mudskipper_hurt",
+          "death": "alexsmobs.mudskipper_hurt"
+        }
+      },
+      "alexsmobs:mungus": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.mungus_idle",
+          "hurt": "alexsmobs.mungus_hurt",
+          "death": "alexsmobs.mungus_hurt"
+        }
+      },
+      "alexsmobs:murmur": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.murmur_hurt",
+          "death": "alexsmobs.murmur_hurt"
+        }
+      },
+      "alexsmobs:orca": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.orca_idle",
+          "hurt": "alexsmobs.orca_hurt",
+          "death": "alexsmobs.orca_die"
+        }
+      },
+      "alexsmobs:platypus": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.platypus_idle",
+          "hurt": "alexsmobs.platypus_hurt",
+          "death": "alexsmobs.platypus_hurt"
+        }
+      },
+      "alexsmobs:potoo": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.potoo_hurt",
+          "death": "alexsmobs.potoo_hurt"
+        }
+      },
+      "alexsmobs:raccoon": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.raccoon_idle",
+          "hurt": "alexsmobs.raccoon_hurt",
+          "death": "alexsmobs.raccoon_hurt"
+        }
+      },
+      "alexsmobs:rain_frog": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.rain_frog_hurt",
+          "hurt": "alexsmobs.rain_frog_hurt",
+          "death": "alexsmobs.rain_frog_hurt"
+        }
+      },
+      "alexsmobs:rattlesnake": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.rattlesnake_hurt",
+          "death": "alexsmobs.rattlesnake_hurt"
+        }
+      },
+      "alexsmobs:rhinoceros": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.rhinoceros_idle",
+          "hurt": "alexsmobs.rhinoceros_hurt",
+          "death": "alexsmobs.rhinoceros_hurt"
+        }
+      },
+      "alexsmobs:roadrunner": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.roadrunner_meep",
+          "hurt": "alexsmobs.roadrunner_hurt",
+          "death": "alexsmobs.roadrunner_hurt"
+        }
+      },
+      "alexsmobs:rocky_roller": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.rocky_roller_idle",
+          "hurt": "alexsmobs.rocky_roller_hurt",
+          "death": "alexsmobs.rocky_roller_hurt"
+        }
+      },
+      "alexsmobs:sea_bear": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.grizzly_bear_idle",
+          "hurt": "alexsmobs.grizzly_bear_hurt",
+          "death": "alexsmobs.grizzly_bear_die"
+        }
+      },
+      "alexsmobs:seagull": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.seagull_idle",
+          "hurt": "alexsmobs.seagull_hurt",
+          "death": "alexsmobs.seagull_hurt"
+        }
+      },
+      "alexsmobs:seal": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.seal_idle",
+          "hurt": "alexsmobs.seal_hurt",
+          "death": "alexsmobs.seal_hurt"
+        }
+      },
+      "alexsmobs:shoebill": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.shoebill_hurt",
+          "hurt": "alexsmobs.shoebill_hurt",
+          "death": "alexsmobs.shoebill_hurt"
+        }
+      },
+      "alexsmobs:skelewag": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.skelewag_idle",
+          "hurt": "alexsmobs.skelewag_hurt",
+          "death": "alexsmobs.skelewag_hurt"
+        }
+      },
+      "alexsmobs:skreecher": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.skreecher_hurt",
+          "death": "alexsmobs.skreecher_hurt"
+        }
+      },
+      "alexsmobs:skunk": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.skunk_idle",
+          "hurt": "alexsmobs.skunk_hurt",
+          "death": "alexsmobs.skunk_hurt"
+        }
+      },
+      "alexsmobs:snow_leopard": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.snow_leopard_idle",
+          "hurt": "alexsmobs.snow_leopard_hurt",
+          "death": "alexsmobs.snow_leopard_hurt"
+        }
+      },
+      "alexsmobs:soul_vulture": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.soul_vulture_idle",
+          "hurt": "alexsmobs.soul_vulture_hurt",
+          "death": "alexsmobs.soul_vulture_hurt"
+        }
+      },
+      "alexsmobs:spectre": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.spectre_idle",
+          "hurt": "alexsmobs.spectre_hurt",
+          "death": "alexsmobs.spectre_hurt"
+        }
+      },
+      "alexsmobs:straddler": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.straddler_idle",
+          "hurt": "alexsmobs.straddler_hurt",
+          "death": "alexsmobs.straddler_hurt"
+        }
+      },
+      "alexsmobs:sugar_glider": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.sugar_glider_idle",
+          "hurt": "alexsmobs.sugar_glider_hurt",
+          "death": "alexsmobs.sugar_glider_hurt"
+        }
+      },
+      "alexsmobs:sunbird": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.sunbird_idle",
+          "hurt": "alexsmobs.sunbird_hurt",
+          "death": "alexsmobs.sunbird_hurt"
+        }
+      },
+      "alexsmobs:tarantula_hawk": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.tarantula_hawk_hurt",
+          "death": "alexsmobs.tarantula_hawk_hurt"
+        }
+      },
+      "alexsmobs:tasmanian_devil": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.tasmanian_devil_idle",
+          "hurt": "alexsmobs.tasmanian_devil_hurt",
+          "death": "alexsmobs.tasmanian_devil_hurt"
+        }
+      },
+      "alexsmobs:terrapin": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.terrapin_hurt",
+          "death": "alexsmobs.terrapin_hurt"
+        }
+      },
+      "alexsmobs:tiger": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.tiger_angry",
+          "hurt": "alexsmobs.tiger_hurt",
+          "death": "alexsmobs.tiger_hurt"
+        }
+      },
+      "alexsmobs:toucan": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.toucan_idle",
+          "hurt": "alexsmobs.toucan_hurt",
+          "death": "alexsmobs.toucan_hurt"
+        }
+      },
+      "alexsmobs:triops": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "hurt": "alexsmobs.triops_hurt",
+          "death": "alexsmobs.triops_hurt"
+        }
+      },
+      "alexsmobs:tusklin": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.tusklin_idle",
+          "hurt": "alexsmobs.tusklin_hurt",
+          "death": "alexsmobs.tusklin_hurt"
+        }
+      },
+      "alexsmobs:underminer": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.underminer_idle",
+          "hurt": "alexsmobs.underminer_hurt",
+          "death": "alexsmobs.underminer_hurt"
+        }
+      },
+      "alexsmobs:void_worm": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.void_worm_idle",
+          "hurt": "alexsmobs.void_worm_hurt",
+          "death": "alexsmobs.void_worm_hurt"
+        }
+      },
+      "alexsmobs:warped_mosco": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.warped_mosco_idle",
+          "hurt": "alexsmobs.warped_mosco_hurt",
+          "death": "alexsmobs.warped_mosco_hurt"
+        }
+      },
+      "alexsmobs:warped_toad": {
+        "volume": 1,
+        "pitch": [0.9, 1.1],
+        "events": {
+          "ambient": "alexsmobs.warped_toad_idle",
+          "hurt": "alexsmobs.warped_toad_hurt",
+          "death": "alexsmobs.warped_toad_hurt"
+        }
+      }
+    }
+  }
+}

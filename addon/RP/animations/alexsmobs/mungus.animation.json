@@ -1,0 +1,173 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alexsmobs.mungus.pose": {
+      "loop": true,
+      "bones": {
+        "eye": {
+          "position": [0, -1, 0]
+        },
+        "hair": {
+          "rotation": [
+            "((math.cos((v.age * 0.1 + 1) * 57.29578)) * 0.1 - 0.1 + v.lsa * -0.40143) * 57.29578",
+            0,
+            0
+          ]
+        },
+        "nose": {
+          "rotation": [
+            0,
+            0,
+            "((math.cos((v.age * 0.1) * 57.29578)) * 0.1 + ((math.cos((v.ls * 0.7 + 1) * 57.29578)) * 0.12) * v.lsa) * 57.29578"
+          ]
+        },
+        "sack": {
+          "position": [
+            0,
+            0,
+            "4 + (math.min(v.p_swellprogress, 10)) * 0.02 - 4"
+          ],
+          "scale": [
+            "1 + ((math.min(v.p_swellprogress, 10)) * 0.22 + 0.95 + (math.cos((v.age * (0.1 + (math.min(v.p_swellprogress, 10)) * 0.2)) * 57.29578) + 1) * (0.05 + (math.min(v.p_swellprogress, 10)) * 0.02) - 1)",
+            "1 + ((math.min(v.p_swellprogress, 10)) * 0.22 + 0.95 + (math.cos((v.age * (0.1 + (math.min(v.p_swellprogress, 10)) * 0.2)) * 57.29578) + 1) * (0.05 + (math.min(v.p_swellprogress, 10)) * 0.02) - 1)",
+            "1 + ((math.min(v.p_swellprogress, 10)) * 0.22 + 0.95 + (math.cos((v.age * (0.1 + (math.min(v.p_swellprogress, 10)) * 0.2)) * 57.29578) + 1) * (0.05 + (math.min(v.p_swellprogress, 10)) * 0.02) + (math.min(v.p_swellprogress, 10)) * 0.2 - 1)"
+          ]
+        },
+        "leg_right": {
+          "rotation": [
+            "(-(((math.cos((v.ls * 0.7 + 1) * 57.29578)) * 0.66) * v.lsa)) * 57.29578",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "-(((math.sin((v.ls * 0.7) * 57.29578)) * v.lsa) * 0.6 - (v.lsa * 0.6))",
+            0
+          ]
+        },
+        "leg_left": {
+          "rotation": [
+            "(((math.cos((v.ls * 0.7 + 1) * 57.29578)) * 0.66) * v.lsa) * 57.29578",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "-(((math.sin((v.ls * 0.7) * 57.29578)) * v.lsa) * 0.6 - (v.lsa * 0.6))",
+            0
+          ]
+        },
+        "body": {
+          "rotation": [
+            0,
+            0,
+            "(((math.cos((v.ls * 0.7 + 0.5) * 57.29578)) * 0.24) * v.lsa) * 57.29578"
+          ],
+          "position": [
+            0,
+            "-(-(math.abs(((math.sin((v.ls * 0.7) * 57.29578)) * v.lsa) * 1.8)))",
+            0
+          ]
+        }
+      }
+    },
+    "animation.alexsmobs.mungus.death_0": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "leg_left": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [20, 0, 8],
+            "0.45": [55, 0, 25],
+            "0.8": [50, 0, 22]
+          }
+        },
+        "leg_right": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [20, 0, -8],
+            "0.45": [55, 0, -25],
+            "0.8": [50, 0, -22]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-6, 0, 0],
+            "0.45": [4, 0, 6],
+            "0.8": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.mungus.death_1": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "leg_left": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-30, 0, 10],
+            "0.16": [25, 0, 5],
+            "0.24": [-20, 0, 15],
+            "0.32": [20, 0, 10],
+            "0.6": [45, 0, 30],
+            "0.9": [40, 0, 28]
+          }
+        },
+        "leg_right": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-30, 0, -10],
+            "0.16": [25, 0, -5],
+            "0.24": [-20, 0, -15],
+            "0.32": [20, 0, -10],
+            "0.6": [45, 0, -30],
+            "0.9": [40, 0, -28]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-12, 0, -4],
+            "0.2": [6, 0, 6],
+            "0.3": [-6, 0, -3],
+            "0.6": [3, 0, 6],
+            "0.9": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.mungus.hurt": {
+      "animation_length": 0.3,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-5, 0, 4],
+            "0.3": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.mungus.idle_shake": {
+      "animation_length": 0.8,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [0, 0, 10],
+            "0.2": [0, 0, -10],
+            "0.3": [0, 0, 9],
+            "0.4": [0, 0, -9],
+            "0.5": [0, 0, 6],
+            "0.6": [0, 0, -6],
+            "0.7": [0, 0, 3],
+            "0.8": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

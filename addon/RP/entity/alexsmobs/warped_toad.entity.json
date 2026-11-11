@@ -1,0 +1,68 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:warped_toad",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/warped_toad",
+        "glow": "textures/entity/alexsmobs/warped_toad_glow"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.warped_toad"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.warped_toad.pose",
+        "death_0": "animation.alexsmobs.warped_toad.death_0",
+        "death_1": "animation.alexsmobs.warped_toad.death_1",
+        "hurt": "animation.alexsmobs.warped_toad.hurt",
+        "idle_look": "animation.alexsmobs.warped_toad.idle_look",
+        "idle_sniff": "animation.alexsmobs.warped_toad.idle_sniff",
+        "idle_shake": "animation.alexsmobs.warped_toad.idle_shake",
+        "ctrl_idle": "controller.animation.alexsmobs.warped_toad.idle",
+        "ctrl_death": "controller.animation.alexsmobs.warped_toad.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.warped_toad.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_attackprogress = math.clamp((v.p_attackprogress ?? 0) + ((q.is_angry) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_blinkprogress = math.clamp((v.p_blinkprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_sitprogress = math.clamp((v.p_sitprogress ?? 0) + ((q.is_sitting) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_swimprogress = math.clamp((v.p_swimprogress ?? 0) + ((q.is_in_water) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_reboundprogress = math.clamp((v.p_reboundprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_jumpprogress = math.clamp((v.p_jumpprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.warped_toad",
+        "controller.render.alexsmobs.warped_toad.glow"
+      ],
+      "spawn_egg": {
+        "base_color": "#1f968e",
+        "overlay_color": "#feac6d"
+      },
+      "enable_attachables": false
+    }
+  }
+}

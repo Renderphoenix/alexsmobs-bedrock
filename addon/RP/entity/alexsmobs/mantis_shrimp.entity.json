@@ -1,0 +1,66 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:mantis_shrimp",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/mantis_shrimp_0",
+        "v1": "textures/entity/alexsmobs/mantis_shrimp_1",
+        "v2": "textures/entity/alexsmobs/mantis_shrimp_2",
+        "v3": "textures/entity/alexsmobs/mantis_shrimp_3"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.mantis_shrimp"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.mantis_shrimp.pose",
+        "death_0": "animation.alexsmobs.mantis_shrimp.death_0",
+        "death_1": "animation.alexsmobs.mantis_shrimp.death_1",
+        "hurt": "animation.alexsmobs.mantis_shrimp.hurt",
+        "idle_look": "animation.alexsmobs.mantis_shrimp.idle_look",
+        "idle_sniff": "animation.alexsmobs.mantis_shrimp.idle_sniff",
+        "idle_shake": "animation.alexsmobs.mantis_shrimp.idle_shake",
+        "idle_tail": "animation.alexsmobs.mantis_shrimp.idle_tail",
+        "ctrl_idle": "controller.animation.alexsmobs.mantis_shrimp.idle",
+        "ctrl_death": "controller.animation.alexsmobs.mantis_shrimp.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.mantis_shrimp.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_inwaterprogress = math.clamp((v.p_inwaterprogress ?? 0) + ((q.is_in_water) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_punchprogress = math.clamp((v.p_punchprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 2);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.mantis_shrimp"
+      ],
+      "spawn_egg": {
+        "base_color": "#db4858",
+        "overlay_color": "#15991e"
+      },
+      "enable_attachables": false
+    }
+  }
+}

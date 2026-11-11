@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:void_worm_part",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "s0": "textures/entity/alexsmobs/void_worm/void_worm_body",
+        "g0": "textures/entity/alexsmobs/void_worm/void_worm_body_glow",
+        "s1": "textures/entity/alexsmobs/void_worm/void_worm_tail",
+        "g1": "textures/entity/alexsmobs/void_worm/void_worm_tail_glow"
+      },
+      "geometry": {
+        "s0": "geometry.alexsmobs.void_worm_part.s0",
+        "s1": "geometry.alexsmobs.void_worm_part.s1"
+      },
+      "animations": {
+        "sway_s0": "animation.alexsmobs.void_worm_part.sway_s0",
+        "sway_s1": "animation.alexsmobs.void_worm_part.sway_s1"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "sway_s0": "q.property('alexsmobs:seg') == 0"
+          },
+          {
+            "sway_s1": "q.property('alexsmobs:seg') == 1"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.void_worm_part",
+        "controller.render.alexsmobs.void_worm_part.glow"
+      ]
+    }
+  }
+}

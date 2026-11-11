@@ -1,0 +1,92 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "alexsmobs:raccoon",
+      "population_control": "animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_on_block_filter": [
+          "minecraft:grass_block",
+          "minecraft:podzol",
+          "minecraft:dirt",
+          "minecraft:coarse_dirt",
+          "minecraft:sand",
+          "minecraft:red_sand",
+          "minecraft:snow",
+          "minecraft:snow_layer",
+          "minecraft:mud",
+          "minecraft:moss_block",
+          "minecraft:gravel",
+          "minecraft:stone",
+          "minecraft:clay",
+          "minecraft:mycelium",
+          "minecraft:terracotta",
+          "minecraft:grass_path"
+        ],
+        "minecraft:brightness_filter": {
+          "min": 7,
+          "max": 15,
+          "adjust_for_weather": false
+        },
+        "minecraft:weight": {
+          "default": 15
+        },
+        "minecraft:herd": {
+          "min_size": 2,
+          "max_size": 4
+        },
+        "minecraft:density_limit": {
+          "surface": 8
+        },
+        "minecraft:biome_filter": {
+          "any_of": [
+            {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "forest"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "flower_forest"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "roofed"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "birch"
+                }
+              ]
+            },
+            {
+              "all_of": [
+                {
+                  "test": "has_biome_tag",
+                  "operator": "!=",
+                  "value": "savanna"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "value": "plains"
+                }
+              ]
+            },
+            {
+              "test": "has_biome_tag",
+              "value": "taiga"
+            },
+            {
+              "test": "has_biome_tag",
+              "value": "cherry_grove"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

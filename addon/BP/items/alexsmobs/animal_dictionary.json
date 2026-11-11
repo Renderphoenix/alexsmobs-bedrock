@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:animal_dictionary",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_animal_dictionary"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.animal_dictionary"
+      },
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

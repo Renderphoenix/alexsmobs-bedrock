@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alexsmobs.lobster": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v2",
+            "Texture.v3",
+            "Texture.v4",
+            "Texture.v5",
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v2",
+            "Texture.v3",
+            "Texture.v4",
+            "Texture.v5",
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v2",
+            "Texture.v3",
+            "Texture.v4",
+            "Texture.v5"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[math.clamp(q.variant, 0, 5)]"
+      ]
+    }
+  }
+}

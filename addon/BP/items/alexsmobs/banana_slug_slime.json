@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:banana_slug_slime",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_banana_slug_slime"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.banana_slug_slime"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

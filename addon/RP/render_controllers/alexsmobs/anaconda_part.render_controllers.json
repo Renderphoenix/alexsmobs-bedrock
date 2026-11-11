@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alexsmobs.anaconda_part": {
+      "arrays": {
+        "geometries": {
+          "Array.geos": [
+            "Geometry.s0",
+            "Geometry.s1",
+            "Geometry.s2"
+          ]
+        },
+        "textures": {
+          "Array.skins": [
+            "Texture.k0",
+            "Texture.k1"
+          ]
+        }
+      },
+      "geometry": "Array.geos[math.clamp(q.property('alexsmobs:seg'), 0, 2)]",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[math.clamp(q.property('alexsmobs:skin'), 0, 1)]"
+      ]
+    }
+  }
+}

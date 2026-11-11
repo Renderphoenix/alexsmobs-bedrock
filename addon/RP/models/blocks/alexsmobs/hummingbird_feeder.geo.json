@@ -1,0 +1,363 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.block.hummingbird_feeder",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        {
+          "name": "block",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-3, 0, -3],
+              "size": [6, 2, 6],
+              "uv": {
+                "north": {
+                  "uv": [3, 3],
+                  "uv_size": [3, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "east": {
+                  "uv": [0, 3],
+                  "uv_size": [3, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "south": {
+                  "uv": [9, 3],
+                  "uv_size": [3, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "west": {
+                  "uv": [6, 3],
+                  "uv_size": [3, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "up": {
+                  "uv": [3, 0],
+                  "uv_size": [3, 3],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "down": {
+                  "uv": [6, 3],
+                  "uv_size": [3, -3],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                }
+              }
+            },
+            {
+              "origin": [-2, 1.9, -2],
+              "size": [4, 8, 4],
+              "uv": {
+                "north": {
+                  "uv": [2, 6.5],
+                  "uv_size": [2, 4],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "east": {
+                  "uv": [0, 6.5],
+                  "uv_size": [2, 4],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "south": {
+                  "uv": [6, 6.5],
+                  "uv_size": [2, 4],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "west": {
+                  "uv": [4, 6.5],
+                  "uv_size": [2, 4],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "up": {
+                  "uv": [2, 4.5],
+                  "uv_size": [2, 2],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "down": {
+                  "uv": [4, 6.5],
+                  "uv_size": [2, -2],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                }
+              }
+            },
+            {
+              "origin": [-1.5, 9.9, 0],
+              "size": [3, 2, 0],
+              "uv": {
+                "north": {
+                  "uv": [6.5, 4.5],
+                  "uv_size": [1.5, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "east": {
+                  "uv": [6.5, 4.5],
+                  "uv_size": [0, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "south": {
+                  "uv": [6.5, 4.5],
+                  "uv_size": [1.5, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "west": {
+                  "uv": [8, 4.5],
+                  "uv_size": [0, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "up": {
+                  "uv": [6.5, 4.5],
+                  "uv_size": [1.5, 0],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "down": {
+                  "uv": [8, 4.5],
+                  "uv_size": [1.5, 0],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                }
+              },
+              "pivot": [0, 12, 0],
+              "rotation": [0, 45, 0]
+            },
+            {
+              "origin": [0, 9.9, -1.5],
+              "size": [0, 2, 3],
+              "uv": {
+                "north": {
+                  "uv": [10, 6],
+                  "uv_size": [0, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "east": {
+                  "uv": [8.5, 6],
+                  "uv_size": [1.5, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "south": {
+                  "uv": [11.5, 6],
+                  "uv_size": [0, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "west": {
+                  "uv": [8.5, 6],
+                  "uv_size": [1.5, 1],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "up": {
+                  "uv": [10, 4.5],
+                  "uv_size": [0, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "down": {
+                  "uv": [10, 6],
+                  "uv_size": [0, -1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                }
+              },
+              "pivot": [0, 12, 0],
+              "rotation": [0, 45, 0]
+            },
+            {
+              "origin": [2, 9.9, 2],
+              "size": [-4, -8, -4],
+              "uv": {
+                "north": {
+                  "uv": [6, 10.5],
+                  "uv_size": [2, -4],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "east": {
+                  "uv": [4, 10.5],
+                  "uv_size": [2, -4],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "south": {
+                  "uv": [2, 10.5],
+                  "uv_size": [2, -4],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "west": {
+                  "uv": [0, 10.5],
+                  "uv_size": [2, -4],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "up": {
+                  "uv": [6, 6.5],
+                  "uv_size": [-2, -2],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "down": {
+                  "uv": [4, 4.5],
+                  "uv_size": [-2, 2],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                }
+              }
+            },
+            {
+              "origin": [3, 0.5, -1.5],
+              "size": [0, 3, 3],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [1.5, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [1.5, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "up": {
+                  "uv": [0, 1.5],
+                  "uv_size": [0, -1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "down": {
+                  "uv": [0, 1.5],
+                  "uv_size": [0, -1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                }
+              },
+              "pivot": [3, 2, 0],
+              "rotation": [0, 0, -22.5]
+            },
+            {
+              "origin": [-1.5, 0.5, -3],
+              "size": [3, 3, 0],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [1.5, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [1.5, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "up": {
+                  "uv": [0, 1.5],
+                  "uv_size": [0, -1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty",
+                  "uv_rotation": 90
+                },
+                "down": {
+                  "uv": [0, 1.5],
+                  "uv_size": [0, -1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty",
+                  "uv_rotation": 270
+                }
+              },
+              "pivot": [0, 2, -3],
+              "rotation": [-22.5, 0, 0]
+            },
+            {
+              "origin": [-1.5, 0.5, 3],
+              "size": [3, 3, 0],
+              "uv": {
+                "north": {
+                  "uv": [1.5, 0],
+                  "uv_size": [-1.5, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "east": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "south": {
+                  "uv": [1.5, 0],
+                  "uv_size": [-1.5, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "west": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "up": {
+                  "uv": [0, 1.5],
+                  "uv_size": [0, -1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty",
+                  "uv_rotation": 90
+                },
+                "down": {
+                  "uv": [0, 1.5],
+                  "uv_size": [0, -1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty",
+                  "uv_rotation": 270
+                }
+              },
+              "pivot": [0, 2, 3],
+              "rotation": [22.5, 0, 0]
+            },
+            {
+              "origin": [-3, 0.5, -1.5],
+              "size": [0, 3, 3],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "east": {
+                  "uv": [1.5, 0],
+                  "uv_size": [-1.5, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [0, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "west": {
+                  "uv": [1.5, 0],
+                  "uv_size": [-1.5, 1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "up": {
+                  "uv": [0, 1.5],
+                  "uv_size": [0, -1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                },
+                "down": {
+                  "uv": [0, 1.5],
+                  "uv_size": [0, -1.5],
+                  "material_instance": "alexsmobs_block_bird_feeder_empty"
+                }
+              },
+              "pivot": [-3, 2, 0],
+              "rotation": [0, 0, 22.5]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

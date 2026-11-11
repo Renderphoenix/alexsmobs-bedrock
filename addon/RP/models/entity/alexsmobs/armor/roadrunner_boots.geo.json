@@ -1,0 +1,69 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.armor.roadrunner_boots",
+        "texture_width": 64,
+        "texture_height": 32,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [0, 1, 0]
+      },
+      "bones": [
+        {
+          "name": "rightLeg",
+          "pivot": [-1.9, 11, 0],
+          "cubes": [
+            {
+              "origin": [-3.9, -1, -2],
+              "size": [4, 12, 4],
+              "uv": [0, 16],
+              "inflate": 1
+            }
+          ]
+        },
+        {
+          "name": "featherr",
+          "pivot": [-3.4, 1.5, 0.4],
+          "parent": "rightLeg",
+          "rotation": [0, 56, -17.92],
+          "cubes": [
+            {
+              "origin": [-6.4, 1, 0.4],
+              "size": [3, 8, 0],
+              "uv": [20, 22]
+            }
+          ]
+        },
+        {
+          "name": "leftLeg",
+          "pivot": [1.9, 11, 0],
+          "cubes": [
+            {
+              "origin": [-0.1, -1, -2],
+              "size": [4, 12, 4],
+              "uv": [0, 16],
+              "inflate": 1,
+              "mirror": true
+            }
+          ]
+        },
+        {
+          "name": "featherl",
+          "pivot": [3.4, 1.5, -0.4],
+          "parent": "leftLeg",
+          "rotation": [0, -56, 17.92],
+          "cubes": [
+            {
+              "origin": [3.4, 0.9, -0.4],
+              "size": [3, 8, 0],
+              "uv": [20, 22],
+              "mirror": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:guster_eye",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_guster_eye"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.guster_eye"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

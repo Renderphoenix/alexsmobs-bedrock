@@ -1,134 +1,66 @@
-# Alex's Mobs — Bedrock Edition Addon
+# Alex's Mobs 2 — Bedrock Edition
 
-A comprehensive Minecraft Bedrock Edition port of the beloved Java mod **Alex's Mobs** by **Alexthe668**, **Carro1001**, and **Paint_Ninja**.
+A brand-new Bedrock port of **Alex's Mobs** by **Alexthe668**, **Carro1001** and **Paint_Ninja**.
+Instead of rebuilding each creature by hand, this port is **converted straight from the Java mod**: a converter
+reads the mod's compiled model code, so every model, texture mapping and Java animation is the original one.
 
-This addon brings an incredible variety of aesthetic, authentic, engaging, and unique creatures to Minecraft Bedrock Edition, complete with custom animations, models, sounds, loot tables, and realistic behaviors.
+## What's inside (v2.0.0)
 
----
+- **90 creatures** with their exact Java models (bones, cubes, UVs) and textures, including variants
+  (lobster colours, capuchin coats, white tigers, albino cachalots, terrapin patterns, …) and glowing eye layers.
+- **Java animations**: walk/swim/fly cycles, look-at, sitting, standing, sleeping and flying poses are compiled from
+  the mod's `setupAnim` code; attack animations (maul, swipes, kicks, punches, lunges, gores, …) are the mod's own
+  keyframes, played when the creature hits something.
+- **New Bedrock animations**: two random death animations per creature, hurt flinches, and idle actions
+  (looking around, sniffing, shaking off, wing stretches, tail swishes, plus the mod's own idles like the elephant
+  trumpet, gorilla chest pound and gazelle ear flick).
+- **Multipart creatures**: anacondas, bone serpents, cave centipedes and void worms are real segment chains that follow
+  the head and pass damage to it; the murmur keeps its floating head.
+- **Behaviour from the mod**: health, speed, damage, armour, follow range, predators and prey (from the mod's target
+  tags), breeding/taming/tempt foods (from the mod's item tags), babies, swimming/amphibious/flying/hovering/lava
+  movement, sleep schedules (nocturnal mobs sleep by day), angry textures.
+- **Spawning from the mod's defaults**: biome rules, spawn weights and group sizes come from Alex's Mobs' own config.
+- **137 items** (foods, materials, buckets that place creatures, armour with its custom 3D models, weapons) and
+  **32 blocks** (purpur planks set, bison fur, banana slug slime, rainbow glass, eggs that hatch, …).
+- **571 original sounds** and **17 languages** taken from the mod's translations.
 
-## Features
+No experimental toggles are needed (stable Script API 2.4.0, achievement-friendly).
 
-- **80+ Authentic Mobs**:
-  - **Overworld Fauna**: Grizzly Bears, Gorillas, Capuchin Monkeys, Elephants, Rhinoceroses, Tigers, Kangaroos, Emus, Moose, Raccoons, Skunks, Tasmanian Devils, Anteaters, and more.
-  - **Birds & Flying Creatures**: Bald Eagles, Blue Jays, Toucans, Hummingbirds, Shoebills, Sunbirds, Crows, Potoos, and Flies.
-  - **Reptiles & Amphibians**: Crocodiles, Alligator Snapping Turtles, Caimans, Rattlesnakes, Komodo Dragons, Anacondas, Terrapins, Mudskippers, and Rain Frogs.
-  - **Aquatic & Marine Life**: Orcas, Cachalot Whales, Giant Squids, Hammerhead Sharks, Frilled Sharks, Seals, Platypuses, Mantis Shrimps, Lobsters, Comb Jelly, Flying Fish, and Catfish.
-  - **Nether & End Inhabitants**: Crimson Mosquitoes, Warped Toads, Straddlers, Stradpoles, Soul Vultures, Laviathans, Endergrades, and Enderiophages.
-  - **Underground & Fantasy**: Cave Centipedes, Rocky Rollers, Underminers, Skreechers, Murmurs, and Farseers.
-- **Natural Ecosystems & Biome Spawns**: Mobs spawn organically in their native biomes (savannas, jungles, deserts, oceans, swamps, nether forests, caves, and mountains).
-- **Custom Items & Blocks**: Custom food items, drops, materials, weapons, attachables, and utility blocks.
-- **Accurate Mob Behaviors & Diets**: Feeding, taming, breeding, and predator-prey dynamics tailored to match the original Java design.
+## Install
 
----
+- Double-click `dist/alexsmobs2-v2.0.0.mcaddon` (after building), or run `update.bat` to copy `addon/BP` and
+  `addon/RP` into Minecraft's development pack folders, then enable **Alex's Mobs 2** (BP + RP) on a world.
+- Do not enable the old 1.2.x Alex's Mobs packs on the same world: both use the `alexsmobs:` identifiers.
 
-## Useful Commands & Functions
+Commands (cheats on): `/function alexsmobs/summon_all`, `/function alexsmobs/give_items`,
+`/function alexsmobs/kill_all`, `/function alexsmobs/help`.
 
-Use these built-in functions in-game (cheats must be enabled):
+## Building from the Java mod
 
-- **Get all custom items** (326 items):
-  ```
-  /function give_all_items
-  ```
-- **Get all custom blocks** (148 blocks):
-  ```
-  /function give_all_blocks
-  ```
-- **Summon all authentic creatures** (89 mobs):
-  ```
-  /function summon_all_mobs
-  ```
-- **Command help**:
-  ```
-  /function help
-  ```
-- **Confirm scripts are working**:
-  - Run function command:
-    ```
-    /function test_scripts
-    ```
-  - Or run native script event:
-    ```
-    /scriptevent alexsmobs:test
-    ```
-  - Or type directly in chat:
-    ```
-    !test
-    ```
-
-
----
-
-## Repository Structure
+Needs node and a JDK (for `javap`). The jar is read from `../forge neoforge/alexsmobs-1.22.9.jar`
+(or `AM_JAR`).
 
 ```
-alexsmobs/
-├── BP/                                # Behavior Pack
-│   ├── blocks/                        # Custom block definitions
-│   ├── entities/                      # Entity behaviors, components & events
-│   ├── functions/                     # Custom in-game mcfunction files
-│   ├── items/                         # Custom item behaviors
-│   ├── loot_tables/                   # Entity & block loot drop tables
-│   ├── recipes/                       # Crafting & smelting recipes
-│   ├── spawn_rules/                   # Natural biome spawning rules
-│   └── manifest.json                  # BP metadata and dependencies
-│
-├── RP/                                # Resource Pack
-│   ├── animations/                    # Skeletal mob animation files
-│   ├── animation_controllers/         # State machines for animations
-│   ├── attachables/                   # 3D handheld and worn item attachables
-│   ├── entity/                        # Client-side render definitions & spawn eggs
-│   ├── models/                        # Bedrock geometry models (entity & blocks)
-│   ├── render_controllers/            # Render controllers for materials & textures
-│   ├── texts/                         # Localization & display names
-│   ├── textures/                      # Mob, item, and block textures
-│   └── manifest.json                  # RP metadata
-│
-├── update.bat                         # Automatic sync script for Bedrock dev packs
-└── README.md
+.\build.ps1            # convert, validate, package dist\alexsmobs2-v<version>.mcaddon
+.\build.ps1 -Sync      # ...and copy into the development pack folders
 ```
 
----
+See `CLAUDE.md` for how the converter works and `.claude/skills/java-to-bedrock-converter/SKILL.md` for the
+step-by-step porting workflow.
 
-## Installation & Development Setup
+## Repository
 
-### Quick Setup with update.bat
+```
+addon/BP, addon/RP     generated packs (do not hand-edit)
+tools/converter/       Java jar -> Bedrock converter (node)
+tools/preview/         offline model/animation renderer for checks
+legacy/v1/             the previous hand-made port (1.2.x), kept for reference
+renders/               trailer renders and subtitles
+```
 
-To sync the latest Behavior Pack and Resource Pack directly into your Minecraft Bedrock development folders:
+## Credits & licensing
 
-1. Simply run `update.bat` (double-click or run from command prompt):
-   ```cmd
-   update.bat
-   ```
-2. The script copies `BP` and `RP` into:
-   - `development_behavior_packs\AlexsMobs_BP`
-   - `development_resource_packs\AlexsMobs_RP`
-3. Launch Minecraft Bedrock Edition, create or edit a world, and activate **Alex's Mobs** in both Resource Packs and Behavior Packs.
-
-### Manual Installation
-
-1. Copy the **`BP`** folder into your `development_behavior_packs` directory.
-2. Copy the **`RP`** folder into your `development_resource_packs` directory.
-3. Open Minecraft Bedrock Edition and activate the packs on your world.
-
-### Important: Enable Experimental Features
-
-In your world settings, make sure to enable:
-- *Holiday Creator Features*
-- *Custom Biomes*
-- *Upcoming Creator Features*
-- *Molang Features*
-
----
-
-## Credits & Licensing
-
-- **Original Mod Authors**:
-  - **Alexthe668** (Lead Developer & Creator)
-  - **Carro1001** (Contributor)
-  - **Paint_Ninja** (Contributor)
-- **Original Java Mod**: [Alex's Mobs on GitHub](https://github.com/AlexModGuy/AlexsMobs) | [CurseForge Page](https://www.curseforge.com/minecraft/mc-mods/alexs-mobs)
-- **License**: This project is licensed under the **GNU Lesser General Public License v3.0 (LGPL-3.0)** in accordance with the original mod license.
-
----
-
-*Enjoy the wild adventures with Alex's Mobs on Bedrock!*
+- Original mod: **Alexthe668**, **Carro1001**, **Paint_Ninja** —
+  [GitHub](https://github.com/AlexModGuy/AlexsMobs) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/alexs-mobs)
+- Bedrock port: Renderphoenix & devsuki. Models, textures, sounds and translations belong to the original authors;
+  see `LICENSE`.

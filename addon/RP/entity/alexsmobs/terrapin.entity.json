@@ -1,0 +1,69 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:terrapin",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/terrapin/terrapin_green",
+        "v1": "textures/entity/alexsmobs/terrapin/terrapin_brown",
+        "v2": "textures/entity/alexsmobs/terrapin/terrapin_black",
+        "v3": "textures/entity/alexsmobs/terrapin/terrapin_red_eared",
+        "v4": "textures/entity/alexsmobs/terrapin/terrapin_painted",
+        "v5": "textures/entity/alexsmobs/terrapin/terrapin_koopa"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.terrapin"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.terrapin.pose",
+        "death_0": "animation.alexsmobs.terrapin.death_0",
+        "death_1": "animation.alexsmobs.terrapin.death_1",
+        "hurt": "animation.alexsmobs.terrapin.hurt",
+        "idle_look": "animation.alexsmobs.terrapin.idle_look",
+        "idle_sniff": "animation.alexsmobs.terrapin.idle_sniff",
+        "idle_shake": "animation.alexsmobs.terrapin.idle_shake",
+        "idle_tail": "animation.alexsmobs.terrapin.idle_tail",
+        "ctrl_idle": "controller.animation.alexsmobs.terrapin.idle",
+        "ctrl_death": "controller.animation.alexsmobs.terrapin.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.terrapin.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_spinprogress = math.clamp((v.p_spinprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_retreatprogress = math.clamp((v.p_retreatprogress ?? 0) + ((v.am_eating) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_swimprogress = math.clamp((v.p_swimprogress ?? 0) + ((q.is_in_water) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.terrapin"
+      ],
+      "spawn_egg": {
+        "base_color": "#6e6e30",
+        "overlay_color": "#929647"
+      },
+      "enable_attachables": false
+    }
+  }
+}

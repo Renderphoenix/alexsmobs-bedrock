@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:dimensional_carver",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_dimensional_carver"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.dimensional_carver"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 20
+      }
+    }
+  }
+}

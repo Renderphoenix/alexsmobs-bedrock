@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.anaconda_part.s0",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [0, 0.5, 0]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [0, 3, 0]
+        },
+        {
+          "name": "part",
+          "pivot": [0, 3, 0],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [-3, 0, -8],
+              "size": [6, 6, 16],
+              "uv": [33, 32]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alexsmobs.murmur_head.pose": {
+      "loop": true,
+      "bones": {
+        "backHair": {
+          "rotation": [
+            "(((v.age <= 5) ? 0 : 3.03687) + (math.cos((v.age * 0.05) * 57.29578)) * 0.05 - 0.05 + ((v.p_angerprogress + (v.p_angerprogress - v.p_angerprogress) * (v.age - v.age)) * 0.2) * -0.34907) * 57.29578",
+            0,
+            "(((v.age <= 5) ? 0 : -3.14159)) * 57.29578"
+          ]
+        },
+        "rightHair": {
+          "rotation": [
+            "(((v.age <= 5) ? 0 : 3.03687) + ((v.p_angerprogress + (v.p_angerprogress - v.p_angerprogress) * (v.age - v.age)) * 0.2) * -0.17453) * 57.29578",
+            0,
+            "(((v.age <= 5) ? 0 : -3.14159) + (math.cos((v.age * 0.05 + 1) * 57.29578)) * 0.05 + 0.05 + ((v.p_angerprogress + (v.p_angerprogress - v.p_angerprogress) * (v.age - v.age)) * 0.2) * 0.43633) * 57.29578"
+          ]
+        },
+        "leftHair": {
+          "rotation": [
+            "(((v.age <= 5) ? 0 : 3.03687) + ((v.p_angerprogress + (v.p_angerprogress - v.p_angerprogress) * (v.age - v.age)) * 0.2) * -0.17453) * 57.29578",
+            0,
+            "(((v.age <= 5) ? 0 : -3.14159) + -((math.cos((v.age * 0.05 + 1) * 57.29578)) * 0.05 + 0.05) + ((v.p_angerprogress + (v.p_angerprogress - v.p_angerprogress) * (v.age - v.age)) * 0.2) * -0.43633) * 57.29578"
+          ]
+        },
+        "head": {
+          "rotation": [
+            "(v.pitch * 0.01745) * 57.29578",
+            "(v.yaw * 0.01745) * 57.29578",
+            0
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alexsmobs.void_worm_part": {
+      "arrays": {
+        "geometries": {
+          "Array.geos": [
+            "Geometry.s0",
+            "Geometry.s1"
+          ]
+        },
+        "textures": {
+          "Array.skins": [
+            "Texture.s0",
+            "Texture.s1"
+          ]
+        }
+      },
+      "geometry": "Array.geos[math.clamp(q.property('alexsmobs:seg'), 0, 1)]",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[math.clamp(q.property('alexsmobs:seg'), 0, 1)]"
+      ]
+    },
+    "controller.render.alexsmobs.void_worm_part.glow": {
+      "arrays": {
+        "geometries": {
+          "Array.geos": [
+            "Geometry.s0",
+            "Geometry.s1"
+          ]
+        },
+        "textures": {
+          "Array.glow": [
+            "Texture.g0",
+            "Texture.g1"
+          ]
+        }
+      },
+      "geometry": "Array.geos[math.clamp(q.property('alexsmobs:seg'), 0, 1)]",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Array.glow[math.clamp(q.property('alexsmobs:seg'), 0, 1)]"
+      ],
+      "ignore_lighting": true
+    }
+  }
+}

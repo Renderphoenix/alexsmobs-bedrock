@@ -1,0 +1,198 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alexsmobs.devils_hole_pupfish.pose": {
+      "loop": true,
+      "bones": {
+        "dorsal_fin": {
+          "rotation": [
+            "(v.lsa * -0.34907) * 57.29578",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "-(v.lsa * 0.5)",
+            0
+          ]
+        },
+        "bottom_fin": {
+          "rotation": [
+            "(v.lsa * 0.17453) * 57.29578",
+            0,
+            0
+          ],
+          "position": [
+            0,
+            "-(v.lsa * -0.5)",
+            "v.lsa * -0.5"
+          ]
+        },
+        "body": {
+          "rotation": [
+            "(v.pitch * 0.01745 + ((((v.p_feedprogress + (v.p_feedprogress - v.p_feedprogress) * (v.age - v.age)) * (math.cos((v.age * 0.3) * 57.29578))) * 0.2) * 3.14159) * 0.1) * 57.29578",
+            "((math.cos((v.age * 0.3 + 1) * 57.29578)) * 0.05 + ((math.cos((v.ls + 1) * 57.29578)) * 0.15) * v.lsa) * 57.29578",
+            "(((v.p_onlandprogress + (v.p_onlandprogress - v.p_onlandprogress) * (v.age - v.age)) * 0.2) * 1.5708) * 57.29578"
+          ],
+          "position": [
+            0,
+            "-((math.sin((v.age * 0.3) * 57.29578)) * 0.5 - 0.5)",
+            "(v.p_feedprogress + (v.p_feedprogress - v.p_feedprogress) * (v.age - v.age)) * (math.abs(math.sin((v.age * 0.3) * 57.29578)))"
+          ]
+        },
+        "tail": {
+          "rotation": [
+            0,
+            "((math.cos((v.age * 0.3 - 1) * 57.29578)) * 0.15 + ((math.cos(v.ls * 57.29578)) * 0.5) * v.lsa) * 57.29578",
+            0
+          ]
+        },
+        "left_fin": {
+          "rotation": [
+            0,
+            "(((math.cos((v.ls + 3) * 57.29578)) * 0.5) * v.lsa + 0.6 * v.lsa) * 57.29578",
+            0
+          ]
+        },
+        "right_fin": {
+          "rotation": [
+            0,
+            "(-(((math.cos((v.ls + 3) * 57.29578)) * 0.5) * v.lsa + 0.6 * v.lsa)) * 57.29578",
+            0
+          ]
+        }
+      }
+    },
+    "animation.alexsmobs.devils_hole_pupfish.death_0": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-10, 15, 0],
+            "0.45": [20, -5, 0],
+            "0.8": [18, -4, 0]
+          }
+        },
+        "bottom_fin": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, 30],
+            "0.45": [0, 0, -20],
+            "0.8": [0, 0, -10]
+          }
+        },
+        "dorsal_fin": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, 30],
+            "0.45": [0, 0, -20],
+            "0.8": [0, 0, -10]
+          }
+        },
+        "left_fin": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, 30],
+            "0.45": [0, 0, -20],
+            "0.8": [0, 0, -10]
+          }
+        },
+        "right_fin": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, -30],
+            "0.45": [0, 0, 20],
+            "0.8": [0, 0, 10]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [-6, 0, 0],
+            "0.45": [4, 0, 6],
+            "0.8": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.devils_hole_pupfish.death_1": {
+      "animation_length": 1,
+      "hold_on_last_frame": true,
+      "bones": {
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-20, 25, 0],
+            "0.2": [-10, -25, 0],
+            "0.3": [-15, 20, 0],
+            "0.6": [20, 0, 0],
+            "0.9": [18, 0, 0]
+          }
+        },
+        "bottom_fin": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, 30],
+            "0.45": [0, 0, -20],
+            "0.8": [0, 0, -10]
+          }
+        },
+        "dorsal_fin": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, 30],
+            "0.45": [0, 0, -20],
+            "0.8": [0, 0, -10]
+          }
+        },
+        "left_fin": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, 30],
+            "0.45": [0, 0, -20],
+            "0.8": [0, 0, -10]
+          }
+        },
+        "right_fin": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.15": [0, 0, -30],
+            "0.45": [0, 0, 20],
+            "0.8": [0, 0, 10]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-12, 0, -4],
+            "0.2": [6, 0, 6],
+            "0.3": [-6, 0, -3],
+            "0.6": [3, 0, 6],
+            "0.9": [3, 0, 5]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.devils_hole_pupfish.hurt": {
+      "animation_length": 0.3,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.08": [-5, 0, 4],
+            "0.3": [0, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.1": [-25, 0, 0],
+            "0.3": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

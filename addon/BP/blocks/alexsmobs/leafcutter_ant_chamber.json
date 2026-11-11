@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:leafcutter_ant_chamber",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_leafcutter_ant_chamber",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.6
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 1.7999999999999998
+      },
+      "minecraft:display_name": "tile.alexsmobs:leafcutter_ant_chamber.name"
+    }
+  }
+}

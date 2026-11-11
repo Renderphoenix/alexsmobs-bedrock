@@ -1,0 +1,128 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.alexsmobs.skunk.idle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [
+            "v.idle_t = 0;",
+            "v.idle_wait = math.random(4, 12);",
+            "v.idle_pick = math.random_integer(0, 3);"
+          ],
+          "transitions": [
+            {
+              "act_0": "v.idle_t > v.idle_wait && v.idle_pick == 0 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+            },
+            {
+              "act_1": "v.idle_t > v.idle_wait && v.idle_pick == 1 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+            },
+            {
+              "act_2": "v.idle_t > v.idle_wait && v.idle_pick == 2 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+            },
+            {
+              "act_3": "v.idle_t > v.idle_wait && v.idle_pick == 3 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+            }
+          ]
+        },
+        "act_0": {
+          "animations": [
+            "idle_look"
+          ],
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+            }
+          ],
+          "blend_transition": 0.3
+        },
+        "act_1": {
+          "animations": [
+            "idle_sniff"
+          ],
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+            }
+          ],
+          "blend_transition": 0.3
+        },
+        "act_2": {
+          "animations": [
+            "idle_shake"
+          ],
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+            }
+          ],
+          "blend_transition": 0.3
+        },
+        "act_3": {
+          "animations": [
+            "idle_tail"
+          ],
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+            }
+          ],
+          "blend_transition": 0.3
+        }
+      }
+    },
+    "controller.animation.alexsmobs.skunk.death": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [
+            "v.death_pick = math.random_integer(0, 1);"
+          ],
+          "transitions": [
+            {
+              "dead_0": "!q.is_alive && v.death_pick == 0"
+            },
+            {
+              "dead_1": "!q.is_alive && v.death_pick == 1"
+            }
+          ]
+        },
+        "dead_0": {
+          "animations": [
+            "death_0"
+          ],
+          "blend_transition": 0.1
+        },
+        "dead_1": {
+          "animations": [
+            "death_1"
+          ],
+          "blend_transition": 0.1
+        }
+      }
+    },
+    "controller.animation.alexsmobs.skunk.hurt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "hurt": "q.hurt_time > 0 && q.is_alive"
+            }
+          ]
+        },
+        "hurt": {
+          "animations": [
+            "hurt"
+          ],
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ],
+          "blend_transition": 0.05
+        }
+      }
+    }
+  }
+}

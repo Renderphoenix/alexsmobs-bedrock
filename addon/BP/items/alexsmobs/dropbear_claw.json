@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:dropbear_claw",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_dropbear_claw"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.dropbear_claw"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

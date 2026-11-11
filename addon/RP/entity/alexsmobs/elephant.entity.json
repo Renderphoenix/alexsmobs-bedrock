@@ -1,0 +1,74 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:elephant",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/elephant/elephant",
+        "overlay": "textures/entity/alexsmobs/elephant/elephant_tusks"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.elephant"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.elephant.pose",
+        "trumpet_0": "animation.alexsmobs.elephant.trumpet_0",
+        "trumpet_1": "animation.alexsmobs.elephant.trumpet_1",
+        "charge_prepare": "animation.alexsmobs.elephant.charge_prepare",
+        "stomp": "animation.alexsmobs.elephant.stomp",
+        "fling": "animation.alexsmobs.elephant.fling",
+        "eat": "animation.alexsmobs.elephant.eat",
+        "breakleaves": "animation.alexsmobs.elephant.breakleaves",
+        "death_0": "animation.alexsmobs.elephant.death_0",
+        "death_1": "animation.alexsmobs.elephant.death_1",
+        "hurt": "animation.alexsmobs.elephant.hurt",
+        "idle_look": "animation.alexsmobs.elephant.idle_look",
+        "idle_sniff": "animation.alexsmobs.elephant.idle_sniff",
+        "idle_shake": "animation.alexsmobs.elephant.idle_shake",
+        "idle_tail": "animation.alexsmobs.elephant.idle_tail",
+        "ctrl_attack": "controller.animation.alexsmobs.elephant.attack",
+        "ctrl_idle": "controller.animation.alexsmobs.elephant.idle",
+        "ctrl_death": "controller.animation.alexsmobs.elephant.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.elephant.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_sitprogress = math.clamp((v.p_sitprogress ?? 0) + ((q.is_sitting) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_standprogress = math.clamp((v.p_standprogress ?? 0) + ((v.am_standing) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_attack",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.elephant",
+        "controller.render.alexsmobs.elephant.overlay"
+      ],
+      "spawn_egg": {
+        "base_color": "#8d8987",
+        "overlay_color": "#ede5d1"
+      },
+      "enable_attachables": false
+    }
+  }
+}

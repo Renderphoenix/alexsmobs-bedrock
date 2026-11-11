@@ -1,0 +1,68 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "alexsmobs:mantis_shrimp",
+      "population_control": "water_animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_underwater": {},
+        "minecraft:height_filter": {
+          "min": 30,
+          "max": 64
+        },
+        "minecraft:distance_filter": {
+          "min": 12,
+          "max": 32
+        },
+        "minecraft:weight": {
+          "default": 23
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 4
+        },
+        "minecraft:density_limit": {
+          "underwater": 8
+        },
+        "minecraft:biome_filter": {
+          "any_of": [
+            {
+              "all_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                },
+                {
+                  "any_of": [
+                    {
+                      "test": "has_biome_tag",
+                      "value": "desert"
+                    },
+                    {
+                      "test": "has_biome_tag",
+                      "value": "mesa"
+                    },
+                    {
+                      "test": "has_biome_tag",
+                      "value": "savanna"
+                    },
+                    {
+                      "test": "has_biome_tag",
+                      "value": "jungle"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "test": "has_biome_tag",
+              "value": "mangrove_swamp"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

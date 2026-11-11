@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:skelewag_sword",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_skelewag_sword"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.skelewag_sword"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 430
+      },
+      "minecraft:damage": 7,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

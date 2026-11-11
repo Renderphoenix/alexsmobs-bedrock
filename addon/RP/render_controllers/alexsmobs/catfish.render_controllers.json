@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alexsmobs.catfish": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v2",
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v2",
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v2"
+          ]
+        },
+        "geometries": {
+          "Array.geos": [
+            "Geometry.default",
+            "Geometry.v1",
+            "Geometry.v2"
+          ]
+        }
+      },
+      "geometry": "Array.geos[math.clamp(q.variant, 0, 2)]",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[math.clamp(q.variant, 0, 2)]"
+      ]
+    }
+  }
+}

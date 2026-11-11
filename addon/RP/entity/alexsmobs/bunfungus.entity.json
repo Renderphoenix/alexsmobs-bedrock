@@ -1,0 +1,71 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:bunfungus",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/bunfungus",
+        "sleep0": "textures/entity/alexsmobs/bunfungus_sleeping"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.bunfungus"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.bunfungus.pose",
+        "eat": "animation.alexsmobs.bunfungus.eat",
+        "belly": "animation.alexsmobs.bunfungus.belly",
+        "slam": "animation.alexsmobs.bunfungus.slam",
+        "death_0": "animation.alexsmobs.bunfungus.death_0",
+        "death_1": "animation.alexsmobs.bunfungus.death_1",
+        "hurt": "animation.alexsmobs.bunfungus.hurt",
+        "idle_look": "animation.alexsmobs.bunfungus.idle_look",
+        "idle_sniff": "animation.alexsmobs.bunfungus.idle_sniff",
+        "idle_shake": "animation.alexsmobs.bunfungus.idle_shake",
+        "idle_tail": "animation.alexsmobs.bunfungus.idle_tail",
+        "ctrl_attack": "controller.animation.alexsmobs.bunfungus.attack",
+        "ctrl_idle": "controller.animation.alexsmobs.bunfungus.idle",
+        "ctrl_death": "controller.animation.alexsmobs.bunfungus.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.bunfungus.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = q.property('alexsmobs:sleeping');",
+          "v.am_standing = 0;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_sleepprogress = math.clamp((v.p_sleepprogress ?? 0) + ((v.am_sleeping) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_reboundprogress = math.clamp((v.p_reboundprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_jumpprogress = math.clamp((v.p_jumpprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_interestedprogress = math.clamp((v.p_interestedprogress ?? 0) + ((v.am_sleeping) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_attack",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.bunfungus"
+      ],
+      "spawn_egg": {
+        "base_color": "#6f6d91",
+        "overlay_color": "#c92b29"
+      },
+      "enable_attachables": false
+    }
+  }
+}

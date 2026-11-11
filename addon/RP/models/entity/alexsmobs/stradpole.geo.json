@@ -1,0 +1,72 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.stradpole",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 5,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [0, 0.5, 0]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "body",
+          "pivot": [0, 4, 0],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [-4, 0, -4],
+              "size": [8, 8, 8],
+              "uv": [0, 0]
+            }
+          ]
+        },
+        {
+          "name": "hair_left",
+          "pivot": [4, 8, 0],
+          "parent": "body",
+          "rotation": [0, 0, 65.0021],
+          "cubes": [
+            {
+              "origin": [4, 8, -3],
+              "size": [9, 0, 8],
+              "uv": [0, 17]
+            }
+          ]
+        },
+        {
+          "name": "hair_right",
+          "pivot": [-4, 8, 0],
+          "parent": "body",
+          "rotation": [0, 0, -65.0021],
+          "cubes": [
+            {
+              "origin": [-13, 8, -3],
+              "size": [9, 0, 8],
+              "uv": [0, 17],
+              "mirror": true
+            }
+          ]
+        },
+        {
+          "name": "tail",
+          "pivot": [0, 4, 4],
+          "parent": "body",
+          "cubes": [
+            {
+              "origin": [0, 0, 4],
+              "size": [0, 8, 14],
+              "uv": [24, 24]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

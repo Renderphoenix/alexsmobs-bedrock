@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:straddle_saddle",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_straddle_saddle"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.straddle_saddle"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:fire_resistant": {
+        "value": true
+      }
+    }
+  }
+}

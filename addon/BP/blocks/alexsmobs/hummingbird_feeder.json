@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:hummingbird_feeder",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.alexsmobs.block.hummingbird_feeder",
+      "minecraft:selection_box": {
+        "origin": [-3, 0, -3],
+        "size": [6, 11.9, 6]
+      },
+      "minecraft:collision_box": {
+        "origin": [-3, 0, -3],
+        "size": [6, 11.9, 6]
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_bird_feeder_empty",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_bird_feeder_empty": {
+          "texture": "alexsmobs_block_bird_feeder_empty",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3
+      },
+      "minecraft:display_name": "tile.alexsmobs:hummingbird_feeder.name"
+    }
+  }
+}

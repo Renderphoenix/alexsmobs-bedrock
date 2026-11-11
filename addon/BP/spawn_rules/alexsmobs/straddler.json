@@ -1,0 +1,37 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "alexsmobs:straddler",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_lava": {},
+        "minecraft:weight": {
+          "default": 42
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 3
+        },
+        "minecraft:density_limit": {
+          "surface": 6
+        },
+        "minecraft:biome_filter": {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "mooshroom_island"
+            },
+            {
+              "test": "has_biome_tag",
+              "value": "basalt_deltas"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

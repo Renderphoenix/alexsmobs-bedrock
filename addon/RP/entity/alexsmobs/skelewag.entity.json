@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:skelewag",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/skelewag_0",
+        "v1": "textures/entity/alexsmobs/skelewag_1"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.skelewag"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.skelewag.pose",
+        "stab": "animation.alexsmobs.skelewag.stab",
+        "slash": "animation.alexsmobs.skelewag.slash",
+        "death_0": "animation.alexsmobs.skelewag.death_0",
+        "death_1": "animation.alexsmobs.skelewag.death_1",
+        "hurt": "animation.alexsmobs.skelewag.hurt",
+        "idle_look": "animation.alexsmobs.skelewag.idle_look",
+        "idle_sniff": "animation.alexsmobs.skelewag.idle_sniff",
+        "ctrl_attack": "controller.animation.alexsmobs.skelewag.attack",
+        "ctrl_idle": "controller.animation.alexsmobs.skelewag.idle",
+        "ctrl_death": "controller.animation.alexsmobs.skelewag.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.skelewag.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_onlandprogress = math.clamp((v.p_onlandprogress ?? 0) + ((q.is_on_ground) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_attack",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.skelewag"
+      ],
+      "spawn_egg": {
+        "base_color": "#d9fcb1",
+        "overlay_color": "#3a4f30"
+      },
+      "enable_attachables": false
+    }
+  }
+}

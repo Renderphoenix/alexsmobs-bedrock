@@ -1,0 +1,87 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.void_worm_part.s1",
+        "texture_width": 256,
+        "texture_height": 256,
+        "visible_bounds_width": 6,
+        "visible_bounds_height": 6,
+        "visible_bounds_offset": [0, 2.5, 0]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "body",
+          "pivot": [0, 19, -16],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [-8, 0, -16],
+              "size": [16, 38, 35],
+              "uv": [0, 0]
+            }
+          ]
+        },
+        {
+          "name": "frillstop_left",
+          "pivot": [8, 38, 0],
+          "parent": "body",
+          "rotation": [0, 0, 45.0001],
+          "cubes": [
+            {
+              "origin": [8, 38, -16],
+              "size": [0, 14, 38],
+              "uv": [65, 36]
+            }
+          ]
+        },
+        {
+          "name": "frillstop_right",
+          "pivot": [-8, 38, 0],
+          "parent": "body",
+          "rotation": [0, 0, -45.0001],
+          "cubes": [
+            {
+              "origin": [-8, 38, -16],
+              "size": [0, 14, 38],
+              "uv": [65, 36],
+              "mirror": true
+            }
+          ]
+        },
+        {
+          "name": "frillsbottom_left",
+          "pivot": [8, 0, 0],
+          "parent": "body",
+          "rotation": [0, 0, 144.9984],
+          "cubes": [
+            {
+              "origin": [8, 0, -16],
+              "size": [0, 14, 38],
+              "uv": [65, 36]
+            }
+          ]
+        },
+        {
+          "name": "frillsbottom_right",
+          "pivot": [-8, 0, 0],
+          "parent": "body",
+          "rotation": [0, 0, -144.9984],
+          "cubes": [
+            {
+              "origin": [-8, 0, -16],
+              "size": [0, 14, 38],
+              "uv": [65, 36],
+              "mirror": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

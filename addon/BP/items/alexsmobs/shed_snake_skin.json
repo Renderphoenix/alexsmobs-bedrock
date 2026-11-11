@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:shed_snake_skin",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_shed_snake_skin"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.shed_snake_skin"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

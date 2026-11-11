@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:lost_tentacle",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_lost_tentacle"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.lost_tentacle"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

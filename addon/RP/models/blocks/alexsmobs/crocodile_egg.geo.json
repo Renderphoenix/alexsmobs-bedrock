@@ -1,0 +1,59 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alexsmobs.block.crocodile_egg",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        {
+          "name": "block",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-1, 0, 0],
+              "size": [4, 6, 4],
+              "uv": {
+                "north": {
+                  "uv": [2, 2],
+                  "uv_size": [2, 3],
+                  "material_instance": "alexsmobs_block_crocodile_egg"
+                },
+                "east": {
+                  "uv": [0, 2],
+                  "uv_size": [2, 3],
+                  "material_instance": "alexsmobs_block_crocodile_egg"
+                },
+                "south": {
+                  "uv": [6, 2],
+                  "uv_size": [2, 3],
+                  "material_instance": "alexsmobs_block_crocodile_egg"
+                },
+                "west": {
+                  "uv": [4, 2],
+                  "uv_size": [2, 3],
+                  "material_instance": "alexsmobs_block_crocodile_egg"
+                },
+                "up": {
+                  "uv": [2, 0],
+                  "uv_size": [2, 2],
+                  "material_instance": "alexsmobs_block_crocodile_egg"
+                },
+                "down": {
+                  "uv": [4, 2],
+                  "uv_size": [2, -2],
+                  "material_instance": "alexsmobs_block_crocodile_egg"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "alexsmobs:triops_eggs",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.alexsmobs.block.triops_eggs",
+      "minecraft:selection_box": {
+        "origin": [-8, 0.25, -8],
+        "size": [16, 0.1, 16]
+      },
+      "minecraft:collision_box": {
+        "origin": [-8, 0.25, -8],
+        "size": [16, 0.1, 16]
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "alexsmobs_block_triops_eggs",
+          "render_method": "alpha_test"
+        },
+        "alexsmobs_block_triops_eggs": {
+          "texture": "alexsmobs_block_triops_eggs",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3
+      },
+      "minecraft:display_name": "tile.alexsmobs:triops_eggs.name"
+    }
+  }
+}

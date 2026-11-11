@@ -1,0 +1,38 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:ghostly_pickaxe",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_ghostly_pickaxe"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.ghostly_pickaxe"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:damage": 4,
+      "minecraft:hand_equipped": true,
+      "minecraft:durability": {
+        "max_durability": 600
+      },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": {
+              "tags": "q.any_tag('stone', 'metal', 'diamond_pick_diggable', 'iron_pick_diggable', 'stone_pick_diggable')"
+            },
+            "speed": 8
+          }
+        ]
+      }
+    }
+  }
+}

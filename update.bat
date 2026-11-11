@@ -1,12 +1,10 @@
 @echo off
 setlocal enabledelayedexpansion
+rem Syncs Alex's Mobs 2 (addon\BP, addon\RP) into Minecraft's development pack folders for testing.
+rem The old 1.2.x port has its own script in legacy\v1\update.bat (different pack folders, do not enable both).
 
-echo ===================================================
-echo   Updating Alex's Mobs Bedrock Development Packs
-echo ===================================================
-
-set "BP_SRC=%~dp0BP"
-set "RP_SRC=%~dp0RP"
+set "BP_SRC=%~dp0addon\BP"
+set "RP_SRC=%~dp0addon\RP"
 
 set "MOJANG_DIR="
 if exist "%APPDATA%\Minecraft Bedrock\Users\Shared\games\com.mojang" (
@@ -17,33 +15,18 @@ if exist "%APPDATA%\Minecraft Bedrock\Users\Shared\games\com.mojang" (
     set "MOJANG_DIR=%APPDATA%\Minecraft Bedrock\Users\Shared\games\com.mojang"
 )
 
-set "BP_DEST=!MOJANG_DIR!\development_behavior_packs\AlexsMobs_BP"
-set "RP_DEST=!MOJANG_DIR!\development_resource_packs\AlexsMobs_RP"
+set "BP_DEST=!MOJANG_DIR!\development_behavior_packs\AlexsMobs2_BP"
+set "RP_DEST=!MOJANG_DIR!\development_resource_packs\AlexsMobs2_RP"
 
-echo.
-echo [1/2] Syncing Behavior Pack (BP)...
+echo [1/2] Behavior pack  -^> %BP_DEST%
 if not exist "%BP_DEST%" mkdir "%BP_DEST%"
 robocopy "%BP_SRC%" "%BP_DEST%" /MIR /FFT /R:1 /W:1 /NFL /NDL /NJH /NJS /nc /ns /np
-if %ERRORLEVEL% GTR 7 (
-    echo [ERROR] Failed to sync BP! Error code: %ERRORLEVEL%
-    exit /b %ERRORLEVEL%
-)
-echo [OK] Behavior Pack synced to:
-echo      %BP_DEST%
+if %ERRORLEVEL% GTR 7 ( echo [ERROR] BP sync failed & exit /b %ERRORLEVEL% )
 
-echo.
-echo [2/2] Syncing Resource Pack (RP)...
+echo [2/2] Resource pack  -^> %RP_DEST%
 if not exist "%RP_DEST%" mkdir "%RP_DEST%"
 robocopy "%RP_SRC%" "%RP_DEST%" /MIR /FFT /R:1 /W:1 /NFL /NDL /NJH /NJS /nc /ns /np
-if %ERRORLEVEL% GTR 7 (
-    echo [ERROR] Failed to sync RP! Error code: %ERRORLEVEL%
-    exit /b %ERRORLEVEL%
-)
-echo [OK] Resource Pack synced to:
-echo      %RP_DEST%
+if %ERRORLEVEL% GTR 7 ( echo [ERROR] RP sync failed & exit /b %ERRORLEVEL% )
 
-echo.
-echo ===================================================
-echo   Update completed successfully!
-echo ===================================================
+echo Done. Enable "Alex's Mobs 2" BP + RP on a world (disable the old Alex's Mobs packs: same alexsmobs: ids).
 exit /b 0

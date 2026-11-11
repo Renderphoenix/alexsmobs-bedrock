@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alexsmobs.cachalot_whale": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.sleep0",
+            "Texture.sleep1"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[(v.am_sleeping ? 4 : 0) + math.clamp(q.variant, 0, 1)]"
+      ]
+    }
+  }
+}

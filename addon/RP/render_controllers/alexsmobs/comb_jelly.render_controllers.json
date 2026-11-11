@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alexsmobs.comb_jelly": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v2",
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v2",
+            "Texture.v0",
+            "Texture.v1",
+            "Texture.v2"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[math.clamp(q.variant, 0, 2)]"
+      ]
+    },
+    "controller.render.alexsmobs.comb_jelly.glow": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.glow"
+      ],
+      "ignore_lighting": true
+    }
+  }
+}

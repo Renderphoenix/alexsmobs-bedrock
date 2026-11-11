@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:shield_of_the_deep",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_shield_of_the_deep"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.shield_of_the_deep"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 400
+      }
+    }
+  }
+}

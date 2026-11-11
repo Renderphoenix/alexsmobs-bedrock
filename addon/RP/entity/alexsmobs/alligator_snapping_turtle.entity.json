@@ -1,0 +1,63 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alexsmobs:alligator_snapping_turtle",
+      "materials": {
+        "default": "entity_alphatest",
+        "overlay": "entity_alphatest",
+        "glow": "entity_alphatest"
+      },
+      "textures": {
+        "v0": "textures/entity/alexsmobs/alligator_snapping_turtle"
+      },
+      "geometry": {
+        "default": "geometry.alexsmobs.alligator_snapping_turtle"
+      },
+      "animations": {
+        "pose": "animation.alexsmobs.alligator_snapping_turtle.pose",
+        "death_0": "animation.alexsmobs.alligator_snapping_turtle.death_0",
+        "death_1": "animation.alexsmobs.alligator_snapping_turtle.death_1",
+        "hurt": "animation.alexsmobs.alligator_snapping_turtle.hurt",
+        "idle_look": "animation.alexsmobs.alligator_snapping_turtle.idle_look",
+        "idle_sniff": "animation.alexsmobs.alligator_snapping_turtle.idle_sniff",
+        "idle_shake": "animation.alexsmobs.alligator_snapping_turtle.idle_shake",
+        "idle_tail": "animation.alexsmobs.alligator_snapping_turtle.idle_tail",
+        "ctrl_idle": "controller.animation.alexsmobs.alligator_snapping_turtle.idle",
+        "ctrl_death": "controller.animation.alexsmobs.alligator_snapping_turtle.death",
+        "ctrl_hurt": "controller.animation.alexsmobs.alligator_snapping_turtle.hurt"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.ls = q.modified_distance_moved;",
+          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
+          "v.age = q.life_time * 20;",
+          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
+          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
+          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+          "v.am_flying = 0;",
+          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
+          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
+          "v.p_openmouthprogress = math.clamp((v.p_openmouthprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
+          "v.p_attackprogress = math.clamp((v.p_attackprogress ?? 0) + ((q.is_angry) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+        ],
+        "animate": [
+          "pose",
+          "ctrl_idle",
+          "ctrl_death",
+          "ctrl_hurt"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alexsmobs.alligator_snapping_turtle"
+      ],
+      "spawn_egg": {
+        "base_color": "#6c5c52",
+        "overlay_color": "#456926"
+      },
+      "enable_attachables": false
+    }
+  }
+}

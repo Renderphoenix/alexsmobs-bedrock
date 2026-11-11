@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alexsmobs:vine_lasso",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "alexsmobs_vine_lasso"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.alexsmobs.vine_lasso"
+      },
+      "minecraft:max_stack_size": 1
+    }
+  }
+}
