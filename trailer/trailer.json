@@ -9,8 +9,11 @@
     "regular": "C:/Users/devsuki/AppData/Local/Microsoft/Windows/Fonts/MinecraftRegular-Bmg3.otf"
   },
   "blender": "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
-  "fps": 24,
+  "fps": 60,
   "frame_format": "PNG",
-  "render_pct": 67,
-  "samples": 16
+  "render_pct": 100,
+  "samples": 32,
+  "png_compression": 0,
+  "crf": "PERC_LOSSLESS",
+  "audio_kbps": 320
 }

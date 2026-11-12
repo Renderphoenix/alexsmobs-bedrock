@@ -33,6 +33,8 @@ def finish(preview_frame=None):
     else:
         fmt = CFG.get("frame_format", "PNG")          # "JPEG" (quality 95) saves ~4x disk at 60 fps
         sc.render.image_settings.file_format = fmt
+        if fmt == "PNG":
+            sc.render.image_settings.compression = int(CFG.get("png_compression", 15))
         if fmt == "JPEG":
             sc.render.image_settings.quality = 95
         sc.render.resolution_percentage = int(CFG.get("render_pct", 100))
