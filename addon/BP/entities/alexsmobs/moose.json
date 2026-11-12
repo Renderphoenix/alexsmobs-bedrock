@@ -196,24 +196,48 @@
       "minecraft:entity_spawned": {
         "sequence": [
           {
-            "randomize": [
-              {
-                "weight": 1,
-                "add": {
-                  "component_groups": [
-                    "alexsmobs:variant_0"
-                  ]
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "value": "cold"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "value": "frozen"
                 }
-              },
-              {
-                "weight": 1,
-                "add": {
-                  "component_groups": [
-                    "alexsmobs:variant_1"
-                  ]
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "alexsmobs:variant_1"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "cold"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "frozen"
                 }
-              }
-            ]
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "alexsmobs:variant_0"
+              ]
+            }
           },
           {
             "randomize": [
@@ -247,24 +271,48 @@
             }
           },
           {
-            "randomize": [
-              {
-                "weight": 1,
-                "add": {
-                  "component_groups": [
-                    "alexsmobs:variant_0"
-                  ]
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "value": "cold"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "value": "frozen"
                 }
-              },
-              {
-                "weight": 1,
-                "add": {
-                  "component_groups": [
-                    "alexsmobs:variant_1"
-                  ]
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "alexsmobs:variant_1"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "cold"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "frozen"
                 }
-              }
-            ]
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "alexsmobs:variant_0"
+              ]
+            }
           }
         ]
       },

@@ -94,6 +94,26 @@ function snakeIdle(C, all) {
   return Object.keys(bones).length ? { loop: true, animation_length: L, bones } : null;
 }
 
+// Kangaroo-style hopping: pose follows the engine variable v.jump_rotation (0 on the ground, 1 at the top of the hop),
+// exactly how vanilla's rabbit animates movement.skip. rig = bone names from mobs.js (hopRig).
+function skipHop(rig, bones) {
+  const jr = (a, b) => `v.jump_rotation * ${a} + ${b}`;
+  const has = n => bones.some(x => x.name === n);
+  const o = {};
+  const put = (n, rot, pos) => { if (n && has(n)) o[n] = Object.assign(o[n] || {}, rot ? { rotation: rot } : {}, pos ? { position: pos } : {}); };
+  put(rig.body, [jr(18, -8), 0, 0], [0, jr(1.4, 0), jr(-0.6, 0)]);
+  for (const n of rig.thighs) put(n, [jr(-62, 26), 0, 0]);
+  for (const n of rig.knees) put(n, [jr(70, -24), 0, 0]);
+  for (const n of rig.feet) put(n, [jr(-40, 18), 0, 0]);
+  rig.tail.forEach((n, i) => put(n, [jr(i ? 12 : 20, i ? -4 : -10), 0, 0]));
+  put(rig.chest, [jr(-8, 4), 0, 0]);
+  for (const n of rig.arms) put(n, [jr(-34, -18), 0, jr(n.endsWith('left') ? -6 : 6, 0)]);
+  put(rig.neck, [jr(-8, 3), 0, 0]);
+  put(rig.head, [jr(-10, 4), 0, 0]);
+  for (const n of rig.ears) put(n, [jr(-14, 0), 0, 0]);
+  return Object.keys(o).length ? { loop: true, animation_length: 1, bones: o } : null;
+}
+
 function breathe(C) {
   const L = 3.6, bones = {};
   const wave = (a, ph = 0) => ({ '0': a(0 + ph), '0.9': a(1 + ph), '1.8': a(2 + ph), '2.7': a(3 + ph), '3.6': a(4 + ph) });
@@ -253,6 +273,7 @@ function generateClient(P) {
       if (Object.keys(gw).length) { add('walk', mk({ loop: true, animation_length: hop ? 0.8 : 1.2, anim_time_update: timeScale.anim_time_update }, gw)); add('run', mk({ loop: true, animation_length: hop ? 0.8 : 1.2, anim_time_update: timeScale.anim_time_update }, gr)); usedGait = 'generic'; }
     }
   }
+  if (s.skip && s.hopRig) { const hop = skipHop(s.hopRig, main.bones); if (hop) { add('walk', hop); add('run', hop); usedGait = 'skip'; } }
   // swim: water kinds use the base gaits (limb + time); land kinds that swim use the swim-state gaits
   let hasSwim = false;
   if (base === 'swim') {
@@ -368,8 +389,8 @@ function generateClient(P) {
   const flyExpr = s.alwaysFly || base === 'fly' ? '1' : hasFly ? '!q.is_on_ground && !q.is_in_water' : '0';
   const standExpr = POSE.stand ? `q.property('${NS}:angry') && !v.is_moving && q.is_on_ground` : '0';
   const pre = [
-    `v.is_moving = q.modified_move_speed >= ${moveT};`,
-    `v.is_sprinting = q.modified_move_speed >= ${sprintT};`,
+    s.skip ? 'v.is_moving = q.modified_move_speed > 0.04 || math.abs(q.vertical_speed) > 0.08;' : `v.is_moving = q.modified_move_speed >= ${moveT};`,
+    s.skip ? 'v.is_sprinting = 0;' : `v.is_sprinting = q.modified_move_speed >= ${sprintT};`,
     `v.anim_speed = math.clamp(q.modified_move_speed / ${REF}, 0.35, 2.4);`,
     `v.am_flying = ${flyExpr};`,
     `v.am_sleeping = ${sleeps ? `q.property('${NS}:sleeping')` : '0'};`,

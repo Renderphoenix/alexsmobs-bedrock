@@ -117,7 +117,7 @@
         "max": 22
       },
       "minecraft:movement": {
-        "value": 0.5
+        "value": 0.32
       },
       "minecraft:attack": {
         "damage": 4
@@ -133,7 +133,6 @@
       },
       "minecraft:nameable": {},
       "minecraft:conditional_bandwidth_optimization": {},
-      "minecraft:jump.static": {},
       "minecraft:loot": {
         "table": "loot_tables/alexsmobs/entities/kangaroo.json"
       },
@@ -174,14 +173,31 @@
         "avoid_damage_blocks": true,
         "can_open_doors": false
       },
-      "minecraft:movement.basic": {},
       "minecraft:behavior.random_stroll": {
         "priority": 7,
-        "speed_multiplier": 0.8
+        "speed_multiplier": 1,
+        "xz_dist": 10,
+        "y_dist": 3,
+        "interval": 80
       },
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0
+      },
+      "minecraft:movement.skip": {},
+      "minecraft:jump.dynamic": {
+        "regular_skip_data": {
+          "distance_scale": 1.15,
+          "height": 0.4,
+          "jump_delay": 18,
+          "animation_duration": 20
+        },
+        "fast_skip_data": {
+          "distance_scale": 2.1,
+          "height": 0.3,
+          "jump_delay": 1,
+          "animation_duration": 16
+        }
       },
       "minecraft:behavior.float": {
         "priority": 0

@@ -37,7 +37,11 @@
         "idle_sniff": "animation.alexsmobs.kangaroo.idle_sniff",
         "idle_shake": "animation.alexsmobs.kangaroo.idle_shake",
         "idle_tail": "animation.alexsmobs.kangaroo.idle_tail",
+        "air_jump": "animation.alexsmobs.kangaroo.air_jump",
+        "air_fall": "animation.alexsmobs.kangaroo.air_fall",
+        "air_land": "animation.alexsmobs.kangaroo.air_land",
         "ctrl_move": "controller.animation.alexsmobs.kangaroo.move",
+        "ctrl_air": "controller.animation.alexsmobs.kangaroo.air",
         "ctrl_idles": "controller.animation.alexsmobs.kangaroo.idles",
         "ctrl_attack": "controller.animation.alexsmobs.kangaroo.attack",
         "ctrl_hurt": "controller.animation.alexsmobs.kangaroo.hurt",
@@ -55,8 +59,8 @@
           "v.life_vy = 0;"
         ],
         "pre_animation": [
-          "v.is_moving = q.modified_move_speed >= 0.1;",
-          "v.is_sprinting = q.modified_move_speed >= 0.8;",
+          "v.is_moving = q.modified_move_speed > 0.04 || math.abs(q.vertical_speed) > 0.08;",
+          "v.is_sprinting = 0;",
           "v.anim_speed = math.clamp(q.modified_move_speed / 0.45, 0.35, 2.4);",
           "v.am_flying = 0;",
           "v.am_sleeping = 0;",
@@ -73,6 +77,7 @@
           {
             "look": "!v.am_sleeping && q.is_alive"
           },
+          "ctrl_air",
           "ctrl_idles",
           "ctrl_attack",
           "ctrl_hurt",

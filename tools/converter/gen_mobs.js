@@ -257,6 +257,13 @@ function behavior(e, s, kind, info) {
         'minecraft:breathable': { total_supply: 15, suffocate_time: 0 },
       });
       if (s.climbs) C2['minecraft:can_climb'] = {};
+      if (s.skip) {
+        delete C2['minecraft:movement.basic']; delete C2['minecraft:jump.static'];
+        C2['minecraft:movement.skip'] = {};
+        C2['minecraft:jump.dynamic'] = { regular_skip_data: { distance_scale: 1.15, height: 0.4, jump_delay: 18, animation_duration: 20 }, fast_skip_data: { distance_scale: 2.1, height: 0.3, jump_delay: 1, animation_duration: 16 } };
+        C2['minecraft:movement'] = { value: 0.32 };
+        C2['minecraft:behavior.random_stroll'] = { priority: 7, speed_multiplier: 1, xz_dist: 10, y_dist: 3, interval: 80 };
+      }
   }
   if (!['water', 'whale', 'semi'].includes(kind) && !(kind === 'hover' && s.alwaysFly)) C2['minecraft:behavior.float'] = { priority: 0 };
   const phased = kind === 'semi' && !s.bottom; // alternates between hunting in the water and basking on land
@@ -363,7 +370,12 @@ function behavior(e, s, kind, info) {
     for (let i = 0; i < info.nV; i++) { groups[`${NS}:variant_${i}`] = { 'minecraft:variant': { value: i } }; variantGroups.push(`${NS}:variant_${i}`); }
   }
   const weights = s.variantWeights || variantGroups.map(() => 1);
-  const pickVariant = variantGroups.length ? [{ randomize: variantGroups.map((g, i) => ({ weight: weights[i] || 1, add: { component_groups: [g] } })) }] : [];
+  const biome = (v, neg) => (neg ? { test: 'has_biome_tag', subject: 'self', operator: '!=', value: v } : { test: 'has_biome_tag', subject: 'self', value: v });
+  const coldFilter = { any_of: [biome('cold'), biome('frozen')] };
+  const warmFilter = { all_of: [biome('cold', true), biome('frozen', true)] };
+  const pickVariant = s.coldVariant !== undefined && variantGroups.length === 2
+    ? [{ filters: coldFilter, add: { component_groups: [variantGroups[s.coldVariant]] } }, { filters: warmFilter, add: { component_groups: [variantGroups[1 - s.coldVariant]] } }]
+    : variantGroups.length ? [{ randomize: variantGroups.map((g, i) => ({ weight: weights[i] || 1, add: { component_groups: [g] } })) }] : [];
 
   // ---- sleep schedule (only mobs with sleep poses/textures)
   if (info.sleeps) {

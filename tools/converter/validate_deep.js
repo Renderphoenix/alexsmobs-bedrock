@@ -9,10 +9,10 @@ const V = k => new Set(S[k]);
 // valid in the game but not used by the vanilla samples we scanned (verified in-game / skill notes)
 const EXTRA_COMPONENTS = new Set(['minecraft:behavior.owner_hurt_by_target', 'minecraft:behavior.owner_hurt_target']);
 const EXTRA_CAUSES = new Set(['suffocation', 'void', 'suicide', 'wither', 'starve', 'thorns', 'flying_into_wall', 'fireworks', 'sonic_boom', 'campfire', 'soul_campfire']);
-const KNOWN_QUERIES = ['is_alive', 'target_x_rotation', 'target_y_rotation', 'state_time', 'hurt_time', 'has_target', 'life_time', 'modified_move_speed', 'modified_distance_moved', 'delta_time', 'any_animation_finished', 'all_animations_finished', 'anim_time', 'ground_speed', 'is_sitting', 'is_in_water', 'is_on_ground', 'is_baby', 'variant', 'is_sneaking', 'is_angry', 'is_wall_climbing', 'position', 'body_y_rotation', 'is_sleeping'];
+const KNOWN_QUERIES = ['is_alive', 'target_x_rotation', 'target_y_rotation', 'state_time', 'hurt_time', 'has_target', 'life_time', 'modified_move_speed', 'modified_distance_moved', 'delta_time', 'any_animation_finished', 'all_animations_finished', 'anim_time', 'ground_speed', 'is_sitting', 'is_in_water', 'is_on_ground', 'is_baby', 'variant', 'is_sneaking', 'is_angry', 'is_wall_climbing', 'vertical_speed', 'position', 'body_y_rotation', 'is_sleeping'];
 // parameters verified in-game (Phoenix Mobs pack on 1.26.60) that the bundled 1.26.50 docs do not list yet
 const DOC_LAG = new Set(['minecraft:behavior.random_fly.y_offset', 'minecraft:behavior.random_fly.avoid_damage_blocks', 'minecraft:buoyant.simulate_waves', 'minecraft:spawn_entity.entities']);
-const BUILTIN_VARS = new Set(['attack_time', 'is_first_person', 'is_paperdoll']);
+const BUILTIN_VARS = new Set(['jump_rotation', 'attack_time', 'is_first_person', 'is_paperdoll']);
 const rec = (v, fn) => { if (Array.isArray(v)) v.forEach(x => rec(x, fn)); else if (v && typeof v === 'object') { fn(v); Object.values(v).forEach(x => rec(x, fn)); } };
 
 module.exports = function deep({ errors, warns, json, of, rel, C }) {
