@@ -69,7 +69,8 @@
           {
             "baby": "q.is_baby"
           }
-        ]
+        ],
+        "scale": "0.75"
       },
       "render_controllers": [
         "controller.render.alexsmobs.hummingbird"

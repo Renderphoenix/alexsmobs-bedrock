@@ -62,7 +62,8 @@
           "ctrl_idles",
           "ctrl_hurt",
           "ctrl_death"
-        ]
+        ],
+        "scale": "0.9"
       },
       "render_controllers": [
         "controller.render.alexsmobs.banana_slug"

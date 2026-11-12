@@ -60,7 +60,7 @@ module.exports = {
   lobster: { kind: 'semi', temper: 'neutral', variants: ['lobster_red', 'lobster_blue', 'lobster_yellow', 'lobster_redblue', 'lobster_black', 'lobster_white'], variantWeights: [70, 8, 8, 4, 6, 4], bottom: true },
   maned_wolf: { kind: 'land', temper: 'skittish', tex: 'maned_wolf' },
   mantis_shrimp: { kind: 'semi', temper: 'neutral', variants: ['mantis_shrimp_0', 'mantis_shrimp_1', 'mantis_shrimp_2', 'mantis_shrimp_3'], bottom: true },
-  mimic_octopus: { kind: 'semi', temper: 'passive', tex: 'mimic_octopus', overlay: 'mimic_octopus_overlay', glow: 'mimic_octopus_eyes', bottom: true },
+  mimic_octopus: { kind: 'semi', temper: 'passive', tex: 'mimic_octopus', glow: 'mimic_octopus_eyes', bottom: true }, // Java tints + fades mimic_octopus_overlay in only while mimicking; drawn always it turns the octopus white
   mimicube: { kind: 'land', temper: 'hostile', player: true, prey: [V], tex: 'mimicube', hops: true },
   moose: { kind: 'land', temper: 'neutral', coldVariant: 1, variants: ['moose_antlered', 'moose_snowy_antlered'], femaleTex: ['moose', 'moose_snowy'] },
   mudskipper: { kind: 'semi', temper: 'neutral', tex: 'mudskipper' },

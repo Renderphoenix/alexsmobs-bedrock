@@ -57,9 +57,19 @@ Achievement-friendly: `product_type: addon`, stable `@minecraft/server` 2.4.0, n
   vanilla turtle mechanism (`causes_pregnancy` → timer → `behavior.lay_egg` with `egg_type`); emu and cockroach drop
   throwable eggs (`minecraft:spawn_entity` + `throwable`/`projectile` items with a projectile entity whose `on_hit.spawn_chance`
   hatches a baby, `gen_eggs.js`). Spawn eggs are the vanilla way: `spawn_egg` colours on the client entity.
+- `flap.js`: our bird flight - per bird a wings-out posture + wingbeat axis measured in Blockbench (mirrored x,-y,-z),
+  applied to `fly`. `gen_client.js` `RENDER_SCALE`: the Java renderers' `PoseStack.scale` constants as client
+  `scripts.scale` (elephant 1.1, orca 1.3, raccoon 0.75...). Mimic octopus has no overlay (Java tints it only while
+  mimicking).
 - `gen_items.js` (+ `abilities.js`: ray items, scans, food effects, my own designs), `gen_recipes.js` (63+ Java recipes;
   furnace/smoker/campfire merged), `armor.js`, `gen_blocks.js`, `gen_pack.js` (manifests, 17 languages, sounds),
   `biomes.js`, `gen_script.js` (BP/scripts/main.js: chains, buckets, egg component, item abilities, food effects).
+
+## Trailer (trailer/)
+Built with the `minecraft-addon-trailer` skill: `gen_shots.py` writes `shots/*.py` (41 shots, music "Heroic Age" by
+Kevin MacLeod, CC BY 4.0 - keep the credit), `scripts/` is the skill toolkit patched for this layout (+ `am.py`
+helpers, `par.py` parallel renders), `bbrun_am.js` bakes poses (drives `v.jump_rotation` for the kangaroo hop).
+Work files, frames and MP4s live on H:/AlexsMobs2_Trailer (`trailer.json`). Review with last-frame stills only.
 
 ## Lessons from the game's Content Log (keep these checks in validate_deep.js)
 Filter `is_creative` and damage cause `in_wall` do not exist; `minecraft:terracotta` is `minecraft:hardened_clay`;

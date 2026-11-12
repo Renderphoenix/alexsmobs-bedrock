@@ -66,7 +66,8 @@
           "ctrl_attack",
           "ctrl_hurt",
           "ctrl_death"
-        ]
+        ],
+        "scale": "1.2"
       },
       "render_controllers": [
         "controller.render.alexsmobs.straddler"

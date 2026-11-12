@@ -88,7 +88,8 @@
           {
             "baby": "q.is_baby"
           }
-        ]
+        ],
+        "scale": "1.1"
       },
       "render_controllers": [
         "controller.render.alexsmobs.elephant",

@@ -10,6 +10,12 @@ const C = require('./config');
 const U = require('./util');
 const A = require('./anims');
 const MO = require('./motion');
+const FL = require('./flap');
+// Java renderer PoseStack.scale(...) constants (RenderX.scale), which the model alone does not carry
+const RENDER_SCALE = { banana_slug: 0.9, blue_jay: 0.9, capuchin_monkey: 0.8, cockroach: 0.85, crimson_mosquito: 1.2, crocodile: 0.9, elephant: 1.1, emu: 0.85,
+  endergrade: 1.2, enderiophage: 0.8, flying_fish: 0.8, frilled_shark: 0.85, gazelle: 0.8, hummingbird: 0.75, jerboa: 0.8, maned_wolf: 0.85,
+  mantis_shrimp: 0.8, mimic_octopus: 0.9, murmur: 0.85, murmur_head: 0.85, orca: 1.3, platypus: 0.9, raccoon: 0.75, rain_frog: 0.9, rhinoceros: 1.1,
+  snow_leopard: 0.9, spectre: 1.3, straddler: 1.2, tarantula_hawk: 0.9, toucan: 0.9, underminer: 0.925, warped_toad: 1.25 };
 
 const NS = C.NS;
 const ATTACK_RE = /^(SLASH|SWIPE|MAUL|BITE|ATTACK|SLAM|LUNGE|DEATHROLL|STOMP|FLING|SHOVE|KICK|PUNCH|TAILSWING|STAB|PAW|LEAP|GORE|BUCK|THROW|LAUNCH)/;
@@ -310,6 +316,11 @@ function generateClient(P) {
       else { const hv = hover(CL); if (Object.keys(hv).length) { add('fly', mk({ loop: true, animation_length: 1.6 }, hv)); hasFly = true; usedGait = usedGait || 'generic'; } }
     } else { add('fly', loopAnim(lp)); hasFly = true; }
   }
+  // our own bird flight (flap.js): wings straight out + a real wingbeat
+  if (FL.FLAP[id] && anims[prefix + ".fly"]) {
+    const desc = n => main.bones.filter(b => (b.parent && (b.parent.name || b.parent)) === n).flatMap(b => [b.name, ...desc(b.name)]);
+    FL.applyFlap(id, anims[prefix + ".fly"], desc(FL.FLAP[id].R).concat(desc(FL.FLAP[id].L)));
+  }
   // postures from the Java pose (sit / sleep / stand)
   const POSE = {};
   for (const st of ['sit', 'sleep', 'stand']) {
@@ -538,6 +549,7 @@ function generateClient(P) {
   U.writeJson(path.join(C.RP, 'render_controllers', NS, `${id}.render_controllers.json`), { format_version: '1.10.0', render_controllers: rc });
   const scripts = { initialize: ['v.is_moving = 0;', 'v.is_sprinting = 0;', 'v.anim_speed = 1;', 'v.am_flying = 0;', 'v.am_sleeping = 0;', 'v.am_standing = 0;', 'v.life_py = q.position(1);', 'v.life_vy = 0;'], pre_animation: pre, animate };
   if (e.scale) scripts.scale = String(e.scale[0]);
+  if (RENDER_SCALE[id]) scripts.scale = String(RENDER_SCALE[id]);
   if (s.scaleVariant) scripts.scale = `q.variant == 1 ? ${s.scaleVariant[1]} : (q.variant == 2 ? ${s.scaleVariant[2]} : 1)`;
   U.writeJson(path.join(C.RP, 'entity', NS, `${id}.entity.json`), {
     format_version: '1.10.0',

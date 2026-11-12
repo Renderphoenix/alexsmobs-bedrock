@@ -67,7 +67,8 @@
           "ctrl_attack",
           "ctrl_hurt",
           "ctrl_death"
-        ]
+        ],
+        "scale": "0.85"
       },
       "render_controllers": [
         "controller.render.alexsmobs.murmur"

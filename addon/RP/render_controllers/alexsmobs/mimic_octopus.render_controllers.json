@@ -21,17 +21,6 @@
         "Array.skins[0]"
       ]
     },
-    "controller.render.alexsmobs.mimic_octopus.overlay": {
-      "geometry": "Geometry.default",
-      "materials": [
-        {
-          "*": "Material.overlay"
-        }
-      ],
-      "textures": [
-        "Texture.overlay"
-      ]
-    },
     "controller.render.alexsmobs.mimic_octopus.glow": {
       "geometry": "Geometry.default",
       "materials": [

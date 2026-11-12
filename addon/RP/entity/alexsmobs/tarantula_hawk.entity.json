@@ -75,7 +75,8 @@
           {
             "baby": "q.is_baby"
           }
-        ]
+        ],
+        "scale": "0.9"
       },
       "render_controllers": [
         "controller.render.alexsmobs.tarantula_hawk"

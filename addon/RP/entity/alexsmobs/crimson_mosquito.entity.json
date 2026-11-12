@@ -70,7 +70,8 @@
           {
             "baby": "q.is_baby"
           }
-        ]
+        ],
+        "scale": "1.2"
       },
       "render_controllers": [
         "controller.render.alexsmobs.crimson_mosquito"

@@ -72,7 +72,8 @@
           {
             "baby": "q.is_baby"
           }
-        ]
+        ],
+        "scale": "1.3"
       },
       "render_controllers": [
         "controller.render.alexsmobs.orca"

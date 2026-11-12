@@ -1,0 +1,16 @@
+{
+  "rp": "C:/Users/devsuki/Desktop/alexsmobs-bedrock/addon/RP",
+  "namespace": "alexsmobs",
+  "work": "H:/AlexsMobs2_Trailer/work",
+  "music": "H:/AlexsMobs2_Trailer/music/Heroic Age.mp3",
+  "output": "H:/AlexsMobs2_Trailer/AlexsMobs2_Trailer_{fps}fps.mp4",
+  "fonts": {
+    "ten": "C:/Users/devsuki/AppData/Local/Microsoft/Windows/Fonts/MinecraftTen-VGORe.ttf",
+    "regular": "C:/Users/devsuki/AppData/Local/Microsoft/Windows/Fonts/MinecraftRegular-Bmg3.otf"
+  },
+  "blender": "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+  "fps": 24,
+  "frame_format": "PNG",
+  "render_pct": 67,
+  "samples": 16
+}

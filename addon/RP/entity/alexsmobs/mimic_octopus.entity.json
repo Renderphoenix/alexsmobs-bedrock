@@ -10,8 +10,7 @@
       },
       "textures": {
         "v0": "textures/entity/alexsmobs/mimic_octopus",
-        "glow": "textures/entity/alexsmobs/mimic_octopus_eyes",
-        "overlay": "textures/entity/alexsmobs/mimic_octopus_overlay"
+        "glow": "textures/entity/alexsmobs/mimic_octopus_eyes"
       },
       "geometry": {
         "default": "geometry.alexsmobs.mimic_octopus"
@@ -69,11 +68,11 @@
           "ctrl_attack",
           "ctrl_hurt",
           "ctrl_death"
-        ]
+        ],
+        "scale": "0.9"
       },
       "render_controllers": [
         "controller.render.alexsmobs.mimic_octopus",
-        "controller.render.alexsmobs.mimic_octopus.overlay",
         "controller.render.alexsmobs.mimic_octopus.glow"
       ],
       "spawn_egg": {
