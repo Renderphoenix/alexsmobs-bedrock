@@ -13,6 +13,8 @@ const GB = require('./gen_blocks');
 const AR = require('./armor');
 const GS = require('./gen_script');
 const GP = require('./gen_pack');
+const GR = require('./gen_recipes');
+const GE = require('./gen_eggs');
 
 function main() {
   const only = process.argv.slice(2);
@@ -24,7 +26,21 @@ function main() {
       fs.rmSync(path.join(d, sub), { recursive: true, force: true });
     }
   }
-  const ctx = { warn: [], lang: [], attackAnims: {}, spawns: [], lootItems: new Set(), soundEvents: new Set(), entitySounds: {}, results: [], chains: {}, followers: {}, itemLang: [], armor: [], buckets: {}, eggs: {}, renderedIcons: {} };
+  const oggSeconds = name => {
+    try {
+      const defs = JSON.parse(fs.readFileSync(path.join(C.ASSETS, 'sounds.json'), 'utf8'));
+      const first = defs[name] && defs[name].sounds[0];
+      const rel = (typeof first === 'string' ? first : first && first.name || name).replace(/^alexsmobs:/, '');
+      const f = path.join(C.ASSETS, 'sounds', rel + '.ogg');
+      const buf = fs.readFileSync(f);
+      const v = buf.indexOf('vorbis');
+      const rate = buf.readUInt32LE(v + 6 + 4 + 1);
+      const last = buf.lastIndexOf('OggS');
+      const gran = Number(buf.readBigUInt64LE(last + 6));
+      return Math.max(30, Math.round(gran / rate));
+    } catch { return 180; }
+  };
+  const ctx = { warn: [], lang: [], attackAnims: {}, spawns: [], lootItems: new Set(), soundEvents: new Set(), entitySounds: {}, results: [], chains: {}, followers: {}, itemLang: [], armor: [], buckets: {}, eggs: {}, renderedIcons: {}, thrown: {}, abilities: { ray: {}, scan: {}, sound: {}, food: {} }, soundRegistry: mod.soundRegistry || {}, recordSeconds: oggSeconds };
   const PARTS = new Set(['anaconda_part', 'bone_serpent_part', 'centipede_body', 'centipede_tail', 'void_worm_part', 'murmur_head']);
   const mobs = mod.entities.filter(e => e.cls && e.category !== 'MISC' && !PARTS.has(e.id) && (e.models && e.models.length || e.guessModel));
   for (const e of mobs) {
@@ -42,12 +58,15 @@ function main() {
     const items = GI.generateItems(ctx, javaLang);
     AR.generateArmor(ctx);
     const blocks = GB.generateBlocks(ctx, javaLang);
+    const nThrown = GE.generateThrown(ctx);
     GS.generateScript(ctx);
+    const rec = GR.generateRecipes(ctx, items.made.concat(blocks));
+    ctx.warn.push(...rec.skipped.map(x => 'recipe ' + x));
     const nSounds = GP.sounds(ctx);
     GP.manifests();
     GP.lang(ctx);
     GP.functions(ctx, ctx.results.map(r => r.id), items.made.concat(blocks));
-    console.log(`items: ${items.made.length} (no icon: ${items.missingIcon.join(', ') || '-'}), blocks: ${blocks.length}, armor: ${ctx.armor.length}, sounds: ${nSounds}`);
+    console.log(`items: ${items.made.length} (no icon: ${items.missingIcon.join(', ') || '-'}), blocks: ${blocks.length}, armor: ${ctx.armor.length}, sounds: ${nSounds}, recipes: ${rec.count}, thrown eggs: ${nThrown}`);
   }
   fs.mkdirSync(C.OUT_DIR, { recursive: true });
   fs.writeFileSync(path.join(C.OUT_DIR, 'build_report.json'), JSON.stringify({ warn: ctx.warn, spawns: ctx.spawns, results: ctx.results }, null, 1));

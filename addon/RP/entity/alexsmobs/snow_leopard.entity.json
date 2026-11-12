@@ -16,7 +16,14 @@
         "default": "geometry.alexsmobs.snow_leopard"
       },
       "animations": {
-        "pose": "animation.alexsmobs.snow_leopard.pose",
+        "idle": "animation.alexsmobs.snow_leopard.idle",
+        "breathe": "animation.alexsmobs.snow_leopard.breathe",
+        "walk": "animation.alexsmobs.snow_leopard.walk",
+        "run": "animation.alexsmobs.snow_leopard.run",
+        "pose_sit": "animation.alexsmobs.snow_leopard.pose_sit",
+        "pose_sleep": "animation.alexsmobs.snow_leopard.pose_sleep",
+        "look": "animation.alexsmobs.snow_leopard.look",
+        "baby": "animation.alexsmobs.snow_leopard.baby",
         "attack_r": "animation.alexsmobs.snow_leopard.attack_r",
         "attack_l": "animation.alexsmobs.snow_leopard.attack_l",
         "death_0": "animation.alexsmobs.snow_leopard.death_0",
@@ -26,35 +33,45 @@
         "idle_sniff": "animation.alexsmobs.snow_leopard.idle_sniff",
         "idle_shake": "animation.alexsmobs.snow_leopard.idle_shake",
         "idle_tail": "animation.alexsmobs.snow_leopard.idle_tail",
+        "ctrl_move": "controller.animation.alexsmobs.snow_leopard.move",
+        "ctrl_idles": "controller.animation.alexsmobs.snow_leopard.idles",
         "ctrl_attack": "controller.animation.alexsmobs.snow_leopard.attack",
-        "ctrl_idle": "controller.animation.alexsmobs.snow_leopard.idle",
-        "ctrl_death": "controller.animation.alexsmobs.snow_leopard.death",
-        "ctrl_hurt": "controller.animation.alexsmobs.snow_leopard.hurt"
+        "ctrl_hurt": "controller.animation.alexsmobs.snow_leopard.hurt",
+        "ctrl_death": "controller.animation.alexsmobs.snow_leopard.death"
       },
       "scripts": {
-        "pre_animation": [
-          "v.ls = q.modified_distance_moved;",
-          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
-          "v.age = q.life_time * 20;",
-          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
-          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
-          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+        "initialize": [
+          "v.is_moving = 0;",
+          "v.is_sprinting = 0;",
+          "v.anim_speed = 1;",
           "v.am_flying = 0;",
-          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;"
+        ],
+        "pre_animation": [
+          "v.is_moving = q.modified_move_speed >= 0.1;",
+          "v.is_sprinting = q.modified_move_speed >= 0.56;",
+          "v.anim_speed = math.clamp(q.modified_move_speed / 0.314999994635582, 0.35, 2.4);",
+          "v.am_flying = 0;",
           "v.am_sleeping = q.property('alexsmobs:sleeping');",
           "v.am_standing = 0;",
-          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
-          "v.p_sneakprogress = math.clamp((v.p_sneakprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_tackleprogress = math.clamp((v.p_tackleprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 3);",
-          "v.p_sitprogress = math.clamp((v.p_sitprogress ?? 0) + ((q.is_sitting) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_sleepprogress = math.clamp((v.p_sleepprogress ?? 0) + ((v.am_sleeping) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+          "v.idle_wait = v.idle_wait ?? 4;",
+          "v.idle_pick = v.idle_pick ?? 0;",
+          "v.atk_pick = v.atk_pick ?? 0;",
+          "v.death_pick = v.death_pick ?? 0;"
         ],
         "animate": [
-          "pose",
+          "ctrl_move",
+          {
+            "look": "!v.am_sleeping && q.is_alive"
+          },
+          "ctrl_idles",
           "ctrl_attack",
-          "ctrl_idle",
+          "ctrl_hurt",
           "ctrl_death",
-          "ctrl_hurt"
+          {
+            "baby": "q.is_baby"
+          }
         ]
       },
       "render_controllers": [

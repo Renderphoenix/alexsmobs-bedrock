@@ -1,32 +1,71 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.alexsmobs.comb_jelly.pose": {
+    "animation.alexsmobs.comb_jelly.idle": {
       "loop": true,
+      "animation_length": 3.142,
       "bones": {
         "body": {
-          "rotation": [
-            0,
-            0,
-            "((v.p_onlandprogress * 0.2) * 1.5708) * 57.29578"
-          ],
-          "position": [
-            "v.p_onlandprogress",
-            "-(-13 + -13 + v.p_onlandprogress * 1.85 - -13 - -13 + (math.sin((v.age * 0.1) * 57.29578)) * (1 - (v.p_onlandprogress * 0.2)) - (1 - (v.p_onlandprogress * 0.2)))",
-            0
-          ],
-          "scale": [
-            "1 + (0.95 + (math.sin(((0.1 * v.age) * (1 - (v.p_onlandprogress * 0.2))) * 57.29578)) * 0.1 - (0.1 * v.p_onlandprogress) - 1)",
-            "1 + (0.95 + (math.cos(((0.1 * v.age) * (1 - (v.p_onlandprogress * 0.2))) * 57.29578)) * 0.1 - 1)",
-            "1 + (0.95 + (math.sin(((0.1 * v.age) * (1 - (v.p_onlandprogress * 0.2))) * 57.29578)) * 0.1 - 1)"
-          ]
-        },
-        "inner_body": {
-          "scale": [
-            "1 + (0.95 + (math.sin(((0.1 * v.age) * (1 - (v.p_onlandprogress * 0.2))) * 57.29578)) * 0.1 - (0.1 * v.p_onlandprogress) - 1)",
-            "1 + (0.95 + (math.cos(((0.1 * v.age) * (1 - (v.p_onlandprogress * 0.2))) * 57.29578)) * 0.1 - 1)",
-            "1 + (0.95 + (math.sin(((0.1 * v.age) * (1 - (v.p_onlandprogress * 0.2))) * 57.29578)) * 0.1 - 1)"
-          ]
+          "position": {
+            "0": [0, 1, 0],
+            "0.1963": [0, 0.62, 0],
+            "0.3927": [0, 0.29, 0],
+            "0.589": [0, 0.08, 0],
+            "0.7854": [0, 0, 0],
+            "0.9817": [0, 0.08, 0],
+            "1.1781": [0, 0.29, 0],
+            "1.3744": [0, 0.62, 0],
+            "1.7671": [0, 1.38, 0],
+            "1.9635": [0, 1.71, 0],
+            "2.1598": [0, 1.92, 0],
+            "2.3562": [0, 2, 0],
+            "2.5525": [0, 1.92, 0],
+            "2.7489": [0, 1.71, 0],
+            "2.9452": [0, 1.38, 0],
+            "3.1416": [0, 1, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.comb_jelly.breathe": {
+      "loop": true,
+      "animation_length": 3.6,
+      "bones": {
+        "body": {
+          "position": {
+            "0": [0, 0, 0],
+            "0.9": [0, 0.14, 0],
+            "1.8": [0, 0, 0],
+            "2.7": [0, -0.14, 0],
+            "3.6": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.comb_jelly.swim": {
+      "loop": true,
+      "animation_length": 3.142,
+      "anim_time_update": "q.anim_time + q.delta_time * v.anim_speed",
+      "bones": {
+        "body": {
+          "position": {
+            "0": [0, 1, 0],
+            "0.1963": [0, 0.62, 0],
+            "0.3927": [0, 0.29, 0],
+            "0.589": [0, 0.08, 0],
+            "0.7854": [0, 0, 0],
+            "0.9817": [0, 0.08, 0],
+            "1.1781": [0, 0.29, 0],
+            "1.3744": [0, 0.62, 0],
+            "1.7671": [0, 1.38, 0],
+            "1.9635": [0, 1.71, 0],
+            "2.1598": [0, 1.92, 0],
+            "2.3562": [0, 2, 0],
+            "2.5525": [0, 1.92, 0],
+            "2.7489": [0, 1.71, 0],
+            "2.9452": [0, 1.38, 0],
+            "3.1416": [0, 1, 0]
+          }
         }
       }
     },

@@ -7,12 +7,6 @@
       "is_summonable": true,
       "is_experimental": false,
       "properties": {
-        "alexsmobs:anim": {
-          "type": "int",
-          "range": [0, 2],
-          "default": 0,
-          "client_sync": true
-        },
         "alexsmobs:angry": {
           "type": "bool",
           "default": false,
@@ -29,7 +23,7 @@
         "minecraft:ageable": {
           "duration": 1200,
           "feed_items": [
-            "minecraft:dead_bush"
+            "minecraft:deadbush"
           ],
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
@@ -49,7 +43,7 @@
         "minecraft:breedable": {
           "require_tame": false,
           "breed_items": [
-            "minecraft:dead_bush"
+            "minecraft:deadbush"
           ],
           "breeds_with": {
             "mate_type": "alexsmobs:gelada_monkey",
@@ -106,11 +100,7 @@
       "minecraft:loot": {
         "table": "loot_tables/alexsmobs/entities/gelada_monkey.json"
       },
-      "minecraft:leashable": {
-        "soft_distance": 4,
-        "hard_distance": 6,
-        "max_distance": 10
-      },
+      "minecraft:leashable": {},
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
@@ -175,7 +165,7 @@
         "speed_multiplier": 1.1,
         "within_radius": 10,
         "items": [
-          "minecraft:dead_bush"
+          "minecraft:deadbush"
         ],
         "can_tempt_vertically": false
       }

@@ -67,10 +67,6 @@
             "deals_damage": "no"
           },
           {
-            "cause": "in_wall",
-            "deals_damage": "no"
-          },
-          {
             "cause": "drowning",
             "deals_damage": "no"
           }

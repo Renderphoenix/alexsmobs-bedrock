@@ -1,6 +1,56 @@
 {
   "format_version": "1.10.0",
   "animation_controllers": {
+    "controller.animation.alexsmobs.blobfish.move": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [
+            "breathe"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "swim": "v.is_moving"
+            }
+          ]
+        },
+        "swim": {
+          "animations": [
+            "swim"
+          ],
+          "blend_transition": 0.4,
+          "transitions": [
+            {
+              "idle": "!v.is_moving"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.blobfish.hurt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "hurt": "q.hurt_time > 0 && q.is_alive"
+            }
+          ]
+        },
+        "hurt": {
+          "animations": [
+            "hurt"
+          ],
+          "blend_transition": 0.05,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ]
+        }
+      }
+    },
     "controller.animation.alexsmobs.blobfish.death": {
       "initial_state": "default",
       "states": {
@@ -28,29 +78,6 @@
             "death_1"
           ],
           "blend_transition": 0.1
-        }
-      }
-    },
-    "controller.animation.alexsmobs.blobfish.hurt": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "transitions": [
-            {
-              "hurt": "q.hurt_time > 0 && q.is_alive"
-            }
-          ]
-        },
-        "hurt": {
-          "animations": [
-            "hurt"
-          ],
-          "transitions": [
-            {
-              "default": "q.all_animations_finished"
-            }
-          ],
-          "blend_transition": 0.05
         }
       }
     }

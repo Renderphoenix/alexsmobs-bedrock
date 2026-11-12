@@ -1,54 +1,133 @@
 {
   "format_version": "1.10.0",
   "animation_controllers": {
+    "controller.animation.alexsmobs.straddler.move": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [
+            "idle",
+            "breathe"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "run": "v.is_sprinting"
+            },
+            {
+              "walk": "v.is_moving"
+            }
+          ]
+        },
+        "walk": {
+          "animations": [
+            "walk"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "run": "v.is_sprinting"
+            },
+            {
+              "idle": "!v.is_moving"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "run"
+          ],
+          "blend_transition": 0.25,
+          "transitions": [
+            {
+              "idle": "!v.is_moving"
+            },
+            {
+              "walk": "q.modified_move_speed < 0.384"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.straddler.idles": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [
+            "v.idle_wait = math.random(3, 9);"
+          ],
+          "transitions": [
+            {
+              "pick": "q.state_time > v.idle_wait && q.modified_move_speed < 0.1 && q.is_on_ground && !q.is_in_water && !v.am_sleeping && !q.is_sitting && q.is_alive && !q.has_target"
+            }
+          ]
+        },
+        "pick": {
+          "on_entry": [
+            "v.idle_pick = math.random_integer(0, 0);"
+          ],
+          "transitions": [
+            {
+              "a0": "v.idle_pick == 0"
+            }
+          ]
+        },
+        "a0": {
+          "animations": [
+            "idle_shake"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.1 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        }
+      }
+    },
     "controller.animation.alexsmobs.straddler.attack": {
       "initial_state": "default",
       "states": {
         "default": {
           "transitions": [
             {
-              "attack_0": "q.property('alexsmobs:anim') == 1"
+              "a0": "v.attack_time > 0 && q.is_alive"
             }
           ]
         },
-        "attack_0": {
+        "a0": {
           "animations": [
             "launch"
           ],
+          "blend_transition": 0.12,
           "transitions": [
             {
-              "default": "q.property('alexsmobs:anim') != 1 && q.all_animations_finished"
+              "default": "q.all_animations_finished"
             }
-          ],
-          "blend_transition": 0.15
+          ]
         }
       }
     },
-    "controller.animation.alexsmobs.straddler.idle": {
+    "controller.animation.alexsmobs.straddler.hurt": {
       "initial_state": "default",
       "states": {
         "default": {
-          "on_entry": [
-            "v.idle_t = 0;",
-            "v.idle_wait = math.random(4, 12);",
-            "v.idle_pick = math.random_integer(0, 0);"
-          ],
           "transitions": [
             {
-              "act_0": "v.idle_t > v.idle_wait && v.idle_pick == 0 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+              "hurt": "q.hurt_time > 0 && q.is_alive"
             }
           ]
         },
-        "act_0": {
+        "hurt": {
           "animations": [
-            "idle_shake"
+            "hurt"
           ],
+          "blend_transition": 0.05,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished"
             }
-          ],
-          "blend_transition": 0.3
+          ]
         }
       }
     },
@@ -79,29 +158,6 @@
             "death_1"
           ],
           "blend_transition": 0.1
-        }
-      }
-    },
-    "controller.animation.alexsmobs.straddler.hurt": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "transitions": [
-            {
-              "hurt": "q.hurt_time > 0 && q.is_alive"
-            }
-          ]
-        },
-        "hurt": {
-          "animations": [
-            "hurt"
-          ],
-          "transitions": [
-            {
-              "default": "q.all_animations_finished"
-            }
-          ],
-          "blend_transition": 0.05
         }
       }
     }

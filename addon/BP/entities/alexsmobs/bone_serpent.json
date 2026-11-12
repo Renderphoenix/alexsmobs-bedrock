@@ -7,12 +7,6 @@
       "is_summonable": true,
       "is_experimental": false,
       "properties": {
-        "alexsmobs:anim": {
-          "type": "int",
-          "range": [0, 1],
-          "default": 0,
-          "client_sync": true
-        },
         "alexsmobs:angry": {
           "type": "bool",
           "default": false,
@@ -83,7 +77,7 @@
       "minecraft:loot": {
         "table": "loot_tables/alexsmobs/entities/bone_serpent.json"
       },
-      "minecraft:fire_immune": true,
+      "minecraft:fire_immune": {},
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
@@ -113,7 +107,6 @@
       "minecraft:buoyant": {
         "base_buoyancy": 1,
         "apply_gravity": true,
-        "simulate_waves": false,
         "big_wave_probability": 0,
         "liquid_blocks": [
           "minecraft:lava",
@@ -164,19 +157,9 @@
         "entity_types": [
           {
             "filters": {
-              "all_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "player"
-                },
-                {
-                  "test": "is_creative",
-                  "subject": "other",
-                  "operator": "!=",
-                  "value": true
-                }
-              ]
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
             },
             "max_dist": 32
           },

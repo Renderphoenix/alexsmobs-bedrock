@@ -46,6 +46,8 @@ class Interp {
     this.anims = new Map(); // animator recordings
     this.curAnim = null;
     this.warn = [];
+    this.gaits = []; // limb/idle motion calls recorded while running setupAnim (see anims2.js)
+    this.faces = []; // faceTarget head-look calls
   }
 
   findOwnMethod(name, desc) {
@@ -75,6 +77,7 @@ class Interp {
     this.mode = 'anim';
     const args = [{ t: 'this' }, { t: 'ent' }, M.S('v.ls'), M.S('v.lsa'), M.S('v.age'), M.S('v.yaw'), M.S('v.pitch')];
     this.ent.progress.clear && this.ent.progress.clear();
+    this.gaits = []; this.faces = [];
     const res = this.run(m, args, { fork });
     return res;
   }
@@ -492,17 +495,20 @@ class Interp {
   citadel(st, name, args, d) {
     const A = args.map(M.toVal);
     const addRot = (box, axis, v) => { if (isBox(box)) chanAdd(st, box, 'r' + axis, v); };
+    const val = x => { x = M.toVal(x); return M.isNum(x) ? x : M.str(x); };
+    const rec = (kind, box, extra) => { if (this.mode === 'anim' && isBox(box)) this.gaits.push(Object.assign({ kind, bone: box.id, guard: guardList(st.guard).slice() }, extra)); };
     const calc = (speed, degree, invert, offset, weight, f, f1) => {
       let r = M.add(M.mul(M.mul(M.fn('cos', M.add(M.mul(f, speed), offset)), degree), f1), M.mul(weight, f1));
       return M.isNum(invert) && invert ? M.neg(r) : (M.isNum(invert) ? r : M.ternary(invert, M.neg(r), r));
     };
     switch (name) {
-      case 'walk': if (this.mode === 'anim') addRot(args[0], 'x', calc(A[1], A[2], A[3], A[4], A[5], A[6], A[7])); return;
-      case 'swing': if (this.mode === 'anim') addRot(args[0], 'y', calc(A[1], A[2], A[3], A[4], A[5], A[6], A[7])); return;
-      case 'flap': if (this.mode === 'anim') addRot(args[0], 'z', calc(A[1], A[2], A[3], A[4], A[5], A[6], A[7])); return;
+      case 'walk': rec('walk', args[0], { axis: 'x', speed: val(A[1]), degree: val(A[2]), invert: val(A[3]), offset: val(A[4]), weight: val(A[5]), f: val(A[6]), f1: val(A[7]) }); if (this.mode === 'anim') addRot(args[0], 'x', calc(A[1], A[2], A[3], A[4], A[5], A[6], A[7])); return;
+      case 'swing': rec('walk', args[0], { axis: 'y', speed: val(A[1]), degree: val(A[2]), invert: val(A[3]), offset: val(A[4]), weight: val(A[5]), f: val(A[6]), f1: val(A[7]) }); if (this.mode === 'anim') addRot(args[0], 'y', calc(A[1], A[2], A[3], A[4], A[5], A[6], A[7])); return;
+      case 'flap': rec('walk', args[0], { axis: 'z', speed: val(A[1]), degree: val(A[2]), invert: val(A[3]), offset: val(A[4]), weight: val(A[5]), f: val(A[6]), f1: val(A[7]) }); if (this.mode === 'anim') addRot(args[0], 'z', calc(A[1], A[2], A[3], A[4], A[5], A[6], A[7])); return;
       case 'bob': {
         if (this.mode !== 'anim' || !isBox(args[0])) return;
         const [, speed, degree, bounce, f, f1] = A;
+        rec('bob', args[0], { speed: val(speed), degree: val(degree), bounce: val(bounce), f: val(f), f1: val(f1) });
         const s = M.fn('sin', M.mul(f, speed));
         let bob = M.sub(M.mul(M.mul(s, f1), degree), M.mul(f1, degree));
         if (M.isNum(bounce) ? bounce : false) bob = M.neg(M.fn('abs', M.mul(M.mul(s, f1), degree)));
@@ -516,6 +522,7 @@ class Interp {
         const n = boxes.length || 1;
         const offset = M.div(M.mul(rootOffset, Math.PI), 2 * n);
         const axis = name === 'chainWave' ? 'x' : name === 'chainSwing' ? 'y' : 'z';
+        boxes.forEach((b, i) => rec('chain', b, { axis, speed: val(speed), degree: val(degree), rootOffset: val(rootOffset), index: i, count: n, f: val(f), f1: val(f1) }));
         boxes.forEach((b, i) => addRot(b, axis, M.mul(M.mul(M.fn('cos', M.add(M.mul(f, speed), M.mul(offset, i))), f1), degree)));
         return;
       }
@@ -539,6 +546,7 @@ class Interp {
         if (this.mode !== 'anim') return;
         const [yaw, pitch, divisor] = [A[0], A[1], A[2]];
         const boxes = args[3] && args[3].t === 'arr' ? args[3].items : args.slice(3).filter(isBox);
+        boxes.forEach(b => rec('face', b, { divisor: val(divisor), n: boxes.length }));
         const actual = M.mul(divisor, boxes.length || 1);
         const ya = M.div(M.div(yaw, 180 / Math.PI), actual);
         const pa = M.div(M.div(pitch, 180 / Math.PI), actual);

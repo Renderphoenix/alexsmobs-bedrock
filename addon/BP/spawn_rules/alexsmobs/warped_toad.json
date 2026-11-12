@@ -8,12 +8,23 @@
     "conditions": [
       {
         "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_on_block_filter": [
+          "minecraft:netherrack",
+          "minecraft:soul_sand",
+          "minecraft:soul_soil",
+          "minecraft:crimson_nylium",
+          "minecraft:warped_nylium",
+          "minecraft:basalt",
+          "minecraft:blackstone"
+        ],
         "minecraft:weight": {
-          "default": 45
+          "default": 8
         },
         "minecraft:herd": {
           "min_size": 5,
-          "max_size": 5
+          "max_size": 5,
+          "event": "minecraft:entity_born",
+          "event_skip_count": 4
         },
         "minecraft:density_limit": {
           "surface": 10

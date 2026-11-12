@@ -1,101 +1,658 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.alexsmobs.bald_eagle.pose": {
+    "animation.alexsmobs.bald_eagle.idle": {
       "loop": true,
+      "animation_length": 4.488,
       "bones": {
-        "body": {
-          "rotation": [
-            "(0.8727 + ((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * 0.69813 + ((v.p_sitprogress + (v.p_sitprogress - v.p_sitprogress) * (v.age - v.age)) * 0.2) * -0.34907 + ((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -0.34907 : ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * 0.69813 + ((v.p_sitprogress + (v.p_sitprogress - v.p_sitprogress) * (v.age - v.age)) * 0.2) * -0.34907 + ((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -0.34907 + (math.min(v.lsa, 1)) * 0.2618) - 0.8727) * 57.29578",
-            0,
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? 0 : ((math.cos((v.ls * 0.5) * 57.29578)) * 0.1) * v.lsa)) * 57.29578"
-          ],
-          "position": [
-            0,
-            "-((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * 4 + -((v.p_sitprogress + (v.p_sitprogress - v.p_sitprogress) * (v.age - v.age)) * 0.2) + -((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) + -(math.abs((math.sin((v.age * 0.2) * 57.29578)) * 0.8)) + -(math.abs(((math.sin((v.age * 0.2) * 57.29578)) * (((((v.p_flapamount + (v.p_flapamount - v.p_flapamount) * (v.age - v.age)) * (v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * (5 - (math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2)) * 0.8)) : ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * 4 + -((v.p_sitprogress + (v.p_sitprogress - v.p_sitprogress) * (v.age - v.age)) * 0.2) + -((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) + math.min(v.lsa, 1) + -(math.abs(((math.sin((v.ls * 0.5) * 57.29578)) * v.lsa) * 0.65)))",
-            "((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -1.5"
-          ]
+        "head": {
+          "rotation": {
+            "0": [5.96, 0, 0],
+            "0.2805": [7.57, 0, 0],
+            "0.561": [8.46, 0, 0],
+            "0.8415": [8.5, 0, 0],
+            "1.122": [7.69, 0, 0],
+            "1.4025": [6.13, 0, 0],
+            "1.683": [4.08, 0, 0],
+            "1.9635": [1.85, 0, 0],
+            "2.244": [-0.23, 0, 0],
+            "2.5245": [-1.84, 0, 0],
+            "2.805": [-2.73, 0, 0],
+            "3.0855": [-2.77, 0, 0],
+            "3.366": [-1.96, 0, 0],
+            "3.6465": [-0.4, 0, 0],
+            "3.927": [1.64, 0, 0],
+            "4.2075": [3.88, 0, 0],
+            "4.488": [5.96, 0, 0]
+          }
         },
         "tail": {
-          "rotation": [
-            "(((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -0.34907 + ((v.p_sitprogress + (v.p_sitprogress - v.p_sitprogress) * (v.age - v.age)) * 0.2) * 0.17453 + (math.cos((v.age * 0.07 + 1) * 57.29578)) * 0.1 + 0.05) * 57.29578",
-            0,
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? 0 : ((math.cos((v.ls * 0.5 + 1) * 57.29578)) * 0.1) * v.lsa)) * 57.29578"
-          ]
+          "rotation": {
+            "0": [5.96, 0, 0],
+            "0.2805": [3.88, 0, 0],
+            "0.561": [1.64, 0, 0],
+            "0.8415": [-0.4, 0, 0],
+            "1.122": [-1.96, 0, 0],
+            "1.4025": [-2.77, 0, 0],
+            "1.683": [-2.73, 0, 0],
+            "1.9635": [-1.84, 0, 0],
+            "2.244": [-0.23, 0, 0],
+            "2.5245": [1.85, 0, 0],
+            "2.805": [4.08, 0, 0],
+            "3.0855": [6.13, 0, 0],
+            "3.366": [7.69, 0, 0],
+            "3.6465": [8.5, 0, 0],
+            "3.927": [8.46, 0, 0],
+            "4.2075": [7.57, 0, 0],
+            "4.488": [5.96, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.bald_eagle.breathe": {
+      "loop": true,
+      "animation_length": 3.6,
+      "bones": {
+        "body": {
+          "position": {
+            "0": [0, 0, 0],
+            "0.9": [0, 0.14, 0],
+            "1.8": [0, 0, 0],
+            "2.7": [0, -0.14, 0],
+            "3.6": [0, 0, 0]
+          }
         },
-        "legL": {
-          "rotation": [
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) * 0.5236 + ((v.p_sitprogress + (v.p_sitprogress - v.p_sitprogress) * (v.age - v.age)) * 0.2) * 0.34907 + ((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -1.0472 : ((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) * 0.5236 + ((v.p_sitprogress + (v.p_sitprogress - v.p_sitprogress) * (v.age - v.age)) * 0.2) * 0.34907 + ((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -1.0472 + (math.min(v.lsa, 1)) * -0.2618 + ((math.cos((v.ls * 0.5) * 57.29578)) * 0.925) * v.lsa + 0.2 * v.lsa)) * 57.29578",
-            0,
-            0
-          ],
-          "position": [
-            0,
-            "-(-((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) + -((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2))",
-            "(math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2"
-          ]
+        "headPivot": {
+          "rotation": {
+            "0": [1, 0, 0],
+            "0.9": [0.98, 1.8, 0],
+            "1.8": [-1, 0, 0],
+            "2.7": [-0.98, -1.8, 0],
+            "3.6": [1, 0, 0]
+          }
         },
-        "legR": {
-          "rotation": [
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) * 0.5236 + ((v.p_sitprogress + (v.p_sitprogress - v.p_sitprogress) * (v.age - v.age)) * 0.2) * 0.34907 + ((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -1.0472 : ((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) * 0.5236 + ((v.p_sitprogress + (v.p_sitprogress - v.p_sitprogress) * (v.age - v.age)) * 0.2) * 0.34907 + ((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -1.0472 + (math.min(v.lsa, 1)) * -0.2618 + -(((math.cos((v.ls * 0.5) * 57.29578)) * 0.925) * v.lsa + 0.2 * v.lsa))) * 57.29578",
-            0,
-            0
-          ],
-          "position": [
-            0,
-            "-(-((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) + -((math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2))",
-            "(math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2"
-          ]
-        },
-        "footL": {
-          "rotation": [
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) * 0.5236 : ((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) * 0.5236 + -(((math.cos((v.ls * 0.5 + 2) * 57.29578)) * 0.2) * v.lsa + 0.2 * v.lsa))) * 57.29578",
-            0,
-            0
-          ]
-        },
-        "footR": {
-          "rotation": [
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) * 0.5236 : ((math.max(0, v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age) - (math.min(v.p_tackleprogress + (v.p_tackleprogress - v.p_tackleprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) * 0.5236 + ((math.cos((v.ls * 0.5 + 2) * 57.29578)) * 0.2) * v.lsa + 0.2 * v.lsa)) * 57.29578",
-            0,
-            0
-          ]
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.9": [0, 5, 0],
+            "1.8": [0, 0, 0],
+            "2.7": [0, -5, 0],
+            "3.6": [0, 0, 0]
+          }
         },
         "wingR": {
-          "rotation": [
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -2.0944 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * 1.0472 : ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -2.0944 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * 1.0472 + (math.min(v.lsa, 1)) * -0.2618)) * 57.29578",
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * 1.5708 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -0.87266 + ((math.cos((v.age * 0.4) * 57.29578)) * 0.6) * (((((v.p_flapamount + (v.p_flapamount - v.p_flapamount) * (v.age - v.age)) * (v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * (5 - (math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2) : ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * 1.5708 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -0.87266)) * 57.29578",
-            0
-          ],
-          "position": [
-            "-((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * 2",
-            "-(((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * 5 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -2)",
-            0
-          ]
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.9": [0, 0, -1.5],
+            "1.8": [0, 0, 0],
+            "2.7": [0, 0, 1.5],
+            "3.6": [0, 0, 0]
+          }
         },
         "wingL": {
-          "rotation": [
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -2.0944 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * 1.0472 : ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -2.0944 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * 1.0472 + (math.min(v.lsa, 1)) * -0.2618)) * 57.29578",
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -1.5708 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * 0.87266 + -(((math.cos((v.age * 0.4) * 57.29578)) * 0.6) * (((((v.p_flapamount + (v.p_flapamount - v.p_flapamount) * (v.age - v.age)) * (v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * (5 - (math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))))) * 0.2)) : ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -1.5708 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * 0.87266)) * 57.29578",
-            0
-          ],
-          "position": [
-            "(v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -2",
-            "-(((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * 5 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -2)",
-            0
-          ]
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.9": [0, 0, 1.5],
+            "1.8": [0, 0, 0],
+            "2.7": [0, 0, -1.5],
+            "3.6": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.bald_eagle.walk": {
+      "loop": true,
+      "animation_length": 2.094,
+      "anim_time_update": "q.anim_time + q.delta_time * v.anim_speed",
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 3.72],
+            "0.1309": [0, 0, 3.44],
+            "0.2618": [0, 0, 2.63],
+            "0.3927": [0, 0, 1.43],
+            "0.6545": [0, 0, -1.43],
+            "0.7854": [0, 0, -2.63],
+            "0.9163": [0, 0, -3.44],
+            "1.0472": [0, 0, -3.72],
+            "1.1781": [0, 0, -3.44],
+            "1.309": [0, 0, -2.63],
+            "1.4399": [0, 0, -1.43],
+            "1.7017": [0, 0, 1.43],
+            "1.8326": [0, 0, 2.63],
+            "1.9635": [0, 0, 3.44],
+            "2.0944": [0, 0, 3.72]
+          },
+          "position": {
+            "0": [0, 0, 0],
+            "0.1309": [0, 0.16, 0],
+            "0.2618": [0, 0.3, 0],
+            "0.3927": [0, 0.39, 0],
+            "0.5236": [0, 0.42, 0],
+            "0.6545": [0, 0.39, 0],
+            "0.7854": [0, 0.3, 0],
+            "0.9163": [0, 0.16, 0],
+            "1.0472": [0, 0, 0],
+            "1.309": [0, 0.3, 0],
+            "1.4399": [0, 0.39, 0],
+            "1.5708": [0, 0.42, 0],
+            "1.7017": [0, 0.39, 0],
+            "1.8326": [0, 0.3, 0],
+            "2.0944": [0, 0, 0]
+          }
+        },
+        "legL": {
+          "rotation": {
+            "0": [41.9, 0, 0],
+            "0.1309": [39.28, 0, 0],
+            "0.2618": [31.81, 0, 0],
+            "0.3927": [20.63, 0, 0],
+            "0.6545": [-5.73, 0, 0],
+            "0.7854": [-16.91, 0, 0],
+            "0.9163": [-24.38, 0, 0],
+            "1.0472": [-27, 0, 0],
+            "1.1781": [-24.38, 0, 0],
+            "1.309": [-16.91, 0, 0],
+            "1.4399": [-5.73, 0, 0],
+            "1.7017": [20.63, 0, 0],
+            "1.8326": [31.81, 0, 0],
+            "1.9635": [39.28, 0, 0],
+            "2.0944": [41.9, 0, 0]
+          }
+        },
+        "legR": {
+          "rotation": {
+            "0": [-41.9, 0, 0],
+            "0.1309": [-39.28, 0, 0],
+            "0.2618": [-31.81, 0, 0],
+            "0.3927": [-20.63, 0, 0],
+            "0.6545": [5.73, 0, 0],
+            "0.7854": [16.91, 0, 0],
+            "0.9163": [24.38, 0, 0],
+            "1.0472": [27, 0, 0],
+            "1.1781": [24.38, 0, 0],
+            "1.309": [16.91, 0, 0],
+            "1.4399": [5.73, 0, 0],
+            "1.7017": [-20.63, 0, 0],
+            "1.8326": [-31.81, 0, 0],
+            "1.9635": [-39.28, 0, 0],
+            "2.0944": [-41.9, 0, 0]
+          }
+        },
+        "footL": {
+          "rotation": {
+            "0": [-4.35, 0, 0],
+            "0.1309": [-1.99, 0, 0],
+            "0.2618": [-0.47, 0, 0],
+            "0.3927": [0, 0, 0],
+            "0.5236": [-0.68, 0, 0],
+            "0.6545": [-2.38, 0, 0],
+            "0.7854": [-4.85, 0, 0],
+            "0.9163": [-7.72, 0, 0],
+            "1.0472": [-10.55, 0, 0],
+            "1.1781": [-12.9, 0, 0],
+            "1.309": [-14.43, 0, 0],
+            "1.4399": [-14.89, 0, 0],
+            "1.5708": [-14.22, 0, 0],
+            "1.7017": [-12.52, 0, 0],
+            "1.8326": [-10.05, 0, 0],
+            "1.9635": [-7.18, 0, 0],
+            "2.0944": [-4.35, 0, 0]
+          }
+        },
+        "footR": {
+          "rotation": {
+            "0": [4.35, 0, 0],
+            "0.1309": [1.99, 0, 0],
+            "0.2618": [0.47, 0, 0],
+            "0.3927": [0, 0, 0],
+            "0.5236": [0.68, 0, 0],
+            "0.6545": [2.38, 0, 0],
+            "0.7854": [4.85, 0, 0],
+            "0.9163": [7.72, 0, 0],
+            "1.0472": [10.55, 0, 0],
+            "1.1781": [12.9, 0, 0],
+            "1.309": [14.43, 0, 0],
+            "1.4399": [14.89, 0, 0],
+            "1.5708": [14.22, 0, 0],
+            "1.7017": [12.52, 0, 0],
+            "1.8326": [10.05, 0, 0],
+            "1.9635": [7.18, 0, 0],
+            "2.0944": [4.35, 0, 0]
+          }
         },
         "head": {
+          "rotation": {
+            "0": [-4.43, 0, 0],
+            "0.1309": [-6.46, 0, 0],
+            "0.2618": [-8.64, 0, 0],
+            "0.3927": [-10.64, 0, 0],
+            "0.5236": [-12.15, 0, 0],
+            "0.6545": [-12.95, 0, 0],
+            "0.7854": [-12.91, 0, 0],
+            "0.9163": [-12.04, 0, 0],
+            "1.0472": [-10.47, 0, 0],
+            "1.1781": [-8.44, 0, 0],
+            "1.309": [-6.26, 0, 0],
+            "1.4399": [-4.26, 0, 0],
+            "1.5708": [-2.75, 0, 0],
+            "1.7017": [-1.95, 0, 0],
+            "1.8326": [-1.99, 0, 0],
+            "1.9635": [-2.86, 0, 0],
+            "2.0944": [-4.43, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 2.01],
+            "0.1309": [0, 0, 0.66],
+            "0.2618": [0, 0, -0.79],
+            "0.3927": [0, 0, -2.13],
+            "0.5236": [0, 0, -3.13],
+            "0.6545": [0, 0, -3.67],
+            "0.7854": [0, 0, -3.64],
+            "0.9163": [0, 0, -3.06],
+            "1.0472": [0, 0, -2.01],
+            "1.1781": [0, 0, -0.66],
+            "1.309": [0, 0, 0.79],
+            "1.4399": [0, 0, 2.13],
+            "1.5708": [0, 0, 3.13],
+            "1.7017": [0, 0, 3.67],
+            "1.8326": [0, 0, 3.64],
+            "1.9635": [0, 0, 3.06],
+            "2.0944": [0, 0, 2.01]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.bald_eagle.run": {
+      "loop": true,
+      "animation_length": 2.094,
+      "anim_time_update": "q.anim_time + q.delta_time * v.anim_speed",
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 0, 5.73],
+            "0.1309": [0, 0, 5.29],
+            "0.2618": [0, 0, 4.05],
+            "0.3927": [0, 0, 2.19],
+            "0.6545": [0, 0, -2.19],
+            "0.7854": [0, 0, -4.05],
+            "0.9163": [0, 0, -5.29],
+            "1.0472": [0, 0, -5.73],
+            "1.1781": [0, 0, -5.29],
+            "1.309": [0, 0, -4.05],
+            "1.4399": [0, 0, -2.19],
+            "1.7017": [0, 0, 2.19],
+            "1.8326": [0, 0, 4.05],
+            "1.9635": [0, 0, 5.29],
+            "2.0944": [0, 0, 5.73]
+          },
+          "position": {
+            "0": [0, 0, 0],
+            "0.1309": [0, 0.25, 0],
+            "0.2618": [0, 0.46, 0],
+            "0.3927": [0, 0.6, 0],
+            "0.5236": [0, 0.65, 0],
+            "0.6545": [0, 0.6, 0],
+            "0.7854": [0, 0.46, 0],
+            "0.9163": [0, 0.25, 0],
+            "1.0472": [0, 0, 0],
+            "1.1781": [0, 0.25, 0],
+            "1.309": [0, 0.46, 0],
+            "1.4399": [0, 0.6, 0],
+            "1.5708": [0, 0.65, 0],
+            "1.7017": [0, 0.6, 0],
+            "1.8326": [0, 0.46, 0],
+            "1.9635": [0, 0.25, 0],
+            "2.0944": [0, 0, 0]
+          }
+        },
+        "legL": {
+          "rotation": {
+            "0": [64.46, 0, 0],
+            "0.1309": [60.42, 0, 0],
+            "0.2618": [48.93, 0, 0],
+            "0.3927": [31.74, 0, 0],
+            "0.6545": [-8.82, 0, 0],
+            "0.7854": [-26.02, 0, 0],
+            "0.9163": [-37.51, 0, 0],
+            "1.0472": [-41.54, 0, 0],
+            "1.1781": [-37.51, 0, 0],
+            "1.309": [-26.02, 0, 0],
+            "1.4399": [-8.82, 0, 0],
+            "1.7017": [31.74, 0, 0],
+            "1.8326": [48.93, 0, 0],
+            "1.9635": [60.42, 0, 0],
+            "2.0944": [64.46, 0, 0]
+          }
+        },
+        "legR": {
+          "rotation": {
+            "0": [-64.46, 0, 0],
+            "0.1309": [-60.42, 0, 0],
+            "0.2618": [-48.93, 0, 0],
+            "0.3927": [-31.74, 0, 0],
+            "0.6545": [8.82, 0, 0],
+            "0.7854": [26.02, 0, 0],
+            "0.9163": [37.51, 0, 0],
+            "1.0472": [41.54, 0, 0],
+            "1.1781": [37.51, 0, 0],
+            "1.309": [26.02, 0, 0],
+            "1.4399": [8.82, 0, 0],
+            "1.7017": [-31.74, 0, 0],
+            "1.8326": [-48.93, 0, 0],
+            "1.9635": [-60.42, 0, 0],
+            "2.0944": [-64.46, 0, 0]
+          }
+        },
+        "footL": {
+          "rotation": {
+            "0": [-6.69, 0, 0],
+            "0.1309": [-3.07, 0, 0],
+            "0.2618": [-0.72, 0, 0],
+            "0.3927": [-0.01, 0, 0],
+            "0.5236": [-1.04, 0, 0],
+            "0.6545": [-3.66, 0, 0],
+            "0.7854": [-7.46, 0, 0],
+            "0.9163": [-11.88, 0, 0],
+            "1.0472": [-16.23, 0, 0],
+            "1.1781": [-19.85, 0, 0],
+            "1.309": [-22.2, 0, 0],
+            "1.4399": [-22.91, 0, 0],
+            "1.5708": [-21.88, 0, 0],
+            "1.7017": [-19.26, 0, 0],
+            "1.8326": [-15.46, 0, 0],
+            "1.9635": [-11.04, 0, 0],
+            "2.0944": [-6.69, 0, 0]
+          }
+        },
+        "footR": {
+          "rotation": {
+            "0": [6.69, 0, 0],
+            "0.1309": [3.07, 0, 0],
+            "0.2618": [0.72, 0, 0],
+            "0.3927": [0.01, 0, 0],
+            "0.5236": [1.04, 0, 0],
+            "0.6545": [3.66, 0, 0],
+            "0.7854": [7.46, 0, 0],
+            "0.9163": [11.88, 0, 0],
+            "1.0472": [16.23, 0, 0],
+            "1.1781": [19.85, 0, 0],
+            "1.309": [22.2, 0, 0],
+            "1.4399": [22.91, 0, 0],
+            "1.5708": [21.88, 0, 0],
+            "1.7017": [19.26, 0, 0],
+            "1.8326": [15.46, 0, 0],
+            "1.9635": [11.04, 0, 0],
+            "2.0944": [6.69, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0": [-6.82, 0, 0],
+            "0.1309": [-9.94, 0, 0],
+            "0.2618": [-13.29, 0, 0],
+            "0.3927": [-16.36, 0, 0],
+            "0.5236": [-18.69, 0, 0],
+            "0.6545": [-19.92, 0, 0],
+            "0.7854": [-19.86, 0, 0],
+            "0.9163": [-18.52, 0, 0],
+            "1.0472": [-16.1, 0, 0],
+            "1.1781": [-12.98, 0, 0],
+            "1.309": [-9.63, 0, 0],
+            "1.4399": [-6.55, 0, 0],
+            "1.5708": [-4.23, 0, 0],
+            "1.7017": [-3, 0, 0],
+            "1.8326": [-3.06, 0, 0],
+            "1.9635": [-4.4, 0, 0],
+            "2.0944": [-6.82, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0": [0, 0, 3.1],
+            "0.1309": [0, 0, 1.02],
+            "0.2618": [0, 0, -1.22],
+            "0.3927": [0, 0, -3.27],
+            "0.5236": [0, 0, -4.82],
+            "0.6545": [0, 0, -5.64],
+            "0.7854": [0, 0, -5.6],
+            "0.9163": [0, 0, -4.71],
+            "1.0472": [0, 0, -3.1],
+            "1.1781": [0, 0, -1.02],
+            "1.309": [0, 0, 1.22],
+            "1.4399": [0, 0, 3.27],
+            "1.5708": [0, 0, 4.82],
+            "1.7017": [0, 0, 5.64],
+            "1.8326": [0, 0, 5.6],
+            "1.9635": [0, 0, 4.71],
+            "2.0944": [0, 0, 3.1]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.bald_eagle.fly": {
+      "loop": true,
+      "animation_length": 3,
+      "bones": {
+        "body": {
+          "rotation": [40, 0, 0],
+          "position": {
+            "0": [0, -4, -1.5],
+            "3": [0, -4, -1.5],
+            "0.075": [0, -3.75, -1.5],
+            "0.15": [0, -3.53, -1.5],
+            "0.225": [0, -3.35, -1.5],
+            "0.3": [0, -3.24, -1.5],
+            "0.375": [0, -3.2, -1.5],
+            "0.45": [0, -3.24, -1.5],
+            "0.525": [0, -3.35, -1.5],
+            "0.6": [0, -3.53, -1.5],
+            "0.675": [0, -3.75, -1.5],
+            "0.75": [0, -4, -1.5],
+            "0.825": [0, -3.75, -1.5],
+            "0.9": [0, -3.53, -1.5],
+            "0.975": [0, -3.35, -1.5],
+            "1.05": [0, -3.24, -1.5],
+            "1.125": [0, -3.2, -1.5],
+            "1.2": [0, -3.24, -1.5],
+            "1.275": [0, -3.35, -1.5],
+            "1.35": [0, -3.53, -1.5],
+            "1.425": [0, -3.75, -1.5],
+            "1.5": [0, -4, -1.5],
+            "1.575": [0, -3.75, -1.5],
+            "1.65": [0, -3.53, -1.5],
+            "1.725": [0, -3.35, -1.5],
+            "1.8": [0, -3.24, -1.5],
+            "1.875": [0, -3.2, -1.5],
+            "1.95": [0, -3.24, -1.5],
+            "2.025": [0, -3.35, -1.5],
+            "2.1": [0, -3.53, -1.5],
+            "2.175": [0, -3.75, -1.5],
+            "2.25": [0, -4, -1.5],
+            "2.325": [0, -3.75, -1.5],
+            "2.4": [0, -3.53, -1.5],
+            "2.475": [0, -3.35, -1.5],
+            "2.55": [0, -3.24, -1.5],
+            "2.625": [0, -3.2, -1.5],
+            "2.7": [0, -3.24, -1.5],
+            "2.775": [0, -3.35, -1.5],
+            "2.85": [0, -3.53, -1.5],
+            "2.925": [0, -3.75, -1.5]
+          }
+        },
+        "wingL": {
+          "rotation": [-85, -85, 0],
+          "position": [1, -5, 0]
+        },
+        "wingR": {
+          "rotation": [-85, 85, 0],
+          "position": [-1, -5, 0]
+        },
+        "head": {
+          "rotation": {
+            "0": [-24.04, 0, 0],
+            "3": [-24.04, 0, 0],
+            "0.075": [-23.32, 0, 0],
+            "0.15": [-22.7, 0, 0],
+            "0.225": [-22.19, 0, 0],
+            "0.3": [-21.8, 0, 0],
+            "0.375": [-21.54, 0, 0],
+            "0.45": [-21.42, 0, 0],
+            "0.525": [-21.43, 0, 0],
+            "0.6": [-21.59, 0, 0],
+            "0.675": [-21.89, 0, 0],
+            "0.75": [-22.31, 0, 0],
+            "0.825": [-22.86, 0, 0],
+            "0.9": [-23.51, 0, 0],
+            "0.975": [-24.24, 0, 0],
+            "1.05": [-25.05, 0, 0],
+            "1.35": [-28.59, 0, 0],
+            "1.425": [-29.44, 0, 0],
+            "1.5": [-30.23, 0, 0],
+            "1.575": [-30.95, 0, 0],
+            "1.65": [-31.57, 0, 0],
+            "1.725": [-32.08, 0, 0],
+            "1.8": [-32.47, 0, 0],
+            "1.875": [-32.73, 0, 0],
+            "1.95": [-32.86, 0, 0],
+            "2.025": [-32.84, 0, 0],
+            "2.1": [-32.68, 0, 0],
+            "2.175": [-32.38, 0, 0],
+            "2.25": [-31.96, 0, 0],
+            "2.325": [-31.41, 0, 0],
+            "2.4": [-30.76, 0, 0],
+            "2.475": [-30.03, 0, 0],
+            "2.55": [-29.22, 0, 0],
+            "2.625": [-28.36, 0, 0],
+            "2.85": [-25.68, 0, 0],
+            "2.925": [-24.83, 0, 0]
+          },
+          "position": [0, 0, -1.5]
+        },
+        "tail": {
+          "rotation": {
+            "0": [-14.04, 0, 0],
+            "3": [-14.04, 0, 0],
+            "0.075": [-14.83, 0, 0],
+            "0.15": [-15.68, 0, 0],
+            "0.375": [-18.36, 0, 0],
+            "0.45": [-19.22, 0, 0],
+            "0.525": [-20.03, 0, 0],
+            "0.6": [-20.76, 0, 0],
+            "0.675": [-21.41, 0, 0],
+            "0.75": [-21.96, 0, 0],
+            "0.825": [-22.38, 0, 0],
+            "0.9": [-22.68, 0, 0],
+            "0.975": [-22.84, 0, 0],
+            "1.05": [-22.86, 0, 0],
+            "1.125": [-22.73, 0, 0],
+            "1.2": [-22.47, 0, 0],
+            "1.275": [-22.08, 0, 0],
+            "1.35": [-21.57, 0, 0],
+            "1.425": [-20.95, 0, 0],
+            "1.5": [-20.23, 0, 0],
+            "1.575": [-19.44, 0, 0],
+            "1.65": [-18.59, 0, 0],
+            "1.95": [-15.05, 0, 0],
+            "2.025": [-14.25, 0, 0],
+            "2.1": [-13.51, 0, 0],
+            "2.175": [-12.86, 0, 0],
+            "2.25": [-12.31, 0, 0],
+            "2.325": [-11.89, 0, 0],
+            "2.4": [-11.59, 0, 0],
+            "2.475": [-11.43, 0, 0],
+            "2.55": [-11.42, 0, 0],
+            "2.625": [-11.54, 0, 0],
+            "2.7": [-11.8, 0, 0],
+            "2.775": [-12.19, 0, 0],
+            "2.85": [-12.7, 0, 0],
+            "2.925": [-13.32, 0, 0]
+          }
+        },
+        "legL": {
+          "rotation": [30, 0, 0],
+          "position": [0, 1, 0]
+        },
+        "footL": {
+          "rotation": [30, 0, 0]
+        },
+        "legR": {
+          "rotation": [30, 0, 0],
+          "position": [0, 1, 0]
+        },
+        "footR": {
+          "rotation": [30, 0, 0]
+        }
+      }
+    },
+    "animation.alexsmobs.bald_eagle.pose_sit": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "body": {
+          "rotation": [-20, 0, 0],
+          "position": [0, 1, 0]
+        },
+        "legL": {
+          "rotation": [20, 0, 0]
+        },
+        "legR": {
+          "rotation": [20, 0, 0]
+        },
+        "tail": {
+          "rotation": [10, 0, 0]
+        }
+      }
+    },
+    "animation.alexsmobs.bald_eagle.look": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "headPivot": {
           "rotation": [
-            "(((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0)) ? ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -0.5236 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -0.17453 + ((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.4) * 1.22173 + (math.cos((v.age * 0.07 - 1) * 57.29578)) * 0.1 + 0.05 : ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -0.5236 + ((math.min(v.p_swoopprogress + (v.p_swoopprogress - v.p_swoopprogress) * (v.age - v.age), v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age))) * 0.2) * -0.17453 + ((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.4) * 1.22173 + ((math.cos((v.ls * 0.5 + 1) * 57.29578)) * 0.15) * v.lsa + -0.2 * v.lsa + (math.cos((v.age * 0.07 - 1) * 57.29578)) * 0.1 + 0.05)) * 57.29578",
-            "((((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0) && q.has_rider) || ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0 && q.has_rider)) ? 0 : v.yaw * 0.01745)) * 57.29578",
-            "((((!((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0) && q.has_rider) || ((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) <= 0 && q.has_rider)) ? 0 : v.pitch * 0.01745)) * 57.29578"
-          ],
-          "position": [
-            0,
-            0,
-            "((v.p_flyprogress + (v.p_flyprogress - v.p_flyprogress) * (v.age - v.age)) * 0.2) * -1.5"
+            "math.clamp(q.target_x_rotation, -45, 45) * 1",
+            "math.clamp(q.target_y_rotation, -70, 70) * 1",
+            0
           ]
+        }
+      }
+    },
+    "animation.alexsmobs.bald_eagle.baby": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "headPivot": {
+          "scale": [1.32, 1.32, 1.32]
+        }
+      }
+    },
+    "animation.alexsmobs.bald_eagle.attack_bite": {
+      "animation_length": 0.55,
+      "bones": {
+        "headPivot": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.12": [-22, 0, 0],
+            "0.26": [34, 0, 0],
+            "0.34": [30, 0, 0],
+            "0.55": [0, 0, 0]
+          }
+        },
+        "body": {
+          "position": {
+            "0": [0, 0, 0],
+            "0.12": [0, 0.3, 1.2],
+            "0.26": [0, -0.3, -2.4],
+            "0.55": [0, 0, 0]
+          },
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.12": [-4, 0, 0],
+            "0.26": [5, 0, 0],
+            "0.55": [0, 0, 0]
+          }
         }
       }
     },

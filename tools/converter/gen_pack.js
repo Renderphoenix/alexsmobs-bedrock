@@ -22,7 +22,7 @@ function meta() {
 function manifests() {
   const m = meta();
   const v = m.version;
-  const desc = `§aA fresh Bedrock port of Alex's Mobs§r, converted straight from the Java mod: real models, Java animations, spawns and drops.\n§7Original mod: Alexthe668, Carro1001, Paint_Ninja`;
+  const desc = `§aA fresh Bedrock port of Alex's Mobs§r: the original models and textures, new animations, spawns, drops, eggs and recipes.\n§7Original mod: Alexthe668, Carro1001, Paint_Ninja`;
   U.writeJson(path.join(C.BP, 'manifest.json'), {
     format_version: 2,
     header: { name: `§6${m.name} §e[BP] §7v${v.join('.')}`, description: desc, uuid: m.uuid.bp, version: v, min_engine_version: m.min_engine_version },
@@ -37,6 +37,7 @@ function manifests() {
     format_version: 2,
     header: { name: `§6${m.name} §e[RP] §7v${v.join('.')}`, description: desc, uuid: m.uuid.rp, version: v, min_engine_version: m.min_engine_version },
     modules: [{ type: 'resources', uuid: m.uuid.rp_res, version: v }],
+    capabilities: ['pbr'], // keeps Vibrant Visuals on (this RP ships no custom .material files)
     dependencies: [{ uuid: m.uuid.bp, version: v }],
     metadata: { authors: ['Alexthe668', 'Carro1001', 'Paint_Ninja', 'Renderphoenix', 'devsuki'], product_type: 'addon' },
   });

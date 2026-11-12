@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alexsmobs:komodo_spit_to_slime"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "alexsmobs:komodo_spit"
+      },
+      {
+        "item": "alexsmobs:komodo_spit"
+      },
+      {
+        "item": "alexsmobs:komodo_spit"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "alexsmobs:komodo_spit"
+      }
+    ],
+    "result": {
+      "item": "minecraft:slime_ball",
+      "count": 1
+    }
+  }
+}

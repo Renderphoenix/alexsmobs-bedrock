@@ -11,6 +11,9 @@ const A = require('./anims');
 const B = require('./biomes');
 const SPECS = require('./mobs');
 const GP = require('./gen_parts');
+const GC = require('./gen_client');
+const SP = require('./spawns');
+const GL = require('./gen_loot');
 
 const NS = C.NS;
 const P = C.PKG;
@@ -78,195 +81,24 @@ function generate(e, ctx) {
   const babyTex = s.babyTex && exists(s.babyTex) ? s.babyTex : null;
   if (babyTex) copyTex(babyTex);
 
-  // ---- animations
-  const anims = {};
-  const animMap = {}; // short -> full id
-  let pose = main.I.setupAnim();
-  const M_ = require('./molang');
-  const poseSize = r => (r ? [...r.chan.values()].reduce((a, v) => a + M_.str(v).length, 0) : 0);
-  if (poseSize(pose) > 30000) { pose = main.I.setupAnim(false); out.notes.push('pose compiled without branch forking (size)'); }
-  const progress = [...main.I.ent.progress.entries()];
-  if (pose) Object.assign(anims, A.poseAnimation(`${prefix}.pose`, pose.chan, main.boxes, main.names));
-  animMap.pose = `${prefix}.pose`;
-  for (const g of geos.slice(1)) {
-    const r = g.I.setupAnim();
-    for (const [k, v] of g.I.ent.progress) if (!progress.find(p => p[0] === k)) progress.push([k, v]);
-    if (r) { Object.assign(anims, A.poseAnimation(`${prefix}.pose_${g.key}`, r.chan, g.boxes, g.names)); animMap['pose_' + g.key] = `${prefix}.pose_${g.key}`; }
-  }
-  const javaAnims = main.I.animator();
-  const attackAnims = [], idleJava = [];
-  for (const [name, an] of javaAnims) {
-    if (!an.frames.length) continue;
-    const short = name.replace(/^ANIMATION_/, '').toLowerCase();
-    const dur = (e.animations || {})[name] || an.tick;
-    Object.assign(anims, A.bakeKeyframed(`${prefix}.${short}`, an, dur, main.names));
-    animMap[short] = `${prefix}.${short}`;
-    if (ATTACK_RE.test(name.replace(/^ANIMATION_/, ''))) attackAnims.push({ short, ticks: dur });
-    else if (!IDLE_SKIP_RE.test(name)) idleJava.push(short);
-  }
+  // ---- client side: animations, controllers, client entity, render controllers (gen_client.js)
   const kindOf = s.kind || autoKind(e);
-  const death = A.deathAnims(prefix, main.bones, kindOf);
-  Object.assign(anims, death.anims);
-  animMap.death_0 = `${prefix}.death_0`; animMap.death_1 = `${prefix}.death_1`; animMap.hurt = `${prefix}.hurt`;
-  const generic = A.idleActions(prefix, main.bones, kindOf === 'water' ? 'fish' : kindOf);
-  Object.assign(anims, generic);
-  const idleList = idleJava.slice();
-  for (const k of Object.keys(generic)) { const sh = k.slice(prefix.length + 1); animMap[sh] = k; idleList.push(sh); }
-  if (s.fix) { anims[`${prefix}.fix`] = { loop: true, bones: Object.fromEntries(Object.entries(s.fix).map(([b, r]) => [b, { rotation: r }])) }; animMap.fix = `${prefix}.fix`; }
-  U.writeJson(path.join(C.RP, 'animations', NS, `${id}.animation.json`), { format_version: '1.8.0', animations: anims });
-
-  // ---- controllers
-  const ctrl = {};
-  const cid = n => `controller.animation.${NS}.${id}.${n}`;
-  const aliveStill = 'q.is_alive && q.ground_speed < 0.08 && !q.is_sitting' + (s.sleepy !== false ? ' && !v.am_sleeping' : '');
-  if (attackAnims.length) {
-    const st = { default: { transitions: attackAnims.map((a, i) => ({ ['attack_' + i]: `q.property('${NS}:anim') == ${i + 1}` })) } };
-    attackAnims.forEach((a, i) => {
-      st['attack_' + i] = { animations: [a.short], transitions: [{ default: `q.property('${NS}:anim') != ${i + 1} && q.all_animations_finished` }], blend_transition: 0.15 };
-    });
-    ctrl[cid('attack')] = { initial_state: 'default', states: st };
-  }
-  if (idleList.length) {
-    const st = {
-      default: {
-        on_entry: ['v.idle_t = 0;', 'v.idle_wait = math.random(4, 12);', `v.idle_pick = math.random_integer(0, ${idleList.length - 1});`],
-        transitions: idleList.map((n, i) => ({ ['act_' + i]: `v.idle_t > v.idle_wait && v.idle_pick == ${i} && ${aliveStill}` })),
-      },
-    };
-    idleList.forEach((n, i) => {
-      st['act_' + i] = { animations: [n], transitions: [{ default: `q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive` }], blend_transition: 0.3 };
-    });
-    ctrl[cid('idle')] = { initial_state: 'default', states: st };
-  }
-  ctrl[cid('death')] = {
-    initial_state: 'default',
-    states: {
-      default: { on_entry: ['v.death_pick = math.random_integer(0, 1);'], transitions: [{ dead_0: '!q.is_alive && v.death_pick == 0' }, { dead_1: '!q.is_alive && v.death_pick == 1' }] },
-      dead_0: { animations: ['death_0'], blend_transition: 0.1 },
-      dead_1: { animations: ['death_1'], blend_transition: 0.1 },
-    },
-  };
-  ctrl[cid('hurt')] = {
-    initial_state: 'default',
-    states: {
-      default: { transitions: [{ hurt: 'q.hurt_time > 0 && q.is_alive' }] },
-      hurt: { animations: ['hurt'], transitions: [{ default: 'q.all_animations_finished' }], blend_transition: 0.05 },
-    },
-  };
-  U.writeJson(path.join(C.RP, 'animation_controllers', NS, `${id}.controller.json`), { format_version: '1.10.0', animation_controllers: ctrl });
-
-  // ---- client entity
-  const isFlyKind = ['flyer', 'hover'].includes(kindOf);
-  const sleeps = progress.some(([k]) => /sleep/.test(k)) || !!(s.states && s.states.sleep);
-  const pre = [
-    'v.ls = q.modified_distance_moved;',
-    'v.lsa = math.clamp(q.modified_move_speed, 0, 1);',
-    'v.age = q.life_time * 20;',
-    'v.yaw = math.clamp(q.target_y_rotation, -85, 85);',
-    'v.pitch = math.clamp(q.target_x_rotation, -60, 60);',
-    'v.idle_t = (v.idle_t ?? 0) + q.delta_time;',
-    `v.am_flying = ${s.alwaysFly ? '1' : isFlyKind ? '!q.is_on_ground && !q.is_in_water' : '0'};`,
-    'v.am_running = q.modified_move_speed > 0.45;',
-    `v.am_sleeping = ${sleeps ? `q.property('${NS}:sleeping')` : '0'};`,
-    `v.am_standing = ${attackAnims.length ? '0' : `q.property('${NS}:angry') && q.ground_speed < 0.05`};`,
-    'v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;',
-  ];
-  for (const [key, p] of progress) {
-    const max = p.max || 5;
-    const target = p.target || '0';
-    pre.push(`v.p_${key} = math.clamp((v.p_${key} ?? 0) + ((${target}) ? 1 : -1) * q.delta_time * 20, 0, ${max});`);
-  }
-  const textures = {};
-  variants.forEach((t, i) => (textures['v' + i] = texPath(t)));
-  if (sleepTex) sleepTex.forEach((t, i) => (textures['sleep' + i] = texPath(t)));
-  if (angryTex) angryTex.forEach((t, i) => (textures['angry' + i] = texPath(t)));
-  if (glow) textures.glow = texPath(glow);
-  if (overlay) textures.overlay = texPath(overlay);
-  if (babyTex) textures.baby = texPath(babyTex);
-  const geometry = {};
-  geos.forEach(g => (geometry[g.key] = g.geoId));
-  const animations = Object.assign({}, animMap);
-  const animate = [];
-  if (geos.length > 1 && s.variantModels) {
-    animate.push({ pose: 'q.variant == 0' });
-    geos.filter(g => g.key.startsWith('v')).forEach(g => animate.push({ ['pose_' + g.key]: `q.variant == ${g.key.slice(1)}` }));
-  } else if (s.baby) {
-    animate.push({ pose: '!q.is_baby' });
-    if (animMap.pose_baby) animate.push({ pose_baby: 'q.is_baby' });
-  } else animate.push('pose');
-  if (animMap.fix) animate.push('fix');
-  for (const n of ['attack', 'idle', 'death', 'hurt']) {
-    if (ctrl[cid(n)]) { animations['ctrl_' + n] = cid(n); animate.push('ctrl_' + n); }
-  }
-  const nV = variants.length;
-  const state = [
-    sleepTex ? `(v.am_sleeping ? ${2 * nV} : 0)` : null,
-    angryTex ? `(q.property('${NS}:angry') ? ${nV} : 0)` : null,
-  ].filter(Boolean);
-  const texArr = variants.map((_, i) => 'Texture.v' + i)
-    .concat(variants.map((_, i) => (angryTex ? 'Texture.angry' + i : 'Texture.v' + i)))
-    .concat(variants.map((_, i) => (sleepTex ? 'Texture.sleep' + i : 'Texture.v' + i)));
-  const varIdx = nV > 1 ? `math.clamp(q.variant, 0, ${nV - 1})` : '0';
-  let texIndex = varIdx;
-  if (sleepTex && angryTex) texIndex = `(v.am_sleeping ? ${2 * nV} : (q.property('${NS}:angry') ? ${nV} : 0)) + ${varIdx}`;
-  else if (sleepTex) texIndex = `(v.am_sleeping ? ${2 * nV} : 0) + ${varIdx}`;
-  else if (angryTex) texIndex = `(q.property('${NS}:angry') ? ${nV} : 0) + ${varIdx}`;
-  if (babyTex) { texArr.push('Texture.baby'); texIndex = `q.is_baby ? ${texArr.length - 1} : (${texIndex})`; }
-  let geoExpr = 'Geometry.default';
-  const geoArrays = {};
-  if (geos.length > 1) {
-    const list = geos.map(g => 'Geometry.' + g.key);
-    geoArrays['Array.geos'] = list;
-    const bi = geos.findIndex(g => g.key === 'baby');
-    const vIdx = s.variantModels ? `math.clamp(q.variant, 0, ${s.variantModels.length - 1})` : '0';
-    geoExpr = bi >= 0 ? `Array.geos[q.is_baby ? ${bi} : ${vIdx}]` : `Array.geos[${vIdx}]`;
-  }
-  const rcMain = `controller.render.${NS}.${id}`;
-  const rc = {
-    [rcMain]: Object.assign(
-      { arrays: Object.assign({ textures: { 'Array.skins': texArr } }, geos.length > 1 ? { geometries: geoArrays } : {}) },
-      { geometry: geoExpr, materials: [{ '*': 'Material.default' }], textures: [`Array.skins[${texIndex}]`] }),
-  };
-  const rcs = [rcMain];
-  if (overlay) {
-    rc[rcMain + '.overlay'] = Object.assign(geos.length > 1 ? { arrays: { geometries: geoArrays } } : {}, { geometry: geoExpr, materials: [{ '*': 'Material.overlay' }], textures: ['Texture.overlay'] });
-    rcs.push(rcMain + '.overlay');
-  }
-  if (glow) {
-    rc[rcMain + '.glow'] = Object.assign(geos.length > 1 ? { arrays: { geometries: geoArrays } } : {}, { geometry: geoExpr, materials: [{ '*': 'Material.glow' }], textures: ['Texture.glow'], ignore_lighting: true });
-    rcs.push(sleepTex || sleeps ? { [rcMain + '.glow']: '!v.am_sleeping' } : rcMain + '.glow');
-  }
-  U.writeJson(path.join(C.RP, 'render_controllers', NS, `${id}.render_controllers.json`), { format_version: '1.10.0', render_controllers: rc });
-  const scripts = { pre_animation: pre, animate };
-  if (e.scale) scripts.scale = String(e.scale[0]);
-  const client = {
-    format_version: '1.10.0',
-    'minecraft:client_entity': {
-      description: {
-        identifier: full,
-        materials: { default: s.translucent ? 'entity_alphablend' : 'entity_alphatest', overlay: 'entity_alphatest', glow: 'entity_alphatest' },
-        textures, geometry, animations, scripts,
-        render_controllers: rcs,
-        spawn_egg: e.egg ? { base_color: e.egg[0], overlay_color: e.egg[1] } : { base_color: '#7a5a3a', overlay_color: '#d8b98a' },
-        enable_attachables: false,
-      },
-    },
-  };
-  U.writeJson(path.join(C.RP, 'entity', NS, `${id}.entity.json`), client);
+  const cl = GC.generateClient({ e, s, id, full, prefix, geos, main, kindOf, variants, sleepTex, angryTex, glow, overlay, babyTex, ctx });
+  const { sleeps, nV, attackNames, idleList } = cl;
+  out.gait = cl.gait; out.states = cl.states;
 
   // ---- behavior
-  const bp = behavior(e, s, kindOf, { attackAnims, sleeps, nV, babyModel: !!s.baby });
+  const bp = behavior(e, s, kindOf, { attackAnims: attackNames, sleeps, nV, babyModel: !!s.baby });
   U.writeJson(path.join(C.BP, 'entities', NS, `${id}.json`), bp);
-  spawnRule(e, s, kindOf, ctx);
+  SP.spawnRule(e, s, kindOf, ctx, /Breed|MateGoal/.test((e.goals || []).map(x => x.goal).join(' ')) && s.temper !== 'hostile');
   loot(e, ctx);
   sounds(e, ctx);
   ctx.lang.push(`entity.${full}.name=${e.name}`, `item.spawn_egg.entity.${full}.name=${e.name} Spawn Egg`);
-  ctx.attackAnims[full] = attackAnims.map(a => a.ticks);
   if (s.parts) GP.generateChain(e, s, { variants }, ctx);
   if (s.follower) GP.generateFollower(e, s, ctx);
   out.geos = geos.map(g => g.key);
-  out.anims = Object.keys(anims).length;
-  out.attack = attackAnims.map(a => a.short);
+  out.anims = cl.anims;
+  out.attack = attackNames;
   out.idle = idleList;
   return out;
 }
@@ -319,8 +151,8 @@ function behavior(e, s, kind, info) {
   C2['minecraft:conditional_bandwidth_optimization'] = {};
   C2['minecraft:jump.static'] = {};
   C2['minecraft:loot'] = { table: `loot_tables/${NS}/entities/${id}.json` };
-  if (!hostile && e.height < 2.2) C2['minecraft:leashable'] = { soft_distance: 4, hard_distance: 6, max_distance: 10 };
-  if (e.fireImmune || ['lava', 'lavawalker'].includes(kind) || s.lavaOk) C2['minecraft:fire_immune'] = true;
+  if (!hostile && e.height < 2.2) C2['minecraft:leashable'] = {};
+  if (e.fireImmune || ['lava', 'lavawalker'].includes(kind) || s.lavaOk) C2['minecraft:fire_immune'] = {};
   else C2['minecraft:hurt_on_condition'] = { damage_conditions: [{ filters: { test: 'in_lava', subject: 'self' }, cause: 'lava', damage_per_tick: 4 }] };
   C2['minecraft:despawn'] = hostile ? { despawn_from_distance: {} } : { despawn_from_distance: { min_distance: 54, max_distance: 128 } };
   C2['minecraft:experience_reward'] = { on_bred: 'Math.Random(1,7)', on_death: hostile ? 'q.last_hit_by_player ? 5 : 0' : 'q.last_hit_by_player ? Math.Random(1,3) : 0' };
@@ -399,7 +231,7 @@ function behavior(e, s, kind, info) {
         'minecraft:navigation.walk': { can_path_over_lava: true, can_walk_in_lava: true, avoid_water: true, can_sink: false, avoid_damage_blocks: false },
         'minecraft:movement.basic': {},
         'minecraft:lava_movement': { value: Math.max(0.2, speed * 1.5) },
-        'minecraft:buoyant': { base_buoyancy: 1, apply_gravity: true, simulate_waves: false, big_wave_probability: 0, liquid_blocks: ['minecraft:lava', 'minecraft:flowing_lava'] },
+        'minecraft:buoyant': { base_buoyancy: 1, apply_gravity: true, big_wave_probability: 0, liquid_blocks: ['minecraft:lava', 'minecraft:flowing_lava'] },
         'minecraft:behavior.random_stroll': { priority: 7, speed_multiplier: 0.8 },
         'minecraft:breathable': { total_supply: 15, suffocate_time: 0, breathes_water: true },
         'minecraft:hurt_on_condition': { damage_conditions: [{ filters: { test: 'in_contact_with_water', operator: '==', value: true }, cause: 'drowning', damage_per_tick: 1 }] },
@@ -429,7 +261,7 @@ function behavior(e, s, kind, info) {
   const melee = { priority: 3, speed_multiplier: kind === 'water' || kind === 'whale' ? 1.6 : 1.25, track_target: true, reach_multiplier: Math.max(1.5, Math.min(3, e.width * 1.2)) };
   const famTest = f => ({ test: 'is_family', subject: 'other', value: f });
   const targets = [];
-  if (hostile || s.player) targets.push({ filters: { all_of: [famTest('player'), { test: 'is_creative', subject: 'other', operator: '!=', value: true }] }, max_dist: Math.min(48, a.follow_range || 16) });
+  if (hostile || s.player) targets.push({ filters: famTest('player'), max_dist: Math.min(48, a.follow_range || 16) });
   if (prey.length) targets.push({ filters: { any_of: prey.map(famTest) }, max_dist: 16 });
   if (damage && (hostile || temper === 'predator' || temper === 'neutral')) {
     C2['minecraft:behavior.melee_attack'] = melee;
@@ -469,6 +301,20 @@ function behavior(e, s, kind, info) {
     };
     adult['minecraft:behavior.breed'] = { priority: 3, speed_multiplier: 1 };
   }
+  // egg layers (crocodile, caiman, platypus, terrapin): mating makes the female pregnant, she then lays an egg block
+  // (the vanilla turtle mechanism: causes_pregnancy + behavior.lay_egg); the egg block hatches the baby.
+  if (s.lays && adult['minecraft:breedable']) {
+    const br = adult['minecraft:breedable'];
+    br.causes_pregnancy = true;
+    br.breeds_with.breed_event = { event: `${NS}:become_pregnant`, target: 'self' };
+    groups[`${NS}:pregnant`] = { 'minecraft:timer': { looping: false, randomInterval: true, time: [30, 80], time_down_event: { event: `${NS}:go_lay_egg`, target: 'self' } } };
+    groups[`${NS}:lay_egg`] = { 'minecraft:behavior.lay_egg': { priority: 2, speed_multiplier: 1, search_range: 16, search_height: 4, goal_radius: 1.5, lay_seconds: 8, egg_type: s.lays.egg, target_blocks: s.lays.blocks, on_lay: { event: `${NS}:laid_egg`, target: 'self' } } };
+    events[`${NS}:become_pregnant`] = { add: { component_groups: [`${NS}:pregnant`] } };
+    events[`${NS}:go_lay_egg`] = { sequence: [{ remove: { component_groups: [`${NS}:pregnant`] } }, { add: { component_groups: [`${NS}:lay_egg`] } }] };
+    events[`${NS}:laid_egg`] = { remove: { component_groups: [`${NS}:lay_egg`] } };
+  }
+  // egg drops (emu, cockroach): adults lay the throwable egg item now and then, like a chicken
+  if (s.dropsEgg) adult['minecraft:spawn_entity'] = { entities: [{ min_wait_time: s.dropsEgg.wait[0], max_wait_time: s.dropsEgg.wait[1], spawn_sound: 'plop', spawn_item: s.dropsEgg.item, num_to_spawn: 1 }] };
   groups[`${NS}:baby`] = baby;
   groups[`${NS}:adult`] = adult;
   if (C2['minecraft:behavior.melee_attack'] && breedable) {
@@ -535,7 +381,6 @@ function behavior(e, s, kind, info) {
   for (const ev of Object.values(events)) if (ev.add && ev.add.component_groups && !ev.add.component_groups.length) delete ev.add;
 
   const properties = {
-    [`${NS}:anim`]: { type: 'int', range: [0, Math.max(1, info.attackAnims.length)], default: 0, client_sync: true },
     [`${NS}:angry`]: { type: 'bool', default: false, client_sync: true },
   };
   if (info.sleeps) properties[`${NS}:sleeping`] = { type: 'bool', default: false, client_sync: true };
@@ -551,52 +396,6 @@ function behavior(e, s, kind, info) {
 }
 function mergeSensor(a, b) { return { triggers: [...((b && b.triggers) || []), ...((a && a.triggers) || [])] }; }
 const isFly = k => k === 'flyer' || k === 'hover';
-
-// ---------------------------------------------------------------- spawn rules
-const POP = { CREATURE: 'animal', MONSTER: 'monster', WATER_CREATURE: 'water_animal', WATER_AMBIENT: 'water_animal', AMBIENT: 'ambient', UNDERGROUND_WATER_CREATURE: 'water_animal', AXOLOTLS: 'water_animal' };
-const GROUND = ['minecraft:grass_block', 'minecraft:podzol', 'minecraft:dirt', 'minecraft:coarse_dirt', 'minecraft:sand', 'minecraft:red_sand', 'minecraft:snow', 'minecraft:snow_layer', 'minecraft:mud', 'minecraft:moss_block', 'minecraft:gravel', 'minecraft:stone', 'minecraft:clay', 'minecraft:mycelium', 'minecraft:terracotta', 'minecraft:grass_path'];
-function spawnRule(e, s, kind, ctx) {
-  const sp = e.spawn;
-  if (!sp || !sp.weight || !sp.biomes || !sp.biomes.length) return;
-  const filter = B.biomeFilter(sp.biomes);
-  if (!filter) { ctx.warn.push(`${e.id}: no Bedrock biome for spawn set ${sp.set}`); return; }
-  const dim = s.spawnDim || B.dimensionOf(sp.biomes, filter);
-  const cat = sp.category || e.category;
-  const pop = POP[cat] || 'animal';
-  const rollPenalty = sp.rolls > 0 ? 1 / Math.max(1, sp.rolls) : 1;
-  const weight = Math.max(1, Math.round(sp.weight * rollPenalty * (pop === 'monster' ? 0.6 : 1.5)));
-  const cond = {};
-  const water = ['water', 'whale'].includes(kind) || (kind === 'semi' && /WATER/.test(cat));
-  if (water) {
-    cond['minecraft:spawns_underwater'] = {};
-    cond['minecraft:height_filter'] = /DEEP_SEA|deep/i.test(sp.set) ? { min: -20, max: 40 } : { min: 30, max: 64 };
-    cond['minecraft:distance_filter'] = { min: 12, max: 32 };
-  } else if (dim === 'cave') {
-    cond['minecraft:spawns_underground'] = {};
-    cond['minecraft:height_filter'] = { min: -60, max: 50 };
-    cond['minecraft:brightness_filter'] = { min: 0, max: 7, adjust_for_weather: false };
-  } else if (kind === 'lava') {
-    cond['minecraft:spawns_lava'] = {};
-    cond['minecraft:distance_filter'] = { min: 12, max: 64 };
-  } else if (kind === 'lavawalker') {
-    cond['minecraft:spawns_lava'] = {};
-  } else {
-    cond['minecraft:spawns_on_surface'] = {};
-    if (dim === 'overworld') cond['minecraft:spawns_on_block_filter'] = GROUND.concat(kind === 'semi' ? ['minecraft:water'] : []);
-    if (pop === 'monster' && dim === 'overworld') cond['minecraft:brightness_filter'] = { min: 0, max: 7, adjust_for_weather: true };
-    else if (pop !== 'monster' && dim === 'overworld') cond['minecraft:brightness_filter'] = { min: 7, max: 15, adjust_for_weather: false };
-  }
-  if (pop === 'monster' && dim === 'overworld') cond['minecraft:difficulty_filter'] = { min: 'easy', max: 'hard' };
-  cond['minecraft:weight'] = { default: Math.min(100, weight) };
-  cond['minecraft:herd'] = { min_size: sp.min || 1, max_size: sp.max || 1 };
-  cond['minecraft:density_limit'] = water ? { underwater: Math.max(4, (sp.max || 1) * 2) } : { surface: Math.max(4, (sp.max || 1) * 2) };
-  cond['minecraft:biome_filter'] = filter;
-  U.writeJson(path.join(C.BP, 'spawn_rules', NS, `${e.id}.json`), {
-    format_version: '1.8.0',
-    'minecraft:spawn_rules': { description: { identifier: `${NS}:${e.id}`, population_control: pop }, conditions: [cond] },
-  });
-  ctx.spawns.push(`${e.id}: ${pop} w${cond['minecraft:weight'].default} ${dim}`);
-}
 
 // ---------------------------------------------------------------- loot
 function convLoot(node) {
@@ -622,6 +421,7 @@ function loot(e, ctx) {
     const j = JSON.parse(fs.readFileSync(f, 'utf8'));
     table = { pools: (j.pools || []).map(p => { const q = convLoot(p); delete q.name; delete q.bonus_rolls; return q; }) };
   }
+  if (!table.pools.some(p => (p.entries || []).length)) { const o = GL.own(e.id); if (o) table = o; }
   U.writeJson(path.join(C.BP, 'loot_tables', NS, 'entities', `${e.id}.json`), table);
   for (const p of table.pools) for (const en of p.entries || []) if (en.name && en.name.startsWith(NS + ':')) ctx.lootItems.add(en.name);
 }

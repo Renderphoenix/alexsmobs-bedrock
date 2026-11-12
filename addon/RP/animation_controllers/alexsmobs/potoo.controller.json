@@ -1,87 +1,208 @@
 {
   "format_version": "1.10.0",
   "animation_controllers": {
-    "controller.animation.alexsmobs.potoo.idle": {
+    "controller.animation.alexsmobs.potoo.move": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [
+            "breathe"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "fly": "v.am_flying && !v.am_sleeping"
+            },
+            {
+              "run": "v.is_sprinting"
+            },
+            {
+              "walk": "v.is_moving"
+            }
+          ]
+        },
+        "walk": {
+          "animations": [
+            "walk"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "fly": "v.am_flying && !v.am_sleeping"
+            },
+            {
+              "run": "v.is_sprinting"
+            },
+            {
+              "idle": "!v.is_moving"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "run"
+          ],
+          "blend_transition": 0.25,
+          "transitions": [
+            {
+              "fly": "v.am_flying && !v.am_sleeping"
+            },
+            {
+              "idle": "!v.is_moving"
+            },
+            {
+              "walk": "q.modified_move_speed < 0.320"
+            }
+          ]
+        },
+        "fly": {
+          "animations": [
+            "fly"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "idle": "!v.am_flying"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.potoo.idles": {
       "initial_state": "default",
       "states": {
         "default": {
           "on_entry": [
-            "v.idle_t = 0;",
-            "v.idle_wait = math.random(4, 12);",
+            "v.idle_wait = math.random(3, 9);"
+          ],
+          "transitions": [
+            {
+              "pick": "q.state_time > v.idle_wait && q.modified_move_speed < 0.07 && q.is_on_ground && !q.is_in_water && !v.am_sleeping && !q.is_sitting && q.is_alive && !q.has_target"
+            }
+          ]
+        },
+        "pick": {
+          "on_entry": [
             "v.idle_pick = math.random_integer(0, 4);"
           ],
           "transitions": [
             {
-              "act_0": "v.idle_t > v.idle_wait && v.idle_pick == 0 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+              "a0": "v.idle_pick == 0"
             },
             {
-              "act_1": "v.idle_t > v.idle_wait && v.idle_pick == 1 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+              "a1": "v.idle_pick == 1"
             },
             {
-              "act_2": "v.idle_t > v.idle_wait && v.idle_pick == 2 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+              "a2": "v.idle_pick == 2"
             },
             {
-              "act_3": "v.idle_t > v.idle_wait && v.idle_pick == 3 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+              "a3": "v.idle_pick == 3"
             },
             {
-              "act_4": "v.idle_t > v.idle_wait && v.idle_pick == 4 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+              "a4": "v.idle_pick == 4"
             }
           ]
         },
-        "act_0": {
+        "a0": {
           "animations": [
             "idle_look"
           ],
+          "blend_transition": 0.35,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.07 || v.am_sleeping || q.has_target || !q.is_alive"
             }
-          ],
-          "blend_transition": 0.3
+          ]
         },
-        "act_1": {
+        "a1": {
           "animations": [
             "idle_sniff"
           ],
+          "blend_transition": 0.35,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.07 || v.am_sleeping || q.has_target || !q.is_alive"
             }
-          ],
-          "blend_transition": 0.3
+          ]
         },
-        "act_2": {
+        "a2": {
           "animations": [
             "idle_shake"
           ],
+          "blend_transition": 0.35,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.07 || v.am_sleeping || q.has_target || !q.is_alive"
             }
-          ],
-          "blend_transition": 0.3
+          ]
         },
-        "act_3": {
+        "a3": {
           "animations": [
             "idle_wings"
           ],
+          "blend_transition": 0.35,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.07 || v.am_sleeping || q.has_target || !q.is_alive"
             }
-          ],
-          "blend_transition": 0.3
+          ]
         },
-        "act_4": {
+        "a4": {
           "animations": [
             "idle_tail"
           ],
+          "blend_transition": 0.35,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.07 || v.am_sleeping || q.has_target || !q.is_alive"
             }
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.potoo.attack": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "a0": "v.attack_time > 0 && q.is_alive"
+            }
+          ]
+        },
+        "a0": {
+          "animations": [
+            "attack_bite"
           ],
-          "blend_transition": 0.3
+          "blend_transition": 0.12,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.potoo.hurt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "hurt": "q.hurt_time > 0 && q.is_alive"
+            }
+          ]
+        },
+        "hurt": {
+          "animations": [
+            "hurt"
+          ],
+          "blend_transition": 0.05,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ]
         }
       }
     },
@@ -112,29 +233,6 @@
             "death_1"
           ],
           "blend_transition": 0.1
-        }
-      }
-    },
-    "controller.animation.alexsmobs.potoo.hurt": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "transitions": [
-            {
-              "hurt": "q.hurt_time > 0 && q.is_alive"
-            }
-          ]
-        },
-        "hurt": {
-          "animations": [
-            "hurt"
-          ],
-          "transitions": [
-            {
-              "default": "q.all_animations_finished"
-            }
-          ],
-          "blend_transition": 0.05
         }
       }
     }

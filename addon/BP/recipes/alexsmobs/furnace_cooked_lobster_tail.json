@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "alexsmobs:furnace_cooked_lobster_tail"
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:lobster_tail"
+      }
+    ],
+    "tags": [
+      "furnace",
+      "campfire",
+      "soul_campfire",
+      "smoker"
+    ],
+    "input": "alexsmobs:lobster_tail",
+    "output": "alexsmobs:cooked_lobster_tail",
+    "priority": 30
+  }
+}

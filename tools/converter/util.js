@@ -24,7 +24,7 @@ const RENAME = {
   'minecraft:turtle_scute': 'minecraft:turtle_scute', 'minecraft:cooked_porkchop': 'minecraft:cooked_porkchop', 'minecraft:porkchop': 'minecraft:porkchop',
   'minecraft:mushroom_stew': 'minecraft:mushroom_stew', 'minecraft:glistering_melon_slice': 'minecraft:glistering_melon_slice',
   'minecraft:zombie_villager': 'minecraft:zombie_villager_v2', 'minecraft:villager': 'minecraft:villager_v2', 'minecraft:snow_golem': 'minecraft:snow_golem',
-  'minecraft:mooshroom': 'minecraft:mooshroom',
+  'minecraft:mooshroom': 'minecraft:mooshroom', 'minecraft:dead_bush': 'minecraft:deadbush', 'minecraft:nether_brick': 'minecraft:netherbrick',
 };
 const VANILLA_ITEM_TAGS = {
   'minecraft:fishes': ['minecraft:cod', 'minecraft:salmon', 'minecraft:tropical_fish', 'minecraft:pufferfish', 'minecraft:cooked_cod', 'minecraft:cooked_salmon'],

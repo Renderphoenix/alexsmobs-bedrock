@@ -1,44 +1,88 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.alexsmobs.void_worm.pose": {
+    "animation.alexsmobs.void_worm.breathe": {
       "loop": true,
+      "animation_length": 3.6,
       "bones": {
-        "root": {
+        "head": {
+          "rotation": {
+            "0": [1, 0, 0],
+            "0.9": [0.98, 1.8, 0],
+            "1.8": [-1, 0, 0],
+            "2.7": [-0.98, -1.8, 0],
+            "3.6": [1, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.void_worm.fly": {
+      "loop": true,
+      "animation_length": 1.6,
+      "bones": {
+        "head": {
+          "rotation": {
+            "0": [2.52, 0, 0],
+            "1": [-2.93, -4.24, 0],
+            "0.2": [2.93, 4.24, 0],
+            "0.4": [1.62, 6, 0],
+            "0.6": [-0.64, 4.24, 0],
+            "0.8": [-2.52, 0, 0],
+            "1.2": [-1.62, -6, 0],
+            "1.4": [0.64, -4.24, 0],
+            "1.6": [2.52, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.void_worm.look": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "head": {
           "rotation": [
-            "(v.pitch * 0.01745) * 57.29578",
-            0,
+            "math.clamp(q.target_x_rotation, -45, 45) * 1",
+            "math.clamp(q.target_y_rotation, -70, 70) * 1",
             0
-          ],
-          "position": [
-            0,
-            "-(24 + -3 - ((math.clamp(v.pitch * -0.125, -10, 10)) * 0.3) - 24)",
-            "-15 + v.lsa * 10"
           ]
         },
-        "bottomjaw": {
+        "neck": {
           "rotation": [
-            "(((v.p_jawprogress + (v.p_jawprogress - v.p_jawprogress) * (v.age - v.age)) * 0.2) * 1.0472) * 57.29578",
-            0,
+            "math.clamp(q.target_x_rotation, -45, 45) * 1",
+            "math.clamp(q.target_y_rotation, -70, 70) * 1",
             0
-          ],
-          "position": [
-            0,
-            "-(((v.p_jawprogress + (v.p_jawprogress - v.p_jawprogress) * (v.age - v.age)) * 0.2) * 2)",
-            "((v.p_jawprogress + (v.p_jawprogress - v.p_jawprogress) * (v.age - v.age)) * 0.2) * -5"
           ]
+        }
+      }
+    },
+    "animation.alexsmobs.void_worm.baby": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "head": {
+          "scale": [1.32, 1.32, 1.32]
+        }
+      }
+    },
+    "animation.alexsmobs.void_worm.attack_bite": {
+      "animation_length": 0.55,
+      "bones": {
+        "head": {
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.12": [-22, 0, 0],
+            "0.26": [34, 0, 0],
+            "0.34": [30, 0, 0],
+            "0.55": [0, 0, 0]
+          }
         },
         "topjaw": {
-          "rotation": [
-            "(((v.p_jawprogress + (v.p_jawprogress - v.p_jawprogress) * (v.age - v.age)) * 0.2) * -1.0472) * 57.29578",
-            0,
-            0
-          ],
-          "position": [
-            0,
-            "-(((v.p_jawprogress + (v.p_jawprogress - v.p_jawprogress) * (v.age - v.age)) * 0.2) * -2)",
-            "((v.p_jawprogress + (v.p_jawprogress - v.p_jawprogress) * (v.age - v.age)) * 0.2) * -5"
-          ]
+          "rotation": {
+            "0": [0, 0, 0],
+            "0.12": [38, 0, 0],
+            "0.26": [0, 0, 0],
+            "0.55": [0, 0, 0]
+          }
         }
       }
     },

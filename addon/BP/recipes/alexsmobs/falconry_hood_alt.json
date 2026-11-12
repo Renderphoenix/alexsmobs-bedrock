@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:falconry_hood_alt"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "FL ",
+      "L L"
+    ],
+    "key": {
+      "F": {
+        "item": "alexsmobs:roadrunner_feather"
+      },
+      "L": {
+        "item": "minecraft:leather"
+      }
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:roadrunner_feather"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:falconry_hood",
+      "count": 1
+    }
+  }
+}

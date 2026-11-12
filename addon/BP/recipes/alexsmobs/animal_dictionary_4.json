@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alexsmobs:animal_dictionary_4"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:book"
+      },
+      {
+        "item": "alexsmobs:rattlesnake_rattle"
+      },
+      {
+        "item": "minecraft:green_dye"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:book"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:animal_dictionary",
+      "count": 1
+    }
+  }
+}

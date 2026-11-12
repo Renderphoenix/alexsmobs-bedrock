@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alexsmobs:kangaroo_hide_to_leather"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "alexsmobs:kangaroo_hide"
+      },
+      {
+        "item": "alexsmobs:kangaroo_hide"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "alexsmobs:kangaroo_hide"
+      }
+    ],
+    "result": {
+      "item": "minecraft:leather",
+      "count": 1
+    }
+  }
+}

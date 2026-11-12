@@ -7,12 +7,6 @@
       "is_summonable": true,
       "is_experimental": false,
       "properties": {
-        "alexsmobs:anim": {
-          "type": "int",
-          "range": [0, 1],
-          "default": 0,
-          "client_sync": true
-        },
         "alexsmobs:angry": {
           "type": "bool",
           "default": false,
@@ -80,12 +74,8 @@
       "minecraft:loot": {
         "table": "loot_tables/alexsmobs/entities/sunbird.json"
       },
-      "minecraft:leashable": {
-        "soft_distance": 4,
-        "hard_distance": 6,
-        "max_distance": 10
-      },
-      "minecraft:fire_immune": true,
+      "minecraft:leashable": {},
+      "minecraft:fire_immune": {},
       "minecraft:despawn": {
         "despawn_from_distance": {
           "min_distance": 54,

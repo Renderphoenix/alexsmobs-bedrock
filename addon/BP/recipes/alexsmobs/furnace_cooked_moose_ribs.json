@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "alexsmobs:furnace_cooked_moose_ribs"
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:moose_ribs"
+      }
+    ],
+    "tags": [
+      "furnace",
+      "campfire",
+      "soul_campfire",
+      "smoker"
+    ],
+    "input": "alexsmobs:moose_ribs",
+    "output": "alexsmobs:cooked_moose_ribs",
+    "priority": 30
+  }
+}

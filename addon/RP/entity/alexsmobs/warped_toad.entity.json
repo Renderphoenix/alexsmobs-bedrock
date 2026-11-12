@@ -16,42 +16,59 @@
         "default": "geometry.alexsmobs.warped_toad"
       },
       "animations": {
-        "pose": "animation.alexsmobs.warped_toad.pose",
+        "breathe": "animation.alexsmobs.warped_toad.breathe",
+        "walk": "animation.alexsmobs.warped_toad.walk",
+        "run": "animation.alexsmobs.warped_toad.run",
+        "swim": "animation.alexsmobs.warped_toad.swim",
+        "pose_sit": "animation.alexsmobs.warped_toad.pose_sit",
+        "look": "animation.alexsmobs.warped_toad.look",
+        "baby": "animation.alexsmobs.warped_toad.baby",
+        "attack_bite": "animation.alexsmobs.warped_toad.attack_bite",
         "death_0": "animation.alexsmobs.warped_toad.death_0",
         "death_1": "animation.alexsmobs.warped_toad.death_1",
         "hurt": "animation.alexsmobs.warped_toad.hurt",
         "idle_look": "animation.alexsmobs.warped_toad.idle_look",
         "idle_sniff": "animation.alexsmobs.warped_toad.idle_sniff",
         "idle_shake": "animation.alexsmobs.warped_toad.idle_shake",
-        "ctrl_idle": "controller.animation.alexsmobs.warped_toad.idle",
-        "ctrl_death": "controller.animation.alexsmobs.warped_toad.death",
-        "ctrl_hurt": "controller.animation.alexsmobs.warped_toad.hurt"
+        "ctrl_move": "controller.animation.alexsmobs.warped_toad.move",
+        "ctrl_idles": "controller.animation.alexsmobs.warped_toad.idles",
+        "ctrl_attack": "controller.animation.alexsmobs.warped_toad.attack",
+        "ctrl_hurt": "controller.animation.alexsmobs.warped_toad.hurt",
+        "ctrl_death": "controller.animation.alexsmobs.warped_toad.death"
       },
       "scripts": {
-        "pre_animation": [
-          "v.ls = q.modified_distance_moved;",
-          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
-          "v.age = q.life_time * 20;",
-          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
-          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
-          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+        "initialize": [
+          "v.is_moving = 0;",
+          "v.is_sprinting = 0;",
+          "v.anim_speed = 1;",
           "v.am_flying = 0;",
-          "v.am_running = q.modified_move_speed > 0.45;",
           "v.am_sleeping = 0;",
-          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
-          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
-          "v.p_attackprogress = math.clamp((v.p_attackprogress ?? 0) + ((q.is_angry) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_blinkprogress = math.clamp((v.p_blinkprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_sitprogress = math.clamp((v.p_sitprogress ?? 0) + ((q.is_sitting) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_swimprogress = math.clamp((v.p_swimprogress ?? 0) + ((q.is_in_water) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_reboundprogress = math.clamp((v.p_reboundprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_jumpprogress = math.clamp((v.p_jumpprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+          "v.am_standing = 0;"
+        ],
+        "pre_animation": [
+          "v.is_moving = q.modified_move_speed >= 0.07;",
+          "v.is_sprinting = q.modified_move_speed >= 0.4;",
+          "v.anim_speed = math.clamp(q.modified_move_speed / 0.18000000268220903, 0.35, 2.4);",
+          "v.am_flying = 0;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;",
+          "v.idle_wait = v.idle_wait ?? 4;",
+          "v.idle_pick = v.idle_pick ?? 0;",
+          "v.atk_pick = v.atk_pick ?? 0;",
+          "v.death_pick = v.death_pick ?? 0;"
         ],
         "animate": [
-          "pose",
-          "ctrl_idle",
+          "ctrl_move",
+          {
+            "look": "!v.am_sleeping && q.is_alive"
+          },
+          "ctrl_idles",
+          "ctrl_attack",
+          "ctrl_hurt",
           "ctrl_death",
-          "ctrl_hurt"
+          {
+            "baby": "q.is_baby"
+          }
         ]
       },
       "render_controllers": [

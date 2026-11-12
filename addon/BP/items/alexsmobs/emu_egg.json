@@ -16,7 +16,15 @@
       "minecraft:display_name": {
         "value": "item.alexsmobs.emu_egg"
       },
-      "minecraft:max_stack_size": 8
+      "minecraft:max_stack_size": 8,
+      "minecraft:projectile": {
+        "projectile_entity": "alexsmobs:emu_egg_projectile"
+      },
+      "minecraft:throwable": {
+        "do_swing_animation": true,
+        "launch_power_scale": 1,
+        "max_launch_power": 1
+      }
     }
   }
 }

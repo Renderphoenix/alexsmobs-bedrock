@@ -16,39 +16,56 @@
         "default": "geometry.alexsmobs.farseer"
       },
       "animations": {
-        "pose": "animation.alexsmobs.farseer.pose",
+        "idle": "animation.alexsmobs.farseer.idle",
+        "breathe": "animation.alexsmobs.farseer.breathe",
+        "fly": "animation.alexsmobs.farseer.fly",
+        "look": "animation.alexsmobs.farseer.look",
+        "baby": "animation.alexsmobs.farseer.baby",
         "emerge": "animation.alexsmobs.farseer.emerge",
+        "attack_bite": "animation.alexsmobs.farseer.attack_bite",
         "death_0": "animation.alexsmobs.farseer.death_0",
         "death_1": "animation.alexsmobs.farseer.death_1",
         "hurt": "animation.alexsmobs.farseer.hurt",
         "idle_look": "animation.alexsmobs.farseer.idle_look",
         "idle_sniff": "animation.alexsmobs.farseer.idle_sniff",
         "idle_shake": "animation.alexsmobs.farseer.idle_shake",
-        "ctrl_idle": "controller.animation.alexsmobs.farseer.idle",
-        "ctrl_death": "controller.animation.alexsmobs.farseer.death",
-        "ctrl_hurt": "controller.animation.alexsmobs.farseer.hurt"
+        "ctrl_move": "controller.animation.alexsmobs.farseer.move",
+        "ctrl_attack": "controller.animation.alexsmobs.farseer.attack",
+        "ctrl_hurt": "controller.animation.alexsmobs.farseer.hurt",
+        "ctrl_death": "controller.animation.alexsmobs.farseer.death"
       },
       "scripts": {
-        "pre_animation": [
-          "v.ls = q.modified_distance_moved;",
-          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
-          "v.age = q.life_time * 20;",
-          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
-          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
-          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
-          "v.am_flying = !q.is_on_ground && !q.is_in_water;",
-          "v.am_running = q.modified_move_speed > 0.45;",
+        "initialize": [
+          "v.is_moving = 0;",
+          "v.is_sprinting = 0;",
+          "v.anim_speed = 1;",
+          "v.am_flying = 0;",
           "v.am_sleeping = 0;",
-          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
-          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
-          "v.p_facingcameraamount = math.clamp((v.p_facingcameraamount ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_angryprogress = math.clamp((v.p_angryprogress ?? 0) + ((q.is_angry) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+          "v.am_standing = 0;"
+        ],
+        "pre_animation": [
+          "v.is_moving = q.modified_move_speed >= 0.1;",
+          "v.is_sprinting = q.modified_move_speed >= 0.56;",
+          "v.anim_speed = math.clamp(q.modified_move_speed / 0.314999994635582, 0.35, 2.4);",
+          "v.am_flying = 1;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;",
+          "v.idle_wait = v.idle_wait ?? 4;",
+          "v.idle_pick = v.idle_pick ?? 0;",
+          "v.atk_pick = v.atk_pick ?? 0;",
+          "v.death_pick = v.death_pick ?? 0;"
         ],
         "animate": [
-          "pose",
-          "ctrl_idle",
+          "ctrl_move",
+          {
+            "look": "!v.am_sleeping && q.is_alive"
+          },
+          "ctrl_attack",
+          "ctrl_hurt",
           "ctrl_death",
-          "ctrl_hurt"
+          {
+            "baby": "q.is_baby"
+          }
         ]
       },
       "render_controllers": [

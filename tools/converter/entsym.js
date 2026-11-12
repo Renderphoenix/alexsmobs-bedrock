@@ -76,7 +76,7 @@ class EntitySyms {
     if (/progress|amount|timer?$|ticks?$|angle|scale|pitch|yaw|lean|tilt/i.test(name) && /^[FDI]/.test(desc || 'F')) {
       if (/progress|amount/i.test(name)) {
         const key = progressKey(name);
-        if (!this.progress.has(key)) this.progress.set(key, { field: name, target: stateFor(name), max: 5 });
+        if (!this.progress.has(key)) this.progress.set(key, { field: name, target: stateFor(name), max: /amount/i.test(name) ? 1 : 5 });
         return M.S(`v.p_${key}`);
       }
       this.unknown.add(name);
@@ -94,7 +94,7 @@ class EntitySyms {
     const ret = (desc || '').split(')')[1] || 'V';
     if (/^(get|)(.*)(Progress|Amount)$/i.test(name) && /^[FD]/.test(ret)) {
       const key = progressKey(name.replace(/^get/, ''));
-      if (!this.progress.has(key)) this.progress.set(key, { field: name, target: stateFor(name), max: 5 });
+      if (!this.progress.has(key)) this.progress.set(key, { field: name, target: stateFor(name), max: /amount/i.test(name) ? 1 : 5 });
       return M.S(`v.p_${key}`);
     }
     if (ret === 'Z' && /^(is|has|can|should)/.test(name)) {

@@ -7,12 +7,6 @@
       "is_summonable": true,
       "is_experimental": false,
       "properties": {
-        "alexsmobs:anim": {
-          "type": "int",
-          "range": [0, 1],
-          "default": 0,
-          "client_sync": true
-        },
         "alexsmobs:angry": {
           "type": "bool",
           "default": false,
@@ -106,11 +100,7 @@
       "minecraft:loot": {
         "table": "loot_tables/alexsmobs/entities/komodo_dragon.json"
       },
-      "minecraft:leashable": {
-        "soft_distance": 4,
-        "hard_distance": 6,
-        "max_distance": 10
-      },
+      "minecraft:leashable": {},
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
@@ -172,19 +162,9 @@
         "entity_types": [
           {
             "filters": {
-              "all_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "player"
-                },
-                {
-                  "test": "is_creative",
-                  "subject": "other",
-                  "operator": "!=",
-                  "value": true
-                }
-              ]
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
             },
             "max_dist": 16
           },

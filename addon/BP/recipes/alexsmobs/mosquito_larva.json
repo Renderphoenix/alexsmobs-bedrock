@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alexsmobs:mosquito_larva"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "alexsmobs:maggot"
+      },
+      {
+        "item": "alexsmobs:mosquito_proboscis"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "alexsmobs:maggot"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:mosquito_larva",
+      "count": 1
+    }
+  }
+}

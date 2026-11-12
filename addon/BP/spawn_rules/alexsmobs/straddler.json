@@ -8,8 +8,12 @@
     "conditions": [
       {
         "minecraft:spawns_lava": {},
+        "minecraft:distance_filter": {
+          "min": 12,
+          "max": 64
+        },
         "minecraft:weight": {
-          "default": 42
+          "default": 50
         },
         "minecraft:herd": {
           "min_size": 1,

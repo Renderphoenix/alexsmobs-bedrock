@@ -10,7 +10,7 @@
         "minecraft:spawns_underground": {},
         "minecraft:height_filter": {
           "min": -60,
-          "max": 50
+          "max": 45
         },
         "minecraft:brightness_filter": {
           "min": 0,
@@ -18,11 +18,13 @@
           "adjust_for_weather": false
         },
         "minecraft:weight": {
-          "default": 6
+          "default": 3
         },
         "minecraft:herd": {
           "min_size": 5,
-          "max_size": 5
+          "max_size": 5,
+          "event": "minecraft:entity_born",
+          "event_skip_count": 4
         },
         "minecraft:density_limit": {
           "surface": 10

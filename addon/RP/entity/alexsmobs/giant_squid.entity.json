@@ -16,40 +16,56 @@
         "default": "geometry.alexsmobs.giant_squid"
       },
       "animations": {
-        "pose": "animation.alexsmobs.giant_squid.pose",
+        "idle": "animation.alexsmobs.giant_squid.idle",
+        "breathe": "animation.alexsmobs.giant_squid.breathe",
+        "swim": "animation.alexsmobs.giant_squid.swim",
+        "look": "animation.alexsmobs.giant_squid.look",
+        "baby": "animation.alexsmobs.giant_squid.baby",
+        "fix": "animation.alexsmobs.giant_squid.fix",
+        "attack_bite": "animation.alexsmobs.giant_squid.attack_bite",
         "death_0": "animation.alexsmobs.giant_squid.death_0",
         "death_1": "animation.alexsmobs.giant_squid.death_1",
         "hurt": "animation.alexsmobs.giant_squid.hurt",
         "idle_look": "animation.alexsmobs.giant_squid.idle_look",
         "idle_sniff": "animation.alexsmobs.giant_squid.idle_sniff",
-        "fix": "animation.alexsmobs.giant_squid.fix",
-        "ctrl_idle": "controller.animation.alexsmobs.giant_squid.idle",
-        "ctrl_death": "controller.animation.alexsmobs.giant_squid.death",
-        "ctrl_hurt": "controller.animation.alexsmobs.giant_squid.hurt"
+        "ctrl_move": "controller.animation.alexsmobs.giant_squid.move",
+        "ctrl_attack": "controller.animation.alexsmobs.giant_squid.attack",
+        "ctrl_hurt": "controller.animation.alexsmobs.giant_squid.hurt",
+        "ctrl_death": "controller.animation.alexsmobs.giant_squid.death"
       },
       "scripts": {
-        "pre_animation": [
-          "v.ls = q.modified_distance_moved;",
-          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
-          "v.age = q.life_time * 20;",
-          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
-          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
-          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+        "initialize": [
+          "v.is_moving = 0;",
+          "v.is_sprinting = 0;",
+          "v.anim_speed = 1;",
           "v.am_flying = 0;",
-          "v.am_running = q.modified_move_speed > 0.45;",
           "v.am_sleeping = 0;",
-          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
-          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
-          "v.p_dryprogress = math.clamp((v.p_dryprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_capturedprogress = math.clamp((v.p_capturedprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_grabprogress = math.clamp((v.p_grabprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+          "v.am_standing = 0;"
+        ],
+        "pre_animation": [
+          "v.is_moving = q.modified_move_speed >= 0.087;",
+          "v.is_sprinting = q.modified_move_speed >= 0.4;",
+          "v.anim_speed = math.clamp(q.modified_move_speed / 0.225, 0.35, 2.4);",
+          "v.am_flying = 0;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;",
+          "v.idle_wait = v.idle_wait ?? 4;",
+          "v.idle_pick = v.idle_pick ?? 0;",
+          "v.atk_pick = v.atk_pick ?? 0;",
+          "v.death_pick = v.death_pick ?? 0;"
         ],
         "animate": [
-          "pose",
+          "ctrl_move",
+          {
+            "look": "!v.am_sleeping && q.is_alive"
+          },
           "fix",
-          "ctrl_idle",
+          "ctrl_attack",
+          "ctrl_hurt",
           "ctrl_death",
-          "ctrl_hurt"
+          {
+            "baby": "q.is_baby"
+          }
         ]
       },
       "render_controllers": [

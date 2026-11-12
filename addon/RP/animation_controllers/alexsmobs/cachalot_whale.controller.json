@@ -1,73 +1,92 @@
 {
   "format_version": "1.10.0",
   "animation_controllers": {
-    "controller.animation.alexsmobs.cachalot_whale.idle": {
-      "initial_state": "default",
+    "controller.animation.alexsmobs.cachalot_whale.move": {
+      "initial_state": "idle",
       "states": {
-        "default": {
-          "on_entry": [
-            "v.idle_t = 0;",
-            "v.idle_wait = math.random(4, 12);",
-            "v.idle_pick = math.random_integer(0, 3);"
+        "idle": {
+          "animations": [
+            "idle",
+            "breathe"
           ],
+          "blend_transition": 0.3,
           "transitions": [
             {
-              "act_0": "v.idle_t > v.idle_wait && v.idle_pick == 0 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+              "sleep": "v.am_sleeping"
             },
             {
-              "act_1": "v.idle_t > v.idle_wait && v.idle_pick == 1 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
-            },
-            {
-              "act_2": "v.idle_t > v.idle_wait && v.idle_pick == 2 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
-            },
-            {
-              "act_3": "v.idle_t > v.idle_wait && v.idle_pick == 3 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+              "swim": "v.is_moving"
             }
           ]
         },
-        "act_0": {
+        "swim": {
           "animations": [
-            "idle_look"
+            "swim"
           ],
+          "blend_transition": 0.4,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "idle": "!v.is_moving"
             }
-          ],
-          "blend_transition": 0.3
+          ]
         },
-        "act_1": {
+        "sleep": {
           "animations": [
-            "idle_sniff"
+            "pose_sleep",
+            "breathe"
           ],
+          "blend_transition": 0.7,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "idle": "!v.am_sleeping"
             }
-          ],
-          "blend_transition": 0.3
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.cachalot_whale.attack": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "a0": "v.attack_time > 0 && q.is_alive"
+            }
+          ]
         },
-        "act_2": {
+        "a0": {
           "animations": [
-            "idle_shake"
+            "attack_bite"
           ],
+          "blend_transition": 0.12,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished"
             }
-          ],
-          "blend_transition": 0.3
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.cachalot_whale.hurt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "hurt": "q.hurt_time > 0 && q.is_alive"
+            }
+          ]
         },
-        "act_3": {
+        "hurt": {
           "animations": [
-            "idle_tail"
+            "hurt"
           ],
+          "blend_transition": 0.05,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished"
             }
-          ],
-          "blend_transition": 0.3
+          ]
         }
       }
     },
@@ -98,29 +117,6 @@
             "death_1"
           ],
           "blend_transition": 0.1
-        }
-      }
-    },
-    "controller.animation.alexsmobs.cachalot_whale.hurt": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "transitions": [
-            {
-              "hurt": "q.hurt_time > 0 && q.is_alive"
-            }
-          ]
-        },
-        "hurt": {
-          "animations": [
-            "hurt"
-          ],
-          "transitions": [
-            {
-              "default": "q.all_animations_finished"
-            }
-          ],
-          "blend_transition": 0.05
         }
       }
     }

@@ -1,0 +1,64 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "alexsmobs:emu_egg_projectile",
+      "is_summonable": true,
+      "is_spawnable": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "projectile",
+          "egg",
+          "emu_egg"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_dropped_ticks": 7,
+          "max_optimized_distance": 100,
+          "use_motion_prediction_hints": true
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:projectile": {
+        "angle_offset": 0,
+        "on_hit": {
+          "impact_damage": {
+            "damage": {
+              "min": 0,
+              "max": 0
+            },
+            "knockback": true,
+            "destroy_on_hit": true
+          },
+          "spawn_chance": {
+            "first_spawn_chance": 0.125,
+            "first_spawn_count": 1,
+            "spawn_baby": true,
+            "second_spawn_chance": 0.03125,
+            "second_spawn_count": 4,
+            "spawn_definition": "alexsmobs:emu"
+          },
+          "particle_on_hit": {
+            "num_particles": 6,
+            "on_other_hit": true,
+            "on_entity_hit": true,
+            "particle_type": "snowballpoof"
+          },
+          "remove_on_hit": {}
+        },
+        "gravity": 0.03,
+        "power": 1.5,
+        "isolated_physics": false
+      },
+      "minecraft:pushable_by_entity": {},
+      "minecraft:pushable_by_block": {}
+    }
+  }
+}

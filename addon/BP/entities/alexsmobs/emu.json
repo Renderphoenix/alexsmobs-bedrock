@@ -7,12 +7,6 @@
       "is_summonable": true,
       "is_experimental": false,
       "properties": {
-        "alexsmobs:anim": {
-          "type": "int",
-          "range": [0, 1],
-          "default": 0,
-          "client_sync": true
-        },
         "alexsmobs:angry": {
           "type": "bool",
           "default": false,
@@ -63,6 +57,17 @@
         "minecraft:behavior.breed": {
           "priority": 3,
           "speed_multiplier": 1
+        },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 900,
+              "max_wait_time": 2400,
+              "spawn_sound": "plop",
+              "spawn_item": "alexsmobs:emu_egg",
+              "num_to_spawn": 1
+            }
+          ]
         },
         "minecraft:behavior.melee_attack": {
           "priority": 3,
@@ -121,11 +126,7 @@
       "minecraft:loot": {
         "table": "loot_tables/alexsmobs/entities/emu.json"
       },
-      "minecraft:leashable": {
-        "soft_distance": 4,
-        "hard_distance": 6,
-        "max_distance": 10
-      },
+      "minecraft:leashable": {},
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {

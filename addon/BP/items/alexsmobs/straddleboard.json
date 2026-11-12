@@ -17,9 +17,6 @@
         "value": "item.alexsmobs.straddleboard"
       },
       "minecraft:max_stack_size": 1,
-      "minecraft:fire_resistant": {
-        "value": true
-      },
       "minecraft:durability": {
         "max_durability": 220
       }

@@ -16,9 +16,25 @@ Alex's Mobs 2 is **generated**. The fix for a wrong mob is almost always in `too
    textures/models/layers, spawn biomes (`DefaultBiomes`), weights (`AMConfig`), group sizes, spawn-egg colours.
    Delete `mod.json` after changing `extract.js`.
 2. **Generate** (`node tools/converter/build.js` or `build.js <mob> ...` for a quick partial run).
-3. **Validate** (`node tools/converter/validate.js`) — must print `OK - no errors` before packaging.
+3. **Validate** (`node tools/converter/validate.js`) — must print `OK - no errors` before packaging. It mirrors the game's
+   Content Log errors (see CLAUDE.md "Lessons"); when the user pastes a log, add the new error class to `validate_deep.js`.
 4. **Look at it** with the offline renderer (below). Blockbench MCP may be down; the renderer needs nothing.
 5. **Package / sync**: `.\build.ps1` (→ `dist/alexsmobs2-v<ver>.mcaddon`), `.\build.ps1 -Sync` or `update.bat`.
+
+## Animations are our own (2.1.0)
+
+`motion.js` + `gen_client.js` turn the Java gait data into clean keyframed loops (no compiled Molang poses, no
+progress variables). To change how a mob moves: adjust `mobs.js` (`hops`, `nocturnal`, `alwaysFly`, `fix`), the fallbacks
+in `gen_client.js` (`genericWalk`, `hopWalk`, `slither`, `hover`) or the idle/death libraries in `anims.js`. Always check
+with `tools/preview/anim_sheet.js` (side view) and, when the Blockbench MCP is connected, load the files with
+`Animator.loadFile` to confirm Blockbench's own parser accepts them. `.tools/gaits.js <ModelName>` style probes
+(print `I.gaits` after `setupAnim()`) show what the Java model does.
+
+## Eggs, items, loot, recipes, spawns
+`gen_eggs.js` (thrown eggs), egg blocks in `gen_blocks.js`, lay_egg/pregnancy in `gen_mobs.js` (`mobs.js` `lays`/`dropsEgg`),
+`gen_items.js` + `abilities.js`, `gen_recipes.js`, `gen_loot.js` (`DROPS`), `spawns.js`. Vanilla patterns to copy from
+`bedrock-samples`: `entities/turtle.json` (pregnancy), `entities/chicken.json` (`spawn_entity` egg), `entities/egg.json`
+(projectile + `spawn_chance`), `items/wind_charge.json` (throwable).
 
 ## Verifying visually (do this after any model/animation change)
 

@@ -7,12 +7,6 @@
       "is_summonable": true,
       "is_experimental": false,
       "properties": {
-        "alexsmobs:anim": {
-          "type": "int",
-          "range": [0, 3],
-          "default": 0,
-          "client_sync": true
-        },
         "alexsmobs:angry": {
           "type": "bool",
           "default": false,
@@ -29,7 +23,7 @@
         "minecraft:ageable": {
           "duration": 1200,
           "feed_items": [
-            "minecraft:dead_bush",
+            "minecraft:deadbush",
             "minecraft:short_grass"
           ],
           "grow_up": {
@@ -50,7 +44,7 @@
         "minecraft:breedable": {
           "require_tame": false,
           "breed_items": [
-            "minecraft:dead_bush",
+            "minecraft:deadbush",
             "minecraft:short_grass"
           ],
           "breeds_with": {
@@ -106,7 +100,7 @@
         "minecraft:healable": {
           "items": [
             {
-              "item": "minecraft:dead_bush",
+              "item": "minecraft:deadbush",
               "heal_amount": 4
             },
             {
@@ -159,11 +153,7 @@
       "minecraft:loot": {
         "table": "loot_tables/alexsmobs/entities/kangaroo.json"
       },
-      "minecraft:leashable": {
-        "soft_distance": 4,
-        "hard_distance": 6,
-        "max_distance": 10
-      },
+      "minecraft:leashable": {},
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
@@ -228,7 +218,7 @@
         "speed_multiplier": 1.1,
         "within_radius": 10,
         "items": [
-          "minecraft:dead_bush",
+          "minecraft:deadbush",
           "minecraft:short_grass",
           "minecraft:carrot"
         ],

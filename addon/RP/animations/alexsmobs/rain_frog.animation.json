@@ -1,94 +1,373 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.alexsmobs.rain_frog.pose": {
+    "animation.alexsmobs.rain_frog.idle": {
       "loop": true,
+      "animation_length": 0.8,
       "bones": {
-        "right_eye": {
-          "position": [
-            0,
-            "-((((math.max(0, (math.sin((v.age * 0.1) * 57.29578) - 0.5) * 2)) * (5 - (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)))) * 0.2) * 0.9 + -((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2))",
-            "(((math.max(0, (math.sin((v.age * 0.1) * 57.29578) - 0.5) * 2)) * (5 - (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)))) * 0.2) * 0.1"
-          ]
-        },
-        "left_eye": {
-          "position": [
-            0,
-            "-((((math.max(0, (math.sin((v.age * 0.1) * 57.29578) - 0.5) * 2)) * (5 - (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)))) * 0.2) * 0.9 + -((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2))",
-            "(((math.max(0, (math.sin((v.age * 0.1) * 57.29578) - 0.5) * 2)) * (5 - (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)))) * 0.2) * 0.1"
-          ]
-        },
         "body": {
-          "rotation": [
-            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * -0.17453 + ((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + -0.4 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2)) * 57.29578",
-            "(((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + ((math.cos((v.ls + 1) * 57.29578)) * 0.35) * v.lsa + ((math.cos((v.age * 0.8 + 1) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2)) * 57.29578",
-            "(((math.cos(v.ls * 57.29578)) * 0.35) * v.lsa) * 57.29578"
-          ],
-          "position": [
-            0,
-            "-(((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) * -2 + ((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 0.2) * 5 + ((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * -2)",
-            "((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * -2"
-          ],
-          "scale": [
-            "1 + (1 + (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.025 - 1)",
-            "1 + (1 + (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.075 - 1)",
-            "1 + (1 + (v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.025 - 1)"
-          ]
-        },
-        "right_leg": {
-          "rotation": [
-            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * 0.17453 + ((math.cos((v.age * 0.8 - 1.5) * 57.29578)) * 0.5) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + 0.2 * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + (math.cos((v.ls - 2.5) * 57.29578)) * v.lsa + 0.3 * v.lsa - (((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * -0.17453 + ((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + -0.4 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578",
-            "(-(((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + ((math.cos((v.ls + 1) * 57.29578)) * 0.35) * v.lsa + ((math.cos((v.age * 0.8 + 1) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578",
-            "(-(((math.cos(v.ls * 57.29578)) * 0.35) * v.lsa)) * 57.29578"
-          ],
-          "position": [
-            0,
-            "-(1.25 + ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) * 0.7 + -((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) + ((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * 2 + 1.5 * ((math.sin((-v.ls + 2.5) * 57.29578)) * v.lsa - v.lsa) - 1.25)",
-            "2.25 - (2 * ((math.sin((-v.ls + 2.5) * 57.29578)) * v.lsa - v.lsa)) - 2.25"
-          ]
-        },
-        "left_leg": {
-          "rotation": [
-            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * 0.17453 + ((math.cos((v.age * 0.8 - 1.5) * 57.29578)) * 0.5) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + 0.2 * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + -((math.cos((v.ls - 2.5) * 57.29578)) * v.lsa + -0.3 * v.lsa) - (((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * -0.17453 + ((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + -0.4 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578",
-            "(-(((math.cos((v.age * 0.8 + 3) * 57.29578)) * 0.25) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + ((math.cos((v.ls + 1) * 57.29578)) * 0.35) * v.lsa + ((math.cos((v.age * 0.8 + 1) * 57.29578)) * 0.25) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578",
-            "(-(((math.cos(v.ls * 57.29578)) * 0.35) * v.lsa)) * 57.29578"
-          ],
-          "position": [
-            0,
-            "-(1.25 + ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) * 0.7 + -((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) + ((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * 2 + 1.5 * ((math.sin((v.ls - 2.5) * 57.29578)) * v.lsa - v.lsa) - 1.25)",
-            "2.25 - (2 * ((math.sin((v.ls - 2.5) * 57.29578)) * v.lsa - v.lsa)) - 2.25"
-          ]
-        },
-        "tongue": {
-          "position": [
-            0,
-            0,
-            "((5 - (v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age))) * 0.2) * 3"
-          ]
-        },
-        "left_arm": {
-          "rotation": [
-            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * 0.17453 + ((math.cos((v.age * 0.8 - 1.5) * 57.29578)) * 0.5) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + -0.2 * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + ((math.cos((v.ls - 2.5) * 57.29578)) * 1.2) * v.lsa + -0.2 * v.lsa) * 57.29578",
-            0,
-            "(-(((math.cos((v.age * 0.8) * 57.29578)) * 0.5) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + 0.3 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2))) * 57.29578"
-          ],
-          "position": [
-            0,
-            "-(((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * 2 + 1.5 * ((math.sin((-v.ls + 2.5) * 57.29578)) * v.lsa - v.lsa))",
-            "-3 + (math.sin((-v.ls + 2.5) * 57.29578)) * v.lsa - v.lsa - -3"
-          ]
+          "rotation": {
+            "0": [-37.1, -6.44, 0],
+            "0.04": [-35.58, -13.48, 0],
+            "0.08": [-29.22, -15.38, 0],
+            "0.12": [-20.46, -11.4, 0],
+            "0.16": [-12.63, -3.06, 0],
+            "0.2": [-8.74, 6.44, 0],
+            "0.24": [-10.26, 13.48, 0],
+            "0.28": [-16.61, 15.38, 0],
+            "0.32": [-25.38, 11.4, 0],
+            "0.36": [-33.2, 3.06, 0],
+            "0.4": [-37.1, -6.44, 0],
+            "0.44": [-35.58, -13.48, 0],
+            "0.48": [-29.22, -15.38, 0],
+            "0.52": [-20.46, -11.4, 0],
+            "0.56": [-12.63, -3.06, 0],
+            "0.6": [-8.74, 6.44, 0],
+            "0.64": [-10.26, 13.48, 0],
+            "0.68": [-16.61, 15.38, 0],
+            "0.72": [-25.38, 11.4, 0],
+            "0.76": [-33.2, 3.06, 0],
+            "0.8": [-37.1, -6.44, 0]
+          }
         },
         "right_arm": {
-          "rotation": [
-            "(((v.p_attackprogress + (v.p_attackprogress - v.p_attackprogress) * (v.age - v.age)) * 0.2) * 0.17453 + ((math.cos((v.age * 0.8 - 1.5) * 57.29578)) * 0.5) * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + -0.2 * (math.clamp(math.sin((((v.p_burrowprogress + (v.p_burrowprogress - v.p_burrowprogress) * (v.age - v.age)) * 3.14159) * 0.2) * 57.29578), 0, 1)) + -(((math.cos((v.ls - 2.5) * 57.29578)) * 1.2) * v.lsa + 0.2 * v.lsa)) * 57.29578",
-            0,
-            "(((math.cos((v.age * 0.8) * 57.29578)) * 0.5) * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2) + 0.3 * ((v.p_danceprogress + (v.p_danceprogress - v.p_danceprogress) * (v.age - v.age)) * 0.2)) * 57.29578"
-          ],
-          "position": [
-            0,
-            "-(((v.p_stanceprogress + (v.p_stanceprogress - v.p_stanceprogress) * (v.age - v.age)) * 0.2) * 2 + 1.5 * ((math.sin((v.ls - 2.5) * 57.29578)) * v.lsa - v.lsa))",
-            "-3 + (math.sin((v.ls - 2.5) * 57.29578)) * v.lsa - v.lsa - -3"
-          ]
+          "rotation": {
+            "0": [-9.43, 0, 45.84],
+            "0.04": [6.98, 0, 40.37],
+            "0.08": [16.34, 0, 26.04],
+            "0.12": [15.09, 0, 8.34],
+            "0.16": [3.7, 0, -5.99],
+            "0.2": [-13.49, 0, -11.46],
+            "0.24": [-29.9, 0, -5.99],
+            "0.28": [-39.26, 0, 8.34],
+            "0.32": [-38.01, 0, 26.04],
+            "0.36": [-26.62, 0, 40.37],
+            "0.4": [-9.43, 0, 45.84],
+            "0.44": [6.98, 0, 40.37],
+            "0.48": [16.34, 0, 26.04],
+            "0.52": [15.09, 0, 8.34],
+            "0.56": [3.7, 0, -5.99],
+            "0.6": [-13.49, 0, -11.46],
+            "0.64": [-29.9, 0, -5.99],
+            "0.68": [-39.26, 0, 8.34],
+            "0.72": [-38.01, 0, 26.04],
+            "0.76": [-26.62, 0, 40.37],
+            "0.8": [-9.43, 0, 45.84]
+          }
+        },
+        "left_arm": {
+          "rotation": {
+            "0": [-9.43, 0, -45.84],
+            "0.04": [6.98, 0, -40.37],
+            "0.08": [16.34, 0, -26.04],
+            "0.12": [15.09, 0, -8.34],
+            "0.16": [3.7, 0, 5.99],
+            "0.2": [-13.49, 0, 11.46],
+            "0.24": [-29.9, 0, 5.99],
+            "0.28": [-39.26, 0, -8.34],
+            "0.32": [-38.01, 0, -26.04],
+            "0.36": [-26.62, 0, -40.37],
+            "0.4": [-9.43, 0, -45.84],
+            "0.44": [6.98, 0, -40.37],
+            "0.48": [16.34, 0, -26.04],
+            "0.52": [15.09, 0, -8.34],
+            "0.56": [3.7, 0, 5.99],
+            "0.6": [-13.49, 0, 11.46],
+            "0.64": [-29.9, 0, 5.99],
+            "0.68": [-39.26, 0, -8.34],
+            "0.72": [-38.01, 0, -26.04],
+            "0.76": [-26.62, 0, -40.37],
+            "0.8": [-9.43, 0, -45.84]
+          }
+        },
+        "right_leg": {
+          "rotation": {
+            "0": [13.49, 0, 0],
+            "0.04": [29.9, 0, 0],
+            "0.08": [39.26, 0, 0],
+            "0.12": [38.01, 0, 0],
+            "0.16": [26.62, 0, 0],
+            "0.2": [9.43, 0, 0],
+            "0.24": [-6.98, 0, 0],
+            "0.28": [-16.34, 0, 0],
+            "0.32": [-15.09, 0, 0],
+            "0.36": [-3.7, 0, 0],
+            "0.4": [13.49, 0, 0],
+            "0.44": [29.9, 0, 0],
+            "0.48": [39.26, 0, 0],
+            "0.52": [38.01, 0, 0],
+            "0.56": [26.62, 0, 0],
+            "0.6": [9.43, 0, 0],
+            "0.64": [-6.98, 0, 0],
+            "0.68": [-16.34, 0, 0],
+            "0.72": [-15.09, 0, 0],
+            "0.76": [-3.7, 0, 0],
+            "0.8": [13.49, 0, 0]
+          }
+        },
+        "left_leg": {
+          "rotation": {
+            "0": [13.49, 0, 0],
+            "0.04": [29.9, 0, 0],
+            "0.08": [39.26, 0, 0],
+            "0.12": [38.01, 0, 0],
+            "0.16": [26.62, 0, 0],
+            "0.2": [9.43, 0, 0],
+            "0.24": [-6.98, 0, 0],
+            "0.28": [-16.34, 0, 0],
+            "0.32": [-15.09, 0, 0],
+            "0.36": [-3.7, 0, 0],
+            "0.4": [13.49, 0, 0],
+            "0.44": [29.9, 0, 0],
+            "0.48": [39.26, 0, 0],
+            "0.52": [38.01, 0, 0],
+            "0.56": [26.62, 0, 0],
+            "0.6": [9.43, 0, 0],
+            "0.64": [-6.98, 0, 0],
+            "0.68": [-16.34, 0, 0],
+            "0.72": [-15.09, 0, 0],
+            "0.76": [-3.7, 0, 0],
+            "0.8": [13.49, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.rain_frog.breathe": {
+      "loop": true,
+      "animation_length": 3.6,
+      "bones": {
+        "body": {
+          "position": {
+            "0": [0, 0, 0],
+            "0.9": [0, 0.14, 0],
+            "1.8": [0, 0, 0],
+            "2.7": [0, -0.14, 0],
+            "3.6": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.rain_frog.walk": {
+      "loop": true,
+      "animation_length": 1.047,
+      "anim_time_update": "q.anim_time + q.delta_time * v.anim_speed",
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 7.04, 13.03],
+            "0.0654": [0, 2.31, 12.04],
+            "0.1309": [0, -2.78, 9.22],
+            "0.1963": [0, -7.44, 4.99],
+            "0.2618": [0, -10.97, 0],
+            "0.3272": [0, -12.83, -4.99],
+            "0.3927": [0, -12.74, -9.22],
+            "0.4581": [0, -10.7, -12.04],
+            "0.5236": [0, -7.04, -13.03],
+            "0.589": [0, -2.31, -12.04],
+            "0.6545": [0, 2.78, -9.22],
+            "0.7199": [0, 7.44, -4.99],
+            "0.7854": [0, 10.97, 0],
+            "0.8508": [0, 12.83, 4.99],
+            "0.9163": [0, 12.74, 9.22],
+            "0.9817": [0, 10.7, 12.04],
+            "1.0472": [0, 7.04, 13.03]
+          }
+        },
+        "left_arm": {
+          "rotation": {
+            "0": [-43.25, 0, 0],
+            "0.0654": [-30.29, 0, 0],
+            "0.1309": [-13.85, 0, 0],
+            "0.1963": [3.56, 0, 0],
+            "0.2618": [19.3, 0, 0],
+            "0.3272": [30.96, 0, 0],
+            "0.3927": [36.78, 0, 0],
+            "0.4581": [35.87, 0, 0],
+            "0.5236": [28.36, 0, 0],
+            "0.589": [15.39, 0, 0],
+            "0.6545": [-1.04, 0, 0],
+            "0.7199": [-18.46, 0, 0],
+            "0.7854": [-34.19, 0, 0],
+            "0.8508": [-45.86, 0, 0],
+            "0.9163": [-51.68, 0, 0],
+            "0.9817": [-50.76, 0, 0],
+            "1.0472": [-43.25, 0, 0]
+          }
+        },
+        "right_arm": {
+          "rotation": {
+            "0": [28.36, 0, 0],
+            "0.0654": [15.39, 0, 0],
+            "0.1309": [-1.04, 0, 0],
+            "0.1963": [-18.46, 0, 0],
+            "0.2618": [-34.19, 0, 0],
+            "0.3272": [-45.86, 0, 0],
+            "0.3927": [-51.68, 0, 0],
+            "0.4581": [-50.76, 0, 0],
+            "0.5236": [-43.25, 0, 0],
+            "0.589": [-30.29, 0, 0],
+            "0.6545": [-13.85, 0, 0],
+            "0.7199": [3.56, 0, 0],
+            "0.7854": [19.3, 0, 0],
+            "0.8508": [30.96, 0, 0],
+            "0.9163": [36.78, 0, 0],
+            "0.9817": [35.87, 0, 0],
+            "1.0472": [28.36, 0, 0]
+          }
+        },
+        "right_leg": {
+          "rotation": {
+            "0": [-18.66, 0, 0],
+            "0.0654": [-7.86, 0, 0],
+            "0.1309": [5.84, 0, 0],
+            "0.1963": [20.35, 0, 0],
+            "0.2618": [33.46, 0, 0],
+            "0.3272": [43.18, 0, 0],
+            "0.3927": [48.03, 0, 0],
+            "0.4581": [47.27, 0, 0],
+            "0.5236": [41.01, 0, 0],
+            "0.589": [30.21, 0, 0],
+            "0.6545": [16.51, 0, 0],
+            "0.7199": [2, 0, 0],
+            "0.7854": [-11.12, 0, 0],
+            "0.8508": [-20.84, 0, 0],
+            "0.9163": [-25.69, 0, 0],
+            "0.9817": [-24.92, 0, 0],
+            "1.0472": [-18.66, 0, 0]
+          }
+        },
+        "left_leg": {
+          "rotation": {
+            "0": [41.01, 0, 0],
+            "0.0654": [30.21, 0, 0],
+            "0.1309": [16.51, 0, 0],
+            "0.1963": [2, 0, 0],
+            "0.2618": [-11.12, 0, 0],
+            "0.3272": [-20.84, 0, 0],
+            "0.3927": [-25.69, 0, 0],
+            "0.4581": [-24.92, 0, 0],
+            "0.5236": [-18.66, 0, 0],
+            "0.589": [-7.86, 0, 0],
+            "0.6545": [5.84, 0, 0],
+            "0.7199": [20.35, 0, 0],
+            "0.7854": [33.46, 0, 0],
+            "0.8508": [43.18, 0, 0],
+            "0.9163": [48.03, 0, 0],
+            "0.9817": [47.27, 0, 0],
+            "1.0472": [41.01, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.alexsmobs.rain_frog.run": {
+      "loop": true,
+      "animation_length": 1.047,
+      "anim_time_update": "q.anim_time + q.delta_time * v.anim_speed",
+      "bones": {
+        "body": {
+          "rotation": {
+            "0": [0, 10.83, 20.05],
+            "0.0654": [0, 3.55, 18.53],
+            "0.1309": [0, -4.27, 14.18],
+            "0.1963": [0, -11.44, 7.67],
+            "0.2618": [0, -16.87, 0],
+            "0.3272": [0, -19.74, -7.67],
+            "0.3927": [0, -19.59, -14.18],
+            "0.4581": [0, -16.47, -18.53],
+            "0.5236": [0, -10.83, -20.05],
+            "0.589": [0, -3.55, -18.53],
+            "0.6545": [0, 4.27, -14.18],
+            "0.7199": [0, 11.44, -7.67],
+            "0.7854": [0, 16.87, 0],
+            "0.8508": [0, 19.74, 7.67],
+            "0.9163": [0, 19.59, 14.18],
+            "0.9817": [0, 16.47, 18.53],
+            "1.0472": [0, 10.83, 20.05]
+          }
+        },
+        "left_arm": {
+          "rotation": {
+            "0": [-66.54, 0, 0],
+            "0.0654": [-46.6, 0, 0],
+            "0.1309": [-21.31, 0, 0],
+            "0.1963": [5.48, 0, 0],
+            "0.2618": [29.69, 0, 0],
+            "0.3272": [47.64, 0, 0],
+            "0.3927": [56.59, 0, 0],
+            "0.4581": [55.18, 0, 0],
+            "0.5236": [43.62, 0, 0],
+            "0.589": [23.68, 0, 0],
+            "0.6545": [-1.61, 0, 0],
+            "0.7199": [-28.4, 0, 0],
+            "0.7854": [-52.61, 0, 0],
+            "0.8508": [-70.55, 0, 0],
+            "0.9163": [-79.5, 0, 0],
+            "0.9817": [-78.1, 0, 0],
+            "1.0472": [-66.54, 0, 0]
+          }
+        },
+        "right_arm": {
+          "rotation": {
+            "0": [43.62, 0, 0],
+            "0.0654": [23.68, 0, 0],
+            "0.1309": [-1.61, 0, 0],
+            "0.1963": [-28.4, 0, 0],
+            "0.2618": [-52.61, 0, 0],
+            "0.3272": [-70.55, 0, 0],
+            "0.3927": [-79.5, 0, 0],
+            "0.4581": [-78.1, 0, 0],
+            "0.5236": [-66.54, 0, 0],
+            "0.589": [-46.6, 0, 0],
+            "0.6545": [-21.31, 0, 0],
+            "0.7199": [5.48, 0, 0],
+            "0.7854": [29.69, 0, 0],
+            "0.8508": [47.64, 0, 0],
+            "0.9163": [56.59, 0, 0],
+            "0.9817": [55.18, 0, 0],
+            "1.0472": [43.62, 0, 0]
+          }
+        },
+        "right_leg": {
+          "rotation": {
+            "0": [-28.71, 0, 0],
+            "0.0654": [-12.1, 0, 0],
+            "0.1309": [8.98, 0, 0],
+            "0.1963": [31.3, 0, 0],
+            "0.2618": [51.48, 0, 0],
+            "0.3272": [66.43, 0, 0],
+            "0.3927": [73.89, 0, 0],
+            "0.4581": [72.72, 0, 0],
+            "0.5236": [63.09, 0, 0],
+            "0.589": [46.47, 0, 0],
+            "0.6545": [25.4, 0, 0],
+            "0.7199": [3.07, 0, 0],
+            "0.7854": [-17.1, 0, 0],
+            "0.8508": [-32.06, 0, 0],
+            "0.9163": [-39.52, 0, 0],
+            "0.9817": [-38.34, 0, 0],
+            "1.0472": [-28.71, 0, 0]
+          }
+        },
+        "left_leg": {
+          "rotation": {
+            "0": [63.09, 0, 0],
+            "0.0654": [46.47, 0, 0],
+            "0.1309": [25.4, 0, 0],
+            "0.1963": [3.07, 0, 0],
+            "0.2618": [-17.1, 0, 0],
+            "0.3272": [-32.06, 0, 0],
+            "0.3927": [-39.52, 0, 0],
+            "0.4581": [-38.34, 0, 0],
+            "0.5236": [-28.71, 0, 0],
+            "0.589": [-12.1, 0, 0],
+            "0.6545": [8.98, 0, 0],
+            "0.7199": [31.3, 0, 0],
+            "0.7854": [51.48, 0, 0],
+            "0.8508": [66.43, 0, 0],
+            "0.9163": [73.89, 0, 0],
+            "0.9817": [72.72, 0, 0],
+            "1.0472": [63.09, 0, 0]
+          }
         }
       }
     },

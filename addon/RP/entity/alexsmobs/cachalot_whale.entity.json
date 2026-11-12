@@ -18,7 +18,13 @@
         "default": "geometry.alexsmobs.cachalot_whale"
       },
       "animations": {
-        "pose": "animation.alexsmobs.cachalot_whale.pose",
+        "idle": "animation.alexsmobs.cachalot_whale.idle",
+        "breathe": "animation.alexsmobs.cachalot_whale.breathe",
+        "swim": "animation.alexsmobs.cachalot_whale.swim",
+        "pose_sleep": "animation.alexsmobs.cachalot_whale.pose_sleep",
+        "look": "animation.alexsmobs.cachalot_whale.look",
+        "baby": "animation.alexsmobs.cachalot_whale.baby",
+        "attack_bite": "animation.alexsmobs.cachalot_whale.attack_bite",
         "death_0": "animation.alexsmobs.cachalot_whale.death_0",
         "death_1": "animation.alexsmobs.cachalot_whale.death_1",
         "hurt": "animation.alexsmobs.cachalot_whale.hurt",
@@ -26,34 +32,43 @@
         "idle_sniff": "animation.alexsmobs.cachalot_whale.idle_sniff",
         "idle_shake": "animation.alexsmobs.cachalot_whale.idle_shake",
         "idle_tail": "animation.alexsmobs.cachalot_whale.idle_tail",
-        "ctrl_idle": "controller.animation.alexsmobs.cachalot_whale.idle",
-        "ctrl_death": "controller.animation.alexsmobs.cachalot_whale.death",
-        "ctrl_hurt": "controller.animation.alexsmobs.cachalot_whale.hurt"
+        "ctrl_move": "controller.animation.alexsmobs.cachalot_whale.move",
+        "ctrl_attack": "controller.animation.alexsmobs.cachalot_whale.attack",
+        "ctrl_hurt": "controller.animation.alexsmobs.cachalot_whale.hurt",
+        "ctrl_death": "controller.animation.alexsmobs.cachalot_whale.death"
       },
       "scripts": {
-        "pre_animation": [
-          "v.ls = q.modified_distance_moved;",
-          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
-          "v.age = q.life_time * 20;",
-          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
-          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
-          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+        "initialize": [
+          "v.is_moving = 0;",
+          "v.is_sprinting = 0;",
+          "v.anim_speed = 1;",
           "v.am_flying = 0;",
-          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;"
+        ],
+        "pre_animation": [
+          "v.is_moving = q.modified_move_speed >= 0.1;",
+          "v.is_sprinting = q.modified_move_speed >= 0.9;",
+          "v.anim_speed = math.clamp(q.modified_move_speed / 0.6, 0.35, 2.4);",
+          "v.am_flying = 0;",
           "v.am_sleeping = q.property('alexsmobs:sleeping');",
-          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
-          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;",
-          "v.p_chargingprogress = math.clamp((v.p_chargingprogress ?? 0) + ((v.am_running) ? 1 : -1) * q.delta_time * 20, 0, 10);",
-          "v.p_chargeprogress = math.clamp((v.p_chargeprogress ?? 0) + ((v.am_running) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_sleepprogress = math.clamp((v.p_sleepprogress ?? 0) + ((v.am_sleeping) ? 1 : -1) * q.delta_time * 20, 0, 5);",
-          "v.p_beachedprogress = math.clamp((v.p_beachedprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 10);",
-          "v.p_grabprogress = math.clamp((v.p_grabprogress ?? 0) + ((0) ? 1 : -1) * q.delta_time * 20, 0, 5);"
+          "v.am_standing = 0;",
+          "v.idle_wait = v.idle_wait ?? 4;",
+          "v.idle_pick = v.idle_pick ?? 0;",
+          "v.atk_pick = v.atk_pick ?? 0;",
+          "v.death_pick = v.death_pick ?? 0;"
         ],
         "animate": [
-          "pose",
-          "ctrl_idle",
+          "ctrl_move",
+          {
+            "look": "!v.am_sleeping && q.is_alive"
+          },
+          "ctrl_attack",
+          "ctrl_hurt",
           "ctrl_death",
-          "ctrl_hurt"
+          {
+            "baby": "q.is_baby"
+          }
         ]
       },
       "render_controllers": [

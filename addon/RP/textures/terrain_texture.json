@@ -37,6 +37,12 @@
     "alexsmobs_block_crocodile_egg": {
       "textures": "textures/alexsmobs/block/crocodile_egg"
     },
+    "alexsmobs_block_crocodile_egg_slightly_cracked": {
+      "textures": "textures/alexsmobs/block/crocodile_egg_slightly_cracked"
+    },
+    "alexsmobs_block_crocodile_egg_very_cracked": {
+      "textures": "textures/alexsmobs/block/crocodile_egg_very_cracked"
+    },
     "alexsmobs_block_crystalized_banana_slug_mucus": {
       "textures": "textures/alexsmobs/block/crystalized_banana_slug_mucus"
     },

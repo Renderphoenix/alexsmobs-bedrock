@@ -106,8 +106,12 @@ function generateFollower(head, spec, ctx) {
   const g = G.toGeometry(gid, boxes, I.texW, I.texH);
   U.writeJson(path.join(C.RP, 'models/entity', NS, `${id}.geo.json`), g.json);
   copyTex(f.tex);
-  const pose = I.setupAnim();
-  const anims = pose ? A.poseAnimation(`animation.${NS}.${id}.pose`, pose.chan, boxes, g.names) : {};
+  I.setupAnim();
+  const MO = require('./motion');
+  const loop = MO.buildLoop(MO.activeGaits(I.gaits, MO.stateEnv('ground', [...I.ent.progress.entries()])), { maxL: 5, maxKeys: 90 });
+  const poseBones = loop ? MO.toBones(loop, g.names) : {};
+  const pose = Object.keys(poseBones).length ? { loop: true, animation_length: loop.length, bones: poseBones } : null;
+  const anims = pose ? { [`animation.${NS}.${id}.pose`]: pose } : {};
   U.writeJson(path.join(C.RP, 'animations', NS, `${id}.animation.json`), { format_version: '1.8.0', animations: anims });
   U.writeJson(path.join(C.RP, 'render_controllers', NS, `${id}.render_controllers.json`), {
     format_version: '1.10.0',
@@ -123,7 +127,6 @@ function generateFollower(head, spec, ctx) {
         geometry: { default: gid },
         animations: pose ? { pose: `animation.${NS}.${id}.pose` } : {},
         scripts: {
-          pre_animation: ['v.ls = 0;', 'v.lsa = 0;', 'v.age = q.life_time * 20;', 'v.yaw = math.clamp(q.target_y_rotation, -85, 85);', 'v.pitch = math.clamp(q.target_x_rotation, -60, 60);'],
           animate: pose ? ['pose'] : [],
         },
         render_controllers: [`controller.render.${NS}.${id}`],
@@ -145,12 +148,12 @@ function writePartBehavior(id, head, spec, o) {
     'minecraft:physics': { has_gravity: false, has_collision: false },
     'minecraft:pushable': { is_pushable: false, is_pushable_by_piston: false },
     'minecraft:knockback_resistance': { value: 1 },
-    'minecraft:damage_sensor': { triggers: [{ cause: 'fall', deals_damage: 'no' }, { cause: 'suffocation', deals_damage: 'no' }, { cause: 'in_wall', deals_damage: 'no' }, { cause: 'drowning', deals_damage: 'no' }] },
+    'minecraft:damage_sensor': { triggers: [{ cause: 'fall', deals_damage: 'no' }, { cause: 'suffocation', deals_damage: 'no' }, { cause: 'drowning', deals_damage: 'no' }] },
     'minecraft:breathable': { total_supply: 15, suffocate_time: 0, breathes_water: true, breathes_air: true },
     'minecraft:conditional_bandwidth_optimization': {},
     'minecraft:movement': { value: 0 },
   };
-  if (fire) comps['minecraft:fire_immune'] = true;
+  if (fire) comps['minecraft:fire_immune'] = {};
   if (head.attrs && head.attrs.damage && hostile) comps['minecraft:attack'] = { damage: Math.round(head.attrs.damage / 2) };
   U.writeJson(path.join(C.BP, 'entities', NS, `${id}.json`), {
     format_version: '1.21.50',

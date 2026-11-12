@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "alexsmobs:furnace_boiled_emu_egg"
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:emu_egg"
+      }
+    ],
+    "tags": [
+      "furnace",
+      "campfire",
+      "soul_campfire",
+      "smoker"
+    ],
+    "input": "alexsmobs:emu_egg",
+    "output": "alexsmobs:boiled_emu_egg",
+    "priority": 30
+  }
+}

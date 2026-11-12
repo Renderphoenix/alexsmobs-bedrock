@@ -7,12 +7,6 @@
       "is_summonable": true,
       "is_experimental": false,
       "properties": {
-        "alexsmobs:anim": {
-          "type": "int",
-          "range": [0, 2],
-          "default": 0,
-          "client_sync": true
-        },
         "alexsmobs:angry": {
           "type": "bool",
           "default": false,
@@ -29,7 +23,7 @@
         "minecraft:ageable": {
           "duration": 1200,
           "feed_items": [
-            "minecraft:dead_bush",
+            "minecraft:deadbush",
             "minecraft:short_grass"
           ],
           "grow_up": {
@@ -50,7 +44,7 @@
         "minecraft:breedable": {
           "require_tame": false,
           "breed_items": [
-            "minecraft:dead_bush",
+            "minecraft:deadbush",
             "minecraft:short_grass"
           ],
           "breeds_with": {
@@ -231,7 +225,7 @@
         "within_radius": 10,
         "items": [
           "minecraft:wheat",
-          "minecraft:dead_bush",
+          "minecraft:deadbush",
           "minecraft:short_grass"
         ],
         "can_tempt_vertically": false

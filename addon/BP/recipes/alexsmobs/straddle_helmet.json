@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:straddle_helmet"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " S ",
+      "S S",
+      "L L"
+    ],
+    "key": {
+      "S": {
+        "item": "alexsmobs:straddlite"
+      },
+      "L": {
+        "item": "minecraft:string"
+      }
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:straddlite"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:straddle_helmet",
+      "count": 1
+    }
+  }
+}

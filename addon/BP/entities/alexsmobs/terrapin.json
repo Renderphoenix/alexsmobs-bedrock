@@ -7,12 +7,6 @@
       "is_summonable": true,
       "is_experimental": false,
       "properties": {
-        "alexsmobs:anim": {
-          "type": "int",
-          "range": [0, 1],
-          "default": 0,
-          "client_sync": true
-        },
         "alexsmobs:angry": {
           "type": "bool",
           "default": false,
@@ -21,6 +15,39 @@
       }
     },
     "component_groups": {
+      "alexsmobs:pregnant": {
+        "minecraft:timer": {
+          "looping": false,
+          "randomInterval": true,
+          "time": [30, 80],
+          "time_down_event": {
+            "event": "alexsmobs:go_lay_egg",
+            "target": "self"
+          }
+        }
+      },
+      "alexsmobs:lay_egg": {
+        "minecraft:behavior.lay_egg": {
+          "priority": 2,
+          "speed_multiplier": 1,
+          "search_range": 16,
+          "search_height": 4,
+          "goal_radius": 1.5,
+          "lay_seconds": 8,
+          "egg_type": "alexsmobs:terrapin_egg",
+          "target_blocks": [
+            "minecraft:sand",
+            "minecraft:red_sand",
+            "minecraft:mud",
+            "minecraft:dirt",
+            "minecraft:clay"
+          ],
+          "on_lay": {
+            "event": "alexsmobs:laid_egg",
+            "target": "self"
+          }
+        }
+      },
       "alexsmobs:baby": {
         "minecraft:is_baby": {},
         "minecraft:scale": {
@@ -51,10 +78,11 @@
             "mate_type": "alexsmobs:terrapin",
             "baby_type": "alexsmobs:terrapin",
             "breed_event": {
-              "event": "minecraft:entity_born",
-              "target": "baby"
+              "event": "alexsmobs:become_pregnant",
+              "target": "self"
             }
-          }
+          },
+          "causes_pregnancy": true
         },
         "minecraft:behavior.breed": {
           "priority": 3,
@@ -123,11 +151,7 @@
       "minecraft:loot": {
         "table": "loot_tables/alexsmobs/entities/terrapin.json"
       },
-      "minecraft:leashable": {
-        "soft_distance": 4,
-        "hard_distance": 6,
-        "max_distance": 10
-      },
+      "minecraft:leashable": {},
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
@@ -225,6 +249,38 @@
       }
     },
     "events": {
+      "alexsmobs:become_pregnant": {
+        "add": {
+          "component_groups": [
+            "alexsmobs:pregnant"
+          ]
+        }
+      },
+      "alexsmobs:go_lay_egg": {
+        "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "alexsmobs:pregnant"
+              ]
+            }
+          },
+          {
+            "add": {
+              "component_groups": [
+                "alexsmobs:lay_egg"
+              ]
+            }
+          }
+        ]
+      },
+      "alexsmobs:laid_egg": {
+        "remove": {
+          "component_groups": [
+            "alexsmobs:lay_egg"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {

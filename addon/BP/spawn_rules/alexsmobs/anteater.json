@@ -23,8 +23,10 @@
           "minecraft:stone",
           "minecraft:clay",
           "minecraft:mycelium",
-          "minecraft:terracotta",
-          "minecraft:grass_path"
+          "minecraft:hardened_clay",
+          "minecraft:grass_path",
+          "minecraft:rooted_dirt",
+          "minecraft:mangrove_roots"
         ],
         "minecraft:brightness_filter": {
           "min": 7,
@@ -32,11 +34,13 @@
           "adjust_for_weather": false
         },
         "minecraft:weight": {
-          "default": 11
+          "default": 3
         },
         "minecraft:herd": {
           "min_size": 1,
-          "max_size": 3
+          "max_size": 3,
+          "event": "minecraft:entity_born",
+          "event_skip_count": 2
         },
         "minecraft:density_limit": {
           "surface": 6

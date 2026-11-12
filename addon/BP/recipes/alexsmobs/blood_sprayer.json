@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:blood_sprayer"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "SS ",
+      "BBP",
+      "B  "
+    ],
+    "key": {
+      "S": {
+        "item": "alexsmobs:blood_sac"
+      },
+      "P": {
+        "item": "alexsmobs:mosquito_proboscis"
+      },
+      "B": {
+        "item": "minecraft:netherbrick"
+      }
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:blood_sac"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:blood_sprayer",
+      "count": 1
+    }
+  }
+}

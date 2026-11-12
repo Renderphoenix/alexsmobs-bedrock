@@ -13,14 +13,14 @@
           "max": 64
         },
         "minecraft:weight": {
-          "default": 5
+          "default": 8
         },
         "minecraft:herd": {
           "min_size": 1,
           "max_size": 1
         },
         "minecraft:density_limit": {
-          "surface": 4
+          "surface": 3
         },
         "minecraft:biome_filter": {
           "all_of": [

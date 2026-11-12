@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:gustmaker"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "SSS",
+      "SES",
+      "SRS"
+    ],
+    "key": {
+      "E": {
+        "item": "alexsmobs:guster_eye"
+      },
+      "S": {
+        "item": "minecraft:cut_sandstone"
+      },
+      "R": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:guster_eye"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:gustmaker",
+      "count": 1
+    }
+  }
+}

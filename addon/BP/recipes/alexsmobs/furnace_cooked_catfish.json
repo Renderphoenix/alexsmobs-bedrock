@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "alexsmobs:furnace_cooked_catfish"
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:raw_catfish"
+      }
+    ],
+    "tags": [
+      "furnace",
+      "campfire",
+      "soul_campfire",
+      "smoker"
+    ],
+    "input": "alexsmobs:raw_catfish",
+    "output": "alexsmobs:cooked_catfish",
+    "priority": 30
+  }
+}

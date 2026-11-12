@@ -17,11 +17,13 @@
           "max": 32
         },
         "minecraft:weight": {
-          "default": 23
+          "default": 5
         },
         "minecraft:herd": {
           "min_size": 1,
-          "max_size": 4
+          "max_size": 4,
+          "event": "minecraft:entity_born",
+          "event_skip_count": 3
         },
         "minecraft:density_limit": {
           "underwater": 8

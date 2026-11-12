@@ -1,0 +1,39 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:shield_of_the_deep"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "SSS",
+      "PHP",
+      "TPT"
+    ],
+    "key": {
+      "S": {
+        "item": "alexsmobs:serrated_shark_tooth"
+      },
+      "P": {
+        "item": "minecraft:prismarine_bricks"
+      },
+      "H": {
+        "item": "minecraft:heart_of_the_sea"
+      },
+      "T": {
+        "item": "alexsmobs:shark_tooth"
+      }
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:serrated_shark_tooth"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:shield_of_the_deep",
+      "count": 1
+    }
+  }
+}

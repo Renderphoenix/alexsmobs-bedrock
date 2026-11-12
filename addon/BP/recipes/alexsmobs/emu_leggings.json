@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:emu_leggings"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "FKF",
+      "K K",
+      "F F"
+    ],
+    "key": {
+      "F": {
+        "item": "alexsmobs:emu_feather"
+      },
+      "K": {
+        "item": "alexsmobs:kangaroo_hide"
+      }
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:emu_feather"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:emu_leggings",
+      "count": 1
+    }
+  }
+}

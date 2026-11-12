@@ -15,35 +15,57 @@
         "default": "geometry.alexsmobs.bone_serpent"
       },
       "animations": {
-        "pose": "animation.alexsmobs.bone_serpent.pose",
+        "idle": "animation.alexsmobs.bone_serpent.idle",
+        "breathe": "animation.alexsmobs.bone_serpent.breathe",
+        "walk": "animation.alexsmobs.bone_serpent.walk",
+        "run": "animation.alexsmobs.bone_serpent.run",
+        "look": "animation.alexsmobs.bone_serpent.look",
+        "baby": "animation.alexsmobs.bone_serpent.baby",
+        "attack_bite": "animation.alexsmobs.bone_serpent.attack_bite",
         "death_0": "animation.alexsmobs.bone_serpent.death_0",
         "death_1": "animation.alexsmobs.bone_serpent.death_1",
         "hurt": "animation.alexsmobs.bone_serpent.hurt",
         "idle_look": "animation.alexsmobs.bone_serpent.idle_look",
         "idle_sniff": "animation.alexsmobs.bone_serpent.idle_sniff",
-        "ctrl_idle": "controller.animation.alexsmobs.bone_serpent.idle",
-        "ctrl_death": "controller.animation.alexsmobs.bone_serpent.death",
-        "ctrl_hurt": "controller.animation.alexsmobs.bone_serpent.hurt"
+        "ctrl_move": "controller.animation.alexsmobs.bone_serpent.move",
+        "ctrl_idles": "controller.animation.alexsmobs.bone_serpent.idles",
+        "ctrl_attack": "controller.animation.alexsmobs.bone_serpent.attack",
+        "ctrl_hurt": "controller.animation.alexsmobs.bone_serpent.hurt",
+        "ctrl_death": "controller.animation.alexsmobs.bone_serpent.death"
       },
       "scripts": {
-        "pre_animation": [
-          "v.ls = q.modified_distance_moved;",
-          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
-          "v.age = q.life_time * 20;",
-          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
-          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
-          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+        "initialize": [
+          "v.is_moving = 0;",
+          "v.is_sprinting = 0;",
+          "v.anim_speed = 1;",
           "v.am_flying = 0;",
-          "v.am_running = q.modified_move_speed > 0.45;",
           "v.am_sleeping = 0;",
-          "v.am_standing = q.property('alexsmobs:angry') && q.ground_speed < 0.05;",
-          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;"
+          "v.am_standing = 0;"
+        ],
+        "pre_animation": [
+          "v.is_moving = q.modified_move_speed >= 0.1;",
+          "v.is_sprinting = q.modified_move_speed >= 0.9;",
+          "v.anim_speed = math.clamp(q.modified_move_speed / 0.6, 0.35, 2.4);",
+          "v.am_flying = 0;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;",
+          "v.idle_wait = v.idle_wait ?? 4;",
+          "v.idle_pick = v.idle_pick ?? 0;",
+          "v.atk_pick = v.atk_pick ?? 0;",
+          "v.death_pick = v.death_pick ?? 0;"
         ],
         "animate": [
-          "pose",
-          "ctrl_idle",
+          "ctrl_move",
+          {
+            "look": "!v.am_sleeping && q.is_alive"
+          },
+          "ctrl_idles",
+          "ctrl_attack",
+          "ctrl_hurt",
           "ctrl_death",
-          "ctrl_hurt"
+          {
+            "baby": "q.is_baby"
+          }
         ]
       },
       "render_controllers": [

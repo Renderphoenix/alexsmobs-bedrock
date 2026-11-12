@@ -67,10 +67,6 @@
             "deals_damage": "no"
           },
           {
-            "cause": "in_wall",
-            "deals_damage": "no"
-          },
-          {
             "cause": "drowning",
             "deals_damage": "no"
           }
@@ -86,7 +82,7 @@
       "minecraft:movement": {
         "value": 0
       },
-      "minecraft:fire_immune": true,
+      "minecraft:fire_immune": {},
       "minecraft:attack": {
         "damage": 3
       }

@@ -1,10 +1,13 @@
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.90",
   "minecraft:block": {
     "description": {
       "identifier": "alexsmobs:crocodile_egg",
       "menu_category": {
         "category": "nature"
+      },
+      "states": {
+        "alexsmobs:hatch": [0, 1, 2]
       }
     },
     "components": {
@@ -34,7 +37,46 @@
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 3
       },
-      "minecraft:display_name": "tile.alexsmobs:crocodile_egg.name"
-    }
+      "minecraft:display_name": "tile.alexsmobs:crocodile_egg.name",
+      "minecraft:custom_components": [
+        "alexsmobs:egg"
+      ],
+      "minecraft:tick": {
+        "interval_range": [80, 160],
+        "looping": true
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('alexsmobs:hatch') == 1",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "alexsmobs_block_crocodile_egg_slightly_cracked",
+              "render_method": "alpha_test"
+            },
+            "alexsmobs_block_crocodile_egg": {
+              "texture": "alexsmobs_block_crocodile_egg_slightly_cracked",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('alexsmobs:hatch') == 2",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "alexsmobs_block_crocodile_egg_very_cracked",
+              "render_method": "alpha_test"
+            },
+            "alexsmobs_block_crocodile_egg": {
+              "texture": "alexsmobs_block_crocodile_egg_very_cracked",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      }
+    ]
   }
 }

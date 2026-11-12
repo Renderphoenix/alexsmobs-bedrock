@@ -9,6 +9,8 @@ const C = require('./config');
 const U = require('./util');
 const J = require('./javap');
 const { scan } = require('./scan');
+const AB = require('./abilities');
+const THROWN = { emu_egg: 'emu', cockroach_ootheca: 'cockroach' };
 
 const NS = C.NS;
 const P = C.PKG;
@@ -131,7 +133,7 @@ function generateItems(ctx, javaLang) {
     };
     const name = javaLang[`item.${NS}.${it.id}`] || U.title(it.id);
     ctx.itemLang.push(`item.${NS}.${it.id}=${name}`);
-    if (it.fire) comps['minecraft:fire_resistant'] = { value: true };
+
     if (it.food && it.food.nutrition !== undefined) {
       comps['minecraft:food'] = { nutrition: it.food.nutrition, saturation_modifier: +(it.food.saturation || 0.3).toFixed(2), can_always_eat: !!it.food.always };
       comps['minecraft:use_animation'] = 'eat';
@@ -150,8 +152,8 @@ function generateItems(ctx, javaLang) {
     }
     // weapons
     if (/Sword|Tendon|Ghostly/.test(it.cls || '')) {
-      comps['minecraft:damage'] = /Sword/.test(it.cls) ? 7 : 4;
-      comps['minecraft:hand_equipped'] = true;
+      comps['minecraft:damage'] = { value: /Sword/.test(it.cls) ? 7 : 4 };
+      comps['minecraft:hand_equipped'] = { value: true };
       comps['minecraft:durability'] = comps['minecraft:durability'] || { max_durability: 600 };
       comps['minecraft:max_stack_size'] = 1;
     }
@@ -167,7 +169,23 @@ function generateItems(ctx, javaLang) {
       ctx.buckets[`${NS}:${mob}`] = id;
     }
     if (it.cls === 'ItemFuel') comps['minecraft:fuel'] = { duration: 100 };
-    if (it.cls === 'RecordItem') comps['minecraft:max_stack_size'] = 1;
+    if (it.cls === 'RecordItem') {
+      comps['minecraft:max_stack_size'] = 1;
+      const field = (it.args.find(a => a && /AMSoundRegistry./.test(a)) || '').split('.').pop();
+      const snd = (ctx.soundRegistry || {})[field] || it.id;
+      comps['minecraft:record'] = { sound_event: `${NS}.${snd}`, duration: ctx.recordSeconds ? ctx.recordSeconds(snd) : 180, comparator_signal: 13 };
+    }
+    if (THROWN[it.id]) {
+      comps['minecraft:projectile'] = { projectile_entity: `${NS}:${it.id}_projectile` };
+      comps['minecraft:throwable'] = { do_swing_animation: true, launch_power_scale: 1.0, max_launch_power: 1.0 };
+      comps['minecraft:max_stack_size'] = it.id === 'emu_egg' ? 8 : 64;
+      ctx.thrown[it.id] = { mob: THROWN[it.id], icon: `textures/${NS}/${texRel}` };
+    }
+    if (AB.RAY[it.id] || AB.SOUND[it.id]) { const a = AB.RAY[it.id] || AB.SOUND[it.id]; comps['minecraft:cooldown'] = { category: `${NS}_${it.id}`, duration: a.cooldown / 20 }; }
+    if (AB.RAY[it.id]) ctx.abilities.ray[id] = AB.RAY[it.id];
+    if (AB.SCAN[it.id]) ctx.abilities.scan[id] = AB.SCAN[it.id];
+    if (AB.SOUND[it.id]) ctx.abilities.sound[id] = AB.SOUND[it.id];
+    if (AB.FOOD[it.id] && comps['minecraft:food']) ctx.abilities.food[id] = AB.FOOD[it.id];
     U.writeJson(path.join(C.BP, 'items', NS, `${it.id}.json`), {
       format_version: '1.21.40',
       'minecraft:item': { description: { identifier: id, menu_category: { category: comps['minecraft:food'] ? 'nature' : comps['minecraft:wearable'] || comps['minecraft:damage'] ? 'equipment' : 'items' } }, components: comps },

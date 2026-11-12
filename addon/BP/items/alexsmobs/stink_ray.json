@@ -19,6 +19,10 @@
       "minecraft:max_stack_size": 1,
       "minecraft:durability": {
         "max_durability": 5
+      },
+      "minecraft:cooldown": {
+        "category": "alexsmobs_stink_ray",
+        "duration": 2
       }
     }
   }

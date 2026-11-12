@@ -2,26 +2,19 @@
 import { world, system, ItemStack } from "@minecraft/server";
 
 const NS = "alexsmobs";
-const ATTACK = {"alexsmobs:alligator_snapping_turtle":[],"alexsmobs:anaconda":[],"alexsmobs:anteater":[20,20],"alexsmobs:bald_eagle":[],"alexsmobs:banana_slug":[],"alexsmobs:bison":[15],"alexsmobs:blobfish":[],"alexsmobs:blue_jay":[],"alexsmobs:bone_serpent":[],"alexsmobs:bunfungus":[20],"alexsmobs:cachalot_whale":[],"alexsmobs:caiman":[],"alexsmobs:capuchin_monkey":[12],"alexsmobs:catfish":[],"alexsmobs:centipede_head":[],"alexsmobs:cockroach":[],"alexsmobs:comb_jelly":[],"alexsmobs:cosmaw":[],"alexsmobs:cosmic_cod":[],"alexsmobs:crimson_mosquito":[],"alexsmobs:crocodile":[23,40],"alexsmobs:crow":[],"alexsmobs:devils_hole_pupfish":[],"alexsmobs:dropbear":[9,15,15],"alexsmobs:elephant":[20,25],"alexsmobs:emu":[],"alexsmobs:endergrade":[],"alexsmobs:enderiophage":[],"alexsmobs:farseer":[],"alexsmobs:flutter":[],"alexsmobs:fly":[],"alexsmobs:flying_fish":[],"alexsmobs:frilled_shark":[17],"alexsmobs:froststalker":[13,12,12,12],"alexsmobs:gazelle":[],"alexsmobs:gelada_monkey":[13,13],"alexsmobs:giant_squid":[],"alexsmobs:gorilla":[20],"alexsmobs:grizzly_bear":[20,15,20],"alexsmobs:guster":[],"alexsmobs:hammerhead_shark":[],"alexsmobs:hummingbird":[],"alexsmobs:jerboa":[],"alexsmobs:kangaroo":[15,13,13],"alexsmobs:komodo_dragon":[],"alexsmobs:laviathan":[],"alexsmobs:leafcutter_ant":[13],"alexsmobs:lobster":[],"alexsmobs:maned_wolf":[],"alexsmobs:mantis_shrimp":[],"alexsmobs:mimic_octopus":[],"alexsmobs:mimicube":[],"alexsmobs:moose":[15],"alexsmobs:mudskipper":[],"alexsmobs:mungus":[],"alexsmobs:murmur":[],"alexsmobs:orca":[8,20],"alexsmobs:platypus":[],"alexsmobs:potoo":[],"alexsmobs:raccoon":[12],"alexsmobs:rain_frog":[],"alexsmobs:rattlesnake":[20],"alexsmobs:rhinoceros":[15,30],"alexsmobs:roadrunner":[],"alexsmobs:rocky_roller":[],"alexsmobs:sea_bear":[17],"alexsmobs:seagull":[],"alexsmobs:seal":[],"alexsmobs:shoebill":[20],"alexsmobs:skelewag":[10,25],"alexsmobs:skreecher":[],"alexsmobs:skunk":[],"alexsmobs:snow_leopard":[13,13],"alexsmobs:soul_vulture":[],"alexsmobs:spectre":[],"alexsmobs:straddler":[30],"alexsmobs:stradpole":[],"alexsmobs:sugar_glider":[],"alexsmobs:sunbird":[],"alexsmobs:tarantula_hawk":[],"alexsmobs:tasmanian_devil":[8],"alexsmobs:terrapin":[],"alexsmobs:tiger":[15,15,20],"alexsmobs:toucan":[],"alexsmobs:triops":[],"alexsmobs:tusklin":[25,25,15,15],"alexsmobs:underminer":[],"alexsmobs:void_worm":[],"alexsmobs:warped_mosco":[25,25,35],"alexsmobs:warped_toad":[]};
 const CHAINS = {"alexsmobs:anaconda":{"part":"alexsmobs:anaconda_part","count":7,"spacing":0.7,"segs":[0,1,1,1,1,1,2],"skin":true},"alexsmobs:bone_serpent":{"part":"alexsmobs:bone_serpent_part","count":8,"spacing":0.95,"segs":[0,0,0,0,0,0,0,1],"skin":false},"alexsmobs:centipede_head":{"part":"alexsmobs:centipede_body","count":6,"spacing":0.72,"segs":[0,0,0,0,0,1],"skin":false},"alexsmobs:void_worm":{"part":"alexsmobs:void_worm_part","count":12,"spacing":1.6,"segs":[0,0,0,0,0,0,0,0,0,0,0,1],"skin":false}};
 const FOLLOWERS = {"alexsmobs:murmur":{"part":"alexsmobs:murmur_head","offset":[0,1.55,-0.35]}};
 const BUCKETS = {"alexsmobs:lobster":"alexsmobs:lobster_bucket","alexsmobs:blobfish":"alexsmobs:blobfish_bucket","alexsmobs:stradpole":"alexsmobs:stradpole_bucket","alexsmobs:platypus":"alexsmobs:platypus_bucket","alexsmobs:frilled_shark":"alexsmobs:frilled_shark_bucket","alexsmobs:mimic_octopus":"alexsmobs:mimic_octopus_bucket","alexsmobs:terrapin":"alexsmobs:terrapin_bucket","alexsmobs:comb_jelly":"alexsmobs:comb_jelly_bucket","alexsmobs:cosmic_cod":"alexsmobs:cosmic_cod_bucket","alexsmobs:devils_hole_pupfish":"alexsmobs:devils_hole_pupfish_bucket","alexsmobs:catfish":"alexsmobs:large_catfish_bucket","alexsmobs:flying_fish":"alexsmobs:flying_fish_bucket","alexsmobs:mudskipper":"alexsmobs:mudskipper_bucket","alexsmobs:triops":"alexsmobs:triops_bucket"};
 const EGGS = {"alexsmobs:caiman_egg":"alexsmobs:caiman","alexsmobs:crocodile_egg":"alexsmobs:crocodile","alexsmobs:platypus_egg":"alexsmobs:platypus","alexsmobs:terrapin_egg":"alexsmobs:terrapin","alexsmobs:triops_eggs":"alexsmobs:triops"};
+const RAY = {"alexsmobs:blood_sprayer":{"range":8,"cooldown":30,"effects":[["mining_fatigue",10,0],["hunger",8,1]],"sound":"bubble.pop","durability":true},"alexsmobs:pocket_sand":{"range":6,"cooldown":30,"effects":[["blindness",8,0],["slowness",4,1]],"sound":"dig.sand","durability":true},"alexsmobs:hemolymph_blaster":{"range":14,"cooldown":25,"effects":[["poison",5,0],["slowness",5,1]],"damage":3,"sound":"mob.slime.big","durability":true},"alexsmobs:squid_grapple":{"range":16,"cooldown":50,"effects":[],"pull":1.1,"sound":"mob.squid.ambient","durability":true},"alexsmobs:stink_ray":{"range":10,"cooldown":40,"effects":[["nausea",10,0],["weakness",10,0],["slowness",5,0]],"sound":"alexsmobs.skunk_spray","durability":true}};
+const SCAN = {"alexsmobs:echolocator":{"radius":64,"label":"Echolocation","family":"alexsmobs"},"alexsmobs:endolocator":{"radius":96,"label":"Endolocation","types":["minecraft:enderman","alexsmobs:enderiophage","alexsmobs:endergrade","alexsmobs:cosmaw","alexsmobs:farseer","alexsmobs:spectre"]},"alexsmobs:pupfish_locator":{"radius":128,"label":"Pupfish locator","types":["alexsmobs:devils_hole_pupfish"]}};
+const SOUND = {"alexsmobs:maraca":{"sound":"alexsmobs.maraca","cooldown":8}};
+const FOOD = {"alexsmobs:lobster_tail":[["hunger",6,0]],"alexsmobs:blobfish":[["nausea",12,0]],"alexsmobs:cosmic_cod":[["slow_falling",20,0]],"alexsmobs:rainbow_jelly":[["regeneration",6,0]],"alexsmobs:raw_catfish":[["hunger",8,0]],"alexsmobs:mosquito_repellent_stew":[["resistance",60,0]]};
 const PART_TYPES = new Set([...Object.values(CHAINS).map((c) => c.part), ...Object.values(FOLLOWERS).map((f) => f.part)]);
 
 const valid = (e) => { try { return !!e && (typeof e.isValid === "function" ? e.isValid() : e.isValid); } catch { return false; } };
 const prop = (e, k, d = 0) => { try { const v = e.getProperty(k); return v === undefined ? d : v; } catch { return d; } };
 const setProp = (e, k, v) => { try { e.setProperty(k, v); } catch {} };
-
-// ------------------------------------------------------------ Java attack animations
-// Each mob lists its Citadel attack animations (duration in ticks); a hit plays a random one.
-world.afterEvents.entityHitEntity.subscribe(({ damagingEntity: e }) => {
-  const list = e && ATTACK[e.typeId];
-  if (!list || !list.length || prop(e, NS + ":anim")) return;
-  const i = Math.floor(Math.random() * list.length);
-  setProp(e, NS + ":anim", i + 1);
-  system.runTimeout(() => { if (valid(e)) setProp(e, NS + ":anim", 0); }, Math.max(6, list[i]));
-});
 
 // ------------------------------------------------------------ multipart chains
 const live = new Map(); // head id -> { head, parts: Entity[], pos: Vec3[] }
@@ -167,35 +160,118 @@ world.afterEvents.playerInteractWithEntity.subscribe((ev) => {
   });
 });
 
-// ------------------------------------------------------------ eggs: placed egg blocks hatch into babies
-const EGG_KEY = "am:eggs";
-const loadEggs = () => { try { return JSON.parse(world.getDynamicProperty(EGG_KEY) ?? "[]"); } catch { return []; } };
-const saveEggs = (l) => { try { world.setDynamicProperty(EGG_KEY, JSON.stringify(l.slice(-200))); } catch {} };
-world.afterEvents.playerPlaceBlock.subscribe(({ block, dimension }) => {
-  if (!EGGS[block.typeId]) return;
-  const l = loadEggs();
-  l.push({ d: dimension.id, x: block.location.x, y: block.location.y, z: block.location.z, t: system.currentTick + 4800 + Math.floor(Math.random() * 4800) });
-  saveEggs(l);
+// ------------------------------------------------------------ helpers
+const snd = (dim, id, loc) => {
+  try { dim.playSound(id, loc); return; } catch {}
+  try { dim.runCommand("playsound " + id + " @a " + loc.x + " " + loc.y + " " + loc.z); } catch {}
+};
+const nice = (t) => t.split(":")[1].replace(/_/g, " ");
+
+// ------------------------------------------------------------ egg blocks: crack stage 0..2, then hatch (like the turtle egg)
+const HATCH = NS + ":hatch";
+system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
+  blockComponentRegistry.registerCustomComponent(NS + ":egg", {
+    onTick(ev) {
+      try {
+        const block = ev.block;
+        const mob = EGGS[block.typeId];
+        if (!mob || Math.random() > 0.45) return;
+        const dim = ev.dimension;
+        const stage = block.permutation.getState(HATCH) ?? 0;
+        if (stage < 2) {
+          block.setPermutation(block.permutation.withState(HATCH, stage + 1));
+          snd(dim, "block.turtle_egg.crack", block.center());
+          return;
+        }
+        snd(dim, "block.turtle_egg.break", block.center());
+        block.setType("minecraft:air");
+        const n = Math.random() < 0.35 ? 2 : 1;
+        for (let i = 0; i < n; i++) {
+          const baby = dim.spawnEntity(mob, block.bottomCenter());
+          try { baby.triggerEvent("minecraft:entity_born"); } catch {}
+        }
+      } catch (e) { console.warn("[alexsmobs] egg hatch failed: " + e); }
+    },
+    onStepOn(ev) {
+      try {
+        const who = ev.entity;
+        if (!who || (who.typeId === "minecraft:player" && who.isSneaking) || Math.random() > 0.05) return;
+        snd(ev.dimension, "block.turtle_egg.break", ev.block.center());
+        ev.block.setType("minecraft:air");
+      } catch {}
+    },
+  });
 });
-system.runInterval(() => {
-  const l = loadEggs();
-  if (!l.length) return;
-  const keep = [];
-  for (const e of l) {
-    let block;
-    try { block = world.getDimension(e.d).getBlock({ x: e.x, y: e.y, z: e.z }); } catch {}
-    if (!block) { keep.push(e); continue; }
-    const mob = EGGS[block.typeId];
-    if (!mob) continue;
-    if (system.currentTick < e.t) { keep.push(e); continue; }
-    try {
-      block.setType("minecraft:air");
-      const baby = world.getDimension(e.d).spawnEntity(mob, { x: e.x + 0.5, y: e.y, z: e.z + 0.5 });
-      baby.triggerEvent(NS + ":become_baby");
-    } catch {}
-  }
-  saveEggs(keep);
-}, 200);
+
+// ------------------------------------------------------------ item abilities
+const wearDown = (player, slot) => {
+  try {
+    const inv = player.getComponent("minecraft:inventory").container;
+    const item = inv.getItem(slot);
+    const dur = item && item.getComponent("minecraft:durability");
+    if (!dur) return;
+    dur.damage = Math.min(dur.maxDurability, dur.damage + 1);
+    inv.setItem(slot, dur.damage >= dur.maxDurability ? undefined : item);
+  } catch {}
+};
+const startCooldown = (player, item) => {
+  try { item.getComponent("minecraft:cooldown")?.startCooldown(player); } catch {}
+};
+const compass = (dx, dz) => {
+  const a = (Math.atan2(dx, -dz) * 180) / Math.PI;
+  return ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"][((Math.round(a / 45) % 8) + 8) % 8];
+};
+
+world.afterEvents.itemUse.subscribe(({ source: player, itemStack: item }) => {
+  if (!player || !item) return;
+  const id = item.typeId;
+  try {
+    const ray = RAY[id];
+    if (ray) {
+      const hits = player.getEntitiesFromViewDirection({ maxDistance: ray.range }) || [];
+      const slot = player.selectedSlotIndex;
+      for (const h of hits.slice(0, 3)) {
+        const t = h.entity;
+        if (!valid(t) || t.id === player.id) continue;
+        for (const [eff, sec, amp] of ray.effects) { try { t.addEffect(eff, sec * 20, { amplifier: amp }); } catch {} }
+        if (ray.damage) { try { t.applyDamage(ray.damage, { cause: "entityAttack", damagingEntity: player }); } catch {} }
+        if (ray.pull) {
+          const dx = player.location.x - t.location.x, dz = player.location.z - t.location.z;
+          const len = Math.sqrt(dx * dx + dz * dz) || 1;
+          try { t.applyImpulse({ x: (dx / len) * ray.pull, y: 0.35, z: (dz / len) * ray.pull }); } catch {}
+        }
+      }
+      if (ray.sound) snd(player.dimension, ray.sound, player.location);
+      if (ray.durability) wearDown(player, slot);
+      startCooldown(player, item);
+      return;
+    }
+    const sc = SCAN[id];
+    if (sc) {
+      const found = player.dimension.getEntities({ location: player.location, maxDistance: sc.radius })
+        .filter((e) => e.id !== player.id && (sc.types ? sc.types.includes(e.typeId) : e.typeId.startsWith(NS + ":") && !PART_TYPES.has(e.typeId) && !e.typeId.endsWith("_projectile")));
+      if (!found.length) { player.onScreenDisplay.setActionBar("§e" + sc.label + ": §fnothing within " + sc.radius + " blocks"); }
+      else {
+        found.sort((a, b) => dist(player.location, a.location) - dist(player.location, b.location));
+        const n = found[0];
+        const d = Math.round(dist(player.location, n.location));
+        player.onScreenDisplay.setActionBar("§e" + sc.label + ": §f" + found.length + " nearby. Nearest: " + nice(n.typeId) + ", " + d + " blocks " + compass(n.location.x - player.location.x, n.location.z - player.location.z));
+      }
+      snd(player.dimension, "random.orb", player.location);
+      return;
+    }
+    const so = SOUND[id];
+    if (so) { snd(player.dimension, so.sound, player.location); startCooldown(player, item); }
+  } catch (e) { console.warn("[alexsmobs] item use failed: " + e); }
+});
+const dist = (a, b) => Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2 + (a.z - b.z) ** 2);
+
+// food effects after eating
+world.afterEvents.itemCompleteUse.subscribe(({ source, itemStack }) => {
+  const list = itemStack && FOOD[itemStack.typeId];
+  if (!list || !source) return;
+  for (const [eff, sec, amp] of list) { try { source.addEffect(eff, sec * 20, { amplifier: amp }); } catch {} }
+});
 
 system.runInterval(tickChains, 1);
 system.runInterval(scan, 100);

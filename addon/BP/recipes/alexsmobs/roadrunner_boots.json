@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alexsmobs:roadrunner_boots"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "F F",
+      "F F",
+      "SBS"
+    ],
+    "key": {
+      "F": {
+        "item": "alexsmobs:roadrunner_feather"
+      },
+      "B": {
+        "item": "minecraft:leather_boots"
+      },
+      "S": {
+        "item": "minecraft:chiseled_sandstone"
+      }
+    },
+    "unlock": [
+      {
+        "item": "alexsmobs:roadrunner_feather"
+      }
+    ],
+    "result": {
+      "item": "alexsmobs:roadrunner_boots",
+      "count": 1
+    }
+  }
+}

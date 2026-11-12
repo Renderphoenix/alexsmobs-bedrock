@@ -1,10 +1,6 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.alexsmobs.anaconda.pose": {
-      "loop": true,
-      "bones": {}
-    },
     "animation.alexsmobs.anaconda.death_0": {
       "animation_length": 1,
       "loop": "hold_on_last_frame",
@@ -34,8 +30,7 @@
       }
     },
     "animation.alexsmobs.anaconda.hurt": {
-      "animation_length": 0.3,
-      "bones": {}
+      "animation_length": 1
     }
   }
 }

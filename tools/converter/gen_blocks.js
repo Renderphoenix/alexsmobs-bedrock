@@ -196,6 +196,24 @@ function generateBlocks(ctx, javaLang) {
         { condition: "q.block_state('minecraft:cardinal_direction') == 'east'", components: { 'minecraft:transformation': { rotation: [0, 270, 0] } } },
       ];
     }
+    if (EGGS[id]) {
+      // Egg blocks work like the turtle egg: a crack state (0..2) advanced by the egg's script component until it hatches.
+      block.format_version = '1.21.90';
+      desc.states = { [`${NS}:hatch`]: [0, 1, 2] };
+      comps['minecraft:custom_components'] = [`${NS}:egg`];
+      comps['minecraft:tick'] = { interval_range: [80, 160], looping: true };
+      const perms = block['minecraft:block'].permutations || [];
+      [[1, 'slightly_cracked_'], [2, 'very_cracked_']].forEach(([n, pre]) => {
+        const cm = resolveModel(`alexsmobs:block/${pre}${id}`);
+        const ct = cm && cm.tex('#all');
+        if (!ct) return;
+        const ck = texKey(ct);
+        const crackMats = {};
+        for (const k of Object.keys(mats)) crackMats[k] = { texture: ck, render_method: mats[k].render_method };
+        perms.push({ condition: `q.block_state('${NS}:hatch') == ${n}`, components: { 'minecraft:material_instances': crackMats } });
+      });
+      if (perms.length) block['minecraft:block'].permutations = perms;
+    }
     U.writeJson(path.join(C.BP, 'blocks', NS, `${id}.json`), block);
     const name = javaLang[`block.${NS}.${id}`] || U.title(id);
     ctx.itemLang.push(`tile.${NS}:${id}.name=${name}`);

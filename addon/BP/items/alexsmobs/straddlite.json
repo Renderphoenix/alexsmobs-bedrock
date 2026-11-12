@@ -16,10 +16,7 @@
       "minecraft:display_name": {
         "value": "item.alexsmobs.straddlite"
       },
-      "minecraft:max_stack_size": 64,
-      "minecraft:fire_resistant": {
-        "value": true
-      }
+      "minecraft:max_stack_size": 64
     }
   }
 }

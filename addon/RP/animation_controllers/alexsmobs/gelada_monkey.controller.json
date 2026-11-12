@@ -1,138 +1,248 @@
 {
   "format_version": "1.10.0",
   "animation_controllers": {
+    "controller.animation.alexsmobs.gelada_monkey.move": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [
+            "idle",
+            "breathe"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "sit": "q.is_sitting && !v.am_sleeping"
+            },
+            {
+              "run": "v.is_sprinting"
+            },
+            {
+              "walk": "v.is_moving"
+            }
+          ]
+        },
+        "walk": {
+          "animations": [
+            "walk"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "sit": "q.is_sitting && !v.am_sleeping"
+            },
+            {
+              "run": "v.is_sprinting"
+            },
+            {
+              "idle": "!v.is_moving"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "run"
+          ],
+          "blend_transition": 0.25,
+          "transitions": [
+            {
+              "sit": "q.is_sitting && !v.am_sleeping"
+            },
+            {
+              "idle": "!v.is_moving"
+            },
+            {
+              "walk": "q.modified_move_speed < 0.320"
+            }
+          ]
+        },
+        "sit": {
+          "animations": [
+            "pose_sit",
+            "breathe"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "idle": "!q.is_sitting || v.am_sleeping"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.gelada_monkey.idles": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [
+            "v.idle_wait = math.random(3, 9);"
+          ],
+          "transitions": [
+            {
+              "pick": "q.state_time > v.idle_wait && q.modified_move_speed < 0.087 && q.is_on_ground && !q.is_in_water && !v.am_sleeping && !q.is_sitting && q.is_alive && !q.has_target"
+            }
+          ]
+        },
+        "pick": {
+          "on_entry": [
+            "v.idle_pick = math.random_integer(0, 5);"
+          ],
+          "transitions": [
+            {
+              "a0": "v.idle_pick == 0"
+            },
+            {
+              "a1": "v.idle_pick == 1"
+            },
+            {
+              "a2": "v.idle_pick == 2"
+            },
+            {
+              "a3": "v.idle_pick == 3"
+            },
+            {
+              "a4": "v.idle_pick == 4"
+            },
+            {
+              "a5": "v.idle_pick == 5"
+            }
+          ]
+        },
+        "a0": {
+          "animations": [
+            "chest"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.087 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a1": {
+          "animations": [
+            "groom"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.087 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a2": {
+          "animations": [
+            "idle_look"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.087 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a3": {
+          "animations": [
+            "idle_sniff"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.087 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a4": {
+          "animations": [
+            "idle_shake"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.087 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a5": {
+          "animations": [
+            "idle_tail"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.087 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        }
+      }
+    },
     "controller.animation.alexsmobs.gelada_monkey.attack": {
       "initial_state": "default",
       "states": {
         "default": {
           "transitions": [
             {
-              "attack_0": "q.property('alexsmobs:anim') == 1"
-            },
-            {
-              "attack_1": "q.property('alexsmobs:anim') == 2"
+              "pick": "v.attack_time > 0 && q.is_alive"
             }
           ]
         },
-        "attack_0": {
+        "pick": {
+          "on_entry": [
+            "v.atk_pick = math.random_integer(0, 1);"
+          ],
+          "transitions": [
+            {
+              "a0": "v.atk_pick == 0"
+            },
+            {
+              "a1": "v.atk_pick == 1"
+            }
+          ]
+        },
+        "a0": {
           "animations": [
             "swipe_l"
           ],
+          "blend_transition": 0.12,
           "transitions": [
             {
-              "default": "q.property('alexsmobs:anim') != 1 && q.all_animations_finished"
-            }
-          ],
-          "blend_transition": 0.15
-        },
-        "attack_1": {
-          "animations": [
-            "swipe_r"
-          ],
-          "transitions": [
-            {
-              "default": "q.property('alexsmobs:anim') != 2 && q.all_animations_finished"
-            }
-          ],
-          "blend_transition": 0.15
-        }
-      }
-    },
-    "controller.animation.alexsmobs.gelada_monkey.idle": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "on_entry": [
-            "v.idle_t = 0;",
-            "v.idle_wait = math.random(4, 12);",
-            "v.idle_pick = math.random_integer(0, 5);"
-          ],
-          "transitions": [
-            {
-              "act_0": "v.idle_t > v.idle_wait && v.idle_pick == 0 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
-            },
-            {
-              "act_1": "v.idle_t > v.idle_wait && v.idle_pick == 1 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
-            },
-            {
-              "act_2": "v.idle_t > v.idle_wait && v.idle_pick == 2 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
-            },
-            {
-              "act_3": "v.idle_t > v.idle_wait && v.idle_pick == 3 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
-            },
-            {
-              "act_4": "v.idle_t > v.idle_wait && v.idle_pick == 4 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
-            },
-            {
-              "act_5": "v.idle_t > v.idle_wait && v.idle_pick == 5 && q.is_alive && q.ground_speed < 0.08 && !q.is_sitting && !v.am_sleeping"
+              "default": "q.all_animations_finished"
             }
           ]
         },
-        "act_0": {
+        "a1": {
           "animations": [
-            "chest"
+            "swipe_r"
           ],
+          "blend_transition": 0.12,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished"
             }
-          ],
-          "blend_transition": 0.3
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.gelada_monkey.hurt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "hurt": "q.hurt_time > 0 && q.is_alive"
+            }
+          ]
         },
-        "act_1": {
+        "hurt": {
           "animations": [
-            "groom"
+            "hurt"
           ],
+          "blend_transition": 0.05,
           "transitions": [
             {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
+              "default": "q.all_animations_finished"
             }
-          ],
-          "blend_transition": 0.3
-        },
-        "act_2": {
-          "animations": [
-            "idle_look"
-          ],
-          "transitions": [
-            {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
-            }
-          ],
-          "blend_transition": 0.3
-        },
-        "act_3": {
-          "animations": [
-            "idle_sniff"
-          ],
-          "transitions": [
-            {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
-            }
-          ],
-          "blend_transition": 0.3
-        },
-        "act_4": {
-          "animations": [
-            "idle_shake"
-          ],
-          "transitions": [
-            {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
-            }
-          ],
-          "blend_transition": 0.3
-        },
-        "act_5": {
-          "animations": [
-            "idle_tail"
-          ],
-          "transitions": [
-            {
-              "default": "q.all_animations_finished || q.ground_speed > 0.15 || !q.is_alive"
-            }
-          ],
-          "blend_transition": 0.3
+          ]
         }
       }
     },
@@ -163,29 +273,6 @@
             "death_1"
           ],
           "blend_transition": 0.1
-        }
-      }
-    },
-    "controller.animation.alexsmobs.gelada_monkey.hurt": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "transitions": [
-            {
-              "hurt": "q.hurt_time > 0 && q.is_alive"
-            }
-          ]
-        },
-        "hurt": {
-          "animations": [
-            "hurt"
-          ],
-          "transitions": [
-            {
-              "default": "q.all_animations_finished"
-            }
-          ],
-          "blend_transition": 0.05
         }
       }
     }

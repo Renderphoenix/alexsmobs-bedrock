@@ -24,7 +24,8 @@ for (const [, j] of of(path.join(C.RP, 'render_controllers'))) Object.keys(j.ren
 for (const [, j] of of(path.join(C.BP, 'entities'))) entities.add(j['minecraft:entity'].description.identifier);
 for (const [, j] of of(path.join(C.BP, 'items'))) items.add(j['minecraft:item'].description.identifier);
 for (const [, j] of of(path.join(C.BP, 'blocks'))) blocks.add(j['minecraft:block'].description.identifier);
-const VANILLA_RC = new Set(['controller.render.armor', 'controller.render.default']);
+const VANILLA_RC = new Set(['controller.render.armor', 'controller.render.default', 'controller.render.item_sprite']);
+const VANILLA_ANIM = new Set(['animation.actor.billboard']);
 const texExists = t => fs.existsSync(path.join(C.RP, t + '.png')) || fs.existsSync(path.join(C.RP, t + '.tga')) || /^textures\/(misc|blocks|items)\//.test(t);
 
 function molang(s, where) {
@@ -38,9 +39,9 @@ function molang(s, where) {
 // client entities + attachables
 for (const [f, j] of [...of(path.join(C.RP, 'entity')), ...of(path.join(C.RP, 'attachables'))]) {
   const d = (j['minecraft:client_entity'] || j['minecraft:attachable']).description;
-  for (const g of Object.values(d.geometry || {})) if (!geos.has(g) && !/^geometry\.(player|humanoid)/.test(g)) errors.push(`${rel(f)}: missing geometry ${g}`);
+  for (const g of Object.values(d.geometry || {})) if (!geos.has(g) && !/^geometry\.(player|humanoid|item_sprite)/.test(g)) errors.push(`${rel(f)}: missing geometry ${g}`);
   for (const t of Object.values(d.textures || {})) if (!texExists(t)) errors.push(`${rel(f)}: missing texture ${t}`);
-  for (const [k, a] of Object.entries(d.animations || {})) if (!anims.has(a) && !ctrls.has(a)) errors.push(`${rel(f)}: missing animation ${k} -> ${a}`);
+  for (const [k, a] of Object.entries(d.animations || {})) if (!anims.has(a) && !ctrls.has(a) && !VANILLA_ANIM.has(a)) errors.push(`${rel(f)}: missing animation ${k} -> ${a}`);
   for (const r of d.render_controllers || []) { const id = typeof r === 'string' ? r : Object.keys(r)[0]; if (!rcs.has(id) && !VANILLA_RC.has(id)) errors.push(`${rel(f)}: missing render controller ${id}`); }
   const sc = d.scripts || {};
   for (const s of [].concat(sc.pre_animation || [])) molang(s, rel(f));
@@ -101,6 +102,8 @@ const sd = (json[path.join(C.RP, 'sounds', 'sound_definitions.json')] || {}).sou
 for (const [k, v] of Object.entries(sd)) for (const s of v.sounds) if (!fs.existsSync(path.join(C.RP, s.name + '.ogg'))) errors.push(`sound ${k}: missing ${s.name}.ogg`);
 const es = ((json[path.join(C.RP, 'sounds.json')] || {}).entity_sounds || {}).entities || {};
 for (const [e, v] of Object.entries(es)) for (const s of Object.values(v.events)) if (!sd[s]) errors.push(`sounds.json ${e}: unknown sound ${s}`);
+
+require('./validate_deep')({ errors, warns, json, of, rel, C });
 
 console.log(`entities ${entities.size}, items ${items.size}, blocks ${blocks.size}, geometries ${geos.size}, animations ${anims.size}, controllers ${ctrls.size}`);
 for (const w of warns) console.log('WARN ', w);

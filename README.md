@@ -2,24 +2,27 @@
 
 A brand-new Bedrock port of **Alex's Mobs** by **Alexthe668**, **Carro1001** and **Paint_Ninja**.
 Instead of rebuilding each creature by hand, this port is **converted straight from the Java mod**: a converter
-reads the mod's compiled model code, so every model, texture mapping and Java animation is the original one.
+reads the mod's compiled model code, so every model and texture mapping is the original one, and the animations are built from the mod's own gait data.
 
-## What's inside (v2.0.0)
+## What's inside (v2.1.0)
 
 - **90 creatures** with their exact Java models (bones, cubes, UVs) and textures, including variants
   (lobster colours, capuchin coats, white tigers, albino cachalots, terrapin patterns, …) and glowing eye layers.
-- **Java animations**: walk/swim/fly cycles, look-at, sitting, standing, sleeping and flying poses are compiled from
-  the mod's `setupAnim` code; attack animations (maul, swipes, kicks, punches, lunges, gores, …) are the mod's own
-  keyframes, played when the creature hits something.
-- **New Bedrock animations**: two random death animations per creature, hurt flinches, and idle actions
-  (looking around, sniffing, shaking off, wing stretches, tail swishes, plus the mod's own idles like the elephant
-  trumpet, gorilla chest pound and gazelle ear flick).
+- **Animations**: our own clean keyframed set per creature, built from the Java mod's gait data (which bones swing, how far,
+  how fast): idle with breathing, walk/run that speeds up with movement, swim, fly, sit/sleep/stand postures, head
+  look-at, two random death animations, hurt flinches and random idle actions (looking around, sniffing, shaking off,
+  wing stretches, tail swishes, plus the mod's own: elephant trumpet, gorilla chest pound, gazelle ear flick). Attacks
+  use the mod's own keyframes (maul, swipes, kicks, lunges, gores).
 - **Multipart creatures**: anacondas, bone serpents, cave centipedes and void worms are real segment chains that follow
   the head and pass damage to it; the murmur keeps its floating head.
 - **Behaviour from the mod**: health, speed, damage, armour, follow range, predators and prey (from the mod's target
   tags), breeding/taming/tempt foods (from the mod's item tags), babies, swimming/amphibious/flying/hovering/lava
   movement, sleep schedules (nocturnal mobs sleep by day), angry textures.
-- **Spawning from the mod's defaults**: biome rules, spawn weights and group sizes come from Alex's Mobs' own config.
+- **Spawning**: the mod's biomes mapped to real Bedrock biome tags, with our own rarity tiers, light rules and herds.
+- **Eggs the Bedrock way**: crocodiles, caimans, platypuses and terrapins get pregnant and lay egg blocks that crack and
+  hatch (turtle mechanism); emus and cockroaches drop throwable eggs that can hatch babies; every creature has a spawn egg.
+- **Loot and recipes**: every creature drops something (our own drops where the Java mod had none), 81 recipes
+  (crafting, furnace, smoker, campfire), food effects, record discs with their real lengths, ray items and locators.
 - **137 items** (foods, materials, buckets that place creatures, armour with its custom 3D models, weapons) and
   **32 blocks** (purpur planks set, bison fur, banana slug slime, rainbow glass, eggs that hatch, …).
 - **571 original sounds** and **17 languages** taken from the mod's translations.

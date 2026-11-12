@@ -10,22 +10,26 @@
         "minecraft:spawns_underground": {},
         "minecraft:height_filter": {
           "min": -60,
-          "max": 50
+          "max": 45
         },
         "minecraft:brightness_filter": {
           "min": 0,
           "max": 7,
           "adjust_for_weather": false
         },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
         "minecraft:weight": {
-          "default": 6
+          "default": 8
         },
         "minecraft:herd": {
           "min_size": 1,
           "max_size": 1
         },
         "minecraft:density_limit": {
-          "surface": 4
+          "surface": 3
         },
         "minecraft:biome_filter": {
           "all_of": [

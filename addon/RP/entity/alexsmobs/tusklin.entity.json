@@ -15,7 +15,12 @@
         "default": "geometry.alexsmobs.tusklin"
       },
       "animations": {
-        "pose": "animation.alexsmobs.tusklin.pose",
+        "idle": "animation.alexsmobs.tusklin.idle",
+        "breathe": "animation.alexsmobs.tusklin.breathe",
+        "walk": "animation.alexsmobs.tusklin.walk",
+        "run": "animation.alexsmobs.tusklin.run",
+        "look": "animation.alexsmobs.tusklin.look",
+        "baby": "animation.alexsmobs.tusklin.baby",
         "rut": "animation.alexsmobs.tusklin.rut",
         "gore_l": "animation.alexsmobs.tusklin.gore_l",
         "gore_r": "animation.alexsmobs.tusklin.gore_r",
@@ -27,31 +32,45 @@
         "idle_look": "animation.alexsmobs.tusklin.idle_look",
         "idle_sniff": "animation.alexsmobs.tusklin.idle_sniff",
         "idle_shake": "animation.alexsmobs.tusklin.idle_shake",
+        "ctrl_move": "controller.animation.alexsmobs.tusklin.move",
+        "ctrl_idles": "controller.animation.alexsmobs.tusklin.idles",
         "ctrl_attack": "controller.animation.alexsmobs.tusklin.attack",
-        "ctrl_idle": "controller.animation.alexsmobs.tusklin.idle",
-        "ctrl_death": "controller.animation.alexsmobs.tusklin.death",
-        "ctrl_hurt": "controller.animation.alexsmobs.tusklin.hurt"
+        "ctrl_hurt": "controller.animation.alexsmobs.tusklin.hurt",
+        "ctrl_death": "controller.animation.alexsmobs.tusklin.death"
       },
       "scripts": {
-        "pre_animation": [
-          "v.ls = q.modified_distance_moved;",
-          "v.lsa = math.clamp(q.modified_move_speed, 0, 1);",
-          "v.age = q.life_time * 20;",
-          "v.yaw = math.clamp(q.target_y_rotation, -85, 85);",
-          "v.pitch = math.clamp(q.target_x_rotation, -60, 60);",
-          "v.idle_t = (v.idle_t ?? 0) + q.delta_time;",
+        "initialize": [
+          "v.is_moving = 0;",
+          "v.is_sprinting = 0;",
+          "v.anim_speed = 1;",
           "v.am_flying = 0;",
-          "v.am_running = q.modified_move_speed > 0.45;",
+          "v.am_sleeping = 0;",
+          "v.am_standing = 0;"
+        ],
+        "pre_animation": [
+          "v.is_moving = q.modified_move_speed >= 0.1;",
+          "v.is_sprinting = q.modified_move_speed >= 0.48;",
+          "v.anim_speed = math.clamp(q.modified_move_speed / 0.27000001072883606, 0.35, 2.4);",
+          "v.am_flying = 0;",
           "v.am_sleeping = 0;",
           "v.am_standing = 0;",
-          "v.am_eating = 0; v.am_digging = 0; v.am_rolling = 0; v.am_perching = 0; v.am_dancing = 0;"
+          "v.idle_wait = v.idle_wait ?? 4;",
+          "v.idle_pick = v.idle_pick ?? 0;",
+          "v.atk_pick = v.atk_pick ?? 0;",
+          "v.death_pick = v.death_pick ?? 0;"
         ],
         "animate": [
-          "pose",
+          "ctrl_move",
+          {
+            "look": "!v.am_sleeping && q.is_alive"
+          },
+          "ctrl_idles",
           "ctrl_attack",
-          "ctrl_idle",
+          "ctrl_hurt",
           "ctrl_death",
-          "ctrl_hurt"
+          {
+            "baby": "q.is_baby"
+          }
         ]
       },
       "render_controllers": [

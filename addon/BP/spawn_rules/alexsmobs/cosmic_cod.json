@@ -8,8 +8,11 @@
     "conditions": [
       {
         "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_on_block_filter": [
+          "minecraft:end_stone"
+        ],
         "minecraft:weight": {
-          "default": 8
+          "default": 3
         },
         "minecraft:herd": {
           "min_size": 9,
