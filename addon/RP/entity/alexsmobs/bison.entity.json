@@ -14,8 +14,7 @@
         "baby": "textures/entity/alexsmobs/bison_baby"
       },
       "geometry": {
-        "default": "geometry.alexsmobs.bison",
-        "baby": "geometry.alexsmobs.bison.baby"
+        "default": "geometry.alexsmobs.bison"
       },
       "animations": {
         "idle": "animation.alexsmobs.bison.idle",
@@ -23,6 +22,7 @@
         "walk": "animation.alexsmobs.bison.walk",
         "run": "animation.alexsmobs.bison.run",
         "look": "animation.alexsmobs.bison.look",
+        "baby": "animation.alexsmobs.bison.baby",
         "prepare_charge": "animation.alexsmobs.bison.prepare_charge",
         "eat": "animation.alexsmobs.bison.eat",
         "attack": "animation.alexsmobs.bison.attack",
@@ -68,7 +68,10 @@
           "ctrl_idles",
           "ctrl_attack",
           "ctrl_hurt",
-          "ctrl_death"
+          "ctrl_death",
+          {
+            "baby": "q.is_baby"
+          }
         ]
       },
       "render_controllers": [

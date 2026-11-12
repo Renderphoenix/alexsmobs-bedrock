@@ -13,10 +13,7 @@
       "bones": [
         {
           "name": "root",
-          "pivot": [0, 0, 21],
-          "locators": {
-            "armor_offset.default_neck": [0, 13, 0]
-          }
+          "pivot": [0, 0, 21]
         },
         {
           "name": "tail",

@@ -14,9 +14,7 @@
         "v2": "textures/entity/alexsmobs/catfish_large"
       },
       "geometry": {
-        "default": "geometry.alexsmobs.catfish",
-        "v1": "geometry.alexsmobs.catfish.v1",
-        "v2": "geometry.alexsmobs.catfish.v2"
+        "default": "geometry.alexsmobs.catfish"
       },
       "animations": {
         "idle": "animation.alexsmobs.catfish.idle",
@@ -54,7 +52,8 @@
           "ctrl_move",
           "ctrl_hurt",
           "ctrl_death"
-        ]
+        ],
+        "scale": "q.variant == 1 ? 1.45 : (q.variant == 2 ? 2.1 : 1)"
       },
       "render_controllers": [
         "controller.render.alexsmobs.catfish"

@@ -459,6 +459,15 @@
         }
       }
     },
+    "animation.alexsmobs.bison.baby": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "head": {
+          "scale": [1.32, 1.32, 1.32]
+        }
+      }
+    },
     "animation.alexsmobs.bison.prepare_charge": {
       "animation_length": 2,
       "bones": {

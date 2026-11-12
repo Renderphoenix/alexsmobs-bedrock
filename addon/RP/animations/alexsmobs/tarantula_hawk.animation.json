@@ -1822,6 +1822,15 @@
         }
       }
     },
+    "animation.alexsmobs.tarantula_hawk.baby": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "head": {
+          "scale": [1.32, 1.32, 1.32]
+        }
+      }
+    },
     "animation.alexsmobs.tarantula_hawk.attack_bite": {
       "animation_length": 0.55,
       "bones": {

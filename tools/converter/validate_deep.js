@@ -61,6 +61,16 @@ module.exports = function deep({ errors, warns, json, of, rel, C }) {
     });
   }
 
+  // ---- blocks / items (errors seen in the game's Content Log)
+  for (const [f, j] of of(path.join(C.BP, 'blocks'))) {
+    const b = j['minecraft:block'];
+    const ver = String(j.format_version).split('.').map(Number);
+    if (b.components['minecraft:custom_components'] && (ver[0] > 1 || ver[1] >= 21 && ver[2] >= 90)) errors.push(`${rel(f)}: minecraft:custom_components is not valid from 1.21.90 (list the component by name instead)`);
+    for (const k of Object.keys(b.components)) if (k.includes(':') && !k.startsWith('minecraft:') && !(j.format_version >= '1.21.90')) errors.push(`${rel(f)}: custom component ${k} needs format_version 1.21.90 or newer`);
+  }
+  for (const [f, j] of of(path.join(C.BP, 'items'))) if (j['minecraft:item'].components['minecraft:record']) errors.push(`${rel(f)}: minecraft:record only accepts vanilla sound events`);
+  for (const [f, j] of of(path.join(C.RP, 'entity'))) { const g = Object.keys(j['minecraft:client_entity'].description.geometry || {}); if (g.length > 1 && !/_part\.|centipede_body|void_worm_part|bone_serpent_part/.test(f)) warnOnce(`${rel(f)}: several geometries on one entity make the engine's armor locators clash`); }
+
   // ---- spawn rules: only vanilla spawn components, valid blocks
   const spawnOk = V('spawnComponents');
   for (const [f, j] of of(path.join(C.BP, 'spawn_rules'))) for (const c of j['minecraft:spawn_rules'].conditions) {

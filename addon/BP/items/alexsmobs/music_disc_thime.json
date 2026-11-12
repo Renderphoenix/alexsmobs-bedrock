@@ -17,10 +17,9 @@
         "value": "item.alexsmobs.music_disc_thime"
       },
       "minecraft:max_stack_size": 1,
-      "minecraft:record": {
-        "sound_event": "alexsmobs.music_disc_thime",
-        "duration": 314,
-        "comparator_signal": 13
+      "minecraft:cooldown": {
+        "category": "alexsmobs_music_disc_thime",
+        "duration": 20
       }
     }
   }

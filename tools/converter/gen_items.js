@@ -173,7 +173,8 @@ function generateItems(ctx, javaLang) {
       comps['minecraft:max_stack_size'] = 1;
       const field = (it.args.find(a => a && /AMSoundRegistry./.test(a)) || '').split('.').pop();
       const snd = (ctx.soundRegistry || {})[field] || it.id;
-      comps['minecraft:record'] = { sound_event: `${NS}.${snd}`, duration: ctx.recordSeconds ? ctx.recordSeconds(snd) : 180, comparator_signal: 13 };
+      ctx.abilities.sound[id] = { sound: `${NS}.${snd}`, cooldown: 400 };
+      comps['minecraft:cooldown'] = { category: `${NS}_${it.id}`, duration: 20 };
     }
     if (THROWN[it.id]) {
       comps['minecraft:projectile'] = { projectile_entity: `${NS}:${it.id}_projectile` };

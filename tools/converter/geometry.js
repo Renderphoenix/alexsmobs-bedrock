@@ -53,7 +53,6 @@ function toGeometry(id, boxes, texW, texH, opts = {}) {
   if (!isFinite(minY)) { minY = 0; maxY = 16; }
   // one explicit neck locator, identical across every geometry of an entity, so Bedrock doesn't
   // auto-generate mismatching ones ("model already has a locator armor_offset.default_neck")
-  if (opts.neck) { const root = bones.find(b => !b.parent); if (root) root.locators = { 'armor_offset.default_neck': opts.neck }; }
   const neck = (() => { const h = bones.find(b => /^(head|neck|skull)/i.test(b.name)); return h ? h.pivot.slice() : [0, r5(maxY), 0]; })();
   const scale = opts.scale || 1;
   const w = Math.max(1, Math.ceil(((maxXZ * 2) / 16) * scale * 1.5 + 1));

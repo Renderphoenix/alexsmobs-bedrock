@@ -13,15 +13,9 @@
             "Texture.v1",
             "Texture.baby"
           ]
-        },
-        "geometries": {
-          "Array.geos": [
-            "Geometry.default",
-            "Geometry.baby"
-          ]
         }
       },
-      "geometry": "Array.geos[q.is_baby ? 1 : 0]",
+      "geometry": "Geometry.default",
       "materials": [
         {
           "*": "Material.default"

@@ -402,6 +402,7 @@ function generateClient(P) {
   U.writeJson(path.join(C.RP, 'render_controllers', NS, `${id}.render_controllers.json`), { format_version: '1.10.0', render_controllers: rc });
   const scripts = { initialize: ['v.is_moving = 0;', 'v.is_sprinting = 0;', 'v.anim_speed = 1;', 'v.am_flying = 0;', 'v.am_sleeping = 0;', 'v.am_standing = 0;'], pre_animation: pre, animate };
   if (e.scale) scripts.scale = String(e.scale[0]);
+  if (s.scaleVariant) scripts.scale = `q.variant == 1 ? ${s.scaleVariant[1]} : (q.variant == 2 ? ${s.scaleVariant[2]} : 1)`;
   U.writeJson(path.join(C.RP, 'entity', NS, `${id}.entity.json`), {
     format_version: '1.10.0',
     'minecraft:client_entity': {

@@ -200,7 +200,7 @@ function generateBlocks(ctx, javaLang) {
       // Egg blocks work like the turtle egg: a crack state (0..2) advanced by the egg's script component until it hatches.
       block.format_version = '1.21.90';
       desc.states = { [`${NS}:hatch`]: [0, 1, 2] };
-      comps['minecraft:custom_components'] = [`${NS}:egg`];
+      comps[`${NS}:egg`] = {};
       comps['minecraft:tick'] = { interval_range: [80, 160], looping: true };
       const perms = block['minecraft:block'].permutations || [];
       [[1, 'slightly_cracked_'], [2, 'very_cracked_']].forEach(([n, pre]) => {

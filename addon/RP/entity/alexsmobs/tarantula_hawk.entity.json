@@ -13,8 +13,7 @@
         "baby": "textures/entity/alexsmobs/tarantula_hawk_baby"
       },
       "geometry": {
-        "default": "geometry.alexsmobs.tarantula_hawk",
-        "baby": "geometry.alexsmobs.tarantula_hawk.baby"
+        "default": "geometry.alexsmobs.tarantula_hawk"
       },
       "animations": {
         "idle": "animation.alexsmobs.tarantula_hawk.idle",
@@ -24,6 +23,7 @@
         "fly": "animation.alexsmobs.tarantula_hawk.fly",
         "pose_sit": "animation.alexsmobs.tarantula_hawk.pose_sit",
         "look": "animation.alexsmobs.tarantula_hawk.look",
+        "baby": "animation.alexsmobs.tarantula_hawk.baby",
         "attack_bite": "animation.alexsmobs.tarantula_hawk.attack_bite",
         "death_0": "animation.alexsmobs.tarantula_hawk.death_0",
         "death_1": "animation.alexsmobs.tarantula_hawk.death_1",
@@ -67,7 +67,10 @@
           "ctrl_idles",
           "ctrl_attack",
           "ctrl_hurt",
-          "ctrl_death"
+          "ctrl_death",
+          {
+            "baby": "q.is_baby"
+          }
         ]
       },
       "render_controllers": [

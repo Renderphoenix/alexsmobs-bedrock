@@ -15,16 +15,9 @@
             "Texture.v1",
             "Texture.v2"
           ]
-        },
-        "geometries": {
-          "Array.geos": [
-            "Geometry.default",
-            "Geometry.v1",
-            "Geometry.v2"
-          ]
         }
       },
-      "geometry": "Array.geos[math.clamp(q.variant, 0, 2)]",
+      "geometry": "Geometry.default",
       "materials": [
         {
           "*": "Material.default"

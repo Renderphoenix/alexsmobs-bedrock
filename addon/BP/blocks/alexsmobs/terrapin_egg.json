@@ -38,9 +38,7 @@
         "explosion_resistance": 3
       },
       "minecraft:display_name": "tile.alexsmobs:terrapin_egg.name",
-      "minecraft:custom_components": [
-        "alexsmobs:egg"
-      ],
+      "alexsmobs:egg": {},
       "minecraft:tick": {
         "interval_range": [80, 160],
         "looping": true

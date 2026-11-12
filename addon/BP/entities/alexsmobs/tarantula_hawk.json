@@ -18,7 +18,7 @@
       "alexsmobs:baby": {
         "minecraft:is_baby": {},
         "minecraft:scale": {
-          "value": 1
+          "value": 0.5
         },
         "minecraft:ageable": {
           "duration": 1200,
