@@ -65,7 +65,7 @@
     },
     "animation.alexsmobs.devils_hole_pupfish.death_0": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "tail": {
           "rotation": {
@@ -119,7 +119,7 @@
     },
     "animation.alexsmobs.devils_hole_pupfish.death_1": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "tail": {
           "rotation": {

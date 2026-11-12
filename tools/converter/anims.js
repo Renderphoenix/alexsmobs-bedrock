@@ -176,8 +176,8 @@ function deathAnims(prefix, geoBones, kind) {
     d0[C.body.name] = Object.assign(d0[C.body.name] || {}, { rotation: ease([0, 0, 0], [-6, 0, 0], [4, 0, 6], [3, 0, 5]) });
     d1[C.body.name] = Object.assign(d1[C.body.name] || {}, { rotation: { '0': [0, 0, 0], '0.1': [-12, 0, -4], '0.2': [6, 0, 6], '0.3': [-6, 0, -3], '0.6': [3, 0, 6], '0.9': [3, 0, 5] } });
   }
-  A[`${prefix}.death_0`] = { animation_length: 1, hold_on_last_frame: true, bones: d0 };
-  A[`${prefix}.death_1`] = { animation_length: 1, hold_on_last_frame: true, bones: d1 };
+  A[`${prefix}.death_0`] = { animation_length: 1, loop: 'hold_on_last_frame', bones: d0 };
+  A[`${prefix}.death_1`] = { animation_length: 1, loop: 'hold_on_last_frame', bones: d1 };
   // hurt flinch
   const h = {};
   for (const b of C.head.concat(C.neck)) h[b.name] = { rotation: { '0': [0, 0, 0], '0.08': [-18, 8, 0], '0.3': [0, 0, 0] } };

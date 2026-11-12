@@ -100,7 +100,7 @@
     },
     "animation.alexsmobs.laviathan.death_0": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "leftLeg": {
           "rotation": {
@@ -186,7 +186,7 @@
     },
     "animation.alexsmobs.laviathan.death_1": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "leftLeg": {
           "rotation": {

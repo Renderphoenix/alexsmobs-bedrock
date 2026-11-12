@@ -142,7 +142,7 @@
     },
     "animation.alexsmobs.mimic_octopus.death_0": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "leftFrontArm1": {
           "rotation": {
@@ -220,7 +220,7 @@
     },
     "animation.alexsmobs.mimic_octopus.death_1": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "leftFrontArm1": {
           "rotation": {

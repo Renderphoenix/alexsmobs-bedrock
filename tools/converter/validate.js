@@ -48,7 +48,10 @@ for (const [f, j] of [...of(path.join(C.RP, 'entity')), ...of(path.join(C.RP, 'a
   if (j['minecraft:client_entity'] && !entities.has(d.identifier)) errors.push(`${rel(f)}: no BP entity for ${d.identifier}`);
 }
 // animations: molang + bones exist (warn)
+const ANIM_KEYS = new Set(['loop', 'animation_length', 'bones', 'anim_time_update', 'blend_weight', 'override_previous_animation', 'start_delay', 'loop_delay', 'sound_effects', 'particle_effects', 'timeline']);
 for (const [f, j] of of(path.join(C.RP, 'animations'))) for (const [n, a] of Object.entries(j.animations || {})) {
+  for (const k of Object.keys(a)) if (!ANIM_KEYS.has(k)) errors.push(`${n}: '${k}' is not a valid animation key`);
+  if (a.loop !== undefined && ![true, false, 'hold_on_last_frame'].includes(a.loop)) errors.push(`${n}: bad loop value ${a.loop}`);
   for (const [b, ch] of Object.entries(a.bones || {})) for (const v of Object.values(ch)) {
     const vals = Array.isArray(v) ? v : typeof v === 'object' ? Object.values(v).flat() : [v];
     vals.forEach(x => molang(x, `${n}/${b}`));

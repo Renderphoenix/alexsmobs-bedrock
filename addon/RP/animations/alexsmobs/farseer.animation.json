@@ -790,7 +790,7 @@
     },
     "animation.alexsmobs.farseer.death_0": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "leftArm": {
           "rotation": {
@@ -972,7 +972,7 @@
     },
     "animation.alexsmobs.farseer.death_1": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "leftArm": {
           "rotation": {

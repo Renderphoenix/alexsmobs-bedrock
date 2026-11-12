@@ -20,7 +20,10 @@
               "size": [8, 8, 18],
               "uv": [0, 0]
             }
-          ]
+          ],
+          "locators": {
+            "armor_offset.default_neck": [0, 18, -8]
+          }
         },
         {
           "name": "neck",

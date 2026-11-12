@@ -91,7 +91,7 @@
     },
     "animation.alexsmobs.potoo.death_0": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "left_foot": {
           "rotation": {
@@ -153,7 +153,7 @@
     },
     "animation.alexsmobs.potoo.death_1": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "left_foot": {
           "rotation": {

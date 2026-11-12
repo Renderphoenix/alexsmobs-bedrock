@@ -471,7 +471,7 @@
     },
     "animation.alexsmobs.gazelle.death_0": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "frontlegR": {
           "rotation": {
@@ -549,7 +549,7 @@
     },
     "animation.alexsmobs.gazelle.death_1": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "frontlegR": {
           "rotation": {

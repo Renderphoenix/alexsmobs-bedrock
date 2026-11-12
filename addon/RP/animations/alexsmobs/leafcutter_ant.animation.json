@@ -174,7 +174,7 @@
     },
     "animation.alexsmobs.leafcutter_ant.death_0": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "legfront_left": {
           "rotation": {
@@ -244,7 +244,7 @@
     },
     "animation.alexsmobs.leafcutter_ant.death_1": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "legfront_left": {
           "rotation": {

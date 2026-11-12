@@ -27,7 +27,7 @@
     },
     "animation.alexsmobs.murmur.death_0": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "arms": {
           "rotation": {
@@ -49,7 +49,7 @@
     },
     "animation.alexsmobs.murmur.death_1": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "arms": {
           "rotation": {

@@ -47,9 +47,10 @@ function generate(e, ctx) {
   const addGeo = (key, cls, ctor, sw) => {
     const { I, boxes } = buildModel(cls, ctor, sw);
     const geoId = key === 'default' ? `geometry.${NS}.${id}` : `geometry.${NS}.${id}.${key}`;
-    const g = G.toGeometry(geoId, boxes, I.texW, I.texH);
+    let g = G.toGeometry(geoId, boxes, I.texW, I.texH, { neck: geos[0] && geos[0].neck });
+    if (!geos.length) g = G.toGeometry(geoId, boxes, I.texW, I.texH, { neck: g.neck });
     U.writeJson(path.join(C.RP, 'models/entity', NS, `${id}${key === 'default' ? '' : '.' + key}.geo.json`), g.json);
-    const rec = { key, geoId, I, boxes, names: g.names, bones: g.json['minecraft:geometry'][0].bones, bounds: g.bounds };
+    const rec = { key, geoId, I, boxes, neck: geos.length ? geos[0].neck : g.neck, names: g.names, bones: g.json['minecraft:geometry'][0].bones, bounds: g.bounds };
     geos.push(rec);
     return rec;
   };

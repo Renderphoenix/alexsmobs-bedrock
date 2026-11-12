@@ -29,11 +29,13 @@ function generateChain(head, spec, headInfo, ctx) {
   const geometry = {}, textures = {};
   const anims = {};
   const animMap = {};
+  let partNeck = null;
   segs.forEach((sg, i) => {
     const I = new Interp(`${P}/client/model/${sg.model}`);
     const boxes = I.build(sg.ctor || [], sg.sw || 1);
     const gid = `geometry.${NS}.${id}.s${i}`;
-    const g = G.toGeometry(gid, boxes, I.texW, I.texH);
+    if (!partNeck) partNeck = G.toGeometry(gid, boxes, I.texW, I.texH).neck;
+    const g = G.toGeometry(gid, boxes, I.texW, I.texH, { neck: partNeck });
     U.writeJson(path.join(C.RP, 'models/entity', NS, `${id}.s${i}.geo.json`), g.json);
     geometry['s' + i] = gid;
     if (sg.tex && copyTex(sg.tex)) textures['s' + i] = texPath(sg.tex);

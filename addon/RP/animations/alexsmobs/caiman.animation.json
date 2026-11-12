@@ -168,7 +168,7 @@
     },
     "animation.alexsmobs.caiman.death_0": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "leftLeg": {
           "rotation": {
@@ -246,7 +246,7 @@
     },
     "animation.alexsmobs.caiman.death_1": {
       "animation_length": 1,
-      "hold_on_last_frame": true,
+      "loop": "hold_on_last_frame",
       "bones": {
         "leftLeg": {
           "rotation": {
