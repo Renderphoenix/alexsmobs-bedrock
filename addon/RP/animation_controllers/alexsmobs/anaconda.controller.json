@@ -5,8 +5,46 @@
       "initial_state": "idle",
       "states": {
         "idle": {
+          "animations": [
+            "idle"
+          ],
           "blend_transition": 0.3,
-          "transitions": []
+          "transitions": [
+            {
+              "run": "v.is_sprinting"
+            },
+            {
+              "walk": "v.is_moving"
+            }
+          ]
+        },
+        "walk": {
+          "animations": [
+            "walk"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "run": "v.is_sprinting"
+            },
+            {
+              "idle": "!v.is_moving"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "run"
+          ],
+          "blend_transition": 0.25,
+          "transitions": [
+            {
+              "idle": "!v.is_moving"
+            },
+            {
+              "walk": "q.modified_move_speed < 0.320"
+            }
+          ]
         }
       }
     },

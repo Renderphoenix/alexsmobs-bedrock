@@ -40,7 +40,7 @@ function main() {
       return Math.max(30, Math.round(gran / rate));
     } catch { return 180; }
   };
-  const ctx = { warn: [], lang: [], attackAnims: {}, spawns: [], lootItems: new Set(), soundEvents: new Set(), entitySounds: {}, results: [], chains: {}, followers: {}, itemLang: [], armor: [], buckets: {}, eggs: {}, renderedIcons: {}, thrown: {}, abilities: { ray: {}, scan: {}, sound: {}, food: {} }, soundRegistry: mod.soundRegistry || {}, recordSeconds: oggSeconds };
+  const ctx = { warn: [], lang: [], attackAnims: {}, spawns: [], lootItems: new Set(), soundEvents: new Set(), entitySounds: {}, results: [], chains: {}, followers: {}, itemLang: [], armor: [], buckets: {}, eggs: {}, renderedIcons: {}, thrown: {}, layers: [], abilities: { ray: {}, scan: {}, sound: {}, food: {} }, soundRegistry: mod.soundRegistry || {}, recordSeconds: oggSeconds };
   const PARTS = new Set(['anaconda_part', 'bone_serpent_part', 'centipede_body', 'centipede_tail', 'void_worm_part', 'murmur_head']);
   const mobs = mod.entities.filter(e => e.cls && e.category !== 'MISC' && !PARTS.has(e.id) && (e.models && e.models.length || e.guessModel));
   for (const e of mobs) {

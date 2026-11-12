@@ -94,6 +94,7 @@ function generateChain(head, spec, headInfo, ctx) {
     part: full, count: ps.count, spacing: ps.spacing,
     segs: Array.from({ length: ps.count }, (_, i) => (segs.length === 3 ? (i === 0 ? 0 : i === ps.count - 1 ? 2 : 1) : (i === ps.count - 1 ? segs.length - 1 : 0))),
     skin: !!skins,
+    wave: ps.wave || null,
   };
 }
 

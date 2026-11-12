@@ -94,58 +94,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "minecraft:oak_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:spruce_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:birch_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:jungle_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:acacia_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:dark_oak_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:mangrove_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:cherry_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:azalea_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:oak_sapling",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:spruce_sapling",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:birch_sapling",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },
@@ -248,6 +196,123 @@
       "minecraft:on_target_escape": {
         "event": "alexsmobs:calm",
         "target": "self"
+      },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "minecraft:oak_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:spruce_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:birch_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:jungle_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:acacia_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:dark_oak_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:mangrove_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cherry_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:azalea_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:oak_sapling",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:spruce_sapling",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:birch_sapling",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:jungle_sapling",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:acacia_sapling",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:dark_oak_sapling",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cherry_sapling",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:sugar_cane",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:apple",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:beetroot",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:potato",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:carrot",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:golden_carrot",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:baked_potato",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:hay_block",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:bamboo",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:banana",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:melon_slice",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:sweet_berries",
+            "heal_amount": 4
+          }
+        ]
       },
       "minecraft:behavior.tempt": {
         "priority": 4,

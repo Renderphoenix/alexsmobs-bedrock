@@ -141,6 +141,72 @@
         }
       }
     },
+    "controller.animation.alexsmobs.roadrunner.air": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "jump": "v.life_vy > 2 && !q.is_in_water && !v.am_sleeping"
+            },
+            {
+              "fall": "v.life_vy < -5 && !q.is_on_ground && !q.is_in_water"
+            }
+          ]
+        },
+        "jump": {
+          "animations": [
+            {
+              "air_jump": "q.is_baby ? 1 : 1"
+            }
+          ],
+          "blend_transition": 0.12,
+          "transitions": [
+            {
+              "land": "q.state_time > 0.3 && v.life_vy <= 0.5 && q.is_on_ground"
+            },
+            {
+              "fall": "v.life_vy < -5"
+            },
+            {
+              "default": "q.is_in_water || q.state_time > 2"
+            }
+          ]
+        },
+        "fall": {
+          "animations": [
+            {
+              "air_fall": "q.is_baby ? 1 : 1"
+            }
+          ],
+          "blend_transition": 0.25,
+          "transitions": [
+            {
+              "land": "q.is_on_ground"
+            },
+            {
+              "default": "q.is_in_water"
+            }
+          ]
+        },
+        "land": {
+          "animations": [
+            {
+              "air_land": "q.is_baby ? 1 : 1"
+            }
+          ],
+          "blend_transition": 0.08,
+          "transitions": [
+            {
+              "default": "q.any_animation_finished"
+            },
+            {
+              "jump": "v.life_vy > 2"
+            }
+          ]
+        }
+      }
+    },
     "controller.animation.alexsmobs.roadrunner.hurt": {
       "initial_state": "default",
       "states": {

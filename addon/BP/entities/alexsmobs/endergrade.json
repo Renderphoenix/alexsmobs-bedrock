@@ -142,6 +142,15 @@
         "priority": 1,
         "speed_multiplier": 1.5
       },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "minecraft:chorus_flower",
+            "heal_amount": 4
+          }
+        ]
+      },
       "minecraft:behavior.tempt": {
         "priority": 4,
         "speed_multiplier": 1.1,

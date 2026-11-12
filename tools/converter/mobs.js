@@ -11,14 +11,14 @@
 const V = 'villager';
 module.exports = {
   alligator_snapping_turtle: { kind: 'semi', temper: 'neutral', prey: ['fish', 'cod', 'salmon', 'tropicalfish'], tex: 'alligator_snapping_turtle', glow: null, moss: 'alligator_snapping_turtle_moss' },
-  anaconda: { kind: 'semi', temper: 'predator', player: false, prey: ['chicken', 'rabbit', 'pig', 'sheep', 'fox', 'capuchin_monkey', 'jerboa'], variants: ['anaconda', 'anaconda_yellow'], parts: { entity: 'anaconda_part', count: 7, spacing: 0.7, segs: [{ model: 'ModelAnaconda', sw: 2 }, { model: 'ModelAnaconda', sw: 3 }, { model: 'ModelAnaconda', sw: 4 }], skin: true } },
+  anaconda: { kind: 'semi', temper: 'predator', player: false, prey: ['chicken', 'rabbit', 'pig', 'sheep', 'fox', 'capuchin_monkey', 'jerboa'], variants: ['anaconda', 'anaconda_yellow'], parts: { entity: 'anaconda_part', count: 7, spacing: 0.7, wave: { amp: 0.34, freq: 0.34 }, segs: [{ model: 'ModelAnaconda', sw: 2 }, { model: 'ModelAnaconda', sw: 3 }, { model: 'ModelAnaconda', sw: 4 }], skin: true } },
   anteater: { kind: 'land', temper: 'neutral', prey: ['leafcutter_ant'], variants: ['anteater'] },
   bald_eagle: { kind: 'flyer', temper: 'predator', prey: ['rabbit', 'jerboa', 'fish', 'cod', 'salmon', 'chicken'], tex: 'bald_eagle' },
   banana_slug: { kind: 'land', temper: 'passive', variants: ['banana_slug/banana_slug_0', 'banana_slug/banana_slug_1', 'banana_slug/banana_slug_2', 'banana_slug/banana_slug_3'] },
   bison: { kind: 'land', temper: 'neutral', variants: ['bison', 'bison_snowy'], babyTex: 'bison_baby' },
   blobfish: { kind: 'water', temper: 'passive', tex: 'blobfish' },
   blue_jay: { kind: 'flyer', temper: 'passive', tex: 'blue_jay' },
-  bone_serpent: { kind: 'lava', temper: 'hostile', player: true, prey: [V, 'wither_skeleton', 'soul_vulture'], tex: 'bone_serpent_head', parts: { entity: 'bone_serpent_part', count: 8, spacing: 0.95, segs: [{ model: 'ModelBoneSerpentBody', tex: 'bone_serpent_mid' }, { model: 'ModelBoneSerpentTail', tex: 'bone_serpent_tail' }] } },
+  bone_serpent: { kind: 'lava', temper: 'hostile', player: true, prey: [V, 'wither_skeleton', 'soul_vulture'], tex: 'bone_serpent_head', parts: { entity: 'bone_serpent_part', count: 8, spacing: 0.95, wave: { amp: 0.3, freq: 0.3 }, segs: [{ model: 'ModelBoneSerpentBody', tex: 'bone_serpent_mid' }, { model: 'ModelBoneSerpentTail', tex: 'bone_serpent_tail' }] } },
   bunfungus: { kind: 'land', temper: 'neutral', tex: 'bunfungus', states: { sleep: 'bunfungus_sleeping' } },
   cachalot_whale: { kind: 'whale', temper: 'neutral', prey: ['giant_squid'], variants: ['cachalot/cachalot_whale', 'cachalot/cachalot_whale_albino'], variantWeights: [99, 1], states: { sleep: ['cachalot/cachalot_whale_sleeping', 'cachalot/cachalot_whale_albino_sleeping'] } },
   caiman: { lays: { egg: 'alexsmobs:caiman_egg', blocks: ['minecraft:sand', 'minecraft:red_sand', 'minecraft:dirt', 'minecraft:grass_block', 'minecraft:mud', 'minecraft:coarse_dirt'] }, kind: 'semi', temper: 'predator', prey: ['fish', 'cod', 'salmon', 'chicken', 'rabbit'], tex: 'caiman' },

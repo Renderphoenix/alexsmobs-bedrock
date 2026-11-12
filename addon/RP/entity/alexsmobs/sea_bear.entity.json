@@ -39,7 +39,9 @@
           "v.anim_speed = 1;",
           "v.am_flying = 0;",
           "v.am_sleeping = 0;",
-          "v.am_standing = 0;"
+          "v.am_standing = 0;",
+          "v.life_py = q.position(1);",
+          "v.life_vy = 0;"
         ],
         "pre_animation": [
           "v.is_moving = q.modified_move_speed >= 0.1;",
@@ -51,7 +53,9 @@
           "v.idle_wait = v.idle_wait ?? 4;",
           "v.idle_pick = v.idle_pick ?? 0;",
           "v.atk_pick = v.atk_pick ?? 0;",
-          "v.death_pick = v.death_pick ?? 0;"
+          "v.death_pick = v.death_pick ?? 0;",
+          "v.life_vy = math.clamp((q.position(1) - (v.life_py ?? q.position(1))) / math.max(q.delta_time, 0.01), -30, 30);",
+          "v.life_py = q.position(1);"
         ],
         "animate": [
           "ctrl_move",

@@ -22,6 +22,7 @@
         "pose_sit": "animation.alexsmobs.komodo_dragon.pose_sit",
         "look": "animation.alexsmobs.komodo_dragon.look",
         "baby": "animation.alexsmobs.komodo_dragon.baby",
+        "lg_idle_look": "animation.alexsmobs.komodo_dragon.lg_idle_look",
         "attack_bite": "animation.alexsmobs.komodo_dragon.attack_bite",
         "death_0": "animation.alexsmobs.komodo_dragon.death_0",
         "death_1": "animation.alexsmobs.komodo_dragon.death_1",
@@ -30,7 +31,11 @@
         "idle_sniff": "animation.alexsmobs.komodo_dragon.idle_sniff",
         "idle_shake": "animation.alexsmobs.komodo_dragon.idle_shake",
         "idle_tail": "animation.alexsmobs.komodo_dragon.idle_tail",
+        "air_jump": "animation.alexsmobs.komodo_dragon.air_jump",
+        "air_fall": "animation.alexsmobs.komodo_dragon.air_fall",
+        "air_land": "animation.alexsmobs.komodo_dragon.air_land",
         "ctrl_move": "controller.animation.alexsmobs.komodo_dragon.move",
+        "ctrl_air": "controller.animation.alexsmobs.komodo_dragon.air",
         "ctrl_idles": "controller.animation.alexsmobs.komodo_dragon.idles",
         "ctrl_attack": "controller.animation.alexsmobs.komodo_dragon.attack",
         "ctrl_hurt": "controller.animation.alexsmobs.komodo_dragon.hurt",
@@ -43,7 +48,9 @@
           "v.anim_speed = 1;",
           "v.am_flying = 0;",
           "v.am_sleeping = 0;",
-          "v.am_standing = 0;"
+          "v.am_standing = 0;",
+          "v.life_py = q.position(1);",
+          "v.life_vy = 0;"
         ],
         "pre_animation": [
           "v.is_moving = q.modified_move_speed >= 0.081;",
@@ -55,13 +62,16 @@
           "v.idle_wait = v.idle_wait ?? 4;",
           "v.idle_pick = v.idle_pick ?? 0;",
           "v.atk_pick = v.atk_pick ?? 0;",
-          "v.death_pick = v.death_pick ?? 0;"
+          "v.death_pick = v.death_pick ?? 0;",
+          "v.life_vy = math.clamp((q.position(1) - (v.life_py ?? q.position(1))) / math.max(q.delta_time, 0.01), -30, 30);",
+          "v.life_py = q.position(1);"
         ],
         "animate": [
           "ctrl_move",
           {
             "look": "!v.am_sleeping && q.is_alive"
           },
+          "ctrl_air",
           "ctrl_idles",
           "ctrl_attack",
           "ctrl_hurt",

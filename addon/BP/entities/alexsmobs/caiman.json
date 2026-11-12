@@ -15,25 +15,14 @@
       }
     },
     "component_groups": {
-      "alexsmobs:pregnant": {
-        "minecraft:timer": {
-          "looping": false,
-          "randomInterval": true,
-          "time": [30, 80],
-          "time_down_event": {
-            "event": "alexsmobs:go_lay_egg",
-            "target": "self"
-          }
-        }
-      },
       "alexsmobs:lay_egg": {
         "minecraft:behavior.lay_egg": {
           "priority": 2,
           "speed_multiplier": 1,
-          "search_range": 16,
-          "search_height": 4,
+          "search_range": 20,
+          "search_height": 5,
           "goal_radius": 1.5,
-          "lay_seconds": 8,
+          "lay_seconds": 6,
           "egg_type": "alexsmobs:caiman_egg",
           "target_blocks": [
             "minecraft:sand",
@@ -100,6 +89,187 @@
           "speed_multiplier": 1.25,
           "track_target": true,
           "reach_multiplier": 1.56
+        }
+      },
+      "alexsmobs:wild": {
+        "minecraft:tameable": {
+          "probability": 0.33,
+          "tame_items": [
+            "minecraft:salmon"
+          ],
+          "tame_event": {
+            "event": "alexsmobs:on_tame",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "reselect_targets": true,
+          "within_radius": 24,
+          "must_see_forget_duration": 10,
+          "attack_interval": 20,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "fish"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "cod"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "salmon"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "chicken"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "rabbit"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "tropical_fish"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "parrot"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "crow"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "toucan"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "jerboa"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "frog"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blue_jay"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "terrapin"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "catfish"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "flying_fish"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "rain_frog"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "sugar_glider"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "banana_slug"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "triops"
+                  }
+                ]
+              },
+              "max_dist": 16
+            }
+          ]
+        }
+      },
+      "alexsmobs:tamed": {
+        "minecraft:is_tamed": {},
+        "minecraft:sittable": {},
+        "minecraft:behavior.stay_while_sitting": {
+          "priority": 1
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 4,
+          "speed_multiplier": 1.1,
+          "start_distance": 10,
+          "stop_distance": 3
+        },
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 2
+        }
+      },
+      "alexsmobs:phase_water": {
+        "minecraft:behavior.move_to_water": {
+          "priority": 3,
+          "speed_multiplier": 1,
+          "search_range": 24,
+          "search_height": 8,
+          "search_count": 1,
+          "goal_radius": 0.5
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "randomInterval": true,
+          "time": [45, 110],
+          "time_down_event": {
+            "event": "alexsmobs:phase_land",
+            "target": "self"
+          }
+        }
+      },
+      "alexsmobs:phase_land": {
+        "minecraft:behavior.move_to_land": {
+          "priority": 3,
+          "speed_multiplier": 1,
+          "search_range": 24,
+          "search_height": 8,
+          "search_count": 1,
+          "goal_radius": 0.5
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "randomInterval": true,
+          "time": [45, 110],
+          "time_down_event": {
+            "event": "alexsmobs:phase_water",
+            "target": "self"
+          }
         }
       }
     },
@@ -189,7 +359,6 @@
         "can_path_over_water": false,
         "can_swim": true,
         "can_walk": true,
-        "can_sink": false,
         "avoid_damage_blocks": true
       },
       "minecraft:movement.amphibious": {
@@ -206,9 +375,14 @@
       "minecraft:behavior.random_swim": {
         "priority": 7,
         "speed_multiplier": 1,
-        "xz_dist": 12,
-        "y_dist": 3,
-        "interval": 100
+        "xz_dist": 14,
+        "y_dist": 8,
+        "interval": 60
+      },
+      "minecraft:behavior.swim_idle": {
+        "priority": 8,
+        "idle_time": 5,
+        "success_rate": 0.1
       },
       "minecraft:behavior.move_to_water": {
         "priority": 6,
@@ -217,123 +391,8 @@
         "search_count": 1,
         "goal_radius": 0.1
       },
-      "minecraft:behavior.float": {
-        "priority": 0
-      },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1
-      },
-      "minecraft:behavior.nearest_attackable_target": {
-        "priority": 2,
-        "must_see": true,
-        "reselect_targets": true,
-        "within_radius": 24,
-        "must_see_forget_duration": 10,
-        "attack_interval": 20,
-        "entity_types": [
-          {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "fish"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "cod"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "salmon"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "chicken"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "rabbit"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "tropical_fish"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "parrot"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "crow"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "toucan"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "jerboa"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "frog"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "blue_jay"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "terrapin"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "catfish"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "flying_fish"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "rain_frog"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "sugar_glider"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "banana_slug"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "triops"
-                }
-              ]
-            },
-            "max_dist": 16
-          }
-        ]
       },
       "minecraft:on_target_acquired": {
         "event": "alexsmobs:angry",
@@ -342,6 +401,39 @@
       "minecraft:on_target_escape": {
         "event": "alexsmobs:calm",
         "target": "self"
+      },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "alexsmobs:blobfish",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:flying_fish",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cod",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:tropical_fish",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:pufferfish",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cooked_cod",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cooked_salmon",
+            "heal_amount": 4
+          }
+        ]
       },
       "minecraft:behavior.tempt": {
         "priority": 4,
@@ -376,27 +468,9 @@
       "alexsmobs:become_pregnant": {
         "add": {
           "component_groups": [
-            "alexsmobs:pregnant"
+            "alexsmobs:lay_egg"
           ]
         }
-      },
-      "alexsmobs:go_lay_egg": {
-        "sequence": [
-          {
-            "remove": {
-              "component_groups": [
-                "alexsmobs:pregnant"
-              ]
-            }
-          },
-          {
-            "add": {
-              "component_groups": [
-                "alexsmobs:lay_egg"
-              ]
-            }
-          }
-        ]
       },
       "alexsmobs:laid_egg": {
         "remove": {
@@ -405,8 +479,83 @@
           ]
         }
       },
+      "alexsmobs:on_tame": {
+        "remove": {
+          "component_groups": [
+            "alexsmobs:wild"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "alexsmobs:tamed"
+          ]
+        }
+      },
+      "alexsmobs:phase_land": {
+        "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "alexsmobs:phase_water"
+              ]
+            }
+          },
+          {
+            "add": {
+              "component_groups": [
+                "alexsmobs:phase_land"
+              ]
+            }
+          }
+        ]
+      },
+      "alexsmobs:phase_water": {
+        "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "alexsmobs:phase_land"
+              ]
+            }
+          },
+          {
+            "add": {
+              "component_groups": [
+                "alexsmobs:phase_water"
+              ]
+            }
+          }
+        ]
+      },
       "minecraft:entity_spawned": {
         "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "alexsmobs:wild"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "alexsmobs:phase_water"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "alexsmobs:phase_land"
+                  ]
+                }
+              }
+            ]
+          },
           {
             "randomize": [
               {
@@ -434,15 +583,37 @@
           {
             "add": {
               "component_groups": [
+                "alexsmobs:wild",
                 "alexsmobs:baby"
               ]
             }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "alexsmobs:phase_water"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "alexsmobs:phase_land"
+                  ]
+                }
+              }
+            ]
           }
         ]
       },
       "minecraft:entity_transformed": {
         "add": {
           "component_groups": [
+            "alexsmobs:wild",
             "alexsmobs:adult"
           ]
         }

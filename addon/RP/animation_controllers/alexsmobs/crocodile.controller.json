@@ -83,7 +83,7 @@
         },
         "pick": {
           "on_entry": [
-            "v.idle_pick = math.random_integer(0, 3);"
+            "v.idle_pick = math.random_integer(0, 4);"
           ],
           "transitions": [
             {
@@ -97,12 +97,15 @@
             },
             {
               "a3": "v.idle_pick == 3"
+            },
+            {
+              "a4": "v.idle_pick == 4"
             }
           ]
         },
         "a0": {
           "animations": [
-            "idle_look"
+            "lg_idle_bask"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -113,7 +116,7 @@
         },
         "a1": {
           "animations": [
-            "idle_sniff"
+            "idle_look"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -124,7 +127,7 @@
         },
         "a2": {
           "animations": [
-            "idle_shake"
+            "idle_sniff"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -134,6 +137,17 @@
           ]
         },
         "a3": {
+          "animations": [
+            "idle_shake"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.087 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a4": {
           "animations": [
             "idle_tail"
           ],
@@ -158,7 +172,7 @@
         },
         "pick": {
           "on_entry": [
-            "v.atk_pick = math.random_integer(0, 1);"
+            "v.atk_pick = math.random_integer(0, 2);"
           ],
           "transitions": [
             {
@@ -166,6 +180,9 @@
             },
             {
               "a1": "v.atk_pick == 1"
+            },
+            {
+              "a2": "v.atk_pick == 2"
             }
           ]
         },
@@ -188,6 +205,83 @@
           "transitions": [
             {
               "default": "q.all_animations_finished"
+            }
+          ]
+        },
+        "a2": {
+          "animations": [
+            "lg_death_roll"
+          ],
+          "blend_transition": 0.12,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.crocodile.air": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "jump": "v.life_vy > 2 && !q.is_in_water && !v.am_sleeping"
+            },
+            {
+              "fall": "v.life_vy < -5 && !q.is_on_ground && !q.is_in_water"
+            }
+          ]
+        },
+        "jump": {
+          "animations": [
+            {
+              "air_jump": "q.is_baby ? 1 : 0.75"
+            }
+          ],
+          "blend_transition": 0.12,
+          "transitions": [
+            {
+              "land": "q.state_time > 0.3 && v.life_vy <= 0.5 && q.is_on_ground"
+            },
+            {
+              "fall": "v.life_vy < -5"
+            },
+            {
+              "default": "q.is_in_water || q.state_time > 2"
+            }
+          ]
+        },
+        "fall": {
+          "animations": [
+            {
+              "air_fall": "q.is_baby ? 1 : 0.75"
+            }
+          ],
+          "blend_transition": 0.25,
+          "transitions": [
+            {
+              "land": "q.is_on_ground"
+            },
+            {
+              "default": "q.is_in_water"
+            }
+          ]
+        },
+        "land": {
+          "animations": [
+            {
+              "air_land": "q.is_baby ? 1 : 0.75"
+            }
+          ],
+          "blend_transition": 0.08,
+          "transitions": [
+            {
+              "default": "q.any_animation_finished"
+            },
+            {
+              "jump": "v.life_vy > 2"
             }
           ]
         }

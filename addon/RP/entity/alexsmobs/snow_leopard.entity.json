@@ -26,6 +26,9 @@
         "baby": "animation.alexsmobs.snow_leopard.baby",
         "attack_r": "animation.alexsmobs.snow_leopard.attack_r",
         "attack_l": "animation.alexsmobs.snow_leopard.attack_l",
+        "lg_idle_tail_hold": "animation.alexsmobs.snow_leopard.lg_idle_tail_hold",
+        "lg_idle_crouch": "animation.alexsmobs.snow_leopard.lg_idle_crouch",
+        "lg_idle_sleep": "animation.alexsmobs.snow_leopard.lg_idle_sleep",
         "death_0": "animation.alexsmobs.snow_leopard.death_0",
         "death_1": "animation.alexsmobs.snow_leopard.death_1",
         "hurt": "animation.alexsmobs.snow_leopard.hurt",
@@ -33,7 +36,11 @@
         "idle_sniff": "animation.alexsmobs.snow_leopard.idle_sniff",
         "idle_shake": "animation.alexsmobs.snow_leopard.idle_shake",
         "idle_tail": "animation.alexsmobs.snow_leopard.idle_tail",
+        "air_jump": "animation.alexsmobs.snow_leopard.air_jump",
+        "air_fall": "animation.alexsmobs.snow_leopard.air_fall",
+        "air_land": "animation.alexsmobs.snow_leopard.air_land",
         "ctrl_move": "controller.animation.alexsmobs.snow_leopard.move",
+        "ctrl_air": "controller.animation.alexsmobs.snow_leopard.air",
         "ctrl_idles": "controller.animation.alexsmobs.snow_leopard.idles",
         "ctrl_attack": "controller.animation.alexsmobs.snow_leopard.attack",
         "ctrl_hurt": "controller.animation.alexsmobs.snow_leopard.hurt",
@@ -46,7 +53,9 @@
           "v.anim_speed = 1;",
           "v.am_flying = 0;",
           "v.am_sleeping = 0;",
-          "v.am_standing = 0;"
+          "v.am_standing = 0;",
+          "v.life_py = q.position(1);",
+          "v.life_vy = 0;"
         ],
         "pre_animation": [
           "v.is_moving = q.modified_move_speed >= 0.1;",
@@ -58,13 +67,16 @@
           "v.idle_wait = v.idle_wait ?? 4;",
           "v.idle_pick = v.idle_pick ?? 0;",
           "v.atk_pick = v.atk_pick ?? 0;",
-          "v.death_pick = v.death_pick ?? 0;"
+          "v.death_pick = v.death_pick ?? 0;",
+          "v.life_vy = math.clamp((q.position(1) - (v.life_py ?? q.position(1))) / math.max(q.delta_time, 0.01), -30, 30);",
+          "v.life_py = q.position(1);"
         ],
         "animate": [
           "ctrl_move",
           {
             "look": "!v.am_sleeping && q.is_alive"
           },
+          "ctrl_air",
           "ctrl_idles",
           "ctrl_attack",
           "ctrl_hurt",

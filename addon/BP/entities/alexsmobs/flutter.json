@@ -54,6 +54,48 @@
           "priority": 3,
           "speed_multiplier": 1
         }
+      },
+      "alexsmobs:wild": {
+        "minecraft:tameable": {
+          "probability": 0.33,
+          "tame_items": [
+            "minecraft:dandelion",
+            "minecraft:poppy",
+            "minecraft:blue_orchid",
+            "minecraft:allium",
+            "minecraft:azure_bluet",
+            "minecraft:red_tulip",
+            "minecraft:orange_tulip",
+            "minecraft:white_tulip",
+            "minecraft:pink_tulip",
+            "minecraft:oxeye_daisy",
+            "minecraft:cornflower",
+            "minecraft:lily_of_the_valley"
+          ],
+          "tame_event": {
+            "event": "alexsmobs:on_tame",
+            "target": "self"
+          }
+        }
+      },
+      "alexsmobs:tamed": {
+        "minecraft:is_tamed": {},
+        "minecraft:sittable": {},
+        "minecraft:behavior.stay_while_sitting": {
+          "priority": 1
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 4,
+          "speed_multiplier": 1.1,
+          "start_distance": 10,
+          "stop_distance": 3
+        },
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 2
+        }
       }
     },
     "components": {
@@ -170,14 +212,45 @@
         "speed_multiplier": 1.1,
         "within_radius": 10,
         "items": [
-          "minecraft:bone_meal"
+          "minecraft:bone_meal",
+          "minecraft:dandelion",
+          "minecraft:poppy",
+          "minecraft:blue_orchid",
+          "minecraft:allium",
+          "minecraft:azure_bluet",
+          "minecraft:red_tulip",
+          "minecraft:orange_tulip",
+          "minecraft:white_tulip",
+          "minecraft:pink_tulip",
+          "minecraft:oxeye_daisy",
+          "minecraft:cornflower",
+          "minecraft:lily_of_the_valley"
         ],
         "can_tempt_vertically": true
       }
     },
     "events": {
+      "alexsmobs:on_tame": {
+        "remove": {
+          "component_groups": [
+            "alexsmobs:wild"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "alexsmobs:tamed"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "alexsmobs:wild"
+              ]
+            }
+          },
           {
             "randomize": [
               {
@@ -205,6 +278,7 @@
           {
             "add": {
               "component_groups": [
+                "alexsmobs:wild",
                 "alexsmobs:baby"
               ]
             }
@@ -214,6 +288,7 @@
       "minecraft:entity_transformed": {
         "add": {
           "component_groups": [
+            "alexsmobs:wild",
             "alexsmobs:adult"
           ]
         }

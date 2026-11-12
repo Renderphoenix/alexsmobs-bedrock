@@ -84,14 +84,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "alexsmobs:cosmic_cod",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },

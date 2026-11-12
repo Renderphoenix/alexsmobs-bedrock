@@ -64,7 +64,7 @@
         },
         "pick": {
           "on_entry": [
-            "v.idle_pick = math.random_integer(0, 6);"
+            "v.idle_pick = math.random_integer(0, 7);"
           ],
           "transitions": [
             {
@@ -87,6 +87,9 @@
             },
             {
               "a6": "v.idle_pick == 6"
+            },
+            {
+              "a7": "v.idle_pick == 7"
             }
           ]
         },
@@ -125,7 +128,7 @@
         },
         "a3": {
           "animations": [
-            "idle_look"
+            "lg_idle_peck"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -136,7 +139,7 @@
         },
         "a4": {
           "animations": [
-            "idle_sniff"
+            "idle_look"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -147,7 +150,7 @@
         },
         "a5": {
           "animations": [
-            "idle_shake"
+            "idle_sniff"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -157,6 +160,17 @@
           ]
         },
         "a6": {
+          "animations": [
+            "idle_shake"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.1 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a7": {
           "animations": [
             "idle_tail"
           ],
@@ -175,18 +189,108 @@
         "default": {
           "transitions": [
             {
-              "a0": "v.attack_time > 0 && q.is_alive"
+              "pick": "v.attack_time > 0 && q.is_alive"
+            }
+          ]
+        },
+        "pick": {
+          "on_entry": [
+            "v.atk_pick = math.random_integer(0, 1);"
+          ],
+          "transitions": [
+            {
+              "a0": "v.atk_pick == 0"
+            },
+            {
+              "a1": "v.atk_pick == 1"
             }
           ]
         },
         "a0": {
           "animations": [
-            "attack_bite"
+            "lg_peck"
           ],
           "blend_transition": 0.12,
           "transitions": [
             {
               "default": "q.all_animations_finished"
+            }
+          ]
+        },
+        "a1": {
+          "animations": [
+            "lg_kick"
+          ],
+          "blend_transition": 0.12,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.emu.air": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "jump": "v.life_vy > 2 && !q.is_in_water && !v.am_sleeping"
+            },
+            {
+              "fall": "v.life_vy < -5 && !q.is_on_ground && !q.is_in_water"
+            }
+          ]
+        },
+        "jump": {
+          "animations": [
+            {
+              "air_jump": "q.is_baby ? 1 : 0.55"
+            }
+          ],
+          "blend_transition": 0.12,
+          "transitions": [
+            {
+              "land": "q.state_time > 0.3 && v.life_vy <= 0.5 && q.is_on_ground"
+            },
+            {
+              "fall": "v.life_vy < -5"
+            },
+            {
+              "default": "q.is_in_water || q.state_time > 2"
+            }
+          ]
+        },
+        "fall": {
+          "animations": [
+            {
+              "air_fall": "q.is_baby ? 1 : 0.55"
+            }
+          ],
+          "blend_transition": 0.25,
+          "transitions": [
+            {
+              "land": "q.is_on_ground"
+            },
+            {
+              "default": "q.is_in_water"
+            }
+          ]
+        },
+        "land": {
+          "animations": [
+            {
+              "air_land": "q.is_baby ? 1 : 0.55"
+            }
+          ],
+          "blend_transition": 0.08,
+          "transitions": [
+            {
+              "default": "q.any_animation_finished"
+            },
+            {
+              "jump": "v.life_vy > 2"
             }
           ]
         }

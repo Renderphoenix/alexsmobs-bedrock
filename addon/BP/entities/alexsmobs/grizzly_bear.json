@@ -121,38 +121,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "minecraft:honeycomb",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:honey_block",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:honeycomb_block",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:honey_bottle",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:salmon",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:bee_nest",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:beetroot",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },
@@ -252,6 +220,35 @@
       "minecraft:on_target_escape": {
         "event": "alexsmobs:calm",
         "target": "self"
+      },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "minecraft:honeycomb",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:honey_block",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:honeycomb_block",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:honey_bottle",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:bee_nest",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:beetroot",
+            "heal_amount": 4
+          }
+        ]
       },
       "minecraft:behavior.tempt": {
         "priority": 4,

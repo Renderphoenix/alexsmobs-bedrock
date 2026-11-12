@@ -88,7 +88,7 @@ function generate(e, ctx) {
   out.gait = cl.gait; out.states = cl.states;
 
   // ---- behavior
-  const bp = behavior(e, s, kindOf, { attackAnims: attackNames, sleeps, nV, babyModel: !!s.baby });
+  const bp = behavior(e, s, kindOf, { attackAnims: attackNames, sleeps, nV, babyModel: !!s.baby, ctx });
   U.writeJson(path.join(C.BP, 'entities', NS, `${id}.json`), bp);
   SP.spawnRule(e, s, kindOf, ctx, /Breed|MateGoal/.test((e.goals || []).map(x => x.goal).join(' ')) && s.temper !== 'hostile');
   loot(e, ctx);
@@ -129,7 +129,9 @@ function behavior(e, s, kind, info) {
   // Alex's Mobs tags are named after the mob, sometimes shortened (grizzly_*, not grizzly_bear_*)
   const names = [...new Set([id, id.replace(/_[a-z]+$/, ''), id.split('_')[0], ...(s.tagNames || [])])];
   const tagOf = (suffix, fn = U.itemTag) => { for (const n of names) { const v = fn(`${n}_${suffix}`); if (v.length) return v; } return []; };
-  const tameItems = tagOf('tameables');
+  // tameable creatures whose Java tags are empty get an item of our own
+  const TAME_FALLBACK = { crocodile: ['minecraft:chicken'], caiman: ['minecraft:salmon'], komodo_dragon: ['minecraft:porkchop'], flutter: U.itemTag('minecraft:small_flowers'), orca: ['minecraft:salmon'] };
+  const tameItems = tagOf('tameables').length ? tagOf('tameables') : (TAME_FALLBACK[id] || []);
   const tameable = (e.supers || []).includes('TamableAnimal') && tameItems.length > 0;
   const breedItems = [...new Set(tagOf('breedables').concat(s.breedItems || []))];
   const temptItems = [...new Set([...tagOf('foodstuffs'), ...breedItems, ...tameItems])].slice(0, 40);
@@ -191,11 +193,12 @@ function behavior(e, s, kind, info) {
     case 'semi':
       Object.assign(C2, {
         'minecraft:breathable': { total_supply: 300, suffocate_time: 0, breathes_air: true, breathes_water: true, generates_bubbles: false },
-        'minecraft:navigation.generic': { is_amphibious: true, can_path_over_water: false, can_swim: true, can_walk: true, can_sink: false, avoid_damage_blocks: true },
+        'minecraft:navigation.generic': { is_amphibious: true, can_path_over_water: false, can_swim: true, can_walk: true, avoid_damage_blocks: true },
         'minecraft:movement.amphibious': { max_turn: 15 },
         'minecraft:underwater_movement': { value: Math.min(0.2, Math.max(0.06, speed * 0.6)) },
         'minecraft:behavior.random_stroll': { priority: 7, speed_multiplier: 0.8, interval: 100 },
-        'minecraft:behavior.random_swim': { priority: 7, speed_multiplier: 1, xz_dist: 12, y_dist: s.bottom ? 1 : 3, interval: 100 },
+        'minecraft:behavior.random_swim': { priority: 7, speed_multiplier: 1, xz_dist: 14, y_dist: s.bottom ? 1 : 8, interval: 60 },
+        'minecraft:behavior.swim_idle': { priority: 8, idle_time: 5, success_rate: 0.1 },
         'minecraft:behavior.move_to_water': { priority: 6, search_range: 16, search_height: 5, search_count: 1, goal_radius: 0.1 },
       });
       if (s.bottom) delete C2['minecraft:behavior.move_to_water'];
@@ -255,7 +258,8 @@ function behavior(e, s, kind, info) {
       });
       if (s.climbs) C2['minecraft:can_climb'] = {};
   }
-  if (!['water', 'whale'].includes(kind) && !(kind === 'hover' && s.alwaysFly)) C2['minecraft:behavior.float'] = { priority: 0 };
+  if (!['water', 'whale', 'semi'].includes(kind) && !(kind === 'hover' && s.alwaysFly)) C2['minecraft:behavior.float'] = { priority: 0 };
+  const phased = kind === 'semi' && !s.bottom; // alternates between hunting in the water and basking on land
 
   // ---- temperament
   const melee = { priority: 3, speed_multiplier: kind === 'water' || kind === 'whale' ? 1.6 : 1.25, track_target: true, reach_multiplier: Math.max(1.5, Math.min(3, e.width * 1.2)) };
@@ -283,6 +287,9 @@ function behavior(e, s, kind, info) {
   if (temper === 'skittish') {
     C2['minecraft:behavior.avoid_mob_type'] = { priority: 2, entity_types: [{ filters: { all_of: [famTest('player'), { test: 'is_sneaking', subject: 'other', value: false }, ...temptItems.slice(0, 6).map(it => ({ test: 'has_equipment', subject: 'other', domain: 'hand', operator: '!=', value: it }))] }, max_dist: 8, walk_speed_multiplier: 1.3, sprint_speed_multiplier: 1.6 }] };
   }
+  // eating: foods that are not breeding/taming items are eaten (heals 4) - bananas for elephants and monkeys, etc.
+  const eatItems = [...new Set(temptItems.filter(i => !breedItems.includes(i) && !tameItems.includes(i)))].slice(0, 40);
+  if (eatItems.length && !hostile) C2['minecraft:healable'] = { force_use: true, items: eatItems.map(item => ({ item, heal_amount: 4 })) };
   if (temptItems.length && !hostile) C2['minecraft:behavior.tempt'] = { priority: 4, speed_multiplier: 1.1, within_radius: 10, items: temptItems, can_tempt_vertically: isFly(kind) };
 
   // ---- breeding / babies
@@ -304,13 +311,12 @@ function behavior(e, s, kind, info) {
   // egg layers (crocodile, caiman, platypus, terrapin): mating makes the female pregnant, she then lays an egg block
   // (the vanilla turtle mechanism: causes_pregnancy + behavior.lay_egg); the egg block hatches the baby.
   if (s.lays && adult['minecraft:breedable']) {
+    info.ctx.layers.push(full);
     const br = adult['minecraft:breedable'];
     br.causes_pregnancy = true;
     br.breeds_with.breed_event = { event: `${NS}:become_pregnant`, target: 'self' };
-    groups[`${NS}:pregnant`] = { 'minecraft:timer': { looping: false, randomInterval: true, time: [30, 80], time_down_event: { event: `${NS}:go_lay_egg`, target: 'self' } } };
-    groups[`${NS}:lay_egg`] = { 'minecraft:behavior.lay_egg': { priority: 2, speed_multiplier: 1, search_range: 16, search_height: 4, goal_radius: 1.5, lay_seconds: 8, egg_type: s.lays.egg, target_blocks: s.lays.blocks, on_lay: { event: `${NS}:laid_egg`, target: 'self' } } };
-    events[`${NS}:become_pregnant`] = { add: { component_groups: [`${NS}:pregnant`] } };
-    events[`${NS}:go_lay_egg`] = { sequence: [{ remove: { component_groups: [`${NS}:pregnant`] } }, { add: { component_groups: [`${NS}:lay_egg`] } }] };
+    groups[`${NS}:lay_egg`] = { 'minecraft:behavior.lay_egg': { priority: 2, speed_multiplier: 1, search_range: 20, search_height: 5, goal_radius: 1.5, lay_seconds: 6, egg_type: s.lays.egg, target_blocks: s.lays.blocks, on_lay: { event: `${NS}:laid_egg`, target: 'self' } } };
+    events[`${NS}:become_pregnant`] = { add: { component_groups: [`${NS}:lay_egg`] } };
     events[`${NS}:laid_egg`] = { remove: { component_groups: [`${NS}:lay_egg`] } };
   }
   // egg drops (emu, cockroach): adults lay the throwable egg item now and then, like a chicken
@@ -335,7 +341,6 @@ function behavior(e, s, kind, info) {
       'minecraft:behavior.follow_owner': { priority: 4, speed_multiplier: 1.1, start_distance: 10, stop_distance: 3 },
       'minecraft:behavior.owner_hurt_by_target': { priority: 1 },
       'minecraft:behavior.owner_hurt_target': { priority: 2 },
-      'minecraft:healable': { items: temptItems.slice(0, 12).map(item => ({ item, heal_amount: 4 })) },
     };
     events[`${NS}:on_tame`] = { remove: { component_groups: [`${NS}:wild`] }, add: { component_groups: [`${NS}:tamed`] } };
     if (C2['minecraft:behavior.nearest_attackable_target']) {
@@ -345,6 +350,14 @@ function behavior(e, s, kind, info) {
   }
 
   // ---- variants
+  if (phased) {
+    const sw = (to) => ({ looping: false, randomInterval: true, time: [45, 110], time_down_event: { event: `${NS}:phase_${to}`, target: 'self' } });
+    groups[`${NS}:phase_water`] = { 'minecraft:behavior.move_to_water': { priority: 3, speed_multiplier: 1, search_range: 24, search_height: 8, search_count: 1, goal_radius: 0.5 }, 'minecraft:timer': sw('land') };
+    groups[`${NS}:phase_land`] = { 'minecraft:behavior.move_to_land': { priority: 3, speed_multiplier: 1, search_range: 24, search_height: 8, search_count: 1, goal_radius: 0.5 }, 'minecraft:timer': sw('water') };
+    events[`${NS}:phase_land`] = { sequence: [{ remove: { component_groups: [`${NS}:phase_water`] } }, { add: { component_groups: [`${NS}:phase_land`] } }] };
+    events[`${NS}:phase_water`] = { sequence: [{ remove: { component_groups: [`${NS}:phase_land`] } }, { add: { component_groups: [`${NS}:phase_water`] } }] };
+  }
+  const phaseSeq = phased ? [{ randomize: [{ weight: 1, add: { component_groups: [`${NS}:phase_water`] } }, { weight: 1, add: { component_groups: [`${NS}:phase_land`] } }] }] : [];
   const variantGroups = [];
   if (info.nV > 1) {
     for (let i = 0; i < info.nV; i++) { groups[`${NS}:variant_${i}`] = { 'minecraft:variant': { value: i } }; variantGroups.push(`${NS}:variant_${i}`); }
@@ -371,10 +384,11 @@ function behavior(e, s, kind, info) {
     sequence: [
       ...(baseAdd.length ? [{ add: { component_groups: baseAdd } }] : []),
       ...pickVariant,
+      ...phaseSeq,
       breedable ? { randomize: [{ weight: 90, add: { component_groups: [`${NS}:adult`] } }, { weight: 10, add: { component_groups: [`${NS}:baby`] } }] } : { add: { component_groups: [`${NS}:adult`] } },
     ],
   };
-  events['minecraft:entity_born'] = { sequence: [{ add: { component_groups: [...baseAdd, `${NS}:baby`] } }, ...pickVariant] };
+  events['minecraft:entity_born'] = { sequence: [{ add: { component_groups: [...baseAdd, `${NS}:baby`] } }, ...pickVariant, ...phaseSeq] };
   events['minecraft:entity_transformed'] = { add: { component_groups: [...baseAdd, `${NS}:adult`] } };
   events[`${NS}:become_baby`] = { remove: { component_groups: [`${NS}:adult`] }, add: { component_groups: [`${NS}:baby`] } };
   events['minecraft:ageable_grow_up'] = { remove: { component_groups: [`${NS}:baby`] }, add: { component_groups: [`${NS}:adult`] } };

@@ -65,18 +65,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "minecraft:honeycomb",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:sweet_berries",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },

@@ -26,13 +26,20 @@
         "swipe_r": "animation.alexsmobs.grizzly_bear.swipe_r",
         "swipe_l": "animation.alexsmobs.grizzly_bear.swipe_l",
         "sniff": "animation.alexsmobs.grizzly_bear.sniff",
+        "lg_idle_sniff": "animation.alexsmobs.grizzly_bear.lg_idle_sniff",
+        "lg_idle_sit": "animation.alexsmobs.grizzly_bear.lg_idle_sit",
+        "lg_eat": "animation.alexsmobs.grizzly_bear.lg_eat",
         "death_0": "animation.alexsmobs.grizzly_bear.death_0",
         "death_1": "animation.alexsmobs.grizzly_bear.death_1",
         "hurt": "animation.alexsmobs.grizzly_bear.hurt",
         "idle_look": "animation.alexsmobs.grizzly_bear.idle_look",
         "idle_sniff": "animation.alexsmobs.grizzly_bear.idle_sniff",
         "idle_shake": "animation.alexsmobs.grizzly_bear.idle_shake",
+        "air_jump": "animation.alexsmobs.grizzly_bear.air_jump",
+        "air_fall": "animation.alexsmobs.grizzly_bear.air_fall",
+        "air_land": "animation.alexsmobs.grizzly_bear.air_land",
         "ctrl_move": "controller.animation.alexsmobs.grizzly_bear.move",
+        "ctrl_air": "controller.animation.alexsmobs.grizzly_bear.air",
         "ctrl_idles": "controller.animation.alexsmobs.grizzly_bear.idles",
         "ctrl_attack": "controller.animation.alexsmobs.grizzly_bear.attack",
         "ctrl_hurt": "controller.animation.alexsmobs.grizzly_bear.hurt",
@@ -45,7 +52,9 @@
           "v.anim_speed = 1;",
           "v.am_flying = 0;",
           "v.am_sleeping = 0;",
-          "v.am_standing = 0;"
+          "v.am_standing = 0;",
+          "v.life_py = q.position(1);",
+          "v.life_vy = 0;"
         ],
         "pre_animation": [
           "v.is_moving = q.modified_move_speed >= 0.087;",
@@ -57,13 +66,16 @@
           "v.idle_wait = v.idle_wait ?? 4;",
           "v.idle_pick = v.idle_pick ?? 0;",
           "v.atk_pick = v.atk_pick ?? 0;",
-          "v.death_pick = v.death_pick ?? 0;"
+          "v.death_pick = v.death_pick ?? 0;",
+          "v.life_vy = math.clamp((q.position(1) - (v.life_py ?? q.position(1))) / math.max(q.delta_time, 0.01), -30, 30);",
+          "v.life_py = q.position(1);"
         ],
         "animate": [
           "ctrl_move",
           {
             "look": "!v.am_sleeping && q.is_alive"
           },
+          "ctrl_air",
           "ctrl_idles",
           "ctrl_attack",
           "ctrl_hurt",

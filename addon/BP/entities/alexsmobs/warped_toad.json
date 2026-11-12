@@ -156,22 +156,44 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
+        }
+      },
+      "alexsmobs:phase_water": {
+        "minecraft:behavior.move_to_water": {
+          "priority": 3,
+          "speed_multiplier": 1,
+          "search_range": 24,
+          "search_height": 8,
+          "search_count": 1,
+          "goal_radius": 0.5
         },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "alexsmobs:maggot",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:mosquito_larva",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:leafcutter_ant_pupa",
-              "heal_amount": 4
-            }
-          ]
+        "minecraft:timer": {
+          "looping": false,
+          "randomInterval": true,
+          "time": [45, 110],
+          "time_down_event": {
+            "event": "alexsmobs:phase_land",
+            "target": "self"
+          }
+        }
+      },
+      "alexsmobs:phase_land": {
+        "minecraft:behavior.move_to_land": {
+          "priority": 3,
+          "speed_multiplier": 1,
+          "search_range": 24,
+          "search_height": 8,
+          "search_count": 1,
+          "goal_radius": 0.5
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "randomInterval": true,
+          "time": [45, 110],
+          "time_down_event": {
+            "event": "alexsmobs:phase_water",
+            "target": "self"
+          }
         }
       }
     },
@@ -248,7 +270,6 @@
         "can_path_over_water": false,
         "can_swim": true,
         "can_walk": true,
-        "can_sink": false,
         "avoid_damage_blocks": true
       },
       "minecraft:movement.amphibious": {
@@ -265,9 +286,14 @@
       "minecraft:behavior.random_swim": {
         "priority": 7,
         "speed_multiplier": 1,
-        "xz_dist": 12,
-        "y_dist": 3,
-        "interval": 100
+        "xz_dist": 14,
+        "y_dist": 8,
+        "interval": 60
+      },
+      "minecraft:behavior.swim_idle": {
+        "priority": 8,
+        "idle_time": 5,
+        "success_rate": 0.1
       },
       "minecraft:behavior.move_to_water": {
         "priority": 6,
@@ -275,9 +301,6 @@
         "search_height": 5,
         "search_count": 1,
         "goal_radius": 0.1
-      },
-      "minecraft:behavior.float": {
-        "priority": 0
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1
@@ -289,6 +312,19 @@
       "minecraft:on_target_escape": {
         "event": "alexsmobs:calm",
         "target": "self"
+      },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "alexsmobs:maggot",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:leafcutter_ant_pupa",
+            "heal_amount": 4
+          }
+        ]
       },
       "minecraft:behavior.tempt": {
         "priority": 4,
@@ -325,6 +361,42 @@
           ]
         }
       },
+      "alexsmobs:phase_land": {
+        "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "alexsmobs:phase_water"
+              ]
+            }
+          },
+          {
+            "add": {
+              "component_groups": [
+                "alexsmobs:phase_land"
+              ]
+            }
+          }
+        ]
+      },
+      "alexsmobs:phase_water": {
+        "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "alexsmobs:phase_land"
+              ]
+            }
+          },
+          {
+            "add": {
+              "component_groups": [
+                "alexsmobs:phase_water"
+              ]
+            }
+          }
+        ]
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {
@@ -333,6 +405,26 @@
                 "alexsmobs:wild"
               ]
             }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "alexsmobs:phase_water"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "alexsmobs:phase_land"
+                  ]
+                }
+              }
+            ]
           },
           {
             "randomize": [
@@ -365,6 +457,26 @@
                 "alexsmobs:baby"
               ]
             }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "alexsmobs:phase_water"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "alexsmobs:phase_land"
+                  ]
+                }
+              }
+            ]
           }
         ]
       },

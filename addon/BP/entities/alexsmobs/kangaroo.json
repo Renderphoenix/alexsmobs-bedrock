@@ -96,22 +96,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "minecraft:deadbush",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:short_grass",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:carrot",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },

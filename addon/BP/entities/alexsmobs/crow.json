@@ -84,54 +84,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "alexsmobs:crocodile_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:platypus_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:emu_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:terrapin_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:caiman_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:sugar",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:wheat_seeds",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:pumpkin_seeds",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:melon_seeds",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:beetroot_seeds",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },
@@ -242,6 +194,51 @@
       "minecraft:behavior.panic": {
         "priority": 1,
         "speed_multiplier": 1.5
+      },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "alexsmobs:crocodile_egg",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:platypus_egg",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:emu_egg",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:terrapin_egg",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:caiman_egg",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:egg",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:sugar",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:wheat_seeds",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:melon_seeds",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:beetroot_seeds",
+            "heal_amount": 4
+          }
+        ]
       },
       "minecraft:behavior.tempt": {
         "priority": 4,

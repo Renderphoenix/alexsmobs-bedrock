@@ -2,10 +2,11 @@
 import { world, system, ItemStack } from "@minecraft/server";
 
 const NS = "alexsmobs";
-const CHAINS = {"alexsmobs:anaconda":{"part":"alexsmobs:anaconda_part","count":7,"spacing":0.7,"segs":[0,1,1,1,1,1,2],"skin":true},"alexsmobs:bone_serpent":{"part":"alexsmobs:bone_serpent_part","count":8,"spacing":0.95,"segs":[0,0,0,0,0,0,0,1],"skin":false},"alexsmobs:centipede_head":{"part":"alexsmobs:centipede_body","count":6,"spacing":0.72,"segs":[0,0,0,0,0,1],"skin":false},"alexsmobs:void_worm":{"part":"alexsmobs:void_worm_part","count":12,"spacing":1.6,"segs":[0,0,0,0,0,0,0,0,0,0,0,1],"skin":false}};
+const CHAINS = {"alexsmobs:anaconda":{"part":"alexsmobs:anaconda_part","count":7,"spacing":0.7,"segs":[0,1,1,1,1,1,2],"skin":true,"wave":{"amp":0.34,"freq":0.34}},"alexsmobs:bone_serpent":{"part":"alexsmobs:bone_serpent_part","count":8,"spacing":0.95,"segs":[0,0,0,0,0,0,0,1],"skin":false,"wave":{"amp":0.3,"freq":0.3}},"alexsmobs:centipede_head":{"part":"alexsmobs:centipede_body","count":6,"spacing":0.72,"segs":[0,0,0,0,0,1],"skin":false,"wave":null},"alexsmobs:void_worm":{"part":"alexsmobs:void_worm_part","count":12,"spacing":1.6,"segs":[0,0,0,0,0,0,0,0,0,0,0,1],"skin":false,"wave":null}};
 const FOLLOWERS = {"alexsmobs:murmur":{"part":"alexsmobs:murmur_head","offset":[0,1.55,-0.35]}};
 const BUCKETS = {"alexsmobs:lobster":"alexsmobs:lobster_bucket","alexsmobs:blobfish":"alexsmobs:blobfish_bucket","alexsmobs:stradpole":"alexsmobs:stradpole_bucket","alexsmobs:platypus":"alexsmobs:platypus_bucket","alexsmobs:frilled_shark":"alexsmobs:frilled_shark_bucket","alexsmobs:mimic_octopus":"alexsmobs:mimic_octopus_bucket","alexsmobs:terrapin":"alexsmobs:terrapin_bucket","alexsmobs:comb_jelly":"alexsmobs:comb_jelly_bucket","alexsmobs:cosmic_cod":"alexsmobs:cosmic_cod_bucket","alexsmobs:devils_hole_pupfish":"alexsmobs:devils_hole_pupfish_bucket","alexsmobs:catfish":"alexsmobs:large_catfish_bucket","alexsmobs:flying_fish":"alexsmobs:flying_fish_bucket","alexsmobs:mudskipper":"alexsmobs:mudskipper_bucket","alexsmobs:triops":"alexsmobs:triops_bucket"};
 const EGGS = {"alexsmobs:caiman_egg":"alexsmobs:caiman","alexsmobs:crocodile_egg":"alexsmobs:crocodile","alexsmobs:platypus_egg":"alexsmobs:platypus","alexsmobs:terrapin_egg":"alexsmobs:terrapin","alexsmobs:triops_eggs":"alexsmobs:triops"};
+const LAYERS = ["alexsmobs:caiman","alexsmobs:crocodile","alexsmobs:platypus","alexsmobs:terrapin"];
 const RAY = {"alexsmobs:blood_sprayer":{"range":8,"cooldown":30,"effects":[["mining_fatigue",10,0],["hunger",8,1]],"sound":"bubble.pop","durability":true},"alexsmobs:pocket_sand":{"range":6,"cooldown":30,"effects":[["blindness",8,0],["slowness",4,1]],"sound":"dig.sand","durability":true},"alexsmobs:hemolymph_blaster":{"range":14,"cooldown":25,"effects":[["poison",5,0],["slowness",5,1]],"damage":3,"sound":"mob.slime.big","durability":true},"alexsmobs:squid_grapple":{"range":16,"cooldown":50,"effects":[],"pull":1.1,"sound":"mob.squid.ambient","durability":true},"alexsmobs:stink_ray":{"range":10,"cooldown":40,"effects":[["nausea",10,0],["weakness",10,0],["slowness",5,0]],"sound":"alexsmobs.skunk_spray","durability":true}};
 const SCAN = {"alexsmobs:echolocator":{"radius":64,"label":"Echolocation","family":"alexsmobs"},"alexsmobs:endolocator":{"radius":96,"label":"Endolocation","types":["minecraft:enderman","alexsmobs:enderiophage","alexsmobs:endergrade","alexsmobs:cosmaw","alexsmobs:farseer","alexsmobs:spectre"]},"alexsmobs:pupfish_locator":{"radius":128,"label":"Pupfish locator","types":["alexsmobs:devils_hole_pupfish"]}};
 const SOUND = {"alexsmobs:maraca":{"sound":"alexsmobs.maraca","cooldown":8},"alexsmobs:music_disc_thime":{"sound":"alexsmobs.music_disc_thime","cooldown":400},"alexsmobs:music_disc_daze":{"sound":"alexsmobs.music_disc_daze","cooldown":400}};
@@ -65,7 +66,19 @@ function forward(rot) {
   return { x: -Math.sin(yaw), y: 0, z: Math.cos(yaw) };
 }
 
+function trailAt(tr, d) {
+  let acc = 0;
+  for (let k = 0; k < tr.length - 1; k++) {
+    const a = tr[k], b = tr[k + 1];
+    const len = Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2 + (a.z - b.z) ** 2) || 0.0001;
+    if (acc + len >= d) { const t = (d - acc) / len; return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, z: a.z + (b.z - a.z) * t }; }
+    acc += len;
+  }
+  return tr[tr.length - 1];
+}
+
 function tickChains() {
+  const tick = system.currentTick;
   for (const [id, c] of live) {
     const head = c.head;
     if (!valid(head)) {
@@ -75,26 +88,41 @@ function tickChains() {
     }
     let hl;
     try { hl = head.location; } catch { continue; }
+    const f = forward(head.getRotation());
     if (c.follower) {
       const p = c.parts[0];
       if (!valid(p)) { live.delete(id); continue; }
-      const f = forward(head.getRotation());
       const [ox, oy, oz] = c.cfg.offset;
       const pos = { x: hl.x + f.x * -oz + ox, y: hl.y + oy, z: hl.z + f.z * -oz };
       try { p.teleport(pos, { facingLocation: { x: pos.x + f.x * 4, y: pos.y, z: pos.z + f.z * 4 } }); } catch {}
       continue;
     }
-    let prev = hl;
     const sp = c.cfg.spacing;
+    let tr = c.trail;
+    if (!tr) {
+      tr = c.trail = [];
+      for (let k = 0; k <= Math.ceil((c.parts.length * sp) / 0.2) + 6; k++) tr.push({ x: hl.x - f.x * k * 0.2, y: hl.y, z: hl.z - f.z * k * 0.2 });
+    }
+    const top = tr[0];
+    if (Math.sqrt((hl.x - top.x) ** 2 + (hl.y - top.y) ** 2 + (hl.z - top.z) ** 2) > 0.2) {
+      tr.unshift({ x: hl.x, y: hl.y, z: hl.z });
+      if (tr.length > 700) tr.length = 700;
+    } else tr[0] = { x: hl.x, y: hl.y, z: hl.z };
+    let vel = { x: 0, z: 0 };
+    try { vel = head.getVelocity(); } catch {}
+    const w = c.cfg.wave;
+    const moving = w ? Math.min(1, Math.sqrt(vel.x * vel.x + vel.z * vel.z) * 9) : 0;
+    const px = -f.z, pz = f.x;
+    let prev = hl;
     for (let i = 0; i < c.parts.length; i++) {
       const p = c.parts[i];
       if (!valid(p)) continue;
-      let pl;
-      try { pl = p.location; } catch { continue; }
-      const dx = pl.x - prev.x, dy = pl.y - prev.y, dz = pl.z - prev.z;
-      const d = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1;
-      const k = sp / d;
-      const pos = d > sp ? { x: prev.x + dx * k, y: prev.y + dy * k, z: prev.z + dz * k } : pl;
+      const base = trailAt(tr, (i + 1) * sp);
+      let pos = base;
+      if (w && moving > 0.02) {
+        const off = Math.sin(tick * w.freq - (i + 1) * 0.85) * w.amp * moving * Math.min(1, (i + 1) / 3);
+        pos = { x: base.x + px * off, y: base.y, z: base.z + pz * off };
+      }
       try { p.teleport(pos, { facingLocation: prev }); } catch {}
       prev = pos;
     }
@@ -169,39 +197,57 @@ const nice = (t) => t.split(":")[1].replace(/_/g, " ");
 
 // ------------------------------------------------------------ egg blocks: crack stage 0..2, then hatch (like the turtle egg)
 const HATCH = NS + ":hatch";
+function growEgg(ev) {
+  try {
+    const block = ev.block;
+    const mob = EGGS[block.typeId];
+    if (!mob) return;
+    const dim = ev.dimension;
+    const stage = block.permutation.getState(HATCH) ?? 0;
+    if (stage < 2) {
+      block.setPermutation(block.permutation.withState(HATCH, stage + 1));
+      snd(dim, "block.turtle_egg.crack", block.center());
+      return;
+    }
+    snd(dim, "block.turtle_egg.break", block.center());
+    block.setType("minecraft:air");
+    const n = Math.random() < 0.35 ? 2 : 1;
+    for (let i = 0; i < n; i++) {
+      const baby = dim.spawnEntity(mob, block.bottomCenter());
+      try { baby.triggerEvent("minecraft:entity_born"); } catch {}
+    }
+  } catch (e) { console.warn("[alexsmobs] egg hatch failed: " + e); }
+}
+function trampleEgg(ev) {
+  try {
+    const who = ev.entity;
+    if (!who || (who.typeId === "minecraft:player" && who.isSneaking) || Math.random() > 0.05) return;
+    snd(ev.dimension, "block.turtle_egg.break", ev.block.center());
+    ev.block.setType("minecraft:air");
+  } catch {}
+}
 system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
-  blockComponentRegistry.registerCustomComponent(NS + ":egg", {
-    onTick(ev) {
-      try {
-        const block = ev.block;
-        const mob = EGGS[block.typeId];
-        if (!mob || Math.random() > 0.45) return;
-        const dim = ev.dimension;
-        const stage = block.permutation.getState(HATCH) ?? 0;
-        if (stage < 2) {
-          block.setPermutation(block.permutation.withState(HATCH, stage + 1));
-          snd(dim, "block.turtle_egg.crack", block.center());
-          return;
-        }
-        snd(dim, "block.turtle_egg.break", block.center());
-        block.setType("minecraft:air");
-        const n = Math.random() < 0.35 ? 2 : 1;
-        for (let i = 0; i < n; i++) {
-          const baby = dim.spawnEntity(mob, block.bottomCenter());
-          try { baby.triggerEvent("minecraft:entity_born"); } catch {}
-        }
-      } catch (e) { console.warn("[alexsmobs] egg hatch failed: " + e); }
-    },
-    onStepOn(ev) {
-      try {
-        const who = ev.entity;
-        if (!who || (who.typeId === "minecraft:player" && who.isSneaking) || Math.random() > 0.05) return;
-        snd(ev.dimension, "block.turtle_egg.break", ev.block.center());
-        ev.block.setType("minecraft:air");
-      } catch {}
-    },
-  });
+  blockComponentRegistry.registerCustomComponent(NS + ":egg", { onTick: growEgg, onRandomTick: growEgg, onStepOn: trampleEgg });
 });
+
+// egg layers become pregnant on their own now and then (10 minute cooldown), so eggs appear without breeding too
+system.runInterval(() => {
+  for (const type of LAYERS) {
+    for (const dimId of ["overworld", "nether", "the_end"]) {
+      let list = [];
+      try { list = world.getDimension(dimId).getEntities({ type }); } catch { continue; }
+      for (const e of list) {
+        try {
+          if (e.getComponent("minecraft:is_baby")) continue;
+          const last = e.getDynamicProperty("am:egg_tick") ?? -1000000;
+          if (system.currentTick - last < 12000 || Math.random() > 0.25) continue;
+          e.setDynamicProperty("am:egg_tick", system.currentTick);
+          e.triggerEvent(NS + ":become_pregnant");
+        } catch {}
+      }
+    }
+  }
+}, 1200);
 
 // ------------------------------------------------------------ item abilities
 const wearDown = (player, slot) => {

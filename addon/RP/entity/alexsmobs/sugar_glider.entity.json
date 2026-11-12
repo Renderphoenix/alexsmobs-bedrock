@@ -31,7 +31,11 @@
         "idle_sniff": "animation.alexsmobs.sugar_glider.idle_sniff",
         "idle_shake": "animation.alexsmobs.sugar_glider.idle_shake",
         "idle_tail": "animation.alexsmobs.sugar_glider.idle_tail",
+        "air_jump": "animation.alexsmobs.sugar_glider.air_jump",
+        "air_fall": "animation.alexsmobs.sugar_glider.air_fall",
+        "air_land": "animation.alexsmobs.sugar_glider.air_land",
         "ctrl_move": "controller.animation.alexsmobs.sugar_glider.move",
+        "ctrl_air": "controller.animation.alexsmobs.sugar_glider.air",
         "ctrl_idles": "controller.animation.alexsmobs.sugar_glider.idles",
         "ctrl_attack": "controller.animation.alexsmobs.sugar_glider.attack",
         "ctrl_hurt": "controller.animation.alexsmobs.sugar_glider.hurt",
@@ -44,7 +48,9 @@
           "v.anim_speed = 1;",
           "v.am_flying = 0;",
           "v.am_sleeping = 0;",
-          "v.am_standing = 0;"
+          "v.am_standing = 0;",
+          "v.life_py = q.position(1);",
+          "v.life_vy = 0;"
         ],
         "pre_animation": [
           "v.is_moving = q.modified_move_speed >= 0.087;",
@@ -56,13 +62,16 @@
           "v.idle_wait = v.idle_wait ?? 4;",
           "v.idle_pick = v.idle_pick ?? 0;",
           "v.atk_pick = v.atk_pick ?? 0;",
-          "v.death_pick = v.death_pick ?? 0;"
+          "v.death_pick = v.death_pick ?? 0;",
+          "v.life_vy = math.clamp((q.position(1) - (v.life_py ?? q.position(1))) / math.max(q.delta_time, 0.01), -30, 30);",
+          "v.life_py = q.position(1);"
         ],
         "animate": [
           "ctrl_move",
           {
             "look": "!v.am_sleeping && q.is_alive"
           },
+          "ctrl_air",
           "ctrl_idles",
           "ctrl_attack",
           "ctrl_hurt",

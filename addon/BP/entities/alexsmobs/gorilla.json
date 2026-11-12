@@ -94,58 +94,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "alexsmobs:banana",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:oak_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:spruce_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:birch_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:jungle_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:acacia_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:dark_oak_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:mangrove_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:cherry_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:azalea_leaves",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:sugar_cane",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:apple",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },
@@ -249,6 +197,59 @@
       "minecraft:on_target_escape": {
         "event": "alexsmobs:calm",
         "target": "self"
+      },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "minecraft:oak_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:spruce_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:birch_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:jungle_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:acacia_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:dark_oak_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:mangrove_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cherry_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:azalea_leaves",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:sugar_cane",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:apple",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:bamboo",
+            "heal_amount": 4
+          }
+        ]
       },
       "minecraft:behavior.tempt": {
         "priority": 4,

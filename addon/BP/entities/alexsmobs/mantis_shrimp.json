@@ -163,22 +163,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "alexsmobs:lobster_tail",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:cooked_lobster_tail",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:tropical_fish",
-              "heal_amount": 4
-            }
-          ]
         }
       },
       "alexsmobs:variant_0": {
@@ -295,7 +279,6 @@
         "can_path_over_water": false,
         "can_swim": true,
         "can_walk": true,
-        "can_sink": false,
         "avoid_damage_blocks": true
       },
       "minecraft:movement.amphibious": {
@@ -312,12 +295,14 @@
       "minecraft:behavior.random_swim": {
         "priority": 7,
         "speed_multiplier": 1,
-        "xz_dist": 12,
+        "xz_dist": 14,
         "y_dist": 1,
-        "interval": 100
+        "interval": 60
       },
-      "minecraft:behavior.float": {
-        "priority": 0
+      "minecraft:behavior.swim_idle": {
+        "priority": 8,
+        "idle_time": 5,
+        "success_rate": 0.1
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1

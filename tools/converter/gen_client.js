@@ -58,11 +58,20 @@ function hopWalk(C, amp, L = 0.8) {
   return bones;
 }
 // limbless ground animals (snake heads): sinuous yaw wave travelling down the body and tail
-function slither(C, amp, L = 1.2) {
+function slither(C, amp, L = 1.2, all = []) {
   const bones = {};
   const N = 8;
-  const chain = [C.body && C.body !== C.root ? C.body : null].concat(C.neck, C.head.slice(0, 1), C.tail).filter(Boolean);
-  chain.slice(0, 10).forEach((b, i) => { const kf = {}; for (let k = 0; k <= N; k++) kf[MO.tkey((L * k) / N)] = [0, MO.r2(Math.sin((2 * Math.PI * k) / N - i * 0.8) * 11 * amp), 0]; bones[b.name] = { rotation: kf }; });
+  let chain = [C.body && C.body !== C.root ? C.body : null].concat(C.neck, C.head.slice(0, 1), C.tail).filter(Boolean);
+  if (!chain.length) chain = all.filter(b => b.parent && !/jaw|mouth|tongue|eye/i.test(b.name));
+  const amps = Math.max(11, 20 - chain.length * 2);
+  chain.slice(0, 10).forEach((b, i) => {
+    const kf = {}, kp = {};
+    for (let k = 0; k <= N; k++) {
+      kf[MO.tkey((L * k) / N)] = [MO.r2(Math.sin((4 * Math.PI * k) / N + 1) * 3 * amp), MO.r2(Math.sin((2 * Math.PI * k) / N - i * 0.8) * amps * amp), MO.r2(Math.sin((2 * Math.PI * k) / N - i * 0.8 + 1.2) * 4 * amp)];
+      kp[MO.tkey((L * k) / N)] = [MO.r2(Math.sin((2 * Math.PI * k) / N - i * 0.8 + 0.5) * 0.9 * amp), 0, MO.r2(-Math.abs(Math.sin((2 * Math.PI * k) / N)) * 0.7 * amp)];
+    }
+    bones[b.name] = { rotation: kf, position: kp };
+  });
   return bones;
 }
 // gentle hover: body bobs, head and tail sway, wings/legs dangle (limbless flyers like the void worm)
@@ -73,6 +82,16 @@ function hover(C, L = 1.6) {
   for (const h of C.head.slice(0, 1)) { const kf = {}; for (let k = 0; k <= N; k++) kf[MO.tkey((L * k) / N)] = [MO.r2(Math.sin((2 * Math.PI * k) / N + 1) * 3), MO.r2(Math.sin((2 * Math.PI * k) / N) * 6), 0]; bones[h.name] = { rotation: kf }; }
   C.tail.slice(0, 6).forEach((t, i) => { const kf = {}; for (let k = 0; k <= N; k++) kf[MO.tkey((L * k) / N)] = [0, MO.r2(Math.sin((2 * Math.PI * k) / N - i * 0.7) * 10), 0]; bones[t.name] = { rotation: kf }; });
   return bones;
+}
+
+// limbless animals: head sways, tongue flicks (jaw bone) - used as the idle when nothing else matched
+function snakeIdle(C, all) {
+  const bones = {};
+  const L = 4;
+  const parts = all.filter(b => b.parent && !/jaw|mouth|tongue/i.test(b.name)).slice(0, 4);
+  parts.forEach((b, i) => { bones[b.name] = { rotation: { '0': [0, 0, 0], '1': [2, 7 - i, 1], '2': [0, 0, 0], '3': [-2, -7 + i, -1], '4': [0, 0, 0] } }; });
+  for (const j of all.filter(b => /jaw|mouth|tongue/i.test(b.name)).slice(0, 1)) bones[j.name] = { rotation: { '0': [0, 0, 0], '0.5': [0, 0, 0], '0.62': [16, 0, 0], '0.74': [0, 0, 0], '0.86': [16, 0, 0], '1': [0, 0, 0], '2.6': [0, 0, 0], '2.72': [14, 0, 0], '2.84': [0, 0, 0], '4': [0, 0, 0] } };
+  return Object.keys(bones).length ? { loop: true, animation_length: L, bones } : null;
 }
 
 function breathe(C) {
@@ -96,6 +115,81 @@ function genericBite(C) {
   if (C.body && C.body !== C.root) bones[C.body.name] = { position: { '0': [0, 0, 0], '0.12': [0, 0.3, 1.2], '0.26': [0, -0.3, -2.4], '0.55': [0, 0, 0] }, rotation: { '0': [0, 0, 0], '0.12': [-4, 0, 0], '0.26': [5, 0, 0], '0.55': [0, 0, 0] } };
   for (const l of C.arms.slice(0, 2)) bones[l.name] = { rotation: { '0': [0, 0, 0], '0.12': [-25, 0, 0], '0.3': [20, 0, 0], '0.55': [0, 0, 0] } };
   return mk({ animation_length: 0.55 }, bones);
+}
+
+// ------------------------------------------------------------------ jump / fall / land (Phoenix-style)
+// jump = pushing up a block (front end rises, forelegs reach up, hind legs drive); fall = a real drop (nose down,
+// forelegs reach); land = squash with a small overshoot. Written for any quadruped/biped rig from the bone classes.
+const K = list => Object.fromEntries(list.map(([t, v]) => [MO.tkey(t), { post: v, lerp_mode: 'catmullrom' }]));
+const Z = [0, 0, 0];
+function airAnims(C, f) {
+  const bz = (C.body && C.body.pivot[2]) || 0;
+  const limbs = C.legs.concat(C.arms);
+  if (!limbs.length) return null;
+  const front = limbs.filter(b => b.pivot[2] < bz - 0.5 || C.arms.includes(b));
+  const hind = limbs.filter(b => !front.includes(b));
+  const head = C.head[0] || C.neck[0];
+  const body = C.body && C.body !== C.root ? C.body : null;
+  const set = (bones, list, key, kf) => list.forEach(b => { bones[b.name] = Object.assign(bones[b.name] || {}, { [key]: kf }); });
+  const mk3 = (fn) => {
+    const bones = {};
+    fn(bones);
+    return Object.keys(bones).length ? bones : null;
+  };
+  const jump = mk3(b => {
+    if (body) b[body.name] = { rotation: K([[0, Z], [0.1, [-34, 0, 0]], [0.35, [-24, 0, 0]], [0.7, [-6, 0, 0]]]), position: K([[0, Z], [0.1, [0, 1.6 * f, 0.6 * f]], [0.7, Z]]) };
+    set(b, front, 'rotation', K([[0, Z], [0.1, [-80, 0, 0]], [0.35, [-56, 0, 0]], [0.7, [-14, 0, 0]]]));
+    set(b, hind, 'rotation', K([[0, Z], [0.08, [58, 0, 0]], [0.35, [38, 0, 0]], [0.7, [8, 0, 0]]]));
+    if (head) b[head.name] = { rotation: K([[0, Z], [0.1, [22, 0, 0]], [0.7, [6, 0, 0]]]) };
+    set(b, C.tail.slice(0, 3), 'rotation', K([[0, Z], [0.2, [-32, 0, 0]], [0.7, [-8, 0, 0]]]));
+    set(b, C.ears.slice(0, 4), 'rotation', K([[0, Z], [0.2, [-24, 0, 0]], [0.7, Z]]));
+  });
+  const fall = mk3(b => {
+    if (body) b[body.name] = { rotation: [24, 0, 0] };
+    set(b, front, 'rotation', [-58, 0, 0]);
+    set(b, hind, 'rotation', [-22, 0, 0]);
+    if (head) b[head.name] = { rotation: [-20, 0, 0] };
+    set(b, C.tail.slice(0, 3), 'rotation', [42, 0, 0]);
+    set(b, C.ears.slice(0, 4), 'rotation', [-34, 0, 0]);
+  });
+  const land = mk3(b => {
+    if (body) b[body.name] = { position: K([[0, [0, -2 * f, 0]], [0.12, [0, -3 * f, 0]], [0.36, [0, 0.4 * f, 0]], [0.7, Z]]), rotation: K([[0, [12, 0, 0]], [0.15, [16, 0, 0]], [0.4, [-3, 0, 0]], [0.7, Z]]) };
+    set(b, front, 'rotation', K([[0, [-18, 0, 0]], [0.15, [14, 0, 0]], [0.7, Z]]));
+    set(b, hind, 'rotation', K([[0, [18, 0, 0]], [0.15, [-12, 0, 0]], [0.7, Z]]));
+    if (head) b[head.name] = { rotation: K([[0, [18, 0, 0]], [0.18, [26, 0, 0]], [0.42, [-6, 0, 0]], [0.7, Z]]) };
+    set(b, C.tail.slice(0, 3), 'rotation', K([[0, [34, 0, 0]], [0.25, [-18, 0, 0]], [0.7, Z]]));
+  });
+  if (!jump || !fall || !land) return null;
+  return { jump: { animation_length: 0.7, loop: 'hold_on_last_frame', bones: jump }, fall: { loop: true, animation_length: 1, bones: fall }, land: { animation_length: 0.7, bones: land } };
+}
+
+// reuse the animations of the previous add-on (same bone names): extra idles, attacks, rolls, pounces...
+const LEGACY_DIR = path.join(C.ROOT, 'legacy', 'v1', 'RP', 'animations');
+const LEGACY_BASE = new Set(['walk', 'idle', 'run', 'hurt', 'swim', 'attack', 'pose', 'fly']);
+const LEGACY_ATTACK = /^(death_roll|throw|pounce|kick|box|dropkick|peck|spin)$/;
+function legacyAnims(id, bones) {
+  const f = path.join(LEGACY_DIR, id + '.animation.json');
+  if (!require('fs').existsSync(f)) return [];
+  let j;
+  try { j = JSON.parse(require('fs').readFileSync(f, 'utf8').replace(/^\uFEFF/, '')).animations || {}; } catch { return []; }
+  const out = [];
+  const hasStr = v => (typeof v === 'string' ? true : Array.isArray(v) ? v.some(hasStr) : v && typeof v === 'object' ? Object.values(v).some(hasStr) : false);
+  const lastKey = v => (Array.isArray(v) || typeof v !== 'object' ? 0 : Math.max(0, ...Object.keys(v).map(Number).filter(Number.isFinite)));
+  for (const [key, def] of Object.entries(j)) {
+    const name = key.split('.').slice(2).join('.');
+    if (!name || LEGACY_BASE.has(name) || /\s/.test(name)) continue;
+    const nb = {};
+    let len = def.animation_length || 0;
+    for (const [bn, ch] of Object.entries(def.bones || {})) {
+      if (!bones.has(bn)) continue;
+      const o = {};
+      for (const [k, v] of Object.entries(ch)) { if (hasStr(v)) continue; o[k] = v; len = Math.max(len, lastKey(v)); }
+      if (Object.keys(o).length) nb[bn] = o;
+    }
+    if (!Object.keys(nb).length) continue;
+    out.push({ short: 'lg_' + name.replace(/[^a-z0-9_]/gi, '_'), attack: LEGACY_ATTACK.test(name), def: { animation_length: MO.r3(len || 1), bones: nb } });
+  }
+  return out;
 }
 
 // ------------------------------------------------------------------ main
@@ -145,6 +239,7 @@ function generateClient(P) {
   const idleLoop = idleG.length ? MO.buildLoop(idleG, { maxL: 6, maxKeys: 110 }) : null;
   add('idle', idleLoop ? loopAnim(idleLoop) : null);
   add('breathe', breathe(CL));
+  if (!short.idle && !short.breathe && base === 'ground' && !CL.legs.length && !CL.arms.length) add('idle', snakeIdle(CL, main.bones));
   // walk / run (ground) or swim (water kinds): limb-driven Java gaits
   const limbG = limbOf(gBase);
   const walkLoop = limbG.length ? MO.buildLoop(limbG, { rate: 6, amp: 0.65, minL: 0.9, maxL: 3.2 }) : null;
@@ -153,7 +248,7 @@ function generateClient(P) {
     if (walkLoop) { add('walk', loopAnim(walkLoop, timeScale)); add('run', loopAnim(runLoop, timeScale)); }
     else {
       const hop = s.hops && (CL.legs.length || CL.arms.length);
-      const mkW = a => (hop ? hopWalk(CL, a) : (CL.legs.length || CL.arms.length ? genericWalk(CL, a) : slither(CL, a)));
+      const mkW = a => (hop ? hopWalk(CL, a) : (CL.legs.length || CL.arms.length ? genericWalk(CL, a) : slither(CL, a, 1.2, main.bones)));
       const gw = mkW(0.65), gr = mkW(1.0);
       if (Object.keys(gw).length) { add('walk', mk({ loop: true, animation_length: hop ? 0.8 : 1.2, anim_time_update: timeScale.anim_time_update }, gw)); add('run', mk({ loop: true, animation_length: hop ? 0.8 : 1.2, anim_time_update: timeScale.anim_time_update }, gr)); usedGait = 'generic'; }
     }
@@ -247,6 +342,8 @@ function generateClient(P) {
     anims[`${prefix}.${sh}`] = def; short[sh] = `${prefix}.${sh}`;
     if (ATTACK_RE.test(name.replace(/^ANIMATION_/, ''))) attackNames.push(sh); else if (!IDLE_SKIP_RE.test(name)) javaIdles.push(sh);
   }
+  const legacy = legacyAnims(id, new Set(main.bones.map(b => b.name)));
+  for (const l of legacy) { anims[`${prefix}.${l.short}`] = l.def; short[l.short] = `${prefix}.${l.short}`; (l.attack ? attackNames : javaIdles).push(l.short); }
   const hurtful = (e.attrs && e.attrs.damage) || s.temper === 'hostile' || s.temper === 'predator' || s.temper === 'neutral';
   if (!attackNames.length && hurtful && (CL.head.length || CL.arms.length)) { add('attack_bite', genericBite(CL)); attackNames.push('attack_bite'); }
   const death = A.deathAnims(prefix, main.bones, kindOf);
@@ -255,6 +352,13 @@ function generateClient(P) {
   const idleList = javaIdles.slice();
   for (const [k, v] of Object.entries(generic)) { if (!v.bones || !Object.keys(v.bones).length) continue; anims[k] = v; const sh = k.slice(prefix.length + 1); short[sh] = k; idleList.push(sh); }
   const canIdle = base === 'ground' && !s.alwaysFly && idleList.length > 0;
+
+  // ---- jump / fall / land for walkers (adults and babies share the rig)
+  const bodyH = (main.bounds && main.bounds.maxY) || 14;
+  const sizeF = Math.max(0.7, Math.min(2.5, bodyH / 14));
+  const airW = sizeF > 1.6 ? 0.55 : sizeF > 1.2 ? 0.75 : 1;
+  const air = base === 'ground' && !['flyer', 'hover', 'water', 'whale'].includes(kindOf) && !s.hops ? airAnims(CL, sizeF) : null;
+  if (air) for (const [k, v] of Object.entries(air)) add('air_' + k, v);
 
   // ---- animation file
   for (const [k, v] of Object.entries(anims)) { if (v && v.loop === undefined) delete v.loop; }
@@ -274,6 +378,8 @@ function generateClient(P) {
     'v.idle_pick = v.idle_pick ?? 0;',
     'v.atk_pick = v.atk_pick ?? 0;',
     'v.death_pick = v.death_pick ?? 0;',
+    'v.life_vy = math.clamp((q.position(1) - (v.life_py ?? q.position(1))) / math.max(q.delta_time, 0.01), -30, 30);',
+    'v.life_py = q.position(1);',
   ];
 
   // ---- controllers
@@ -341,6 +447,15 @@ function generateClient(P) {
     attackNames.forEach((n, i) => { st['a' + i] = { animations: [n], blend_transition: 0.12, transitions: [{ default: 'q.all_animations_finished' }] }; });
     ctrl[cid('attack')] = { initial_state: 'default', states: st };
   }
+  if (air) {
+    const aw = `q.is_baby ? 1 : ${airW}`;
+    ctrl[cid('air')] = { initial_state: 'default', states: {
+      default: { transitions: [{ jump: 'v.life_vy > 2 && !q.is_in_water && !v.am_sleeping' }, { fall: 'v.life_vy < -5 && !q.is_on_ground && !q.is_in_water' }] },
+      jump: { animations: [{ air_jump: aw }], blend_transition: 0.12, transitions: [{ land: 'q.state_time > 0.3 && v.life_vy <= 0.5 && q.is_on_ground' }, { fall: 'v.life_vy < -5' }, { default: 'q.is_in_water || q.state_time > 2' }] },
+      fall: { animations: [{ air_fall: aw }], blend_transition: 0.25, transitions: [{ land: 'q.is_on_ground' }, { default: 'q.is_in_water' }] },
+      land: { animations: [{ air_land: aw }], blend_transition: 0.08, transitions: [{ default: 'q.any_animation_finished' }, { jump: 'v.life_vy > 2' }] },
+    } };
+  }
   ctrl[cid('hurt')] = { initial_state: 'default', states: {
     default: { transitions: [{ hurt: 'q.hurt_time > 0 && q.is_alive' }] },
     hurt: { animations: ['hurt'], blend_transition: 0.05, transitions: [{ default: 'q.all_animations_finished' }] },
@@ -367,7 +482,7 @@ function generateClient(P) {
   animations.ctrl_move = cid('move');
   if (short.look) animate.push({ look: '!v.am_sleeping && q.is_alive' });
   if (short.fix) animate.push('fix');
-  for (const n of ['idles', 'attack', 'hurt', 'death']) if (ctrl[cid(n)]) { animations['ctrl_' + n] = cid(n); animate.push('ctrl_' + n); }
+  for (const n of ['air', 'idles', 'attack', 'hurt', 'death']) if (ctrl[cid(n)]) { animations['ctrl_' + n] = cid(n); animate.push('ctrl_' + n); }
   if (short.baby) animate.push({ baby: 'q.is_baby' });
 
   const nV = variants.length;
@@ -400,7 +515,7 @@ function generateClient(P) {
     rcs.push(sleeps ? { [rcMain + '.glow']: '!v.am_sleeping' } : rcMain + '.glow');
   }
   U.writeJson(path.join(C.RP, 'render_controllers', NS, `${id}.render_controllers.json`), { format_version: '1.10.0', render_controllers: rc });
-  const scripts = { initialize: ['v.is_moving = 0;', 'v.is_sprinting = 0;', 'v.anim_speed = 1;', 'v.am_flying = 0;', 'v.am_sleeping = 0;', 'v.am_standing = 0;'], pre_animation: pre, animate };
+  const scripts = { initialize: ['v.is_moving = 0;', 'v.is_sprinting = 0;', 'v.anim_speed = 1;', 'v.am_flying = 0;', 'v.am_sleeping = 0;', 'v.am_standing = 0;', 'v.life_py = q.position(1);', 'v.life_vy = 0;'], pre_animation: pre, animate };
   if (e.scale) scripts.scale = String(e.scale[0]);
   if (s.scaleVariant) scripts.scale = `q.variant == 1 ? ${s.scaleVariant[1]} : (q.variant == 2 ? ${s.scaleVariant[2]} : 1)`;
   U.writeJson(path.join(C.RP, 'entity', NS, `${id}.entity.json`), {

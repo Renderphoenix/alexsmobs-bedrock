@@ -22,7 +22,9 @@
         },
         "minecraft:ageable": {
           "duration": 1200,
-          "feed_items": [],
+          "feed_items": [
+            "minecraft:salmon"
+          ],
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -38,6 +40,109 @@
         }
       },
       "alexsmobs:adult": {},
+      "alexsmobs:wild": {
+        "minecraft:tameable": {
+          "probability": 0.33,
+          "tame_items": [
+            "minecraft:salmon"
+          ],
+          "tame_event": {
+            "event": "alexsmobs:on_tame",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "reselect_targets": true,
+          "within_radius": 24,
+          "must_see_forget_duration": 10,
+          "attack_interval": 20,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "seal"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "dolphin"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "cod"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "salmon"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "squid"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "turtle"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "guardian"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "moose"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "polar_bear"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "drowned"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "elder_guardian"
+                  }
+                ]
+              },
+              "max_dist": 16
+            }
+          ]
+        }
+      },
+      "alexsmobs:tamed": {
+        "minecraft:is_tamed": {},
+        "minecraft:sittable": {},
+        "minecraft:behavior.stay_while_sitting": {
+          "priority": 1
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 4,
+          "speed_multiplier": 1.1,
+          "start_distance": 10,
+          "stop_distance": 3
+        },
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 2
+        }
+      },
       "alexsmobs:variant_0": {
         "minecraft:variant": {
           "value": 0
@@ -176,78 +281,6 @@
       "minecraft:behavior.hurt_by_target": {
         "priority": 1
       },
-      "minecraft:behavior.nearest_attackable_target": {
-        "priority": 2,
-        "must_see": true,
-        "reselect_targets": true,
-        "within_radius": 24,
-        "must_see_forget_duration": 10,
-        "attack_interval": 20,
-        "entity_types": [
-          {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "seal"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "dolphin"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "cod"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "salmon"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "squid"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "turtle"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "guardian"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "moose"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "polar_bear"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "drowned"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "elder_guardian"
-                }
-              ]
-            },
-            "max_dist": 16
-          }
-        ]
-      },
       "minecraft:on_target_acquired": {
         "event": "alexsmobs:angry",
         "target": "self"
@@ -255,6 +288,15 @@
       "minecraft:on_target_escape": {
         "event": "alexsmobs:calm",
         "target": "self"
+      },
+      "minecraft:behavior.tempt": {
+        "priority": 4,
+        "speed_multiplier": 1.1,
+        "within_radius": 10,
+        "items": [
+          "minecraft:salmon"
+        ],
+        "can_tempt_vertically": false
       }
     },
     "events": {
@@ -268,8 +310,27 @@
           "alexsmobs:angry": false
         }
       },
+      "alexsmobs:on_tame": {
+        "remove": {
+          "component_groups": [
+            "alexsmobs:wild"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "alexsmobs:tamed"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "alexsmobs:wild"
+              ]
+            }
+          },
           {
             "randomize": [
               {
@@ -320,6 +381,7 @@
           {
             "add": {
               "component_groups": [
+                "alexsmobs:wild",
                 "alexsmobs:baby"
               ]
             }
@@ -365,6 +427,7 @@
       "minecraft:entity_transformed": {
         "add": {
           "component_groups": [
+            "alexsmobs:wild",
             "alexsmobs:adult"
           ]
         }

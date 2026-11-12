@@ -121,58 +121,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "alexsmobs:acacia_blossom",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:dandelion",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:poppy",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:blue_orchid",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:allium",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:azure_bluet",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:red_tulip",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:orange_tulip",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:white_tulip",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:pink_tulip",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:oxeye_daisy",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:cornflower",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },
@@ -299,6 +247,79 @@
       "minecraft:on_target_escape": {
         "event": "alexsmobs:calm",
         "target": "self"
+      },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "alexsmobs:acacia_blossom",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:dandelion",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:poppy",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:blue_orchid",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:allium",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:azure_bluet",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:red_tulip",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:orange_tulip",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:white_tulip",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:pink_tulip",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:oxeye_daisy",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cornflower",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:lily_of_the_valley",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:sunflower",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:lilac",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:rose_bush",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:peony",
+            "heal_amount": 4
+          }
+        ]
       },
       "minecraft:behavior.tempt": {
         "priority": 4,

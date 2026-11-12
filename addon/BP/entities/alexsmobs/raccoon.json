@@ -89,42 +89,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "alexsmobs:crocodile_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:platypus_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:emu_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:terrapin_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:caiman_egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:egg",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:sugar",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:bread",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },
@@ -279,6 +243,15 @@
             "max_dist": 8,
             "walk_speed_multiplier": 1.3,
             "sprint_speed_multiplier": 1.6
+          }
+        ]
+      },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "minecraft:sugar",
+            "heal_amount": 4
           }
         ]
       },

@@ -168,6 +168,31 @@
         "priority": 1,
         "speed_multiplier": 1.5
       },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "minecraft:wheat_seeds",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:pumpkin_seeds",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:melon_seeds",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:beetroot_seeds",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:glow_berries",
+            "heal_amount": 4
+          }
+        ]
+      },
       "minecraft:behavior.tempt": {
         "priority": 4,
         "speed_multiplier": 1.1,

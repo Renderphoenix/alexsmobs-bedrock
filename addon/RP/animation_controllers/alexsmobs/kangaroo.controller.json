@@ -106,7 +106,7 @@
         },
         "pick": {
           "on_entry": [
-            "v.idle_pick = math.random_integer(0, 4);"
+            "v.idle_pick = math.random_integer(0, 5);"
           ],
           "transitions": [
             {
@@ -123,6 +123,9 @@
             },
             {
               "a4": "v.idle_pick == 4"
+            },
+            {
+              "a5": "v.idle_pick == 5"
             }
           ]
         },
@@ -139,7 +142,7 @@
         },
         "a1": {
           "animations": [
-            "idle_look"
+            "lg_idle_graze"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -150,7 +153,7 @@
         },
         "a2": {
           "animations": [
-            "idle_sniff"
+            "idle_look"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -161,7 +164,7 @@
         },
         "a3": {
           "animations": [
-            "idle_shake"
+            "idle_sniff"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -171,6 +174,17 @@
           ]
         },
         "a4": {
+          "animations": [
+            "idle_shake"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.1 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a5": {
           "animations": [
             "idle_tail"
           ],
@@ -195,7 +209,7 @@
         },
         "pick": {
           "on_entry": [
-            "v.atk_pick = math.random_integer(0, 2);"
+            "v.atk_pick = math.random_integer(0, 4);"
           ],
           "transitions": [
             {
@@ -206,6 +220,12 @@
             },
             {
               "a2": "v.atk_pick == 2"
+            },
+            {
+              "a3": "v.atk_pick == 3"
+            },
+            {
+              "a4": "v.atk_pick == 4"
             }
           ]
         },
@@ -234,6 +254,28 @@
         "a2": {
           "animations": [
             "punch_l"
+          ],
+          "blend_transition": 0.12,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ]
+        },
+        "a3": {
+          "animations": [
+            "lg_box"
+          ],
+          "blend_transition": 0.12,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ]
+        },
+        "a4": {
+          "animations": [
+            "lg_dropkick"
           ],
           "blend_transition": 0.12,
           "transitions": [

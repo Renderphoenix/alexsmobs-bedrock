@@ -106,7 +106,7 @@
         },
         "pick": {
           "on_entry": [
-            "v.idle_pick = math.random_integer(0, 7);"
+            "v.idle_pick = math.random_integer(0, 9);"
           ],
           "transitions": [
             {
@@ -132,6 +132,12 @@
             },
             {
               "a7": "v.idle_pick == 7"
+            },
+            {
+              "a8": "v.idle_pick == 8"
+            },
+            {
+              "a9": "v.idle_pick == 9"
             }
           ]
         },
@@ -181,7 +187,7 @@
         },
         "a4": {
           "animations": [
-            "idle_look"
+            "lg_trumpet"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -192,7 +198,7 @@
         },
         "a5": {
           "animations": [
-            "idle_sniff"
+            "lg_eat"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -203,7 +209,7 @@
         },
         "a6": {
           "animations": [
-            "idle_shake"
+            "idle_look"
           ],
           "blend_transition": 0.35,
           "transitions": [
@@ -213,6 +219,28 @@
           ]
         },
         "a7": {
+          "animations": [
+            "idle_sniff"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.1 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a8": {
+          "animations": [
+            "idle_shake"
+          ],
+          "blend_transition": 0.35,
+          "transitions": [
+            {
+              "default": "q.all_animations_finished || q.modified_move_speed >= 0.1 || v.am_sleeping || q.has_target || !q.is_alive"
+            }
+          ]
+        },
+        "a9": {
           "animations": [
             "idle_tail"
           ],
@@ -267,6 +295,72 @@
           "transitions": [
             {
               "default": "q.all_animations_finished"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.alexsmobs.elephant.air": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "jump": "v.life_vy > 2 && !q.is_in_water && !v.am_sleeping"
+            },
+            {
+              "fall": "v.life_vy < -5 && !q.is_on_ground && !q.is_in_water"
+            }
+          ]
+        },
+        "jump": {
+          "animations": [
+            {
+              "air_jump": "q.is_baby ? 1 : 0.55"
+            }
+          ],
+          "blend_transition": 0.12,
+          "transitions": [
+            {
+              "land": "q.state_time > 0.3 && v.life_vy <= 0.5 && q.is_on_ground"
+            },
+            {
+              "fall": "v.life_vy < -5"
+            },
+            {
+              "default": "q.is_in_water || q.state_time > 2"
+            }
+          ]
+        },
+        "fall": {
+          "animations": [
+            {
+              "air_fall": "q.is_baby ? 1 : 0.55"
+            }
+          ],
+          "blend_transition": 0.25,
+          "transitions": [
+            {
+              "land": "q.is_on_ground"
+            },
+            {
+              "default": "q.is_in_water"
+            }
+          ]
+        },
+        "land": {
+          "animations": [
+            {
+              "air_land": "q.is_baby ? 1 : 0.55"
+            }
+          ],
+          "blend_transition": 0.08,
+          "transitions": [
+            {
+              "default": "q.any_animation_finished"
+            },
+            {
+              "jump": "v.life_vy > 2"
             }
           ]
         }

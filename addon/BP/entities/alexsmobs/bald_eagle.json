@@ -161,58 +161,6 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 2
-        },
-        "minecraft:healable": {
-          "items": [
-            {
-              "item": "alexsmobs:blobfish",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:flying_fish",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:raw_catfish",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:cooked_catfish",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:cod",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:salmon",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:tropical_fish",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:pufferfish",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:cooked_cod",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:cooked_salmon",
-              "heal_amount": 4
-            },
-            {
-              "item": "minecraft:rotten_flesh",
-              "heal_amount": 4
-            },
-            {
-              "item": "alexsmobs:fish_oil",
-              "heal_amount": 4
-            }
-          ]
         }
       }
     },
@@ -334,6 +282,51 @@
       "minecraft:on_target_escape": {
         "event": "alexsmobs:calm",
         "target": "self"
+      },
+      "minecraft:healable": {
+        "force_use": true,
+        "items": [
+          {
+            "item": "alexsmobs:blobfish",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:flying_fish",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:raw_catfish",
+            "heal_amount": 4
+          },
+          {
+            "item": "alexsmobs:cooked_catfish",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cod",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:salmon",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:tropical_fish",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:pufferfish",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cooked_cod",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:cooked_salmon",
+            "heal_amount": 4
+          }
+        ]
       },
       "minecraft:behavior.tempt": {
         "priority": 4,

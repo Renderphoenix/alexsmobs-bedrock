@@ -24,6 +24,8 @@
         "flick_tail": "animation.alexsmobs.gazelle.flick_tail",
         "flick_ears": "animation.alexsmobs.gazelle.flick_ears",
         "eat_grass": "animation.alexsmobs.gazelle.eat_grass",
+        "lg_idle_graze": "animation.alexsmobs.gazelle.lg_idle_graze",
+        "lg_idle_alert": "animation.alexsmobs.gazelle.lg_idle_alert",
         "attack_bite": "animation.alexsmobs.gazelle.attack_bite",
         "death_0": "animation.alexsmobs.gazelle.death_0",
         "death_1": "animation.alexsmobs.gazelle.death_1",
@@ -31,7 +33,11 @@
         "idle_look": "animation.alexsmobs.gazelle.idle_look",
         "idle_sniff": "animation.alexsmobs.gazelle.idle_sniff",
         "idle_tail": "animation.alexsmobs.gazelle.idle_tail",
+        "air_jump": "animation.alexsmobs.gazelle.air_jump",
+        "air_fall": "animation.alexsmobs.gazelle.air_fall",
+        "air_land": "animation.alexsmobs.gazelle.air_land",
         "ctrl_move": "controller.animation.alexsmobs.gazelle.move",
+        "ctrl_air": "controller.animation.alexsmobs.gazelle.air",
         "ctrl_idles": "controller.animation.alexsmobs.gazelle.idles",
         "ctrl_attack": "controller.animation.alexsmobs.gazelle.attack",
         "ctrl_hurt": "controller.animation.alexsmobs.gazelle.hurt",
@@ -44,7 +50,9 @@
           "v.anim_speed = 1;",
           "v.am_flying = 0;",
           "v.am_sleeping = 0;",
-          "v.am_standing = 0;"
+          "v.am_standing = 0;",
+          "v.life_py = q.position(1);",
+          "v.life_vy = 0;"
         ],
         "pre_animation": [
           "v.is_moving = q.modified_move_speed >= 0.087;",
@@ -56,13 +64,16 @@
           "v.idle_wait = v.idle_wait ?? 4;",
           "v.idle_pick = v.idle_pick ?? 0;",
           "v.atk_pick = v.atk_pick ?? 0;",
-          "v.death_pick = v.death_pick ?? 0;"
+          "v.death_pick = v.death_pick ?? 0;",
+          "v.life_vy = math.clamp((q.position(1) - (v.life_py ?? q.position(1))) / math.max(q.delta_time, 0.01), -30, 30);",
+          "v.life_py = q.position(1);"
         ],
         "animate": [
           "ctrl_move",
           {
             "look": "!v.am_sleeping && q.is_alive"
           },
+          "ctrl_air",
           "ctrl_idles",
           "ctrl_attack",
           "ctrl_hurt",
