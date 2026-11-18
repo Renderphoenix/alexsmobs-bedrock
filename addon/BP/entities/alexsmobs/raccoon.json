@@ -11,6 +11,12 @@
           "type": "bool",
           "default": false,
           "client_sync": true
+        },
+        "alexsmobs:bandana": {
+          "type": "int",
+          "range": [0, 16],
+          "default": 0,
+          "client_sync": true
         }
       }
     },

@@ -220,7 +220,7 @@ function legacyAnims(id, bones) {
 
 // ------------------------------------------------------------------ main
 function generateClient(P) {
-  const { e, s, id, full, prefix, geos, main, kindOf, variants, sleepTex, angryTex, glow, overlay, babyTex, ctx } = P;
+  const { e, s, id, full, prefix, geos, main, kindOf, variants, sleepTex, angryTex, glow, overlay, babyTex, bandana, rigby, ctx } = P;
   const anims = {};
   const short = {}; // short name -> full id
   const add = (name, def) => { if (!def) return; anims[`${prefix}.${name}`] = def; short[name] = `${prefix}.${name}`; };
@@ -321,6 +321,15 @@ function generateClient(P) {
     const desc = n => main.bones.filter(b => (b.parent && (b.parent.name || b.parent)) === n).flatMap(b => [b.name, ...desc(b.name)]);
     FL.applyFlap(id, anims[prefix + ".fly"], desc(FL.FLAP[id].R).concat(desc(FL.FLAP[id].L)));
   }
+  // Easter egg dance (Java: cockroach, maned wolf, rain frog dance near a jukebox): the model's own dance pose + gaits
+  let hasDance = false;
+  if (s.dances && hasProg('dance')) {
+    const envD = MO.stateEnv('dance', progress);
+    const gD = MO.activeGaits(raw, envD);
+    const dD = deltaFor('dance');
+    const lpD = gD.length || dD ? MO.buildLoop(gD, { rate: 6, amp: 1.0, minL: 0.5, maxL: 3, maxKeys: 100, delta: dD || undefined }) : null;
+    if (lpD) { add('dance', loopAnim(lpD)); hasDance = true; }
+  }
   // postures from the Java pose (sit / sleep / stand)
   const POSE = {};
   for (const st of ['sit', 'sleep', 'stand']) {
@@ -406,6 +415,7 @@ function generateClient(P) {
     `v.am_flying = ${flyExpr};`,
     `v.am_sleeping = ${sleeps ? `q.property('${NS}:sleeping')` : '0'};`,
     `v.am_standing = ${standExpr};`,
+    `v.am_dancing = ${s.dances ? `q.property('${NS}:dancing') && q.is_alive` : '0'};`,
     'v.idle_wait = v.idle_wait ?? 4;',
     'v.idle_pick = v.idle_pick ?? 0;',
     'v.atk_pick = v.atk_pick ?? 0;',
@@ -419,19 +429,19 @@ function generateClient(P) {
   const canSwimState = hasSwim && base !== 'swim';
   const avail = {
     sleep: sleeps && POSE.sleep, sit: POSE.sit, stand: POSE.stand,
-    fly: hasFly && base !== 'fly', swim: canSwimState, run: !!short.run, walk: !!short.walk,
+    fly: hasFly && base !== 'fly', swim: canSwimState, run: !!short.run, walk: !!short.walk, dance: hasDance,
   };
   const cond = {
     sleep: 'v.am_sleeping', sit: 'q.is_sitting && !v.am_sleeping', stand: 'v.am_standing', fly: 'v.am_flying && !v.am_sleeping',
-    swim: 'q.is_in_water && v.is_moving', run: 'v.is_sprinting', walk: 'v.is_moving',
+    swim: 'q.is_in_water && v.is_moving', run: 'v.is_sprinting', walk: 'v.is_moving', dance: 'v.am_dancing && !v.am_sleeping',
   };
-  const order = ['sleep', 'sit', 'fly', 'swim', 'stand', 'run', 'walk'];
-  const BLEND = { idle: 0.3, walk: 0.3, run: 0.25, swim: 0.4, fly: 0.3, sit: 0.5, sleep: 0.7, stand: 0.45 };
+  const order = ['dance', 'sleep', 'sit', 'fly', 'swim', 'stand', 'run', 'walk'];
+  const BLEND = { dance: 0.3, idle: 0.3, walk: 0.3, run: 0.25, swim: 0.4, fly: 0.3, sit: 0.5, sleep: 0.7, stand: 0.45 };
   const route = self => order.filter(k => avail[k] && k !== self).map(k => ({ [k]: cond[k] })).concat(self === 'idle' ? [] : [{ idle: 'true' }]);
   const stateAnims = {
     idle: base === 'swim' ? ['idle', 'breathe'] : ['idle', 'breathe'].filter(n => short[n]),
     walk: ['walk'], run: ['run'], swim: ['swim'], fly: ['fly'],
-    sit: ['pose_sit', 'breathe'], sleep: ['pose_sleep', 'breathe'], stand: ['pose_stand', 'breathe'],
+    dance: ['dance'], sit: ['pose_sit', 'breathe'], sleep: ['pose_sleep', 'breathe'], stand: ['pose_stand', 'breathe'],
   };
   if (base === 'fly') { stateAnims.idle = ['fly']; }
   let initial = 'idle';
@@ -453,9 +463,9 @@ function generateClient(P) {
       rt.sort((a, b) => (a.walk ? 1 : 0) - (b.walk ? 1 : 0));
       states.run = stat('run', rt);
     }
-    for (const k of ['sleep', 'sit', 'stand', 'fly', 'swim']) {
+    for (const k of ['dance', 'sleep', 'sit', 'stand', 'fly', 'swim']) {
       if (!avail[k]) continue;
-      const back = { sleep: '!v.am_sleeping', sit: '!q.is_sitting || v.am_sleeping', stand: '!v.am_standing', fly: '!v.am_flying', swim: '!q.is_in_water || !v.is_moving' }[k];
+      const back = { dance: '!v.am_dancing', sleep: '!v.am_sleeping', sit: '!q.is_sitting || v.am_sleeping', stand: '!v.am_standing', fly: '!v.am_flying', swim: '!q.is_in_water || !v.is_moving' }[k];
       states[k] = stat(k, [{ idle: back }]);
     }
   }
@@ -507,6 +517,8 @@ function generateClient(P) {
   if (glow) textures.glow = texPath(glow);
   if (overlay) textures.overlay = texPath(overlay);
   if (babyTex) textures.baby = texPath(babyTex);
+  if (rigby) textures.rigby = texPath(rigby);
+  if (bandana) for (let i = 0; i < 23; i++) textures['bandana' + i] = texPath(bandana + '_' + i);
   const geometry = {};
   geos.forEach(g => (geometry[g.key] = g.geoId));
   const animations = Object.assign({}, short);
@@ -527,6 +539,8 @@ function generateClient(P) {
   else if (sleepTex) texIndex = `(v.am_sleeping ? ${2 * nV} : 0) + ${varIdx}`;
   else if (angryTex) texIndex = `(q.property('${NS}:angry') ? ${nV} : 0) + ${varIdx}`;
   if (babyTex) { texArr.push('Texture.baby'); texIndex = `q.is_baby ? ${texArr.length - 1} : (${texIndex})`; }
+  // Easter egg: a mob named Rigby gets the Rigby skin (Java does the same for the raccoon)
+  if (rigby) { texArr.push('Texture.rigby'); texIndex = `q.is_name_any('Rigby') ? ${texArr.length - 1} : (${texIndex})`; }
   let geoExpr = 'Geometry.default';
   const geoArrays = {};
   if (geos.length > 1) {
@@ -539,8 +553,17 @@ function generateClient(P) {
   const rc = { [rcMain]: Object.assign({ arrays: Object.assign({ textures: { 'Array.skins': texArr } }, geos.length > 1 ? { geometries: geoArrays } : {}) }, { geometry: geoExpr, materials: [{ '*': 'Material.default' }], textures: [`Array.skins[${texIndex}]`] }) };
   const rcs = [rcMain];
   if (overlay) {
-    rc[rcMain + '.overlay'] = Object.assign(geos.length > 1 ? { arrays: { geometries: geoArrays } } : {}, { geometry: geoExpr, materials: [{ '*': 'Material.overlay' }], textures: ['Texture.overlay'] });
+    // the cockroach "overlay" is the maracas texture: only the maraca bones are drawn, and only while the cockroach holds them
+    const partVis = s.maracas ? { part_visibility: [{ '*': false }, { 'maraca_*': `q.property('${NS}:maracas')` }] } : {};
+    rc[rcMain + '.overlay'] = Object.assign(geos.length > 1 ? { arrays: { geometries: geoArrays } } : {}, { geometry: geoExpr, materials: [{ '*': 'Material.overlay' }], textures: ['Texture.overlay'] }, partVis);
     rcs.push(rcMain + '.overlay');
+  }
+  if (bandana) {
+    // dyed bandana: pre-tinted textures 0-15 = dye colour (alexsmobs:bandana is 1-16), 16-22 = rainbow frames for the name jeb_
+    const bIdx = `q.is_name_any('jeb_') ? 16 + math.mod(math.floor(q.life_time * 6), 7) : q.property('${NS}:bandana') - 1`;
+    rc[rcMain + '.bandana'] = Object.assign(geos.length > 1 ? { arrays: { geometries: geoArrays } } : {}, { geometry: geoExpr, materials: [{ '*': 'Material.overlay' }], textures: ['Array.bandana[' + bIdx + ']'] });
+    rc[rcMain + '.bandana'].arrays = Object.assign(rc[rcMain + '.bandana'].arrays || {}, { textures: { 'Array.bandana': Array.from({ length: 23 }, (_, i) => 'Texture.bandana' + i) } });
+    rcs.push({ [rcMain + '.bandana']: `q.property('${NS}:bandana') > 0 || q.is_name_any('jeb_')` });
   }
   if (glow) {
     rc[rcMain + '.glow'] = Object.assign(geos.length > 1 ? { arrays: { geometries: geoArrays } } : {}, { geometry: geoExpr, materials: [{ '*': 'Material.glow' }], textures: ['Texture.glow'], ignore_lighting: true });

@@ -11,6 +11,11 @@
           "type": "bool",
           "default": false,
           "client_sync": true
+        },
+        "alexsmobs:dancing": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
         }
       }
     },

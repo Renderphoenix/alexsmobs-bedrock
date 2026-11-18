@@ -20,6 +20,25 @@
       "textures": [
         "Array.skins[0]"
       ]
+    },
+    "controller.render.alexsmobs.cockroach.overlay": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.overlay"
+        }
+      ],
+      "textures": [
+        "Texture.overlay"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "maraca_*": "q.property('alexsmobs:maracas')"
+        }
+      ]
     }
   }
 }

@@ -12,6 +12,9 @@
           "blend_transition": 0.3,
           "transitions": [
             {
+              "dance": "v.am_dancing && !v.am_sleeping"
+            },
+            {
               "run": "v.is_sprinting"
             },
             {
@@ -25,6 +28,9 @@
           ],
           "blend_transition": 0.3,
           "transitions": [
+            {
+              "dance": "v.am_dancing && !v.am_sleeping"
+            },
             {
               "run": "v.is_sprinting"
             },
@@ -40,10 +46,24 @@
           "blend_transition": 0.25,
           "transitions": [
             {
+              "dance": "v.am_dancing && !v.am_sleeping"
+            },
+            {
               "idle": "!v.is_moving"
             },
             {
               "walk": "q.modified_move_speed < 0.320"
+            }
+          ]
+        },
+        "dance": {
+          "animations": [
+            "dance"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "idle": "!v.am_dancing"
             }
           ]
         }

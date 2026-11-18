@@ -11,6 +11,16 @@
           "type": "bool",
           "default": false,
           "client_sync": true
+        },
+        "alexsmobs:dancing": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "alexsmobs:maracas": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
         }
       }
     },

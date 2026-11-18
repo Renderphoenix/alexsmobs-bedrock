@@ -49,6 +49,7 @@
           "v.am_flying = 1;",
           "v.am_sleeping = 0;",
           "v.am_standing = 0;",
+          "v.am_dancing = 0;",
           "v.idle_wait = v.idle_wait ?? 4;",
           "v.idle_pick = v.idle_pick ?? 0;",
           "v.atk_pick = v.atk_pick ?? 0;",

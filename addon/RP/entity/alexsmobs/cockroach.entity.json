@@ -9,7 +9,8 @@
         "glow": "entity_alphatest"
       },
       "textures": {
-        "v0": "textures/entity/alexsmobs/cockroach"
+        "v0": "textures/entity/alexsmobs/cockroach",
+        "overlay": "textures/entity/alexsmobs/cockroach_maracas"
       },
       "geometry": {
         "default": "geometry.alexsmobs.cockroach"
@@ -19,6 +20,7 @@
         "breathe": "animation.alexsmobs.cockroach.breathe",
         "walk": "animation.alexsmobs.cockroach.walk",
         "run": "animation.alexsmobs.cockroach.run",
+        "dance": "animation.alexsmobs.cockroach.dance",
         "look": "animation.alexsmobs.cockroach.look",
         "baby": "animation.alexsmobs.cockroach.baby",
         "death_0": "animation.alexsmobs.cockroach.death_0",
@@ -55,6 +57,7 @@
           "v.am_flying = 0;",
           "v.am_sleeping = 0;",
           "v.am_standing = 0;",
+          "v.am_dancing = q.property('alexsmobs:dancing') && q.is_alive;",
           "v.idle_wait = v.idle_wait ?? 4;",
           "v.idle_pick = v.idle_pick ?? 0;",
           "v.atk_pick = v.atk_pick ?? 0;",
@@ -78,7 +81,8 @@
         "scale": "0.85"
       },
       "render_controllers": [
-        "controller.render.alexsmobs.cockroach"
+        "controller.render.alexsmobs.cockroach",
+        "controller.render.alexsmobs.cockroach.overlay"
       ],
       "spawn_egg": {
         "base_color": "#0d0909",

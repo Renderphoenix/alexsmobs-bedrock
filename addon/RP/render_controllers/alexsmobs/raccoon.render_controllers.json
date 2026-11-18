@@ -7,7 +7,8 @@
           "Array.skins": [
             "Texture.v0",
             "Texture.v0",
-            "Texture.v0"
+            "Texture.v0",
+            "Texture.rigby"
           ]
         }
       },
@@ -18,8 +19,48 @@
         }
       ],
       "textures": [
-        "Array.skins[0]"
+        "Array.skins[q.is_name_any('Rigby') ? 3 : (0)]"
       ]
+    },
+    "controller.render.alexsmobs.raccoon.bandana": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.overlay"
+        }
+      ],
+      "textures": [
+        "Array.bandana[q.is_name_any('jeb_') ? 16 + math.mod(math.floor(q.life_time * 6), 7) : q.property('alexsmobs:bandana') - 1]"
+      ],
+      "arrays": {
+        "textures": {
+          "Array.bandana": [
+            "Texture.bandana0",
+            "Texture.bandana1",
+            "Texture.bandana2",
+            "Texture.bandana3",
+            "Texture.bandana4",
+            "Texture.bandana5",
+            "Texture.bandana6",
+            "Texture.bandana7",
+            "Texture.bandana8",
+            "Texture.bandana9",
+            "Texture.bandana10",
+            "Texture.bandana11",
+            "Texture.bandana12",
+            "Texture.bandana13",
+            "Texture.bandana14",
+            "Texture.bandana15",
+            "Texture.bandana16",
+            "Texture.bandana17",
+            "Texture.bandana18",
+            "Texture.bandana19",
+            "Texture.bandana20",
+            "Texture.bandana21",
+            "Texture.bandana22"
+          ]
+        }
+      }
     },
     "controller.render.alexsmobs.raccoon.glow": {
       "geometry": "Geometry.default",

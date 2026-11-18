@@ -10,7 +10,31 @@
       },
       "textures": {
         "v0": "textures/entity/alexsmobs/raccoon",
-        "glow": "textures/entity/alexsmobs/raccoon_eyes"
+        "glow": "textures/entity/alexsmobs/raccoon_eyes",
+        "rigby": "textures/entity/alexsmobs/raccoon_rigby",
+        "bandana0": "textures/entity/alexsmobs/raccoon_bandana_0",
+        "bandana1": "textures/entity/alexsmobs/raccoon_bandana_1",
+        "bandana2": "textures/entity/alexsmobs/raccoon_bandana_2",
+        "bandana3": "textures/entity/alexsmobs/raccoon_bandana_3",
+        "bandana4": "textures/entity/alexsmobs/raccoon_bandana_4",
+        "bandana5": "textures/entity/alexsmobs/raccoon_bandana_5",
+        "bandana6": "textures/entity/alexsmobs/raccoon_bandana_6",
+        "bandana7": "textures/entity/alexsmobs/raccoon_bandana_7",
+        "bandana8": "textures/entity/alexsmobs/raccoon_bandana_8",
+        "bandana9": "textures/entity/alexsmobs/raccoon_bandana_9",
+        "bandana10": "textures/entity/alexsmobs/raccoon_bandana_10",
+        "bandana11": "textures/entity/alexsmobs/raccoon_bandana_11",
+        "bandana12": "textures/entity/alexsmobs/raccoon_bandana_12",
+        "bandana13": "textures/entity/alexsmobs/raccoon_bandana_13",
+        "bandana14": "textures/entity/alexsmobs/raccoon_bandana_14",
+        "bandana15": "textures/entity/alexsmobs/raccoon_bandana_15",
+        "bandana16": "textures/entity/alexsmobs/raccoon_bandana_16",
+        "bandana17": "textures/entity/alexsmobs/raccoon_bandana_17",
+        "bandana18": "textures/entity/alexsmobs/raccoon_bandana_18",
+        "bandana19": "textures/entity/alexsmobs/raccoon_bandana_19",
+        "bandana20": "textures/entity/alexsmobs/raccoon_bandana_20",
+        "bandana21": "textures/entity/alexsmobs/raccoon_bandana_21",
+        "bandana22": "textures/entity/alexsmobs/raccoon_bandana_22"
       },
       "geometry": {
         "default": "geometry.alexsmobs.raccoon"
@@ -60,6 +84,7 @@
           "v.am_flying = 0;",
           "v.am_sleeping = 0;",
           "v.am_standing = q.property('alexsmobs:angry') && !v.is_moving && q.is_on_ground;",
+          "v.am_dancing = 0;",
           "v.idle_wait = v.idle_wait ?? 4;",
           "v.idle_pick = v.idle_pick ?? 0;",
           "v.atk_pick = v.atk_pick ?? 0;",
@@ -85,6 +110,9 @@
       },
       "render_controllers": [
         "controller.render.alexsmobs.raccoon",
+        {
+          "controller.render.alexsmobs.raccoon.bandana": "q.property('alexsmobs:bandana') > 0 || q.is_name_any('jeb_')"
+        },
         "controller.render.alexsmobs.raccoon.glow"
       ],
       "spawn_egg": {

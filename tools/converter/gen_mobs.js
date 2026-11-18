@@ -52,6 +52,16 @@ function generate(e, ctx) {
     const geoId = key === 'default' ? `geometry.${NS}.${id}` : `geometry.${NS}.${id}.${key}`;
     let g = G.toGeometry(geoId, boxes, I.texW, I.texH, { neck: geos[0] && geos[0].neck });
     if (!geos.length) g = G.toGeometry(geoId, boxes, I.texW, I.texH, { neck: g.neck });
+    if (s.maracas && key === 'default') {
+      // Easter egg: two maracas held in the front legs (drawn only when alexsmobs:maracas is set, see gen_client overlay)
+      const gb = g.json['minecraft:geometry'][0].bones;
+      const fl = gb.find(b => /left_leg_front/.test(b.name)), fr = gb.find(b => /right_leg_front/.test(b.name));
+      if (fl && fr) for (const [leg, sx, nm] of [[fl, 1, 'maraca_left'], [fr, -1, 'maraca_right']]) {
+        gb.push({ name: nm, parent: leg.name, pivot: [sx * 2.6, 3, -4.5], cubes: [
+          { origin: [sx * 2.6 - 0.5, 2.5, -6.6], size: [1, 1, 3], uv: [32, 0] },
+          { origin: [sx * 2.6 - 1, 2, -8.6], size: [2, 2, 2], uv: [32, 4] }] });
+      }
+    }
     U.writeJson(path.join(C.RP, 'models/entity', NS, `${id}${key === 'default' ? '' : '.' + key}.geo.json`), g.json);
     const rec = { key, geoId, I, boxes, neck: geos.length ? geos[0].neck : g.neck, names: g.names, bones: g.json['minecraft:geometry'][0].bones, bounds: g.bounds };
     geos.push(rec);
@@ -76,19 +86,50 @@ function generate(e, ctx) {
   [sleepTex, angryTex].forEach(l => l && l.forEach(copyTex));
   const glow = s.glow && exists(s.glow) ? s.glow : null;
   if (glow) copyTex(glow);
-  const overlay = s.overlay && exists(s.overlay) ? s.overlay : null;
+  let overlay = s.overlay && exists(s.overlay) ? s.overlay : null;
   if (overlay) copyTex(overlay);
+  if (s.maracas) {
+    // drawn texture for the cockroach maracas (UV block 32,0..40,8 is empty in the Java texture)
+    const png = require('./png');
+    const rel = id + '_maracas';
+    const C0 = [87, 58, 43, 255], C1 = [173, 150, 117, 255], G0 = [94, 150, 92, 255], G1 = [43, 89, 47, 255], R0 = [186, 60, 52, 255];
+    fs.mkdirSync(path.dirname(path.join(C.RP, texPath(rel) + '.png')), { recursive: true });
+    fs.writeFileSync(path.join(C.RP, texPath(rel) + '.png'), png.encode(64, 64, (x, y) => {
+      if (x < 32 || x >= 40 || y > 7) return null;
+      if (y < 4) return (x + y) % 3 === 0 ? C0 : C1;                    // handle
+      return (x * 3 + y) % 5 === 0 ? R0 : (x + y) % 2 ? G0 : G1;        // painted gourd
+    }));
+    overlay = rel;
+  }
+  const bandana = s.bandana && exists(s.bandana) ? s.bandana : null;
+  if (bandana) copyTex(bandana);
+  const rigby = s.rigby && exists(s.rigby) ? s.rigby : null;
+  if (rigby) copyTex(rigby);
+  if (bandana) {
+    // The Java bandana is a grey mask tinted per dye colour (and cycled for a raccoon named jeb_). Bedrock needs no custom
+    // material this way: one pre-tinted texture per colour, picked by alexsmobs:bandana / the jeb_ name.
+    const px = require('../preview/pixel'), png = require('./png');
+    const src = px.load(U.jarTex('entity/' + bandana));
+    const COLORS = ['F9FFFE', 'F9801D', 'C74EBD', '3AB3DA', 'FED83D', '80C71F', 'F38BAA', '474F52', '9D9D97', '169C9C', '8932B8', '3C44AA', '835432', '5E7C16', 'B02E26', '1D1D21']
+      .concat(['E02828', 'F9801D', 'FED83D', '80C71F', '169C9C', '3C44AA', '8932B8']);
+    COLORS.forEach((hex, i) => {
+      const c = [0, 2, 4].map(k => parseInt(hex.slice(k, k + 2), 16));
+      const out = png.encode(src.w, src.h, (x, y) => { const o = (y * src.w + x) * 4; return [0, 1, 2].map(k => Math.round(src.data[o + k] * c[k] / 255)).concat(src.data[o + 3]); });
+      fs.writeFileSync(path.join(C.RP, texPath(bandana + '_' + i) + '.png'), out);
+    });
+    fs.rmSync(path.join(C.RP, texPath(bandana) + '.png'), { force: true });
+  }
   const babyTex = s.babyTex && exists(s.babyTex) ? s.babyTex : null;
   if (babyTex) copyTex(babyTex);
 
   // ---- client side: animations, controllers, client entity, render controllers (gen_client.js)
   const kindOf = s.kind || autoKind(e);
-  const cl = GC.generateClient({ e, s, id, full, prefix, geos, main, kindOf, variants, sleepTex, angryTex, glow, overlay, babyTex, ctx });
+  const cl = GC.generateClient({ e, s, id, full, prefix, geos, main, kindOf, variants, sleepTex, angryTex, glow, overlay, babyTex, bandana, rigby, ctx });
   const { sleeps, nV, attackNames, idleList } = cl;
   out.gait = cl.gait; out.states = cl.states;
 
   // ---- behavior
-  const bp = behavior(e, s, kindOf, { attackAnims: attackNames, sleeps, nV, babyModel: !!s.baby, ctx });
+  const bp = behavior(e, s, kindOf, { attackAnims: attackNames, sleeps, nV, babyModel: !!s.baby, dances: !!s.dances, maracas: !!s.maracas, bandana: !!s.bandana, ctx });
   U.writeJson(path.join(C.BP, 'entities', NS, `${id}.json`), bp);
   SP.spawnRule(e, s, kindOf, ctx, /Breed|MateGoal/.test((e.goals || []).map(x => x.goal).join(' ')) && s.temper !== 'hostile');
   loot(e, ctx);
@@ -410,6 +451,9 @@ function behavior(e, s, kind, info) {
     [`${NS}:angry`]: { type: 'bool', default: false, client_sync: true },
   };
   if (info.sleeps) properties[`${NS}:sleeping`] = { type: 'bool', default: false, client_sync: true };
+  if (info.dances) properties[`${NS}:dancing`] = { type: 'bool', default: false, client_sync: true };
+  if (info.maracas) properties[`${NS}:maracas`] = { type: 'bool', default: false, client_sync: true };
+  if (info.bandana) properties[`${NS}:bandana`] = { type: 'int', range: [0, 16], default: 0, client_sync: true };
   return {
     format_version: '1.21.50',
     'minecraft:entity': {

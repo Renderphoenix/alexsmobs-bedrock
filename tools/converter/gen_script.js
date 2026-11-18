@@ -327,6 +327,90 @@ world.afterEvents.itemCompleteUse.subscribe(({ source, itemStack }) => {
   for (const [eff, sec, amp] of list) { try { source.addEffect(eff, sec * 20, { amplifier: amp }); } catch {} }
 });
 
+// ------------------------------------------------------------ Easter eggs (from the Java mod)
+// 1) cockroach, maned wolf and rain frog dance while a jukebox plays nearby; the cockroach also dances to a maraca
+//    (right-click it with a maraca to hand it a pair of maracas), 2) dye a raccoon with any dye for a bandana (shears
+//    take it off; a raccoon named jeb_ gets the rainbow bandana, one named Rigby gets the Rigby skin - client side).
+const DANCERS = ["alexsmobs:cockroach", "alexsmobs:maned_wolf", "alexsmobs:rain_frog"];
+const DYE_NAMES = ["white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"];
+const jukeboxes = new Map(); // "dim|x|y|z" -> { dim, x, y, z, until }
+const isDisc = (id) => /music_disc|record/.test(id || "");
+const spendOne = (player) => {
+  try {
+    if (String(player.getGameMode()).toLowerCase() === "creative") return;
+    const slot = player.getComponent("minecraft:inventory").container.getSlot(player.selectedSlotIndex);
+    if (slot.amount > 1) slot.amount -= 1; else slot.setItem(undefined);
+  } catch {}
+};
+const startDance = (e, secs) => {
+  try { e.setProperty("alexsmobs:dancing", true); e.setDynamicProperty("am:dance_until", system.currentTick + secs * 20); } catch {}
+};
+const danceNear = (dim, loc, radius, secs) => {
+  for (const t of DANCERS) {
+    let list = [];
+    try { list = dim.getEntities({ type: t, location: loc, maxDistance: radius }); } catch {}
+    for (const e of list) if (valid(e)) startDance(e, secs);
+  }
+};
+world.afterEvents.playerInteractWithBlock.subscribe((ev) => {
+  const b = ev.block;
+  if (!b || b.typeId !== "minecraft:jukebox") return;
+  const key = b.dimension.id + "|" + b.x + "|" + b.y + "|" + b.z;
+  const held = ev.itemStack ?? ev.beforeItemStack;
+  if (held && isDisc(held.typeId)) jukeboxes.set(key, { dim: b.dimension, x: b.x, y: b.y, z: b.z, until: system.currentTick + 20 * 60 * 4 });
+  else jukeboxes.delete(key); // empty hand ejects the disc
+});
+world.afterEvents.playerInteractWithEntity.subscribe((ev) => {
+  const { player, target } = ev;
+  const held = ev.beforeItemStack ?? ev.itemStack;
+  if (!target || !held) return;
+  try {
+    if (target.typeId === "alexsmobs:cockroach" && held.typeId === "alexsmobs:maraca") {
+      if (!target.getProperty("alexsmobs:maracas")) { target.setProperty("alexsmobs:maracas", true); spendOne(player); }
+      startDance(target, 20);
+      snd(target.dimension, "alexsmobs.maraca", target.location);
+    } else if (target.typeId === "alexsmobs:raccoon") {
+      const m = /^minecraft:(.+)_dye$/.exec(held.typeId);
+      const idx = m ? DYE_NAMES.indexOf(m[1]) : -1;
+      if (idx >= 0) { target.setProperty("alexsmobs:bandana", idx + 1); spendOne(player); }
+      else if (held.typeId === "minecraft:shears" && target.getProperty("alexsmobs:bandana") > 0) target.setProperty("alexsmobs:bandana", 0);
+    }
+  } catch {}
+});
+world.afterEvents.itemUse.subscribe(({ source: player, itemStack: item }) => {
+  if (player && item && item.typeId === "alexsmobs:maraca") danceNear(player.dimension, player.location, 8, 8);
+});
+world.afterEvents.entityHurt.subscribe(({ hurtEntity }) => {
+  if (hurtEntity && DANCERS.includes(hurtEntity.typeId)) { try { hurtEntity.setProperty("alexsmobs:dancing", false); hurtEntity.setDynamicProperty("am:dance_until", 0); } catch {} }
+});
+system.runInterval(() => {
+  const now = system.currentTick;
+  for (const [key, j] of jukeboxes) {
+    let playing = now < j.until;
+    try {
+      const blk = j.dim.getBlock({ x: j.x, y: j.y, z: j.z });
+      if (!blk || blk.typeId !== "minecraft:jukebox") { jukeboxes.delete(key); continue; }
+      const rp = blk.getComponent("minecraft:record_player");
+      if (rp && typeof rp.isPlaying === "function") playing = rp.isPlaying();
+    } catch {}
+    if (!playing) { jukeboxes.delete(key); continue; }
+    danceNear(j.dim, { x: j.x + 0.5, y: j.y, z: j.z + 0.5 }, 12, 4);
+  }
+  for (const dim of ["overworld", "nether", "the_end"]) {
+    let d;
+    try { d = world.getDimension(dim); } catch { continue; }
+    for (const t of DANCERS) {
+      let list = [];
+      try { list = d.getEntities({ type: t }); } catch {}
+      for (const e of list) {
+        try {
+          if (e.getProperty("alexsmobs:dancing") && !(now < (e.getDynamicProperty("am:dance_until") ?? 0))) e.setProperty("alexsmobs:dancing", false);
+        } catch {}
+      }
+    }
+  }
+}, 20);
+
 system.runInterval(tickChains, 1);
 system.runInterval(scan, 100);
 system.runTimeout(scan, 40);
